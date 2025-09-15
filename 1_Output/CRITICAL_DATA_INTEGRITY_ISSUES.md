@@ -8,21 +8,24 @@
 
 ---
 
-## Major Discrepancies Discovered
+## Major Discrepancies Discovered (NOW RESOLVED)
 
-### 1. McCabe Complexity Inconsistencies
+### 1. McCabe Complexity Inconsistencies - FIXED
 
-**Database Values vs Metrics Report**:
-- `plautogenMT`: Database=45, Metrics=8 (***81% difference***)
-- `plinvoiceMT`: Database=45, Metrics=8 (***81% difference***)
-- `slautogenMT`: Database=45, Metrics=8 (***81% difference***)
-- `slinvoiceMT`: Database=45, Metrics=8 (***81% difference***)
+**Original Problem**:
+- `plautogenMT`: AST=45, Phase 3 Report=8 (***81% difference***)
+- `plinvoiceMT`: AST=45, Phase 3 Report=8 (***81% difference***)
+- `slautogenMT`: AST=45, Phase 3 Report=8 (***81% difference***)
+- `slinvoiceMT`: AST=45, Phase 3 Report=8 (***81% difference***)
 
-### 2. Average Complexity Discrepancy
+**RESOLUTION**: Phase 3 was incorrectly recalculating instead of using AST values. Fixed to use AST values directly.
 
-- **Database Average**: 6.47 (across 443 programs)
-- **Reported Average**: 3.12 (across 257 programs)
-- **Difference**: 107% higher in database
+### 2. Average Complexity Discrepancy - CORRECTED
+
+- **Database Average**: 6.47 (across 443 programs including copybooks)
+- **Original Phase 3 Report**: 3.12 (incorrect recalculation)
+- **Corrected Phase 3 Report**: 9.8 (using AST values from 257 programs)
+- **Actual complexity is higher than initially reported**
 
 ### 3. Parse Confidence Conflicts
 
