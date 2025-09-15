@@ -1,0 +1,138 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl",
+  "fileName": "gl100.cbl",
+  "fileHash": "aae38b26a81c0749c34d4d51f6db1831e1b12c528ffbbd76ee391d76c823c40e",
+  "timestamp": "2025-09-15T19:46:18.973Z",
+  "parseTime": 33,
+  "lines": {
+    "total": 272,
+    "code": 125,
+    "comment": 146,
+    "blank": 1
+  },
+  "programId": "gl100",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:93: error: envdiv.cob: No such file or directory\n   91 | *>===============================\n   92 | *>\n   93 >  copy \"envdiv.cob\".\n   94 |  input-output            section.\n   95 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:164: error: wsfnctn.cob: No such file or directory\n  162 | *>\n  163 |  77  prog-name           pic x(15)  value \"gl100 (3.02.03)\".\n  164 >  copy \"wsfnctn.cob\".\n  165 | *>\n  166 |  77  a                   pic 9      value zero.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:183: error: wscall.cob: No such file or directory\n  181 | *>**************\n  182 | *>\n  183 >  copy \"wscall.cob\".\n  184 |  copy \"wssystem.cob\".\n  185 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:184: error: wssystem.cob: No such file or directory\n  182 | *>\n  183 |  copy \"wscall.cob\".\n  184 >  copy \"wssystem.cob\".\n  185 |  copy \"wsnames.cob\".\n  186 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:185: error: wsnames.cob: No such file or directory\n  183 |  copy \"wscall.cob\".\n  184 |  copy \"wssystem.cob\".\n  185 >  copy \"wsnames.cob\".\n  186 | *>\n  187 |  77  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:102: error: 'fs-reply' is not defined\n  100 |      select  archive    assign  file-2\n  101 |                         access  sequential\n  102 >                         status  fs-reply\n  103 |                         organization  line sequential.\n  104 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:189: error: 'ws-calling-data' is not defined\n  187 |  77  to-day              pic x(10).\n  188 | *>\n  189 >  procedure division using ws-calling-data\n  190 |                           system-record\n  191 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:190: error: 'system-record' is not defined\n  188 | *>\n  189 |  procedure division using ws-calling-data\n  190 >                           system-record\n  191 |                           to-day\n  192 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:192: error: 'file-defs' is not defined\n  190 |                           system-record\n  191 |                           to-day\n  192 >                           file-defs.\n  193 | *>***************************************\n  194 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl: in section 'gl100-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:201: error: 'ws-term-code' is not defined\n  199 |      perform  disk-change.\n  200 |      if       a  equal  9   *> abort procedure\n  201 >               move 5 to ws-term-code\n  202 |               go to menu-exit.\n  203 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl: in section 'disk-change':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:233: error: 'file-24' is not defined\n  231 | *>\n  232 |      move     space to Arg-Test.             *> this lot needs checking !..\n  233 >      string   file-24        delimited by space\n  234 |               \"archives\"     delimited by size\n  235 |               file-defs-os-delimiter\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:235: error: 'file-defs-os-delimiter' is not defined\n  233 |      string   file-24        delimited by space\n  234 |               \"archives\"     delimited by size\n  235 >               file-defs-os-delimiter\n  236 |                              delimited by size\n  237 |                 file-2      delimited by space\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:93: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:164: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:183: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:184: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:185: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:102: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:189: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:190: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:192: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:201: error: 'ws-term-code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:233: error: 'file-24' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:235: error: 'file-defs-os-delimiter' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:93: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:164: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:183: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:184: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:185: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:102: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:189: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:190: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:192: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:201: error: 'ws-term-code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:233: error: 'file-24' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl100.cbl:235: error: 'file-defs-os-delimiter' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 11,
+    "cognitive": 30,
+    "halstead": {
+      "uniqueOperators": 5,
+      "uniqueOperands": 50,
+      "totalOperators": 25,
+      "totalOperands": 72,
+      "vocabulary": 55,
+      "length": 97,
+      "volume": 561,
+      "difficulty": 3.6,
+      "effort": 2019,
+      "timeToProgram": 112,
+      "deliveredBugs": 0.187
+    },
+    "maintainability": 79
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 84
+      },
+      {
+        "name": "envdiv",
+        "line": 93
+      },
+      {
+        "name": "wsfnctn",
+        "line": 164
+      },
+      {
+        "name": "wscall",
+        "line": 183
+      },
+      {
+        "name": "wssystem",
+        "line": 184
+      },
+      {
+        "name": "wsnames",
+        "line": 185
+      }
+    ],
+    "performs": [
+      {
+        "target": "disk-change",
+        "line": 199
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "archive",
+        "line": 118
+      },
+      {
+        "name": "arch-out",
+        "line": 132
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 160
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

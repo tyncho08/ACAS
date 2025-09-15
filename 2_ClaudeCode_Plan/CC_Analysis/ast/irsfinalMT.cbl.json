@@ -1,0 +1,372 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl",
+  "fileName": "irsfinalMT.cbl",
+  "fileHash": "b28e75699317ba5bad8281a89f76b55866a33c21210e95a3ef633502300d7aeb",
+  "timestamp": "2025-09-15T19:46:03.727Z",
+  "parseTime": 51,
+  "lines": {
+    "total": 727,
+    "code": 454,
+    "comment": 269,
+    "blank": 4
+  },
+  "programId": "irsfinalMT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:54: error: ACAS-SQLstate-error-list.cob: No such file or directory\n   52 | *>  Module USAGE see irsdflt for details.\n   53 | *>**\n   54 >  copy \"ACAS-SQLstate-error-list.cob\".\n   55 | *>\n   56 | *>***********************************************************************..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:89: error: envdiv.cob: No such file or directory\n   87 | *>\n   88 |  environment division.\n   89 >  copy \"envdiv.cob\".\n   90 | *>\n   91 |  input-output section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:165: error: mysql-variables.cpy: No such file or directory\n  163 | *>       ACASDB\n  164 | *>       TABLE=IRSFINAL-REC,HV\n  165 >  COPY \"mysql-variables.cpy\".\n  166 | *>\n  167 | *>    Definitions for the IRSFINAL-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:180: error: wsfnctn.cob: No such file or directory\n  178 | *>\n  179 | *>**************************************************************\n  180 >  copy \"wsfnctn.cob\".            *> File-Access\n  181 | *>\n  182 | *>**************************************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:184: error: Test-Data-Flags.cob: No such file or directory\n  182 | *>**************************************************************\n  183 | *>\n  184 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  185 | *>\n  186 |  copy \"irswsfinal.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:186: error: irswsfinal.cob: No such file or directory\n  184 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  185 | *>\n  186 >  copy \"irswsfinal.cob\".\n  187 | *>\n  188 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:584: error: mysql-procedures.cpy: No such file or directory\n  582 | *>\n  583 | *> /MYSQL PRO\\\n  584 >  COPY \"mysql-procedures.cpy\".\n  585 | *> /MYSQL-END\\\n  586 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:197: error: 'Ws-Mysql-Error-Number' is not defined\n  195 |  01  Display-Message-2       foreground-color 2.\n  196 |      03      value \"SM004 SQL Err No.=\" line 4 col  1.    *> size 18 char\n  197 >      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.    *>..\n  198 |      03      value \" Para=\"                              col 23.    *> si..\n  199 |      03  using WS-No-Paragraph         pic 9(3)          col 29.    *>..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:199: error: 'WS-No-Paragraph' is not defined\n  197 |      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.    *>..\n  198 |      03      value \" Para=\"                              col 23.    *> si..\n  199 >      03  using WS-No-Paragraph         pic 9(3)          col 29.    *>..\n  200 |      03      value \" SQL Cmd=\"                           col 32.    *>..\n  201 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:201: error: 'Ws-Mysql-Command' is not defined\n  199 |      03  using WS-No-Paragraph         pic 9(3)          col 29.    *>..\n  200 |      03      value \" SQL Cmd=\"                           col 32.    *>..\n  201 >      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  202 |      03      value \"SQL Err Msg=\"       line 7 col  1.    *>      12\n  203 |      03  using Ws-Mysql-Error-Message  pic x(67)        col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:203: error: 'Ws-Mysql-Error-Message' is not defined\n  201 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  202 |      03      value \"SQL Err Msg=\"       line 7 col  1.    *>      12\n  203 >      03  using Ws-Mysql-Error-Message  pic x(67)        col 13.\n  204 | *>\n  205 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:206: error: 'File-Access' is not defined\n  204 | *>\n  205 | *>\n  206 >  PROCEDURE DIVISION   using File-Access\n  207 |                             ACAS-DAL-Common-data\n  208 |                             Final-Record.   *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:207: error: 'ACAS-DAL-Common-data' is not defined\n  205 | *>\n  206 |  PROCEDURE DIVISION   using File-Access\n  207 >                             ACAS-DAL-Common-data\n  208 |                             Final-Record.   *>  Ws record\n  209 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:208: error: 'Final-Record' is not defined\n  206 |  PROCEDURE DIVISION   using File-Access\n  207 |                             ACAS-DAL-Common-data\n  208 >                             Final-Record.   *>  Ws record\n  209 | *>**********************************************\n  210 |  ba-ACAS-DAL-Process  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:222: error: 'We-Error' is not defined\n  220 | *>\n  221 |  ba010-Initialise.\n  222 >      move     zero   to We-Error                        *> as in irsub5\n  223 |      move     spaces to WS-MYSQL-Error-Message\n  224 |                         WS-MYSQL-Error-Number\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:225: error: 'WS-Log-Where' is not defined\n  223 |      move     spaces to WS-MYSQL-Error-Message\n  224 |                         WS-MYSQL-Error-Number\n  225 >                         WS-Log-Where\n  226 |                         WS-File-Key\n  227 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:226: error: 'WS-File-Key' is not defined\n  224 |                         WS-MYSQL-Error-Number\n  225 |                         WS-Log-Where\n  226 >                         WS-File-Key\n  227 |                         SQL-Msg\n  228 |                         SQL-Err\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:227: error: 'SQL-Msg' is not defined\n  225 |                         WS-Log-Where\n  226 |                         WS-File-Key\n  227 >                         SQL-Msg\n  228 |                         SQL-Err\n  229 |                         SQL-State.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:228: error: 'SQL-Err' is not defined\n  226 |                         WS-File-Key\n  227 |                         SQL-Msg\n  228 >                         SQL-Err\n  229 |                         SQL-State.\n  230 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:229: error: 'SQL-State' is not defined\n  227 |                         SQL-Msg\n  228 |                         SQL-Err\n  229 >                         SQL-State.\n  230 | *>\n  231 | *>   As this is for only one set of 32 rows we will skip this ...\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:238: error: 'File-Function' is not defined\n  236 | *>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  237 | *>\n  238 >      evaluate File-Function\n  239 |         when  1\n  240 |               go to ba020-Process-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:262: error: 'DB-Schema' is not defined\n  260 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  261 |  *>\n  262 >      string   DB-Schema      delimited by space\n  263 |               X\"00\"          delimited by size\n  264 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:264: error: 'WS-MYSQL-BASE-NAME' is not defined\n  262 |      string   DB-Schema      delimited by space\n  263 |               X\"00\"          delimited by size\n  264 >                                into WS-MYSQL-BASE-NAME\n  265 |      end-string.\n  266 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:266: error: 'DB-Host' is not defined\n  264 |                                into WS-MYSQL-BASE-NAME\n  265 |      end-string.\n  266 >      string   DB-Host        delimited by space\n  267 |               X\"00\"          delimited by size\n  268 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:268: error: 'WS-MYSQL-HOST-NAME' is not defined\n  266 |      string   DB-Host        delimited by space\n  267 |               X\"00\"          delimited by size\n  268 >                                into WS-MYSQL-HOST-NAME\n  269 |      end-string.\n  270 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:270: error: 'DB-UName' is not defined\n  268 |                                into WS-MYSQL-HOST-NAME\n  269 |      end-string.\n  270 >      string   DB-UName       delimited by space\n  271 |               X\"00\"          delimited by size\n  272 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:272: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  270 |      string   DB-UName       delimited by space\n  271 |               X\"00\"          delimited by size\n  272 >                                into WS-MYSQL-IMPLEMENTATION\n  273 |      end-string.\n  274 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:274: error: 'DB-UPass' is not defined\n  272 |                                into WS-MYSQL-IMPLEMENTATION\n  273 |      end-string.\n  274 >      string   DB-UPass       delimited by space\n  275 |               X\"00\"          delimited by size\n  276 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:276: error: 'WS-MYSQL-PASSWORD' is not defined\n  274 |      string   DB-UPass       delimited by space\n  275 |               X\"00\"          delimited by size\n  276 >                                into WS-MYSQL-PASSWORD\n  277 |      end-string.\n  278 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:278: error: 'DB-Port' is not defined\n  276 |                                into WS-MYSQL-PASSWORD\n  277 |      end-string.\n  278 >      string   DB-Port        delimited by space\n  279 |               X\"00\"          delimited by size\n  280 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:280: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  278 |      string   DB-Port        delimited by space\n  279 |               X\"00\"          delimited by size\n  280 >                                into WS-MYSQL-PORT-NUMBER\n  281 |      end-string.\n  282 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:282: error: 'DB-Socket' is not defined\n  280 |                                into WS-MYSQL-PORT-NUMBER\n  281 |      end-string.\n  282 >      string   DB-Socket      delimited by space\n  283 |               X\"00\"          delimited by size\n  284 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:284: error: 'WS-MYSQL-SOCKET' is not defined\n  282 |      string   DB-Socket      delimited by space\n  283 |               X\"00\"          delimited by size\n  284 >                                into WS-MYSQL-SOCKET\n  285 |      end-string.\n  286 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:288: error: 'fs-reply' is not defined\n  286 |      move     1 to ws-No-Paragraph.\n  287 |      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  288 >      if       fs-reply not = zero\n  289 |               go   to ba999-end.\n  290 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:364: error: 'WS-MYSQL-RESULT' is not defined\n  362 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  363 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  364 >            MOVE WS-MYSQL-RESULT TO TP-IRSFINAL-REC\n  365 | *>               /MYSQL-END\\\n  366 |            move    \"000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:367: error: 'Testing-2' is not defined\n  365 | *>               /MYSQL-END\\\n  366 |            move    \"000\" to WS-File-Key\n  367 >               if    Testing-2\n  368 |                     display Display-Message-1 with erase eos\n  369 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:373: error: 'WS-MYSQL-Count-Rows' is not defined\n  371 | *>  It could be an empty table so test for it\n  372 | *>\n  373 >               if       WS-MYSQL-Count-Rows = zero\n  374 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  375 |                        if    WS-MYSQL-Error-Number  not = \"0  \"    *> set..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:380: error: 'WS-MYSQL-SQLstate' is not defined\n  378 |                              move WS-MYSQL-Error-Message to SQL-Msg\n  379 |                        end-if       *> do not really need to do this mean..\n  380 >                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n  381 |                        move  WS-MYSQL-SqlState   to SQL-State\n  382 |                        move  10 to fs-reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:419: error: 'Testing-1' is not defined\n  417 |                        move    \"EOF\" to WS-File-Key\n  418 |                        move     zero to Most-Cursor-Set\n  419 >                        if       Testing-1..\n  420 |                                 perform Ca-Process-Logs\n  421 |                        end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:454: error: 'AR1' is not defined\n  452 |                        exit perform\n  453 |               end-if\n  454 >               move     HV-IRS-AR1    to AR1 (HV-IRS-FINAL-ACC-REC-KEY)..\n  455 |               move     HV-IRS-AR2    to AR2 (HV-IRS-FINAL-ACC-REC-KEY)\n  456 |               if       Testing-1\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:455: error: 'AR2' is not defined\n  453 |               end-if\n  454 |               move     HV-IRS-AR1    to AR1 (HV-IRS-FINAL-ACC-REC-KEY)..\n  455 >               move     HV-IRS-AR2    to AR2 (HV-IRS-FINAL-ACC-REC-KEY)\n  456 |               if       Testing-1\n  457 |                        perform Ca-Process-Logs\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl: in paragraph 'ba070-Process-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:468: error: 'WS-Mysql-Time-Step' is not defined\n  466 | *>\n  467 |  ba070-Process-Write.\n  468 >      move     zero to WS-Mysql-Time-Step\n  469 |                       WS-SQL-Retry.\n  470 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:469: error: 'WS-SQL-Retry' is not defined\n  467 |  ba070-Process-Write.\n  468 |      move     zero to WS-Mysql-Time-Step\n  469 >                       WS-SQL-Retry.\n  470 | *>\n  471 |      move     zero to FS-Reply WE-Error\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:287: error: 'MYSQL-1000-OPEN' is not defined\n  285 |      end-string.\n  286 |      move     1 to ws-No-Paragraph.\n  287 >      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  288 |      if       fs-reply not = zero\n  289 |               go   to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:287: error: 'MYSQL-1090-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl: in paragraph 'ba030-Process-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:311: error: 'MYSQL-1980-CLOSE' is not defined\n  309 | *>    Close the Database\n  310 | *>\n  311 >            PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n  312 | *>  /MYSQL-END\\\n  313 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:311: error: 'MYSQL-1999-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:362: error: 'MYSQL-1210-COMMAND' is not defined\n  360 |              ws-Where (1:J)\n  361 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  362 >            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  363 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  364 |            MOVE WS-MYSQL-RESULT TO TP-IRSFINAL-REC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:362: error: 'MYSQL-1219-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:363: error: 'MYSQL-1220-STORE-RESULT' is not defined\n  361 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  362 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  363 >            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  364 |            MOVE WS-MYSQL-RESULT TO TP-IRSFINAL-REC\n  365 | *>               /MYSQL-END\\\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:363: error: 'MYSQL-1239-EXIT' is not defined\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:54: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:89: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:165: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:180: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:184: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:186: error: irswsfinal.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:584: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:197: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:199: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:201: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:203: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:206: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:207: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:208: error: 'Final-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:222: error: 'We-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:225: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:226: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:227: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:228: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:229: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:238: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:262: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:264: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:266: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:268: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:270: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:272: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:274: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:276: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:278: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:280: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:282: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:284: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:288: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:364: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:367: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:373: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:380: error: 'WS-MYSQL-SQLstate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:419: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:454: error: 'AR1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:455: error: 'AR2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:468: error: 'WS-Mysql-Time-Step' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:469: error: 'WS-SQL-Retry' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:287: error: 'MYSQL-1000-OPEN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:287: error: 'MYSQL-1090-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:311: error: 'MYSQL-1980-CLOSE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:311: error: 'MYSQL-1999-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:362: error: 'MYSQL-1210-COMMAND' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:362: error: 'MYSQL-1219-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:363: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:363: error: 'MYSQL-1239-EXIT' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:54: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:89: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:165: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:180: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:184: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:186: error: irswsfinal.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:584: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:197: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:199: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:201: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:203: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:206: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:207: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:208: error: 'Final-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:222: error: 'We-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:225: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:226: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:227: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:228: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:229: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:238: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:262: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:264: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:266: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:268: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:270: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:272: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:274: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:276: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:278: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:280: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:282: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:284: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:288: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:364: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:367: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:373: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:380: error: 'WS-MYSQL-SQLstate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:419: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:454: error: 'AR1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:455: error: 'AR2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:468: error: 'WS-Mysql-Time-Step' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:469: error: 'WS-SQL-Retry' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:287: error: 'MYSQL-1000-OPEN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:287: error: 'MYSQL-1090-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:311: error: 'MYSQL-1980-CLOSE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:311: error: 'MYSQL-1999-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:362: error: 'MYSQL-1210-COMMAND' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:362: error: 'MYSQL-1219-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:363: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl:363: error: 'MYSQL-1239-EXIT' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 66,
+    "cognitive": 110,
+    "halstead": {
+      "uniqueOperators": 11,
+      "uniqueOperands": 136,
+      "totalOperators": 245,
+      "totalOperands": 617,
+      "vocabulary": 147,
+      "length": 862,
+      "volume": 6206,
+      "difficulty": 24.95,
+      "effort": 154856,
+      "timeToProgram": 8603,
+      "deliveredBugs": 2.069
+    },
+    "maintainability": 65
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 374
+      },
+      {
+        "target": "MySQL_error",
+        "line": 377
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 380
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 404
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 437
+      },
+      {
+        "target": "MySQL_error",
+        "line": 439
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 446
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 487
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 488
+      },
+      {
+        "target": "MySQL_error",
+        "line": 491
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 554
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 555
+      },
+      {
+        "target": "MySQL_error",
+        "line": 558
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 595
+      },
+      {
+        "target": "fhlogger",
+        "line": 721
+      }
+    ],
+    "copies": [
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 54
+      },
+      {
+        "name": "of",
+        "line": 82
+      },
+      {
+        "name": "envdiv",
+        "line": 89
+      },
+      {
+        "name": "mysql-variables",
+        "line": 165
+      },
+      {
+        "name": "wsfnctn",
+        "line": 180
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 184
+      },
+      {
+        "name": "irswsfinal",
+        "line": 186
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 584
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 260
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 287
+      },
+      {
+        "target": "ba998-Free",
+        "line": 303
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 311
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 362
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 363
+      },
+      {
+        "target": "varying",
+        "line": 395
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 420
+      },
+      {
+        "target": "end-if",
+        "line": 422
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 430
+      },
+      {
+        "target": "end-if",
+        "line": 432
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 450
+      },
+      {
+        "target": "end-if",
+        "line": 452
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 457
+      },
+      {
+        "target": "varying",
+        "line": 475
+      },
+      {
+        "target": "cycle",
+        "line": 478
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 485
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 504
+      },
+      {
+        "target": "if",
+        "line": 512
+      },
+      {
+        "target": "varying",
+        "line": 523
+      },
+      {
+        "target": "bb300-Update",
+        "line": 547
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 566
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 602
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 654
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 711
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 93
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

@@ -1,0 +1,136 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl",
+  "fileName": "gl090.cbl",
+  "fileHash": "6be43c32601d33205535df21d096a681ccfb947c9dbfeadebe044f39c22e3611",
+  "timestamp": "2025-09-15T19:46:18.785Z",
+  "parseTime": 43,
+  "lines": {
+    "total": 216,
+    "code": 90,
+    "comment": 125,
+    "blank": 1
+  },
+  "programId": "gl090",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:88: error: envdiv.cob: No such file or directory\n   86 | *>===============================\n   87 | *>\n   88 >  copy \"envdiv.cob\".\n   89 |  input-output            section.\n   90 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:134: error: wscall.cob: No such file or directory\n  132 | *>**************\n  133 | *>\n  134 >  copy \"wscall.cob\".\n  135 |  copy \"wssystem.cob\".\n  136 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:135: error: wssystem.cob: No such file or directory\n  133 | *>\n  134 |  copy \"wscall.cob\".\n  135 >  copy \"wssystem.cob\".\n  136 |  copy \"wsnames.cob\".\n  137 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:136: error: wsnames.cob: No such file or directory\n  134 |  copy \"wscall.cob\".\n  135 |  copy \"wssystem.cob\".\n  136 >  copy \"wsnames.cob\".\n  137 | *>\n  138 |  01  to-day             pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:140: error: 'ws-calling-data' is not defined\n  138 |  01  to-day             pic x(10).\n  139 | *>\n  140 >  procedure division using ws-calling-data\n  141 |                           system-record\n  142 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:141: error: 'system-record' is not defined\n  139 | *>\n  140 |  procedure division using ws-calling-data\n  141 >                           system-record\n  142 |                           to-day\n  143 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:143: error: 'file-defs' is not defined\n  141 |                           system-record\n  142 |                           to-day\n  143 >                           file-defs.\n  144 | *>***************************************\n  145 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl: in paragraph 'menu-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:153: error: 'usera' is not defined\n  151 |      perform  zz070-convert-date.\n  152 |      display  ws-date at 0171 with foreground-color 2.\n  153 >      display  usera at 0301 with foreground-color 3.\n  154 | *>\n  155 |      display  \"Select Option By Number :- [ ]\" at 0801 with foreground-co..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:158: error: 'profit-centres' is not defined\n  156 |      display  \"(1)  Detailed Trial Balance\" at 1001 with foreground-color..\n  157 | *>\n  158 >      if       profit-centres\n  159 |               display \"(2)  Profit Centre Trial Balance\" at 1201 with for..\n  160 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:161: error: 'branches' is not defined\n  159 |               display \"(2)  Profit Centre Trial Balance\" at 1201 with for..\n  160 |      else\n  161 >       if      branches\n  162 |               display \"(2)  Branch Trial Balance\" at 1201 with foreground..\n  163 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl: in section 'zz070-convert-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:197: error: 'Date-Form' is not defined\n  195 |      move     to-day to ws-date.\n  196 | *>\n  197 >      if       Date-Form = zero\n  198 |               move 1 to Date-Form.\n  199 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:199: error: 'Date-UK' is not defined\n  197 |      if       Date-Form = zero\n  198 |               move 1 to Date-Form.\n  199 >      if       Date-UK\n  200 |               go to zz070-Exit.\n  201 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:201: error: 'Date-USA' is not defined\n  199 |      if       Date-UK\n  200 |               go to zz070-Exit.\n  201 >      if       Date-USA                *> swap month and days\n  202 |               move ws-days to ws-swap\n  203 |               move ws-month to ws-days\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:88: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:134: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:135: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:136: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:140: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:141: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:143: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:153: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:158: error: 'profit-centres' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:161: error: 'branches' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:197: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:199: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:201: error: 'Date-USA' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:88: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:134: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:135: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:136: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:140: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:141: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:143: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:153: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:158: error: 'profit-centres' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:161: error: 'branches' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:197: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:199: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090.cbl:201: error: 'Date-USA' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 14,
+    "cognitive": 23,
+    "halstead": {
+      "uniqueOperators": 7,
+      "uniqueOperands": 32,
+      "totalOperators": 34,
+      "totalOperands": 46,
+      "vocabulary": 39,
+      "length": 80,
+      "volume": 423,
+      "difficulty": 5.03,
+      "effort": 2127,
+      "timeToProgram": 118,
+      "deliveredBugs": 0.141
+    },
+    "maintainability": 80
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "gl090b",
+        "line": 170
+      },
+      {
+        "target": "gl090a",
+        "line": 176
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 79
+      },
+      {
+        "name": "envdiv",
+        "line": 88
+      },
+      {
+        "name": "wscall",
+        "line": 134
+      },
+      {
+        "name": "wssystem",
+        "line": 135
+      },
+      {
+        "name": "wsnames",
+        "line": 136
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-convert-date",
+        "line": 151
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 95
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

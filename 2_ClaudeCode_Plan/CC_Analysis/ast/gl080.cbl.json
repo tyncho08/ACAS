@@ -1,0 +1,456 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl",
+  "fileName": "gl080.cbl",
+  "fileHash": "884f2099312d615b531b4c668041dfaaf81a5da149d069d4c652d2d09f60504a",
+  "timestamp": "2025-09-15T19:46:18.680Z",
+  "parseTime": 85,
+  "lines": {
+    "total": 752,
+    "code": 399,
+    "comment": 352,
+    "blank": 1
+  },
+  "programId": "gl080",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:132: error: envdiv.cob: No such file or directory\n  130 | *>===============================\n  131 | *>\n  132 >  copy \"envdiv.cob\".\n  133 |  input-output            section.\n  134 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:189: error: wsledger.cob: No such file or directory\n  187 | *>\n  188 |  01  Arg-Test            pic x(525) value spaces.\n  189 >  copy \"wsledger.cob\".\n  190 |  copy \"wsbatch.cob\".\n  191 |  copy \"wspost.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:190: error: wsbatch.cob: No such file or directory\n  188 |  01  Arg-Test            pic x(525) value spaces.\n  189 |  copy \"wsledger.cob\".\n  190 >  copy \"wsbatch.cob\".\n  191 |  copy \"wspost.cob\".\n  192 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:191: error: wspost.cob: No such file or directory\n  189 |  copy \"wsledger.cob\".\n  190 |  copy \"wsbatch.cob\".\n  191 >  copy \"wspost.cob\".\n  192 | *>\n  193 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:217: error: Test-Data-Flags.cob: No such file or directory\n  215 |      03  WS-OTM5-Record         pic x.\n  216 | *>\n  217 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  218 | *>\n  219 |  01  accept-terminator-array   pic 9(4).\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:259: error: wsfnctn.cob: No such file or directory\n  257 |     03  GL088           pic x(60) value \"GL088 Batches present that have..\n  258 | *>\n  259 >  copy \"wsfnctn.cob\".\n  260 | *>\n  261 |  linkage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:264: error: wscall.cob: No such file or directory\n  262 | *>**************\n  263 | *>\n  264 >  copy \"wscall.cob\".\n  265 |  copy \"wssystem.cob\".\n  266 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:265: error: wssystem.cob: No such file or directory\n  263 | *>\n  264 |  copy \"wscall.cob\".\n  265 >  copy \"wssystem.cob\".\n  266 |  copy \"wsnames.cob\".\n  267 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:266: error: wsnames.cob: No such file or directory\n  264 |  copy \"wscall.cob\".\n  265 |  copy \"wssystem.cob\".\n  266 >  copy \"wsnames.cob\".\n  267 | *>\n  268 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:715: error: FileStat-Msgs.cpy: No such file or directory\n  713 | *>\n  714 |  copy \"FileStat-Msgs.cpy\" replacing MSG by ws-Eval-Msg\n  715 >                                     STATUS by fs-reply.\n  716 | *>\n  717 |  Eval-Msg-Exit.  exit section.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:750: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  748 |      exit     section.\n  749 | *>\n  750 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  751 | *>\n  752 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:141: error: 'fs-reply' is not defined\n  139 |      select  archive    assign  file-2\n  140 |                         access  sequential\n  141 >                         status  fs-reply\n  142 |                         organization  line sequential.\n  143 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:270: error: 'ws-calling-data' is not defined\n  268 |  01  to-day              pic x(10).\n  269 | *>\n  270 >  procedure division using ws-calling-data\n  271 |                           system-record\n  272 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:271: error: 'system-record' is not defined\n  269 | *>\n  270 |  procedure division using ws-calling-data\n  271 >                           system-record\n  272 |                           to-day\n  273 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:273: error: 'file-defs' is not defined\n  271 |                           system-record\n  272 |                           to-day\n  273 >                           file-defs.\n  274 | *>***************************************\n  275 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'gl080-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:288: error: 'usera' is not defined\n  286 |      perform  zz070-convert-date.\n  287 |      display  ws-date at 0171 with foreground-color 2.\n  288 >      display  usera at 0301 with foreground-color 3.\n  289 |      move     1  to File-Key-No.\n  290 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:289: error: 'File-Key-No' is not defined\n  287 |      display  ws-date at 0171 with foreground-color 2.\n  288 |      display  usera at 0301 with foreground-color 3.\n  289 >      move     1  to File-Key-No.\n  290 | *>\n  291 |      move     zero  to  a.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:292: error: 'scycle' is not defined\n  290 | *>\n  291 |      move     zero  to  a.\n  292 >      move     scycle to lin2.\n  293 | *>\n  294 | *> Let check that a back up has been run first\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:292: error: 'lin2' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:316: error: 'archiving' is not defined\n  314 |               go to  main-end.\n  315 | *>\n  316 >      if       archiving\n  317 |               display \"Phase - 2.  Transaction Archiving\" at 0801 with fo..\n  318 |               perform gl080b\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:326: error: 'period' is not defined\n  324 | *>\n  325 |      if       a = 9\n  326 >           or  scycle <  period\n  327 |               go to  main-end.\n  328 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:346: error: 'ledger-balance' is not defined\n  344 |      if       fs-reply = 10\n  345 |               go to  loop-end.\n  346 >      move     ledger-balance  to  ledger-q (a).\n  347 |      if       current-quarter = 4\n  348 |               move  ledger-balance  to  ledger-last.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:346: error: 'ledger-q' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:347: error: 'current-quarter' is not defined\n  345 |               go to  loop-end.\n  346 |      move     ledger-balance  to  ledger-q (a).\n  347 >      if       current-quarter = 4\n  348 |               move  ledger-balance  to  ledger-last.\n  349 |      perform  GL-Nominal-Rewrite.                 *> rewrite  ledger-reco..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:348: error: 'ledger-last' is not defined\n  346 |      move     ledger-balance  to  ledger-q (a).\n  347 |      if       current-quarter = 4\n  348 >               move  ledger-balance  to  ledger-last.\n  349 |      perform  GL-Nominal-Rewrite.                 *> rewrite  ledger-reco..\n  350 |      go       to loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'gl080a':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:382: error: 'bcycle' is not defined\n  380 |               go to  end-run.\n  381 | *>\n  382 >      if       bcycle not = scycle\n  383 |               go to  loop.\n  384 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:385: error: 'status-closed' is not defined\n  383 |               go to  loop.\n  384 | *>\n  385 >      if       not status-closed\n  386 |        and    not processed\n  387 |               move  1  to  a.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:386: error: 'processed' is not defined\n  384 | *>\n  385 |      if       not status-closed\n  386 >        and    not processed\n  387 |               move  1  to  a.\n  388 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'gl080b':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:431: error: 'cleared-status' is not defined\n  429 |      perform  GL-Posting-Close.                     *> close    posting-f..\n  430 | *>\n  431 >      move     2         to  cleared-status.\n  432 |      move     run-date  to  stored.\n  433 |      move     zero      to  batch-start.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:432: error: 'run-date' is not defined\n  430 | *>\n  431 |      move     2         to  cleared-status.\n  432 >      move     run-date  to  stored.\n  433 |      move     zero      to  batch-start.\n  434 |      perform  GL-Batch-Rewrite.                    *> rewrite  batch-reco..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:432: error: 'stored' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:433: error: 'batch-start' is not defined\n  431 |      move     2         to  cleared-status.\n  432 |      move     run-date  to  stored.\n  433 >      move     zero      to  batch-start.\n  434 |      perform  GL-Batch-Rewrite.                    *> rewrite  batch-reco..\n  435 |      go       to loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'arc-process':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:449: error: 'WS-Batch-Nos' is not defined\n  447 | *>-------------------------\n  448 | *>\n  449 >      display  WS-Batch-Nos at 2345 with foreground-color 2.\n  450 |      move     WS-Batch-Nos  to  arc-batch.\n  451 |      perform  GL-Posting-Open.                      *> open     i-o  post..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:460: error: 'WS-Post-Key' is not defined\n  458 |               go to  main-exit.\n  459 | *>\n  460 >      if       WS-Post-Key = zero\n  461 |         or    batch  not = WS-Batch-Nos\n  462 |               go to  loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:461: error: 'batch' is not defined\n  459 | *>\n  460 |      if       WS-Post-Key = zero\n  461 >         or    batch  not = WS-Batch-Nos\n  462 |               go to  loop.\n  463 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:464: error: 'post-number' is not defined\n  462 |               go to  loop.\n  463 | *>\n  464 >      display  post-number at 2364 with foreground-color 2.\n  465 | *>\n  466 |      move     batch        to  arc-batch.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:468: error: 'post-code IN WS-Posting-Record' is not defined\n  466 |      move     batch        to  arc-batch.\n  467 |      move     post-number  to  arc-post.\n  468 >      move     post-code in WS-Posting-Record    to  arc-code.\n  469 |      move     post-date    to  arc-date.\n  470 |      move     post-legend  to  arc-legend.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:469: error: 'post-date' is not defined\n  467 |      move     post-number  to  arc-post.\n  468 |      move     post-code in WS-Posting-Record    to  arc-code.\n  469 >      move     post-date    to  arc-date.\n  470 |      move     post-legend  to  arc-legend.\n  471 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:470: error: 'post-legend' is not defined\n  468 |      move     post-code in WS-Posting-Record    to  arc-code.\n  469 |      move     post-date    to  arc-date.\n  470 >      move     post-legend  to  arc-legend.\n  471 | *>\n  472 |      move     post-dr      to  arc-ac.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:472: error: 'post-dr' is not defined\n  470 |      move     post-legend  to  arc-legend.\n  471 | *>\n  472 >      move     post-dr      to  arc-ac.\n  473 |      move     dr-pc        to  arc-pc.\n  474 |      move     post-cr      to  arc-c-ac.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:473: error: 'dr-pc' is not defined\n  471 | *>\n  472 |      move     post-dr      to  arc-ac.\n  473 >      move     dr-pc        to  arc-pc.\n  474 |      move     post-cr      to  arc-c-ac.\n  475 |      move     cr-pc        to  arc-c-pc.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:474: error: 'post-cr' is not defined\n  472 |      move     post-dr      to  arc-ac.\n  473 |      move     dr-pc        to  arc-pc.\n  474 >      move     post-cr      to  arc-c-ac.\n  475 |      move     cr-pc        to  arc-c-pc.\n  476 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:475: error: 'cr-pc' is not defined\n  473 |      move     dr-pc        to  arc-pc.\n  474 |      move     post-cr      to  arc-c-ac.\n  475 >      move     cr-pc        to  arc-c-pc.\n  476 | *>\n  477 |      if       post-vat-side = \"CR\"\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:477: error: 'post-vat-side' is not defined\n  475 |      move     cr-pc        to  arc-c-pc.\n  476 | *>\n  477 >      if       post-vat-side = \"CR\"\n  478 |               add  post-amount  vat-amount  giving  arc-amount\n  479 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:478: error: 'post-amount' is not defined\n  476 | *>\n  477 |      if       post-vat-side = \"CR\"\n  478 >               add  post-amount  vat-amount  giving  arc-amount\n  479 |      else\n  480 |               move post-amount  to  arc-amount.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:478: error: 'vat-amount' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:498: error: 'vat-ac IN WS-Posting-Record' is not defined\n  496 |      write    arc-trans-record.\n  497 | *>\n  498 >      if       vat-ac of WS-Posting-Record equal  zero\n  499 |            or vat-amount = zero\n  500 |               go to  by-pass.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:503: error: 'vat-pc' is not defined\n  501 | *>\n  502 |      move     vat-ac of WS-Posting-Record  to  arc-ac.\n  503 >      move     vat-pc     to  arc-pc.\n  504 |      move     vat-amount to  arc-amount.\n  505 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'disk-change':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:532: error: 'file-24' is not defined\n  530 | *>\n  531 |      move     space to Arg-Test.                   *> this lot looks wron..\n  532 >      string   file-24        delimited by space   *> spaces\n  533 |               \"archives\"     delimited by size\n  534 |               file-defs-os-delimiter\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:534: error: 'file-defs-os-delimiter' is not defined\n  532 |      string   file-24        delimited by space   *> spaces\n  533 |               \"archives\"     delimited by size\n  534 >               file-defs-os-delimiter\n  535 |                              delimited by size\n  536 |                 file-2      delimited by space  *> archive.dat\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'compress-post':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:634: error: 'FS-Cobol-Files-Used' is not defined\n  632 | *>  First check if NOT running with Cobol files, if so skip section.\n  633 | *>\n  634 >      if       not FS-Cobol-Files-Used    *> Will use fn-Read-Next-Sorted-..\n  635 |               go to main-exit\n  636 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'Test-Work-File-Size-1':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:644: error: 'WS-Posting-Record' is not defined\n  642 | *>  Check files are same size\n  643 | *>\n  644 >      if       function length (WS-Posting-Record) not =\n  645 |               function length (work-file-record)\n  646 |               display GL082 at 1001 with foreground-color 3\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'zz070-convert-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:730: error: 'Date-Form' is not defined\n  728 |      move     to-day to ws-date.\n  729 | *>\n  730 >      if       Date-Form = zero\n  731 |               move 1 to Date-Form.\n  732 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:732: error: 'Date-UK' is not defined\n  730 |      if       Date-Form = zero\n  731 |               move 1 to Date-Form.\n  732 >      if       Date-UK\n  733 |               go to zz070-Exit.\n  734 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:734: error: 'Date-USA' is not defined\n  732 |      if       Date-UK\n  733 |               go to zz070-Exit.\n  734 >      if       Date-USA                *> swap month and days\n  735 |               move ws-days to ws-swap\n  736 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'gl080-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:338: error: 'GL-Nominal-Open' is not defined\n  336 | *>\n  337 |      display  \"Phase - 5.  End of Period Processing\" at 0801 with foregro..\n  338 >      perform  GL-Nominal-Open.                   *> open     i-o  ledger-..\n  339 | *>\n  340 |  loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:343: error: 'GL-Nominal-Read-Next' is not defined\n  341 | *>***\n  342 | *>\n  343 >      perform  GL-Nominal-Read-Next.               *> read     ledger-file..\n  344 |      if       fs-reply = 10\n  345 |               go to  loop-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:349: error: 'GL-Nominal-Rewrite' is not defined\n  347 |      if       current-quarter = 4\n  348 |               move  ledger-balance  to  ledger-last.\n  349 >      perform  GL-Nominal-Rewrite.                 *> rewrite  ledger-reco..\n  350 |      go       to loop.\n  351 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:355: error: 'GL-Nominal-Close' is not defined\n  353 | *>*******\n  354 | *>\n  355 >      perform  GL-Nominal-Close.                   *> close    ledger-file..\n  356 |      add      1  to  current-quarter.\n  357 |      if       current-quarter = 5\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'gl080a':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:373: error: 'GL-Batch-Open-Input' is not defined\n  371 | *>\n  372 |      display  \"Checking Batches\" AT 2301 with foreground-color 2.\n  373 >      perform  GL-Batch-Open-Input.              *> open     input  batch-..\n  374 | *>\n  375 |  loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:378: error: 'GL-Batch-Read-Next' is not defined\n  376 | *>***\n  377 | *>\n  378 >      perform  GL-Batch-Read-Next.               *> read     batch-file  n..\n  379 |      if       fs-reply = 10\n  380 |               go to  end-run.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'end-run':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:394: error: 'GL-Batch-Close' is not defined\n  392 | *>******\n  393 | *>\n  394 >      perform  GL-Batch-Close.                    *> close    batch-file.\n  395 | *>\n  396 |  main-exit.   exit section.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'gl080b':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:416: error: 'GL-Batch-Open' is not defined\n  414 |               close archive         *>  a non-existent file\n  415 |               open output archive.\n  416 >      perform  GL-Batch-Open.                       *> open     i-o  batch..\n  417 | *>\n  418 |  loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:429: error: 'GL-Posting-Close' is not defined\n  427 | *>\n  428 |      perform  arc-process.\n  429 >      perform  GL-Posting-Close.                     *> close    posting-f..\n  430 | *>\n  431 |      move     2         to  cleared-status.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:434: error: 'GL-Batch-Rewrite' is not defined\n  432 |      move     run-date  to  stored.\n  433 |      move     zero      to  batch-start.\n  434 >      perform  GL-Batch-Rewrite.                    *> rewrite  batch-reco..\n  435 |      go       to loop.\n  436 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'arc-process':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:451: error: 'GL-Posting-Open' is not defined\n  449 |      display  WS-Batch-Nos at 2345 with foreground-color 2.\n  450 |      move     WS-Batch-Nos  to  arc-batch.\n  451 >      perform  GL-Posting-Open.                      *> open     i-o  post..\n  452 | *>\n  453 |  loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:456: error: 'GL-Posting-Read-Next' is not defined\n  454 | *>***\n  455 | *>\n  456 >      perform  GL-Posting-Read-Next.                 *> read     posting-f..\n  457 |      if       fs-reply = 10\n  458 |               go to  main-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'by-pass':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:514: error: 'GL-Posting-Delete' is not defined\n  512 | *>******\n  513 | *>\n  514 >      perform  GL-Posting-Delete.                   *> delete   posting-fi..\n  515 |      go       to loop.\n  516 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in section 'compress-post':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'Test-Work-File-Size-1':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:652: error: 'GL-Posting-Open-Input' is not defined\n  650 |               stop run.\n  651 | *>\n  652 >      perform  GL-Posting-Open-Input.          *> open     input  posting-..\n  653 |      open     output work-file.\n  654 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop1-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:674: error: 'GL-Posting-Open-Output' is not defined\n  672 |      perform  GL-Posting-Close.\n  673 |      open     input  work-file.\n  674 >      perform  GL-Posting-Open-Output.               *> open     output po..\n  675 | *>\n  676 |  loop2.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl: in paragraph 'loop2':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:684: error: 'GL-Posting-Write' is not defined\n  682 |               go to file-error.\n  683 |      move     work-file-record to WS-Posting-Record.\n  684 >      perform  GL-Posting-Write.           *> write    posting-record from..\n  685 |      if       fs-reply not = zero\n  686 |               go to file-error.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:132: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:189: error: wsledger.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:190: error: wsbatch.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:191: error: wspost.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:217: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:259: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:264: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:265: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:266: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:715: error: FileStat-Msgs.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:750: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:141: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:270: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:271: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:273: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:288: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:289: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:292: error: 'scycle' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:292: error: 'lin2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:316: error: 'archiving' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:326: error: 'period' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:346: error: 'ledger-balance' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:346: error: 'ledger-q' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:347: error: 'current-quarter' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:348: error: 'ledger-last' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:382: error: 'bcycle' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:385: error: 'status-closed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:386: error: 'processed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:431: error: 'cleared-status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:432: error: 'run-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:432: error: 'stored' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:433: error: 'batch-start' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:449: error: 'WS-Batch-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:460: error: 'WS-Post-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:461: error: 'batch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:464: error: 'post-number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:468: error: 'post-code IN WS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:469: error: 'post-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:470: error: 'post-legend' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:472: error: 'post-dr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:473: error: 'dr-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:474: error: 'post-cr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:475: error: 'cr-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:477: error: 'post-vat-side' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:478: error: 'post-amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:478: error: 'vat-amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:498: error: 'vat-ac IN WS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:503: error: 'vat-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:532: error: 'file-24' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:534: error: 'file-defs-os-delimiter' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:634: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:644: error: 'WS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:730: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:732: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:734: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:338: error: 'GL-Nominal-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:343: error: 'GL-Nominal-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:349: error: 'GL-Nominal-Rewrite' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:355: error: 'GL-Nominal-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:373: error: 'GL-Batch-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:378: error: 'GL-Batch-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:394: error: 'GL-Batch-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:416: error: 'GL-Batch-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:429: error: 'GL-Posting-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:434: error: 'GL-Batch-Rewrite' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:451: error: 'GL-Posting-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:456: error: 'GL-Posting-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:514: error: 'GL-Posting-Delete' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:652: error: 'GL-Posting-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:674: error: 'GL-Posting-Open-Output' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:684: error: 'GL-Posting-Write' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:132: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:189: error: wsledger.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:190: error: wsbatch.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:191: error: wspost.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:217: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:259: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:264: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:265: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:266: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:715: error: FileStat-Msgs.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:750: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:141: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:270: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:271: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:273: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:288: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:289: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:292: error: 'scycle' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:292: error: 'lin2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:316: error: 'archiving' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:326: error: 'period' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:346: error: 'ledger-balance' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:346: error: 'ledger-q' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:347: error: 'current-quarter' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:348: error: 'ledger-last' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:382: error: 'bcycle' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:385: error: 'status-closed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:386: error: 'processed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:431: error: 'cleared-status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:432: error: 'run-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:432: error: 'stored' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:433: error: 'batch-start' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:449: error: 'WS-Batch-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:460: error: 'WS-Post-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:461: error: 'batch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:464: error: 'post-number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:468: error: 'post-code IN WS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:469: error: 'post-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:470: error: 'post-legend' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:472: error: 'post-dr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:473: error: 'dr-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:474: error: 'post-cr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:475: error: 'cr-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:477: error: 'post-vat-side' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:478: error: 'post-amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:478: error: 'vat-amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:498: error: 'vat-ac IN WS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:503: error: 'vat-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:532: error: 'file-24' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:534: error: 'file-defs-os-delimiter' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:634: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:644: error: 'WS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:730: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:732: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:734: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:338: error: 'GL-Nominal-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:343: error: 'GL-Nominal-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:349: error: 'GL-Nominal-Rewrite' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:355: error: 'GL-Nominal-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:373: error: 'GL-Batch-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:378: error: 'GL-Batch-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:394: error: 'GL-Batch-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:416: error: 'GL-Batch-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:429: error: 'GL-Posting-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:434: error: 'GL-Batch-Rewrite' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:451: error: 'GL-Posting-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:456: error: 'GL-Posting-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:514: error: 'GL-Posting-Delete' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:652: error: 'GL-Posting-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:674: error: 'GL-Posting-Open-Output' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl080.cbl:684: error: 'GL-Posting-Write' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 77,
+    "cognitive": 220,
+    "halstead": {
+      "uniqueOperators": 14,
+      "uniqueOperands": 75,
+      "totalOperators": 206,
+      "totalOperands": 189,
+      "vocabulary": 89,
+      "length": 395,
+      "volume": 2558,
+      "difficulty": 17.64,
+      "effort": 45122,
+      "timeToProgram": 2507,
+      "deliveredBugs": 0.853
+    },
+    "maintainability": 66
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 123
+      },
+      {
+        "name": "envdiv",
+        "line": 132
+      },
+      {
+        "name": "seledger",
+        "line": 148
+      },
+      {
+        "name": "selbatch",
+        "line": 149
+      },
+      {
+        "name": "selpost",
+        "line": 150
+      },
+      {
+        "name": "fdledger",
+        "line": 175
+      },
+      {
+        "name": "fdbatch",
+        "line": 176
+      },
+      {
+        "name": "fdpost",
+        "line": 177
+      },
+      {
+        "name": "wsledger",
+        "line": 189
+      },
+      {
+        "name": "wsbatch",
+        "line": 190
+      },
+      {
+        "name": "wspost",
+        "line": 191
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 217
+      },
+      {
+        "name": "screenio",
+        "line": 220
+      },
+      {
+        "name": "wsfnctn",
+        "line": 259
+      },
+      {
+        "name": "wscall",
+        "line": 264
+      },
+      {
+        "name": "wssystem",
+        "line": 265
+      },
+      {
+        "name": "wsnames",
+        "line": 266
+      },
+      {
+        "name": "FileStat-Msgs",
+        "line": 714
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 750
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-convert-date",
+        "line": 286
+      },
+      {
+        "target": "gl080a",
+        "line": 308
+      },
+      {
+        "target": "gl080b",
+        "line": 318
+      },
+      {
+        "target": "gl080c",
+        "line": 321
+      },
+      {
+        "target": "compress-post",
+        "line": 323
+      },
+      {
+        "target": "GL-Nominal-Open",
+        "line": 338
+      },
+      {
+        "target": "GL-Nominal-Read-Next",
+        "line": 343
+      },
+      {
+        "target": "GL-Nominal-Rewrite",
+        "line": 349
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 355
+      },
+      {
+        "target": "GL-Batch-Open-Input",
+        "line": 373
+      },
+      {
+        "target": "GL-Batch-Read-Next",
+        "line": 378
+      },
+      {
+        "target": "GL-Batch-Close",
+        "line": 394
+      },
+      {
+        "target": "disk-change",
+        "line": 407
+      },
+      {
+        "target": "GL-Batch-Open",
+        "line": 416
+      },
+      {
+        "target": "GL-Batch-Read-Next",
+        "line": 421
+      },
+      {
+        "target": "arc-process",
+        "line": 428
+      },
+      {
+        "target": "GL-Posting-Close",
+        "line": 429
+      },
+      {
+        "target": "GL-Batch-Rewrite",
+        "line": 434
+      },
+      {
+        "target": "GL-Batch-Close",
+        "line": 441
+      },
+      {
+        "target": "GL-Posting-Open",
+        "line": 451
+      },
+      {
+        "target": "GL-Posting-Read-Next",
+        "line": 456
+      },
+      {
+        "target": "GL-Posting-Delete",
+        "line": 514
+      },
+      {
+        "target": "GL-Batch-Open",
+        "line": 571
+      },
+      {
+        "target": "GL-Batch-Read-Next",
+        "line": 576
+      },
+      {
+        "target": "del-process",
+        "line": 583
+      },
+      {
+        "target": "GL-Posting-Close",
+        "line": 584
+      },
+      {
+        "target": "GL-Batch-Rewrite",
+        "line": 590
+      },
+      {
+        "target": "GL-Batch-Close",
+        "line": 596
+      },
+      {
+        "target": "GL-Posting-Open",
+        "line": 608
+      },
+      {
+        "target": "GL-Posting-Read-Next",
+        "line": 613
+      },
+      {
+        "target": "GL-Posting-Delete",
+        "line": 623
+      },
+      {
+        "target": "GL-Posting-Open-Input",
+        "line": 652
+      },
+      {
+        "target": "GL-Posting-Read-Next",
+        "line": 658
+      },
+      {
+        "target": "GL-Posting-Close",
+        "line": 672
+      },
+      {
+        "target": "GL-Posting-Open-Output",
+        "line": 674
+      },
+      {
+        "target": "GL-Posting-Write",
+        "line": 684
+      },
+      {
+        "target": "evaluate-message",
+        "line": 694
+      },
+      {
+        "target": "GL-Posting-Close",
+        "line": 704
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "archive",
+        "line": 157
+      },
+      {
+        "name": "work-file",
+        "line": 171
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 179
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

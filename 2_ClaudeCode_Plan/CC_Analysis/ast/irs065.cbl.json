@@ -1,0 +1,179 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl",
+  "fileName": "irs065.cbl",
+  "fileHash": "eebfc10dd4c96bb5760293890401f82c28215ef7c14fa6a0949647bc6e036f6f",
+  "timestamp": "2025-09-15T19:46:20.320Z",
+  "parseTime": 39,
+  "lines": {
+    "total": 257,
+    "code": 117,
+    "comment": 139,
+    "blank": 1
+  },
+  "programId": "irs065",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:107: error: envdiv.cob: No such file or directory\n  105 | *>\n  106 |  environment division.\n  107 >  copy  \"envdiv.cob\".\n  108 |  input-output section.\n  109 |  file-control.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:148: error: wsfnctn.cob: No such file or directory\n  146 |  77  nl-file             pic x(11).\n  147 | *>\n  148 >  copy  \"wsfnctn.cob\".\n  149 | *>\n  150 |  copy \"irswsnl.cob\" replacing        nl-record by WS-IRSNL-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:150: error: irswsnl.cob: No such file or directory\n  148 |  copy  \"wsfnctn.cob\".\n  149 | *>\n  150 >  copy \"irswsnl.cob\" replacing        nl-record by WS-IRSNL-Record.\n  151 | *>\n  152 |  01  Dummies-For-Unused-FH-Calls.      *> IRS call blk at zz100-ACAS-IRS-..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:159: error: Test-Data-Flags.cob: No such file or directory\n  157 |      03  WS-IRS-Posting-Record pic x.\n  158 | *>\n  159 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  160 | *>\n  161 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:176: error: irswssystem.cob: No such file or directory\n  174 | *>\n  175 |  copy \"irswssystem.cob\"   *> IRS param record\n  176 >               replacing system-record  by IRS-System-Params. *> (01 level..\n  177 | *>\n  178 |  copy \"wssystem.cob\"    *> NEW for v3.02\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:206: error: wssystem.cob: No such file or directory\n  204 |                         PL-App-Created by IRS-PL-App-Created\n  205 |                         PL-Approp-AC   by IRS-PL-Approp-AC\n  206 >                         1st-Time-Flag  by IRS-First-Time-Flag.\n  207 | *>\n  208 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:208: error: wsnames.cob: No such file or directory\n  206 |                         1st-Time-Flag  by IRS-First-Time-Flag.\n  207 | *>\n  208 >  copy \"wsnames.cob\".\n  209 | *>\n  210 |  procedure division using IRS-System-Params *> IRS param\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:255: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory\n  253 |      exit     section.\n  254 | *>\n  255 >  copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n  256 | *>\n  257 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:210: error: 'IRS-System-Params' is not defined\n  208 |  copy \"wsnames.cob\".\n  209 | *>\n  210 >  procedure division using IRS-System-Params *> IRS param\n  211 |                           WS-System-Record  *> ACAS param\n  212 |                           File-Defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:211: error: 'WS-System-Record' is not defined\n  209 | *>\n  210 |  procedure division using IRS-System-Params *> IRS param\n  211 >                           WS-System-Record  *> ACAS param\n  212 |                           File-Defs.\n  213 | *>=========================================\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:212: error: 'File-Defs' is not defined\n  210 |  procedure division using IRS-System-Params *> IRS param\n  211 |                           WS-System-Record  *> ACAS param\n  212 >                           File-Defs.\n  213 | *>=========================================\n  214 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl: in section 'input-to-sort':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:227: error: 'fs-reply' is not defined\n  225 | *>*********************\n  226 |      perform  acasirsub1-Open-Input.          *> was open input NL\n  227 >      if       fs-reply not = zero\n  228 |               display IR912     at 2201\n  229 |               display FS-Reply  at 2252\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:231: error: 'Accept-Reply' is not defined\n  229 |               display FS-Reply  at 2252\n  230 |               display SY008     at 2401\n  231 >               accept Accept-Reply at 2235\n  232 |               open output output-file\n  233 |               close output-file\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl: in paragraph 'process-input-record':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:243: error: 'Sub' is not defined\n  241 |               go to  end-of-input.\n  242 | *>\n  243 >      if       Sub                          *> Only want owners\n  244 |               go to process-input-record.\n  245 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:246: error: 'WS-IRSNL-Record' is not defined\n  244 |               go to process-input-record.\n  245 | *>\n  246 >      release  sort-record  from  WS-IRSNL-Record.\n  247 |      go to    process-input-record.\n  248 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:226: error: 'acasirsub1-Open-Input' is not defined\n  224 |  input-to-sort section.\n  225 | *>*********************\n  226 >      perform  acasirsub1-Open-Input.          *> was open input NL\n  227 |      if       fs-reply not = zero\n  228 |               display IR912     at 2201\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:234: error: 'acasirsub1-Close' is not defined\n  232 |               open output output-file\n  233 |               close output-file\n  234 >               perform  acasirsub1-Close\n  235 |               goback.\n  236 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl: in paragraph 'process-input-record':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:239: error: 'acasirsub1-Read-Next' is not defined\n  237 |  process-input-record.\n  238 | *>\n  239 >      perform  acasirsub1-Read-Next.\n  240 |      if       fs-reply = 10\n  241 |               go to  end-of-input.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:107: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:148: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:150: error: irswsnl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:159: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:176: error: irswssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:206: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:208: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:255: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:210: error: 'IRS-System-Params' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:211: error: 'WS-System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:212: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:227: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:231: error: 'Accept-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:243: error: 'Sub' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:246: error: 'WS-IRSNL-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:226: error: 'acasirsub1-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:234: error: 'acasirsub1-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:239: error: 'acasirsub1-Read-Next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:107: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:148: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:150: error: irswsnl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:159: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:176: error: irswssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:206: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:208: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:255: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:210: error: 'IRS-System-Params' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:211: error: 'WS-System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:212: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:227: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:231: error: 'Accept-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:243: error: 'Sub' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:246: error: 'WS-IRSNL-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:226: error: 'acasirsub1-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:234: error: 'acasirsub1-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs065.cbl:239: error: 'acasirsub1-Read-Next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 7,
+    "cognitive": 18,
+    "halstead": {
+      "uniqueOperators": 7,
+      "uniqueOperands": 75,
+      "totalOperators": 22,
+      "totalOperands": 161,
+      "vocabulary": 82,
+      "length": 183,
+      "volume": 1163,
+      "difficulty": 7.51,
+      "effort": 8741,
+      "timeToProgram": 486,
+      "deliveredBugs": 0.388
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "irsubn",
+        "line": 53
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 100
+      },
+      {
+        "name": "envdiv",
+        "line": 107
+      },
+      {
+        "name": "wsfnctn",
+        "line": 148
+      },
+      {
+        "name": "irswsnl",
+        "line": 150
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 159
+      },
+      {
+        "name": "irswssystem",
+        "line": 175
+      },
+      {
+        "name": "wssystem",
+        "line": 178
+      },
+      {
+        "name": "wsnames",
+        "line": 208
+      },
+      {
+        "name": "Proc-ZZ100-ACAS-IRS-Calls",
+        "line": 255
+      }
+    ],
+    "performs": [
+      {
+        "target": "acasirsubn",
+        "line": 54
+      },
+      {
+        "target": "acasirsub1-Open-Input",
+        "line": 226
+      },
+      {
+        "target": "acasirsub1-Close",
+        "line": 234
+      },
+      {
+        "target": "acasirsub1-Read-Next",
+        "line": 239
+      },
+      {
+        "target": "acasirsub1-Close",
+        "line": 250
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "output-file",
+        "line": 118
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 143
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

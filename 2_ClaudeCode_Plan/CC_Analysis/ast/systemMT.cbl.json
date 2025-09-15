@@ -1,0 +1,492 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl",
+  "fileName": "systemMT.cbl",
+  "fileHash": "86f18b55fc6ea1fe07721698e8d523a97b6e4e0bf639169c9c6101cf1366bb6c",
+  "timestamp": "2025-09-15T19:46:09.453Z",
+  "parseTime": 286,
+  "lines": {
+    "total": 5258,
+    "code": 4466,
+    "comment": 787,
+    "blank": 5
+  },
+  "programId": "systemMT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:194: error: ACAS-SQLstate-error-list.cob: No such file or directory\n  192 | *>                                     * = FS-Reply = 99.\n  193 | *>\n  194 >  copy \"ACAS-SQLstate-error-list.cob\".\n  195 | *>\n  196 | *>       During testing a log file will be created containing datetime st..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:238: error: envdiv.cob: No such file or directory\n  236 | *>\n  237 |  environment division.\n  238 >  copy \"envdiv.cob\".\n  239 | *>\n  240 |  input-output section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:317: error: mysql-variables.cpy: No such file or directory\n  315 | *>       ACASDB\n  316 | *>       TABLE=SYSTEM-REC,HV\n  317 >  COPY \"mysql-variables.cpy\".\n  318 | *>\n  319 | *>    Definitions for the SYSTEM-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:498: error: wsfnctn.cob: No such file or directory\n  496 | *>\n  497 | *>**********************************************************************\n  498 >  copy \"wsfnctn.cob\".                         *> File-Access\n  499 | *>\n  500 | *>**********************************************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:502: error: Test-Data-Flags.cob: No such file or directory\n  500 | *>**********************************************************************\n  501 | *>\n  502 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  503 | *>\n  504 |  copy \"wssystem.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:504: error: wssystem.cob: No such file or directory\n  502 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  503 | *>\n  504 >  copy \"wssystem.cob\".\n  505 | *>\n  506 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1032: error: mysql-procedures.cpy: No such file or directory\n 1030 | *>\n 1031 | *> /MYSQL PRO\\\n 1032 >  COPY \"mysql-procedures.cpy\".\n 1033 | *> /MYSQL-END\\\n 1034 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:515: error: 'Ws-Mysql-Error-Number' is not defined\n  513 |  01  Display-Message-2       foreground-color 2.\n  514 |      03      value \"SM004 SQL Err No.=\" line 4 col  1.    *> size 18 char\n  515 >      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.    *>..\n  516 |      03      value \" Para=\"                              col 23.    *> si..\n  517 |      03  using WS-No-Paragraph         pic 9(3)          col 29.    *>..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:517: error: 'WS-No-Paragraph' is not defined\n  515 |      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.    *>..\n  516 |      03      value \" Para=\"                              col 23.    *> si..\n  517 >      03  using WS-No-Paragraph         pic 9(3)          col 29.    *>..\n  518 |      03      value \" SQL Cmd=\"                           col 32.    *>..\n  519 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:519: error: 'Ws-Mysql-Command' is not defined\n  517 |      03  using WS-No-Paragraph         pic 9(3)          col 29.    *>..\n  518 |      03      value \" SQL Cmd=\"                           col 32.    *>..\n  519 >      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  520 |      03      value \"SQL Err Msg=\"       line 7 col  1.    *>      12\n  521 |      03  using Ws-Mysql-Error-Message  pic x(67)        col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:521: error: 'Ws-Mysql-Error-Message' is not defined\n  519 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  520 |      03      value \"SQL Err Msg=\"       line 7 col  1.    *>      12\n  521 >      03  using Ws-Mysql-Error-Message  pic x(67)        col 13.\n  522 | *>\n  523 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:524: error: 'File-Access' is not defined\n  522 | *>\n  523 | *>\n  524 >  PROCEDURE DIVISION   using File-Access\n  525 |                             ACAS-DAL-Common-data\n  526 |                             System-Record.   *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:525: error: 'ACAS-DAL-Common-data' is not defined\n  523 | *>\n  524 |  PROCEDURE DIVISION   using File-Access\n  525 >                             ACAS-DAL-Common-data\n  526 |                             System-Record.   *>  Ws record\n  527 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:526: error: 'System-Record' is not defined\n  524 |  PROCEDURE DIVISION   using File-Access\n  525 |                             ACAS-DAL-Common-data\n  526 >                             System-Record.   *>  Ws record\n  527 | *>**********************************************\n  528 |  ba-ACAS-DAL-Process  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:542: error: 'WS-Log-Where' is not defined\n  540 |      move     spaces to WS-MYSQL-Error-Message\n  541 |                         WS-MYSQL-Error-Number\n  542 >                         WS-Log-Where\n  543 |                         WS-File-Key\n  544 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:543: error: 'WS-File-Key' is not defined\n  541 |                         WS-MYSQL-Error-Number\n  542 |                         WS-Log-Where\n  543 >                         WS-File-Key\n  544 |                         SQL-Msg\n  545 |                         SQL-Err\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:544: error: 'SQL-Msg' is not defined\n  542 |                         WS-Log-Where\n  543 |                         WS-File-Key\n  544 >                         SQL-Msg\n  545 |                         SQL-Err\n  546 |                         SQL-State.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:545: error: 'SQL-Err' is not defined\n  543 |                         WS-File-Key\n  544 |                         SQL-Msg\n  545 >                         SQL-Err\n  546 |                         SQL-State.\n  547 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:546: error: 'SQL-State' is not defined\n  544 |                         SQL-Msg\n  545 |                         SQL-Err\n  546 >                         SQL-State.\n  547 | *>\n  548 | *>   As this is for only one row we will skip this ...\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:573: error: 'File-Function' is not defined\n  571 | *>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  572 | *>\n  573 >      evaluate File-Function\n  574 |         when  1\n  575 |               go to ba020-Process-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:598: error: 'DB-Schema' is not defined\n  596 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  597 |  *>\n  598 >      string   DB-Schema      delimited by space\n  599 |               X\"00\"          delimited by size\n  600 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:600: error: 'WS-MYSQL-BASE-NAME' is not defined\n  598 |      string   DB-Schema      delimited by space\n  599 |               X\"00\"          delimited by size\n  600 >                                into WS-MYSQL-BASE-NAME\n  601 |      end-string.\n  602 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:602: error: 'DB-Host' is not defined\n  600 |                                into WS-MYSQL-BASE-NAME\n  601 |      end-string.\n  602 >      string   DB-Host        delimited by space\n  603 |               X\"00\"          delimited by size\n  604 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:604: error: 'WS-MYSQL-HOST-NAME' is not defined\n  602 |      string   DB-Host        delimited by space\n  603 |               X\"00\"          delimited by size\n  604 >                                into WS-MYSQL-HOST-NAME\n  605 |      end-string.\n  606 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:606: error: 'DB-UName' is not defined\n  604 |                                into WS-MYSQL-HOST-NAME\n  605 |      end-string.\n  606 >      string   DB-UName       delimited by space\n  607 |               X\"00\"          delimited by size\n  608 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:608: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  606 |      string   DB-UName       delimited by space\n  607 |               X\"00\"          delimited by size\n  608 >                                into WS-MYSQL-IMPLEMENTATION\n  609 |      end-string.\n  610 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:610: error: 'DB-UPass' is not defined\n  608 |                                into WS-MYSQL-IMPLEMENTATION\n  609 |      end-string.\n  610 >      string   DB-UPass       delimited by space\n  611 |               X\"00\"          delimited by size\n  612 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:612: error: 'WS-MYSQL-PASSWORD' is not defined\n  610 |      string   DB-UPass       delimited by space\n  611 |               X\"00\"          delimited by size\n  612 >                                into WS-MYSQL-PASSWORD\n  613 |      end-string.\n  614 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:614: error: 'DB-Port' is not defined\n  612 |                                into WS-MYSQL-PASSWORD\n  613 |      end-string.\n  614 >      string   DB-Port        delimited by space\n  615 |               X\"00\"          delimited by size\n  616 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:616: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  614 |      string   DB-Port        delimited by space\n  615 |               X\"00\"          delimited by size\n  616 >                                into WS-MYSQL-PORT-NUMBER\n  617 |      end-string.\n  618 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:618: error: 'DB-Socket' is not defined\n  616 |                                into WS-MYSQL-PORT-NUMBER\n  617 |      end-string.\n  618 >      string   DB-Socket      delimited by space\n  619 |               X\"00\"          delimited by size\n  620 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:620: error: 'WS-MYSQL-SOCKET' is not defined\n  618 |      string   DB-Socket      delimited by space\n  619 |               X\"00\"          delimited by size\n  620 >                                into WS-MYSQL-SOCKET\n  621 |      end-string.\n  622 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:624: error: 'fs-reply' is not defined\n  622 |      move     1 to ws-No-Paragraph.\n  623 |      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  624 >      if       fs-reply not = zero\n  625 |               go   to ba999-end.\n  626 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:694: error: 'WS-MYSQL-RESULT' is not defined\n  692 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  693 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  694 >            MOVE WS-MYSQL-RESULT TO TP-SYSTEM-REC\n  695 | *>               /MYSQL-END\\\n  696 |            move    \">000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:697: error: 'Testing-2' is not defined\n  695 | *>               /MYSQL-END\\\n  696 |            move    \">000\" to WS-File-Key\n  697 >               if    Testing-2\n  698 |                     display Display-Message-1 with erase eos\n  699 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:703: error: 'WS-MYSQL-Count-Rows' is not defined\n  701 | *>  It could be an empty table so test for it\n  702 | *>\n  703 >               if       WS-MYSQL-Count-Rows = zero\n  704 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  705 |                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:705: error: 'WS-MYSQL-SQLstate' is not defined\n  703 |               if       WS-MYSQL-Count-Rows = zero\n  704 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  705 >                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n  706 |                        move  WS-MYSQL-SqlState   to SQL-State\n  707 |                        if    WS-MYSQL-Error-Number (1:1) not = \"0\"    *>..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:713: error: 'WE-Error' is not defined\n  711 |                        end-if       *> do not really need to do this mean..\n  712 |                        move 10 to fs-reply\n  713 >                        move 10 to WE-Error\n  714 |                        move    \"No Data\" to WS-File-Key\n  715 |                        go to ba998-Free        *> can clear the dup code..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl: in paragraph 'ba070-Process-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:940: error: 'WS-Mysql-Time-Step' is not defined\n  938 | *>\n  939 |  ba070-Process-Write.\n  940 >      move     zero to WS-Mysql-Time-Step\n  941 |                       WS-SQL-Retry.\n  942 |      perform  bb000-HV-Load.                       *>  move System-Record..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:941: error: 'WS-SQL-Retry' is not defined\n  939 |  ba070-Process-Write.\n  940 |      move     zero to WS-Mysql-Time-Step\n  941 >                       WS-SQL-Retry.\n  942 |      perform  bb000-HV-Load.                       *>  move System-Record..\n  943 |      move     1 to WS-File-Key.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl: in paragraph 'ba999-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1048: error: 'Testing-1' is not defined\n 1046 | *>\n 1047 |  ba999-End.\n 1048 >      if       Testing-1\n 1049 |               perform Ca-Process-Logs\n 1050 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1051: error: 'fn-close' is not defined\n 1049 |               perform Ca-Process-Logs\n 1050 |      end-if.\n 1051 >      if       fn-close\n 1052 |               move zero to File-Function\n 1053 |                            Access-Type              *> close log file\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1053: error: 'Access-Type' is not defined\n 1051 |      if       fn-close\n 1052 |               move zero to File-Function\n 1053 >                            Access-Type              *> close log file\n 1054 |               perform  Ca-Process-Logs\n 1055 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl: in section 'bb000-HV-Load':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1070: error: 'System-Record-Version-Prime' is not defined\n 1068 |      initialize TD-SYSTEM-REC.\n 1069 |      move     1                       to HV-SYSTEM-REC-KEY\n 1070 >      move     System-Record-Version-Prime     to HV-SYSTEM-RECORD-VERSION..\n 1071 |      move     System-Record-Version-Secondary to HV-SYSTEM-RECORD-VERSION..\n 1072 |      move     Vat-Rate-1              to HV-VAT-RATE-1\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1071: error: 'System-Record-Version-Secondary' is not defined\n 1069 |      move     1                       to HV-SYSTEM-REC-KEY\n 1070 |      move     System-Record-Version-Prime     to HV-SYSTEM-RECORD-VERSION..\n 1071 >      move     System-Record-Version-Secondary to HV-SYSTEM-RECORD-VERSION..\n 1072 |      move     Vat-Rate-1              to HV-VAT-RATE-1\n 1073 |      move     Vat-Rate-2              to HV-VAT-RATE-2\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1072: error: 'Vat-Rate-1' is not defined\n 1070 |      move     System-Record-Version-Prime     to HV-SYSTEM-RECORD-VERSION..\n 1071 |      move     System-Record-Version-Secondary to HV-SYSTEM-RECORD-VERSION..\n 1072 >      move     Vat-Rate-1              to HV-VAT-RATE-1\n 1073 |      move     Vat-Rate-2              to HV-VAT-RATE-2\n 1074 |      move     Vat-Rate-3              to HV-VAT-RATE-3\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1073: error: 'Vat-Rate-2' is not defined\n 1071 |      move     System-Record-Version-Secondary to HV-SYSTEM-RECORD-VERSION..\n 1072 |      move     Vat-Rate-1              to HV-VAT-RATE-1\n 1073 >      move     Vat-Rate-2              to HV-VAT-RATE-2\n 1074 |      move     Vat-Rate-3              to HV-VAT-RATE-3\n 1075 |      move     Vat-Rate-4              to HV-VAT-RATE-4\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1074: error: 'Vat-Rate-3' is not defined\n 1072 |      move     Vat-Rate-1              to HV-VAT-RATE-1\n 1073 |      move     Vat-Rate-2              to HV-VAT-RATE-2\n 1074 >      move     Vat-Rate-3              to HV-VAT-RATE-3\n 1075 |      move     Vat-Rate-4              to HV-VAT-RATE-4\n 1076 |      move     Vat-Rate-5              to HV-VAT-RATE-5\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1075: error: 'Vat-Rate-4' is not defined\n 1073 |      move     Vat-Rate-2              to HV-VAT-RATE-2\n 1074 |      move     Vat-Rate-3              to HV-VAT-RATE-3\n 1075 >      move     Vat-Rate-4              to HV-VAT-RATE-4\n 1076 |      move     Vat-Rate-5              to HV-VAT-RATE-5\n 1077 |      move     Cyclea                  to HV-CYCLEA\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1076: error: 'Vat-Rate-5' is not defined\n 1074 |      move     Vat-Rate-3              to HV-VAT-RATE-3\n 1075 |      move     Vat-Rate-4              to HV-VAT-RATE-4\n 1076 >      move     Vat-Rate-5              to HV-VAT-RATE-5\n 1077 |      move     Cyclea                  to HV-CYCLEA\n 1078 |      move     Period                  to HV-PERIOD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1077: error: 'Cyclea' is not defined\n 1075 |      move     Vat-Rate-4              to HV-VAT-RATE-4\n 1076 |      move     Vat-Rate-5              to HV-VAT-RATE-5\n 1077 >      move     Cyclea                  to HV-CYCLEA\n 1078 |      move     Period                  to HV-PERIOD\n 1079 |      move     Page-Lines              to HV-PAGE-LINES\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1078: error: 'Period' is not defined\n 1076 |      move     Vat-Rate-5              to HV-VAT-RATE-5\n 1077 |      move     Cyclea                  to HV-CYCLEA\n 1078 >      move     Period                  to HV-PERIOD\n 1079 |      move     Page-Lines              to HV-PAGE-LINES\n 1080 |      move     Next-Invoice            to HV-NEXT-INVOICE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1079: error: 'Page-Lines' is not defined\n 1077 |      move     Cyclea                  to HV-CYCLEA\n 1078 |      move     Period                  to HV-PERIOD\n 1079 >      move     Page-Lines              to HV-PAGE-LINES\n 1080 |      move     Next-Invoice            to HV-NEXT-INVOICE\n 1081 |      move     Run-Date                to HV-RUN-DAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1080: error: 'Next-Invoice' is not defined\n 1078 |      move     Period                  to HV-PERIOD\n 1079 |      move     Page-Lines              to HV-PAGE-LINES\n 1080 >      move     Next-Invoice            to HV-NEXT-INVOICE\n 1081 |      move     Run-Date                to HV-RUN-DAT\n 1082 |      move     Start-Date              to HV-START-DAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1081: error: 'Run-Date' is not defined\n 1079 |      move     Page-Lines              to HV-PAGE-LINES\n 1080 |      move     Next-Invoice            to HV-NEXT-INVOICE\n 1081 >      move     Run-Date                to HV-RUN-DAT\n 1082 |      move     Start-Date              to HV-START-DAT\n 1083 |      move     End-Date                to HV-END-DAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1082: error: 'Start-Date' is not defined\n 1080 |      move     Next-Invoice            to HV-NEXT-INVOICE\n 1081 |      move     Run-Date                to HV-RUN-DAT\n 1082 >      move     Start-Date              to HV-START-DAT\n 1083 |      move     End-Date                to HV-END-DAT\n 1084 |      move     Suser                   to HV-SUSER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1083: error: 'End-Date' is not defined\n 1081 |      move     Run-Date                to HV-RUN-DAT\n 1082 |      move     Start-Date              to HV-START-DAT\n 1083 >      move     End-Date                to HV-END-DAT\n 1084 |      move     Suser                   to HV-SUSER\n 1085 |      move     User-Code               to HV-USER-CODE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1084: error: 'Suser' is not defined\n 1082 |      move     Start-Date              to HV-START-DAT\n 1083 |      move     End-Date                to HV-END-DAT\n 1084 >      move     Suser                   to HV-SUSER\n 1085 |      move     User-Code               to HV-USER-CODE\n 1086 |      move     Address-1               to HV-ADDRESS-1\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1085: error: 'User-Code' is not defined\n 1083 |      move     End-Date                to HV-END-DAT\n 1084 |      move     Suser                   to HV-SUSER\n 1085 >      move     User-Code               to HV-USER-CODE\n 1086 |      move     Address-1               to HV-ADDRESS-1\n 1087 |      move     Address-2               to HV-ADDRESS-2\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1086: error: 'Address-1' is not defined\n 1084 |      move     Suser                   to HV-SUSER\n 1085 |      move     User-Code               to HV-USER-CODE\n 1086 >      move     Address-1               to HV-ADDRESS-1\n 1087 |      move     Address-2               to HV-ADDRESS-2\n 1088 |      move     Address-3               to HV-ADDRESS-3\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1087: error: 'Address-2' is not defined\n 1085 |      move     User-Code               to HV-USER-CODE\n 1086 |      move     Address-1               to HV-ADDRESS-1\n 1087 >      move     Address-2               to HV-ADDRESS-2\n 1088 |      move     Address-3               to HV-ADDRESS-3\n 1089 |      move     Address-4               to HV-ADDRESS-4\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1088: error: 'Address-3' is not defined\n 1086 |      move     Address-1               to HV-ADDRESS-1\n 1087 |      move     Address-2               to HV-ADDRESS-2\n 1088 >      move     Address-3               to HV-ADDRESS-3\n 1089 |      move     Address-4               to HV-ADDRESS-4\n 1090 |      move     Post-Code               to HV-POST-CODE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1089: error: 'Address-4' is not defined\n 1087 |      move     Address-2               to HV-ADDRESS-2\n 1088 |      move     Address-3               to HV-ADDRESS-3\n 1089 >      move     Address-4               to HV-ADDRESS-4\n 1090 |      move     Post-Code               to HV-POST-CODE\n 1091 |      move     Country                 to HV-COUNTRY\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1090: error: 'Post-Code' is not defined\n 1088 |      move     Address-3               to HV-ADDRESS-3\n 1089 |      move     Address-4               to HV-ADDRESS-4\n 1090 >      move     Post-Code               to HV-POST-CODE\n 1091 |      move     Country                 to HV-COUNTRY\n 1092 |      move     Print-Spool-Name        to HV-PRINT-SPOOL-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1091: error: 'Country' is not defined\n 1089 |      move     Address-4               to HV-ADDRESS-4\n 1090 |      move     Post-Code               to HV-POST-CODE\n 1091 >      move     Country                 to HV-COUNTRY\n 1092 |      move     Print-Spool-Name        to HV-PRINT-SPOOL-NAME\n 1093 |      move     Pass-Value              to HV-PASS-VALUE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1092: error: 'Print-Spool-Name' is not defined\n 1090 |      move     Post-Code               to HV-POST-CODE\n 1091 |      move     Country                 to HV-COUNTRY\n 1092 >      move     Print-Spool-Name        to HV-PRINT-SPOOL-NAME\n 1093 |      move     Pass-Value              to HV-PASS-VALUE\n 1094 |      move     Level-1                 to HV-LEVEL-1\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1093: error: 'Pass-Value' is not defined\n 1091 |      move     Country                 to HV-COUNTRY\n 1092 |      move     Print-Spool-Name        to HV-PRINT-SPOOL-NAME\n 1093 >      move     Pass-Value              to HV-PASS-VALUE\n 1094 |      move     Level-1                 to HV-LEVEL-1\n 1095 |      move     Level-2                 to HV-LEVEL-2\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1094: error: 'Level-1' is not defined\n 1092 |      move     Print-Spool-Name        to HV-PRINT-SPOOL-NAME\n 1093 |      move     Pass-Value              to HV-PASS-VALUE\n 1094 >      move     Level-1                 to HV-LEVEL-1\n 1095 |      move     Level-2                 to HV-LEVEL-2\n 1096 |      move     Level-3                 to HV-LEVEL-3\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1095: error: 'Level-2' is not defined\n 1093 |      move     Pass-Value              to HV-PASS-VALUE\n 1094 |      move     Level-1                 to HV-LEVEL-1\n 1095 >      move     Level-2                 to HV-LEVEL-2\n 1096 |      move     Level-3                 to HV-LEVEL-3\n 1097 |      move     Level-4                 to HV-LEVEL-4\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1096: error: 'Level-3' is not defined\n 1094 |      move     Level-1                 to HV-LEVEL-1\n 1095 |      move     Level-2                 to HV-LEVEL-2\n 1096 >      move     Level-3                 to HV-LEVEL-3\n 1097 |      move     Level-4                 to HV-LEVEL-4\n 1098 |      move     Level-5                 to HV-LEVEL-5\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1097: error: 'Level-4' is not defined\n 1095 |      move     Level-2                 to HV-LEVEL-2\n 1096 |      move     Level-3                 to HV-LEVEL-3\n 1097 >      move     Level-4                 to HV-LEVEL-4\n 1098 |      move     Level-5                 to HV-LEVEL-5\n 1099 |      move     Level-6                 to HV-LEVEL-6\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1098: error: 'Level-5' is not defined\n 1096 |      move     Level-3                 to HV-LEVEL-3\n 1097 |      move     Level-4                 to HV-LEVEL-4\n 1098 >      move     Level-5                 to HV-LEVEL-5\n 1099 |      move     Level-6                 to HV-LEVEL-6\n 1100 |      move     Pass-Word               to HV-PASS-WORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1099: error: 'Level-6' is not defined\n 1097 |      move     Level-4                 to HV-LEVEL-4\n 1098 |      move     Level-5                 to HV-LEVEL-5\n 1099 >      move     Level-6                 to HV-LEVEL-6\n 1100 |      move     Pass-Word               to HV-PASS-WORD\n 1101 |      move     Host                    to HV-HOST\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1100: error: 'Pass-Word' is not defined\n 1098 |      move     Level-5                 to HV-LEVEL-5\n 1099 |      move     Level-6                 to HV-LEVEL-6\n 1100 >      move     Pass-Word               to HV-PASS-WORD\n 1101 |      move     Host                    to HV-HOST\n 1102 |      move     Op-System               to HV-OP-SYSTEM\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1101: error: 'Host' is not defined\n 1099 |      move     Level-6                 to HV-LEVEL-6\n 1100 |      move     Pass-Word               to HV-PASS-WORD\n 1101 >      move     Host                    to HV-HOST\n 1102 |      move     Op-System               to HV-OP-SYSTEM\n 1103 |      move     Current-Quarter         to HV-CURRENT-QUARTER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1102: error: 'Op-System' is not defined\n 1100 |      move     Pass-Word               to HV-PASS-WORD\n 1101 |      move     Host                    to HV-HOST\n 1102 >      move     Op-System               to HV-OP-SYSTEM\n 1103 |      move     Current-Quarter         to HV-CURRENT-QUARTER\n 1104 |      move     File-System-Used        to HV-FILE-SYSTEM-USED\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1103: error: 'Current-Quarter' is not defined\n 1101 |      move     Host                    to HV-HOST\n 1102 |      move     Op-System               to HV-OP-SYSTEM\n 1103 >      move     Current-Quarter         to HV-CURRENT-QUARTER\n 1104 |      move     File-System-Used        to HV-FILE-SYSTEM-USED\n 1105 |      move     File-Duplicates-In-Use  to HV-FILE-DUPLICATES-IN-USE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1104: error: 'File-System-Used' is not defined\n 1102 |      move     Op-System               to HV-OP-SYSTEM\n 1103 |      move     Current-Quarter         to HV-CURRENT-QUARTER\n 1104 >      move     File-System-Used        to HV-FILE-SYSTEM-USED\n 1105 |      move     File-Duplicates-In-Use  to HV-FILE-DUPLICATES-IN-USE\n 1106 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1105: error: 'File-Duplicates-In-Use' is not defined\n 1103 |      move     Current-Quarter         to HV-CURRENT-QUARTER\n 1104 |      move     File-System-Used        to HV-FILE-SYSTEM-USED\n 1105 >      move     File-Duplicates-In-Use  to HV-FILE-DUPLICATES-IN-USE\n 1106 | *>\n 1107 | *> SPECIAL\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1109: error: 'Maps-Ser-xx' is not defined\n 1107 | *> SPECIAL\n 1108 | *>\n 1109 >      move     Maps-Ser-xx to  WS-Maps-xx\n 1110 |      move     Maps-Ser-nn to  WS-Maps-nn\n 1111 |      move     ws-Maps-Ser-x           to HV-MAPS-SER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1110: error: 'Maps-Ser-nn' is not defined\n 1108 | *>\n 1109 |      move     Maps-Ser-xx to  WS-Maps-xx\n 1110 >      move     Maps-Ser-nn to  WS-Maps-nn\n 1111 |      move     ws-Maps-Ser-x           to HV-MAPS-SER\n 1112 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1113: error: 'Date-Form' is not defined\n 1111 |      move     ws-Maps-Ser-x           to HV-MAPS-SER\n 1112 | *>\n 1113 >      move     Date-Form               to HV-DATE-FORM\n 1114 |      move     Data-Capture-Used       to HV-DATA-CAPTURE-USED\n 1115 |      move     RDBMS-DB-Name           to HV-RDBMS-DB-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1114: error: 'Data-Capture-Used' is not defined\n 1112 | *>\n 1113 |      move     Date-Form               to HV-DATE-FORM\n 1114 >      move     Data-Capture-Used       to HV-DATA-CAPTURE-USED\n 1115 |      move     RDBMS-DB-Name           to HV-RDBMS-DB-NAME\n 1116 |      move     RDBMS-User              to HV-RDBMS-USER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1115: error: 'RDBMS-DB-Name' is not defined\n 1113 |      move     Date-Form               to HV-DATE-FORM\n 1114 |      move     Data-Capture-Used       to HV-DATA-CAPTURE-USED\n 1115 >      move     RDBMS-DB-Name           to HV-RDBMS-DB-NAME\n 1116 |      move     RDBMS-User              to HV-RDBMS-USER\n 1117 |      move     RDBMS-Passwd            to HV-RDBMS-PASSWD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1116: error: 'RDBMS-User' is not defined\n 1114 |      move     Data-Capture-Used       to HV-DATA-CAPTURE-USED\n 1115 |      move     RDBMS-DB-Name           to HV-RDBMS-DB-NAME\n 1116 >      move     RDBMS-User              to HV-RDBMS-USER\n 1117 |      move     RDBMS-Passwd            to HV-RDBMS-PASSWD\n 1118 |      move     RDBMS-Port              to HV-RDBMS-PORT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1117: error: 'RDBMS-Passwd' is not defined\n 1115 |      move     RDBMS-DB-Name           to HV-RDBMS-DB-NAME\n 1116 |      move     RDBMS-User              to HV-RDBMS-USER\n 1117 >      move     RDBMS-Passwd            to HV-RDBMS-PASSWD\n 1118 |      move     RDBMS-Port              to HV-RDBMS-PORT\n 1119 |      move     RDBMS-Host              to HV-RDBMS-HOST\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1118: error: 'RDBMS-Port' is not defined\n 1116 |      move     RDBMS-User              to HV-RDBMS-USER\n 1117 |      move     RDBMS-Passwd            to HV-RDBMS-PASSWD\n 1118 >      move     RDBMS-Port              to HV-RDBMS-PORT\n 1119 |      move     RDBMS-Host              to HV-RDBMS-HOST\n 1120 |      move     RDBMS-Socket            to HV-RDBMS-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1119: error: 'RDBMS-Host' is not defined\n 1117 |      move     RDBMS-Passwd            to HV-RDBMS-PASSWD\n 1118 |      move     RDBMS-Port              to HV-RDBMS-PORT\n 1119 >      move     RDBMS-Host              to HV-RDBMS-HOST\n 1120 |      move     RDBMS-Socket            to HV-RDBMS-SOCKET\n 1121 |      move     VAT-Reg-Number          to HV-VAT-REG-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1120: error: 'RDBMS-Socket' is not defined\n 1118 |      move     RDBMS-Port              to HV-RDBMS-PORT\n 1119 |      move     RDBMS-Host              to HV-RDBMS-HOST\n 1120 >      move     RDBMS-Socket            to HV-RDBMS-SOCKET\n 1121 |      move     VAT-Reg-Number          to HV-VAT-REG-NUMBER\n 1122 |      move     Param-Restrict          to HV-PARAM-RESTRICT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1121: error: 'VAT-Reg-Number' is not defined\n 1119 |      move     RDBMS-Host              to HV-RDBMS-HOST\n 1120 |      move     RDBMS-Socket            to HV-RDBMS-SOCKET\n 1121 >      move     VAT-Reg-Number          to HV-VAT-REG-NUMBER\n 1122 |      move     Param-Restrict          to HV-PARAM-RESTRICT\n 1123 |      move     P-C                     to HV-P-C\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1122: error: 'Param-Restrict' is not defined\n 1120 |      move     RDBMS-Socket            to HV-RDBMS-SOCKET\n 1121 |      move     VAT-Reg-Number          to HV-VAT-REG-NUMBER\n 1122 >      move     Param-Restrict          to HV-PARAM-RESTRICT\n 1123 |      move     P-C                     to HV-P-C\n 1124 |      move     P-C-Grouped             to HV-P-C-GROUPED\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1123: error: 'P-C' is not defined\n 1121 |      move     VAT-Reg-Number          to HV-VAT-REG-NUMBER\n 1122 |      move     Param-Restrict          to HV-PARAM-RESTRICT\n 1123 >      move     P-C                     to HV-P-C\n 1124 |      move     P-C-Grouped             to HV-P-C-GROUPED\n 1125 |      move     P-C-Level               to HV-P-C-LEVEL\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1124: error: 'P-C-Grouped' is not defined\n 1122 |      move     Param-Restrict          to HV-PARAM-RESTRICT\n 1123 |      move     P-C                     to HV-P-C\n 1124 >      move     P-C-Grouped             to HV-P-C-GROUPED\n 1125 |      move     P-C-Level               to HV-P-C-LEVEL\n 1126 |      move     Comps                   to HV-COMPS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1125: error: 'P-C-Level' is not defined\n 1123 |      move     P-C                     to HV-P-C\n 1124 |      move     P-C-Grouped             to HV-P-C-GROUPED\n 1125 >      move     P-C-Level               to HV-P-C-LEVEL\n 1126 |      move     Comps                   to HV-COMPS\n 1127 |      move     Comps-Active            to HV-COMPS-ACTIVE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1126: error: 'Comps' is not defined\n 1124 |      move     P-C-Grouped             to HV-P-C-GROUPED\n 1125 |      move     P-C-Level               to HV-P-C-LEVEL\n 1126 >      move     Comps                   to HV-COMPS\n 1127 |      move     Comps-Active            to HV-COMPS-ACTIVE\n 1128 |      move     M-V                     to HV-M-V\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1127: error: 'Comps-Active' is not defined\n 1125 |      move     P-C-Level               to HV-P-C-LEVEL\n 1126 |      move     Comps                   to HV-COMPS\n 1127 >      move     Comps-Active            to HV-COMPS-ACTIVE\n 1128 |      move     M-V                     to HV-M-V\n 1129 |      move     Arch                    to HV-ARCH\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1128: error: 'M-V' is not defined\n 1126 |      move     Comps                   to HV-COMPS\n 1127 |      move     Comps-Active            to HV-COMPS-ACTIVE\n 1128 >      move     M-V                     to HV-M-V\n 1129 |      move     Arch                    to HV-ARCH\n 1130 |      move     Trans-Print             to HV-TRANS-PRINT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1129: error: 'Arch' is not defined\n 1127 |      move     Comps-Active            to HV-COMPS-ACTIVE\n 1128 |      move     M-V                     to HV-M-V\n 1129 >      move     Arch                    to HV-ARCH\n 1130 |      move     Trans-Print             to HV-TRANS-PRINT\n 1131 |      move     Trans-Printed           to HV-TRANS-PRINTED\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1130: error: 'Trans-Print' is not defined\n 1128 |      move     M-V                     to HV-M-V\n 1129 |      move     Arch                    to HV-ARCH\n 1130 >      move     Trans-Print             to HV-TRANS-PRINT\n 1131 |      move     Trans-Printed           to HV-TRANS-PRINTED\n 1132 |      move     Header-Level            to HV-HEADER-LEVEL\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1131: error: 'Trans-Printed' is not defined\n 1129 |      move     Arch                    to HV-ARCH\n 1130 |      move     Trans-Print             to HV-TRANS-PRINT\n 1131 >      move     Trans-Printed           to HV-TRANS-PRINTED\n 1132 |      move     Header-Level            to HV-HEADER-LEVEL\n 1133 |      move     Sales-Range             to HV-SALES-RANGE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1132: error: 'Header-Level' is not defined\n 1130 |      move     Trans-Print             to HV-TRANS-PRINT\n 1131 |      move     Trans-Printed           to HV-TRANS-PRINTED\n 1132 >      move     Header-Level            to HV-HEADER-LEVEL\n 1133 |      move     Sales-Range             to HV-SALES-RANGE\n 1134 |      move     Purchase-Range          to HV-PURCHASE-RANGE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1133: error: 'Sales-Range' is not defined\n 1131 |      move     Trans-Printed           to HV-TRANS-PRINTED\n 1132 |      move     Header-Level            to HV-HEADER-LEVEL\n 1133 >      move     Sales-Range             to HV-SALES-RANGE\n 1134 |      move     Purchase-Range          to HV-PURCHASE-RANGE\n 1135 |      move     Vat                     to HV-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1134: error: 'Purchase-Range' is not defined\n 1132 |      move     Header-Level            to HV-HEADER-LEVEL\n 1133 |      move     Sales-Range             to HV-SALES-RANGE\n 1134 >      move     Purchase-Range          to HV-PURCHASE-RANGE\n 1135 |      move     Vat                     to HV-VAT\n 1136 |      move     Batch-Id                to HV-BATCH-ID\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1135: error: 'Vat' is not defined\n 1133 |      move     Sales-Range             to HV-SALES-RANGE\n 1134 |      move     Purchase-Range          to HV-PURCHASE-RANGE\n 1135 >      move     Vat                     to HV-VAT\n 1136 |      move     Batch-Id                to HV-BATCH-ID\n 1137 |      move     Ledger-2nd-Index        to HV-LEDGER-2ND-INDEX\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1136: error: 'Batch-Id' is not defined\n 1134 |      move     Purchase-Range          to HV-PURCHASE-RANGE\n 1135 |      move     Vat                     to HV-VAT\n 1136 >      move     Batch-Id                to HV-BATCH-ID\n 1137 |      move     Ledger-2nd-Index        to HV-LEDGER-2ND-INDEX\n 1138 |      move     Irs-Instead             to HV-IRS-INSTEAD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1137: error: 'Ledger-2nd-Index' is not defined\n 1135 |      move     Vat                     to HV-VAT\n 1136 |      move     Batch-Id                to HV-BATCH-ID\n 1137 >      move     Ledger-2nd-Index        to HV-LEDGER-2ND-INDEX\n 1138 |      move     Irs-Instead             to HV-IRS-INSTEAD\n 1139 |      move     Ledger-Sec              to HV-LEDGER-SEC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1138: error: 'Irs-Instead' is not defined\n 1136 |      move     Batch-Id                to HV-BATCH-ID\n 1137 |      move     Ledger-2nd-Index        to HV-LEDGER-2ND-INDEX\n 1138 >      move     Irs-Instead             to HV-IRS-INSTEAD\n 1139 |      move     Ledger-Sec              to HV-LEDGER-SEC\n 1140 |      move     Updates                 to HV-UPDATES\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1139: error: 'Ledger-Sec' is not defined\n 1137 |      move     Ledger-2nd-Index        to HV-LEDGER-2ND-INDEX\n 1138 |      move     Irs-Instead             to HV-IRS-INSTEAD\n 1139 >      move     Ledger-Sec              to HV-LEDGER-SEC\n 1140 |      move     Updates                 to HV-UPDATES\n 1141 |      move     Postings                to HV-POSTINGS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1140: error: 'Updates' is not defined\n 1138 |      move     Irs-Instead             to HV-IRS-INSTEAD\n 1139 |      move     Ledger-Sec              to HV-LEDGER-SEC\n 1140 >      move     Updates                 to HV-UPDATES\n 1141 |      move     Postings                to HV-POSTINGS\n 1142 |      move     Next-Batch              to HV-NEXT-BATCH\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1141: error: 'Postings' is not defined\n 1139 |      move     Ledger-Sec              to HV-LEDGER-SEC\n 1140 |      move     Updates                 to HV-UPDATES\n 1141 >      move     Postings                to HV-POSTINGS\n 1142 |      move     Next-Batch              to HV-NEXT-BATCH\n 1143 |      move     Extra-Charge-Ac         to HV-EXTRA-CHARGE-AC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1142: error: 'Next-Batch' is not defined\n 1140 |      move     Updates                 to HV-UPDATES\n 1141 |      move     Postings                to HV-POSTINGS\n 1142 >      move     Next-Batch              to HV-NEXT-BATCH\n 1143 |      move     Extra-Charge-Ac         to HV-EXTRA-CHARGE-AC\n 1144 |      move     Vat-Ac                  to HV-VAT-AC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1143: error: 'Extra-Charge-Ac' is not defined\n 1141 |      move     Postings                to HV-POSTINGS\n 1142 |      move     Next-Batch              to HV-NEXT-BATCH\n 1143 >      move     Extra-Charge-Ac         to HV-EXTRA-CHARGE-AC\n 1144 |      move     Vat-Ac                  to HV-VAT-AC\n 1145 |      move     Print-Spool-Name2       to HV-PRINT-SPOOL-NAME2\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1144: error: 'Vat-Ac' is not defined\n 1142 |      move     Next-Batch              to HV-NEXT-BATCH\n 1143 |      move     Extra-Charge-Ac         to HV-EXTRA-CHARGE-AC\n 1144 >      move     Vat-Ac                  to HV-VAT-AC\n 1145 |      move     Print-Spool-Name2       to HV-PRINT-SPOOL-NAME2\n 1146 |      move     Next-Folio              to HV-NEXT-FOLIO\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1145: error: 'Print-Spool-Name2' is not defined\n 1143 |      move     Extra-Charge-Ac         to HV-EXTRA-CHARGE-AC\n 1144 |      move     Vat-Ac                  to HV-VAT-AC\n 1145 >      move     Print-Spool-Name2       to HV-PRINT-SPOOL-NAME2\n 1146 |      move     Next-Folio              to HV-NEXT-FOLIO\n 1147 |      move     BL-Pay-Ac               to HV-BL-PAY-AC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1146: error: 'Next-Folio' is not defined\n 1144 |      move     Vat-Ac                  to HV-VAT-AC\n 1145 |      move     Print-Spool-Name2       to HV-PRINT-SPOOL-NAME2\n 1146 >      move     Next-Folio              to HV-NEXT-FOLIO\n 1147 |      move     BL-Pay-Ac               to HV-BL-PAY-AC\n 1148 |      move     P-Creditors             to HV-P-CREDITORS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1147: error: 'BL-Pay-Ac' is not defined\n 1145 |      move     Print-Spool-Name2       to HV-PRINT-SPOOL-NAME2\n 1146 |      move     Next-Folio              to HV-NEXT-FOLIO\n 1147 >      move     BL-Pay-Ac               to HV-BL-PAY-AC\n 1148 |      move     P-Creditors             to HV-P-CREDITORS\n 1149 |      move     BL-Purch-Ac             to HV-BL-PURCH-AC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1148: error: 'P-Creditors' is not defined\n 1146 |      move     Next-Folio              to HV-NEXT-FOLIO\n 1147 |      move     BL-Pay-Ac               to HV-BL-PAY-AC\n 1148 >      move     P-Creditors             to HV-P-CREDITORS\n 1149 |      move     BL-Purch-Ac             to HV-BL-PURCH-AC\n 1150 |      move     GL-BL-Pay-Ac            to HV-GL-BL-PAY-AC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1149: error: 'BL-Purch-Ac' is not defined\n 1147 |      move     BL-Pay-Ac               to HV-BL-PAY-AC\n 1148 |      move     P-Creditors             to HV-P-CREDITORS\n 1149 >      move     BL-Purch-Ac             to HV-BL-PURCH-AC\n 1150 |      move     GL-BL-Pay-Ac            to HV-GL-BL-PAY-AC\n 1151 |      move     GL-P-Creditors          to HV-GL-P-CREDITORS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1150: error: 'GL-BL-Pay-Ac' is not defined\n 1148 |      move     P-Creditors             to HV-P-CREDITORS\n 1149 |      move     BL-Purch-Ac             to HV-BL-PURCH-AC\n 1150 >      move     GL-BL-Pay-Ac            to HV-GL-BL-PAY-AC\n 1151 |      move     GL-P-Creditors          to HV-GL-P-CREDITORS\n 1152 |      move     GL-BL-Purch-Ac          to HV-GL-BL-PURCH-AC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1151: error: 'GL-P-Creditors' is not defined\n 1149 |      move     BL-Purch-Ac             to HV-BL-PURCH-AC\n 1150 |      move     GL-BL-Pay-Ac            to HV-GL-BL-PAY-AC\n 1151 >      move     GL-P-Creditors          to HV-GL-P-CREDITORS\n 1152 |      move     GL-BL-Purch-Ac          to HV-GL-BL-PURCH-AC\n 1153 |      move     BL-End-Cycle-Date       to HV-BL-END-CYCLE-DAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1152: error: 'GL-BL-Purch-Ac' is not defined\n 1150 |      move     GL-BL-Pay-Ac            to HV-GL-BL-PAY-AC\n 1151 |      move     GL-P-Creditors          to HV-GL-P-CREDITORS\n 1152 >      move     GL-BL-Purch-Ac          to HV-GL-BL-PURCH-AC\n 1153 |      move     BL-End-Cycle-Date       to HV-BL-END-CYCLE-DAT\n 1154 |      move     BL-Next-Batch           to HV-BL-NEXT-BATCH\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1153: error: 'BL-End-Cycle-Date' is not defined\n 1151 |      move     GL-P-Creditors          to HV-GL-P-CREDITORS\n 1152 |      move     GL-BL-Purch-Ac          to HV-GL-BL-PURCH-AC\n 1153 >      move     BL-End-Cycle-Date       to HV-BL-END-CYCLE-DAT\n 1154 |      move     BL-Next-Batch           to HV-BL-NEXT-BATCH\n 1155 |      move     Age-To-Pay              to HV-AGE-TO-PAY\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1154: error: 'BL-Next-Batch' is not defined\n 1152 |      move     GL-BL-Purch-Ac          to HV-GL-BL-PURCH-AC\n 1153 |      move     BL-End-Cycle-Date       to HV-BL-END-CYCLE-DAT\n 1154 >      move     BL-Next-Batch           to HV-BL-NEXT-BATCH\n 1155 |      move     Age-To-Pay              to HV-AGE-TO-PAY\n 1156 |      move     Purchase-Ledger         to HV-PURCHASE-LEDGER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1155: error: 'Age-To-Pay' is not defined\n 1153 |      move     BL-End-Cycle-Date       to HV-BL-END-CYCLE-DAT\n 1154 |      move     BL-Next-Batch           to HV-BL-NEXT-BATCH\n 1155 >      move     Age-To-Pay              to HV-AGE-TO-PAY\n 1156 |      move     Purchase-Ledger         to HV-PURCHASE-LEDGER\n 1157 |      move     PL-Delim                to HV-PL-DELIM\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1156: error: 'Purchase-Ledger' is not defined\n 1154 |      move     BL-Next-Batch           to HV-BL-NEXT-BATCH\n 1155 |      move     Age-To-Pay              to HV-AGE-TO-PAY\n 1156 >      move     Purchase-Ledger         to HV-PURCHASE-LEDGER\n 1157 |      move     PL-Delim                to HV-PL-DELIM\n 1158 |      move     Entry-Level             to HV-ENTRY-LEVEL\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1157: error: 'PL-Delim' is not defined\n 1155 |      move     Age-To-Pay              to HV-AGE-TO-PAY\n 1156 |      move     Purchase-Ledger         to HV-PURCHASE-LEDGER\n 1157 >      move     PL-Delim                to HV-PL-DELIM\n 1158 |      move     Entry-Level             to HV-ENTRY-LEVEL\n 1159 |      move     P-Flag-A                to HV-P-FLAG-A\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1158: error: 'Entry-Level' is not defined\n 1156 |      move     Purchase-Ledger         to HV-PURCHASE-LEDGER\n 1157 |      move     PL-Delim                to HV-PL-DELIM\n 1158 >      move     Entry-Level             to HV-ENTRY-LEVEL\n 1159 |      move     P-Flag-A                to HV-P-FLAG-A\n 1160 |      move     P-Flag-I                to HV-P-FLAG-I\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1159: error: 'P-Flag-A' is not defined\n 1157 |      move     PL-Delim                to HV-PL-DELIM\n 1158 |      move     Entry-Level             to HV-ENTRY-LEVEL\n 1159 >      move     P-Flag-A                to HV-P-FLAG-A\n 1160 |      move     P-Flag-I                to HV-P-FLAG-I\n 1161 |      move     P-Flag-P                to HV-P-FLAG-P\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1160: error: 'P-Flag-I' is not defined\n 1158 |      move     Entry-Level             to HV-ENTRY-LEVEL\n 1159 |      move     P-Flag-A                to HV-P-FLAG-A\n 1160 >      move     P-Flag-I                to HV-P-FLAG-I\n 1161 |      move     P-Flag-P                to HV-P-FLAG-P\n 1162 |      move     PL-Stock-Link           to HV-PL-STOCK-LINK\ncobc: too many errors [-fmax-errors=128]\n\ncobc: aborting compile of /Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl at line 1160 (PROGRAM-ID: systemMT)\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:194: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:238: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:317: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:498: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:502: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:504: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1032: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:515: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:517: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:519: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:521: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:524: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:525: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:526: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:542: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:543: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:544: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:545: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:546: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:573: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:598: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:600: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:602: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:604: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:606: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:608: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:610: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:612: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:614: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:616: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:618: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:620: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:624: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:694: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:697: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:703: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:705: error: 'WS-MYSQL-SQLstate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:713: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:940: error: 'WS-Mysql-Time-Step' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:941: error: 'WS-SQL-Retry' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1048: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1051: error: 'fn-close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1053: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1070: error: 'System-Record-Version-Prime' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1071: error: 'System-Record-Version-Secondary' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1072: error: 'Vat-Rate-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1073: error: 'Vat-Rate-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1074: error: 'Vat-Rate-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1075: error: 'Vat-Rate-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1076: error: 'Vat-Rate-5' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1077: error: 'Cyclea' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1078: error: 'Period' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1079: error: 'Page-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1080: error: 'Next-Invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1081: error: 'Run-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1082: error: 'Start-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1083: error: 'End-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1084: error: 'Suser' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1085: error: 'User-Code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1086: error: 'Address-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1087: error: 'Address-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1088: error: 'Address-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1089: error: 'Address-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1090: error: 'Post-Code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1091: error: 'Country' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1092: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1093: error: 'Pass-Value' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1094: error: 'Level-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1095: error: 'Level-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1096: error: 'Level-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1097: error: 'Level-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1098: error: 'Level-5' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1099: error: 'Level-6' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1100: error: 'Pass-Word' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1101: error: 'Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1102: error: 'Op-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1103: error: 'Current-Quarter' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1104: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1105: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1109: error: 'Maps-Ser-xx' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1110: error: 'Maps-Ser-nn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1113: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1114: error: 'Data-Capture-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1115: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1116: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1117: error: 'RDBMS-Passwd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1118: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1119: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1120: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1121: error: 'VAT-Reg-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1122: error: 'Param-Restrict' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1123: error: 'P-C' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1124: error: 'P-C-Grouped' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1125: error: 'P-C-Level' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1126: error: 'Comps' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1127: error: 'Comps-Active' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1128: error: 'M-V' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1129: error: 'Arch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1130: error: 'Trans-Print' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1131: error: 'Trans-Printed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1132: error: 'Header-Level' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1133: error: 'Sales-Range' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1134: error: 'Purchase-Range' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1135: error: 'Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1136: error: 'Batch-Id' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1137: error: 'Ledger-2nd-Index' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1138: error: 'Irs-Instead' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1139: error: 'Ledger-Sec' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1140: error: 'Updates' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1141: error: 'Postings' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1142: error: 'Next-Batch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1143: error: 'Extra-Charge-Ac' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1144: error: 'Vat-Ac' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1145: error: 'Print-Spool-Name2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1146: error: 'Next-Folio' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1147: error: 'BL-Pay-Ac' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1148: error: 'P-Creditors' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1149: error: 'BL-Purch-Ac' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1150: error: 'GL-BL-Pay-Ac' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1151: error: 'GL-P-Creditors' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1152: error: 'GL-BL-Purch-Ac' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1153: error: 'BL-End-Cycle-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1154: error: 'BL-Next-Batch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1155: error: 'Age-To-Pay' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1156: error: 'Purchase-Ledger' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1157: error: 'PL-Delim' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1158: error: 'Entry-Level' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1159: error: 'P-Flag-A' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1160: error: 'P-Flag-I' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:194: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:238: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:317: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:498: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:502: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:504: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1032: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:515: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:517: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:519: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:521: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:524: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:525: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:526: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:542: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:543: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:544: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:545: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:546: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:573: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:598: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:600: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:602: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:604: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:606: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:608: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:610: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:612: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:614: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:616: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:618: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:620: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:624: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:694: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:697: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:703: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:705: error: 'WS-MYSQL-SQLstate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:713: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:940: error: 'WS-Mysql-Time-Step' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:941: error: 'WS-SQL-Retry' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1048: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1051: error: 'fn-close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1053: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1070: error: 'System-Record-Version-Prime' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1071: error: 'System-Record-Version-Secondary' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1072: error: 'Vat-Rate-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1073: error: 'Vat-Rate-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1074: error: 'Vat-Rate-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1075: error: 'Vat-Rate-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1076: error: 'Vat-Rate-5' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1077: error: 'Cyclea' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1078: error: 'Period' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1079: error: 'Page-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1080: error: 'Next-Invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1081: error: 'Run-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1082: error: 'Start-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1083: error: 'End-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1084: error: 'Suser' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1085: error: 'User-Code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1086: error: 'Address-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1087: error: 'Address-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1088: error: 'Address-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1089: error: 'Address-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1090: error: 'Post-Code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1091: error: 'Country' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1092: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1093: error: 'Pass-Value' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1094: error: 'Level-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1095: error: 'Level-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1096: error: 'Level-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1097: error: 'Level-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1098: error: 'Level-5' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1099: error: 'Level-6' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1100: error: 'Pass-Word' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1101: error: 'Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1102: error: 'Op-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1103: error: 'Current-Quarter' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1104: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1105: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1109: error: 'Maps-Ser-xx' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1110: error: 'Maps-Ser-nn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1113: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1114: error: 'Data-Capture-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1115: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1116: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1117: error: 'RDBMS-Passwd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1118: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1119: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1120: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1121: error: 'VAT-Reg-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1122: error: 'Param-Restrict' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1123: error: 'P-C' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1124: error: 'P-C-Grouped' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1125: error: 'P-C-Level' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1126: error: 'Comps' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1127: error: 'Comps-Active' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1128: error: 'M-V' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1129: error: 'Arch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1130: error: 'Trans-Print' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1131: error: 'Trans-Printed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1132: error: 'Header-Level' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1133: error: 'Sales-Range' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1134: error: 'Purchase-Range' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1135: error: 'Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1136: error: 'Batch-Id' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1137: error: 'Ledger-2nd-Index' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1138: error: 'Irs-Instead' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1139: error: 'Ledger-Sec' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1140: error: 'Updates' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1141: error: 'Postings' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1142: error: 'Next-Batch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1143: error: 'Extra-Charge-Ac' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1144: error: 'Vat-Ac' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1145: error: 'Print-Spool-Name2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1146: error: 'Next-Folio' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1147: error: 'BL-Pay-Ac' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1148: error: 'P-Creditors' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1149: error: 'BL-Purch-Ac' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1150: error: 'GL-BL-Pay-Ac' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1151: error: 'GL-P-Creditors' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1152: error: 'GL-BL-Purch-Ac' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1153: error: 'BL-End-Cycle-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1154: error: 'BL-Next-Batch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1155: error: 'Age-To-Pay' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1156: error: 'Purchase-Ledger' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1157: error: 'PL-Delim' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1158: error: 'Entry-Level' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1159: error: 'P-Flag-A' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemMT.cbl:1160: error: 'P-Flag-I' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 61,
+    "cognitive": 118,
+    "halstead": {
+      "uniqueOperators": 11,
+      "uniqueOperands": 526,
+      "totalOperators": 774,
+      "totalOperands": 11386,
+      "vocabulary": 537,
+      "length": 12160,
+      "volume": 110276,
+      "difficulty": 119.06,
+      "effort": 13128965,
+      "timeToProgram": 729387,
+      "deliveredBugs": 36.759
+    },
+    "maintainability": 56
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 704
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 705
+      },
+      {
+        "target": "MySQL_error",
+        "line": 709
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 730
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 912
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 913
+      },
+      {
+        "target": "MySQL_error",
+        "line": 916
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 950
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 951
+      },
+      {
+        "target": "MySQL_error",
+        "line": 954
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1006
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1007
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1010
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1043
+      },
+      {
+        "target": "fhlogger",
+        "line": 5252
+      }
+    ],
+    "copies": [
+      {
+        "name": "*>",
+        "line": 181
+      },
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 194
+      },
+      {
+        "name": "of",
+        "line": 231
+      },
+      {
+        "name": "envdiv",
+        "line": 238
+      },
+      {
+        "name": "mysql-variables",
+        "line": 317
+      },
+      {
+        "name": "wsfnctn",
+        "line": 498
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 502
+      },
+      {
+        "name": "wssystem",
+        "line": 504
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1032
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 596
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 623
+      },
+      {
+        "target": "ba998-Free",
+        "line": 639
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 647
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 692
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 693
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 934
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 942
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 948
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 972
+      },
+      {
+        "target": "bb300-Update",
+        "line": 997
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 1049
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 1054
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 3330
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 5242
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 242
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

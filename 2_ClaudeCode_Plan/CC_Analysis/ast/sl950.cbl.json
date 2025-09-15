@@ -1,0 +1,583 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl",
+  "fileName": "sl950.cbl",
+  "fileHash": "46f9849ae3b548a12b963a5645c3a6a9689c8104d6d5277078e3c0f2edb5aa1e",
+  "timestamp": "2025-09-15T19:46:28.881Z",
+  "parseTime": 130,
+  "lines": {
+    "total": 1075,
+    "code": 567,
+    "comment": 506,
+    "blank": 2
+  },
+  "programId": "sl950",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:187: error: envdiv.cob: No such file or directory\n  185 | *>===============================\n  186 | *>\n  187 >  copy \"envdiv.cob\".\n  188 |  input-output            section.\n  189 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:198: error: selprint-2.cpy: No such file or directory\n  196 | *> copy \"selsl.cob\".\n  197 | *> copy \"seldel.cob\".\n  198 >  copy \"selprint-2.cpy\" replacing \"prt-1\" by \"prt-3\".\t*> Dispatch printer\n  199 | *>\n  200 |  data                    division.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:229: error: print-spool-command-invoice.cob: No such file or directory\n  227 | *>\n  228 |  copy \"print-spool-command-invoice.cob\" replacing     *>  ==PSN2== by ==P..\n  229 >                                                   \"prt-1\" by \"prt-3\".\n  230 | *>\n  231 | *> Also change for two (or more) copies per packing note or invoice,  if..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:239: error: wsmaps03.cob: No such file or directory\n  237 | *>\n  238 | \n  239 >  copy \"wsmaps03.cob\".\n  240 |  copy \"wsfnctn.cob\".\n  241 |                            *> was copy \"wsinv.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:240: error: wsfnctn.cob: No such file or directory\n  238 | \n  239 |  copy \"wsmaps03.cob\".\n  240 >  copy \"wsfnctn.cob\".\n  241 |                            *> was copy \"wsinv.cob\".\n  242 |  copy \"slwsinv.cob\"  replacing Invoice-Line by Invoice-Lines. *> original..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:242: error: slwsinv.cob: No such file or directory\n  240 |  copy \"wsfnctn.cob\".\n  241 |                            *> was copy \"wsinv.cob\".\n  242 >  copy \"slwsinv.cob\"  replacing Invoice-Line by Invoice-Lines. *> original..\n  243 |  copy \"slwsinv2.cob\".\n  244 |  01  WS-Invoice-Record  redefines Invoice-Record\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:243: error: slwsinv2.cob: No such file or directory\n  241 |                            *> was copy \"wsinv.cob\".\n  242 |  copy \"slwsinv.cob\"  replacing Invoice-Line by Invoice-Lines. *> original..\n  243 >  copy \"slwsinv2.cob\".\n  244 |  01  WS-Invoice-Record  redefines Invoice-Record\n  245 |                                 pic x(137).\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:246: error: wssl.cob: No such file or directory\n  244 |  01  WS-Invoice-Record  redefines Invoice-Record\n  245 |                                 pic x(137).\n  246 >  copy \"wssl.cob\".\n  247 |  copy \"wsdel.cob\".\n  248 |  copy \"wsstock.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:247: error: wsdel.cob: No such file or directory\n  245 |                                 pic x(137).\n  246 |  copy \"wssl.cob\".\n  247 >  copy \"wsdel.cob\".\n  248 |  copy \"wsstock.cob\".\n  249 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:248: error: wsstock.cob: No such file or directory\n  246 |  copy \"wssl.cob\".\n  247 |  copy \"wsdel.cob\".\n  248 >  copy \"wsstock.cob\".\n  249 | *>\n  250 |  *> 77  WS-Temp-Invoice-Record     pic x(140).  *> actual is 137.  NOT US..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:330: error: Test-Data-Flags.cob: No such file or directory\n  328 |          05  ws-intl-days    pic xx.\n  329 | *>\n  330 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  331 | *>\n  332 |  01  File-Info                          value zero.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:471: error: wscall.cob: No such file or directory\n  469 | *>**************\n  470 | *>\n  471 >  copy \"wscall.cob\".\n  472 |  copy \"wssystem.cob\".\n  473 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:472: error: wssystem.cob: No such file or directory\n  470 | *>\n  471 |  copy \"wscall.cob\".\n  472 >  copy \"wssystem.cob\".\n  473 |  copy \"wsnames.cob\".\n  474 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:473: error: wsnames.cob: No such file or directory\n  471 |  copy \"wscall.cob\".\n  472 |  copy \"wssystem.cob\".\n  473 >  copy \"wsnames.cob\".\n  474 | *>\n  475 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1073: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n 1071 |      exit     section.\n 1072 | *>\n 1073 >  copy \"Proc-ACAS-FH-Calls.cob\".\n 1074 | *>\n 1075 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:211: error: 'print-file' is not defined\n  209 | *> copy \"fddel.cob\".\n  210 | *>\n  211 >  fd  print-file.\n  212 | *>\n  213 |  01  print-record            pic x(84).   *> was 102).\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:211: error: 'print-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:244: error: 'Invoice-Record' is not defined\n  242 |  copy \"slwsinv.cob\"  replacing Invoice-Line by Invoice-Lines. *> original..\n  243 |  copy \"slwsinv2.cob\".\n  244 >  01  WS-Invoice-Record  redefines Invoice-Record\n  245 |                                 pic x(137).\n  246 |  copy \"wssl.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:477: error: 'ws-calling-data' is not defined\n  475 |  01  to-day              pic x(10).\n  476 | *>\n  477 >  procedure division using ws-calling-data\n  478 |                           system-record\n  479 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:478: error: 'system-record' is not defined\n  476 | *>\n  477 |  procedure division using ws-calling-data\n  478 >                           system-record\n  479 |                           to-day\n  480 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:480: error: 'file-defs' is not defined\n  478 |                           system-record\n  479 |                           to-day\n  480 >                           file-defs.\n  481 | *>=======================================\n  482 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:484: error: 'full-invoicing' is not defined\n  482 | *>\n  483 |  init01 section.\n  484 >      if       full-invoicing = zero     *> Hmm, not sure about this for t..\n  485 |               exit program.             *> but if no invoicing cant be us..\n  486 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:490: error: 'Print-Spool-Name3' is not defined\n  488 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n  489 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  490 >      move     Print-Spool-Name3 to PSN.  *> was PSN3\n  491 |      move     1 to File-Key-No.\n  492 |      perform  zz070-Convert-Date.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:490: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:491: error: 'File-Key-No' is not defined\n  489 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  490 |      move     Print-Spool-Name3 to PSN.  *> was PSN3\n  491 >      move     1 to File-Key-No.\n  492 |      perform  zz070-Convert-Date.\n  493 |      perform  zz090-Setup-Company-Details.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'menu-return':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:506: error: 'print-file' is not a file name\n  504 |      perform  Sales-Open-Input.      *> open     input  sales-file delive..\n  505 |      perform  Delivery-Open-Input.\n  506 >      open     output print-file.\n  507 | *>\n  508 |      if       pass-value not = 3\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:508: error: 'pass-value' is not defined\n  506 |      open     output print-file.\n  507 | *>\n  508 >      if       pass-value not = 3\n  509 |               go to  All-Print-start.\n  510 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:511: error: 'next-invoice' is not defined\n  509 |               go to  All-Print-start.\n  510 | *>\n  511 >      subtract 1  from  next-invoice  giving  invoice-nos.\n  512 |      move     zero  to  item-nos.\n  513 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:511: error: 'invoice-nos' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:512: error: 'item-nos' is not defined\n  510 | *>\n  511 |      subtract 1  from  next-invoice  giving  invoice-nos.\n  512 >      move     zero  to  item-nos.\n  513 | *>\n  514 |      perform  Invoice-Read-Indexed.   *> read invoice-file  record invali..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:515: error: 'fs-reply' is not defined\n  513 | *>\n  514 |      perform  Invoice-Read-Indexed.   *> read invoice-file  record invali..\n  515 >      if       fs-reply not = zero     *> chk if last inv. created is pres..\n  516 |               go to  main-end.\n  517 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:518: error: 'sinvoice-header' is not defined\n  516 |               go to  main-end.\n  517 | *>\n  518 >      move     WS-Invoice-Record  to  sinvoice-header.\n  519 | *>\n  520 |      if       pending in sih-status\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:520: error: 'pending IN sih-status' is not defined\n  518 |      move     WS-Invoice-Record  to  sinvoice-header.\n  519 | *>\n  520 >      if       pending in sih-status\n  521 |               perform  print-routine\n  522 |               go to    main-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:525: error: 'sih-invoice' is not defined\n  523 | *>\n  524 |      display  \"Invoice Number - \" at 0501 with foreground-color 2.\n  525 >      display  sih-invoice at 0518 with foreground-color 3.\n  526 |      display  \"Already Produced!.....Re-Print  (Y/N) ? - [Y]\" at 0601 wit..\n  527 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'amend-request':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:557: error: 'first-sl-inv' is not defined\n  555 |      accept   ws-reply at 0938 with foreground-color 6 update UPPER.\n  556 |      if       ws-reply = \"Y\"\n  557 >               move zeros to first-sl-inv item-nos\n  558 |               go to All-Print.\n  559 |      if       ws-reply not = \"N\"\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'All-Print-go':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:572: error: 'fn-Not-Less-Than' is not defined\n  570 | *>\n  571 |      move     1 to File-Key-No.\n  572 >      set      fn-Not-Less-Than to true.\n  573 |      perform  Invoice-Start.   *> start invoice-file key not < invoice-ke..\n  574 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'All-Print':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:587: error: 'sih-lines' is not defined\n  585 |      move     WS-Invoice-Record  to  sinvoice-header.\n  586 | *>\n  587 >      if       sih-lines = zero and\n  588 |               sapplied\n  589 |               go to All-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:588: error: 'sapplied' is not defined\n  586 | *>\n  587 |      if       sih-lines = zero and\n  588 >               sapplied\n  589 |               go to All-Print.\n  590 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:591: error: 'sih-status-P' is not defined\n  589 |               go to All-Print.\n  590 | *>\n  591 >      if       sih-status-P = \"P\"\t\t*> Pick list printed\n  592 |               go to All-Print.\n  593 |      if       pending in sih-status\t\t*> Invoices not yet printed but pick..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:600: error: 'sih-type' is not defined\n  598 |               go to  All-Print.\n  599 | *>\n  600 >      if       sih-type > 2      *> ONLY print for invoices and receipts (..\n  601 |               go to All-Print.\n  602 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:650: error: 'print-file' is not a file name\n  648 |      perform  Sales-Close.\n  649 |      perform  Delivery-Close.\n  650 >      close    print-file.\n  651 |      call     \"SYSTEM\" using print-report.\n  652 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:651: error: 'print-report' is not defined\n  649 |      perform  Delivery-Close.\n  650 |      close    print-file.\n  651 >      call     \"SYSTEM\" using print-report.\n  652 | *>\n  653 | *>     if       pass-value = 3\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in section 'print-routine':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:670: error: 'Invoice-Lines' is not defined\n  668 |                    exit perform\n  669 |               end-if\n  670 >               move WS-Invoice-Record to Invoice-Lines (i)\n  671 |               if   sil-type (i) = \"D\"\n  672 |                    exit perform\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:671: error: 'sil-type' is not defined\n  669 |               end-if\n  670 |               move WS-Invoice-Record to Invoice-Lines (i)\n  671 >               if   sil-type (i) = \"D\"\n  672 |                    exit perform\n  673 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:683: error: 'SL-Invoice-Lines' is not defined\n  681 |      if       ii = 0\n  682 |               move 1 to ii.\n  683 >      divide   ii by  SL-Invoice-Lines   giving  l7-count-2.  *> was 15\n  684 |      add      1  to  l7-count-2.\n  685 |      move     1  to  l7-count-1.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'get-customer':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:700: error: 'sih-customer' is not defined\n  698 | *>\n  699 |      move     1 to File-Key-No.\n  700 >      move     sih-customer  to  WS-Sales-Key.\n  701 |      perform  Sales-Read-Indexed.           *> read     sales-file  recor..\n  702 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:700: error: 'WS-Sales-Key' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:703: error: 'delivery-tag' is not defined\n  701 |      perform  Sales-Read-Indexed.           *> read     sales-file  recor..\n  702 | *>\n  703 >      if       delivery-tag  >  zero\n  704 |               move  \"D\"          to WS-Deliv-Key-Type\n  705 |               move  WS-Sales-Key to WS-Deliv-Sales-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:704: error: 'WS-Deliv-Key-Type' is not defined\n  702 | *>\n  703 |      if       delivery-tag  >  zero\n  704 >               move  \"D\"          to WS-Deliv-Key-Type\n  705 |               move  WS-Sales-Key to WS-Deliv-Sales-Key\n  706 |               perform  Delivery-Read-Indexed.        *> read delivery-fil..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:705: error: 'WS-Deliv-Sales-Key' is not defined\n  703 |      if       delivery-tag  >  zero\n  704 |               move  \"D\"          to WS-Deliv-Key-Type\n  705 >               move  WS-Sales-Key to WS-Deliv-Sales-Key\n  706 |               perform  Delivery-Read-Indexed.        *> read delivery-fil..\n  707 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:712: error: 'sales-name' is not defined\n  710 |                         l5-i-line  l5-d-line l6-i-line  l6-d-line.\n  711 | *>\n  712 >      move     sales-name  to  l1-i-name.\n  713 | *>\n  714 |      move     1  to  a.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:715: error: 'sales-address' is not defined\n  713 | *>\n  714 |      move     1  to  a.\n  715 >      unstring sales-address delimited by sl-delim into  l2-i-line count a..\n  716 |      unstring sales-address delimited by sl-delim into  l3-i-line count a..\n  717 |      unstring sales-address delimited by sl-delim into  l4-i-line count a..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:715: error: 'sl-delim' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:724: error: 'deliv-name' is not defined\n  722 |               go to  heading-details.\n  723 | *>\n  724 >      move     deliv-name  to  l1-d-name.\n  725 | *>\n  726 |      move     1  to  a.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:727: error: 'deliv-address' is not defined\n  725 | *>\n  726 |      move     1  to  a.\n  727 >      unstring deliv-address  delimited by sl-delim into  l2-d-line  count..\n  728 |      unstring deliv-address  delimited by sl-delim into  l3-d-line  count..\n  729 |      unstring deliv-address  delimited by sl-delim into  l4-d-line  count..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'heading-details':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:738: error: 'sih-date' is not defined\n  736 |      move     sih-invoice  to  l3-invoice.\n  737 | *>\n  738 >      move     sih-date  to  u-bin.\n  739 |      perform  zz060-Convert-Date.\n  740 |      move     ws-date  to  l3-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:738: error: 'u-bin' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:743: error: 'sih-ref' is not defined\n  741 | *>\n  742 |      move     sih-customer  to l6-account.\n  743 >      move     sih-ref       to l4-ref.\n  744 |      move     sih-order     to l6-order.\n  745 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:744: error: 'sih-order' is not defined\n  742 |      move     sih-customer  to l6-account.\n  743 |      move     sih-ref       to l4-ref.\n  744 >      move     sih-order     to l6-order.\n  745 | *>\n  746 |      perform  headings-1.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:757: error: 'sil-product' is not defined\n  755 | *>****\n  756 | *>\n  757 >      move     sil-product (k) to test-product.\n  758 |      if       il-comment\n  759 |               move spaces to line-8.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:761: error: 'i-level-2' is not defined\n  759 |               move spaces to line-8.\n  760 | *>\n  761 >      if       i-level-2\n  762 |               move  sil-description (k) to l8-desc.\t*> updated by stock d..\n  763 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:762: error: 'sil-description' is not defined\n  760 | *>\n  761 |      if       i-level-2\n  762 >               move  sil-description (k) to l8-desc.\t*> updated by stock d..\n  763 | *>\n  764 |      if       il-comment\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:768: error: 'sil-qty' is not defined\n  766 | *>\n  767 |      if       i-level-2\t\t\t                                    *> Do basic..\n  768 >               move  sil-qty (k)         to l8-qty\n  769 |               add   sil-qty (k)         to ws-Item-Count\t\t    *> track no..\n  770 |               move  sil-product (k)     to l8-product\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:771: error: 'WS-Stock-Key' is not defined\n  769 |               add   sil-qty (k)         to ws-Item-Count\t\t    *> track no..\n  770 |               move  sil-product (k)     to l8-product\n  771 >                                            WS-Stock-Key\n  772 |               if    SL-Stock-Link = \"Y\"\n  773 | *>                    read  Stock-File record key WS-Stock-Key invalid ke..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:772: error: 'SL-Stock-Link' is not defined\n  770 |               move  sil-product (k)     to l8-product\n  771 |                                            WS-Stock-Key\n  772 >               if    SL-Stock-Link = \"Y\"\n  773 | *>                    read  Stock-File record key WS-Stock-Key invalid ke..\n  774 |                     move 1 to File-Key-No\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:777: error: 'WS-Stock-Abrev-Key' is not defined\n  775 |                     perform Stock-Read-Indexed\n  776 |                     if      FS-Reply = 21\n  777 >                             move sil-product (k) to WS-Stock-Abrev-Key\n  778 |                             move 2 to File-Key-No\n  779 |                             perform Stock-Read-Indexed   *> read Stock-Fi..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:787: error: 'WS-Stock-Location' is not defined\n  785 |                          move WS-Stock-Key       to l8-Product\n  786 |                          move WS-Stock-Abrev-Key to l8-Abrev\n  787 >                          move WS-Stock-Location  to l8-Loc\n  788 |                          move WS-Stock-Desc      to l8-Desc\n  789 |                     end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:788: error: 'WS-Stock-Desc' is not defined\n  786 |                          move WS-Stock-Abrev-Key to l8-Abrev\n  787 |                          move WS-Stock-Location  to l8-Loc\n  788 >                          move WS-Stock-Desc      to l8-Desc\n  789 |                     end-if\n  790 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in section 'headings-1':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:854: error: 'SL-Comp-Pick' is not defined\n  852 |      move     ws-Time (3:2) to l3-MM.\n  853 | *>\n  854 >      if       SL-Comp-Pick\t\t\t\t*> print Co. address details\n  855 |       if      first-time = \"Y\"           \t\t*> Dont print a blank page\n  856 |               write Print-Record from line-Company-Details1 after 1\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:868: error: 'VAT-Reg-Number' is not defined\n  866 |               write Print-Record from line-Company-Details6 after 1\n  867 |               write Print-Record from line-Company-Details7 after 1\n  868 >               if    VAT-Reg-Number (1:4) not = spaces\n  869 |                     write Print-Record from line-Company-Details8 after 1\n  870 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in section 'zz060-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:908: error: 'u-date' is not defined\n  906 | *>\n  907 |      perform  maps04.\n  908 >      if       u-date = spaces\n  909 |               move spaces to ws-Date\n  910 |               go to zz060-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:913: error: 'Date-Form' is not defined\n  911 |      move     u-date to ws-date.\n  912 | *>\n  913 >      if       Date-Form = zero\n  914 |               move 1 to Date-Form.\n  915 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:915: error: 'Date-UK' is not defined\n  913 |      if       Date-Form = zero\n  914 |               move 1 to Date-Form.\n  915 >      if       Date-UK\n  916 |               go to zz060-Exit.\n  917 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:917: error: 'Date-USA' is not defined\n  915 |      if       Date-UK\n  916 |               go to zz060-Exit.\n  917 >      if       Date-USA                *> swap month and days\n  918 |               move ws-days to ws-swap\n  919 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in section 'zz090-Setup-Company-Details':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1020: error: 'Usera' is not defined\n 1018 | *>  Use C$JUSTIFY instead of all this coding.\n 1019 | *>\n 1020 >      move     Usera     to Line-Company-Details1.\n 1021 |      move     Address-1 to line-Company-Details2.\n 1022 |      move     Address-2 to line-Company-Details3.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1021: error: 'Address-1' is not defined\n 1019 | *>\n 1020 |      move     Usera     to Line-Company-Details1.\n 1021 >      move     Address-1 to line-Company-Details2.\n 1022 |      move     Address-2 to line-Company-Details3.\n 1023 |      move     Address-3 to line-Company-Details4.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1022: error: 'Address-2' is not defined\n 1020 |      move     Usera     to Line-Company-Details1.\n 1021 |      move     Address-1 to line-Company-Details2.\n 1022 >      move     Address-2 to line-Company-Details3.\n 1023 |      move     Address-3 to line-Company-Details4.\n 1024 |      move     Address-4 to line-Company-Details5.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1023: error: 'Address-3' is not defined\n 1021 |      move     Address-1 to line-Company-Details2.\n 1022 |      move     Address-2 to line-Company-Details3.\n 1023 >      move     Address-3 to line-Company-Details4.\n 1024 |      move     Address-4 to line-Company-Details5.\n 1025 |      move     Post-Code to line-Company-Details6.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1024: error: 'Address-4' is not defined\n 1022 |      move     Address-2 to line-Company-Details3.\n 1023 |      move     Address-3 to line-Company-Details4.\n 1024 >      move     Address-4 to line-Company-Details5.\n 1025 |      move     Post-Code to line-Company-Details6.\n 1026 |      move     Country   to line-Company-Details7.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1025: error: 'Post-Code' is not defined\n 1023 |      move     Address-3 to line-Company-Details4.\n 1024 |      move     Address-4 to line-Company-Details5.\n 1025 >      move     Post-Code to line-Company-Details6.\n 1026 |      move     Country   to line-Company-Details7.\n 1027 | *> Backflow - simple !\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1026: error: 'Country' is not defined\n 1024 |      move     Address-4 to line-Company-Details5.\n 1025 |      move     Post-Code to line-Company-Details6.\n 1026 >      move     Country   to line-Company-Details7.\n 1027 | *> Backflow - simple !\n 1028 |      if       Line-Company-Details4 (1:20) = spaces\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in section 'maps04':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1068: error: 'maps03-ws' is not defined\n 1066 | *>*******************\n 1067 | *>\n 1068 >      call     \"maps04\"  using  maps03-ws.\n 1069 | *>\n 1070 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'menu-return':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:502: error: 'Invoice-Open' is not defined\n  500 |      display  ws-date at 0171 with foreground-color 2.\n  501 | *>\n  502 >      perform  Invoice-Open.          *> open     i-o    invoice-file.\n  503 |      perform  Stock-Open-Input.      *> open     input Stock-File.\n  504 |      perform  Sales-Open-Input.      *> open     input  sales-file delive..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:503: error: 'Stock-Open-Input' is not defined\n  501 | *>\n  502 |      perform  Invoice-Open.          *> open     i-o    invoice-file.\n  503 >      perform  Stock-Open-Input.      *> open     input Stock-File.\n  504 |      perform  Sales-Open-Input.      *> open     input  sales-file delive..\n  505 |      perform  Delivery-Open-Input.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:504: error: 'Sales-Open-Input' is not defined\n  502 |      perform  Invoice-Open.          *> open     i-o    invoice-file.\n  503 |      perform  Stock-Open-Input.      *> open     input Stock-File.\n  504 >      perform  Sales-Open-Input.      *> open     input  sales-file delive..\n  505 |      perform  Delivery-Open-Input.\n  506 |      open     output print-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:505: error: 'Delivery-Open-Input' is not defined\n  503 |      perform  Stock-Open-Input.      *> open     input Stock-File.\n  504 |      perform  Sales-Open-Input.      *> open     input  sales-file delive..\n  505 >      perform  Delivery-Open-Input.\n  506 |      open     output print-file.\n  507 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:514: error: 'Invoice-Read-Indexed' is not defined\n  512 |      move     zero  to  item-nos.\n  513 | *>\n  514 >      perform  Invoice-Read-Indexed.   *> read invoice-file  record invali..\n  515 |      if       fs-reply not = zero     *> chk if last inv. created is pres..\n  516 |               go to  main-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'All-Print-go':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:573: error: 'Invoice-Start' is not defined\n  571 |      move     1 to File-Key-No.\n  572 |      set      fn-Not-Less-Than to true.\n  573 >      perform  Invoice-Start.   *> start invoice-file key not < invoice-ke..\n  574 | *>\n  575 |  All-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'All-Print':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:578: error: 'Invoice-Read-Next-Header' is not defined\n  576 | *>********\n  577 | *>\n  578 >      perform  Invoice-Read-Next-Header.    *> read invoice-file next reco..\n  579 |      if       fs-reply = 10\n  580 |               go to  main-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:646: error: 'Invoice-Close' is not defined\n  644 | *>*******\n  645 | *>\n  646 >      perform  Invoice-Close.    *> close invoice-file\n  647 |      perform  Stock-Close.      *>     sales-file delivery-file Stock-Fil..\n  648 |      perform  Sales-Close.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:647: error: 'Stock-Close' is not defined\n  645 | *>\n  646 |      perform  Invoice-Close.    *> close invoice-file\n  647 >      perform  Stock-Close.      *>     sales-file delivery-file Stock-Fil..\n  648 |      perform  Sales-Close.\n  649 |      perform  Delivery-Close.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:648: error: 'Sales-Close' is not defined\n  646 |      perform  Invoice-Close.    *> close invoice-file\n  647 |      perform  Stock-Close.      *>     sales-file delivery-file Stock-Fil..\n  648 >      perform  Sales-Close.\n  649 |      perform  Delivery-Close.\n  650 |      close    print-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:649: error: 'Delivery-Close' is not defined\n  647 |      perform  Stock-Close.      *>     sales-file delivery-file Stock-Fil..\n  648 |      perform  Sales-Close.\n  649 >      perform  Delivery-Close.\n  650 |      close    print-file.\n  651 |      call     \"SYSTEM\" using print-report.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in section 'print-routine':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:663: error: 'Invoice-Read-Next' is not defined\n  661 |      move     1  to  i.\n  662 |      perform  sih-lines times\n  663 >               perform  Invoice-Read-Next     *> read invoice-file next re..\n  664 |               if       fs-reply = 10\n  665 |                        exit perform\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'get-customer':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:701: error: 'Sales-Read-Indexed' is not defined\n  699 |      move     1 to File-Key-No.\n  700 |      move     sih-customer  to  WS-Sales-Key.\n  701 >      perform  Sales-Read-Indexed.           *> read     sales-file  recor..\n  702 | *>\n  703 |      if       delivery-tag  >  zero\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:706: error: 'Delivery-Read-Indexed' is not defined\n  704 |               move  \"D\"          to WS-Deliv-Key-Type\n  705 |               move  WS-Sales-Key to WS-Deliv-Sales-Key\n  706 >               perform  Delivery-Read-Indexed.        *> read delivery-fil..\n  707 | *>\n  708 |      move     spaces to l1-i-name l1-d-name l2-i-line  l2-d-line\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:775: error: 'Stock-Read-Indexed' is not defined\n  773 | *>                    read  Stock-File record key WS-Stock-Key invalid ke..\n  774 |                     move 1 to File-Key-No\n  775 >                     perform Stock-Read-Indexed\n  776 |                     if      FS-Reply = 21\n  777 |                             move sil-product (k) to WS-Stock-Abrev-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl: in paragraph 'total-print-2':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:839: error: 'Invoice-Rewrite' is not defined\n  837 |               move \"P\" to sih-status-P\t\t\t\t*> we have printed pick list\n  838 |               move sinvoice-header to WS-Invoice-Record\n  839 >               perform Invoice-Rewrite.        *>  rewrite invoice-record.\n  840 | *>\n  841 |  main-exit.   exit section.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:187: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:198: error: selprint-2.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:229: error: print-spool-command-invoice.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:239: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:240: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:242: error: slwsinv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:243: error: slwsinv2.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:246: error: wssl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:247: error: wsdel.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:248: error: wsstock.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:330: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:471: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:472: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:473: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1073: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:211: error: 'print-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:211: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:244: error: 'Invoice-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:477: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:478: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:480: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:484: error: 'full-invoicing' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:490: error: 'Print-Spool-Name3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:490: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:491: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:506: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:508: error: 'pass-value' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:511: error: 'next-invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:511: error: 'invoice-nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:512: error: 'item-nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:515: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:518: error: 'sinvoice-header' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:520: error: 'pending IN sih-status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:525: error: 'sih-invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:557: error: 'first-sl-inv' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:572: error: 'fn-Not-Less-Than' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:587: error: 'sih-lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:588: error: 'sapplied' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:591: error: 'sih-status-P' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:600: error: 'sih-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:650: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:651: error: 'print-report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:670: error: 'Invoice-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:671: error: 'sil-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:683: error: 'SL-Invoice-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:700: error: 'sih-customer' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:700: error: 'WS-Sales-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:703: error: 'delivery-tag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:704: error: 'WS-Deliv-Key-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:705: error: 'WS-Deliv-Sales-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:712: error: 'sales-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:715: error: 'sales-address' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:715: error: 'sl-delim' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:724: error: 'deliv-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:727: error: 'deliv-address' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:738: error: 'sih-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:738: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:743: error: 'sih-ref' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:744: error: 'sih-order' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:757: error: 'sil-product' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:761: error: 'i-level-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:762: error: 'sil-description' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:768: error: 'sil-qty' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:771: error: 'WS-Stock-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:772: error: 'SL-Stock-Link' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:777: error: 'WS-Stock-Abrev-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:787: error: 'WS-Stock-Location' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:788: error: 'WS-Stock-Desc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:854: error: 'SL-Comp-Pick' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:868: error: 'VAT-Reg-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:908: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:913: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:915: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:917: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1020: error: 'Usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1021: error: 'Address-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1022: error: 'Address-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1023: error: 'Address-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1024: error: 'Address-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1025: error: 'Post-Code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1026: error: 'Country' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1068: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:502: error: 'Invoice-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:503: error: 'Stock-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:504: error: 'Sales-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:505: error: 'Delivery-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:514: error: 'Invoice-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:573: error: 'Invoice-Start' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:578: error: 'Invoice-Read-Next-Header' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:646: error: 'Invoice-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:647: error: 'Stock-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:648: error: 'Sales-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:649: error: 'Delivery-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:663: error: 'Invoice-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:701: error: 'Sales-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:706: error: 'Delivery-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:775: error: 'Stock-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:839: error: 'Invoice-Rewrite' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:187: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:198: error: selprint-2.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:229: error: print-spool-command-invoice.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:239: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:240: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:242: error: slwsinv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:243: error: slwsinv2.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:246: error: wssl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:247: error: wsdel.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:248: error: wsstock.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:330: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:471: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:472: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:473: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1073: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:211: error: 'print-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:211: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:244: error: 'Invoice-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:477: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:478: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:480: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:484: error: 'full-invoicing' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:490: error: 'Print-Spool-Name3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:490: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:491: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:506: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:508: error: 'pass-value' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:511: error: 'next-invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:511: error: 'invoice-nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:512: error: 'item-nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:515: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:518: error: 'sinvoice-header' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:520: error: 'pending IN sih-status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:525: error: 'sih-invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:557: error: 'first-sl-inv' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:572: error: 'fn-Not-Less-Than' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:587: error: 'sih-lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:588: error: 'sapplied' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:591: error: 'sih-status-P' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:600: error: 'sih-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:650: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:651: error: 'print-report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:670: error: 'Invoice-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:671: error: 'sil-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:683: error: 'SL-Invoice-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:700: error: 'sih-customer' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:700: error: 'WS-Sales-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:703: error: 'delivery-tag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:704: error: 'WS-Deliv-Key-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:705: error: 'WS-Deliv-Sales-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:712: error: 'sales-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:715: error: 'sales-address' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:715: error: 'sl-delim' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:724: error: 'deliv-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:727: error: 'deliv-address' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:738: error: 'sih-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:738: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:743: error: 'sih-ref' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:744: error: 'sih-order' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:757: error: 'sil-product' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:761: error: 'i-level-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:762: error: 'sil-description' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:768: error: 'sil-qty' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:771: error: 'WS-Stock-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:772: error: 'SL-Stock-Link' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:777: error: 'WS-Stock-Abrev-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:787: error: 'WS-Stock-Location' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:788: error: 'WS-Stock-Desc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:854: error: 'SL-Comp-Pick' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:868: error: 'VAT-Reg-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:908: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:913: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:915: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:917: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1020: error: 'Usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1021: error: 'Address-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1022: error: 'Address-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1023: error: 'Address-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1024: error: 'Address-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1025: error: 'Post-Code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1026: error: 'Country' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:1068: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:502: error: 'Invoice-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:503: error: 'Stock-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:504: error: 'Sales-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:505: error: 'Delivery-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:514: error: 'Invoice-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:573: error: 'Invoice-Start' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:578: error: 'Invoice-Read-Next-Header' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:646: error: 'Invoice-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:647: error: 'Stock-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:648: error: 'Sales-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:649: error: 'Delivery-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:663: error: 'Invoice-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:701: error: 'Sales-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:706: error: 'Delivery-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:775: error: 'Stock-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl950.cbl:839: error: 'Invoice-Rewrite' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 98,
+    "cognitive": 200,
+    "halstead": {
+      "uniqueOperators": 14,
+      "uniqueOperands": 137,
+      "totalOperators": 353,
+      "totalOperands": 326,
+      "vocabulary": 151,
+      "length": 679,
+      "volume": 4915,
+      "difficulty": 16.66,
+      "effort": 81867,
+      "timeToProgram": 4548,
+      "deliveredBugs": 1.638
+    },
+    "maintainability": 61
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 651
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1041
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1042
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1043
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1044
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1045
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1047
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1049
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1060
+      },
+      {
+        "target": "maps04",
+        "line": 1068
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 178
+      },
+      {
+        "name": "envdiv",
+        "line": 187
+      },
+      {
+        "name": "selinv",
+        "line": 194
+      },
+      {
+        "name": "selstock",
+        "line": 195
+      },
+      {
+        "name": "selsl",
+        "line": 196
+      },
+      {
+        "name": "seldel",
+        "line": 197
+      },
+      {
+        "name": "selprint-2",
+        "line": 198
+      },
+      {
+        "name": "fdinv",
+        "line": 206
+      },
+      {
+        "name": "fdstock",
+        "line": 207
+      },
+      {
+        "name": "fdsl",
+        "line": 208
+      },
+      {
+        "name": "fddel",
+        "line": 209
+      },
+      {
+        "name": "print-spool-command-invoice",
+        "line": 228
+      },
+      {
+        "name": "print-spool-command-p-dispatch",
+        "line": 233
+      },
+      {
+        "name": "print-spool-command-p-dispatch-2",
+        "line": 234
+      },
+      {
+        "name": "print-spool-command-p-dispatch-3",
+        "line": 236
+      },
+      {
+        "name": "wsmaps03",
+        "line": 239
+      },
+      {
+        "name": "wsfnctn",
+        "line": 240
+      },
+      {
+        "name": "wsinv",
+        "line": 241
+      },
+      {
+        "name": "slwsinv",
+        "line": 242
+      },
+      {
+        "name": "slwsinv2",
+        "line": 243
+      },
+      {
+        "name": "wssl",
+        "line": 246
+      },
+      {
+        "name": "wsdel",
+        "line": 247
+      },
+      {
+        "name": "wsstock",
+        "line": 248
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 330
+      },
+      {
+        "name": "wscall",
+        "line": 471
+      },
+      {
+        "name": "wssystem",
+        "line": 472
+      },
+      {
+        "name": "wsnames",
+        "line": 473
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 1073
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 492
+      },
+      {
+        "target": "zz090-Setup-Company-Details",
+        "line": 493
+      },
+      {
+        "target": "Invoice-Open",
+        "line": 502
+      },
+      {
+        "target": "Stock-Open-Input",
+        "line": 503
+      },
+      {
+        "target": "Sales-Open-Input",
+        "line": 504
+      },
+      {
+        "target": "Delivery-Open-Input",
+        "line": 505
+      },
+      {
+        "target": "Invoice-Read-Indexed",
+        "line": 514
+      },
+      {
+        "target": "print-routine",
+        "line": 521
+      },
+      {
+        "target": "print-routine",
+        "line": 533
+      },
+      {
+        "target": "Invoice-Start",
+        "line": 573
+      },
+      {
+        "target": "Invoice-Read-Next-Header",
+        "line": 578
+      },
+      {
+        "target": "print-routine",
+        "line": 594
+      },
+      {
+        "target": "print-routine",
+        "line": 617
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 646
+      },
+      {
+        "target": "Stock-Close",
+        "line": 647
+      },
+      {
+        "target": "Sales-Close",
+        "line": 648
+      },
+      {
+        "target": "Delivery-Close",
+        "line": 649
+      },
+      {
+        "target": "sih-lines",
+        "line": 662
+      },
+      {
+        "target": "Invoice-Read-Next",
+        "line": 663
+      },
+      {
+        "target": "end-if",
+        "line": 665
+      },
+      {
+        "target": "end-if",
+        "line": 668
+      },
+      {
+        "target": "end-if",
+        "line": 672
+      },
+      {
+        "target": "Sales-Read-Indexed",
+        "line": 701
+      },
+      {
+        "target": "Delivery-Read-Indexed",
+        "line": 706
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 739
+      },
+      {
+        "target": "headings-1",
+        "line": 746
+      },
+      {
+        "target": "Stock-Read-Indexed",
+        "line": 775
+      },
+      {
+        "target": "Stock-Read-Indexed",
+        "line": 779
+      },
+      {
+        "target": "headings-1",
+        "line": 812
+      },
+      {
+        "target": "Invoice-Rewrite",
+        "line": 839
+      },
+      {
+        "target": "maps04",
+        "line": 907
+      },
+      {
+        "target": "varying",
+        "line": 972
+      },
+      {
+        "target": "varying",
+        "line": 975
+      },
+      {
+        "target": "varying",
+        "line": 978
+      },
+      {
+        "target": "varying",
+        "line": 981
+      },
+      {
+        "target": "varying",
+        "line": 984
+      },
+      {
+        "target": "varying",
+        "line": 987
+      },
+      {
+        "target": "varying",
+        "line": 990
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "print-file",
+        "line": 211
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 215
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

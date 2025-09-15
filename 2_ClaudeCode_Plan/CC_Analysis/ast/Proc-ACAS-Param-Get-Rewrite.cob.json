@@ -1,0 +1,223 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob",
+  "fileName": "Proc-ACAS-Param-Get-Rewrite.cob",
+  "fileHash": "3ddaa541f3bc1f1d34da4660781492e90b6550ed9face750adc996c6c2b9c7e5",
+  "timestamp": "2025-09-15T19:46:10.677Z",
+  "parseTime": 33,
+  "lines": {
+    "total": 65,
+    "code": 48,
+    "comment": 16,
+    "blank": 1
+  },
+  "programId": null,
+  "divisions": {
+    "identification": false,
+    "environment": false,
+    "data": false,
+    "procedure": false
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:2: warning: continuation of COBOL words used [-Wdialect]\n    1 | *>\n    2 >  zz900-Read-System-Param  section.\n    3 | *>\n    4 | *> First get system param cobol file\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:4: error: invalid indicator 's' at column 7\n    2 |  zz900-Read-System-Param  section.\n    3 | *>\n    4 > *> First get system param cobol file\n    5 | *>\n    6 |  zz900-Open.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:6: warning: continuation of COBOL words used [-Wdialect]\n    4 | *> First get system param cobol file\n    5 | *>\n    6 >  zz900-Open.\n    7 |      move     zeros to File-System-Used\n    8 |                        File-Duplicates-In-Use.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:7: error: invalid indicator 'o' at column 7\n    5 | *>\n    6 |  zz900-Open.\n    7 >      move     zeros to File-System-Used\n    8 |                        File-Duplicates-In-Use.\n    9 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:9: error: invalid indicator 'o' at column 7\n    7 |      move     zeros to File-System-Used\n    8 |                        File-Duplicates-In-Use.\n    9 >      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n   10 |      move     1 to File-Key-No.\n   11 |      perform  System-Open-Input.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:10: error: invalid indicator 'o' at column 7\n    8 |                        File-Duplicates-In-Use.\n    9 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n   10 >      move     1 to File-Key-No.\n   11 |      perform  System-Open-Input.\n   12 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:11: error: invalid indicator 'e' at column 7\n    9 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n   10 |      move     1 to File-Key-No.\n   11 >      perform  System-Open-Input.\n   12 |      if       fs-reply not = zero\n   13 |               move     \"sys002\" to ws-called    *> create param file by r..\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:12: error: invalid indicator 'f' at column 7\n   10 |      move     1 to File-Key-No.\n   11 |      perform  System-Open-Input.\n   12 >      if       fs-reply not = zero\n   13 |               move     \"sys002\" to ws-called    *> create param file by r..\n   14 |               call     ws-called using ws-calling-data file-defs\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:16: error: invalid indicator 'n' at column 7\n   14 |               call     ws-called using ws-calling-data file-defs\n   15 |               perform  System-Open\n   16 >      end-if.\n   17 | *>\n   18 |  zz900-Get-System-Recs.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:18: warning: continuation of COBOL words used [-Wdialect]\n   16 |      end-if.\n   17 | *>\n   18 >  zz900-Get-System-Recs.\n   19 |      move     zeros to File-System-Used         *> again in case RDB setu..\n   20 |                        File-Duplicates-In-Use.  *> if sys002 just been ru..\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:19: error: invalid indicator 'o' at column 7\n   17 | *>\n   18 |  zz900-Get-System-Recs.\n   19 >      move     zeros to File-System-Used         *> again in case RDB setu..\n   20 |                        File-Duplicates-In-Use.  *> if sys002 just been ru..\n   21 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:21: error: invalid indicator 'o' at column 7\n   19 |      move     zeros to File-System-Used         *> again in case RDB setu..\n   20 |                        File-Duplicates-In-Use.  *> if sys002 just been ru..\n   21 >      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n   22 |      move     1 to File-Key-No.\n   23 |      perform  System-Read-Indexed.              *> Read Cobol file params\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:22: error: invalid indicator 'o' at column 7\n   20 |                        File-Duplicates-In-Use.  *> if sys002 just been ru..\n   21 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n   22 >      move     1 to File-Key-No.\n   23 |      perform  System-Read-Indexed.              *> Read Cobol file params\n   24 |      if       fs-reply not = zero               *> should NOT happen as d..\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:23: error: invalid indicator 'e' at column 7\n   21 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n   22 |      move     1 to File-Key-No.\n   23 >      perform  System-Read-Indexed.              *> Read Cobol file params\n   24 |      if       fs-reply not = zero               *> should NOT happen as d..\n   25 |               perform System-Close              *> open-system\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:24: error: invalid indicator 'f' at column 7\n   22 |      move     1 to File-Key-No.\n   23 |      perform  System-Read-Indexed.              *> Read Cobol file params\n   24 >      if       fs-reply not = zero               *> should NOT happen as d..\n   25 |               perform System-Close              *> open-system\n   26 |               move    \"sys002\" to ws-called     *> create param file by r..\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:30: error: invalid indicator 'n' at column 7\n   28 |               perform  System-Open\n   29 |               go to zz900-Get-System-Recs\n   30 >      end-if.\n   31 | *>\n   32 |      perform  System-Close.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:32: error: invalid indicator 'e' at column 7\n   30 |      end-if.\n   31 | *>\n   32 >      perform  System-Close.\n   33 | *>\n   34 |  zz900-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:34: warning: continuation of COBOL words used [-Wdialect]\n   32 |      perform  System-Close.\n   33 | *>\n   34 >  zz900-Exit.\n   35 |      exit     section.\n   36 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:35: error: invalid indicator 'x' at column 7\n   33 | *>\n   34 |  zz900-Exit.\n   35 >      exit     section.\n   36 | *>\n   37 |  zz910-Rewrite-System-Param  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:37: warning: continuation of COBOL words used [-Wdialect]\n   35 |      exit     section.\n   36 | *>\n   37 >  zz910-Rewrite-System-Param  section.\n   38 | *>\n   39 | *> Save to RDB or file.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:39: error: invalid indicator 'e' at column 7\n   37 |  zz910-Rewrite-System-Param  section.\n   38 | *>\n   39 > *> Save to RDB or file.\n   40 | *>\n   41 |  zz910-Open.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:41: warning: continuation of COBOL words used [-Wdialect]\n   39 | *> Save to RDB or file.\n   40 | *>\n   41 >  zz910-Open.\n   42 | *> Force RDB processing\n   43 |      if       File-System-Used NOT = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:42: error: invalid indicator 'c' at column 7\n   40 | *>\n   41 |  zz910-Open.\n   42 > *> Force RDB processing\n   43 |      if       File-System-Used NOT = zero\n   44 |               move     \"66\" to FA-RDBMS-Flat-Statuses\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:43: error: invalid indicator 'f' at column 7\n   41 |  zz910-Open.\n   42 | *> Force RDB processing\n   43 >      if       File-System-Used NOT = zero\n   44 |               move     \"66\" to FA-RDBMS-Flat-Statuses\n   45 |               move     1 to File-Key-No\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:50: error: invalid indicator 'n' at column 7\n   48 |               perform  System-Rewrite\n   49 |               perform  System-Close\n   50 >      end-if.\n   51 | *>\n   52 | *> Now do the same for the Cobol file.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:54: error: invalid indicator 'o' at column 7\n   52 | *> Now do the same for the Cobol file.\n   53 | *>\n   54 >      move     zeros to File-System-Used\n   55 |                        File-Duplicates-In-Use.\n   56 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:56: error: invalid indicator 'o' at column 7\n   54 |      move     zeros to File-System-Used\n   55 |                        File-Duplicates-In-Use.\n   56 >      move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n   57 |      move     1 to File-Key-No.\n   58 |      perform  System-Open.                       *> Open cobol file param..\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:57: error: invalid indicator 'o' at column 7\n   55 |                        File-Duplicates-In-Use.\n   56 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n   57 >      move     1 to File-Key-No.\n   58 |      perform  System-Open.                       *> Open cobol file param..\n   59 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:58: error: invalid indicator 'e' at column 7\n   56 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n   57 |      move     1 to File-Key-No.\n   58 >      perform  System-Open.                       *> Open cobol file param..\n   59 |      move     1 to File-Key-No.\n   60 |      perform  System-Rewrite.                    *> Update Cobol file par..\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:59: error: invalid indicator 'o' at column 7\n   57 |      move     1 to File-Key-No.\n   58 |      perform  System-Open.                       *> Open cobol file param..\n   59 >      move     1 to File-Key-No.\n   60 |      perform  System-Rewrite.                    *> Update Cobol file par..\n   61 |      perform  System-Close.                      *> Close the Cobol param..\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:60: error: invalid indicator 'e' at column 7\n   58 |      perform  System-Open.                       *> Open cobol file param..\n   59 |      move     1 to File-Key-No.\n   60 >      perform  System-Rewrite.                    *> Update Cobol file par..\n   61 |      perform  System-Close.                      *> Close the Cobol param..\n   62 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:61: error: invalid indicator 'e' at column 7\n   59 |      move     1 to File-Key-No.\n   60 |      perform  System-Rewrite.                    *> Update Cobol file par..\n   61 >      perform  System-Close.                      *> Close the Cobol param..\n   62 | *>\n   63 |  zz910-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:63: warning: continuation of COBOL words used [-Wdialect]\n   61 |      perform  System-Close.                      *> Close the Cobol param..\n   62 | *>\n   63 >  zz910-Exit.\n   64 |      exit     section.\n   65 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:64: error: invalid indicator 'x' at column 7\n   62 | *>\n   63 |  zz910-Exit.\n   64 >      exit     section.\n   65 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: PROGRAM-ID header missing\n    1 > *>\n    2 |  zz900-Read-System-Param  section.\n    3 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: ENVIRONMENT DIVISION header missing\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: CONFIGURATION SECTION header missing\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: SPECIAL-NAMES header missing\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: invalid system-name 'Read-System-Param'\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: syntax error, unexpected SECTION, expecting CRT or Identifier\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: PROCEDURE DIVISION header missing\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: syntax error, unexpected ., expecting EXTEND or INPUT or I-O or OUTPUT\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob: in paragraph 'File-Duplicates-In-Use':\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:13: error: 'ws-called' is not defined\n   11 |      perform  System-Open-Input.\n   12 |      if       fs-reply not = zero\n   13 >               move     \"sys002\" to ws-called    *> create param file by r..\n   14 |               call     ws-called using ws-calling-data file-defs\n   15 |               perform  System-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:14: error: 'ws-calling-data' is not defined\n   12 |      if       fs-reply not = zero\n   13 |               move     \"sys002\" to ws-called    *> create param file by r..\n   14 >               call     ws-called using ws-calling-data file-defs\n   15 |               perform  System-Open\n   16 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:14: error: 'file-defs' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob: in section 'Rewrite-System-Param':\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:29: error: syntax error, unexpected ., expecting EXTEND or INPUT or I-O or OUTPUT\n   27 |               call     ws-called using ws-calling-data file-defs\n   28 |               perform  System-Open\n   29 >               go to zz900-Get-System-Recs\n   30 |      end-if.\n   31 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:44: error: 'FA-RDBMS-Flat-Statuses' is not defined\n   42 | *> Force RDB processing\n   43 |      if       File-System-Used NOT = zero\n   44 >               move     \"66\" to FA-RDBMS-Flat-Statuses\n   45 |               move     1 to File-Key-No\n   46 |               perform  System-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:45: error: 'File-Key-No' is not defined\n   43 |      if       File-System-Used NOT = zero\n   44 |               move     \"66\" to FA-RDBMS-Flat-Statuses\n   45 >               move     1 to File-Key-No\n   46 |               perform  System-Open\n   47 |               move     1 to File-Key-No\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:52: error: 'do' is not defined\n   50 |      end-if.\n   51 | *>\n   52 > *> Now do the same for the Cobol file.\n   53 | *>\n   54 |      move     zeros to File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:52: error: syntax error, unexpected Identifier, expecting TIMES\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob: in paragraph 'File-Duplicates-In-Use':\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:15: error: 'System-OpenGet-System-Recs' is not defined\n   13 |               move     \"sys002\" to ws-called    *> create param file by r..\n   14 |               call     ws-called using ws-calling-data file-defs\n   15 >               perform  System-Open\n   16 |      end-if.\n   17 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob: in paragraph 'File-Duplicates-In-Use':\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:25: error: 'System-Close' is not defined\n   23 |      perform  System-Read-Indexed.              *> Read Cobol file params\n   24 |      if       fs-reply not = zero               *> should NOT happen as d..\n   25 >               perform System-Close              *> open-system\n   26 |               move    \"sys002\" to ws-called     *> create param file by r..\n   27 |               call     ws-called using ws-calling-data file-defs\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:28: error: 'System-Open' is not defined\n   26 |               move    \"sys002\" to ws-called     *> create param file by r..\n   27 |               call     ws-called using ws-calling-data file-defs\n   28 >               perform  System-Open\n   29 |               go to zz900-Get-System-Recs\n   30 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:29: error: 'zz900-Get-System-RecsExit' is not defined\n   27 |               call     ws-called using ws-calling-data file-defs\n   28 |               perform  System-Open\n   29 >               go to zz900-Get-System-Recs\n   30 |      end-if.\n   31 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob: in section 'Rewrite-System-Param':\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:48: error: 'System-Rewrite' is not defined\n   46 |               perform  System-Open\n   47 |               move     1 to File-Key-No\n   48 >               perform  System-Rewrite\n   49 |               perform  System-Close\n   50 |      end-if.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:4: error: invalid indicator 's' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:7: error: invalid indicator 'o' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:9: error: invalid indicator 'o' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:10: error: invalid indicator 'o' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:11: error: invalid indicator 'e' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:12: error: invalid indicator 'f' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:16: error: invalid indicator 'n' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:19: error: invalid indicator 'o' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:21: error: invalid indicator 'o' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:22: error: invalid indicator 'o' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:23: error: invalid indicator 'e' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:24: error: invalid indicator 'f' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:30: error: invalid indicator 'n' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:32: error: invalid indicator 'e' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:35: error: invalid indicator 'x' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:39: error: invalid indicator 'e' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:42: error: invalid indicator 'c' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:43: error: invalid indicator 'f' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:50: error: invalid indicator 'n' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:54: error: invalid indicator 'o' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:56: error: invalid indicator 'o' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:57: error: invalid indicator 'o' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:58: error: invalid indicator 'e' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:59: error: invalid indicator 'o' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:60: error: invalid indicator 'e' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:61: error: invalid indicator 'e' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:64: error: invalid indicator 'x' at column 7",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: PROGRAM-ID header missing",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: ENVIRONMENT DIVISION header missing",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: CONFIGURATION SECTION header missing",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: SPECIAL-NAMES header missing",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: invalid system-name 'Read-System-Param'",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: syntax error, unexpected SECTION, expecting CRT or Identifier",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: PROCEDURE DIVISION header missing",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: syntax error, unexpected ., expecting EXTEND or INPUT or I-O or OUTPUT",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:13: error: 'ws-called' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:14: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:14: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:29: error: syntax error, unexpected ., expecting EXTEND or INPUT or I-O or OUTPUT",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:44: error: 'FA-RDBMS-Flat-Statuses' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:45: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:52: error: 'do' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:52: error: syntax error, unexpected Identifier, expecting TIMES",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:15: error: 'System-OpenGet-System-Recs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:25: error: 'System-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:28: error: 'System-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:29: error: 'zz900-Get-System-RecsExit' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:48: error: 'System-Rewrite' is not defined"
+      ],
+      "warnings": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:2: warning: continuation of COBOL words used [-Wdialect]",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:6: warning: continuation of COBOL words used [-Wdialect]",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:18: warning: continuation of COBOL words used [-Wdialect]",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:34: warning: continuation of COBOL words used [-Wdialect]",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:37: warning: continuation of COBOL words used [-Wdialect]",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:41: warning: continuation of COBOL words used [-Wdialect]",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:63: warning: continuation of COBOL words used [-Wdialect]"
+      ]
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:4: error: invalid indicator 's' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:7: error: invalid indicator 'o' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:9: error: invalid indicator 'o' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:10: error: invalid indicator 'o' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:11: error: invalid indicator 'e' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:12: error: invalid indicator 'f' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:16: error: invalid indicator 'n' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:19: error: invalid indicator 'o' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:21: error: invalid indicator 'o' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:22: error: invalid indicator 'o' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:23: error: invalid indicator 'e' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:24: error: invalid indicator 'f' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:30: error: invalid indicator 'n' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:32: error: invalid indicator 'e' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:35: error: invalid indicator 'x' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:39: error: invalid indicator 'e' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:42: error: invalid indicator 'c' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:43: error: invalid indicator 'f' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:50: error: invalid indicator 'n' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:54: error: invalid indicator 'o' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:56: error: invalid indicator 'o' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:57: error: invalid indicator 'o' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:58: error: invalid indicator 'e' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:59: error: invalid indicator 'o' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:60: error: invalid indicator 'e' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:61: error: invalid indicator 'e' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:64: error: invalid indicator 'x' at column 7",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: PROGRAM-ID header missing",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: ENVIRONMENT DIVISION header missing",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: CONFIGURATION SECTION header missing",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: SPECIAL-NAMES header missing",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: invalid system-name 'Read-System-Param'",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: syntax error, unexpected SECTION, expecting CRT or Identifier",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: PROCEDURE DIVISION header missing",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:1: error: syntax error, unexpected ., expecting EXTEND or INPUT or I-O or OUTPUT",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:13: error: 'ws-called' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:14: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:14: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:29: error: syntax error, unexpected ., expecting EXTEND or INPUT or I-O or OUTPUT",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:44: error: 'FA-RDBMS-Flat-Statuses' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:45: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:52: error: 'do' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:52: error: syntax error, unexpected Identifier, expecting TIMES",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:15: error: 'System-OpenGet-System-Recs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:25: error: 'System-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:28: error: 'System-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:29: error: 'zz900-Get-System-RecsExit' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-ACAS-Param-Get-Rewrite.cob:48: error: 'System-Rewrite' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 7,
+    "cognitive": 8,
+    "halstead": {
+      "uniqueOperators": 6,
+      "uniqueOperands": 5,
+      "totalOperators": 41,
+      "totalOperands": 11,
+      "vocabulary": 11,
+      "length": 52,
+      "volume": 180,
+      "difficulty": 6.6,
+      "effort": 1187,
+      "timeToProgram": 66,
+      "deliveredBugs": 0.06
+    },
+    "maintainability": 83
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [],
+    "performs": [
+      {
+        "target": "System-Open-Input",
+        "line": 11
+      },
+      {
+        "target": "System-Open",
+        "line": 15
+      },
+      {
+        "target": "System-Read-Indexed",
+        "line": 23
+      },
+      {
+        "target": "System-Close",
+        "line": 25
+      },
+      {
+        "target": "System-Open",
+        "line": 28
+      },
+      {
+        "target": "System-Close",
+        "line": 32
+      },
+      {
+        "target": "System-Open",
+        "line": 46
+      },
+      {
+        "target": "System-Rewrite",
+        "line": 48
+      },
+      {
+        "target": "System-Close",
+        "line": 49
+      },
+      {
+        "target": "System-Open",
+        "line": 58
+      },
+      {
+        "target": "System-Rewrite",
+        "line": 60
+      },
+      {
+        "target": "System-Close",
+        "line": 61
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.2
+}

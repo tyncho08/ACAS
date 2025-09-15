@@ -1,0 +1,281 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl",
+  "fileName": "irs090.cbl",
+  "fileHash": "2e5958ad578c70813ee8f79044b029326c159c748cfe5127950364eaa7fd880a",
+  "timestamp": "2025-09-15T19:46:20.636Z",
+  "parseTime": 60,
+  "lines": {
+    "total": 541,
+    "code": 326,
+    "comment": 214,
+    "blank": 1
+  },
+  "programId": "irs090",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:101: error: envdiv.cob: No such file or directory\n   99 | *>\n  100 |  environment division.\n  101 >  copy \"envdiv.cob\".\n  102 | *>\n  103 |  input-output section.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:154: error: irsprint-spool-command.cob: No such file or directory\n  152 |  77  prog-name           pic x(16)  value \"irs090 (3.02.14)\".\n  153 |  77  sr-reply            pic 99     value zeros.\n  154 >  copy \"irsprint-spool-command.cob\".\n  155 | *>\n  156 |  01  filler.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:221: error: wsfnctn.cob: No such file or directory\n  219 |         \"  Note that above values are subject to rounding\".\n  220 | *>\n  221 >  copy \"wsfnctn.cob\".\n  222 |  copy \"irsfdwsnl.cob\"      replacing record-1      by WS-IRSNL-Record.\n  223 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:222: error: irsfdwsnl.cob: No such file or directory\n  220 | *>\n  221 |  copy \"wsfnctn.cob\".\n  222 >  copy \"irsfdwsnl.cob\"      replacing record-1      by WS-IRSNL-Record.\n  223 | *>\n  224 |  01  Dummies-For-Unused-FH-Calls.      *> IRS call blk at zz100-ACAS-IRS-..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:231: error: Test-Data-Flags.cob: No such file or directory\n  229 |      03  WS-IRS-Posting-Record pic x.\n  230 | *>\n  231 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  232 | *>\n  233 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:250: error: irswssystem.cob: No such file or directory\n  248 | *>\n  249 |  copy \"irswssystem.cob\"   *> IRS param record\n  250 >               replacing system-record  by IRS-System-Params. *> (01 level..\n  251 | *>\n  252 |  copy \"wssystem.cob\"      *> new for v3.02\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:280: error: wssystem.cob: No such file or directory\n  278 |                         PL-App-Created by IRS-PL-App-Created\n  279 |                         PL-Approp-AC   by IRS-PL-Approp-AC\n  280 >                         1st-Time-Flag  by IRS-First-Time-Flag.\n  281 | *>\n  282 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:282: error: wsnames.cob: No such file or directory\n  280 |                         1st-Time-Flag  by IRS-First-Time-Flag.\n  281 | *>\n  282 >  copy \"wsnames.cob\".\n  283 | *>\n  284 |  procedure division using IRS-System-Params\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:539: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory\n  537 |  lzg-exit.    exit.\n  538 | *>\n  539 >  copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n  540 | *>\n  541 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:114: error: 'fs-reply' is not defined\n  112 |      select  work-file       assign \"workpost.tmp\"\n  113 |                              organization sequential\n  114 >                              status fs-reply.\n  115 | *>\n  116 |      select  work-file-2     assign \"work2.tmp\"\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:284: error: 'IRS-System-Params' is not defined\n  282 |  copy \"wsnames.cob\".\n  283 | *>\n  284 >  procedure division using IRS-System-Params\n  285 |                           WS-System-Record\n  286 |                           File-Defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:285: error: 'WS-System-Record' is not defined\n  283 | *>\n  284 |  procedure division using IRS-System-Params\n  285 >                           WS-System-Record\n  286 |                           File-Defs.\n  287 | *>*****************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:286: error: 'File-Defs' is not defined\n  284 |  procedure division using IRS-System-Params\n  285 |                           WS-System-Record\n  286 >                           File-Defs.\n  287 | *>*****************************************\n  288 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in section 'lb-init':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:313: error: 'run-date' is not defined\n  311 |      end-perform\n  312 | *>\n  313 >      move     run-date to l1-date.\n  314 |      move     client to l1-client.\n  315 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:314: error: 'client' is not defined\n  312 | *>\n  313 |      move     run-date to l1-date.\n  314 >      move     client to l1-client.\n  315 | *>\n  316 |  lbb-screen-heads.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in section 'ld-output-final':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in paragraph 'ldb':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:375: error: 'owning' is not defined\n  373 |      if       fs-reply = \"FE\"\n  374 |               go to ldz-exit.\n  375 >      move     owning to wl4-no.\n  376 |      read     work-file-2  invalid key\n  377 |               go to ldb.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in section 'le-close':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:397: error: 'Print-Spool-Name' is not defined\n  395 |      close    print-file work-file work-file-2.      *>  nominal-ledger\n  396 |      perform  acasirsub1-Close.\n  397 >      move     Print-Spool-Name to PSN.\n  398 |      call     \"SYSTEM\" using Print-Report.\n  399 |      open     output  work-file-2 work-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:397: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:398: error: 'Print-Report' is not defined\n  396 |      perform  acasirsub1-Close.\n  397 |      move     Print-Spool-Name to PSN.\n  398 >      call     \"SYSTEM\" using Print-Report.\n  399 |      open     output  work-file-2 work-file.\n  400 |      close    work-file-2 work-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in section 'lz-common-routines':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in paragraph 'lze-work':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:469: error: 'nl-name' is not defined\n  467 |  lze-work.\n  468 | *>\n  469 >      move     nl-name to l4-name.\n  470 |      if       sub-nominal = zero\n  471 |               move owning to wl4-no\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:470: error: 'sub-nominal' is not defined\n  468 | *>\n  469 |      move     nl-name to l4-name.\n  470 >      if       sub-nominal = zero\n  471 |               move owning to wl4-no\n  472 |               move \"M\" to l4-type\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in paragraph 'lzf-read':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:514: error: 'tipe' is not defined\n  512 | *>    Get pointer to Sub nominal to find main a/c\n  513 | *>\n  514 >      if       tipe = \"S\"\n  515 |               move owning to sub-nominal\n  516 |               move rec-pointer to owning\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:516: error: 'rec-pointer' is not defined\n  514 |      if       tipe = \"S\"\n  515 |               move owning to sub-nominal\n  516 >               move rec-pointer to owning\n  517 |               go to lzf-read.\n  518 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in section 'lb-init':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in paragraph 'lbc-get-year-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:331: error: 'acasirsub1-Open-Input' is not defined\n  329 | *>\n  330 |      open     input  work-file.      *>  nominal-ledger.\n  331 >      perform  acasirsub1-Open-Input.\n  332 |      open     output  print-file work-file-2.\n  333 |      perform  lzc-set-report-months thru lzc-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in section 'ld-output-final':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:367: error: 'acasirsub1-Close' is not defined\n  365 |      close    work-file-2.         *> nominal-ledger\n  366 |      open     input work-file-2.   *> nominal-ledger\n  367 >      perform  acasirsub1-Close.\n  368 |      perform  acasirsub1-Open-Input.\n  369 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in section 'lz-common-routines':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in paragraph 'lzf-read':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:501: error: 'acasirsub1-Read-Indexed' is not defined\n  499 |  lzf-read.\n  500 | *>\n  501 >      perform  acasirsub1-Read-Indexed.\n  502 |      if       fs-reply not = zero\n  503 |               display IR990 at 1401 with foreground-color 2\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl: in paragraph 'lzg-read-nl-seq':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:525: error: 'acasirsub1-Read-Next' is not defined\n  523 |  lzg-read-nl-seq.\n  524 | *>\n  525 >      perform  acasirsub1-Read-Next.\n  526 |      if       fs-reply = 10\n  527 |               move \"FE\" to fs-reply.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:101: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:154: error: irsprint-spool-command.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:221: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:222: error: irsfdwsnl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:231: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:250: error: irswssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:280: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:282: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:539: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:114: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:284: error: 'IRS-System-Params' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:285: error: 'WS-System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:286: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:313: error: 'run-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:314: error: 'client' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:375: error: 'owning' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:397: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:397: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:398: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:469: error: 'nl-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:470: error: 'sub-nominal' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:514: error: 'tipe' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:516: error: 'rec-pointer' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:331: error: 'acasirsub1-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:367: error: 'acasirsub1-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:501: error: 'acasirsub1-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:525: error: 'acasirsub1-Read-Next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:101: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:154: error: irsprint-spool-command.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:221: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:222: error: irsfdwsnl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:231: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:250: error: irswssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:280: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:282: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:539: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:114: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:284: error: 'IRS-System-Params' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:285: error: 'WS-System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:286: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:313: error: 'run-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:314: error: 'client' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:375: error: 'owning' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:397: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:397: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:398: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:469: error: 'nl-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:470: error: 'sub-nominal' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:514: error: 'tipe' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:516: error: 'rec-pointer' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:331: error: 'acasirsub1-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:367: error: 'acasirsub1-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:501: error: 'acasirsub1-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl:525: error: 'acasirsub1-Read-Next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 40,
+    "cognitive": 100,
+    "halstead": {
+      "uniqueOperators": 10,
+      "uniqueOperands": 90,
+      "totalOperators": 149,
+      "totalOperands": 176,
+      "vocabulary": 100,
+      "length": 325,
+      "volume": 2159,
+      "difficulty": 9.78,
+      "effort": 21113,
+      "timeToProgram": 1173,
+      "deliveredBugs": 0.72
+    },
+    "maintainability": 71
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 398
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 94
+      },
+      {
+        "name": "envdiv",
+        "line": 101
+      },
+      {
+        "name": "irsfdwsnl",
+        "line": 139
+      },
+      {
+        "name": "irsprint-spool-command",
+        "line": 154
+      },
+      {
+        "name": "wsfnctn",
+        "line": 221
+      },
+      {
+        "name": "irsfdwsnl",
+        "line": 222
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 231
+      },
+      {
+        "name": "irswssystem",
+        "line": 249
+      },
+      {
+        "name": "wssystem",
+        "line": 252
+      },
+      {
+        "name": "wsnames",
+        "line": 282
+      },
+      {
+        "name": "Proc-ZZ100-ACAS-IRS-Calls",
+        "line": 539
+      }
+    ],
+    "performs": [
+      {
+        "target": "lb-init",
+        "line": 292
+      },
+      {
+        "target": "lc-process",
+        "line": 293
+      },
+      {
+        "target": "ld-output-final",
+        "line": 294
+      },
+      {
+        "target": "le-close",
+        "line": 295
+      },
+      {
+        "target": "varying",
+        "line": 310
+      },
+      {
+        "target": "acasirsub1-Open-Input",
+        "line": 331
+      },
+      {
+        "target": "lzc-set-report-months",
+        "line": 333
+      },
+      {
+        "target": "lzd-headings",
+        "line": 334
+      },
+      {
+        "target": "lze-print-line",
+        "line": 345
+      },
+      {
+        "target": "lzf-get-nominal",
+        "line": 348
+      },
+      {
+        "target": "lze-print-line",
+        "line": 352
+      },
+      {
+        "target": "lzf-get-nominal",
+        "line": 353
+      },
+      {
+        "target": "acasirsub1-Close",
+        "line": 367
+      },
+      {
+        "target": "acasirsub1-Open-Input",
+        "line": 368
+      },
+      {
+        "target": "lzg-read-nl-seq",
+        "line": 372
+      },
+      {
+        "target": "lzd-headings",
+        "line": 382
+      },
+      {
+        "target": "acasirsub1-Close",
+        "line": 396
+      },
+      {
+        "target": "varying",
+        "line": 479
+      },
+      {
+        "target": "move",
+        "line": 481
+      },
+      {
+        "target": "acasirsub1-Read-Indexed",
+        "line": 501
+      },
+      {
+        "target": "acasirsub1-Close",
+        "line": 508
+      },
+      {
+        "target": "acasirsub1-Read-Next",
+        "line": 525
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "work-file",
+        "line": 131
+      },
+      {
+        "name": "work-file-2",
+        "line": 140
+      },
+      {
+        "name": "print-file",
+        "line": 147
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 151
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

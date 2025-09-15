@@ -1,0 +1,223 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl",
+  "fileName": "salesRES.cbl",
+  "fileHash": "d293ca7800bd02675c8daa82cd6ed9453128324232ce596c9c5cb6250c3a8b3b",
+  "timestamp": "2025-09-15T19:46:07.100Z",
+  "parseTime": 35,
+  "lines": {
+    "total": 235,
+    "code": 113,
+    "comment": 119,
+    "blank": 3
+  },
+  "programId": "salesRES",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:93: error: envdiv.cob: No such file or directory\n   91 | *>-------------------\n   92 | *>\n   93 >  copy \"envdiv.cob\".\n   94 |  input-output            section.\n   95 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:100: error: selsl.cob: No such file or directory\n   98 | *>-----------\n   99 | *>\n  100 >  copy \"selsl.cob\".\n  101 |      select  Sales-File-Seq  assign        \"salesled.seq\"\n  102 |                              organization  sequential\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:111: error: fdsl.cob: No such file or directory\n  109 | *>-----------\n  110 | *>\n  111 >  copy \"fdsl.cob\".\n  112 |  fd  Sales-File-Seq.\n  113 |  copy \"wssl.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:113: error: wssl.cob: No such file or directory\n  111 |  copy \"fdsl.cob\".\n  112 |  fd  Sales-File-Seq.\n  113 >  copy \"wssl.cob\".\n  114 | *>\n  115 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory\n  134 |  01  SO-Print            pic x(160)    value spaces.\n  135 | *>\n  136 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  137 | *>\n  138 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:138: error: wsfnctn.cob: No such file or directory\n  136 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  137 | *>\n  138 >  copy \"wsfnctn.cob\".\n  139 |  copy \"wsnames.cob\".\n  140 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:139: error: wsnames.cob: No such file or directory\n  137 | *>\n  138 |  copy \"wsfnctn.cob\".\n  139 >  copy \"wsnames.cob\".\n  140 |  copy \"wscall.cob\".\n  141 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:140: error: wscall.cob: No such file or directory\n  138 |  copy \"wsfnctn.cob\".\n  139 |  copy \"wsnames.cob\".\n  140 >  copy \"wscall.cob\".\n  141 | *>\n  142 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:230: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  228 |      goback.\n  229 | *>\n  230 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_SalesS now\n  231 | *>\n  232 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:115: error: RECORD description missing or invalid\n  113 |  copy \"wssl.cob\".\n  114 | *>\n  115 >  working-storage section.\n  116 | *>----------------------\n  117 |  77  prog-name           pic x(22)    value \"salesRES (3.02.00)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:101: error: missing file description for FILE Sales-File-Seq\n   99 | *>\n  100 |  copy \"selsl.cob\".\n  101 >      select  Sales-File-Seq  assign        \"salesled.seq\"\n  102 |                              organization  sequential\n  103 |                              status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:103: error: 'FS-Reply' is not defined\n  101 |      select  Sales-File-Seq  assign        \"salesled.seq\"\n  102 |                              organization  sequential\n  103 >                              status        FS-Reply.\n  104 | *>\n  105 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:154: error: 'WS-Log-System' is not defined\n  152 |  aa000-Main-Start.\n  153 |      perform  zz020-Get-Program-Args.\n  154 >      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 |      move     11     to WS-Log-File-no.  *> for FHlogger\n  156 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:155: error: 'WS-Log-File-no' is not defined\n  153 |      perform  zz020-Get-Program-Args.\n  154 |      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 >      move     11     to WS-Log-File-no.  *> for FHlogger\n  156 | *>\n  157 |      move     spaces to SO-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:172: error: 'Sales-File' is not defined\n  170 |               perform  Call-Sysout\n  171 |               goback.\n  172 >      open     output   Sales-File.\n  173 |      if       FS-Reply not = zeros\n  174 |               move     spaces to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:172: error: 'Sales-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:180: error: 'file-12' is not defined\n  178 |               perform  Call-Sysout\n  179 | \n  180 >               move     file-12 to SO-Print\n  181 |               perform  Call-Sysout\n  182 | \n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:185: error: 'Sales-File' is not a file name\n  183 |               move     \"CLOSE \" to SO-Print\n  184 |               perform  Call-Sysout\n  185 >               close    Sales-File\n  186 |               close    Sales-File-Seq\n  187 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl: in paragraph 'aa010-Read-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:205: error: 'Sales-Record' is not defined\n  203 |               end-if\n  204 |               add      1 to WS-Rec-Cnt-In\n  205 >               write    Sales-Record from WS-Sales-Record\n  206 |               if       FS-Reply not = zero\n  207 |                        move     SY006 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:205: error: 'WS-Sales-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl: in paragraph 'aa020-Finish-Off':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:216: error: 'Sales-File' is not a file name\n  214 | aa020-Finish-Off.\n  215 |      close    Sales-File-Seq\n  216 >               Sales-File.\n  217 |      move     spaces to SO-Print.\n  218 |      string\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined\n  151 | *>\n  152 |  aa000-Main-Start.\n  153 >      perform  zz020-Get-Program-Args.\n  154 |      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 |      move     11     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:93: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:100: error: selsl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:111: error: fdsl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:113: error: wssl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:138: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:139: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:140: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:230: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:115: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:101: error: missing file description for FILE Sales-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:103: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:154: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:155: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:172: error: 'Sales-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:172: error: 'Sales-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:180: error: 'file-12' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:185: error: 'Sales-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:205: error: 'Sales-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:205: error: 'WS-Sales-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:216: error: 'Sales-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:93: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:100: error: selsl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:111: error: fdsl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:113: error: wssl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:138: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:139: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:140: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:230: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:115: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:101: error: missing file description for FILE Sales-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:103: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:154: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:155: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:172: error: 'Sales-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:172: error: 'Sales-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:180: error: 'file-12' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:185: error: 'Sales-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:205: error: 'Sales-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:205: error: 'WS-Sales-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:216: error: 'Sales-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 9,
+    "cognitive": 19,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 56,
+      "totalOperators": 56,
+      "totalOperands": 107,
+      "vocabulary": 64,
+      "length": 163,
+      "volume": 978,
+      "difficulty": 7.64,
+      "effort": 7475,
+      "timeToProgram": 415,
+      "deliveredBugs": 0.326
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 233
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23
+      },
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 93
+      },
+      {
+        "name": "selsl",
+        "line": 100
+      },
+      {
+        "name": "fdsl",
+        "line": 111
+      },
+      {
+        "name": "wssl",
+        "line": 113
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 136
+      },
+      {
+        "name": "wsfnctn",
+        "line": 138
+      },
+      {
+        "name": "wsnames",
+        "line": 139
+      },
+      {
+        "name": "wscall",
+        "line": 140
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 230
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 153
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 160
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 167
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 170
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 178
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 181
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 184
+      },
+      {
+        "target": "forever",
+        "line": 192
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 201
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 208
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 224
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 226
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Sales-File-Seq",
+        "line": 112
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 115
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

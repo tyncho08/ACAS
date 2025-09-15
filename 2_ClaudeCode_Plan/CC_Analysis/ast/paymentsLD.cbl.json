@@ -1,0 +1,449 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl",
+  "fileName": "paymentsLD.cbl",
+  "fileHash": "370f733818a46c4073f910bd57a1e26efce61f7698c67bad655ccfd5b1cbc298",
+  "timestamp": "2025-09-15T19:46:05.539Z",
+  "parseTime": 58,
+  "lines": {
+    "total": 516,
+    "code": 314,
+    "comment": 201,
+    "blank": 1
+  },
+  "programId": "paymentsLD",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:125: error: envdiv.cob: No such file or directory\n  123 | *>-------------------\n  124 | *>\n  125 >  copy \"envdiv.cob\".\n  126 |  input-output            section.\n  127 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:132: error: selsys.cob: No such file or directory\n  130 | *>-----------\n  131 | *>\n  132 >  copy \"selsys.cob\".\n  133 |  data division.\n  134 | *>------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:139: error: fdsys.cob: No such file or directory\n  137 | *>-----------\n  138 | *>\n  139 >  copy \"fdsys.cob\".\n  140 |  working-storage section.\n  141 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:175: error: Test-Data-Flags.cob: No such file or directory\n  173 |      03  WS-Socket       pic x(64).\n  174 | *>\n  175 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  176 | *>\n  177 | *>  Record definition for Cobol file here:\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:179: error: wspay.cob: No such file or directory\n  177 | *>  Record definition for Cobol file here:\n  178 | *>\n  179 >  copy \"wspay.cob\".\n  180 | *>\n  181 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:181: error: wsfnctn.cob: No such file or directory\n  179 |  copy \"wspay.cob\".\n  180 | *>\n  181 >  copy \"wsfnctn.cob\".\n  182 |  copy \"wsnames.cob\".\n  183 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:182: error: wsnames.cob: No such file or directory\n  180 | *>\n  181 |  copy \"wsfnctn.cob\".\n  182 >  copy \"wsnames.cob\".\n  183 |  copy \"wscall.cob\".\n  184 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:183: error: wscall.cob: No such file or directory\n  181 |  copy \"wsfnctn.cob\".\n  182 |  copy \"wsnames.cob\".\n  183 >  copy \"wscall.cob\".\n  184 | *>\n  185 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:511: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  509 |      goback.\n  510 | *>\n  511 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  512 | *>\n  513 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:213: error: 'WS-Log-System' is not defined\n  211 |      move     Prog-Name to So-Print.\n  212 |      perform  Call-Sysout.\n  213 >      move     4      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  214 |      move     16     to WS-Log-File-No.  *> RDB, File/Table within sub Sy..\n  215 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:214: error: 'WS-Log-File-No' is not defined\n  212 |      perform  Call-Sysout.\n  213 |      move     4      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  214 >      move     16     to WS-Log-File-No.  *> RDB, File/Table within sub Sy..\n  215 | *>\n  216 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:218: error: 'System-File' is not defined\n  216 | *>  Get the system param for the various RDB fields\n  217 | *>\n  218 >      open     input System-File.\n  219 |      if       fs-reply not = zero\n  220 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:218: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:219: error: 'fs-reply' is not defined\n  217 | *>\n  218 |      open     input System-File.\n  219 >      if       fs-reply not = zero\n  220 |               display Prog-Name at 0101 with erase eos\n  221 |               display SY001    at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:224: error: 'System-File' is not a file name\n  222 |               display fs-reply at 0428\n  223 |               display SY004    at 0501\n  224 >               close System-File\n  225 |               move 128 to return-code\n  226 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:227: error: 'rrn' is not defined\n  225 |               move 128 to return-code\n  226 |               goback.\n  227 >      move     1 to rrn.     *> Read the system parameter record (1)\n  228 |      read     system-file record.\n  229 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:228: error: 'System-File' is not a file name\n  226 |               goback.\n  227 |      move     1 to rrn.     *> Read the system parameter record (1)\n  228 >      read     system-file record.\n  229 |      if       fs-reply not = zero\n  230 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:234: error: 'System-File' is not a file name\n  232 |               display fs-reply       at 0428\n  233 |               display \"Not set up ?\" at 0431\n  234 >               close System-File\n  235 |               move 128 to return-code\n  236 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:240: error: 'RDBMS-DB-Name' is not defined\n  238 | *>  Load up the DB settings from the system record as its not passed on.\n  239 | *>\n  240 >      if       RDBMS-DB-Name = spaces\n  241 |          or   FS-Cobol-Files-Used\n  242 |               display Prog-Name    *>  at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:241: error: 'FS-Cobol-Files-Used' is not defined\n  239 | *>\n  240 |      if       RDBMS-DB-Name = spaces\n  241 >          or   FS-Cobol-Files-Used\n  242 |               display Prog-Name    *>  at 0101 with erase eos\n  243 |               display SY019\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:249: error: 'System-File' is not a file name\n  247 |               if       WS-RDB-Return = 8\n  248 |                        display \"acas.param file NOT found - Aborted\"\n  249 >                        close  System-File\n  250 |                        goback\n  251 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:254: error: 'System-File' is not a file name\n  252 |               if       WS-RDB-Return = 1\n  253 |                        display \"Invalid keyword terminator found - Aborte..\n  254 >                        close  System-File\n  255 |                        goback\n  256 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:259: error: 'System-File' is not a file name\n  257 |               if       WS-RDB-Return = 2\n  258 |                        display \"Invalid keyword found - Aborted\"\n  259 >                        close  System-File\n  260 |                        goback\n  261 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:264: error: 'RDBMS-Host' is not defined\n  262 |               if       WS-RDB-Return = zeros\n  263 |                        display \"acas-param file found and being used \"\n  264 >                        move     WS-Host-Name      to RDBMS-Host\n  265 |                        move     WS-Implementation to RDBMS-User\n  266 |                        move     WS-Password       to RDBMS-Passwd\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:265: error: 'RDBMS-User' is not defined\n  263 |                        display \"acas-param file found and being used \"\n  264 |                        move     WS-Host-Name      to RDBMS-Host\n  265 >                        move     WS-Implementation to RDBMS-User\n  266 |                        move     WS-Password       to RDBMS-Passwd\n  267 |                        move     WS-Base-Name      to RDBMS-DB-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:266: error: 'RDBMS-Passwd' is not defined\n  264 |                        move     WS-Host-Name      to RDBMS-Host\n  265 |                        move     WS-Implementation to RDBMS-User\n  266 >                        move     WS-Password       to RDBMS-Passwd\n  267 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  268 |                        move     WS-Port-Number    to RDBMS-Port\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:268: error: 'RDBMS-Port' is not defined\n  266 |                        move     WS-Password       to RDBMS-Passwd\n  267 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  268 >                        move     WS-Port-Number    to RDBMS-Port\n  269 |                        move     WS-Socket         to RDBMS-Socket\n  270 |                       display \"User = \"   RDBMS-User\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:269: error: 'RDBMS-Socket' is not defined\n  267 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  268 |                        move     WS-Port-Number    to RDBMS-Port\n  269 >                        move     WS-Socket         to RDBMS-Socket\n  270 |                       display \"User = \"   RDBMS-User\n  271 |                       display \"Host = \"   RDBMS-Host\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:289: error: 'System-File' is not a file name\n  287 |               display \"Host = \"   RDBMS-Host\n  288 |               display \"Socket = \" RDBMS-Socket\n  289 >               close System-File\n  290 |               stop \"SY008 Note message & Hit return\"\n  291 |               move 64 to Return-Code\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'aa010-Proc-Override':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:298: error: 'File-System-Used' is not defined\n  296 | *>  Over-ride processes for acas032/paymentsMT for Dup modes\n  297 | *>\n  298 >      move     zero to File-System-Used\n  299 |                       File-Duplicates-In-Use\n  300 |                       FA-File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:299: error: 'File-Duplicates-In-Use' is not defined\n  297 | *>\n  298 |      move     zero to File-System-Used\n  299 >                       File-Duplicates-In-Use\n  300 |                       FA-File-System-Used\n  301 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:300: error: 'FA-File-System-Used' is not defined\n  298 |      move     zero to File-System-Used\n  299 |                       File-Duplicates-In-Use\n  300 >                       FA-File-System-Used\n  301 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  302 |      move     zero to Log-file-rec-written.        *> for logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:301: error: 'FA-File-Duplicates-In-Use' is not defined\n  299 |                       File-Duplicates-In-Use\n  300 |                       FA-File-System-Used\n  301 >                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  302 |      move     zero to Log-file-rec-written.        *> for logging.\n  303 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:302: error: 'Log-file-rec-written' is not defined\n  300 |                       FA-File-System-Used\n  301 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  302 >      move     zero to Log-file-rec-written.        *> for logging.\n  303 | *>\n  304 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:304: error: 'File-Key-No' is not defined\n  302 |      move     zero to Log-file-rec-written.        *> for logging.\n  303 | *>\n  304 >      move     1 to File-Key-No.\n  305 |      perform  acas032-Open-Input.              *> open input Cobol Paymen..\n  306 |      if       FS-Reply = 35\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:316: error: 'System-File' is not a file name\n  314 |               move    \"CLOSE   \" to SO-Print\n  315 |               perform call-Sysout\n  316 >               close System-File\n  317 |               perform acas032-Close\n  318 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:327: error: 'System-File' is not a file name\n  325 |               move \"CLOSE   \" to SO-Print\n  326 |               perform call-Sysout\n  327 >               close System-File\n  328 |               perform acas032-Close\n  329 |               move 16 to return-code\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:337: error: 'System-File' is not a file name\n  335 |      if       FS-Reply not = zero\n  336 |               display PL015      *> at 0301\n  337 >               close System-File\n  338 |               perform acas032-Close\n  339 |               move zero to File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:344: error: 'Access-Type' is not defined\n  342 |               goback\n  343 |      end-if.\n  344 >      move     zero to Access-Type.\n  345 |      go       to aa010-Read.\n  346 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'acas032':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:348: error: 'System-Record' is not defined\n  346 | *>\n  347 |  acas032.\n  348 >      call     \"acas032\" using System-Record\n  349 |                               WS-Pay-Record\n  350 |                               File-Access\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:349: error: 'WS-Pay-Record' is not defined\n  347 |  acas032.\n  348 |      call     \"acas032\" using System-Record\n  349 >                               WS-Pay-Record\n  350 |                               File-Access\n  351 |                               File-Defs\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:350: error: 'File-Access' is not defined\n  348 |      call     \"acas032\" using System-Record\n  349 |                               WS-Pay-Record\n  350 >                               File-Access\n  351 |                               File-Defs\n  352 |                               ACAS-DAL-Common-Data.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:351: error: 'File-Defs' is not defined\n  349 |                               WS-Pay-Record\n  350 |                               File-Access\n  351 >                               File-Defs\n  352 |                               ACAS-DAL-Common-Data.\n  353 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:352: error: 'ACAS-DAL-Common-Data' is not defined\n  350 |                               File-Access\n  351 |                               File-Defs\n  352 >                               ACAS-DAL-Common-Data.\n  353 | *>\n  354 |  acas032-Open.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'acas032-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:355: error: 'fn-open' is not defined\n  353 | *>\n  354 |  acas032-Open.\n  355 >      set      fn-open to true.\n  356 |      set      fn-i-o  to true.\n  357 |      perform  acas032.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:356: error: 'fn-i-o' is not defined\n  354 |  acas032-Open.\n  355 |      set      fn-open to true.\n  356 >      set      fn-i-o  to true.\n  357 |      perform  acas032.\n  358 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'acas032-Open-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:362: error: 'fn-input' is not defined\n  360 |  acas032-Open-Input.\n  361 |      set      fn-open  to true.\n  362 >      set      fn-input to true.\n  363 |      perform  acas032.\n  364 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'acas032-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:367: error: 'fn-Close' is not defined\n  365 | *>\n  366 |  acas032-Close.\n  367 >      set      fn-Close to true.\n  368 |      perform  acas032.\n  369 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'acas032-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:371: error: 'fn-Read-Next' is not defined\n  369 | *>\n  370 |  acas032-Read-Next.\n  371 >      set      fn-Read-Next to true.\n  372 |      perform  acas032.\n  373 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'acas032-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:375: error: 'fn-Write' is not defined\n  373 | *>\n  374 |  acas032-Write.\n  375 >      set      fn-Write to true.\n  376 |      perform  acas032.\n  377 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'acas032-Rewrite':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:379: error: 'fn-re-write' is not defined\n  377 | *>\n  378 |  acas032-Rewrite.\n  379 >      set      fn-re-write to true.\n  380 |      perform  acas032.\n  381 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'aa010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:403: error: 'Sql-State' is not defined\n  401 |                    FA-File-System-Used.\n  402 |      perform  acas032-Write.\n  403 >      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  404 |          or   fs-reply = 22  or = 99                    *> Check for dup..\n  405 |          or   SQL-Err (1:4) = \"1062\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:405: error: 'SQL-Err' is not defined\n  403 |      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  404 |          or   fs-reply = 22  or = 99                    *> Check for dup..\n  405 >          or   SQL-Err (1:4) = \"1062\"\n  406 |                          or = \"1022\"\n  407 |               move    zeros to FS-Reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:408: error: 'WE-Error' is not defined\n  406 |                          or = \"1022\"\n  407 |               move    zeros to FS-Reply\n  408 >                                WE-Error\n  409 |               perform acas032-Rewrite\n  410 |               if      FS-Reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:413: error: 'WS-File-Key' is not defined\n  411 |                       move spaces to SO-Print\n  412 |                       string  PL010\n  413 >                                WS-File-Key into SO-Print\n  414 |                       perform call-Sysout\n  415 |                       move    PL099 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:433: error: 'SQL-Msg' is not defined\n  431 |               string PL018 SQL-Err into SO-Print\n  432 |               perform Call-Sysout\n  433 >               move SQL-Msg to SO-Print\n  434 |               perform Call-Sysout\n  435 |               move SQL-State to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'aa999-Finish':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:499: error: 'File-Function' is not defined\n  497 |                    FA-File-System-Used.\n  498 |      move     zero to Access-Type.\n  499 >      move     2 to File-Function.\n  500 |      perform  acas032-Close.                     *> Close RDB\n  501 |      close    System-File.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:501: error: 'System-File' is not a file name\n  499 |      move     2 to File-Function.\n  500 |      perform  acas032-Close.                     *> Close RDB\n  501 >      close    System-File.\n  502 |      move     zero to File-System-Used\n  503 |                    FA-File-System-Used.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:210: error: 'zz020-Get-Program-Args' is not defined\n  208 | *>\n  209 |  aa000-main-start.\n  210 >      perform  zz020-Get-Program-Args.\n  211 |      move     Prog-Name to So-Print.\n  212 |      perform  Call-Sysout.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:125: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:132: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:139: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:175: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:179: error: wspay.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:181: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:182: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:183: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:511: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:213: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:214: error: 'WS-Log-File-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:218: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:218: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:219: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:224: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:227: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:228: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:234: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:240: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:241: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:249: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:254: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:259: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:264: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:265: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:266: error: 'RDBMS-Passwd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:268: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:269: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:289: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:298: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:299: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:300: error: 'FA-File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:301: error: 'FA-File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:302: error: 'Log-file-rec-written' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:304: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:316: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:327: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:337: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:344: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:348: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:349: error: 'WS-Pay-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:350: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:351: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:352: error: 'ACAS-DAL-Common-Data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:355: error: 'fn-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:356: error: 'fn-i-o' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:362: error: 'fn-input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:367: error: 'fn-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:371: error: 'fn-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:375: error: 'fn-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:379: error: 'fn-re-write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:403: error: 'Sql-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:405: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:408: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:413: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:433: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:499: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:501: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:210: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:125: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:132: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:139: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:175: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:179: error: wspay.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:181: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:182: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:183: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:511: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:213: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:214: error: 'WS-Log-File-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:218: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:218: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:219: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:224: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:227: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:228: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:234: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:240: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:241: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:249: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:254: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:259: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:264: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:265: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:266: error: 'RDBMS-Passwd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:268: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:269: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:289: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:298: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:299: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:300: error: 'FA-File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:301: error: 'FA-File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:302: error: 'Log-file-rec-written' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:304: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:316: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:327: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:337: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:344: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:348: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:349: error: 'WS-Pay-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:350: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:351: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:352: error: 'ACAS-DAL-Common-Data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:355: error: 'fn-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:356: error: 'fn-i-o' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:362: error: 'fn-input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:367: error: 'fn-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:371: error: 'fn-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:375: error: 'fn-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:379: error: 'fn-re-write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:403: error: 'Sql-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:405: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:408: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:413: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:433: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:499: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:501: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsLD.cbl:210: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 32,
+    "cognitive": 58,
+    "halstead": {
+      "uniqueOperators": 10,
+      "uniqueOperands": 75,
+      "totalOperators": 196,
+      "totalOperands": 261,
+      "vocabulary": 85,
+      "length": 457,
+      "volume": 2929,
+      "difficulty": 17.4,
+      "effort": 50966,
+      "timeToProgram": 2831,
+      "deliveredBugs": 0.976
+    },
+    "maintainability": 71
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas-get-params",
+        "line": 245
+      },
+      {
+        "target": "acas032",
+        "line": 348
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 450
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 460
+      },
+      {
+        "target": "ACAS-Sysout",
+        "line": 514
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 115
+      },
+      {
+        "name": "envdiv",
+        "line": 125
+      },
+      {
+        "name": "selsys",
+        "line": 132
+      },
+      {
+        "name": "fdsys",
+        "line": 139
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 175
+      },
+      {
+        "name": "wspay",
+        "line": 179
+      },
+      {
+        "name": "wsfnctn",
+        "line": 181
+      },
+      {
+        "name": "wsnames",
+        "line": 182
+      },
+      {
+        "name": "wscall",
+        "line": 183
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 511
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 210
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 212
+      },
+      {
+        "target": "acas032-Open-Input",
+        "line": 305
+      },
+      {
+        "target": "call-Sysout",
+        "line": 308
+      },
+      {
+        "target": "call-Sysout",
+        "line": 313
+      },
+      {
+        "target": "call-Sysout",
+        "line": 315
+      },
+      {
+        "target": "acas032-Close",
+        "line": 317
+      },
+      {
+        "target": "call-Sysout",
+        "line": 324
+      },
+      {
+        "target": "call-Sysout",
+        "line": 326
+      },
+      {
+        "target": "acas032-Close",
+        "line": 328
+      },
+      {
+        "target": "acas032-Open",
+        "line": 334
+      },
+      {
+        "target": "acas032-Close",
+        "line": 338
+      },
+      {
+        "target": "acas032-Close",
+        "line": 341
+      },
+      {
+        "target": "acas032",
+        "line": 357
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 358
+      },
+      {
+        "target": "acas032",
+        "line": 363
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 364
+      },
+      {
+        "target": "acas032",
+        "line": 368
+      },
+      {
+        "target": "acas032",
+        "line": 372
+      },
+      {
+        "target": "acas032",
+        "line": 376
+      },
+      {
+        "target": "acas032",
+        "line": 380
+      },
+      {
+        "target": "acas032-Read-Next",
+        "line": 388
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 395
+      },
+      {
+        "target": "acas032-Write",
+        "line": 402
+      },
+      {
+        "target": "acas032-Rewrite",
+        "line": 409
+      },
+      {
+        "target": "call-Sysout",
+        "line": 414
+      },
+      {
+        "target": "call-Sysout",
+        "line": 416
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 426
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 429
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 432
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 434
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 436
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 437
+      },
+      {
+        "target": "call-Sysout",
+        "line": 469
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 472
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 475
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 477
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 479
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 481
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 482
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 491
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 494
+      },
+      {
+        "target": "acas032-Close",
+        "line": 500
+      },
+      {
+        "target": "acas032-close",
+        "line": 504
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 506
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 508
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 140
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>                rollback\n*>...",
+        "line": 447
+      },
+      {
+        "content": "*>                commit\n*>...",
+        "line": 457
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

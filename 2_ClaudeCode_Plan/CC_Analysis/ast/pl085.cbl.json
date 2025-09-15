@@ -1,0 +1,354 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl",
+  "fileName": "pl085.cbl",
+  "fileHash": "6f5e04f5c94fdb5092375520d136f12ebaa26a60e55823844099d9506de648aa",
+  "timestamp": "2025-09-15T19:46:22.336Z",
+  "parseTime": 69,
+  "lines": {
+    "total": 690,
+    "code": 413,
+    "comment": 276,
+    "blank": 1
+  },
+  "programId": "pl085",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:92: error: envdiv.cob: No such file or directory\n   90 | *>===============================\n   91 | *>\n   92 >  copy \"envdiv.cob\".\n   93 |  input-output            section.\n   94 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:113: error: wsmaps03.cob: No such file or directory\n  111 | *>-----------------------\n  112 |  77  prog-name           pic x(15) value \"PL085 (3.02.05)\".\n  113 >  copy \"wsmaps03.cob\".\n  114 |  copy \"wsfnctn.cob\".\n  115 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:114: error: wsfnctn.cob: No such file or directory\n  112 |  77  prog-name           pic x(15) value \"PL085 (3.02.05)\".\n  113 |  copy \"wsmaps03.cob\".\n  114 >  copy \"wsfnctn.cob\".\n  115 | *>\n  116 |  01  ws-amount-screen-display.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:147: error: wspl.cob: No such file or directory\n  145 | *>\n  146 | *> copy \"wsoi.cob\".\n  147 >  copy \"wspl.cob\".\n  148 |  copy \"plwsoi5C.cob\".  *> ITM5-rec redefs oi-header o-t-m-rec.\n  149 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:148: error: plwsoi5C.cob: No such file or directory\n  146 | *> copy \"wsoi.cob\".\n  147 |  copy \"wspl.cob\".\n  148 >  copy \"plwsoi5C.cob\".  *> ITM5-rec redefs oi-header o-t-m-rec.\n  149 | *>\n  150 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:245: error: Test-Data-Flags.cob: No such file or directory\n  243 | *> 01  error-code          pic 999.\n  244 | *>\n  245 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  246 | *>\n  247 |  linkage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:250: error: wscall.cob: No such file or directory\n  248 | *>**************\n  249 | *>\n  250 >  copy \"wscall.cob\".\n  251 |  copy \"wssystem.cob\".\n  252 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:251: error: wssystem.cob: No such file or directory\n  249 | *>\n  250 |  copy \"wscall.cob\".\n  251 >  copy \"wssystem.cob\".\n  252 |  copy \"wsnames.cob\".\n  253 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:252: error: wsnames.cob: No such file or directory\n  250 |  copy \"wscall.cob\".\n  251 |  copy \"wssystem.cob\".\n  252 >  copy \"wsnames.cob\".\n  253 | *>\n  254 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:688: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  686 |      exit     section.\n  687 | *>\n  688 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  689 | *>\n  690 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:256: error: 'ws-calling-data' is not defined\n  254 |  01  to-day              pic x(10).\n  255 | *>\n  256 >  procedure division using ws-calling-data\n  257 |                           system-record\n  258 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:257: error: 'system-record' is not defined\n  255 | *>\n  256 |  procedure division using ws-calling-data\n  257 >                           system-record\n  258 |                           to-day\n  259 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:259: error: 'file-defs' is not defined\n  257 |                           system-record\n  258 |                           to-day\n  259 >                           file-defs.\n  260 | *>=======================================\n  261 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:263: error: 'p-flag-p' is not defined\n  261 | *>\n  262 |  init01 section.\n  263 >      if       p-flag-p = 0\n  264 |               display PL142   at 2301 erase eos\n  265 |               display PL003   at 2401\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'menu-exit':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:292: error: 'oi-5-flag' is not defined\n  290 | *>********\n  291 | *>\n  292 >      move     \"Y\" to oi-5-flag.\n  293 |      perform  display-heads.\n  294 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in section 'new-payment':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'New-Payment-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:306: error: 'lin' is not defined\n  304 | *>\n  305 |  New-Payment-Main.\n  306 >      move     4  to  lin.\n  307 |      perform  display-heads.\n  308 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'get-batch':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:323: error: 'oi5-supplier' is not defined\n  321 |  get-batch.\n  322 | *>\n  323 >      move     spaces to oi5-supplier.\n  324 |      accept   oi5-supplier at 0572 with foreground-color 3 update UPPER.\n  325 |  *>    move     function upper-case (oi5-supplier) to oi5-supplier.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'customer-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:342: error: 'oi5-invoice' is not defined\n  340 |      if       k = zero\n  341 |               go to customer-input.\n  342 >      multiply display-n by 1000 giving oi5-invoice.\n  343 |      add      k to oi5-invoice.\n  344 |      move     oi5-key to save-key.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:344: error: 'oi5-key' is not defined\n  342 |      multiply display-n by 1000 giving oi5-invoice.\n  343 |      add      k to oi5-invoice.\n  344 >      move     oi5-key to save-key.\n  345 |      set      fn-not-less-than to true.\n  346 |      perform  OTM5-Start.  *> start open-item-file-5 key not < oi5-key.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:345: error: 'fn-not-less-than' is not defined\n  343 |      add      k to oi5-invoice.\n  344 |      move     oi5-key to save-key.\n  345 >      set      fn-not-less-than to true.\n  346 |      perform  OTM5-Start.  *> start open-item-file-5 key not < oi5-key.\n  347 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'find-trans-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:352: error: 'fs-reply' is not defined\n  350 | *>\n  351 |      perform  OTM5-Read-Next. *>   read open-item-file-5 next record at e..\n  352 >      if       fs-reply = 10\n  353 |               go to  get-batch.\n  354 |  *>    move     open-item-record-5  to  oi-header.  *> redefs oi-header o..\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:356: error: 'oi-supplier' is not defined\n  354 |  *>    move     open-item-record-5  to  oi-header.  *> redefs oi-header o..\n  355 | *>\n  356 >      if       oi-supplier not = save-supplier\n  357 |          or   oi-invoice not = save-invoice\n  358 |               go to get-batch.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:357: error: 'oi-invoice' is not defined\n  355 | *>\n  356 |      if       oi-supplier not = save-supplier\n  357 >          or   oi-invoice not = save-invoice\n  358 |               go to get-batch.\n  359 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:360: error: 'oi-b-nos' is not defined\n  358 |               go to get-batch.\n  359 | *>\n  360 >      if       oi-b-nos not = display-n\n  361 |            or oi-b-item not = k\n  362 |            or (oi-type not = 5 and not = 6)\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:361: error: 'oi-b-item' is not defined\n  359 | *>\n  360 |      if       oi-b-nos not = display-n\n  361 >            or oi-b-item not = k\n  362 |            or (oi-type not = 5 and not = 6)\n  363 |               go to  find-trans-loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:362: error: 'oi-type' is not defined\n  360 |      if       oi-b-nos not = display-n\n  361 |            or oi-b-item not = k\n  362 >            or (oi-type not = 5 and not = 6)\n  363 |               go to  find-trans-loop.\n  364 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:371: error: 'oi-date' is not defined\n  369 | *>\n  370 |      move     oi-supplier  to  pay-customer.\n  371 >      move     oi-date      to  pay-date.\n  372 |      move     oi-paid      to  pay-value hold-pay.\n  373 |      move     oi-approp    to  approp-amount.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:372: error: 'oi-paid' is not defined\n  370 |      move     oi-supplier  to  pay-customer.\n  371 |      move     oi-date      to  pay-date.\n  372 >      move     oi-paid      to  pay-value hold-pay.\n  373 |      move     oi-approp    to  approp-amount.\n  374 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:373: error: 'oi-approp' is not defined\n  371 |      move     oi-date      to  pay-date.\n  372 |      move     oi-paid      to  pay-value hold-pay.\n  373 >      move     oi-approp    to  approp-amount.\n  374 | *>\n  375 |      display  pay-customer at 0572 with foreground-color 3.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:376: error: 'WS-Purch-Key' is not defined\n  374 | *>\n  375 |      display  pay-customer at 0572 with foreground-color 3.\n  376 >      move     pay-customer to  WS-Purch-Key.\n  377 | *>\n  378 |      perform  Purch-Read-Indexed. *>  read     purchase-file  record  inv..\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:382: error: 'purch-address' is not defined\n  380 |               move  zero  to  c-check.\n  381 | *>\n  382 >      move     purch-address  to  address1.\n  383 | *>\n  384 |      display  purch-name at 0401 with foreground-color 3.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:384: error: 'purch-name' is not defined\n  382 |      move     purch-address  to  address1.\n  383 | *>\n  384 >      display  purch-name at 0401 with foreground-color 3.\n  385 | *>\n  386 |      move     1  to  a.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:387: error: 'pl-delim' is not defined\n  385 | *>\n  386 |      move     1  to  a.\n  387 >      unstring address1  delimited  by pl-delim  into  address-line count..\n  388 |      display  address-line at 0501 with foreground-color 3.\n  389 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:404: error: 'purch-current' is not defined\n  402 |      move     spaces  to  address-line.\n  403 | *>\n  404 >      move     purch-current  to  display-s.\n  405 |      display  \"Current Balance - \" at 1001  with foreground-color 2.\n  406 |      display  display-s at 1019 with foreground-color 3.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'value-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:412: error: 'curs' is not defined\n  410 | *>\n  411 |      move     pay-value to amt-ok.\n  412 >      move     0749 to curs.\n  413 |      perform  accept-money2.\n  414 |      move     amt-ok to pay-value.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'value-input-2':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:439: error: 'oi-deduct-amt' is not defined\n  437 |      if       oi-approp = zero\n  438 |               go to  skip-pay-approp.\n  439 >      move     oi-deduct-amt  to si-deduct-amt.\n  440 | *>\n  441 |  data-input.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'skip-pay-approp':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:449: error: 'purch-unapplied' is not defined\n  447 | *>\n  448 |      if       trans-unapplied\n  449 >               add hold-pay to purch-unapplied\n  450 |               perform Purch-Rewrite  *> rewrite purch-record.\n  451 |      move     14  to  lin.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in section 'payment-appropriate':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'pay-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:516: error: 'oi-cr' is not defined\n  514 |               go to pay-loop.\n  515 | *>\n  516 >      divide   oi-cr by 100 giving work-1.\n  517 |      subtract work-1 from oi-paid.\n  518 |      subtract work-1 from oi-p-c.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:518: error: 'oi-p-c' is not defined\n  516 |      divide   oi-cr by 100 giving work-1.\n  517 |      subtract work-1 from oi-paid.\n  518 >      subtract work-1 from oi-p-c.\n  519 |      subtract work-1 from approp-amount.\n  520 |      move     zero to oi-b-nos oi-b-item oi-cr oi-status.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:520: error: 'oi-status' is not defined\n  518 |      subtract work-1 from oi-p-c.\n  519 |      subtract work-1 from approp-amount.\n  520 >      move     zero to oi-b-nos oi-b-item oi-cr oi-status.\n  521 | *>\n  522 |      if       si-deduct-amt = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'get-deduct':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:541: error: 'oi-net' is not defined\n  539 |               go to  get-deduct\n  540 |      else\n  541 >               add oi-deduct-amt to oi-net\n  542 |               subtract  oi-deduct-amt  from  si-deduct-amt.\n  543 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in section 'erase-screen':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:575: error: 'cole' is not defined\n  573 | *>===================\n  574 | *>\n  575 >      move     1 to cole.\n  576 |      display  space at curs with erase eos.\n  577 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in section 'zz050-Validate-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:590: error: 'Date-Form' is not defined\n  588 | *>\n  589 |      move     ws-test-date to ws-date.\n  590 >      if       Date-Form = zero\n  591 |               move 1 to Date-Form.\n  592 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:592: error: 'Date-UK' is not defined\n  590 |      if       Date-Form = zero\n  591 |               move 1 to Date-Form.\n  592 >      if       Date-UK\n  593 |               go to zz050-test-date.\n  594 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:594: error: 'Date-USA' is not defined\n  592 |      if       Date-UK\n  593 |               go to zz050-test-date.\n  594 >      if       Date-USA                *> swap month and days\n  595 |               move ws-days to ws-swap\n  596 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'zz050-test-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:608: error: 'u-date' is not defined\n  606 | *>\n  607 |  zz050-test-date.\n  608 >      move     ws-date to u-date.\n  609 |      move     zero to u-bin.\n  610 |      perform  maps04.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:609: error: 'u-bin' is not defined\n  607 |  zz050-test-date.\n  608 |      move     ws-date to u-date.\n  609 >      move     zero to u-bin.\n  610 |      perform  maps04.\n  611 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in section 'maps04':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:683: error: 'maps03-ws' is not defined\n  681 | *>*******************\n  682 | *>\n  683 >      call     \"maps04\"  using  maps03-ws.\n  684 | *>\n  685 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'dh-exit':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:283: error: 'Purch-Open' is not defined\n  281 | *>\n  282 |      move     zero  to  k.\n  283 >      perform  Purch-Open. *> open     i-o purchase-file open-item-file-5.\n  284 |      perform  OTM5-Open.\n  285 |      perform  new-payment.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:284: error: 'OTM5-Open' is not defined\n  282 |      move     zero  to  k.\n  283 |      perform  Purch-Open. *> open     i-o purchase-file open-item-file-5.\n  284 >      perform  OTM5-Open.\n  285 |      perform  new-payment.\n  286 |      perform  Purch-Close.  *> close    purchase-file open-item-file-5.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:286: error: 'Purch-Close' is not defined\n  284 |      perform  OTM5-Open.\n  285 |      perform  new-payment.\n  286 >      perform  Purch-Close.  *> close    purchase-file open-item-file-5.\n  287 |      perform  OTM5-Close.\n  288 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:287: error: 'OTM5-Close' is not defined\n  285 |      perform  new-payment.\n  286 |      perform  Purch-Close.  *> close    purchase-file open-item-file-5.\n  287 >      perform  OTM5-Close.\n  288 | *>\n  289 |  menu-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in section 'new-payment':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'customer-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:346: error: 'OTM5-Start' is not defined\n  344 |      move     oi5-key to save-key.\n  345 |      set      fn-not-less-than to true.\n  346 >      perform  OTM5-Start.  *> start open-item-file-5 key not < oi5-key.\n  347 | *>\n  348 |  find-trans-loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'find-trans-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:351: error: 'OTM5-Read-Next' is not defined\n  349 | *>**************\n  350 | *>\n  351 >      perform  OTM5-Read-Next. *>   read open-item-file-5 next record at e..\n  352 |      if       fs-reply = 10\n  353 |               go to  get-batch.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:378: error: 'Purch-Read-Indexed' is not defined\n  376 |      move     pay-customer to  WS-Purch-Key.\n  377 | *>\n  378 >      perform  Purch-Read-Indexed. *>  read     purchase-file  record  inv..\n  379 |      if       fs-reply = 21\n  380 |               move  zero  to  c-check.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'value-input-2':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:435: error: 'OTM5-Delete' is not defined\n  433 |               go to value-input.\n  434 | *>\n  435 >      perform  OTM5-Delete.  *>  delete   open-item-file-5.\n  436 | *>\n  437 |      if       oi-approp = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'skip-pay-approp':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:450: error: 'Purch-Rewrite' is not defined\n  448 |      if       trans-unapplied\n  449 |               add hold-pay to purch-unapplied\n  450 >               perform Purch-Rewrite  *> rewrite purch-record.\n  451 |      move     14  to  lin.\n  452 |      perform  erase-screen.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in section 'payment-appropriate':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl: in paragraph 'by-pass-deduct':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:550: error: 'OTM5-Rewrite' is not defined\n  548 | *>*************\n  549 | *>\n  550 >      perform  OTM5-Rewrite. *>  rewrite  open-item-record-5 from oi-heade..\n  551 |      if       approp-amount = zero\n  552 |         and   si-deduct-amt = zero\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:92: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:113: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:114: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:147: error: wspl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:148: error: plwsoi5C.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:245: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:250: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:251: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:252: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:688: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:256: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:257: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:259: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:263: error: 'p-flag-p' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:292: error: 'oi-5-flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:306: error: 'lin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:323: error: 'oi5-supplier' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:342: error: 'oi5-invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:344: error: 'oi5-key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:345: error: 'fn-not-less-than' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:352: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:356: error: 'oi-supplier' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:357: error: 'oi-invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:360: error: 'oi-b-nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:361: error: 'oi-b-item' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:362: error: 'oi-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:371: error: 'oi-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:372: error: 'oi-paid' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:373: error: 'oi-approp' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:376: error: 'WS-Purch-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:382: error: 'purch-address' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:384: error: 'purch-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:387: error: 'pl-delim' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:404: error: 'purch-current' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:412: error: 'curs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:439: error: 'oi-deduct-amt' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:449: error: 'purch-unapplied' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:516: error: 'oi-cr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:518: error: 'oi-p-c' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:520: error: 'oi-status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:541: error: 'oi-net' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:575: error: 'cole' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:590: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:592: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:594: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:608: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:609: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:683: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:283: error: 'Purch-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:284: error: 'OTM5-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:286: error: 'Purch-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:287: error: 'OTM5-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:346: error: 'OTM5-Start' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:351: error: 'OTM5-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:378: error: 'Purch-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:435: error: 'OTM5-Delete' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:450: error: 'Purch-Rewrite' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:550: error: 'OTM5-Rewrite' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:92: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:113: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:114: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:147: error: wspl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:148: error: plwsoi5C.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:245: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:250: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:251: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:252: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:688: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:256: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:257: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:259: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:263: error: 'p-flag-p' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:292: error: 'oi-5-flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:306: error: 'lin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:323: error: 'oi5-supplier' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:342: error: 'oi5-invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:344: error: 'oi5-key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:345: error: 'fn-not-less-than' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:352: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:356: error: 'oi-supplier' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:357: error: 'oi-invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:360: error: 'oi-b-nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:361: error: 'oi-b-item' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:362: error: 'oi-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:371: error: 'oi-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:372: error: 'oi-paid' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:373: error: 'oi-approp' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:376: error: 'WS-Purch-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:382: error: 'purch-address' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:384: error: 'purch-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:387: error: 'pl-delim' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:404: error: 'purch-current' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:412: error: 'curs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:439: error: 'oi-deduct-amt' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:449: error: 'purch-unapplied' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:516: error: 'oi-cr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:518: error: 'oi-p-c' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:520: error: 'oi-status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:541: error: 'oi-net' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:575: error: 'cole' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:590: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:592: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:594: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:608: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:609: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:683: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:283: error: 'Purch-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:284: error: 'OTM5-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:286: error: 'Purch-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:287: error: 'OTM5-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:346: error: 'OTM5-Start' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:351: error: 'OTM5-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:378: error: 'Purch-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:435: error: 'OTM5-Delete' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:450: error: 'Purch-Rewrite' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl085.cbl:550: error: 'OTM5-Rewrite' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 67,
+    "cognitive": 185,
+    "halstead": {
+      "uniqueOperators": 13,
+      "uniqueOperands": 62,
+      "totalOperators": 207,
+      "totalOperands": 137,
+      "vocabulary": 75,
+      "length": 344,
+      "volume": 2143,
+      "difficulty": 14.36,
+      "effort": 30776,
+      "timeToProgram": 1710,
+      "deliveredBugs": 0.714
+    },
+    "maintainability": 68
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 683
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 92
+      },
+      {
+        "name": "selpl",
+        "line": 99
+      },
+      {
+        "name": "seloi5",
+        "line": 100
+      },
+      {
+        "name": "fdpl",
+        "line": 107
+      },
+      {
+        "name": "fdoi5",
+        "line": 108
+      },
+      {
+        "name": "wsmaps03",
+        "line": 113
+      },
+      {
+        "name": "wsfnctn",
+        "line": 114
+      },
+      {
+        "name": "wsoi",
+        "line": 146
+      },
+      {
+        "name": "wspl",
+        "line": 147
+      },
+      {
+        "name": "plwsoi5C",
+        "line": 148
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 245
+      },
+      {
+        "name": "wscall",
+        "line": 250
+      },
+      {
+        "name": "wssystem",
+        "line": 251
+      },
+      {
+        "name": "wsnames",
+        "line": 252
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 688
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 277
+      },
+      {
+        "target": "Purch-Open",
+        "line": 283
+      },
+      {
+        "target": "OTM5-Open",
+        "line": 284
+      },
+      {
+        "target": "new-payment",
+        "line": 285
+      },
+      {
+        "target": "Purch-Close",
+        "line": 286
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 287
+      },
+      {
+        "target": "display-heads",
+        "line": 293
+      },
+      {
+        "target": "display-heads",
+        "line": 307
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "line": 318
+      },
+      {
+        "target": "OTM5-Start",
+        "line": 346
+      },
+      {
+        "target": "OTM5-Read-Next",
+        "line": 351
+      },
+      {
+        "target": "Purch-Read-Indexed",
+        "line": 378
+      },
+      {
+        "target": "accept-money2",
+        "line": 413
+      },
+      {
+        "target": "OTM5-Delete",
+        "line": 435
+      },
+      {
+        "target": "payment-appropriate",
+        "line": 444
+      },
+      {
+        "target": "Purch-Rewrite",
+        "line": 450
+      },
+      {
+        "target": "erase-screen",
+        "line": 452
+      },
+      {
+        "target": "OTM5-Start",
+        "line": 495
+      },
+      {
+        "target": "OTM5-Read-Next",
+        "line": 500
+      },
+      {
+        "target": "accept-money",
+        "line": 536
+      },
+      {
+        "target": "OTM5-Rewrite",
+        "line": 550
+      },
+      {
+        "target": "maps04",
+        "line": 610
+      },
+      {
+        "target": "maps04",
+        "line": 624
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 110
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

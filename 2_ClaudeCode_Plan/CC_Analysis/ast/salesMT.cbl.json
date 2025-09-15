@@ -1,0 +1,500 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl",
+  "fileName": "salesMT.cbl",
+  "fileHash": "ad76f1fdb528141f6fa8a8a3a29ca4e5c3ca079b3594ce504fb6b6c6b3346373",
+  "timestamp": "2025-09-15T19:46:06.923Z",
+  "parseTime": 147,
+  "lines": {
+    "total": 2269,
+    "code": 1717,
+    "comment": 547,
+    "blank": 5
+  },
+  "programId": "salesMT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:278: error: mysql-variables.cpy: No such file or directory\n  276 | *>       ACASDB\n  277 | *>       TABLE=SALEDGER-REC,HV\n  278 >  COPY \"mysql-variables.cpy\".\n  279 | *>\n  280 | *>    Definitions for the SALEDGER-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:327: error: wsfnctn.cob: No such file or directory\n  325 | *>\n  326 | *>**********************************************************************\n  327 >  copy \"wsfnctn.cob\".                         *> File-Access\n  328 | *>\n  329 | *>**********************************************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:331: error: Test-Data-Flags.cob: No such file or directory\n  329 | *>**********************************************************************\n  330 | *>\n  331 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  332 | *>\n  333 |  copy \"wssl.cob\".            *> WS-Sales-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:333: error: wssl.cob: No such file or directory\n  331 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  332 | *>\n  333 >  copy \"wssl.cob\".            *> WS-Sales-Record.\n  334 | *>\n  335 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1170: error: mysql-procedures.cpy: No such file or directory\n 1168 | *>\n 1169 | *> /MYSQL PRO\\\n 1170 >  COPY \"mysql-procedures.cpy\".\n 1171 | *> /MYSQL-END\\\n 1172 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:344: error: 'Ws-Mysql-Error-Number' is not defined\n  342 |  01  Display-Message-2       foreground-color 2.\n  343 |      03      value \"SM004 SQL Err No.=\" line 4 col  1.    *> size 18 char\n  344 >      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.    *>..\n  345 |      03      value \" Para=\"                              col 23.    *> si..\n  346 |      03  using WS-No-Paragraph         pic 9(3)          col 29.    *>..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:346: error: 'WS-No-Paragraph' is not defined\n  344 |      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.    *>..\n  345 |      03      value \" Para=\"                              col 23.    *> si..\n  346 >      03  using WS-No-Paragraph         pic 9(3)          col 29.    *>..\n  347 |      03      value \" SQL Cmd=\"                           col 32.    *>..\n  348 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:348: error: 'Ws-Mysql-Command' is not defined\n  346 |      03  using WS-No-Paragraph         pic 9(3)          col 29.    *>..\n  347 |      03      value \" SQL Cmd=\"                           col 32.    *>..\n  348 >      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  349 |      03      value \"SQL Err Msg=\"       line 7 col  1.    *>      12\n  350 |      03  using Ws-Mysql-Error-Message  pic x(67)        col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:350: error: 'Ws-Mysql-Error-Message' is not defined\n  348 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  349 |      03      value \"SQL Err Msg=\"       line 7 col  1.    *>      12\n  350 >      03  using Ws-Mysql-Error-Message  pic x(67)        col 13.\n  351 | *>\n  352 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:353: error: 'File-Access' is not defined\n  351 | *>\n  352 | *>\n  353 >  PROCEDURE DIVISION   using File-Access\n  354 |                             ACAS-DAL-Common-data\n  355 |                             WS-Sales-Record.   *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:354: error: 'ACAS-DAL-Common-data' is not defined\n  352 | *>\n  353 |  PROCEDURE DIVISION   using File-Access\n  354 >                             ACAS-DAL-Common-data\n  355 |                             WS-Sales-Record.   *>  Ws record\n  356 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:355: error: 'WS-Sales-Record' is not defined\n  353 |  PROCEDURE DIVISION   using File-Access\n  354 |                             ACAS-DAL-Common-data\n  355 >                             WS-Sales-Record.   *>  Ws record\n  356 | *>**********************************************\n  357 |  ba-ACAS-DAL-Process  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:378: error: 'WS-Log-Where' is not defined\n  376 |      move     spaces to WS-MYSQL-Error-Message\n  377 |                         WS-MYSQL-Error-Number\n  378 >                         WS-Log-Where\n  379 |                         WS-File-Key\n  380 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:379: error: 'WS-File-Key' is not defined\n  377 |                         WS-MYSQL-Error-Number\n  378 |                         WS-Log-Where\n  379 >                         WS-File-Key\n  380 |                         SQL-Msg\n  381 |                         SQL-Err\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:380: error: 'SQL-Msg' is not defined\n  378 |                         WS-Log-Where\n  379 |                         WS-File-Key\n  380 >                         SQL-Msg\n  381 |                         SQL-Err\n  382 |                         SQL-State.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:381: error: 'SQL-Err' is not defined\n  379 |                         WS-File-Key\n  380 |                         SQL-Msg\n  381 >                         SQL-Err\n  382 |                         SQL-State.\n  383 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:382: error: 'SQL-State' is not defined\n  380 |                         SQL-Msg\n  381 |                         SQL-Err\n  382 >                         SQL-State.\n  383 | *>\n  384 | *>   Now Test for valid key for start, read-indexed and delete\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:392: error: 'File-Function' is not defined\n  390 | *>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  391 | *>\n  392 >      evaluate File-Function\n  393 |         when  1\n  394 |               go to ba020-Process-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:420: error: 'DB-Schema' is not defined\n  418 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  419 |  *>\n  420 >      string   DB-Schema      delimited by space\n  421 |               X\"00\"          delimited by size\n  422 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:422: error: 'WS-MYSQL-BASE-NAME' is not defined\n  420 |      string   DB-Schema      delimited by space\n  421 |               X\"00\"          delimited by size\n  422 >                                into WS-MYSQL-BASE-NAME\n  423 |      end-string.\n  424 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:424: error: 'DB-Host' is not defined\n  422 |                                into WS-MYSQL-BASE-NAME\n  423 |      end-string.\n  424 >      string   DB-Host        delimited by space\n  425 |               X\"00\"          delimited by size\n  426 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:426: error: 'WS-MYSQL-HOST-NAME' is not defined\n  424 |      string   DB-Host        delimited by space\n  425 |               X\"00\"          delimited by size\n  426 >                                into WS-MYSQL-HOST-NAME\n  427 |      end-string.\n  428 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:428: error: 'DB-UName' is not defined\n  426 |                                into WS-MYSQL-HOST-NAME\n  427 |      end-string.\n  428 >      string   DB-UName       delimited by space\n  429 |               X\"00\"          delimited by size\n  430 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:430: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  428 |      string   DB-UName       delimited by space\n  429 |               X\"00\"          delimited by size\n  430 >                                into WS-MYSQL-IMPLEMENTATION\n  431 |      end-string.\n  432 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:432: error: 'DB-UPass' is not defined\n  430 |                                into WS-MYSQL-IMPLEMENTATION\n  431 |      end-string.\n  432 >      string   DB-UPass       delimited by space\n  433 |               X\"00\"          delimited by size\n  434 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:434: error: 'WS-MYSQL-PASSWORD' is not defined\n  432 |      string   DB-UPass       delimited by space\n  433 |               X\"00\"          delimited by size\n  434 >                                into WS-MYSQL-PASSWORD\n  435 |      end-string.\n  436 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:436: error: 'DB-Port' is not defined\n  434 |                                into WS-MYSQL-PASSWORD\n  435 |      end-string.\n  436 >      string   DB-Port        delimited by space\n  437 |               X\"00\"          delimited by size\n  438 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:438: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  436 |      string   DB-Port        delimited by space\n  437 |               X\"00\"          delimited by size\n  438 >                                into WS-MYSQL-PORT-NUMBER\n  439 |      end-string.\n  440 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:440: error: 'DB-Socket' is not defined\n  438 |                                into WS-MYSQL-PORT-NUMBER\n  439 |      end-string.\n  440 >      string   DB-Socket      delimited by space\n  441 |               X\"00\"          delimited by size\n  442 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:442: error: 'WS-MYSQL-SOCKET' is not defined\n  440 |      string   DB-Socket      delimited by space\n  441 |               X\"00\"          delimited by size\n  442 >                                into WS-MYSQL-SOCKET\n  443 |      end-string.\n  444 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:446: error: 'fs-reply' is not defined\n  444 |      move     1 to ws-No-Paragraph.\n  445 |      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  446 >      if       fs-reply not = zero\n  447 |               go   to ba999-end.\n  448 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:515: error: 'WS-MYSQL-RESULT' is not defined\n  513 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  514 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  515 >            MOVE WS-MYSQL-RESULT TO TP-SALEDGER-REC\n  516 | *>               /MYSQL-END\\\n  517 |            move    \"0000000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:518: error: 'Testing-2' is not defined\n  516 | *>               /MYSQL-END\\\n  517 |            move    \"0000000\" to WS-File-Key\n  518 >               if    Testing-2\n  519 |                     display Display-Message-1 with erase eos\n  520 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:524: error: 'WS-MYSQL-Count-Rows' is not defined\n  522 | *>  It could be an empty table so test for it\n  523 | *>\n  524 >               if       WS-MYSQL-Count-Rows = zero\n  525 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  526 |                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:526: error: 'WS-MYSQL-SQLstate' is not defined\n  524 |               if       WS-MYSQL-Count-Rows = zero\n  525 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  526 >                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n  527 |                        move  WS-MYSQL-SqlState   to SQL-State\n  528 |                        if    WS-MYSQL-Error-Number  not = \"0  \"    *> set..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:534: error: 'WE-Error' is not defined\n  532 |                        end-if       *> do not really need to do this mean..\n  533 |                        move 10 to fs-reply\n  534 >                        move 10 to WE-Error\n  535 |                        move    \"No Data\" to WS-File-Key\n  536 |                        go to ba999-End       *> can clear the dup code af..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in paragraph 'ba060-Process-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:764: error: 'access-type' is not defined\n  762 | *>  Check for Param error 1st on start\n  763 | *>\n  764 >      if       access-type < 5 or > 8                   *> not using not <..\n  765 |               move 99 to FS-Reply\n  766 |               move 997 to WE-Error                     *> Invalid calling..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in paragraph 'ba070-Process-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:869: error: 'WS-Sales-Key' is not defined\n  867 |  ba070-Process-Write.\n  868 |      perform  bb000-HV-Load.                       *>  move WS-Sales-Reco..\n  869 >      move     WS-Sales-Key to WS-File-Key.\n  870 |      move     zero to FS-Reply WE-Error SQL-State\n  871 |      move     spaces to SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in paragraph 'ba999-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1188: error: 'Testing-1' is not defined\n 1186 | *>  Any Clean ups before quiting    move data record ?????  do so at the..\n 1187 | *>\n 1188 >      if       Testing-1\n 1189 |               perform Ca-Process-Logs\n 1190 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in section 'bb000-HV-Load':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1205: error: 'Sales-NAME' is not defined\n 1203 |      initialize TD-SALEDGER-REC.\n 1204 |      move     WS-Sales-Key       to HV-SALES-KEY\n 1205 >      move     Sales-NAME         to HV-SALES-NAME\n 1206 |      move     Sales-ADDRESS      to HV-SALES-ADDRESS\n 1207 |      move     Sales-PHONE        to HV-SALES-PHONE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1206: error: 'Sales-ADDRESS' is not defined\n 1204 |      move     WS-Sales-Key       to HV-SALES-KEY\n 1205 |      move     Sales-NAME         to HV-SALES-NAME\n 1206 >      move     Sales-ADDRESS      to HV-SALES-ADDRESS\n 1207 |      move     Sales-PHONE        to HV-SALES-PHONE\n 1208 |      move     Sales-EXT          to HV-SALES-EXT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1207: error: 'Sales-PHONE' is not defined\n 1205 |      move     Sales-NAME         to HV-SALES-NAME\n 1206 |      move     Sales-ADDRESS      to HV-SALES-ADDRESS\n 1207 >      move     Sales-PHONE        to HV-SALES-PHONE\n 1208 |      move     Sales-EXT          to HV-SALES-EXT\n 1209 |      move     Sales-EMAIL        to HV-SALES-EMAIL\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1208: error: 'Sales-EXT' is not defined\n 1206 |      move     Sales-ADDRESS      to HV-SALES-ADDRESS\n 1207 |      move     Sales-PHONE        to HV-SALES-PHONE\n 1208 >      move     Sales-EXT          to HV-SALES-EXT\n 1209 |      move     Sales-EMAIL        to HV-SALES-EMAIL\n 1210 |      move     Sales-FAX          to HV-SALES-FAX\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1209: error: 'Sales-EMAIL' is not defined\n 1207 |      move     Sales-PHONE        to HV-SALES-PHONE\n 1208 |      move     Sales-EXT          to HV-SALES-EXT\n 1209 >      move     Sales-EMAIL        to HV-SALES-EMAIL\n 1210 |      move     Sales-FAX          to HV-SALES-FAX\n 1211 |      move     Sales-STATUS       to HV-SALES-STATUS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1210: error: 'Sales-FAX' is not defined\n 1208 |      move     Sales-EXT          to HV-SALES-EXT\n 1209 |      move     Sales-EMAIL        to HV-SALES-EMAIL\n 1210 >      move     Sales-FAX          to HV-SALES-FAX\n 1211 |      move     Sales-STATUS       to HV-SALES-STATUS\n 1212 |      move     Sales-Late         to HV-SALES-LATE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1211: error: 'Sales-STATUS' is not defined\n 1209 |      move     Sales-EMAIL        to HV-SALES-EMAIL\n 1210 |      move     Sales-FAX          to HV-SALES-FAX\n 1211 >      move     Sales-STATUS       to HV-SALES-STATUS\n 1212 |      move     Sales-Late         to HV-SALES-LATE\n 1213 |      move     Sales-Dunning      to HV-SALES-DUNNING\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1212: error: 'Sales-Late' is not defined\n 1210 |      move     Sales-FAX          to HV-SALES-FAX\n 1211 |      move     Sales-STATUS       to HV-SALES-STATUS\n 1212 >      move     Sales-Late         to HV-SALES-LATE\n 1213 |      move     Sales-Dunning      to HV-SALES-DUNNING\n 1214 |      move     Email-Invoice      to HV-EMAIL-INVOICE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1213: error: 'Sales-Dunning' is not defined\n 1211 |      move     Sales-STATUS       to HV-SALES-STATUS\n 1212 |      move     Sales-Late         to HV-SALES-LATE\n 1213 >      move     Sales-Dunning      to HV-SALES-DUNNING\n 1214 |      move     Email-Invoice      to HV-EMAIL-INVOICE\n 1215 |      move     Email-Statement    to HV-EMAIL-STATEMENT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1214: error: 'Email-Invoice' is not defined\n 1212 |      move     Sales-Late         to HV-SALES-LATE\n 1213 |      move     Sales-Dunning      to HV-SALES-DUNNING\n 1214 >      move     Email-Invoice      to HV-EMAIL-INVOICE\n 1215 |      move     Email-Statement    to HV-EMAIL-STATEMENT\n 1216 |      move     Email-Letters      to HV-EMAIL-LETTERS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1215: error: 'Email-Statement' is not defined\n 1213 |      move     Sales-Dunning      to HV-SALES-DUNNING\n 1214 |      move     Email-Invoice      to HV-EMAIL-INVOICE\n 1215 >      move     Email-Statement    to HV-EMAIL-STATEMENT\n 1216 |      move     Email-Letters      to HV-EMAIL-LETTERS\n 1217 |      move     Delivery-Tag       to HV-DELIVERY-TAG\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1216: error: 'Email-Letters' is not defined\n 1214 |      move     Email-Invoice      to HV-EMAIL-INVOICE\n 1215 |      move     Email-Statement    to HV-EMAIL-STATEMENT\n 1216 >      move     Email-Letters      to HV-EMAIL-LETTERS\n 1217 |      move     Delivery-Tag       to HV-DELIVERY-TAG\n 1218 |      move     Notes-Tag          to HV-NOTES-TAG\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1217: error: 'Delivery-Tag' is not defined\n 1215 |      move     Email-Statement    to HV-EMAIL-STATEMENT\n 1216 |      move     Email-Letters      to HV-EMAIL-LETTERS\n 1217 >      move     Delivery-Tag       to HV-DELIVERY-TAG\n 1218 |      move     Notes-Tag          to HV-NOTES-TAG\n 1219 |      move     Sales-CREDIT       to HV-SALES-CREDIT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1218: error: 'Notes-Tag' is not defined\n 1216 |      move     Email-Letters      to HV-EMAIL-LETTERS\n 1217 |      move     Delivery-Tag       to HV-DELIVERY-TAG\n 1218 >      move     Notes-Tag          to HV-NOTES-TAG\n 1219 |      move     Sales-CREDIT       to HV-SALES-CREDIT\n 1220 |      move     Sales-DISCOUNT     to HV-SALES-DISCOUNT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1219: error: 'Sales-CREDIT' is not defined\n 1217 |      move     Delivery-Tag       to HV-DELIVERY-TAG\n 1218 |      move     Notes-Tag          to HV-NOTES-TAG\n 1219 >      move     Sales-CREDIT       to HV-SALES-CREDIT\n 1220 |      move     Sales-DISCOUNT     to HV-SALES-DISCOUNT\n 1221 |      move     Sales-Late-MIN     to HV-SALES-Late-MIN\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1220: error: 'Sales-DISCOUNT' is not defined\n 1218 |      move     Notes-Tag          to HV-NOTES-TAG\n 1219 |      move     Sales-CREDIT       to HV-SALES-CREDIT\n 1220 >      move     Sales-DISCOUNT     to HV-SALES-DISCOUNT\n 1221 |      move     Sales-Late-MIN     to HV-SALES-Late-MIN\n 1222 |      move     Sales-Late-Max     to HV-SALES-Late-MAX\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1221: error: 'Sales-Late-MIN' is not defined\n 1219 |      move     Sales-CREDIT       to HV-SALES-CREDIT\n 1220 |      move     Sales-DISCOUNT     to HV-SALES-DISCOUNT\n 1221 >      move     Sales-Late-MIN     to HV-SALES-Late-MIN\n 1222 |      move     Sales-Late-Max     to HV-SALES-Late-MAX\n 1223 |      move     Sales-LIMIT        to HV-SALES-LIMIT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1222: error: 'Sales-Late-Max' is not defined\n 1220 |      move     Sales-DISCOUNT     to HV-SALES-DISCOUNT\n 1221 |      move     Sales-Late-MIN     to HV-SALES-Late-MIN\n 1222 >      move     Sales-Late-Max     to HV-SALES-Late-MAX\n 1223 |      move     Sales-LIMIT        to HV-SALES-LIMIT\n 1224 |      move     Sales-ACTIVETY     to HV-SALES-ACTIVETY\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1223: error: 'Sales-LIMIT' is not defined\n 1221 |      move     Sales-Late-MIN     to HV-SALES-Late-MIN\n 1222 |      move     Sales-Late-Max     to HV-SALES-Late-MAX\n 1223 >      move     Sales-LIMIT        to HV-SALES-LIMIT\n 1224 |      move     Sales-ACTIVETY     to HV-SALES-ACTIVETY\n 1225 |      move     Sales-LAST-INV     to HV-SALES-LAST-INV\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1224: error: 'Sales-ACTIVETY' is not defined\n 1222 |      move     Sales-Late-Max     to HV-SALES-Late-MAX\n 1223 |      move     Sales-LIMIT        to HV-SALES-LIMIT\n 1224 >      move     Sales-ACTIVETY     to HV-SALES-ACTIVETY\n 1225 |      move     Sales-LAST-INV     to HV-SALES-LAST-INV\n 1226 |      move     Sales-LAST-PAY     to HV-SALES-LAST-PAY\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1225: error: 'Sales-LAST-INV' is not defined\n 1223 |      move     Sales-LIMIT        to HV-SALES-LIMIT\n 1224 |      move     Sales-ACTIVETY     to HV-SALES-ACTIVETY\n 1225 >      move     Sales-LAST-INV     to HV-SALES-LAST-INV\n 1226 |      move     Sales-LAST-PAY     to HV-SALES-LAST-PAY\n 1227 |      move     Sales-AVERAGE      to HV-SALES-AVERAGE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1226: error: 'Sales-LAST-PAY' is not defined\n 1224 |      move     Sales-ACTIVETY     to HV-SALES-ACTIVETY\n 1225 |      move     Sales-LAST-INV     to HV-SALES-LAST-INV\n 1226 >      move     Sales-LAST-PAY     to HV-SALES-LAST-PAY\n 1227 |      move     Sales-AVERAGE      to HV-SALES-AVERAGE\n 1228 |      move     Sales-PAY-ACTIVETY to HV-SALES-PAY-ACTIVETY\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1227: error: 'Sales-AVERAGE' is not defined\n 1225 |      move     Sales-LAST-INV     to HV-SALES-LAST-INV\n 1226 |      move     Sales-LAST-PAY     to HV-SALES-LAST-PAY\n 1227 >      move     Sales-AVERAGE      to HV-SALES-AVERAGE\n 1228 |      move     Sales-PAY-ACTIVETY to HV-SALES-PAY-ACTIVETY\n 1229 |      move     Sales-PAY-AVERAGE  to HV-SALES-PAY-AVERAGE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1228: error: 'Sales-PAY-ACTIVETY' is not defined\n 1226 |      move     Sales-LAST-PAY     to HV-SALES-LAST-PAY\n 1227 |      move     Sales-AVERAGE      to HV-SALES-AVERAGE\n 1228 >      move     Sales-PAY-ACTIVETY to HV-SALES-PAY-ACTIVETY\n 1229 |      move     Sales-PAY-AVERAGE  to HV-SALES-PAY-AVERAGE\n 1230 |      move     Sales-PAY-WORST    to HV-SALES-PAY-WORST\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1229: error: 'Sales-PAY-AVERAGE' is not defined\n 1227 |      move     Sales-AVERAGE      to HV-SALES-AVERAGE\n 1228 |      move     Sales-PAY-ACTIVETY to HV-SALES-PAY-ACTIVETY\n 1229 >      move     Sales-PAY-AVERAGE  to HV-SALES-PAY-AVERAGE\n 1230 |      move     Sales-PAY-WORST    to HV-SALES-PAY-WORST\n 1231 |      move     Sales-CREATE-DATE  to HV-SALES-CREATE-DAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1230: error: 'Sales-PAY-WORST' is not defined\n 1228 |      move     Sales-PAY-ACTIVETY to HV-SALES-PAY-ACTIVETY\n 1229 |      move     Sales-PAY-AVERAGE  to HV-SALES-PAY-AVERAGE\n 1230 >      move     Sales-PAY-WORST    to HV-SALES-PAY-WORST\n 1231 |      move     Sales-CREATE-DATE  to HV-SALES-CREATE-DAT\n 1232 |      move     Sales-CURRENT      to HV-SALES-CURRENT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1231: error: 'Sales-CREATE-DATE' is not defined\n 1229 |      move     Sales-PAY-AVERAGE  to HV-SALES-PAY-AVERAGE\n 1230 |      move     Sales-PAY-WORST    to HV-SALES-PAY-WORST\n 1231 >      move     Sales-CREATE-DATE  to HV-SALES-CREATE-DAT\n 1232 |      move     Sales-CURRENT      to HV-SALES-CURRENT\n 1233 |      move     Sales-LAST         to HV-SALES-LAST\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1232: error: 'Sales-CURRENT' is not defined\n 1230 |      move     Sales-PAY-WORST    to HV-SALES-PAY-WORST\n 1231 |      move     Sales-CREATE-DATE  to HV-SALES-CREATE-DAT\n 1232 >      move     Sales-CURRENT      to HV-SALES-CURRENT\n 1233 |      move     Sales-LAST         to HV-SALES-LAST\n 1234 |      move     TURNOVER-Q1        to HV-TURNOVER-Q1\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1233: error: 'Sales-LAST' is not defined\n 1231 |      move     Sales-CREATE-DATE  to HV-SALES-CREATE-DAT\n 1232 |      move     Sales-CURRENT      to HV-SALES-CURRENT\n 1233 >      move     Sales-LAST         to HV-SALES-LAST\n 1234 |      move     TURNOVER-Q1        to HV-TURNOVER-Q1\n 1235 |      move     TURNOVER-Q2        to HV-TURNOVER-Q2\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1234: error: 'TURNOVER-Q1' is not defined\n 1232 |      move     Sales-CURRENT      to HV-SALES-CURRENT\n 1233 |      move     Sales-LAST         to HV-SALES-LAST\n 1234 >      move     TURNOVER-Q1        to HV-TURNOVER-Q1\n 1235 |      move     TURNOVER-Q2        to HV-TURNOVER-Q2\n 1236 |      move     TURNOVER-Q3        to HV-TURNOVER-Q3\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1235: error: 'TURNOVER-Q2' is not defined\n 1233 |      move     Sales-LAST         to HV-SALES-LAST\n 1234 |      move     TURNOVER-Q1        to HV-TURNOVER-Q1\n 1235 >      move     TURNOVER-Q2        to HV-TURNOVER-Q2\n 1236 |      move     TURNOVER-Q3        to HV-TURNOVER-Q3\n 1237 |      move     TURNOVER-Q4        to HV-TURNOVER-Q4\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1236: error: 'TURNOVER-Q3' is not defined\n 1234 |      move     TURNOVER-Q1        to HV-TURNOVER-Q1\n 1235 |      move     TURNOVER-Q2        to HV-TURNOVER-Q2\n 1236 >      move     TURNOVER-Q3        to HV-TURNOVER-Q3\n 1237 |      move     TURNOVER-Q4        to HV-TURNOVER-Q4\n 1238 |      move     Sales-UNAPPLIED    to HV-SALES-UNAPPLIED.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1237: error: 'TURNOVER-Q4' is not defined\n 1235 |      move     TURNOVER-Q2        to HV-TURNOVER-Q2\n 1236 |      move     TURNOVER-Q3        to HV-TURNOVER-Q3\n 1237 >      move     TURNOVER-Q4        to HV-TURNOVER-Q4\n 1238 |      move     Sales-UNAPPLIED    to HV-SALES-UNAPPLIED.\n 1239 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1238: error: 'Sales-UNAPPLIED' is not defined\n 1236 |      move     TURNOVER-Q3        to HV-TURNOVER-Q3\n 1237 |      move     TURNOVER-Q4        to HV-TURNOVER-Q4\n 1238 >      move     Sales-UNAPPLIED    to HV-SALES-UNAPPLIED.\n 1239 | *>\n 1240 | *> Loading HVs implies a non-Fetch action. RGs are handled separately for\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:445: error: 'MYSQL-1000-OPEN' is not defined\n  443 |      end-string.\n  444 |      move     1 to ws-No-Paragraph.\n  445 >      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  446 |      if       fs-reply not = zero\n  447 |               go   to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:445: error: 'MYSQL-1090-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in paragraph 'ba030-Process-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:469: error: 'MYSQL-1980-CLOSE' is not defined\n  467 | *>    Close the Database\n  468 | *>\n  469 >            PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n  470 | *>  /MYSQL-END\\\n  471 |      go      to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:469: error: 'MYSQL-1999-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:513: error: 'MYSQL-1210-COMMAND' is not defined\n  511 |              ws-Where (1:J)      *> Sales-KEY > \"0000000\" ORDER BY SALEDG..\n  512 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  513 >            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  514 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  515 |            MOVE WS-MYSQL-RESULT TO TP-SALEDGER-REC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:513: error: 'MYSQL-1219-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:514: error: 'MYSQL-1220-STORE-RESULT' is not defined\n  512 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  513 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  514 >            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  515 |            MOVE WS-MYSQL-RESULT TO TP-SALEDGER-REC\n  516 | *>               /MYSQL-END\\\n/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:514: error: 'MYSQL-1239-EXIT' is not defined\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:278: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:327: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:331: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:333: error: wssl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1170: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:344: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:346: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:348: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:350: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:353: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:354: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:355: error: 'WS-Sales-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:378: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:379: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:380: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:381: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:382: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:392: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:420: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:422: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:424: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:426: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:428: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:430: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:432: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:434: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:436: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:438: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:440: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:442: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:446: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:515: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:518: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:524: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:526: error: 'WS-MYSQL-SQLstate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:534: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:764: error: 'access-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:869: error: 'WS-Sales-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1188: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1205: error: 'Sales-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1206: error: 'Sales-ADDRESS' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1207: error: 'Sales-PHONE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1208: error: 'Sales-EXT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1209: error: 'Sales-EMAIL' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1210: error: 'Sales-FAX' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1211: error: 'Sales-STATUS' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1212: error: 'Sales-Late' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1213: error: 'Sales-Dunning' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1214: error: 'Email-Invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1215: error: 'Email-Statement' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1216: error: 'Email-Letters' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1217: error: 'Delivery-Tag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1218: error: 'Notes-Tag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1219: error: 'Sales-CREDIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1220: error: 'Sales-DISCOUNT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1221: error: 'Sales-Late-MIN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1222: error: 'Sales-Late-Max' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1223: error: 'Sales-LIMIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1224: error: 'Sales-ACTIVETY' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1225: error: 'Sales-LAST-INV' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1226: error: 'Sales-LAST-PAY' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1227: error: 'Sales-AVERAGE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1228: error: 'Sales-PAY-ACTIVETY' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1229: error: 'Sales-PAY-AVERAGE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1230: error: 'Sales-PAY-WORST' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1231: error: 'Sales-CREATE-DATE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1232: error: 'Sales-CURRENT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1233: error: 'Sales-LAST' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1234: error: 'TURNOVER-Q1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1235: error: 'TURNOVER-Q2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1236: error: 'TURNOVER-Q3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1237: error: 'TURNOVER-Q4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1238: error: 'Sales-UNAPPLIED' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:445: error: 'MYSQL-1000-OPEN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:445: error: 'MYSQL-1090-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:469: error: 'MYSQL-1980-CLOSE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:469: error: 'MYSQL-1999-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:513: error: 'MYSQL-1210-COMMAND' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:513: error: 'MYSQL-1219-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:514: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:514: error: 'MYSQL-1239-EXIT' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:278: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:327: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:331: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:333: error: wssl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1170: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:344: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:346: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:348: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:350: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:353: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:354: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:355: error: 'WS-Sales-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:378: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:379: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:380: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:381: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:382: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:392: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:420: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:422: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:424: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:426: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:428: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:430: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:432: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:434: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:436: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:438: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:440: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:442: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:446: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:515: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:518: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:524: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:526: error: 'WS-MYSQL-SQLstate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:534: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:764: error: 'access-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:869: error: 'WS-Sales-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1188: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1205: error: 'Sales-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1206: error: 'Sales-ADDRESS' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1207: error: 'Sales-PHONE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1208: error: 'Sales-EXT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1209: error: 'Sales-EMAIL' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1210: error: 'Sales-FAX' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1211: error: 'Sales-STATUS' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1212: error: 'Sales-Late' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1213: error: 'Sales-Dunning' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1214: error: 'Email-Invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1215: error: 'Email-Statement' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1216: error: 'Email-Letters' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1217: error: 'Delivery-Tag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1218: error: 'Notes-Tag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1219: error: 'Sales-CREDIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1220: error: 'Sales-DISCOUNT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1221: error: 'Sales-Late-MIN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1222: error: 'Sales-Late-Max' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1223: error: 'Sales-LIMIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1224: error: 'Sales-ACTIVETY' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1225: error: 'Sales-LAST-INV' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1226: error: 'Sales-LAST-PAY' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1227: error: 'Sales-AVERAGE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1228: error: 'Sales-PAY-ACTIVETY' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1229: error: 'Sales-PAY-AVERAGE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1230: error: 'Sales-PAY-WORST' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1231: error: 'Sales-CREATE-DATE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1232: error: 'Sales-CURRENT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1233: error: 'Sales-LAST' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1234: error: 'TURNOVER-Q1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1235: error: 'TURNOVER-Q2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1236: error: 'TURNOVER-Q3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1237: error: 'TURNOVER-Q4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:1238: error: 'Sales-UNAPPLIED' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:445: error: 'MYSQL-1000-OPEN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:445: error: 'MYSQL-1090-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:469: error: 'MYSQL-1980-CLOSE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:469: error: 'MYSQL-1999-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:513: error: 'MYSQL-1210-COMMAND' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:513: error: 'MYSQL-1219-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:514: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/salesMT.cbl:514: error: 'MYSQL-1239-EXIT' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 125,
+    "cognitive": 238,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 257,
+      "totalOperators": 543,
+      "totalOperands": 3542,
+      "vocabulary": 269,
+      "length": 4085,
+      "volume": 32972,
+      "difficulty": 82.69,
+      "effort": 2726534,
+      "timeToProgram": 151474,
+      "deliveredBugs": 10.991
+    },
+    "maintainability": 52
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 525
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 526
+      },
+      {
+        "target": "MySQL_error",
+        "line": 530
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 561
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 611
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 612
+      },
+      {
+        "target": "MySQL_error",
+        "line": 615
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 691
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 734
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 735
+      },
+      {
+        "target": "MySQL_error",
+        "line": 740
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 841
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 842
+      },
+      {
+        "target": "MySQL_error",
+        "line": 845
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 876
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 877
+      },
+      {
+        "target": "MySQL_error",
+        "line": 880
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 931
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 932
+      },
+      {
+        "target": "MySQL_error",
+        "line": 935
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 977
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 978
+      },
+      {
+        "target": "MySQL_error",
+        "line": 981
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1048
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1049
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1053
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 1084
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1134
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1135
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1138
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1181
+      },
+      {
+        "target": "fhlogger",
+        "line": 2263
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 193
+      },
+      {
+        "name": "envdiv",
+        "line": 200
+      },
+      {
+        "name": "mysql-variables",
+        "line": 278
+      },
+      {
+        "name": "wsfnctn",
+        "line": 327
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 331
+      },
+      {
+        "name": "wssl",
+        "line": 333
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1170
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 418
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 445
+      },
+      {
+        "target": "ba998-Free",
+        "line": 461
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 469
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 513
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 514
+      },
+      {
+        "target": "ba999-End",
+        "line": 545
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 633
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 674
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 675
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 754
+      },
+      {
+        "target": "ba998-Free",
+        "line": 773
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 831
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 832
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 868
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 874
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 928
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 951
+      },
+      {
+        "target": "bb300-Update",
+        "line": 970
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1036
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 1037
+      },
+      {
+        "target": "ba999-End",
+        "line": 1068
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 1156
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 1189
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1769
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2253
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 204
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

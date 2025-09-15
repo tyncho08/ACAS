@@ -1,0 +1,473 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl",
+  "fileName": "auditLD.cbl",
+  "fileHash": "f1018e1d5fe877253cd871a3ea0051345330a7f94e067d3d86096b28c79a45ed",
+  "timestamp": "2025-09-15T19:46:01.524Z",
+  "parseTime": 62,
+  "lines": {
+    "total": 525,
+    "code": 326,
+    "comment": 198,
+    "blank": 1
+  },
+  "programId": "auditLD",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:123: error: envdiv.cob: No such file or directory\n  121 | *>-------------------\n  122 | *>\n  123 >  copy \"envdiv.cob\".\n  124 |  input-output            section.\n  125 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:130: error: selsys.cob: No such file or directory\n  128 | *>-----------\n  129 | *>\n  130 >  copy \"selsys.cob\".\n  131 |  data division.\n  132 | *>------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:137: error: fdsys.cob: No such file or directory\n  135 | *>-----------\n  136 | *>\n  137 >  copy \"fdsys.cob\".\n  138 |  working-storage section.\n  139 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:172: error: Test-Data-Flags.cob: No such file or directory\n  170 |      03  WS-Socket       pic x(64).\n  171 | *>\n  172 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  173 | *>\n  174 |  copy \"wsaudit.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:174: error: wsaudit.cob: No such file or directory\n  172 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  173 | *>\n  174 >  copy \"wsaudit.cob\".\n  175 |  copy \"wsfnctn.cob\".\n  176 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:175: error: wsfnctn.cob: No such file or directory\n  173 | *>\n  174 |  copy \"wsaudit.cob\".\n  175 >  copy \"wsfnctn.cob\".\n  176 |  copy \"wsnames.cob\".\n  177 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:176: error: wsnames.cob: No such file or directory\n  174 |  copy \"wsaudit.cob\".\n  175 |  copy \"wsfnctn.cob\".\n  176 >  copy \"wsnames.cob\".\n  177 |  copy \"wscall.cob\".\n  178 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:177: error: wscall.cob: No such file or directory\n  175 |  copy \"wsfnctn.cob\".\n  176 |  copy \"wsnames.cob\".\n  177 >  copy \"wscall.cob\".\n  178 | *>\n  179 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:520: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  518 |      goback.\n  519 | *>\n  520 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  521 | *>\n  522 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:207: error: 'WS-Log-System' is not defined\n  205 |      perform  Call-Sysout.\n  206 |   *>     display  prog-name. *> at 0101 with foreground-color 2 erase eos..\n  207 >      move     5      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  208 |      move     13     to WS-Log-File-No.  *> RDB, File/Table\n  209 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:208: error: 'WS-Log-File-No' is not defined\n  206 |   *>     display  prog-name. *> at 0101 with foreground-color 2 erase eos..\n  207 |      move     5      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  208 >      move     13     to WS-Log-File-No.  *> RDB, File/Table\n  209 | *>\n  210 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:212: error: 'System-File' is not defined\n  210 | *>  Get the system param for the various RDB fields\n  211 | *>\n  212 >      open     input System-File.\n  213 |      if       fs-reply not = zero\n  214 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:212: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:213: error: 'fs-reply' is not defined\n  211 | *>\n  212 |      open     input System-File.\n  213 >      if       fs-reply not = zero\n  214 |               display Prog-Name at 0101 with erase eos\n  215 |               display SY001     at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:218: error: 'System-File' is not a file name\n  216 |               display fs-reply  at 0428\n  217 |               display SY004     at 0501\n  218 >               close System-File\n  219 |               move 128 to return-code\n  220 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:221: error: 'rrn' is not defined\n  219 |               move 128 to return-code\n  220 |               goback.\n  221 >      move     1 to rrn.\n  222 |      read     system-file record.\n  223 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:222: error: 'System-File' is not a file name\n  220 |               goback.\n  221 |      move     1 to rrn.\n  222 >      read     system-file record.\n  223 |      if       fs-reply not = zero\n  224 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:228: error: 'System-File' is not a file name\n  226 |               display fs-reply        at 0428\n  227 |               display \"Not set up ?\"  at 0431\n  228 >               close System-File\n  229 |               move 128 to return-code\n  230 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:234: error: 'RDBMS-DB-Name' is not defined\n  232 | *>  Load up the DB settings from the system record as its not passed on.\n  233 | *>\n  234 >      if       RDBMS-DB-Name = spaces\n  235 |          or   FS-Cobol-Files-Used\n  236 |               display Prog-Name    *>  at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:235: error: 'FS-Cobol-Files-Used' is not defined\n  233 | *>\n  234 |      if       RDBMS-DB-Name = spaces\n  235 >          or   FS-Cobol-Files-Used\n  236 |               display Prog-Name    *>  at 0101 with erase eos\n  237 |               display SY019\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:243: error: 'System-File' is not a file name\n  241 |               if       WS-RDB-Return = 8\n  242 |                        display \"acas.param file NOT found - Aborted\"\n  243 >                        close  System-File\n  244 |                        goback\n  245 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:248: error: 'System-File' is not a file name\n  246 |               if       WS-RDB-Return = 1\n  247 |                        display \"Invalid keyword terminator found - Aborte..\n  248 >                        close  System-File\n  249 |                        goback\n  250 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:253: error: 'System-File' is not a file name\n  251 |               if       WS-RDB-Return = 2\n  252 |                        display \"Invalid keyword found - Aborted\"\n  253 >                        close  System-File\n  254 |                        goback\n  255 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:258: error: 'RDBMS-Host' is not defined\n  256 |               if       WS-RDB-Return = zeros\n  257 |                        display \"acas-param file found and being used \"\n  258 >                        move     WS-Host-Name      to RDBMS-Host\n  259 |                        move     WS-Implementation to RDBMS-User\n  260 |                        move     WS-Password       to RDBMS-Passwd\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:259: error: 'RDBMS-User' is not defined\n  257 |                        display \"acas-param file found and being used \"\n  258 |                        move     WS-Host-Name      to RDBMS-Host\n  259 >                        move     WS-Implementation to RDBMS-User\n  260 |                        move     WS-Password       to RDBMS-Passwd\n  261 |                        move     WS-Base-Name      to RDBMS-DB-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:260: error: 'RDBMS-Passwd' is not defined\n  258 |                        move     WS-Host-Name      to RDBMS-Host\n  259 |                        move     WS-Implementation to RDBMS-User\n  260 >                        move     WS-Password       to RDBMS-Passwd\n  261 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  262 |                        move     WS-Port-Number    to RDBMS-Port\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:262: error: 'RDBMS-Port' is not defined\n  260 |                        move     WS-Password       to RDBMS-Passwd\n  261 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  262 >                        move     WS-Port-Number    to RDBMS-Port\n  263 |                        move     WS-Socket         to RDBMS-Socket\n  264 |                       display \"User = \"   RDBMS-User\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:263: error: 'RDBMS-Socket' is not defined\n  261 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  262 |                        move     WS-Port-Number    to RDBMS-Port\n  263 >                        move     WS-Socket         to RDBMS-Socket\n  264 |                       display \"User = \"   RDBMS-User\n  265 |                       display \"Host = \"   RDBMS-Host\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:285: error: 'System-File' is not a file name\n  283 |               display \"Host = \"   RDBMS-Host\n  284 |               display \"Socket = \" RDBMS-Socket\n  285 >               close System-File\n  286 |               move 64 to Return-Code\n  287 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'aa010-Proc-Override':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:293: error: 'File-System-Used' is not defined\n  291 | *>  Over-ride processes for acas010/auditMT for Dup modes\n  292 | *>\n  293 >      move     zero to File-System-Used\n  294 |                       File-Duplicates-In-Use\n  295 |                       FA-File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:294: error: 'File-Duplicates-In-Use' is not defined\n  292 | *>\n  293 |      move     zero to File-System-Used\n  294 >                       File-Duplicates-In-Use\n  295 |                       FA-File-System-Used\n  296 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:295: error: 'FA-File-System-Used' is not defined\n  293 |      move     zero to File-System-Used\n  294 |                       File-Duplicates-In-Use\n  295 >                       FA-File-System-Used\n  296 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  297 |      move     zero to Log-file-rec-written.        *> for logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:296: error: 'FA-File-Duplicates-In-Use' is not defined\n  294 |                       File-Duplicates-In-Use\n  295 |                       FA-File-System-Used\n  296 >                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  297 |      move     zero to Log-file-rec-written.        *> for logging.\n  298 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:297: error: 'Log-file-rec-written' is not defined\n  295 |                       FA-File-System-Used\n  296 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  297 >      move     zero to Log-file-rec-written.        *> for logging.\n  298 |      move     1 to File-Key-No.\n  299 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:298: error: 'File-Key-No' is not defined\n  296 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  297 |      move     zero to Log-file-rec-written.        *> for logging.\n  298 >      move     1 to File-Key-No.\n  299 | *>\n  300 |      perform  acas010-Open-Input.      *> open input Cobol Audit FILE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:311: error: 'System-File' is not a file name\n  309 |               move    \"CLOSE   \" to SO-Print\n  310 |               perform call-Sysout\n  311 >               close System-File\n  312 |               perform acas010-Close\n  313 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:324: error: 'System-File' is not a file name\n  322 |               move    \"CLOSE   \" to SO-Print\n  323 |               perform call-Sysout\n  324 >               close System-File\n  325 |               perform acas010-Close\n  326 |               move 16 to return-code\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:337: error: 'System-File' is not a file name\n  335 |               move \"CLOSE   \" to SO-Print\n  336 |               perform call-Sysout\n  337 >               close System-File\n  338 |               perform acas010-Close\n  339 |               move zero to File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:345: error: 'Access-Type' is not defined\n  343 |               goback\n  344 |      end-if.\n  345 >      move     zero to Access-Type.\n  346 |      go       to aa010-Read.\n  347 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'acas010':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:349: error: 'System-Record' is not defined\n  347 | *>\n  348 |  acas010.\n  349 >      call     \"acas010\" using System-Record\n  350 |                               WS-Stock-Audit-Record\n  351 |                               File-Access\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:350: error: 'WS-Stock-Audit-Record' is not defined\n  348 |  acas010.\n  349 |      call     \"acas010\" using System-Record\n  350 >                               WS-Stock-Audit-Record\n  351 |                               File-Access\n  352 |                               File-Defs\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:351: error: 'File-Access' is not defined\n  349 |      call     \"acas010\" using System-Record\n  350 |                               WS-Stock-Audit-Record\n  351 >                               File-Access\n  352 |                               File-Defs\n  353 |                               ACAS-DAL-Common-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:352: error: 'File-Defs' is not defined\n  350 |                               WS-Stock-Audit-Record\n  351 |                               File-Access\n  352 >                               File-Defs\n  353 |                               ACAS-DAL-Common-data.\n  354 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:353: error: 'ACAS-DAL-Common-data' is not defined\n  351 |                               File-Access\n  352 |                               File-Defs\n  353 >                               ACAS-DAL-Common-data.\n  354 | *>\n  355 |  acas010-Open.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'acas010-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:356: error: 'fn-open' is not defined\n  354 | *>\n  355 |  acas010-Open.\n  356 >      set      fn-open to true.\n  357 |      set      fn-i-o  to true.\n  358 |      perform  acas010.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:357: error: 'fn-i-o' is not defined\n  355 |  acas010-Open.\n  356 |      set      fn-open to true.\n  357 >      set      fn-i-o  to true.\n  358 |      perform  acas010.\n  359 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'acas010-Open-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:363: error: 'fn-input' is not defined\n  361 |  acas010-Open-Input.\n  362 |      set      fn-open  to true.\n  363 >      set      fn-input to true.\n  364 |      perform  acas010.\n  365 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'acas010-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:368: error: 'fn-Close' is not defined\n  366 | *>\n  367 |  acas010-Close.\n  368 >      set      fn-Close to true.\n  369 |      perform  acas010.\n  370 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'acas010-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:372: error: 'fn-Read-Next' is not defined\n  370 | *>\n  371 |  acas010-Read-Next.\n  372 >      set      fn-Read-Next to true.\n  373 |      perform  acas010.\n  374 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'acas010-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:376: error: 'fn-Write' is not defined\n  374 | *>\n  375 |  acas010-Write.\n  376 >      set      fn-Write to true.\n  377 |      perform  acas010.\n  378 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'acas010-Rewrite':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:380: error: 'fn-Re-Write' is not defined\n  378 | *>\n  379 |  acas010-Rewrite.\n  380 >      set      fn-Re-Write to true.\n  381 |      perform  acas010.\n  382 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'aa010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:409: error: 'Sql-State' is not defined\n  407 |                    FA-File-System-Used.\n  408 |      perform  acas010-Write.\n  409 >      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  410 |         or    fs-reply = 22  or = 99                    *> Check for dup..\n  411 |          or   SQL-Err (1:4) = \"1062\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:411: error: 'SQL-Err' is not defined\n  409 |      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  410 |         or    fs-reply = 22  or = 99                    *> Check for dup..\n  411 >          or   SQL-Err (1:4) = \"1062\"\n  412 |                            or \"1022\"\n  413 |               move    zeros to FS-Reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:414: error: 'WE-Error' is not defined\n  412 |                            or \"1022\"\n  413 |               move    zeros to FS-Reply\n  414 >                                WE-Error\n  415 |               perform acas010-Rewrite\n  416 |               if      FS-Reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:419: error: 'WS-File-Key' is not defined\n  417 |                       move spaces to SO-Print\n  418 |                       string SL010\n  419 >                               WS-File-Key into SO-Print\n  420 |                       perform call-Sysout\n  421 |                       move    SL099 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:439: error: 'SQL-Msg' is not defined\n  437 |               string SL018 SQL-Err into SO-Print\n  438 |               perform Call-Sysout\n  439 >               move SQL-Msg to SO-Print\n  440 |               perform Call-Sysout\n  441 |               move SQL-State to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'aa999-Finish':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:508: error: 'File-Function' is not defined\n  506 |                    FA-File-System-Used.\n  507 |      move     zero to Access-Type.\n  508 >      move     2 to File-Function.\n  509 |      perform  acas010-Close.                     *> Close RDB\n  510 |      close    System-File.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:510: error: 'System-File' is not a file name\n  508 |      move     2 to File-Function.\n  509 |      perform  acas010-Close.                     *> Close RDB\n  510 >      close    System-File.\n  511 |      move     zero to File-System-Used\n  512 |                    FA-File-System-Used.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:203: error: 'zz020-Get-Program-Args' is not defined\n  201 | *>\n  202 |  aa000-main-start.\n  203 >      perform  zz020-Get-Program-Args.\n  204 |      move     Prog-Name to So-Print.\n  205 |      perform  Call-Sysout.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:123: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:130: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:137: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:172: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:174: error: wsaudit.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:175: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:176: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:177: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:520: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:207: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:208: error: 'WS-Log-File-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:212: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:212: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:213: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:218: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:221: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:222: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:228: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:234: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:235: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:243: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:248: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:253: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:258: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:259: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:260: error: 'RDBMS-Passwd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:262: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:263: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:285: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:293: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:294: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:295: error: 'FA-File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:296: error: 'FA-File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:297: error: 'Log-file-rec-written' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:298: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:311: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:324: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:337: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:345: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:349: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:350: error: 'WS-Stock-Audit-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:351: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:352: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:353: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:356: error: 'fn-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:357: error: 'fn-i-o' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:363: error: 'fn-input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:368: error: 'fn-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:372: error: 'fn-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:376: error: 'fn-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:380: error: 'fn-Re-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:409: error: 'Sql-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:411: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:414: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:419: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:439: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:508: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:510: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:203: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:123: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:130: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:137: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:172: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:174: error: wsaudit.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:175: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:176: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:177: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:520: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:207: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:208: error: 'WS-Log-File-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:212: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:212: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:213: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:218: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:221: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:222: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:228: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:234: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:235: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:243: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:248: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:253: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:258: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:259: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:260: error: 'RDBMS-Passwd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:262: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:263: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:285: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:293: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:294: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:295: error: 'FA-File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:296: error: 'FA-File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:297: error: 'Log-file-rec-written' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:298: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:311: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:324: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:337: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:345: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:349: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:350: error: 'WS-Stock-Audit-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:351: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:352: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:353: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:356: error: 'fn-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:357: error: 'fn-i-o' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:363: error: 'fn-input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:368: error: 'fn-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:372: error: 'fn-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:376: error: 'fn-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:380: error: 'fn-Re-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:409: error: 'Sql-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:411: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:414: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:419: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:439: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:508: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:510: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD.cbl:203: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 32,
+    "cognitive": 58,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 77,
+      "totalOperators": 215,
+      "totalOperands": 267,
+      "vocabulary": 86,
+      "length": 482,
+      "volume": 3097,
+      "difficulty": 15.6,
+      "effort": 48332,
+      "timeToProgram": 2685,
+      "deliveredBugs": 1.032
+    },
+    "maintainability": 71
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas-get-params",
+        "line": 239
+      },
+      {
+        "target": "acas010",
+        "line": 349
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 456
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 466
+      },
+      {
+        "target": "ACAS-Sysout",
+        "line": 523
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 113
+      },
+      {
+        "name": "envdiv",
+        "line": 123
+      },
+      {
+        "name": "selsys",
+        "line": 130
+      },
+      {
+        "name": "fdsys",
+        "line": 137
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 172
+      },
+      {
+        "name": "wsaudit",
+        "line": 174
+      },
+      {
+        "name": "wsfnctn",
+        "line": 175
+      },
+      {
+        "name": "wsnames",
+        "line": 176
+      },
+      {
+        "name": "wscall",
+        "line": 177
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 520
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 203
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 205
+      },
+      {
+        "target": "acas010-Open-Input",
+        "line": 300
+      },
+      {
+        "target": "call-Sysout",
+        "line": 303
+      },
+      {
+        "target": "call-Sysout",
+        "line": 308
+      },
+      {
+        "target": "call-Sysout",
+        "line": 310
+      },
+      {
+        "target": "acas010-Close",
+        "line": 312
+      },
+      {
+        "target": "call-Sysout",
+        "line": 316
+      },
+      {
+        "target": "call-Sysout",
+        "line": 321
+      },
+      {
+        "target": "call-Sysout",
+        "line": 323
+      },
+      {
+        "target": "acas010-Close",
+        "line": 325
+      },
+      {
+        "target": "acas010-Open",
+        "line": 331
+      },
+      {
+        "target": "call-Sysout",
+        "line": 334
+      },
+      {
+        "target": "call-Sysout",
+        "line": 336
+      },
+      {
+        "target": "acas010-Close",
+        "line": 338
+      },
+      {
+        "target": "acas010-Close",
+        "line": 341
+      },
+      {
+        "target": "acas010",
+        "line": 358
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 359
+      },
+      {
+        "target": "acas010",
+        "line": 364
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 365
+      },
+      {
+        "target": "acas010",
+        "line": 369
+      },
+      {
+        "target": "acas010",
+        "line": 373
+      },
+      {
+        "target": "acas010",
+        "line": 377
+      },
+      {
+        "target": "acas010",
+        "line": 381
+      },
+      {
+        "target": "acas010-Read-Next",
+        "line": 389
+      },
+      {
+        "target": "call-Sysout",
+        "line": 397
+      },
+      {
+        "target": "call-Sysout",
+        "line": 399
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 400
+      },
+      {
+        "target": "acas010-Write",
+        "line": 408
+      },
+      {
+        "target": "acas010-Rewrite",
+        "line": 415
+      },
+      {
+        "target": "call-Sysout",
+        "line": 420
+      },
+      {
+        "target": "call-Sysout",
+        "line": 422
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 432
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 435
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 438
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 440
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 442
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 443
+      },
+      {
+        "target": "call-Sysout",
+        "line": 475
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 478
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 481
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 483
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 485
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 487
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 488
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 497
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 500
+      },
+      {
+        "target": "call-Sysout",
+        "line": 504
+      },
+      {
+        "target": "acas010-Close",
+        "line": 509
+      },
+      {
+        "target": "acas010-close",
+        "line": 513
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 515
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 517
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 138
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>                rollback\n*>...",
+        "line": 453
+      },
+      {
+        "content": "*>                commit\n*>...",
+        "line": 463
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

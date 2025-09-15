@@ -1,0 +1,197 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl",
+  "fileName": "irs085.cbl",
+  "fileHash": "e2626e10117800ad9bc3167645bdf1d3c4743a944e17e03aec0d5ce39c9808d0",
+  "timestamp": "2025-09-15T19:46:20.547Z",
+  "parseTime": 71,
+  "lines": {
+    "total": 263,
+    "code": 120,
+    "comment": 142,
+    "blank": 1
+  },
+  "programId": "irs085",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:99: error: envdiv.cob: No such file or directory\n   97 | *>\n   98 |  environment division.\n   99 >  copy  \"envdiv.cob\".\n  100 | *>\n  101 |  input-output section.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:138: error: wsfnctn.cob: No such file or directory\n  136 |  77  ws-reply            pic x     value space.\n  137 | *>\n  138 >  copy \"wsfnctn.cob\".\n  139 |  copy \"irswsdflt.cob\"     replacing Default-Record by WS-IRS-Default-Reco..\n  140 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:139: error: irswsdflt.cob: No such file or directory\n  137 | *>\n  138 |  copy \"wsfnctn.cob\".\n  139 >  copy \"irswsdflt.cob\"     replacing Default-Record by WS-IRS-Default-Reco..\n  140 | *>\n  141 |  copy \"irswspost.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:141: error: irswspost.cob: No such file or directory\n  139 |  copy \"irswsdflt.cob\"     replacing Default-Record by WS-IRS-Default-Reco..\n  140 | *>\n  141 >  copy \"irswspost.cob\".\n  142 | *>\n  143 |  01  filler redefines Posting-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:158: error: Test-Data-Flags.cob: No such file or directory\n  156 |      03  WS-IRS-Posting-Record pic x.\n  157 | *>\n  158 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  159 | *>\n  160 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:173: error: irswssystem.cob: No such file or directory\n  171 |  linkage section.\n  172 |  copy \"irswssystem.cob\"   *> IRS param record\n  173 >               replacing system-record  by IRS-System-Params. *> (01 level..\n  174 | *>\n  175 |  copy \"wssystem.cob\"    *> NEW for v3.02\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:203: error: wssystem.cob: No such file or directory\n  201 |                         PL-App-Created by IRS-PL-App-Created\n  202 |                         PL-Approp-AC   by IRS-PL-Approp-AC\n  203 >                         1st-Time-Flag  by IRS-First-Time-Flag.\n  204 | *>\n  205 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:205: error: wsnames.cob: No such file or directory\n  203 |                         1st-Time-Flag  by IRS-First-Time-Flag.\n  204 | *>\n  205 >  copy \"wsnames.cob\".\n  206 | *>\n  207 |  procedure division using IRS-System-Params\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:261: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory\n  259 |      perform  acasirsub4-Close.\n  260 | *>\n  261 >  copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n  262 | *>\n  263 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:143: error: 'Posting-Record' is not defined\n  141 |  copy \"irswspost.cob\".\n  142 | *>\n  143 >  01  filler redefines Posting-Record.\n  144 |      03  filler          pic 9(5).\n  145 |      03  filler          pic xx.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:207: error: 'IRS-System-Params' is not defined\n  205 |  copy \"wsnames.cob\".\n  206 | *>\n  207 >  procedure division using IRS-System-Params\n  208 |                           WS-System-Record\n  209 |                           File-Defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:208: error: 'WS-System-Record' is not defined\n  206 | *>\n  207 |  procedure division using IRS-System-Params\n  208 >                           WS-System-Record\n  209 |                           File-Defs.\n  210 | *>=========================================\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:209: error: 'File-Defs' is not defined\n  207 |  procedure division using IRS-System-Params\n  208 |                           WS-System-Record\n  209 >                           File-Defs.\n  210 | *>=========================================\n  211 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:214: error: 'file-function' is not defined\n  212 |  init01 section.\n  213 | *>**************\n  214 >      move     3 to file-function.\n  215 |      perform  acasirsub3.\n  216 |      sort     sort-file on ascending key sort-account sort-month\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl: in section 'input-to-sort':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:226: error: 'fs-reply' is not defined\n  224 | *>---------------------\n  225 |      perform  acasirsub4-Open-Input.\n  226 >      if       fs-reply not zero\n  227 |               display IR914    at 2301 with foreground-color 4 erase eol\n  228 |               display fs-reply at 2352 with foreground-color 4\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl: in paragraph 'process-input-record':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:240: error: 'post-amount' is not defined\n  238 | *>\n  239 |      move     post-mm to sort-month.\n  240 >      move     post-amount to sort-amount.\n  241 | *>\n  242 |      move     post-cr to sort-account.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:242: error: 'post-cr' is not defined\n  240 |      move     post-amount to sort-amount.\n  241 | *>\n  242 >      move     post-cr to sort-account.\n  243 |      release  sort-record.\n  244 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:246: error: 'post-dr' is not defined\n  244 | *>\n  245 |      multiply -1 by sort-amount.\n  246 >      move     post-dr to sort-account.\n  247 |      release  sort-record.\n  248 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:249: error: 'vat-ac-def' is not defined\n  247 |      release  sort-record.\n  248 | *>\n  249 >      if       vat-ac-def = zero\n  250 |               go to process-input-record.\n  251 |      move     vat-amount to sort-amount.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:251: error: 'vat-amount' is not defined\n  249 |      if       vat-ac-def = zero\n  250 |               go to process-input-record.\n  251 >      move     vat-amount to sort-amount.\n  252 |      move     def-acs (vat-ac-def) to sort-account.\n  253 |      release  sort-record.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:252: error: 'def-acs' is not defined\n  250 |               go to process-input-record.\n  251 |      move     vat-amount to sort-amount.\n  252 >      move     def-acs (vat-ac-def) to sort-account.\n  253 |      release  sort-record.\n  254 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:215: error: 'acasirsub3' is not defined\n  213 | *>**************\n  214 |      move     3 to file-function.\n  215 >      perform  acasirsub3.\n  216 |      sort     sort-file on ascending key sort-account sort-month\n  217 |                   input procedure is input-to-sort\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl: in section 'input-to-sort':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:225: error: 'acasirsub4-Open-Input' is not defined\n  223 |  input-to-sort section.\n  224 | *>---------------------\n  225 >      perform  acasirsub4-Open-Input.\n  226 |      if       fs-reply not zero\n  227 |               display IR914    at 2301 with foreground-color 4 erase eol\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl: in paragraph 'process-input-record':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:235: error: 'acasirsub4-Read-Next' is not defined\n  233 |  process-input-record.\n  234 | *>\n  235 >      perform  acasirsub4-Read-Next.\n  236 |      if       fs-reply = 10\n  237 |               go to end-of-input.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl: in paragraph 'end-of-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:259: error: 'acasirsub4-Close' is not defined\n  257 |  end-of-input.\n  258 | *>\n  259 >      perform  acasirsub4-Close.\n  260 | *>\n  261 |  copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:99: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:138: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:139: error: irswsdflt.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:141: error: irswspost.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:158: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:173: error: irswssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:203: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:205: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:261: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:143: error: 'Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:207: error: 'IRS-System-Params' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:208: error: 'WS-System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:209: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:214: error: 'file-function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:226: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:240: error: 'post-amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:242: error: 'post-cr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:246: error: 'post-dr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:249: error: 'vat-ac-def' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:251: error: 'vat-amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:252: error: 'def-acs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:215: error: 'acasirsub3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:225: error: 'acasirsub4-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:235: error: 'acasirsub4-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:259: error: 'acasirsub4-Close' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:99: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:138: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:139: error: irswsdflt.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:141: error: irswspost.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:158: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:173: error: irswssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:203: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:205: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:261: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:143: error: 'Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:207: error: 'IRS-System-Params' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:208: error: 'WS-System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:209: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:214: error: 'file-function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:226: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:240: error: 'post-amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:242: error: 'post-cr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:246: error: 'post-dr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:249: error: 'vat-ac-def' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:251: error: 'vat-amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:252: error: 'def-acs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:215: error: 'acasirsub3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:225: error: 'acasirsub4-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:235: error: 'acasirsub4-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl:259: error: 'acasirsub4-Close' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 8,
+    "cognitive": 23,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 52,
+      "totalOperators": 29,
+      "totalOperands": 115,
+      "vocabulary": 61,
+      "length": 144,
+      "volume": 854,
+      "difficulty": 9.95,
+      "effort": 8499,
+      "timeToProgram": 472,
+      "deliveredBugs": 0.285
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "irsubn",
+        "line": 49
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 92
+      },
+      {
+        "name": "envdiv",
+        "line": 99
+      },
+      {
+        "name": "wsfnctn",
+        "line": 138
+      },
+      {
+        "name": "irswsdflt",
+        "line": 139
+      },
+      {
+        "name": "irswspost",
+        "line": 141
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 158
+      },
+      {
+        "name": "irswssystem",
+        "line": 172
+      },
+      {
+        "name": "wssystem",
+        "line": 175
+      },
+      {
+        "name": "wsnames",
+        "line": 205
+      },
+      {
+        "name": "Proc-ZZ100-ACAS-IRS-Calls",
+        "line": 261
+      }
+    ],
+    "performs": [
+      {
+        "target": "acasirsubn",
+        "line": 50
+      },
+      {
+        "target": "acasirsub3",
+        "line": 215
+      },
+      {
+        "target": "acasirsub4-Open-Input",
+        "line": 225
+      },
+      {
+        "target": "acasirsub4-Read-Next",
+        "line": 235
+      },
+      {
+        "target": "acasirsub4-Close",
+        "line": 259
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "output-file",
+        "line": 118
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 132
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

@@ -1,0 +1,465 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl",
+  "fileName": "glbatchMT.cbl",
+  "fileHash": "bfe8331721508ba73e9250435fbf8101935f34ed554643676e9596e9ee224909",
+  "timestamp": "2025-09-15T19:46:02.921Z",
+  "parseTime": 107,
+  "lines": {
+    "total": 1713,
+    "code": 1190,
+    "comment": 518,
+    "blank": 5
+  },
+  "programId": "glbatchMT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:159: error: ACAS-SQLstate-error-list.cob: No such file or directory\n  157 | *>                                     * = FS-Reply = 99.\n  158 | *>\n  159 >  copy \"ACAS-SQLstate-error-list.cob\".\n  160 | *>\n  161 | *>       During testing a log file will be created containing datetime st..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:275: error: mysql-variables.cpy: No such file or directory\n  273 | *>       ACASDB\n  274 | *>       TABLE=GLBATCH-REC,HV\n  275 >  COPY \"mysql-variables.cpy\".\n  276 | *>\n  277 | *>    Definitions for the GLBATCH-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:307: error: wsfnctn.cob: No such file or directory\n  305 | *>**************\n  306 | *>\n  307 >  copy \"wsfnctn.cob\".                         *> File-Access\n  308 | *>\n  309 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:309: error: Test-Data-Flags.cob: No such file or directory\n  307 |  copy \"wsfnctn.cob\".                         *> File-Access\n  308 | *>\n  309 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  310 | *>\n  311 | *>  Record definition for Cobol file here:\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:313: error: wsbatch.cob: No such file or directory\n  311 | *>  Record definition for Cobol file here:\n  312 | *>\n  313 >  copy \"wsbatch.cob\".\n  314 | *>\n  315 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1034: error: mysql-procedures.cpy: No such file or directory\n 1032 | *>\n 1033 | *> /MYSQL PRO\\\n 1034 >  COPY \"mysql-procedures.cpy\".\n 1035 | *> /MYSQL-END\\\n 1036 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:324: error: 'Ws-Mysql-Error-Number' is not defined\n  322 |  01  Display-Message-2       foreground-color 2.\n  323 |      03      value \"SM004 SQL Err No.=\"            line 4 col  1.\n  324 >      03  using Ws-Mysql-Error-Number   pic x(4)           col 19.\n  325 |      03      value \" Para=\"                               col 23.\n  326 |      03  using WS-No-Paragraph         pic 9(3)           col 29.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:326: error: 'WS-No-Paragraph' is not defined\n  324 |      03  using Ws-Mysql-Error-Number   pic x(4)           col 19.\n  325 |      03      value \" Para=\"                               col 23.\n  326 >      03  using WS-No-Paragraph         pic 9(3)           col 29.\n  327 |      03      value \" SQL Cmd=\"                            col 32.\n  328 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:328: error: 'Ws-Mysql-Command' is not defined\n  326 |      03  using WS-No-Paragraph         pic 9(3)           col 29.\n  327 |      03      value \" SQL Cmd=\"                            col 32.\n  328 >      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  329 |      03      value \"SQL Err Msg=\"                  line 7 col  1.\n  330 |      03  using Ws-Mysql-Error-Message  pic x(67)          col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:330: error: 'Ws-Mysql-Error-Message' is not defined\n  328 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  329 |      03      value \"SQL Err Msg=\"                  line 7 col  1.\n  330 >      03  using Ws-Mysql-Error-Message  pic x(67)          col 13.\n  331 | *>\n  332 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:333: error: 'File-Access' is not defined\n  331 | *>\n  332 | *>\n  333 >  PROCEDURE DIVISION   using File-Access\n  334 |                             ACAS-DAL-Common-data\n  335 |                             WS-Batch-Record.   *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:334: error: 'ACAS-DAL-Common-data' is not defined\n  332 | *>\n  333 |  PROCEDURE DIVISION   using File-Access\n  334 >                             ACAS-DAL-Common-data\n  335 |                             WS-Batch-Record.   *>  Ws record\n  336 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:335: error: 'WS-Batch-Record' is not defined\n  333 |  PROCEDURE DIVISION   using File-Access\n  334 |                             ACAS-DAL-Common-data\n  335 >                             WS-Batch-Record.   *>  Ws record\n  336 | *>**********************************************\n  337 |  ba-ACAS-DAL-Process  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:355: error: 'WS-Log-Where' is not defined\n  353 |      move     spaces to WS-MYSQL-Error-Message\n  354 |                         WS-MYSQL-Error-Number\n  355 >                         WS-Log-Where\n  356 |                         WS-File-Key\n  357 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:356: error: 'WS-File-Key' is not defined\n  354 |                         WS-MYSQL-Error-Number\n  355 |                         WS-Log-Where\n  356 >                         WS-File-Key\n  357 |                         SQL-Msg\n  358 |                         SQL-Err\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:357: error: 'SQL-Msg' is not defined\n  355 |                         WS-Log-Where\n  356 |                         WS-File-Key\n  357 >                         SQL-Msg\n  358 |                         SQL-Err\n  359 |                         SQL-State.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:358: error: 'SQL-Err' is not defined\n  356 |                         WS-File-Key\n  357 |                         SQL-Msg\n  358 >                         SQL-Err\n  359 |                         SQL-State.\n  360 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:359: error: 'SQL-State' is not defined\n  357 |                         SQL-Msg\n  358 |                         SQL-Err\n  359 >                         SQL-State.\n  360 | *>\n  361 | *>   Now Test for valid key for start, read-indexed and delete\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:370: error: 'File-Function' is not defined\n  368 | *>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  369 | *>\n  370 >      evaluate File-Function\n  371 |         when  1\n  372 |               go to ba020-Process-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:401: error: 'DB-Schema' is not defined\n  399 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  400 |  *>\n  401 >      string   DB-Schema      delimited by space\n  402 |               X\"00\"          delimited by size\n  403 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:403: error: 'WS-MYSQL-BASE-NAME' is not defined\n  401 |      string   DB-Schema      delimited by space\n  402 |               X\"00\"          delimited by size\n  403 >                                into WS-MYSQL-BASE-NAME\n  404 |      end-string.\n  405 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:405: error: 'DB-Host' is not defined\n  403 |                                into WS-MYSQL-BASE-NAME\n  404 |      end-string.\n  405 >      string   DB-Host        delimited by space\n  406 |               X\"00\"          delimited by size\n  407 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:407: error: 'WS-MYSQL-HOST-NAME' is not defined\n  405 |      string   DB-Host        delimited by space\n  406 |               X\"00\"          delimited by size\n  407 >                                into WS-MYSQL-HOST-NAME\n  408 |      end-string.\n  409 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:409: error: 'DB-UName' is not defined\n  407 |                                into WS-MYSQL-HOST-NAME\n  408 |      end-string.\n  409 >      string   DB-UName       delimited by space\n  410 |               X\"00\"          delimited by size\n  411 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:411: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  409 |      string   DB-UName       delimited by space\n  410 |               X\"00\"          delimited by size\n  411 >                                into WS-MYSQL-IMPLEMENTATION\n  412 |      end-string.\n  413 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:413: error: 'DB-UPass' is not defined\n  411 |                                into WS-MYSQL-IMPLEMENTATION\n  412 |      end-string.\n  413 >      string   DB-UPass       delimited by space\n  414 |               X\"00\"          delimited by size\n  415 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:415: error: 'WS-MYSQL-PASSWORD' is not defined\n  413 |      string   DB-UPass       delimited by space\n  414 |               X\"00\"          delimited by size\n  415 >                                into WS-MYSQL-PASSWORD\n  416 |      end-string.\n  417 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:417: error: 'DB-Port' is not defined\n  415 |                                into WS-MYSQL-PASSWORD\n  416 |      end-string.\n  417 >      string   DB-Port        delimited by space\n  418 |               X\"00\"          delimited by size\n  419 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:419: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  417 |      string   DB-Port        delimited by space\n  418 |               X\"00\"          delimited by size\n  419 >                                into WS-MYSQL-PORT-NUMBER\n  420 |      end-string.\n  421 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:421: error: 'DB-Socket' is not defined\n  419 |                                into WS-MYSQL-PORT-NUMBER\n  420 |      end-string.\n  421 >      string   DB-Socket      delimited by space\n  422 |               X\"00\"          delimited by size\n  423 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:423: error: 'WS-MYSQL-SOCKET' is not defined\n  421 |      string   DB-Socket      delimited by space\n  422 |               X\"00\"          delimited by size\n  423 >                                into WS-MYSQL-SOCKET\n  424 |      end-string.\n  425 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:427: error: 'fs-reply' is not defined\n  425 |      move     1 to ws-No-Paragraph.\n  426 |      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  427 >      if       fs-reply not = zero\n  428 |               go   to ba999-end.\n  429 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:497: error: 'WS-MYSQL-RESULT' is not defined\n  495 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  496 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  497 >            MOVE WS-MYSQL-RESULT TO TP-GLBATCH-REC\n  498 | *>               /MYSQL-END\\\n  499 |            move    \"00000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:500: error: 'Testing-2' is not defined\n  498 | *>               /MYSQL-END\\\n  499 |            move    \"00000\" to WS-File-Key\n  500 >               if    Testing-2\n  501 |                     display Display-Message-1 with erase eos\n  502 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:506: error: 'WS-MYSQL-Count-Rows' is not defined\n  504 | *>  It could be an empty table so test for it\n  505 | *>\n  506 >               if       WS-MYSQL-Count-Rows = zero\n  507 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  508 |                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:508: error: 'WS-MYSQL-SQLstate' is not defined\n  506 |               if       WS-MYSQL-Count-Rows = zero\n  507 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  508 >                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n  509 |                        move  WS-MYSQL-SqlState   to SQL-State\n  510 |                        if    WS-MYSQL-Error-Number  not = \"0  \"    *> set..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:516: error: 'WE-Error' is not defined\n  514 |                        end-if       *> do not really need to do this mean..\n  515 |                        move 10 to fs-reply\n  516 >                        move 10 to WE-Error\n  517 |                        move    \"No Data\" to WS-File-Key\n  518 |                        go to ba999-End       *> can clear the dup code af..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in paragraph 'ba060-Process-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:717: error: 'access-type' is not defined\n  715 | *>  Check for Param error 1st on start\n  716 | *>\n  717 >      if       access-type < 5 or > 8                   *> not using not <..\n  718 |               move 99 to FS-Reply\n  719 |               move 997 to WE-Error                     *> Invalid calling..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in paragraph 'ba070-Process-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:819: error: 'ws-BATCH-KEY' is not defined\n  817 |  ba070-Process-Write.\n  818 |      perform  bb000-HV-Load.                       *>  move WS-Batch-Reco..\n  819 >      move     ws-BATCH-KEY to WS-File-Key.\n  820 |      move     zero to FS-Reply WE-Error SQL-State.\n  821 |      move     spaces to SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in paragraph 'ba999-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1052: error: 'Testing-1' is not defined\n 1050 | *>  Any Clean ups before quiting    move data record ?????  do so at the..\n 1051 | *>\n 1052 >      if       Testing-1\n 1053 |               perform Ca-Process-Logs\n 1054 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in section 'bb000-HV-Load':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1068: error: 'WS-BATCH-KEY9' is not defined\n 1066 | *>\n 1067 |      initialize TD-GLBATCH-REC.\n 1068 >      move     WS-BATCH-KEY9      to HV-BATCH-KEY.\n 1069 |      move     Items              to HV-ITEMS\n 1070 |      move     Batch-Status       to HV-BATCH-STATUS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1069: error: 'Items' is not defined\n 1067 |      initialize TD-GLBATCH-REC.\n 1068 |      move     WS-BATCH-KEY9      to HV-BATCH-KEY.\n 1069 >      move     Items              to HV-ITEMS\n 1070 |      move     Batch-Status       to HV-BATCH-STATUS\n 1071 |      move     Cleared-Status     to HV-CLEARED-STATUS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1070: error: 'Batch-Status' is not defined\n 1068 |      move     WS-BATCH-KEY9      to HV-BATCH-KEY.\n 1069 |      move     Items              to HV-ITEMS\n 1070 >      move     Batch-Status       to HV-BATCH-STATUS\n 1071 |      move     Cleared-Status     to HV-CLEARED-STATUS\n 1072 |      move     Bcycle             to HV-BCYCLE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1071: error: 'Cleared-Status' is not defined\n 1069 |      move     Items              to HV-ITEMS\n 1070 |      move     Batch-Status       to HV-BATCH-STATUS\n 1071 >      move     Cleared-Status     to HV-CLEARED-STATUS\n 1072 |      move     Bcycle             to HV-BCYCLE\n 1073 |      move     Entered            to HV-ENTERED\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1072: error: 'Bcycle' is not defined\n 1070 |      move     Batch-Status       to HV-BATCH-STATUS\n 1071 |      move     Cleared-Status     to HV-CLEARED-STATUS\n 1072 >      move     Bcycle             to HV-BCYCLE\n 1073 |      move     Entered            to HV-ENTERED\n 1074 |      move     Proofed            to HV-PROOFED\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1073: error: 'Entered' is not defined\n 1071 |      move     Cleared-Status     to HV-CLEARED-STATUS\n 1072 |      move     Bcycle             to HV-BCYCLE\n 1073 >      move     Entered            to HV-ENTERED\n 1074 |      move     Proofed            to HV-PROOFED\n 1075 |      move     Posted             to HV-POSTED\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1074: error: 'Proofed' is not defined\n 1072 |      move     Bcycle             to HV-BCYCLE\n 1073 |      move     Entered            to HV-ENTERED\n 1074 >      move     Proofed            to HV-PROOFED\n 1075 |      move     Posted             to HV-POSTED\n 1076 |      move     Stored             to HV-STORED\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1075: error: 'Posted' is not defined\n 1073 |      move     Entered            to HV-ENTERED\n 1074 |      move     Proofed            to HV-PROOFED\n 1075 >      move     Posted             to HV-POSTED\n 1076 |      move     Stored             to HV-STORED\n 1077 |      move     Input-Gross        to HV-INPUT-GROSS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1076: error: 'Stored' is not defined\n 1074 |      move     Proofed            to HV-PROOFED\n 1075 |      move     Posted             to HV-POSTED\n 1076 >      move     Stored             to HV-STORED\n 1077 |      move     Input-Gross        to HV-INPUT-GROSS\n 1078 |      move     Input-Vat          to HV-INPUT-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1077: error: 'Input-Gross' is not defined\n 1075 |      move     Posted             to HV-POSTED\n 1076 |      move     Stored             to HV-STORED\n 1077 >      move     Input-Gross        to HV-INPUT-GROSS\n 1078 |      move     Input-Vat          to HV-INPUT-VAT\n 1079 |      move     Actual-Gross       to HV-ACTUAL-GROSS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1078: error: 'Input-Vat' is not defined\n 1076 |      move     Stored             to HV-STORED\n 1077 |      move     Input-Gross        to HV-INPUT-GROSS\n 1078 >      move     Input-Vat          to HV-INPUT-VAT\n 1079 |      move     Actual-Gross       to HV-ACTUAL-GROSS\n 1080 |      move     Actual-Vat         to HV-ACTUAL-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1079: error: 'Actual-Gross' is not defined\n 1077 |      move     Input-Gross        to HV-INPUT-GROSS\n 1078 |      move     Input-Vat          to HV-INPUT-VAT\n 1079 >      move     Actual-Gross       to HV-ACTUAL-GROSS\n 1080 |      move     Actual-Vat         to HV-ACTUAL-VAT\n 1081 |      move     Description        to HV-DESCRIPTION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1080: error: 'Actual-Vat' is not defined\n 1078 |      move     Input-Vat          to HV-INPUT-VAT\n 1079 |      move     Actual-Gross       to HV-ACTUAL-GROSS\n 1080 >      move     Actual-Vat         to HV-ACTUAL-VAT\n 1081 |      move     Description        to HV-DESCRIPTION\n 1082 |      move     bDefault           to HV-BDEFAULT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1081: error: 'Description' is not defined\n 1079 |      move     Actual-Gross       to HV-ACTUAL-GROSS\n 1080 |      move     Actual-Vat         to HV-ACTUAL-VAT\n 1081 >      move     Description        to HV-DESCRIPTION\n 1082 |      move     bDefault           to HV-BDEFAULT\n 1083 |      move     Convention         to HV-CONVENTION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1082: error: 'bDefault' is not defined\n 1080 |      move     Actual-Vat         to HV-ACTUAL-VAT\n 1081 |      move     Description        to HV-DESCRIPTION\n 1082 >      move     bDefault           to HV-BDEFAULT\n 1083 |      move     Convention         to HV-CONVENTION\n 1084 |      move     Batch-Def-AC       to HV-BATCH-DEF-AC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1083: error: 'Convention' is not defined\n 1081 |      move     Description        to HV-DESCRIPTION\n 1082 |      move     bDefault           to HV-BDEFAULT\n 1083 >      move     Convention         to HV-CONVENTION\n 1084 |      move     Batch-Def-AC       to HV-BATCH-DEF-AC\n 1085 |      move     Batch-Def-PC       to HV-BATCH-DEF-PC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1084: error: 'Batch-Def-AC' is not defined\n 1082 |      move     bDefault           to HV-BDEFAULT\n 1083 |      move     Convention         to HV-CONVENTION\n 1084 >      move     Batch-Def-AC       to HV-BATCH-DEF-AC\n 1085 |      move     Batch-Def-PC       to HV-BATCH-DEF-PC\n 1086 |      move     Batch-Def-Code     to HV-BATCH-DEF-CODE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1085: error: 'Batch-Def-PC' is not defined\n 1083 |      move     Convention         to HV-CONVENTION\n 1084 |      move     Batch-Def-AC       to HV-BATCH-DEF-AC\n 1085 >      move     Batch-Def-PC       to HV-BATCH-DEF-PC\n 1086 |      move     Batch-Def-Code     to HV-BATCH-DEF-CODE\n 1087 |      move     Batch-Def-Vat      to HV-BATCH-DEF-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1086: error: 'Batch-Def-Code' is not defined\n 1084 |      move     Batch-Def-AC       to HV-BATCH-DEF-AC\n 1085 |      move     Batch-Def-PC       to HV-BATCH-DEF-PC\n 1086 >      move     Batch-Def-Code     to HV-BATCH-DEF-CODE\n 1087 |      move     Batch-Def-Vat      to HV-BATCH-DEF-VAT\n 1088 |      move     Batch-Start        to HV-BATCH-START.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1087: error: 'Batch-Def-Vat' is not defined\n 1085 |      move     Batch-Def-PC       to HV-BATCH-DEF-PC\n 1086 |      move     Batch-Def-Code     to HV-BATCH-DEF-CODE\n 1087 >      move     Batch-Def-Vat      to HV-BATCH-DEF-VAT\n 1088 |      move     Batch-Start        to HV-BATCH-START.\n 1089 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1088: error: 'Batch-Start' is not defined\n 1086 |      move     Batch-Def-Code     to HV-BATCH-DEF-CODE\n 1087 |      move     Batch-Def-Vat      to HV-BATCH-DEF-VAT\n 1088 >      move     Batch-Start        to HV-BATCH-START.\n 1089 | *>\n 1090 | *> Loading HVs implies a non-Fetch action. RGs are handled separately for\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:426: error: 'MYSQL-1000-OPEN' is not defined\n  424 |      end-string.\n  425 |      move     1 to ws-No-Paragraph.\n  426 >      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  427 |      if       fs-reply not = zero\n  428 |               go   to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:426: error: 'MYSQL-1090-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in paragraph 'ba030-Process-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:450: error: 'MYSQL-1980-CLOSE' is not defined\n  448 | *>    Close the Database\n  449 | *>\n  450 >            PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n  451 | *>  /MYSQL-END\\\n  452 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:450: error: 'MYSQL-1999-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:495: error: 'MYSQL-1210-COMMAND' is not defined\n  493 |              ws-Where (1:J)      *> BATCH-KEY > \"000000\" ORDER BY GLBATCH..\n  494 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  495 >            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  496 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  497 |            MOVE WS-MYSQL-RESULT TO TP-GLBATCH-REC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:495: error: 'MYSQL-1219-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:496: error: 'MYSQL-1220-STORE-RESULT' is not defined\n  494 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  495 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  496 >            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  497 |            MOVE WS-MYSQL-RESULT TO TP-GLBATCH-REC\n  498 | *>               /MYSQL-END\\\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:496: error: 'MYSQL-1239-EXIT' is not defined\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:159: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:275: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:307: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:309: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:313: error: wsbatch.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1034: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:324: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:326: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:328: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:330: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:333: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:334: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:335: error: 'WS-Batch-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:355: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:356: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:357: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:358: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:359: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:370: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:401: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:403: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:405: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:407: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:409: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:411: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:413: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:415: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:417: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:419: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:421: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:423: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:427: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:497: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:500: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:506: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:508: error: 'WS-MYSQL-SQLstate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:516: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:717: error: 'access-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:819: error: 'ws-BATCH-KEY' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1052: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1068: error: 'WS-BATCH-KEY9' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1069: error: 'Items' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1070: error: 'Batch-Status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1071: error: 'Cleared-Status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1072: error: 'Bcycle' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1073: error: 'Entered' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1074: error: 'Proofed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1075: error: 'Posted' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1076: error: 'Stored' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1077: error: 'Input-Gross' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1078: error: 'Input-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1079: error: 'Actual-Gross' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1080: error: 'Actual-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1081: error: 'Description' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1082: error: 'bDefault' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1083: error: 'Convention' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1084: error: 'Batch-Def-AC' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1085: error: 'Batch-Def-PC' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1086: error: 'Batch-Def-Code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1087: error: 'Batch-Def-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1088: error: 'Batch-Start' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:426: error: 'MYSQL-1000-OPEN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:426: error: 'MYSQL-1090-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:450: error: 'MYSQL-1980-CLOSE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:450: error: 'MYSQL-1999-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:495: error: 'MYSQL-1210-COMMAND' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:495: error: 'MYSQL-1219-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:496: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:496: error: 'MYSQL-1239-EXIT' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:159: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:275: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:307: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:309: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:313: error: wsbatch.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1034: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:324: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:326: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:328: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:330: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:333: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:334: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:335: error: 'WS-Batch-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:355: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:356: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:357: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:358: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:359: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:370: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:401: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:403: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:405: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:407: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:409: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:411: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:413: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:415: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:417: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:419: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:421: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:423: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:427: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:497: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:500: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:506: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:508: error: 'WS-MYSQL-SQLstate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:516: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:717: error: 'access-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:819: error: 'ws-BATCH-KEY' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1052: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1068: error: 'WS-BATCH-KEY9' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1069: error: 'Items' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1070: error: 'Batch-Status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1071: error: 'Cleared-Status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1072: error: 'Bcycle' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1073: error: 'Entered' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1074: error: 'Proofed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1075: error: 'Posted' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1076: error: 'Stored' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1077: error: 'Input-Gross' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1078: error: 'Input-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1079: error: 'Actual-Gross' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1080: error: 'Actual-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1081: error: 'Description' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1082: error: 'bDefault' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1083: error: 'Convention' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1084: error: 'Batch-Def-AC' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1085: error: 'Batch-Def-PC' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1086: error: 'Batch-Def-Code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1087: error: 'Batch-Def-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:1088: error: 'Batch-Start' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:426: error: 'MYSQL-1000-OPEN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:426: error: 'MYSQL-1090-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:450: error: 'MYSQL-1980-CLOSE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:450: error: 'MYSQL-1999-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:495: error: 'MYSQL-1210-COMMAND' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:495: error: 'MYSQL-1219-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:496: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glbatchMT.cbl:496: error: 'MYSQL-1239-EXIT' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 112,
+    "cognitive": 213,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 220,
+      "totalOperators": 446,
+      "totalOperands": 2318,
+      "vocabulary": 232,
+      "length": 2764,
+      "volume": 21719,
+      "difficulty": 63.22,
+      "effort": 1373065,
+      "timeToProgram": 76281,
+      "deliveredBugs": 7.24
+    },
+    "maintainability": 55
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 507
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 508
+      },
+      {
+        "target": "MySQL_error",
+        "line": 512
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 545
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 579
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 580
+      },
+      {
+        "target": "MySQL_error",
+        "line": 583
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 659
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 686
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 687
+      },
+      {
+        "target": "MySQL_error",
+        "line": 692
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 794
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 795
+      },
+      {
+        "target": "MySQL_error",
+        "line": 798
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 826
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 827
+      },
+      {
+        "target": "MySQL_error",
+        "line": 830
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 881
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 882
+      },
+      {
+        "target": "MySQL_error",
+        "line": 885
+      },
+      {
+        "target": "MySQL_query",
+        "line": 916
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 962
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 963
+      },
+      {
+        "target": "MySQL_error",
+        "line": 966
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1008
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1009
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1012
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1045
+      },
+      {
+        "target": "fhlogger",
+        "line": 1707
+      }
+    ],
+    "copies": [
+      {
+        "name": "*>",
+        "line": 146
+      },
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 159
+      },
+      {
+        "name": "of",
+        "line": 194
+      },
+      {
+        "name": "envdiv",
+        "line": 201
+      },
+      {
+        "name": "mysql-variables",
+        "line": 275
+      },
+      {
+        "name": "wsfnctn",
+        "line": 307
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 309
+      },
+      {
+        "name": "wsbatch",
+        "line": 313
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1034
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 399
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 426
+      },
+      {
+        "target": "ba998-Free",
+        "line": 442
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 450
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 495
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 496
+      },
+      {
+        "target": "ba999-End",
+        "line": 527
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 600
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 643
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 644
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 706
+      },
+      {
+        "target": "ba998-Free",
+        "line": 726
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 784
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 785
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 818
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 824
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 878
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 959
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 982
+      },
+      {
+        "target": "bb300-Update",
+        "line": 1001
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 1053
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1410
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1697
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 205
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>              DELETE\n*>              FROM GLBATCH-REC\n*>...",
+        "line": 902
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

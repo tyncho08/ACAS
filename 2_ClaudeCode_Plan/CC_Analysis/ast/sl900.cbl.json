@@ -1,0 +1,187 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl",
+  "fileName": "sl900.cbl",
+  "fileHash": "e4af935306160cb3140db7d8ff05593766c943455fcecc058745e2f05ad114ca",
+  "timestamp": "2025-09-15T19:46:27.972Z",
+  "parseTime": 51,
+  "lines": {
+    "total": 486,
+    "code": 262,
+    "comment": 222,
+    "blank": 2
+  },
+  "programId": "sl900",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:108: error: envdiv.cob: No such file or directory\n  106 | *>================================\n  107 | *>\n  108 >  copy \"envdiv.cob\".\n  109 | *>\n  110 |  data                    division.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:117: error: wsmaps03.cob: No such file or directory\n  115 |  77  prog-name               pic x(15) value \"SL900 (3.02.12)\".\n  116 | *>\n  117 >  copy \"wsmaps03.cob\".\n  118 |  copy \"wsfnctn.cob\".\n  119 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:118: error: wsfnctn.cob: No such file or directory\n  116 | *>\n  117 |  copy \"wsmaps03.cob\".\n  118 >  copy \"wsfnctn.cob\".\n  119 | *>\n  120 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:120: error: Test-Data-Flags.cob: No such file or directory\n  118 |  copy \"wsfnctn.cob\".\n  119 | *>\n  120 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  121 | *>\n  122 |  01  ws-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:178: error: wscall.cob: No such file or directory\n  176 | *>***************\n  177 | *>\n  178 >  copy \"wscall.cob\".\n  179 |  copy \"wssystem.cob\".\n  180 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:179: error: wssystem.cob: No such file or directory\n  177 | *>\n  178 |  copy \"wscall.cob\".\n  179 >  copy \"wssystem.cob\".\n  180 |  copy \"wsnames.cob\".\n  181 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:180: error: wsnames.cob: No such file or directory\n  178 |  copy \"wscall.cob\".\n  179 |  copy \"wssystem.cob\".\n  180 >  copy \"wsnames.cob\".\n  181 | *>\n  182 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:184: error: 'ws-calling-data' is not defined\n  182 |  01  to-day              pic x(10).\n  183 | *>\n  184 >  procedure division using ws-calling-data\n  185 |                           system-record\n  186 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:185: error: 'system-record' is not defined\n  183 | *>\n  184 |  procedure division using ws-calling-data\n  185 >                           system-record\n  186 |                           to-day\n  187 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:187: error: 'file-defs' is not defined\n  185 |                           system-record\n  186 |                           to-day\n  187 >                           file-defs.\n  188 | *>=======================================\n  189 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:196: error: 'ws-caller' is not defined\n  194 | *>\n  195 |      perform  zz070-Convert-Date.\n  196 >      move     ws-caller to ws-del-link.\n  197 |      move     ws-called to ws-caller.\n  198 |      if       next-invoice  = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:196: error: 'ws-del-link' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:197: error: 'ws-called' is not defined\n  195 |      perform  zz070-Convert-Date.\n  196 |      move     ws-caller to ws-del-link.\n  197 >      move     ws-called to ws-caller.\n  198 |      if       next-invoice  = zero\n  199 |               perform  fixed-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:198: error: 'next-invoice' is not defined\n  196 |      move     ws-caller to ws-del-link.\n  197 |      move     ws-called to ws-caller.\n  198 >      if       next-invoice  = zero\n  199 |               perform  fixed-data.\n  200 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl: in paragraph 'menu-return':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:210: error: 'not-invoicing' is not defined\n  208 |      display  \"(1)  Enter or Amend Invoicing Fixed Data\"      at 0811 wit..\n  209 | *>\n  210 >      if       not-invoicing\n  211 |               display \"(2)  Enter Invoice Details\"      at 0911 with fore..\n  212 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl: in paragraph 'menu-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:210: error: invalid conditional expression\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:243: error: 'pass-value' is not defined\n  241 | *>\n  242 |      if       menu-reply  = 4\n  243 >               move  menu-reply  to  pass-value\n  244 |               move \"sl920\" to ws-called\n  245 |               go to loadit.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl: in section 'fixed-data':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:343: error: 'G-L' is not defined\n  341 | *> Rem out Extra-charge-ac as not used.  20/03/18.\n  342 | *>\n  343 >      if       G-L or IRS\n  344 |  *>             display \"Extra Charge Discount Account\"   at 1611 with fo..\n  345 |  *>             display \"- [      ]\"  at 1645                     with fo..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:343: error: 'IRS' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:346: error: invalid conditional expression\n  344 |  *>             display \"Extra Charge Discount Account\"   at 1611 with fo..\n  345 |  *>             display \"- [      ]\"  at 1645                     with fo..\n  346 >               display \"Vat Account\" at 1711                     with fore..\n  347 |               display \"- [      ]\"  at 1745                     with fore..\n  348 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:356: error: 'Extra-Desc' is not defined\n  354 |      move     next-invoice to ws-next-invoice.\n  355 |      display  ws-next-invoice at 0548 with foreground-color 3.\n  356 >      display  Extra-Desc      at 0748 with foreground-color 2.\n  357 |      display  Extra-Type      at 0948    with foreground-color 3.\n  358 |      display  Extra-Print     at 1048   with foreground-color 3.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:357: error: 'Extra-Type' is not defined\n  355 |      display  ws-next-invoice at 0548 with foreground-color 3.\n  356 |      display  Extra-Desc      at 0748 with foreground-color 2.\n  357 >      display  Extra-Type      at 0948    with foreground-color 3.\n  358 |      display  Extra-Print     at 1048   with foreground-color 3.\n  359 |      move     Extra-Rate  to ws-discount.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:358: error: 'Extra-Print' is not defined\n  356 |      display  Extra-Desc      at 0748 with foreground-color 2.\n  357 |      display  Extra-Type      at 0948    with foreground-color 3.\n  358 >      display  Extra-Print     at 1048   with foreground-color 3.\n  359 |      move     Extra-Rate  to ws-discount.\n  360 |      move     ws-disc-wka to ws-disca1.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:359: error: 'Extra-Rate' is not defined\n  357 |      display  Extra-Type      at 0948    with foreground-color 3.\n  358 |      display  Extra-Print     at 1048   with foreground-color 3.\n  359 >      move     Extra-Rate  to ws-discount.\n  360 |      move     ws-disc-wka to ws-disca1.\n  361 |      move     ws-disc-wkb to ws-disca3.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:363: error: 'invoicer' is not defined\n  361 |      move     ws-disc-wkb to ws-disca3.\n  362 |      display  ws-discount-display at 1148 with foreground-color 3.\n  363 >      display  invoicer        at 1348 with foreground-color 3.\n  364 |      display  SL-Stock-Link   at 1437 with foreground-color 3.\n  365 |      display  SL-Stock-Audit  at 1537 with foreground-color 3.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:364: error: 'SL-Stock-Link' is not defined\n  362 |      display  ws-discount-display at 1148 with foreground-color 3.\n  363 |      display  invoicer        at 1348 with foreground-color 3.\n  364 >      display  SL-Stock-Link   at 1437 with foreground-color 3.\n  365 |      display  SL-Stock-Audit  at 1537 with foreground-color 3.\n  366 |  *>    move     Extra-Charge-Ac to ws-extra-charge-ac.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:365: error: 'SL-Stock-Audit' is not defined\n  363 |      display  invoicer        at 1348 with foreground-color 3.\n  364 |      display  SL-Stock-Link   at 1437 with foreground-color 3.\n  365 >      display  SL-Stock-Audit  at 1537 with foreground-color 3.\n  366 |  *>    move     Extra-Charge-Ac to ws-extra-charge-ac.\n  367 |  *>    display  ws-Extra-Charge-Ac at 1648 with foreground-color 3.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:368: error: 'VAT-Ac' is not defined\n  366 |  *>    move     Extra-Charge-Ac to ws-extra-charge-ac.\n  367 |  *>    display  ws-Extra-Charge-Ac at 1648 with foreground-color 3.\n  368 >      move     VAT-Ac to ws-vat-ac.\n  369 |      display  ws-vat-ac       at 1748 with foreground-color 3.\n  370 |      move     pf-retention    to ws-pf-retention.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:370: error: 'pf-retention' is not defined\n  368 |      move     VAT-Ac to ws-vat-ac.\n  369 |      display  ws-vat-ac       at 1748 with foreground-color 3.\n  370 >      move     pf-retention    to ws-pf-retention.\n  371 |      display  ws-pf-retention at 1948 with foreground-color 3.\n  372 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl: in paragraph 'Extra-Chgs':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:416: error: invalid conditional expression\n  414 |      if       SL-Stock-Link not = \"Y\" and not = \"N\"\n  415 |               go to Stock-Link-Check.\n  416 >      if       SL-Stock-Link = \"N\"\n  417 |               move \"N\" to SL-Stock-Audit\n  418 |               display  SL-Stock-Audit  at 1537 with foreground-color 3\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl: in section 'zz070-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:466: error: 'Date-Form' is not defined\n  464 |      move     to-day to ws-date.\n  465 | *>\n  466 >      if       Date-Form = zero\n  467 |               move 1 to Date-Form.\n  468 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:468: error: 'Date-UK' is not defined\n  466 |      if       Date-Form = zero\n  467 |               move 1 to Date-Form.\n  468 >      if       Date-UK\n  469 |               go to zz070-Exit.\n  470 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:470: error: 'Date-USA' is not defined\n  468 |      if       Date-UK\n  469 |               go to zz070-Exit.\n  470 >      if       Date-USA                *> swap month and days\n  471 |               move ws-days to ws-swap\n  472 |               move ws-month to ws-days\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:108: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:117: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:118: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:120: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:178: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:179: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:180: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:184: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:185: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:187: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:196: error: 'ws-caller' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:196: error: 'ws-del-link' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:197: error: 'ws-called' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:198: error: 'next-invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:210: error: 'not-invoicing' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:210: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:243: error: 'pass-value' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:343: error: 'G-L' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:343: error: 'IRS' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:346: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:356: error: 'Extra-Desc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:357: error: 'Extra-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:358: error: 'Extra-Print' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:359: error: 'Extra-Rate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:363: error: 'invoicer' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:364: error: 'SL-Stock-Link' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:365: error: 'SL-Stock-Audit' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:368: error: 'VAT-Ac' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:370: error: 'pf-retention' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:416: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:466: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:468: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:470: error: 'Date-USA' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:108: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:117: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:118: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:120: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:178: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:179: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:180: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:184: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:185: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:187: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:196: error: 'ws-caller' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:196: error: 'ws-del-link' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:197: error: 'ws-called' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:198: error: 'next-invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:210: error: 'not-invoicing' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:210: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:243: error: 'pass-value' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:343: error: 'G-L' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:343: error: 'IRS' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:346: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:356: error: 'Extra-Desc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:357: error: 'Extra-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:358: error: 'Extra-Print' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:359: error: 'Extra-Rate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:363: error: 'invoicer' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:364: error: 'SL-Stock-Link' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:365: error: 'SL-Stock-Audit' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:368: error: 'VAT-Ac' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:370: error: 'pf-retention' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:416: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:466: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:468: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl:470: error: 'Date-USA' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 55,
+    "cognitive": 149,
+    "halstead": {
+      "uniqueOperators": 10,
+      "uniqueOperands": 65,
+      "totalOperators": 136,
+      "totalOperands": 158,
+      "vocabulary": 75,
+      "length": 294,
+      "volume": 1831,
+      "difficulty": 12.15,
+      "effort": 22257,
+      "timeToProgram": 1237,
+      "deliveredBugs": 0.61
+    },
+    "maintainability": 70
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 99
+      },
+      {
+        "name": "envdiv",
+        "line": 108
+      },
+      {
+        "name": "wsmaps03",
+        "line": 117
+      },
+      {
+        "name": "wsfnctn",
+        "line": 118
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 120
+      },
+      {
+        "name": "wscall",
+        "line": 178
+      },
+      {
+        "name": "wssystem",
+        "line": 179
+      },
+      {
+        "name": "wsnames",
+        "line": 180
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 195
+      },
+      {
+        "target": "fixed-data",
+        "line": 199
+      },
+      {
+        "target": "Fixed-Data",
+        "line": 239
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 113
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

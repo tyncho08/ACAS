@@ -1,0 +1,397 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl",
+  "fileName": "irsdfltLD.cbl",
+  "fileHash": "146265c6cce29bbea11ff8eb9b7ab0e368ea1293069c1169a3652d3a389e547c",
+  "timestamp": "2025-09-15T19:46:03.419Z",
+  "parseTime": 51,
+  "lines": {
+    "total": 460,
+    "code": 266,
+    "comment": 193,
+    "blank": 1
+  },
+  "programId": "irsdfltLD",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:114: error: envdiv.cob: No such file or directory\n  112 | *>-------------------\n  113 | *>\n  114 >  copy \"envdiv.cob\".\n  115 |  input-output            section.\n  116 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:121: error: selsys.cob: No such file or directory\n  119 | *>-----------\n  120 | *>\n  121 >  copy \"selsys.cob\".\n  122 |  data division.\n  123 | *>------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:128: error: fdsys.cob: No such file or directory\n  126 | *>-----------\n  127 | *>\n  128 >  copy \"fdsys.cob\".\n  129 |  working-storage section.\n  130 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:163: error: Test-Data-Flags.cob: No such file or directory\n  161 |      03  WS-Socket       pic x(64).\n  162 | *>\n  163 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  164 | *>\n  165 |  copy \"irswsdflt.cob\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:166: error: irswsdflt.cob: No such file or directory\n  164 | *>\n  165 |  copy \"irswsdflt.cob\"\n  166 >            replacing Default-Record by WS-IRS-Default-Record.\n  167 |  copy \"wsfnctn.cob\".\n  168 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:167: error: wsfnctn.cob: No such file or directory\n  165 |  copy \"irswsdflt.cob\"\n  166 |            replacing Default-Record by WS-IRS-Default-Record.\n  167 >  copy \"wsfnctn.cob\".\n  168 |  copy \"wsnames.cob\".\n  169 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:168: error: wsnames.cob: No such file or directory\n  166 |            replacing Default-Record by WS-IRS-Default-Record.\n  167 |  copy \"wsfnctn.cob\".\n  168 >  copy \"wsnames.cob\".\n  169 |  copy \"wscall.cob\".\n  170 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:169: error: wscall.cob: No such file or directory\n  167 |  copy \"wsfnctn.cob\".\n  168 |  copy \"wsnames.cob\".\n  169 >  copy \"wscall.cob\".\n  170 | *>\n  171 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:455: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  453 |      goback.\n  454 | *>\n  455 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  456 | *>\n  457 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:198: error: 'WS-Log-System' is not defined\n  196 |      move     Prog-Name to So-Print.\n  197 |      perform  Call-Sysout.\n  198 >      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  199 |      move     12     to WS-Log-File-no.  *> for FHlogger\n  200 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:199: error: 'WS-Log-File-no' is not defined\n  197 |      perform  Call-Sysout.\n  198 |      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  199 >      move     12     to WS-Log-File-no.  *> for FHlogger\n  200 | *>\n  201 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:203: error: 'System-File' is not defined\n  201 | *>  Get the system param for the various RDB fields\n  202 | *>\n  203 >      open     input System-File.\n  204 |      if       fs-reply not = zero\n  205 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:203: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:204: error: 'fs-reply' is not defined\n  202 | *>\n  203 |      open     input System-File.\n  204 >      if       fs-reply not = zero\n  205 |               display Prog-Name at 0101 with erase eos\n  206 |               display ST001     at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:209: error: 'System-File' is not a file name\n  207 |               display fs-reply  at 0428\n  208 |               display ST004     at 0501\n  209 >               close System-File\n  210 |               move 128 to return-code\n  211 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:212: error: 'rrn' is not defined\n  210 |               move 128 to return-code\n  211 |               goback.\n  212 >      move     1 to rrn.\n  213 |      read     System-File record.\n  214 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:213: error: 'System-File' is not a file name\n  211 |               goback.\n  212 |      move     1 to rrn.\n  213 >      read     System-File record.\n  214 |      if       fs-reply not = zero\n  215 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:219: error: 'System-File' is not a file name\n  217 |               display fs-reply        at 0428\n  218 |               display \"Not set up ?\"  at 0431\n  219 >               close System-File\n  220 |               move 128 to return-code\n  221 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:225: error: 'RDBMS-DB-Name' is not defined\n  223 | *>  Load up the DB settings from the system record as its not passed on.\n  224 | *>\n  225 >      if       RDBMS-DB-Name = spaces\n  226 |          or   FS-Cobol-Files-Used\n  227 |               display Prog-Name    *>  at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:226: error: 'FS-Cobol-Files-Used' is not defined\n  224 | *>\n  225 |      if       RDBMS-DB-Name = spaces\n  226 >          or   FS-Cobol-Files-Used\n  227 |               display Prog-Name    *>  at 0101 with erase eos\n  228 |               display SY019\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:234: error: 'System-File' is not a file name\n  232 |               if       WS-RDB-Return = 8\n  233 |                        display \"acas.param file NOT found - Aborted\"\n  234 >                        close  System-File\n  235 |                        goback\n  236 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:239: error: 'System-File' is not a file name\n  237 |               if       WS-RDB-Return = 1\n  238 |                        display \"Invalid keyword terminator found - Aborte..\n  239 >                        close  System-File\n  240 |                        goback\n  241 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:244: error: 'System-File' is not a file name\n  242 |               if       WS-RDB-Return = 2\n  243 |                        display \"Invalid keyword found - Aborted\"\n  244 >                        close  System-File\n  245 |                        goback\n  246 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:249: error: 'RDBMS-Host' is not defined\n  247 |               if       WS-RDB-Return = zeros\n  248 |                        display \"acas-param file found and being used \"\n  249 >                        move     WS-Host-Name      to RDBMS-Host\n  250 |                        move     WS-Implementation to RDBMS-User\n  251 |                        move     WS-Password       to RDBMS-Passwd\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:250: error: 'RDBMS-User' is not defined\n  248 |                        display \"acas-param file found and being used \"\n  249 |                        move     WS-Host-Name      to RDBMS-Host\n  250 >                        move     WS-Implementation to RDBMS-User\n  251 |                        move     WS-Password       to RDBMS-Passwd\n  252 |                        move     WS-Base-Name      to RDBMS-DB-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:251: error: 'RDBMS-Passwd' is not defined\n  249 |                        move     WS-Host-Name      to RDBMS-Host\n  250 |                        move     WS-Implementation to RDBMS-User\n  251 >                        move     WS-Password       to RDBMS-Passwd\n  252 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  253 |                        move     WS-Port-Number    to RDBMS-Port\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:253: error: 'RDBMS-Port' is not defined\n  251 |                        move     WS-Password       to RDBMS-Passwd\n  252 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  253 >                        move     WS-Port-Number    to RDBMS-Port\n  254 |                        move     WS-Socket         to RDBMS-Socket\n  255 |                       display \"User = \"   RDBMS-User\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:254: error: 'RDBMS-Socket' is not defined\n  252 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  253 |                        move     WS-Port-Number    to RDBMS-Port\n  254 >                        move     WS-Socket         to RDBMS-Socket\n  255 |                       display \"User = \"   RDBMS-User\n  256 |                       display \"Host = \"   RDBMS-Host\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:274: error: 'System-File' is not a file name\n  272 |               display \"Host = \"   RDBMS-Host\n  273 |               display \"Socket = \" RDBMS-Socket\n  274 >               close System-File\n  275 |               move 64 to Return-Code\n  276 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'aa010-Proc-Override':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:282: error: 'Log-file-rec-written' is not defined\n  280 | *>  Over-ride processes for acasirsub3/irsdfltMT for Dup modes\n  281 | *>\n  282 >      move     zero to Log-file-rec-written.        *> for logging.\n  283 |      move     1 to File-System-Used\n  284 |                    FA-File-System-Used.            *> RDB in use\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:283: error: 'File-System-Used' is not defined\n  281 | *>\n  282 |      move     zero to Log-file-rec-written.        *> for logging.\n  283 >      move     1 to File-System-Used\n  284 |                    FA-File-System-Used.            *> RDB in use\n  285 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:284: error: 'FA-File-System-Used' is not defined\n  282 |      move     zero to Log-file-rec-written.        *> for logging.\n  283 |      move     1 to File-System-Used\n  284 >                    FA-File-System-Used.            *> RDB in use\n  285 |      move     1 to File-Key-No.\n  286 |      perform  acasirsub3-Open.                     *> Open/Init RDB via F..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:285: error: 'File-Key-No' is not defined\n  283 |      move     1 to File-System-Used\n  284 |                    FA-File-System-Used.            *> RDB in use\n  285 >      move     1 to File-Key-No.\n  286 |      perform  acasirsub3-Open.                     *> Open/Init RDB via F..\n  287 |      go       to aa010-Read.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'acasirsub3':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:290: error: 'System-Record' is not defined\n  288 | *>\n  289 |  acasirsub3.\n  290 >      call     \"acasirsub3\" using System-Record\n  291 |                                 WS-IRS-Default-Record\n  292 |                                 File-Access\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:291: error: 'WS-IRS-Default-Record' is not defined\n  289 |  acasirsub3.\n  290 |      call     \"acasirsub3\" using System-Record\n  291 >                                 WS-IRS-Default-Record\n  292 |                                 File-Access\n  293 |                                 File-Defs\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:292: error: 'File-Access' is not defined\n  290 |      call     \"acasirsub3\" using System-Record\n  291 |                                 WS-IRS-Default-Record\n  292 >                                 File-Access\n  293 |                                 File-Defs\n  294 |                                 ACAS-DAL-Common-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:293: error: 'File-Defs' is not defined\n  291 |                                 WS-IRS-Default-Record\n  292 |                                 File-Access\n  293 >                                 File-Defs\n  294 |                                 ACAS-DAL-Common-data.\n  295 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:294: error: 'ACAS-DAL-Common-data' is not defined\n  292 |                                 File-Access\n  293 |                                 File-Defs\n  294 >                                 ACAS-DAL-Common-data.\n  295 | *>\n  296 |  acasirsub3-Open.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'acasirsub3-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:297: error: 'fn-open' is not defined\n  295 | *>\n  296 |  acasirsub3-Open.\n  297 >      set      fn-open to true.\n  298 |      set      fn-i-o  to true.\n  299 |      perform  acasirsub3.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:298: error: 'fn-i-o' is not defined\n  296 |  acasirsub3-Open.\n  297 |      set      fn-open to true.\n  298 >      set      fn-i-o  to true.\n  299 |      perform  acasirsub3.\n  300 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'acasirsub3-Open-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:304: error: 'fn-input' is not defined\n  302 |  acasirsub3-Open-Input.\n  303 |      set      fn-open  to true.\n  304 >      set      fn-input to true.\n  305 |      perform  acasirsub3.\n  306 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'acasirsub3-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:309: error: 'fn-Close' is not defined\n  307 | *>\n  308 |  acasirsub3-Close.\n  309 >      set      fn-Close to true.\n  310 |      perform  acasirsub3.\n  311 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'acasirsub3-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:313: error: 'fn-Read-Next' is not defined\n  311 | *>\n  312 |  acasirsub3-Read-Next.\n  313 >      set      fn-Read-Next to true.\n  314 |      perform  acasirsub3.\n  315 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'acasirsub3-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:317: error: 'fn-Write' is not defined\n  315 | *>\n  316 |  acasirsub3-Write.\n  317 >      set      fn-Write to true.\n  318 |      perform  acasirsub3.\n  319 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'acasirsub3-ReWrite':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:321: error: 'fn-re-write' is not defined\n  319 | *>\n  320 |  acasirsub3-ReWrite.\n  321 >      set      fn-re-write to true.\n  322 |      perform  acasirsub3.\n  323 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'aa010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:346: error: 'Sql-State' is not defined\n  344 | *>\n  345 |      perform acasirsub3-Write.           *> if error will do a rewrite.\n  346 >      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  347 |          or   fs-reply = 22 or 99        *> Check for dup key/record\n  348 |          or   SQL-Err (1:4) = \"1062\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:348: error: 'SQL-Err' is not defined\n  346 |      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  347 |          or   fs-reply = 22 or 99        *> Check for dup key/record\n  348 >          or   SQL-Err (1:4) = \"1062\"\n  349 |                          or = \"1022\"\n  350 |               move    zeros to FS-Reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:351: error: 'WE-Error' is not defined\n  349 |                          or = \"1022\"\n  350 |               move    zeros to FS-Reply\n  351 >                                WE-Error\n  352 |               perform acasirsub3-Rewrite\n  353 |               if      fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:355: error: 'WS-File-Key' is not defined\n  353 |               if      fs-reply not = zero\n  354 |                       move spaces to SO-Print\n  355 >                       string  SL014 WS-File-Key into SO-Print\n  356 |                       perform call-Sysout\n  357 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:371: error: 'SQL-Msg' is not defined\n  369 |               string SL018 SQL-Err into SO-Print\n  370 |               perform call-Sysout\n  371 >               move SQL-Msg to SO-Print\n  372 |               perform call-Sysout\n  373 |               move SQL-State to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'aa999-Finish-2':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:442: error: 'Access-Type' is not defined\n  440 |      move     1 to File-System-Used\n  441 |                    FA-File-System-Used.\n  442 >      move     zero to Access-Type.\n  443 |      move     2 to File-Function.\n  444 |      perform  acasirsub3-Close.                     *> Close RDB\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:443: error: 'File-Function' is not defined\n  441 |                    FA-File-System-Used.\n  442 |      move     zero to Access-Type.\n  443 >      move     2 to File-Function.\n  444 |      perform  acasirsub3-Close.                     *> Close RDB\n  445 |      close    System-File.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:445: error: 'System-File' is not a file name\n  443 |      move     2 to File-Function.\n  444 |      perform  acasirsub3-Close.                     *> Close RDB\n  445 >      close    System-File.\n  446 |      move     zero to File-System-Used\n  447 |                       File-Duplicates-In-Use.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:447: error: 'File-Duplicates-In-Use' is not defined\n  445 |      close    System-File.\n  446 |      move     zero to File-System-Used\n  447 >                       File-Duplicates-In-Use.\n  448 |      perform  acasirsub3-Close.                     *> Close File\n  449 |      move     \"EOJ - Load Default Table\" to So-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:195: error: 'zz020-Get-Program-Args' is not defined\n  193 | *>\n  194 |  aa000-main-start.\n  195 >      perform  zz020-Get-Program-Args.\n  196 |      move     Prog-Name to So-Print.\n  197 |      perform  Call-Sysout.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:114: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:121: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:128: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:163: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:166: error: irswsdflt.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:167: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:168: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:169: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:455: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:198: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:199: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:203: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:203: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:204: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:209: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:212: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:213: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:219: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:225: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:226: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:234: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:239: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:244: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:249: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:250: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:251: error: 'RDBMS-Passwd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:253: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:254: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:274: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:282: error: 'Log-file-rec-written' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:283: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:284: error: 'FA-File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:285: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:290: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:291: error: 'WS-IRS-Default-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:292: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:293: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:294: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:297: error: 'fn-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:298: error: 'fn-i-o' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:304: error: 'fn-input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:309: error: 'fn-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:313: error: 'fn-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:317: error: 'fn-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:321: error: 'fn-re-write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:346: error: 'Sql-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:348: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:351: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:355: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:371: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:442: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:443: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:445: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:447: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:195: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:114: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:121: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:128: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:163: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:166: error: irswsdflt.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:167: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:168: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:169: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:455: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:198: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:199: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:203: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:203: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:204: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:209: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:212: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:213: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:219: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:225: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:226: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:234: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:239: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:244: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:249: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:250: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:251: error: 'RDBMS-Passwd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:253: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:254: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:274: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:282: error: 'Log-file-rec-written' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:283: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:284: error: 'FA-File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:285: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:290: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:291: error: 'WS-IRS-Default-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:292: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:293: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:294: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:297: error: 'fn-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:298: error: 'fn-i-o' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:304: error: 'fn-input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:309: error: 'fn-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:313: error: 'fn-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:317: error: 'fn-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:321: error: 'fn-re-write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:346: error: 'Sql-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:348: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:351: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:355: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:371: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:442: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:443: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:445: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:447: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl:195: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 29,
+    "cognitive": 55,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 85,
+      "totalOperators": 161,
+      "totalOperands": 226,
+      "vocabulary": 94,
+      "length": 387,
+      "volume": 2537,
+      "difficulty": 11.96,
+      "effort": 30350,
+      "timeToProgram": 1686,
+      "deliveredBugs": 0.846
+    },
+    "maintainability": 72
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas-get-params",
+        "line": 230
+      },
+      {
+        "target": "acasirsub3",
+        "line": 290
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 390
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 400
+      },
+      {
+        "target": "ACAS-Sysout",
+        "line": 458
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 104
+      },
+      {
+        "name": "envdiv",
+        "line": 114
+      },
+      {
+        "name": "selsys",
+        "line": 121
+      },
+      {
+        "name": "fdsys",
+        "line": 128
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 163
+      },
+      {
+        "name": "irswsdflt",
+        "line": 165
+      },
+      {
+        "name": "wsfnctn",
+        "line": 167
+      },
+      {
+        "name": "wsnames",
+        "line": 168
+      },
+      {
+        "name": "wscall",
+        "line": 169
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 455
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 195
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 197
+      },
+      {
+        "target": "acasirsub3-Open",
+        "line": 286
+      },
+      {
+        "target": "acasirsub3",
+        "line": 299
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 300
+      },
+      {
+        "target": "acasirsub3",
+        "line": 305
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 306
+      },
+      {
+        "target": "acasirsub3",
+        "line": 310
+      },
+      {
+        "target": "acasirsub3",
+        "line": 314
+      },
+      {
+        "target": "acasirsub3",
+        "line": 318
+      },
+      {
+        "target": "acasirsub3",
+        "line": 322
+      },
+      {
+        "target": "acasirsub3-Read-Next",
+        "line": 330
+      },
+      {
+        "target": "acasirsub3-Write",
+        "line": 345
+      },
+      {
+        "target": "acasirsub3-Rewrite",
+        "line": 352
+      },
+      {
+        "target": "call-Sysout",
+        "line": 356
+      },
+      {
+        "target": "call-Sysout",
+        "line": 364
+      },
+      {
+        "target": "call-Sysout",
+        "line": 367
+      },
+      {
+        "target": "call-Sysout",
+        "line": 370
+      },
+      {
+        "target": "call-Sysout",
+        "line": 372
+      },
+      {
+        "target": "call-Sysout",
+        "line": 374
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 375
+      },
+      {
+        "target": "call-Sysout",
+        "line": 409
+      },
+      {
+        "target": "call-Sysout",
+        "line": 412
+      },
+      {
+        "target": "call-Sysout",
+        "line": 415
+      },
+      {
+        "target": "call-Sysout",
+        "line": 417
+      },
+      {
+        "target": "call-Sysout",
+        "line": 419
+      },
+      {
+        "target": "call-Sysout",
+        "line": 421
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 422
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 431
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 434
+      },
+      {
+        "target": "aa030-Commit",
+        "line": 438
+      },
+      {
+        "target": "acasirsub3-Close",
+        "line": 444
+      },
+      {
+        "target": "acasirsub3-Close",
+        "line": 448
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 450
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 452
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 129
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>                rollback\n*>...",
+        "line": 387
+      },
+      {
+        "content": "*>                commit\n*>...",
+        "line": 397
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

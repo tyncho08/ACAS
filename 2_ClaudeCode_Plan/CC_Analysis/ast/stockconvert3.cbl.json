@@ -1,0 +1,117 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl",
+  "fileName": "stockconvert3.cbl",
+  "fileHash": "cf34ef4b8d2dd4f7a0458cb1287088398b87e92d4c7d347dd0372f4d30242a77",
+  "timestamp": "2025-09-15T19:46:30.602Z",
+  "parseTime": 31,
+  "lines": {
+    "total": 254,
+    "code": 162,
+    "comment": 90,
+    "blank": 2
+  },
+  "programId": "stockconvert3",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:105: error: fdstock.cob: No such file or directory\n  103 |  file section.\n  104 | *>\n  105 >  copy \"fdstock.cob\".\n  106 |  copy \"fdstock.cob\"  replacing ==Stock-File== by ==Temp-Stock-File==\n  107 |                                ==Stock-Record== by ==Temp-Stock-Record==.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:107: error: fdstock.cob: No such file or directory\n  105 |  copy \"fdstock.cob\".\n  106 |  copy \"fdstock.cob\"  replacing ==Stock-File== by ==Temp-Stock-File==\n  107 >                                ==Stock-Record== by ==Temp-Stock-Record==.\n  108 |  fd  Old-Stock-File.\n  109 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:90: error: missing file description for FILE Temp-Stock-File\n   88 |                              record key           Stock-Key in Old-Stock-..\n   89 | *>\n   90 >      select Temp-Stock-File  assign               \"Temp-stock.dat\"\n   91 |                              organization         sequential.\n   92 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:93: error: missing file description for FILE Stock-File\n   91 |                              organization         sequential.\n   92 | *>\n   93 >      select  Stock-File      assign               \"stockctl.dat\"  *>  Fil..\n   94 |                              access               dynamic\n   95 |                              organization         indexed\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:97: error: 'Stock-Key IN Stock-Record' is not defined\n   95 |                              organization         indexed\n   96 |                              status               Fs-Reply\n   97 >                              record key           Stock-Key       in Stoc..\n   98 |                              alternate record key Stock-Abrev-Key in Stoc..\n   99 |                              alternate record key Stock-Desc      in Stoc..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:98: error: 'Stock-Abrev-Key IN Stock-Record' is not defined\n   96 |                              status               Fs-Reply\n   97 |                              record key           Stock-Key       in Stoc..\n   98 >                              alternate record key Stock-Abrev-Key in Stoc..\n   99 |                              alternate record key Stock-Desc      in Stoc..\n  100 |                              alternate record key Stock-Location  in Stoc..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:99: error: 'Stock-Desc IN Stock-Record' is not defined\n   97 |                              record key           Stock-Key       in Stoc..\n   98 |                              alternate record key Stock-Abrev-Key in Stoc..\n   99 >                              alternate record key Stock-Desc      in Stoc..\n  100 |                              alternate record key Stock-Location  in Stoc..\n  101 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:100: error: 'Stock-Location IN Stock-Record' is not defined\n   98 |                              alternate record key Stock-Abrev-Key in Stoc..\n   99 |                              alternate record key Stock-Desc      in Stoc..\n  100 >                              alternate record key Stock-Location  in Stoc..\n  101 | *>\n  102 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl: in paragraph 'AA010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:205: error: 'Temp-Stock-Record' is not defined\n  203 | *>\n  204 |      add      1 to In-Rec-Count.\n  205 >      initialise Temp-Stock-Record with filler.\n  206 |      move     CORRESPONDING Old-Stock-Record to Temp-Stock-Record.\n  207 |      write    Temp-Stock-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl: in paragraph 'AA020-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:245: error: 'Stock-Record' is not defined\n  243 | *>\n  244 |      add      1 to In-Rec-Count.\n  245 >      move     CORRESPONDING Temp-Stock-Record to Stock-Record.\n  246 |      write    Stock-Record.\n  247 |      if       fs-reply not = zero\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:105: error: fdstock.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:107: error: fdstock.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:90: error: missing file description for FILE Temp-Stock-File",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:93: error: missing file description for FILE Stock-File",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:97: error: 'Stock-Key IN Stock-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:98: error: 'Stock-Abrev-Key IN Stock-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:99: error: 'Stock-Desc IN Stock-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:100: error: 'Stock-Location IN Stock-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:205: error: 'Temp-Stock-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:245: error: 'Stock-Record' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:105: error: fdstock.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:107: error: fdstock.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:90: error: missing file description for FILE Temp-Stock-File",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:93: error: missing file description for FILE Stock-File",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:97: error: 'Stock-Key IN Stock-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:98: error: 'Stock-Abrev-Key IN Stock-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:99: error: 'Stock-Desc IN Stock-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:100: error: 'Stock-Location IN Stock-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:205: error: 'Temp-Stock-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stockconvert3.cbl:245: error: 'Stock-Record' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 12,
+    "cognitive": 23,
+    "halstead": {
+      "uniqueOperators": 5,
+      "uniqueOperands": 48,
+      "totalOperators": 35,
+      "totalOperands": 68,
+      "vocabulary": 53,
+      "length": 103,
+      "volume": 590,
+      "difficulty": 3.54,
+      "effort": 2089,
+      "timeToProgram": 116,
+      "deliveredBugs": 0.197
+    },
+    "maintainability": 79
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 11
+      },
+      {
+        "name": "of",
+        "line": 71
+      },
+      {
+        "name": "fdstock",
+        "line": 105
+      },
+      {
+        "name": "fdstock",
+        "line": 106
+      }
+    ],
+    "performs": []
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Old-Stock-File",
+        "line": 108
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 167
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

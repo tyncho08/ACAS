@@ -1,0 +1,705 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl",
+  "fileName": "plinvoiceMT.cbl",
+  "fileHash": "6bfda35f6f7abe15624dcf3c0d40ebcc78e0fad19341baa23662037a802a789e",
+  "timestamp": "2025-09-15T19:46:06.288Z",
+  "parseTime": 168,
+  "lines": {
+    "total": 3226,
+    "code": 2275,
+    "comment": 947,
+    "blank": 4
+  },
+  "programId": "plinvoiceMT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:255: error: envdiv.cob: No such file or directory\n  253 | *>\n  254 |  environment division.\n  255 >  copy \"envdiv.cob\".\n  256 | *>\n  257 |  input-output section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:384: error: mysql-variables.cpy: No such file or directory\n  382 | *>       TABLE=PUINVOICE-REC,HV\n  383 | *>       TABLE=PUINV-LINES-REC,HV1\n  384 >  COPY \"mysql-variables.cpy\".\n  385 | *>\n  386 | *>    Definitions for the PUINVOICE-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:445: error: wsfnctn.cob: No such file or directory\n  443 | *>\n  444 | *>**********************************************************************\n  445 >  copy \"wsfnctn.cob\".                         *> File-Access\n  446 | *>\n  447 | *>**********************************************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:449: error: Test-Data-Flags.cob: No such file or directory\n  447 | *>**********************************************************************\n  448 | *>\n  449 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  450 | *>\n  451 | *>  Using the first record but not the 2nd as it uses occurs 40 but\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:457: error: plwspinv.cob: No such file or directory\n  455 |                                  leading ==ih-==      by ==WS-ih-==\n  456 |                                   ==occurs 40.== by ==.==\n  457 >                                   ==il-==      by ==Un-Used-il-==.\n  458 | *>\n  459 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1416: error: mysql-procedures.cpy: No such file or directory\n 1414 | *>\n 1415 | *> /MYSQL PRO\\\n 1416 >  COPY \"mysql-procedures.cpy\".\n 1417 | *> /MYSQL-END\\\n 1418 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:468: error: 'Ws-Mysql-Error-Number' is not defined\n  466 |  01  Display-Message-2       foreground-color 2.\n  467 |      03      value \"SM004 SQL Err No.=\"           line 4 col  1.\n  468 >      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.\n  469 |      03      value \" Para=\"                              col 23.\n  470 |      03  using WS-No-Paragraph         pic 9(3)          col 29.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:470: error: 'WS-No-Paragraph' is not defined\n  468 |      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.\n  469 |      03      value \" Para=\"                              col 23.\n  470 >      03  using WS-No-Paragraph         pic 9(3)          col 29.\n  471 |      03      value \" SQL Cmd=\"                           col 32.\n  472 |      03  using Ws-Mysql-Command        pic x(199)        col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:472: error: 'Ws-Mysql-Command' is not defined\n  470 |      03  using WS-No-Paragraph         pic 9(3)          col 29.\n  471 |      03      value \" SQL Cmd=\"                           col 32.\n  472 >      03  using Ws-Mysql-Command        pic x(199)        col 41.\n  473 |      03      value \"SQL Err Msg=\"                 line 7 col  1.\n  474 |      03  using Ws-Mysql-Error-Message  pic x(67)         col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:474: error: 'Ws-Mysql-Error-Message' is not defined\n  472 |      03  using Ws-Mysql-Command        pic x(199)        col 41.\n  473 |      03      value \"SQL Err Msg=\"                 line 7 col  1.\n  474 >      03  using Ws-Mysql-Error-Message  pic x(67)         col 13.\n  475 | *>\n  476 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:477: error: 'File-Access' is not defined\n  475 | *>\n  476 | *>\n  477 >  PROCEDURE DIVISION   using File-Access\n  478 |                             ACAS-DAL-Common-data\n  479 |                             WS-Invoice-Record.   *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:478: error: 'ACAS-DAL-Common-data' is not defined\n  476 | *>\n  477 |  PROCEDURE DIVISION   using File-Access\n  478 >                             ACAS-DAL-Common-data\n  479 |                             WS-Invoice-Record.   *>  Ws record\n  480 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:479: error: 'WS-Invoice-Record' is not defined\n  477 |  PROCEDURE DIVISION   using File-Access\n  478 |                             ACAS-DAL-Common-data\n  479 >                             WS-Invoice-Record.   *>  Ws record\n  480 | *>**********************************************\n  481 |  ba-ACAS-DAL-Process  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:497: error: 'SQL-State' is not defined\n  495 |  ba010-Initialise.\n  496 | *>\n  497 >      move     zero   to SQL-State.\n  498 | *>\n  499 | *>                        We-Error\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:504: error: 'WS-Log-Where' is not defined\n  502 |      move     spaces to WS-MYSQL-Error-Message\n  503 |                         WS-MYSQL-Error-Number\n  504 >                         WS-Log-Where\n  505 |                         WS-File-Key\n  506 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:505: error: 'WS-File-Key' is not defined\n  503 |                         WS-MYSQL-Error-Number\n  504 |                         WS-Log-Where\n  505 >                         WS-File-Key\n  506 |                         SQL-Msg\n  507 |                         SQL-Err.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:506: error: 'SQL-Msg' is not defined\n  504 |                         WS-Log-Where\n  505 |                         WS-File-Key\n  506 >                         SQL-Msg\n  507 |                         SQL-Err.\n  508 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:507: error: 'SQL-Err' is not defined\n  505 |                         WS-File-Key\n  506 |                         SQL-Msg\n  507 >                         SQL-Err.\n  508 | *>\n  509 | *>  Work out what is being requested and convert to action !!\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:514: error: 'File-Function' is not defined\n  512 | *>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  513 | *>\n  514 >      evaluate File-Function\n  515 |         when  1\n  516 |               go to ba020-Process-Open          *> Coded / D.tested\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:569: error: 'DB-Schema' is not defined\n  567 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  568 |  *>\n  569 >      string   DB-Schema      delimited by space\n  570 |               X\"00\"          delimited by size\n  571 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:571: error: 'WS-MYSQL-BASE-NAME' is not defined\n  569 |      string   DB-Schema      delimited by space\n  570 |               X\"00\"          delimited by size\n  571 >                                into WS-MYSQL-BASE-NAME\n  572 |      end-string.\n  573 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:573: error: 'DB-Host' is not defined\n  571 |                                into WS-MYSQL-BASE-NAME\n  572 |      end-string.\n  573 >      string   DB-Host        delimited by space\n  574 |               X\"00\"          delimited by size\n  575 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:575: error: 'WS-MYSQL-HOST-NAME' is not defined\n  573 |      string   DB-Host        delimited by space\n  574 |               X\"00\"          delimited by size\n  575 >                                into WS-MYSQL-HOST-NAME\n  576 |      end-string.\n  577 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:577: error: 'DB-UName' is not defined\n  575 |                                into WS-MYSQL-HOST-NAME\n  576 |      end-string.\n  577 >      string   DB-UName       delimited by space\n  578 |               X\"00\"          delimited by size\n  579 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:579: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  577 |      string   DB-UName       delimited by space\n  578 |               X\"00\"          delimited by size\n  579 >                                into WS-MYSQL-IMPLEMENTATION\n  580 |      end-string.\n  581 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:581: error: 'DB-UPass' is not defined\n  579 |                                into WS-MYSQL-IMPLEMENTATION\n  580 |      end-string.\n  581 >      string   DB-UPass       delimited by space\n  582 |               X\"00\"          delimited by size\n  583 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:583: error: 'WS-MYSQL-PASSWORD' is not defined\n  581 |      string   DB-UPass       delimited by space\n  582 |               X\"00\"          delimited by size\n  583 >                                into WS-MYSQL-PASSWORD\n  584 |      end-string.\n  585 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:585: error: 'DB-Port' is not defined\n  583 |                                into WS-MYSQL-PASSWORD\n  584 |      end-string.\n  585 >      string   DB-Port        delimited by space\n  586 |               X\"00\"          delimited by size\n  587 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:587: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  585 |      string   DB-Port        delimited by space\n  586 |               X\"00\"          delimited by size\n  587 >                                into WS-MYSQL-PORT-NUMBER\n  588 |      end-string.\n  589 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:589: error: 'DB-Socket' is not defined\n  587 |                                into WS-MYSQL-PORT-NUMBER\n  588 |      end-string.\n  589 >      string   DB-Socket      delimited by space\n  590 |               X\"00\"          delimited by size\n  591 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:591: error: 'WS-MYSQL-SOCKET' is not defined\n  589 |      string   DB-Socket      delimited by space\n  590 |               X\"00\"          delimited by size\n  591 >                                into WS-MYSQL-SOCKET\n  592 |      end-string.\n  593 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:595: error: 'fs-reply' is not defined\n  593 |      move     1 to ws-No-Paragraph.\n  594 |      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  595 >      if       fs-reply not = zero\n  596 |               go   to ba999-end.\n  597 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:670: error: 'WS-MYSQL-RESULT' is not defined\n  668 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  669 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  670 >            MOVE WS-MYSQL-RESULT TO TP-PUINVOICE-REC\n  671 | *>               /MYSQL-END\\\n  672 |            move    \"0000000000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:673: error: 'Testing-2' is not defined\n  671 | *>               /MYSQL-END\\\n  672 |            move    \"0000000000\" to WS-File-Key\n  673 >               if    Testing-2\n  674 |                     display Display-Message-1 with erase eos\n  675 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:679: error: 'WS-MYSQL-Count-Rows' is not defined\n  677 | *>  It could be an empty table so test for it\n  678 | *>\n  679 >               if       WS-MYSQL-Count-Rows = zero\n  680 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  681 |                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:681: error: 'WS-MYSQL-SQLstate' is not defined\n  679 |               if       WS-MYSQL-Count-Rows = zero\n  680 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  681 >                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n  682 |                        move  WS-MYSQL-SqlState   to SQL-State\n  683 |                        if    WS-MYSQL-Error-Number  not = \"0  \"    *> set..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:689: error: 'WE-Error' is not defined\n  687 |                        end-if       *> do not really need to do this mean..\n  688 |                        move 10 to fs-reply\n  689 >                        move 10 to WE-Error        *> should be 0 'JIC' li..\n  690 |                        move    \"No Data\" to WS-File-Key\n  691 |                        go to ba999-End       *> can clear the dup code af..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in paragraph 'ba041-Reread':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:720: error: 'FN-Read-Next-Header' is not defined\n  718 | *>  but 1st support for Read-Next-Header to bypass line processing.\n  719 | *>\n  720 >      if       FN-Read-Next-Header\n  721 |               go to ba042-Fetch.\n  722 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:724: error: 'WS-ih-Test' is not defined\n  722 | *>\n  723 |      if       WS-Last-Read-Line < WS-Actual-Lines-In-Row\n  724 >               add 1 WS-Last-Read-Line giving   WS-ih-Test\n  725 |               move  WS-Last-Read-Invoice    to WS-ih-Invoice\n  726 |               perform bc050-Process-Read-Indexed thru bc059-Exit\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:725: error: 'WS-ih-Invoice' is not defined\n  723 |      if       WS-Last-Read-Line < WS-Actual-Lines-In-Row\n  724 |               add 1 WS-Last-Read-Line giving   WS-ih-Test\n  725 >               move  WS-Last-Read-Invoice    to WS-ih-Invoice\n  726 |               perform bc050-Process-Read-Indexed thru bc059-Exit\n  727 |               if     fs-Reply not = zero    *> = 23    *> no row found\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:730: error: 'WS-Invoice-Key' is not defined\n  728 |                      initialise WS-Invoice-Record\n  729 |                      move spaces to WS-File-Key\n  730 >                      string WS-Invoice-Key\n  731 |                             \" Not Found\"\n  732 |                                  into WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in paragraph 'ba060-Process-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:948: error: 'access-type' is not defined\n  946 | *>  Check for Param error 1st on start\n  947 | *>\n  948 >      if       access-type < 5 or > 8                   *> not using not <..\n  949 |               move 99 to FS-Reply\n  950 |               move 997 to WE-Error                     *> Invalid calling..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1073: error: 'WS-Mysql-Save-Result' is not defined\n 1071 | *>    Save the pointers (PUINVOICE-REC) [ and we will restore at end ]\n 1072 | *>\n 1073 >      move     WS-Mysql-Result     to WS-Mysql-Save-Result.     *> primary..\n 1074 |      move     WS-Mysql-Count-Rows to WS-Mysql-Save-Count-Rows.\n 1075 |      move     zero to WS-Mysql-Count-Rows.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1074: error: 'WS-Mysql-Save-Count-Rows' is not defined\n 1072 | *>\n 1073 |      move     WS-Mysql-Result     to WS-Mysql-Save-Result.     *> primary..\n 1074 >      move     WS-Mysql-Count-Rows to WS-Mysql-Save-Count-Rows.\n 1075 |      move     zero to WS-Mysql-Count-Rows.\n 1076 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1129: error: 'WS-Mysql-Save-Result-RG1' is not defined\n 1127 | *>  ALL this does depend on application code  in slnnn ???? <<<<<<<\n 1128 | *>\n 1129 >      move     WS-Mysql-Result to WS-Mysql-Save-Result-RG1.    *> RG 1 Tb2\n 1130 |      move     WS-Mysql-Count-Rows to WS-Mysql-Save-Count-Rows-RG1.\n 1131 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1130: error: 'WS-Mysql-Save-Count-Rows-RG1' is not defined\n 1128 | *>\n 1129 |      move     WS-Mysql-Result to WS-Mysql-Save-Result-RG1.    *> RG 1 Tb2\n 1130 >      move     WS-Mysql-Count-Rows to WS-Mysql-Save-Count-Rows-RG1.\n 1131 | *>\n 1132 | *> Restore the Primary table pointer & row count.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in paragraph 'ba999-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1434: error: 'Testing-1' is not defined\n 1432 | *>  Any Clean ups before quiting    move data record ?????  do so at the..\n 1433 | *>\n 1434 >      if       Testing-1\n 1435 |               perform Ca-Process-Logs\n 1436 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in section 'bb000-HV-Load':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1455: error: 'WS-ih-Supplier' is not defined\n 1453 |      move     WS-ih-Invoice       to HV-IH-INVOICE.\n 1454 |      move     WS-ih-Test          to HV-IH-TEST.\n 1455 >      move     WS-ih-Supplier      to HV-IH-SUPPLIER\n 1456 |      move     WS-ih-Date          to HV-IH-DAT\n 1457 |      move     WS-ih-Order         to HV-IH-ORDER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1456: error: 'WS-ih-Date' is not defined\n 1454 |      move     WS-ih-Test          to HV-IH-TEST.\n 1455 |      move     WS-ih-Supplier      to HV-IH-SUPPLIER\n 1456 >      move     WS-ih-Date          to HV-IH-DAT\n 1457 |      move     WS-ih-Order         to HV-IH-ORDER\n 1458 |      move     WS-ih-Type          to HV-IH-TYPE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1457: error: 'WS-ih-Order' is not defined\n 1455 |      move     WS-ih-Supplier      to HV-IH-SUPPLIER\n 1456 |      move     WS-ih-Date          to HV-IH-DAT\n 1457 >      move     WS-ih-Order         to HV-IH-ORDER\n 1458 |      move     WS-ih-Type          to HV-IH-TYPE\n 1459 |      move     WS-ih-Ref           to HV-IH-REF\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1458: error: 'WS-ih-Type' is not defined\n 1456 |      move     WS-ih-Date          to HV-IH-DAT\n 1457 |      move     WS-ih-Order         to HV-IH-ORDER\n 1458 >      move     WS-ih-Type          to HV-IH-TYPE\n 1459 |      move     WS-ih-Ref           to HV-IH-REF\n 1460 |      move     WS-ih-P-C           to HV-IH-P-C\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1459: error: 'WS-ih-Ref' is not defined\n 1457 |      move     WS-ih-Order         to HV-IH-ORDER\n 1458 |      move     WS-ih-Type          to HV-IH-TYPE\n 1459 >      move     WS-ih-Ref           to HV-IH-REF\n 1460 |      move     WS-ih-P-C           to HV-IH-P-C\n 1461 |      move     WS-ih-Net           to HV-IH-NET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1460: error: 'WS-ih-P-C' is not defined\n 1458 |      move     WS-ih-Type          to HV-IH-TYPE\n 1459 |      move     WS-ih-Ref           to HV-IH-REF\n 1460 >      move     WS-ih-P-C           to HV-IH-P-C\n 1461 |      move     WS-ih-Net           to HV-IH-NET\n 1462 |      move     WS-ih-Extra         to HV-IH-EXTRA\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1461: error: 'WS-ih-Net' is not defined\n 1459 |      move     WS-ih-Ref           to HV-IH-REF\n 1460 |      move     WS-ih-P-C           to HV-IH-P-C\n 1461 >      move     WS-ih-Net           to HV-IH-NET\n 1462 |      move     WS-ih-Extra         to HV-IH-EXTRA\n 1463 |      move     WS-ih-Carriage      to HV-IH-CARRIAGE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1462: error: 'WS-ih-Extra' is not defined\n 1460 |      move     WS-ih-P-C           to HV-IH-P-C\n 1461 |      move     WS-ih-Net           to HV-IH-NET\n 1462 >      move     WS-ih-Extra         to HV-IH-EXTRA\n 1463 |      move     WS-ih-Carriage      to HV-IH-CARRIAGE\n 1464 |      move     WS-ih-Vat           to HV-IH-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1463: error: 'WS-ih-Carriage' is not defined\n 1461 |      move     WS-ih-Net           to HV-IH-NET\n 1462 |      move     WS-ih-Extra         to HV-IH-EXTRA\n 1463 >      move     WS-ih-Carriage      to HV-IH-CARRIAGE\n 1464 |      move     WS-ih-Vat           to HV-IH-VAT\n 1465 |      move     WS-ih-Discount      to HV-IH-DISCOUNT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1464: error: 'WS-ih-Vat' is not defined\n 1462 |      move     WS-ih-Extra         to HV-IH-EXTRA\n 1463 |      move     WS-ih-Carriage      to HV-IH-CARRIAGE\n 1464 >      move     WS-ih-Vat           to HV-IH-VAT\n 1465 |      move     WS-ih-Discount      to HV-IH-DISCOUNT\n 1466 |      move     WS-ih-E-Vat         to HV-IH-E-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1465: error: 'WS-ih-Discount' is not defined\n 1463 |      move     WS-ih-Carriage      to HV-IH-CARRIAGE\n 1464 |      move     WS-ih-Vat           to HV-IH-VAT\n 1465 >      move     WS-ih-Discount      to HV-IH-DISCOUNT\n 1466 |      move     WS-ih-E-Vat         to HV-IH-E-VAT\n 1467 |      move     WS-ih-C-Vat         to HV-IH-C-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1466: error: 'WS-ih-E-Vat' is not defined\n 1464 |      move     WS-ih-Vat           to HV-IH-VAT\n 1465 |      move     WS-ih-Discount      to HV-IH-DISCOUNT\n 1466 >      move     WS-ih-E-Vat         to HV-IH-E-VAT\n 1467 |      move     WS-ih-C-Vat         to HV-IH-C-VAT\n 1468 |      move     WS-ih-Status        to HV-IH-STATUS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1467: error: 'WS-ih-C-Vat' is not defined\n 1465 |      move     WS-ih-Discount      to HV-IH-DISCOUNT\n 1466 |      move     WS-ih-E-Vat         to HV-IH-E-VAT\n 1467 >      move     WS-ih-C-Vat         to HV-IH-C-VAT\n 1468 |      move     WS-ih-Status        to HV-IH-STATUS\n 1469 |      move     WS-ih-Lines         to HV-IH-LINES\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1468: error: 'WS-ih-Status' is not defined\n 1466 |      move     WS-ih-E-Vat         to HV-IH-E-VAT\n 1467 |      move     WS-ih-C-Vat         to HV-IH-C-VAT\n 1468 >      move     WS-ih-Status        to HV-IH-STATUS\n 1469 |      move     WS-ih-Lines         to HV-IH-LINES\n 1470 |      move     WS-ih-Deduct-Days   to HV-IH-DEDUCT-DAYS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1469: error: 'WS-ih-Lines' is not defined\n 1467 |      move     WS-ih-C-Vat         to HV-IH-C-VAT\n 1468 |      move     WS-ih-Status        to HV-IH-STATUS\n 1469 >      move     WS-ih-Lines         to HV-IH-LINES\n 1470 |      move     WS-ih-Deduct-Days   to HV-IH-DEDUCT-DAYS\n 1471 |      move     WS-ih-Deduct-Amt    to HV-IH-DEDUCT-AMT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1470: error: 'WS-ih-Deduct-Days' is not defined\n 1468 |      move     WS-ih-Status        to HV-IH-STATUS\n 1469 |      move     WS-ih-Lines         to HV-IH-LINES\n 1470 >      move     WS-ih-Deduct-Days   to HV-IH-DEDUCT-DAYS\n 1471 |      move     WS-ih-Deduct-Amt    to HV-IH-DEDUCT-AMT\n 1472 |      move     WS-ih-Deduct-Vat    to HV-IH-DEDUCT-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1471: error: 'WS-ih-Deduct-Amt' is not defined\n 1469 |      move     WS-ih-Lines         to HV-IH-LINES\n 1470 |      move     WS-ih-Deduct-Days   to HV-IH-DEDUCT-DAYS\n 1471 >      move     WS-ih-Deduct-Amt    to HV-IH-DEDUCT-AMT\n 1472 |      move     WS-ih-Deduct-Vat    to HV-IH-DEDUCT-VAT\n 1473 |      move     WS-ih-Days          to HV-IH-DAYS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1472: error: 'WS-ih-Deduct-Vat' is not defined\n 1470 |      move     WS-ih-Deduct-Days   to HV-IH-DEDUCT-DAYS\n 1471 |      move     WS-ih-Deduct-Amt    to HV-IH-DEDUCT-AMT\n 1472 >      move     WS-ih-Deduct-Vat    to HV-IH-DEDUCT-VAT\n 1473 |      move     WS-ih-Days          to HV-IH-DAYS\n 1474 |      move     WS-ih-CR            to HV-IH-CR\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1473: error: 'WS-ih-Days' is not defined\n 1471 |      move     WS-ih-Deduct-Amt    to HV-IH-DEDUCT-AMT\n 1472 |      move     WS-ih-Deduct-Vat    to HV-IH-DEDUCT-VAT\n 1473 >      move     WS-ih-Days          to HV-IH-DAYS\n 1474 |      move     WS-ih-CR            to HV-IH-CR\n 1475 |      move     WS-ih-Day-Book-Flag to HV-IH-DAY-BOOK-FLAG\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1474: error: 'WS-ih-CR' is not defined\n 1472 |      move     WS-ih-Deduct-Vat    to HV-IH-DEDUCT-VAT\n 1473 |      move     WS-ih-Days          to HV-IH-DAYS\n 1474 >      move     WS-ih-CR            to HV-IH-CR\n 1475 |      move     WS-ih-Day-Book-Flag to HV-IH-DAY-BOOK-FLAG\n 1476 |      move     WS-ih-Update        to HV-IH-UPDATE.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1475: error: 'WS-ih-Day-Book-Flag' is not defined\n 1473 |      move     WS-ih-Days          to HV-IH-DAYS\n 1474 |      move     WS-ih-CR            to HV-IH-CR\n 1475 >      move     WS-ih-Day-Book-Flag to HV-IH-DAY-BOOK-FLAG\n 1476 |      move     WS-ih-Update        to HV-IH-UPDATE.\n 1477 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1476: error: 'WS-ih-Update' is not defined\n 1474 |      move     WS-ih-CR            to HV-IH-CR\n 1475 |      move     WS-ih-Day-Book-Flag to HV-IH-DAY-BOOK-FLAG\n 1476 >      move     WS-ih-Update        to HV-IH-UPDATE.\n 1477 | *>\n 1478 |  bb000-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:594: error: 'MYSQL-1000-OPEN' is not defined\n  592 |      end-string.\n  593 |      move     1 to ws-No-Paragraph.\n  594 >      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  595 |      if       fs-reply not = zero\n  596 |               go   to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:594: error: 'MYSQL-1090-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in paragraph 'ba030-Process-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:618: error: 'MYSQL-1980-CLOSE' is not defined\n  616 | *>    Close the Database\n  617 | *>\n  618 >            PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n  619 | *>  /MYSQL-END\\\n  620 |      go      to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:618: error: 'MYSQL-1999-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:668: error: 'MYSQL-1210-COMMAND' is not defined\n  666 |              ws-Where (1:J)\n  667 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  668 >            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  669 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  670 |            MOVE WS-MYSQL-RESULT TO TP-PUINVOICE-REC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:668: error: 'MYSQL-1219-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:669: error: 'MYSQL-1220-STORE-RESULT' is not defined\n  667 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  668 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  669 >            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  670 |            MOVE WS-MYSQL-RESULT TO TP-PUINVOICE-REC\n  671 | *>               /MYSQL-END\\\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:669: error: 'MYSQL-1239-EXIT' is not defined\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:255: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:384: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:445: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:449: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:457: error: plwspinv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1416: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:468: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:470: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:472: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:474: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:477: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:478: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:479: error: 'WS-Invoice-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:497: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:504: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:505: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:506: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:507: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:514: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:569: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:571: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:573: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:575: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:577: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:579: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:581: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:583: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:585: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:587: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:589: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:591: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:595: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:670: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:673: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:679: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:681: error: 'WS-MYSQL-SQLstate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:689: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:720: error: 'FN-Read-Next-Header' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:724: error: 'WS-ih-Test' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:725: error: 'WS-ih-Invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:730: error: 'WS-Invoice-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:948: error: 'access-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1073: error: 'WS-Mysql-Save-Result' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1074: error: 'WS-Mysql-Save-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1129: error: 'WS-Mysql-Save-Result-RG1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1130: error: 'WS-Mysql-Save-Count-Rows-RG1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1434: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1455: error: 'WS-ih-Supplier' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1456: error: 'WS-ih-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1457: error: 'WS-ih-Order' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1458: error: 'WS-ih-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1459: error: 'WS-ih-Ref' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1460: error: 'WS-ih-P-C' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1461: error: 'WS-ih-Net' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1462: error: 'WS-ih-Extra' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1463: error: 'WS-ih-Carriage' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1464: error: 'WS-ih-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1465: error: 'WS-ih-Discount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1466: error: 'WS-ih-E-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1467: error: 'WS-ih-C-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1468: error: 'WS-ih-Status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1469: error: 'WS-ih-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1470: error: 'WS-ih-Deduct-Days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1471: error: 'WS-ih-Deduct-Amt' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1472: error: 'WS-ih-Deduct-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1473: error: 'WS-ih-Days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1474: error: 'WS-ih-CR' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1475: error: 'WS-ih-Day-Book-Flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1476: error: 'WS-ih-Update' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:594: error: 'MYSQL-1000-OPEN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:594: error: 'MYSQL-1090-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:618: error: 'MYSQL-1980-CLOSE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:618: error: 'MYSQL-1999-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:668: error: 'MYSQL-1210-COMMAND' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:668: error: 'MYSQL-1219-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:669: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:669: error: 'MYSQL-1239-EXIT' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:255: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:384: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:445: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:449: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:457: error: plwspinv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1416: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:468: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:470: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:472: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:474: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:477: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:478: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:479: error: 'WS-Invoice-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:497: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:504: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:505: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:506: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:507: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:514: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:569: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:571: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:573: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:575: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:577: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:579: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:581: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:583: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:585: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:587: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:589: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:591: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:595: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:670: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:673: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:679: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:681: error: 'WS-MYSQL-SQLstate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:689: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:720: error: 'FN-Read-Next-Header' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:724: error: 'WS-ih-Test' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:725: error: 'WS-ih-Invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:730: error: 'WS-Invoice-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:948: error: 'access-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1073: error: 'WS-Mysql-Save-Result' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1074: error: 'WS-Mysql-Save-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1129: error: 'WS-Mysql-Save-Result-RG1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1130: error: 'WS-Mysql-Save-Count-Rows-RG1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1434: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1455: error: 'WS-ih-Supplier' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1456: error: 'WS-ih-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1457: error: 'WS-ih-Order' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1458: error: 'WS-ih-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1459: error: 'WS-ih-Ref' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1460: error: 'WS-ih-P-C' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1461: error: 'WS-ih-Net' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1462: error: 'WS-ih-Extra' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1463: error: 'WS-ih-Carriage' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1464: error: 'WS-ih-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1465: error: 'WS-ih-Discount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1466: error: 'WS-ih-E-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1467: error: 'WS-ih-C-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1468: error: 'WS-ih-Status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1469: error: 'WS-ih-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1470: error: 'WS-ih-Deduct-Days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1471: error: 'WS-ih-Deduct-Amt' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1472: error: 'WS-ih-Deduct-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1473: error: 'WS-ih-Days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1474: error: 'WS-ih-CR' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1475: error: 'WS-ih-Day-Book-Flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:1476: error: 'WS-ih-Update' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:594: error: 'MYSQL-1000-OPEN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:594: error: 'MYSQL-1090-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:618: error: 'MYSQL-1980-CLOSE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:618: error: 'MYSQL-1999-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:668: error: 'MYSQL-1210-COMMAND' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:668: error: 'MYSQL-1219-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:669: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceMT.cbl:669: error: 'MYSQL-1239-EXIT' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 171,
+    "cognitive": 296,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 284,
+      "totalOperators": 806,
+      "totalOperands": 4729,
+      "vocabulary": 296,
+      "length": 5535,
+      "volume": 45439,
+      "difficulty": 99.91,
+      "effort": 4539772,
+      "timeToProgram": 252210,
+      "deliveredBugs": 15.146
+    },
+    "maintainability": 44
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 680
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 681
+      },
+      {
+        "target": "MySQL_error",
+        "line": 685
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 750
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 794
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 795
+      },
+      {
+        "target": "MySQL_error",
+        "line": 798
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 881
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 917
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 918
+      },
+      {
+        "target": "MySQL_error",
+        "line": 922
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1027
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1028
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1031
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1103
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1104
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1107
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1162
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1163
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1167
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1229
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1230
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1233
+      },
+      {
+        "target": "MySQL_query",
+        "line": 1275
+      },
+      {
+        "target": "MySQL_query",
+        "line": 1284
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1326
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1327
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1330
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1387
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1388
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1391
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1427
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 2403
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 2404
+      },
+      {
+        "target": "MySQL_error",
+        "line": 2408
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 2443
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 2500
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 2501
+      },
+      {
+        "target": "MySQL_error",
+        "line": 2506
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 2571
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 2572
+      },
+      {
+        "target": "MySQL_error",
+        "line": 2575
+      },
+      {
+        "target": "MySQL_query",
+        "line": 2617
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 2668
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 2669
+      },
+      {
+        "target": "MySQL_error",
+        "line": 2672
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 2721
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 2722
+      },
+      {
+        "target": "MySQL_error",
+        "line": 2725
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 3213
+      },
+      {
+        "target": "fhlogger",
+        "line": 3220
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 248
+      },
+      {
+        "name": "envdiv",
+        "line": 255
+      },
+      {
+        "name": "mysql-variables",
+        "line": 384
+      },
+      {
+        "name": "wsfnctn",
+        "line": 445
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 449
+      },
+      {
+        "name": "plwspinv",
+        "line": 454
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1416
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 567
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 594
+      },
+      {
+        "target": "ba998-Free",
+        "line": 610
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 618
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 668
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 669
+      },
+      {
+        "target": "ba999-End",
+        "line": 701
+      },
+      {
+        "target": "bc050-Process-Read-Indexed",
+        "line": 726
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 816
+      },
+      {
+        "target": "bc050-Process-Read-Indexed",
+        "line": 827
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 864
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 865
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 934
+      },
+      {
+        "target": "ba999-End",
+        "line": 936
+      },
+      {
+        "target": "ba998-Free",
+        "line": 939
+      },
+      {
+        "target": "ba998-Free",
+        "line": 957
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1017
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 1018
+      },
+      {
+        "target": "ba999-End",
+        "line": 1048
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1089
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 1090
+      },
+      {
+        "target": "bc070-Process-Write",
+        "line": 1147
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 1152
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 1160
+      },
+      {
+        "target": "ba999-End",
+        "line": 1177
+      },
+      {
+        "target": "bc080-Process-Delete",
+        "line": 1189
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1226
+      },
+      {
+        "target": "ba999-End",
+        "line": 1244
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1323
+      },
+      {
+        "target": "ba999-End",
+        "line": 1343
+      },
+      {
+        "target": "bc085-Process-Delete-ALL",
+        "line": 1347
+      },
+      {
+        "target": "bc090-Process-ReWrite",
+        "line": 1356
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 1361
+      },
+      {
+        "target": "bb300-Update",
+        "line": 1380
+      },
+      {
+        "target": "ba999-End",
+        "line": 1403
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 1435
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1917
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2318
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2394
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 2395
+      },
+      {
+        "target": "ba999-End",
+        "line": 2430
+      },
+      {
+        "target": "bc100-UnloadHVs-rg1",
+        "line": 2464
+      },
+      {
+        "target": "ba999-End",
+        "line": 2483
+      },
+      {
+        "target": "bc000-HV-Load-rg1",
+        "line": 2490
+      },
+      {
+        "target": "bc200-Insert-rg1",
+        "line": 2497
+      },
+      {
+        "target": "ba999-End",
+        "line": 2525
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2565
+      },
+      {
+        "target": "ba999-End",
+        "line": 2594
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2657
+      },
+      {
+        "target": "ba999-End",
+        "line": 2678
+      },
+      {
+        "target": "ba999-End",
+        "line": 2685
+      },
+      {
+        "target": "bc000-HV-Load-rg1",
+        "line": 2693
+      },
+      {
+        "target": "bc300-Update-rg1",
+        "line": 2714
+      },
+      {
+        "target": "ba999-End",
+        "line": 2731
+      },
+      {
+        "target": "ba999-End",
+        "line": 2738
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 3001
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 3198
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 259
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "code converting to Cobol calls etc.\n*>                       see the RDB specific ACAS notes.\n*>\n*> ...",
+        "line": 92
+      },
+      {
+        "content": "*>              DELETE\n*>              FROM PUINV-LINES-REC WHERE IL-INVOICE = {key value (1:8)}\n*>...",
+        "line": 1260
+      },
+      {
+        "content": "*>              DELETE\n*>              FROM PUINV-LINES-REC WHERE 'IL-INVOICE' = WS-ih-Invoice\n*>...",
+        "line": 2603
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

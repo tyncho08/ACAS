@@ -1,0 +1,345 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl",
+  "fileName": "pl160.cbl",
+  "fileHash": "121d2c0e2bf3bad52ead33591b5f200b53601a81a7083fb56529ddccfabcbb76",
+  "timestamp": "2025-09-15T19:46:22.998Z",
+  "parseTime": 71,
+  "lines": {
+    "total": 791,
+    "code": 529,
+    "comment": 261,
+    "blank": 1
+  },
+  "programId": "pl160",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:88: error: envdiv.cob: No such file or directory\n   86 | *>===============================\n   87 | *>\n   88 >  copy \"envdiv.cob\".\n   89 |  input-output            section.\n   90 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:96: error: selprint.cob: No such file or directory\n   94 | *>\n   95 | *> copy \"selpl.cob\".\n   96 >  copy \"selprint.cob\".\n   97 | *>\n   98 |      select  sales-sort      assign        fn-sales,\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:109: error: fdprint.cob: No such file or directory\n  107 | *>\n  108 | *> copy \"fdpl.cob\".\n  109 >  copy \"fdprint.cob\".\n  110 |  fd  sales-sort.\n  111 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:118: error: print-spool-command.cob: No such file or directory\n  116 | *>-----------------------\n  117 |  77  prog-name           pic x(15) value \"PL160 (3.02.07)\".\n  118 >  copy \"print-spool-command.cob\".\n  119 |  copy \"wsfnctn.cob\".\n  120 |  copy \"wsmaps03.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:119: error: wsfnctn.cob: No such file or directory\n  117 |  77  prog-name           pic x(15) value \"PL160 (3.02.07)\".\n  118 |  copy \"print-spool-command.cob\".\n  119 >  copy \"wsfnctn.cob\".\n  120 |  copy \"wsmaps03.cob\".\n  121 |  copy \"wspl.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:120: error: wsmaps03.cob: No such file or directory\n  118 |  copy \"print-spool-command.cob\".\n  119 |  copy \"wsfnctn.cob\".\n  120 >  copy \"wsmaps03.cob\".\n  121 |  copy \"wspl.cob\".\n  122 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:121: error: wspl.cob: No such file or directory\n  119 |  copy \"wsfnctn.cob\".\n  120 |  copy \"wsmaps03.cob\".\n  121 >  copy \"wspl.cob\".\n  122 | *>\n  123 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:147: error: Test-Data-Flags.cob: No such file or directory\n  145 |      03  WS-OTM5-Record         pic x.\n  146 | *>\n  147 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  148 | *>\n  149 |  01  fn-sales        pic x(12)       value \"suppsort.inx\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:275: error: wscall.cob: No such file or directory\n  273 | *>***************\n  274 | *>\n  275 >  copy \"wscall.cob\".\n  276 |  copy \"wssystem.cob\".\n  277 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:276: error: wssystem.cob: No such file or directory\n  274 | *>\n  275 |  copy \"wscall.cob\".\n  276 >  copy \"wssystem.cob\".\n  277 |  copy \"wsnames.cob\".\n  278 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:277: error: wsnames.cob: No such file or directory\n  275 |  copy \"wscall.cob\".\n  276 |  copy \"wssystem.cob\".\n  277 >  copy \"wsnames.cob\".\n  278 | *>\n  279 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:789: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  787 |      exit     section.\n  788 | *>\n  789 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  790 | *>\n  791 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:100: error: 'fs-reply' is not defined\n   98 |      select  sales-sort      assign        fn-sales,\n   99 |                              access        sequential,\n  100 >                              status        fs-reply.\n  101 | *>\n  102 |  data                    division.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:333: error: 'ws-calling-data' is not defined\n  331 |      03  value \"Enter date & operator\"                     col 39.\n  332 | *>\n  333 >  procedure division using ws-calling-data\n  334 |                           system-record\n  335 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:334: error: 'system-record' is not defined\n  332 | *>\n  333 |  procedure division using ws-calling-data\n  334 >                           system-record\n  335 |                           to-day\n  336 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:336: error: 'file-defs' is not defined\n  334 |                           system-record\n  335 |                           to-day\n  336 >                           file-defs.\n  337 | *>=======================================\n  338 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:343: error: 'usera' is not defined\n  341 |      perform  zz070-Convert-Date.\n  342 |      move     ws-date to  l1-date.\n  343 >      move     usera   to  l3-user.\n  344 | *> Force Esc, PgUp, PgDown, PrtSC to be detected\n  345 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:347: error: 'Print-Spool-Name' is not defined\n  345 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n  346 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  347 >      move     Print-Spool-Name to PSN.\n  348 |      move     1 to File-Key-No.\n  349 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:347: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:348: error: 'File-Key-No' is not defined\n  346 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  347 |      move     Print-Spool-Name to PSN.\n  348 >      move     1 to File-Key-No.\n  349 | *>\n  350 |      perform  report1.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in section 'report1':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:368: error: 'print-file' is not defined\n  366 |      perform  report-produce.\n  367 | *>\n  368 >      close    print-file.             *>  sales-sort. (closed on read at..\n  369 |      perform  Purch-Close.           *>  close    purchase-file.\n  370 |      call     \"SYSTEM\" using Print-Report.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:368: error: 'print-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:370: error: 'Print-Report' is not defined\n  368 |      close    print-file.             *>  sales-sort. (closed on read at..\n  369 |      perform  Purch-Close.           *>  close    purchase-file.\n  370 >      call     \"SYSTEM\" using Print-Report.\n  371 |      if       FS-Cobol-Files-Used             *> Make it a null file\n  372 |               open     output sales-sort      *>  but only if processing\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:371: error: 'FS-Cobol-Files-Used' is not defined\n  369 |      perform  Purch-Close.           *>  close    purchase-file.\n  370 |      call     \"SYSTEM\" using Print-Report.\n  371 >      if       FS-Cobol-Files-Used             *> Make it a null file\n  372 |               open     output sales-sort      *>  but only if processing\n  373 |               close    sales-sort             *>   Cobol files\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in section 'report-selection':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in paragraph 'accept-data':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:426: error: 'u-bin' is not defined\n  424 |      move     enter-date-in to ws-test-date.\n  425 |      perform  zz050-Validate-Date.\n  426 >      if       u-bin = zero\n  427 |               display PL005 at 2368 with foreground-color 2   *> this msg..\n  428 |               go to accept-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in section 'report-produce':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:439: error: 'print-file' is not a file name\n  437 |      if       FS-Cobol-Files-Used\n  438 |               open     input   sales-sort.\n  439 >      open     output  print-file.\n  440 |      move     zero  to  a.\n  441 |      perform  headings.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in paragraph 'read-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:466: error: 'WS-Purch-Key' is not defined\n  464 |               go to  end-report.\n  465 | *>\n  466 >      move     sales-sort-key  to  WS-Purch-Key.\n  467 | *>\n  468 |  Read-Loop-Tests.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in paragraph 'Select-Criteria-Tests-Continued':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:489: error: 'supplier-dead' is not defined\n  487 |  Select-Criteria-Tests-Continued.\n  488 |      if       status-in = \"L\"\n  489 >          and  supplier-dead\n  490 |               go to  read-loop\n  491 |       else\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:493: error: 'supplier-live' is not defined\n  491 |       else\n  492 |        if    status-in = \"D\"\n  493 >          and  supplier-live\n  494 |               go to  read-loop.\n  495 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:498: error: 'purch-credit' is not defined\n  496 |      if       credit-op not = space\n  497 |               move  credit-in     to  test-1\n  498 >               move  purch-credit  to  test-2\n  499 |               move  credit-op     to  test-op\n  500 |               perform  test-num\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:506: error: 'purch-activety' is not defined\n  504 |      if       invoice-op not = space\n  505 |               move  invoice-in     to  test-1\n  506 >               move  purch-activety to  test-2\n  507 |               move  invoice-op     to  test-op\n  508 |               perform  test-num\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:514: error: 'purch-average' is not defined\n  512 |      if       average-op not = space\n  513 |               move  average-in    to  test-1\n  514 >               move  purch-average to  test-2\n  515 |               move  average-op    to  test-op\n  516 |               perform  test-num\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:521: error: 'purch-current' is not defined\n  519 | *>\n  520 |      if       overdue-op not = space\n  521 >         and   purch-current  >  0.00\n  522 |               move  overdue-in    to  test-1\n  523 |               subtract  purch-last-inv  from  run-date giving  test-2\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:523: error: 'purch-last-inv' is not defined\n  521 |         and   purch-current  >  0.00\n  522 |               move  overdue-in    to  test-1\n  523 >               subtract  purch-last-inv  from  run-date giving  test-2\n  524 |               move  overdue-op    to  test-op\n  525 |               perform  test-num\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:523: error: 'run-date' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:531: error: 'purch-create-date' is not defined\n  529 |      if       enter-date-op not = space\n  530 |               move  ws-enter-date     to  test-1\n  531 >               move  purch-create-date to  test-2\n  532 |               move  enter-date-op     to  test-op\n  533 |               perform  test-num\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in paragraph 'headings':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:567: error: 'print-record' is not defined\n  565 |      move     a  to  l3-page.\n  566 |      if       a not = 1\n  567 >               write print-record  from  line-1 after page\n  568 |               write print-record  from  line-3 after 1\n  569 |               move  spaces  to  print-record\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in paragraph 'listing':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:584: error: 'Page-Lines' is not defined\n  582 | *>******\n  583 | *>\n  584 >      if       line-cnt > Page-Lines\n  585 |               perform headings.\n  586 |      move     WS-Purch-Key  to  l6-key.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:593: error: 'purch-name' is not defined\n  591 |               move  \"Dormant\" to  l6-status.\n  592 |      move     spaces to l6-phone.\n  593 >      move     purch-name     to  l6-name.\n  594 |      move     purch-address  to  l7-address.\n  595 |      inspect  l7-address  replacing  all  pl-delim  by  \",\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:594: error: 'purch-address' is not defined\n  592 |      move     spaces to l6-phone.\n  593 |      move     purch-name     to  l6-name.\n  594 >      move     purch-address  to  l7-address.\n  595 |      inspect  l7-address  replacing  all  pl-delim  by  \",\".\n  596 |      if       purch-ext = spaces\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:595: error: 'pl-delim' is not defined\n  593 |      move     purch-name     to  l6-name.\n  594 |      move     purch-address  to  l7-address.\n  595 >      inspect  l7-address  replacing  all  pl-delim  by  \",\".\n  596 |      if       purch-ext = spaces\n  597 |               move purch-phone to l6-phone\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:596: error: 'purch-ext' is not defined\n  594 |      move     purch-address  to  l7-address.\n  595 |      inspect  l7-address  replacing  all  pl-delim  by  \",\".\n  596 >      if       purch-ext = spaces\n  597 |               move purch-phone to l6-phone\n  598 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:597: error: 'purch-phone' is not defined\n  595 |      inspect  l7-address  replacing  all  pl-delim  by  \",\".\n  596 |      if       purch-ext = spaces\n  597 >               move purch-phone to l6-phone\n  598 |      else\n  599 |               string purch-phone delimited by \"  \"\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:603: error: 'purch-fax' is not defined\n  601 |                      purch-ext   delimited by size  into l6-phone with po..\n  602 | *>\n  603 >      move     purch-fax to l6-fax.\n  604 |      move     purch-limit   to  l6-limit.\n  605 |      move     purch-credit  to  l6-credit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:604: error: 'purch-limit' is not defined\n  602 | *>\n  603 |      move     purch-fax to l6-fax.\n  604 >      move     purch-limit   to  l6-limit.\n  605 |      move     purch-credit  to  l6-credit.\n  606 |      move     purch-discount to l6-discount.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:606: error: 'purch-discount' is not defined\n  604 |      move     purch-limit   to  l6-limit.\n  605 |      move     purch-credit  to  l6-credit.\n  606 >      move     purch-discount to l6-discount.\n  607 | *>\n  608 |      if       line-cnt > Page-Lines - 3\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in section 'zz050-Validate-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:726: error: 'Date-Form' is not defined\n  724 | *>\n  725 |      move     ws-test-date to ws-date.\n  726 >      if       Date-Form = zero\n  727 |               move 1 to Date-Form.\n  728 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:728: error: 'Date-UK' is not defined\n  726 |      if       Date-Form = zero\n  727 |               move 1 to Date-Form.\n  728 >      if       Date-UK\n  729 |               go to zz050-test-date.\n  730 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:730: error: 'Date-USA' is not defined\n  728 |      if       Date-UK\n  729 |               go to zz050-test-date.\n  730 >      if       Date-USA                *> swap month and days\n  731 |               move ws-days to ws-swap\n  732 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in paragraph 'zz050-test-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:744: error: 'u-date' is not defined\n  742 | *>\n  743 |  zz050-test-date.\n  744 >      move     ws-date to u-date.\n  745 |      move     zero to u-bin.\n  746 |      perform  maps04.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in section 'maps04':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:784: error: 'maps03-ws' is not defined\n  782 | *>*******************\n  783 | *>\n  784 >      call     \"maps04\"  using  maps03-ws.\n  785 | *>\n  786 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in section 'report1':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:362: error: 'Purch-Open-Input' is not defined\n  360 | *>===================\n  361 | *>\n  362 >      perform  Purch-Open-Input.     *> open input purchase-file.\n  363 | *>\n  364 |      perform  report-selection.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:369: error: 'Purch-Close' is not defined\n  367 | *>\n  368 |      close    print-file.             *>  sales-sort. (closed on read at..\n  369 >      perform  Purch-Close.           *>  close    purchase-file.\n  370 |      call     \"SYSTEM\" using Print-Report.\n  371 |      if       FS-Cobol-Files-Used             *> Make it a null file\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in section 'report-produce':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in paragraph 'read-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:456: error: 'Purch-Read-Next-Sorted-ByName' is not defined\n  454 | *>\n  455 |      if       NOT FS-Cobol-Files-Used\n  456 >               perform Purch-Read-Next-Sorted-ByName\n  457 |               if      fs-reply not = zero        *>   = 10\n  458 |                       go to  End-Report\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl: in paragraph 'Read-Loop-Tests':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:480: error: 'Purch-Read-Indexed' is not defined\n  478 |               go       to Select-Criteria-Tests-Continued.\n  479 | *>\n  480 >      perform  Purch-Read-Indexed.          *> read purchase-file invalid..\n  481 |      if       fs-reply = 21\n  482 |               display PL170 at 2301 with foreground-color 4\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:88: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:96: error: selprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:109: error: fdprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:118: error: print-spool-command.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:119: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:120: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:121: error: wspl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:147: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:275: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:276: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:277: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:789: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:100: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:333: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:334: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:336: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:343: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:347: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:347: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:348: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:368: error: 'print-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:368: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:370: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:371: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:426: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:439: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:466: error: 'WS-Purch-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:489: error: 'supplier-dead' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:493: error: 'supplier-live' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:498: error: 'purch-credit' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:506: error: 'purch-activety' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:514: error: 'purch-average' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:521: error: 'purch-current' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:523: error: 'purch-last-inv' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:523: error: 'run-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:531: error: 'purch-create-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:567: error: 'print-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:584: error: 'Page-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:593: error: 'purch-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:594: error: 'purch-address' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:595: error: 'pl-delim' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:596: error: 'purch-ext' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:597: error: 'purch-phone' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:603: error: 'purch-fax' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:604: error: 'purch-limit' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:606: error: 'purch-discount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:726: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:728: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:730: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:744: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:784: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:362: error: 'Purch-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:369: error: 'Purch-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:456: error: 'Purch-Read-Next-Sorted-ByName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:480: error: 'Purch-Read-Indexed' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:88: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:96: error: selprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:109: error: fdprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:118: error: print-spool-command.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:119: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:120: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:121: error: wspl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:147: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:275: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:276: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:277: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:789: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:100: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:333: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:334: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:336: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:343: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:347: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:347: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:348: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:368: error: 'print-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:368: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:370: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:371: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:426: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:439: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:466: error: 'WS-Purch-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:489: error: 'supplier-dead' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:493: error: 'supplier-live' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:498: error: 'purch-credit' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:506: error: 'purch-activety' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:514: error: 'purch-average' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:521: error: 'purch-current' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:523: error: 'purch-last-inv' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:523: error: 'run-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:531: error: 'purch-create-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:567: error: 'print-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:584: error: 'Page-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:593: error: 'purch-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:594: error: 'purch-address' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:595: error: 'pl-delim' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:596: error: 'purch-ext' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:597: error: 'purch-phone' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:603: error: 'purch-fax' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:604: error: 'purch-limit' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:606: error: 'purch-discount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:726: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:728: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:730: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:744: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:784: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:362: error: 'Purch-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:369: error: 'Purch-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:456: error: 'Purch-Read-Next-Sorted-ByName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl160.cbl:480: error: 'Purch-Read-Indexed' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 97,
+    "cognitive": 202,
+    "halstead": {
+      "uniqueOperators": 11,
+      "uniqueOperands": 59,
+      "totalOperators": 263,
+      "totalOperands": 155,
+      "vocabulary": 70,
+      "length": 418,
+      "volume": 2562,
+      "difficulty": 14.45,
+      "effort": 37019,
+      "timeToProgram": 2057,
+      "deliveredBugs": 0.854
+    },
+    "maintainability": 63
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 370
+      },
+      {
+        "target": "maps04",
+        "line": 784
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 79
+      },
+      {
+        "name": "envdiv",
+        "line": 88
+      },
+      {
+        "name": "selpl",
+        "line": 95
+      },
+      {
+        "name": "selprint",
+        "line": 96
+      },
+      {
+        "name": "fdpl",
+        "line": 108
+      },
+      {
+        "name": "fdprint",
+        "line": 109
+      },
+      {
+        "name": "print-spool-command",
+        "line": 118
+      },
+      {
+        "name": "wsfnctn",
+        "line": 119
+      },
+      {
+        "name": "wsmaps03",
+        "line": 120
+      },
+      {
+        "name": "wspl",
+        "line": 121
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 147
+      },
+      {
+        "name": "screenio",
+        "line": 203
+      },
+      {
+        "name": "wscall",
+        "line": 275
+      },
+      {
+        "name": "wssystem",
+        "line": 276
+      },
+      {
+        "name": "wsnames",
+        "line": 277
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 789
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 341
+      },
+      {
+        "target": "report1",
+        "line": 350
+      },
+      {
+        "target": "Purch-Open-Input",
+        "line": 362
+      },
+      {
+        "target": "report-selection",
+        "line": 364
+      },
+      {
+        "target": "report-heading-setup",
+        "line": 365
+      },
+      {
+        "target": "report-produce",
+        "line": 366
+      },
+      {
+        "target": "Purch-Close",
+        "line": 369
+      },
+      {
+        "target": "zz050-Validate-Date",
+        "line": 425
+      },
+      {
+        "target": "headings",
+        "line": 441
+      },
+      {
+        "target": "Purch-Read-Next-Sorted-ByName",
+        "line": 456
+      },
+      {
+        "target": "Purch-Read-Indexed",
+        "line": 480
+      },
+      {
+        "target": "test-num",
+        "line": 500
+      },
+      {
+        "target": "test-num",
+        "line": 508
+      },
+      {
+        "target": "test-num",
+        "line": 516
+      },
+      {
+        "target": "test-num",
+        "line": 525
+      },
+      {
+        "target": "test-num",
+        "line": 533
+      },
+      {
+        "target": "listing",
+        "line": 537
+      },
+      {
+        "target": "headings",
+        "line": 585
+      },
+      {
+        "target": "headings",
+        "line": 609
+      },
+      {
+        "target": "maps04",
+        "line": 746
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "sales-sort",
+        "line": 110
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 115
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

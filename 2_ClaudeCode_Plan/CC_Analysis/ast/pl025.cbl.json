@@ -1,0 +1,296 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl",
+  "fileName": "pl025.cbl",
+  "fileHash": "ef9655c5364575786dbb4662a6f9b3577430830a9dd57c4c9729c4baabe84a14",
+  "timestamp": "2025-09-15T19:46:21.408Z",
+  "parseTime": 62,
+  "lines": {
+    "total": 432,
+    "code": 242,
+    "comment": 188,
+    "blank": 2
+  },
+  "programId": "pl025",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:90: error: envdiv.cob: No such file or directory\n   88 | *>===============================\n   89 | *>\n   90 >  copy \"envdiv.cob\".\n   91 | \n   92 |  input-output            section.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:113: error: wsfnctn.cob: No such file or directory\n  111 | *>----------------------\n  112 |  77  prog-name           pic x(15) value \"PL025 (3.02.08)\".\n  113 >  copy \"wsfnctn.cob\".\n  114 |  copy \"wsmaps09.cob\".\n  115 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:114: error: wsmaps09.cob: No such file or directory\n  112 |  77  prog-name           pic x(15) value \"PL025 (3.02.08)\".\n  113 |  copy \"wsfnctn.cob\".\n  114 >  copy \"wsmaps09.cob\".\n  115 | *>\n  116 | *> EX FDs\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:118: error: wspl.cob: No such file or directory\n  116 | *> EX FDs\n  117 | *>\n  118 >  copy \"wspl.cob\".\n  119 |  copy \"wsdel.cob\".\n  120 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:119: error: wsdel.cob: No such file or directory\n  117 | *>\n  118 |  copy \"wspl.cob\".\n  119 >  copy \"wsdel.cob\".\n  120 | *>\n  121 | *> REMARK OUT, ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:176: error: Test-Data-Flags.cob: No such file or directory\n  174 |      03  PL131           pic x(36) value \"PL131 Supplier Record Already E..\n  175 | *>\n  176 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  177 | *>\n  178 |  01  error-code          pic 999.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:183: error: wscall.cob: No such file or directory\n  181 | *>==============\n  182 | *>\n  183 >  copy \"wscall.cob\".\n  184 |  copy \"wssystem.cob\".\n  185 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:184: error: wssystem.cob: No such file or directory\n  182 | *>\n  183 |  copy \"wscall.cob\".\n  184 >  copy \"wssystem.cob\".\n  185 |  copy \"wsnames.cob\".\n  186 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:185: error: wsnames.cob: No such file or directory\n  183 |  copy \"wscall.cob\".\n  184 |  copy \"wssystem.cob\".\n  185 >  copy \"wsnames.cob\".\n  186 | *>\n  187 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:430: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  428 |  main-exit.   exit section.\n  429 | *>\n  430 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  431 | *>\n  432 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:200: error: 'Purch-name' is not defined\n  198 |      03  from d24-check       pic x(15)      col 31.\n  199 |      03  value \"Supplier Name: [\"    line  6 col  6.\n  200 >      03  using Purch-name  pic x(30) line  6 col 22.\n  201 |      03  value \"]\"                   line  6 col 52.\n  202 |      03  value \"Addr: [\"             line  7 col 15.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:203: error: 'Purch-addr1' is not defined\n  201 |      03  value \"]\"                   line  6 col 52.\n  202 |      03  value \"Addr: [\"             line  7 col 15.\n  203 >      03  using Purch-addr1 pic x(48)         col 22.\n  204 |      03  value \"]\"                   line  7 col 70.\n  205 |      03  value \"[\"                   line  8 col 21.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:206: error: 'Purch-addr2' is not defined\n  204 |      03  value \"]\"                   line  7 col 70.\n  205 |      03  value \"[\"                   line  8 col 21.\n  206 >      03  using Purch-addr2    pic x(48)      col 22.\n  207 |      03  value \"]\"                   line  8 col 70.\n  208 |      03  value \"Suppliers Bank Details\"\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:211: error: 'Purch-SortCode' is not defined\n  209 |                                      line  9 col  6.\n  210 |      03  value \"Sort Code  : [\"      line 10 col  8.\n  211 >      03  using Purch-SortCode pic 9(6)       col 22.\n  212 |      03  value \"]\"                           col 28.\n  213 |      03  value \"Account No : [\"      line 11 col  8.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:214: error: 'Purch-AccountNo' is not defined\n  212 |      03  value \"]\"                           col 28.\n  213 |      03  value \"Account No : [\"      line 11 col  8.\n  214 >      03  using Purch-AccountNo pic 9(8)      col 22.\n  215 |      03  value \"]\"                           col 30.\n  216 |      03  value \"Supplier Note: [\"    line 12 col  6.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:223: error: 'Purch-phone' is not defined\n  221 |      03  value \"]\"                           col 70.\n  222 |      03  value \"Telephone    : [\"    line 14 col  6.\n  223 >      03  using Purch-phone    pic x(13)      col 22.\n  224 |      03  value \"]\"                           col 35.\n  225 |      03  value \"Ext: [\"                      col 37.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:226: error: 'Purch-ext' is not defined\n  224 |      03  value \"]\"                           col 35.\n  225 |      03  value \"Ext: [\"                      col 37.\n  226 >      03  using Purch-ext      pic x(4)       col 43.\n  227 |      03  value \"]\"                           col 47.\n  228 |      03  value \"Fax : [\"                     col 50.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:229: error: 'Purch-fax' is not defined\n  227 |      03  value \"]\"                           col 47.\n  228 |      03  value \"Fax : [\"                     col 50.\n  229 >      03  using Purch-fax      pic x(13)      col 57.\n  230 |      03  value \"]\"                           col 70.\n  231 |      03  value \"Email Sales  : [\"    line 15 col  6.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:232: error: 'Purch-email' is not defined\n  230 |      03  value \"]\"                           col 70.\n  231 |      03  value \"Email Sales  : [\"    line 15 col  6.\n  232 >      03  using Purch-email    pic x(30)      col 22.\n  233 |      03  value \"]\"                           col 52.\n  234 |      03  value \"Credit Period: [\"    line 18 col  6.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:235: error: 'Purch-credit' is not defined\n  233 |      03  value \"]\"                           col 52.\n  234 |      03  value \"Credit Period: [\"    line 18 col  6.\n  235 >      03  using Purch-credit   pic 99         col 22.\n  236 |      03  value \"]\"                           col 24.\n  237 |      03  value \"Credit limit : [\"    line 19 col  6.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:238: error: 'Purch-limit' is not defined\n  236 |      03  value \"]\"                           col 24.\n  237 |      03  value \"Credit limit : [\"    line 19 col  6.\n  238 >      03  using Purch-limit    pic 9(7)       col 22.\n  239 |      03  value \"] Discount : [\"              col 29.\n  240 |      03  using Purch-discount pic 99v99      col 43.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:240: error: 'Purch-discount' is not defined\n  238 |      03  using Purch-limit    pic 9(7)       col 22.\n  239 |      03  value \"] Discount : [\"              col 29.\n  240 >      03  using Purch-discount pic 99v99      col 43.\n  241 |      03  value \"]\"                           col 47.\n  242 |      03  value \"*******************\" line 19 col 61.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:262: error: 'ws-calling-data' is not defined\n  260 |      03  value \"*******************\" line 24 col 61.\n  261 | *>\n  262 >  procedure division using ws-calling-data\n  263 |                           system-record\n  264 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:263: error: 'system-record' is not defined\n  261 | *>\n  262 |  procedure division using ws-calling-data\n  263 >                           system-record\n  264 |                           to-day\n  265 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:265: error: 'file-defs' is not defined\n  263 |                           system-record\n  264 |                           to-day\n  265 >                           file-defs.\n  266 | *>=======================================\n  267 |  init01 section.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in section 'setup-suppliers':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:295: error: 'customer-nos' is not defined\n  293 | *>==============================\n  294 | *>\n  295 >      move     spaces to customer-nos.\n  296 |      move     spaces to a01-Notes-1  a01-Notes-2 d24-03. *> not in sl960\n  297 |      move     \"]\" to d24-02.                     *> not in sl960\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in paragraph 'supplier-accept':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:311: error: 'maps09-reply' is not defined\n  309 |      display  \" \" at line ws-23-lines col 1 with erase eol.\n  310 | *>\n  311 >      move     \"C\"  to  maps09-reply.\n  312 |      perform  maps09.\n  313 |      if       maps09-reply not = \"Y\"\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:316: error: 'check-digit IN maps09-ws' is not defined\n  314 |               go to  supplier-accept.\n  315 | *>\n  316 >      move     check-digit of maps09-ws to WS-Purch-Key (7:1).\n  317 |      display  WS-Purch-Key (7:1) at 0444 with foreground-color 3.\n  318 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:316: error: 'WS-Purch-Key' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:320: error: 'customer-code' is not defined\n  318 | *>\n  319 |      move     \"]\" to d24-03.                  *> not in sl960\n  320 >      move     customer-code  to  WS-Purch-Key.\n  321 |      perform  Purch-Read-Indexed     *>  read  purchase-file invalid key\n  322 |      if       fs-reply = 21 or 23\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:322: error: 'fs-reply' is not defined\n  320 |      move     customer-code  to  WS-Purch-Key.\n  321 |      perform  Purch-Read-Indexed     *>  read  purchase-file invalid key\n  322 >      if       fs-reply = 21 or 23\n  323 |               go to  supplier-details.\n  324 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in paragraph 'supplier-details':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:333: error: 'WS-Purch-Record' is not defined\n  331 | *>***************\n  332 | *>\n  333 >      initialize WS-Purch-Record  WS-Delivery-Record.\n  334 |      move     run-date      to purch-create-date.\n  335 |      move     1             to purch-status.      *> Live\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:333: error: 'WS-Delivery-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:334: error: 'run-date' is not defined\n  332 | *>\n  333 |      initialize WS-Purch-Record  WS-Delivery-Record.\n  334 >      move     run-date      to purch-create-date.\n  335 |      move     1             to purch-status.      *> Live\n  336 |      move     customer-code to WS-Purch-Key.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:334: error: 'purch-create-date' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:335: error: 'purch-status' is not defined\n  333 |      initialize WS-Purch-Record  WS-Delivery-Record.\n  334 |      move     run-date      to purch-create-date.\n  335 >      move     1             to purch-status.      *> Live\n  336 |      move     customer-code to WS-Purch-Key.\n  337 |      move     age-to-pay    to purch-credit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:337: error: 'age-to-pay' is not defined\n  335 |      move     1             to purch-status.      *> Live\n  336 |      move     customer-code to WS-Purch-Key.\n  337 >      move     age-to-pay    to purch-credit.\n  338 | *>\n  339 |  get-details.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in paragraph 'main-output':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:357: error: 'Purch-Notes-Tag' is not defined\n  355 |      perform  Purch-Write.        *> write    purch-record.\n  356 | *>\n  357 >      if       Purch-Notes-Tag not = zero\n  358 |               move   \"D\"       to WS-Deliv-Key-Type\n  359 |               move   WS-Purch-Key to Deliv-Purchase-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:358: error: 'WS-Deliv-Key-Type' is not defined\n  356 | *>\n  357 |      if       Purch-Notes-Tag not = zero\n  358 >               move   \"D\"       to WS-Deliv-Key-Type\n  359 |               move   WS-Purch-Key to Deliv-Purchase-Key\n  360 |               move   spaces    to Deliv-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:359: error: 'Deliv-Purchase-Key' is not defined\n  357 |      if       Purch-Notes-Tag not = zero\n  358 |               move   \"D\"       to WS-Deliv-Key-Type\n  359 >               move   WS-Purch-Key to Deliv-Purchase-Key\n  360 |               move   spaces    to Deliv-Name\n  361 |               move   A01-Notes to Deliv-Address\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:360: error: 'Deliv-Name' is not defined\n  358 |               move   \"D\"       to WS-Deliv-Key-Type\n  359 |               move   WS-Purch-Key to Deliv-Purchase-Key\n  360 >               move   spaces    to Deliv-Name\n  361 |               move   A01-Notes to Deliv-Address\n  362 |               perform Delivery-Write.    *>  write  delivery-record.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:361: error: 'Deliv-Address' is not defined\n  359 |               move   WS-Purch-Key to Deliv-Purchase-Key\n  360 |               move   spaces    to Deliv-Name\n  361 >               move   A01-Notes to Deliv-Address\n  362 |               perform Delivery-Write.    *>  write  delivery-record.\n  363 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in section 'supplier-data':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in paragraph 'Supplier-Data-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:395: error: 'purch-address' is not defined\n  393 |      accept   display-02.\n  394 | *>\n  395 >      move     purch-address  to  test-address.\n  396 |      perform  validate-address.\n  397 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in section 'validate-address':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:415: error: 'pl-delim' is not defined\n  413 | *>\n  414 |      move     zero  to  a.\n  415 >      inspect  test-address  tallying  a  for all pl-delim.\n  416 | *>\n  417 |      if       a  >  4  or  <  1\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:281: error: 'Purch-Open' is not defined\n  279 |      display  prog-name at 0101 with foreground-color 2.\n  280 | *>\n  281 >      perform  Purch-Open.        *> open   i-o purchase-file\n  282 |      perform  Delivery-Open.     *> open   i-o delivery-file.\n  283 |      display  \" \" at line 3 col 1 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:282: error: 'Delivery-Open' is not defined\n  280 | *>\n  281 |      perform  Purch-Open.        *> open   i-o purchase-file\n  282 >      perform  Delivery-Open.     *> open   i-o delivery-file.\n  283 |      display  \" \" at line 3 col 1 with erase eos\n  284 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:286: error: 'Purch-Close' is not defined\n  284 | *>\n  285 |      perform  setup-suppliers.\n  286 >      perform  Purch-Close.\n  287 |      perform  Delivery-Close.    *> close  purchase-file delivery-file.\n  288 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:287: error: 'Delivery-Close' is not defined\n  285 |      perform  setup-suppliers.\n  286 |      perform  Purch-Close.\n  287 >      perform  Delivery-Close.    *> close  purchase-file delivery-file.\n  288 | *>\n  289 |  menu-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in section 'setup-suppliers':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in paragraph 'supplier-accept':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:321: error: 'Purch-Read-Indexed' is not defined\n  319 |      move     \"]\" to d24-03.                  *> not in sl960\n  320 |      move     customer-code  to  WS-Purch-Key.\n  321 >      perform  Purch-Read-Indexed     *>  read  purchase-file invalid key\n  322 |      if       fs-reply = 21 or 23\n  323 |               go to  supplier-details.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl: in paragraph 'main-output':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:355: error: 'Purch-Write' is not defined\n  353 |      if       escape-code = \"Q\"\n  354 |               go to  main-exit.\n  355 >      perform  Purch-Write.        *> write    purch-record.\n  356 | *>\n  357 |      if       Purch-Notes-Tag not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:362: error: 'Delivery-Write' is not defined\n  360 |               move   spaces    to Deliv-Name\n  361 |               move   A01-Notes to Deliv-Address\n  362 >               perform Delivery-Write.    *>  write  delivery-record.\n  363 | *>\n  364 |  main-exit.   exit section.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:90: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:113: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:114: error: wsmaps09.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:118: error: wspl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:119: error: wsdel.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:176: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:183: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:184: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:185: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:430: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:200: error: 'Purch-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:203: error: 'Purch-addr1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:206: error: 'Purch-addr2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:211: error: 'Purch-SortCode' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:214: error: 'Purch-AccountNo' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:223: error: 'Purch-phone' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:226: error: 'Purch-ext' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:229: error: 'Purch-fax' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:232: error: 'Purch-email' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:235: error: 'Purch-credit' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:238: error: 'Purch-limit' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:240: error: 'Purch-discount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:262: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:263: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:265: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:295: error: 'customer-nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:311: error: 'maps09-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:316: error: 'check-digit IN maps09-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:316: error: 'WS-Purch-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:320: error: 'customer-code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:322: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:333: error: 'WS-Purch-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:333: error: 'WS-Delivery-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:334: error: 'run-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:334: error: 'purch-create-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:335: error: 'purch-status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:337: error: 'age-to-pay' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:357: error: 'Purch-Notes-Tag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:358: error: 'WS-Deliv-Key-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:359: error: 'Deliv-Purchase-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:360: error: 'Deliv-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:361: error: 'Deliv-Address' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:395: error: 'purch-address' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:415: error: 'pl-delim' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:281: error: 'Purch-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:282: error: 'Delivery-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:286: error: 'Purch-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:287: error: 'Delivery-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:321: error: 'Purch-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:355: error: 'Purch-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:362: error: 'Delivery-Write' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:90: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:113: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:114: error: wsmaps09.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:118: error: wspl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:119: error: wsdel.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:176: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:183: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:184: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:185: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:430: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:200: error: 'Purch-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:203: error: 'Purch-addr1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:206: error: 'Purch-addr2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:211: error: 'Purch-SortCode' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:214: error: 'Purch-AccountNo' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:223: error: 'Purch-phone' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:226: error: 'Purch-ext' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:229: error: 'Purch-fax' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:232: error: 'Purch-email' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:235: error: 'Purch-credit' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:238: error: 'Purch-limit' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:240: error: 'Purch-discount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:262: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:263: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:265: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:295: error: 'customer-nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:311: error: 'maps09-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:316: error: 'check-digit IN maps09-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:316: error: 'WS-Purch-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:320: error: 'customer-code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:322: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:333: error: 'WS-Purch-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:333: error: 'WS-Delivery-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:334: error: 'run-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:334: error: 'purch-create-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:335: error: 'purch-status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:337: error: 'age-to-pay' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:357: error: 'Purch-Notes-Tag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:358: error: 'WS-Deliv-Key-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:359: error: 'Deliv-Purchase-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:360: error: 'Deliv-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:361: error: 'Deliv-Address' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:395: error: 'purch-address' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:415: error: 'pl-delim' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:281: error: 'Purch-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:282: error: 'Delivery-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:286: error: 'Purch-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:287: error: 'Delivery-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:321: error: 'Purch-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:355: error: 'Purch-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl025.cbl:362: error: 'Delivery-Write' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 22,
+    "cognitive": 52,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 52,
+      "totalOperators": 82,
+      "totalOperands": 99,
+      "vocabulary": 61,
+      "length": 181,
+      "volume": 1073,
+      "difficulty": 8.57,
+      "effort": 9197,
+      "timeToProgram": 511,
+      "deliveredBugs": 0.358
+    },
+    "maintainability": 76
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps09",
+        "line": 371
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 81
+      },
+      {
+        "name": "envdiv",
+        "line": 90
+      },
+      {
+        "name": "selpl",
+        "line": 98
+      },
+      {
+        "name": "seldel",
+        "line": 99
+      },
+      {
+        "name": "fdpl",
+        "line": 107
+      },
+      {
+        "name": "fddel",
+        "line": 108
+      },
+      {
+        "name": "wsfnctn",
+        "line": 113
+      },
+      {
+        "name": "wsmaps09",
+        "line": 114
+      },
+      {
+        "name": "wspl",
+        "line": 118
+      },
+      {
+        "name": "wsdel",
+        "line": 119
+      },
+      {
+        "name": "screenio",
+        "line": 169
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 176
+      },
+      {
+        "name": "wscall",
+        "line": 183
+      },
+      {
+        "name": "wssystem",
+        "line": 184
+      },
+      {
+        "name": "wsnames",
+        "line": 185
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 430
+      }
+    ],
+    "performs": [
+      {
+        "target": "Purch-Open",
+        "line": 281
+      },
+      {
+        "target": "Delivery-Open",
+        "line": 282
+      },
+      {
+        "target": "setup-suppliers",
+        "line": 285
+      },
+      {
+        "target": "Purch-Close",
+        "line": 286
+      },
+      {
+        "target": "Delivery-Close",
+        "line": 287
+      },
+      {
+        "target": "maps09",
+        "line": 312
+      },
+      {
+        "target": "Purch-Read-Indexed",
+        "line": 321
+      },
+      {
+        "target": "supplier-data",
+        "line": 342
+      },
+      {
+        "target": "test-escape",
+        "line": 345
+      },
+      {
+        "target": "Purch-Write",
+        "line": 355
+      },
+      {
+        "target": "Delivery-Write",
+        "line": 362
+      },
+      {
+        "target": "validate-address",
+        "line": 396
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 110
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

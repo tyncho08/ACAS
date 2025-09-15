@@ -1,0 +1,973 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl",
+  "fileName": "gl030.cbl",
+  "fileHash": "dc42433b63b7c1cd77ab1e6a789b68db8826b0e071e9e07633617a6d83996644",
+  "timestamp": "2025-09-15T19:46:17.647Z",
+  "parseTime": 213,
+  "lines": {
+    "total": 2582,
+    "code": 1835,
+    "comment": 741,
+    "blank": 6
+  },
+  "programId": "gl030",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:147: error: envdiv.cob: No such file or directory\n  145 | *>===============================\n  146 | *>\n  147 >  copy \"envdiv.cob\".\n  148 |  input-output            section.\n  149 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:160: error: selprint.cob: No such file or directory\n  158 |                             status       fs-reply.\n  159 | *>\n  160 >  copy \"selprint.cob\".\n  161 |  data                    division.\n  162 | *>===============================\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:176: error: fdprint.cob: No such file or directory\n  174 |      03  ECoA-Ledger-Name  pic x(24).\n  175 | *>\n  176 >  copy \"fdprint.cob\" replacing ==x(132)== by ==x(100)==.\n  177 | *>\n  178 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:182: error: print-spool-command.cob: No such file or directory\n  180 | *>\n  181 |  77  prog-name           pic x(15)       value \"GL030 (3.02.17)\".\n  182 >  copy \"print-spool-command.cob\".\n  183 |  77  gate-sw             pic 9           value 1.  *> removed ALTER verb..\n  184 |      88  DoClear                         value 1.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:187: error: wsmaps03.cob: No such file or directory\n  185 |      88  AskClear                        value 2.\n  186 | *>\n  187 >  copy \"wsmaps03.cob\".\n  188 |  copy \"glwspc.cob\".\n  189 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:188: error: glwspc.cob: No such file or directory\n  186 | *>\n  187 |  copy \"wsmaps03.cob\".\n  188 >  copy \"glwspc.cob\".\n  189 |  copy \"wsfnctn.cob\".\n  190 |  copy \"wsledger.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:189: error: wsfnctn.cob: No such file or directory\n  187 |  copy \"wsmaps03.cob\".\n  188 |  copy \"glwspc.cob\".\n  189 >  copy \"wsfnctn.cob\".\n  190 |  copy \"wsledger.cob\".\n  191 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:190: error: wsledger.cob: No such file or directory\n  188 |  copy \"glwspc.cob\".\n  189 |  copy \"wsfnctn.cob\".\n  190 >  copy \"wsledger.cob\".\n  191 | *>\n  192 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:216: error: Test-Data-Flags.cob: No such file or directory\n  214 |      03  WS-OTM5-Record         pic x.\n  215 | *>\n  216 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  217 | *>\n  218 |  01  work-fields.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:381: error: wsledger.cob: No such file or directory\n  379 |                                  WS-Ledger-Key    by WS-Saved-Ledger-Key\n  380 |                                  WS-Ledger-Key9   by WS-Saved-Ledger-Key9\n  381 >                                  WS-Ledger-Nos    by WS-Saved-Ledger-Nos.\n  382 | *>\n  383 |  01  print-lines.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:466: error: wscall.cob: No such file or directory\n  464 | *>**************\n  465 | *>\n  466 >  copy \"wscall.cob\".\n  467 |  copy \"wssystem.cob\".\n  468 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:467: error: wssystem.cob: No such file or directory\n  465 | *>\n  466 |  copy \"wscall.cob\".\n  467 >  copy \"wssystem.cob\".\n  468 |  copy \"wsnames.cob\".\n  469 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:468: error: wsnames.cob: No such file or directory\n  466 |  copy \"wscall.cob\".\n  467 |  copy \"wssystem.cob\".\n  468 >  copy \"wsnames.cob\".\n  469 | *>\n  470 |  01  to-day                pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2580: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n 2578 |      exit     section.\n 2579 | *>\n 2580 >  copy \"Proc-ACAS-FH-Calls.cob\".\n 2581 | *>\n 2582 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:158: error: 'fs-reply' is not defined\n  156 |      select  Saved-CoA      assign       Archive-Name\n  157 |                             organization line sequential\n  158 >                             status       fs-reply.\n  159 | *>\n  160 |  copy \"selprint.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:472: error: 'ws-calling-data' is not defined\n  470 |  01  to-day                pic x(10).\n  471 | *>\n  472 >  procedure division using ws-calling-data\n  473 |                           system-record\n  474 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:473: error: 'system-record' is not defined\n  471 | *>\n  472 |  procedure division using ws-calling-data\n  473 >                           system-record\n  474 |                           to-day\n  475 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:475: error: 'file-defs' is not defined\n  473 |                           system-record\n  474 |                           to-day\n  475 >                           file-defs.\n  476 | *>***************************************\n  477 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:485: error: 'Print-Spool-Name' is not defined\n  483 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n  484 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  485 >      move     Print-Spool-Name to PSN.\n  486 | *>\n  487 |      accept   ws-env-lines   from lines.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:485: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:497: error: 'File-Key-No' is not defined\n  495 |      subtract 1 from ws-lines giving ws-23-lines.\n  496 |      subtract 2 from ws-lines giving ws-22-lines.\n  497 >      move     1  to File-Key-No.\n  498 | *>\n  499 |  Menu-Input.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'Menu-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:504: error: 'usera' is not defined\n  502 |      perform  zz070-convert-date.\n  503 |      display  ws-date at 0171 with foreground-color 2.\n  504 >      display  usera at 0301 with foreground-color 3.\n  505 | *>\n  506 |      display  \"Select one of the following by number :- [ ] or by Functio..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:509: error: 'lin' is not defined\n  507 |                  with foreground-color 2.\n  508 | *>\n  509 >      move     10 to  lin.\n  510 |      move     2  to  a.\n  511 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:512: error: 'Profit-Centres' is not defined\n  510 |      move     2  to  a.\n  511 | *>\n  512 >      if       Profit-Centres or Branches\n  513 |               move  1  to  a\n  514 |               perform displaya.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:512: error: 'Branches' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:513: error: invalid conditional expression\n  511 | *>\n  512 |      if       Profit-Centres or Branches\n  513 >               move  1  to  a\n  514 |               perform displaya.\n  515 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:517: error: 'curs' is not defined\n  515 | *>\n  516 |      if       Profit-Centres    *>gl030a  Est  Opt=1\n  517 >               display \"Set-up or Amend Profit Centres\" at curs with foreg..\n  518 |               add  1  to  lin.\n  519 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:534: error: 'index-2' is not defined\n  532 |      add      1  to  lin.\n  533 | *>\n  534 >      if       index-2           *> gl030e  Opt=4  *> don't need the test..\n  535 |               move  4  to  a\n  536 |               perform displaya\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'displaya':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:618: error: 'cole' is not defined\n  616 | *>\n  617 |  displaya.\n  618 >      move     1 to cole.\n  619 |      display  \"(\" at curs with foreground-color 2.\n  620 |      move     2 to cole.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'gl030a':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:633: error: 'WS-Ledger-Record' is not defined\n  631 |      if       fs-reply not = zero\n  632 |               perform  GL-Nominal-Open-Output      *>  open  output  ledg..\n  633 >               initialise WS-Ledger-Record\n  634 |               move low-values to ledger-name\n  635 |               move  999999 to  WS-Ledger-nos\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:634: error: 'ledger-name' is not defined\n  632 |               perform  GL-Nominal-Open-Output      *>  open  output  ledg..\n  633 |               initialise WS-Ledger-Record\n  634 >               move low-values to ledger-name\n  635 |               move  999999 to  WS-Ledger-nos\n  636 |               move  99     to  ledger-pc\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:635: error: 'WS-Ledger-nos' is not defined\n  633 |               initialise WS-Ledger-Record\n  634 |               move low-values to ledger-name\n  635 >               move  999999 to  WS-Ledger-nos\n  636 |               move  99     to  ledger-pc\n  637 |               move zeros to ledger-type Ledger-Place ledger-level\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:636: error: 'ledger-pc' is not defined\n  634 |               move low-values to ledger-name\n  635 |               move  999999 to  WS-Ledger-nos\n  636 >               move  99     to  ledger-pc\n  637 |               move zeros to ledger-type Ledger-Place ledger-level\n  638 |                    ledger-balance ledger-last ledger-q1 ledger-q2\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:637: error: 'ledger-type' is not defined\n  635 |               move  999999 to  WS-Ledger-nos\n  636 |               move  99     to  ledger-pc\n  637 >               move zeros to ledger-type Ledger-Place ledger-level\n  638 |                    ledger-balance ledger-last ledger-q1 ledger-q2\n  639 |                    ledger-q3 ledger-q4\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:637: error: 'Ledger-Place' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:637: error: 'ledger-level' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-balance' is not defined\n  636 |               move  99     to  ledger-pc\n  637 |               move zeros to ledger-type Ledger-Place ledger-level\n  638 >                    ledger-balance ledger-last ledger-q1 ledger-q2\n  639 |                    ledger-q3 ledger-q4\n  640 |               perform  GL-Nominal-Write.      *> write WS-Ledger-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-last' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-q1' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-q2' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:639: error: 'ledger-q3' is not defined\n  637 |               move zeros to ledger-type Ledger-Place ledger-level\n  638 |                    ledger-balance ledger-last ledger-q1 ledger-q2\n  639 >                    ledger-q3 ledger-q4\n  640 |               perform  GL-Nominal-Write.      *> write WS-Ledger-Record.\n  641 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:639: error: 'ledger-q4' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'main-continue':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:651: error: 'we-error' is not defined\n  649 |      perform  GL-Nominal-Read-Indexed.   *> read ledger-file  record inva..\n  650 |      if       fs-reply = 21\n  651 >               move     255  to  we-error.\n  652 | *>\n  653 |      if       we-error = 255\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:654: error: 'p-c-Branches' is not defined\n  652 | *>\n  653 |      if       we-error = 255\n  654 >               move  spaces  to  p-c-Branches\n  655 |      else\n  656 |               move  WS-Ledger-Record  to  p-c-Branches.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:658: error: 'pc-ledg' is not defined\n  656 |               move  WS-Ledger-Record  to  p-c-Branches.\n  657 | *>\n  658 >      move     999999  to  pc-ledg.\n  659 |      move     zero    to  pc-pc est.\n  660 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:659: error: 'pc-pc' is not defined\n  657 | *>\n  658 |      move     999999  to  pc-ledg.\n  659 >      move     zero    to  pc-pc est.\n  660 | *>\n  661 |      set      pc  to  1.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:661: error: 'pc' is not defined\n  659 |      move     zero    to  pc-pc est.\n  660 | *>\n  661 >      set      pc  to  1.\n  662 |      search   p-b-codes\n  663 |               when p-b-codes (pc) = \"E\"  set est to pc.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:662: error: 'p-b-codes' is not defined\n  660 | *>\n  661 |      set      pc  to  1.\n  662 >      search   p-b-codes\n  663 |               when p-b-codes (pc) = \"E\"  set est to pc.\n  664 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'Loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:692: error: 'curs2' is not defined\n  690 | *>\n  691 |  Loop.\n  692 >      move     curs to curs2.\n  693 |      display  y at curs2 with foreground-color 2.\n  694 |      add      3 to col2.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:694: error: 'col2' is not defined\n  692 |      move     curs to curs2.\n  693 |      display  y at curs2 with foreground-color 2.\n  694 >      add      3 to col2.\n  695 |      display  \". [\" at curs2 with foreground-color 2.\n  696 |      add      3 to col2.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'gl030b':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'Loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:896: error: invalid conditional expression\n  894 |      if       Profit-Centres\n  895 |               display \"P/C\" at 0417 with foreground-color 2.\n  896 >      if       Branches\n  897 |               display \"Branch\" at 0415 with foreground-color 2.\n  898 |      display  \"-----------Name-----------  Type  Placement  Level\" at 042..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:914: error: 'ledger-n' is not defined\n  912 |      display  \"]  [ ]      [ ]      [ ]\" at curs with foreground-color 2.\n  913 | *>\n  914 >      move     zero  to  ledger-n ledger-s.\n  915 | *>\n  916 |  Accept-Ledger.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:914: error: 'ledger-s' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'Accept-Ledger':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:924: error: 'lin2' is not defined\n  922 | *>\n  923 |      move     curs to curs2.\n  924 >      add      1 to lin2.\n  925 |      move     1 to col2.\n  926 |      if       ledger-n  <  1000\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:936: error: 'sales-range' is not defined\n  934 | *>\n  935 |      move     WS-Ledger-Nos  to  ledger-check.\n  936 >      if       ledger-first = sales-range\n  937 |         or    purchase-range\n  938 |               display \"Invalid start number!\" at curs2 with foreground-co..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:937: error: 'purchase-range' is not defined\n  935 |      move     WS-Ledger-Nos  to  ledger-check.\n  936 |      if       ledger-first = sales-range\n  937 >         or    purchase-range\n  938 |               display \"Invalid start number!\" at curs2 with foreground-co..\n  939 |               go to  Accept-Ledger.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'accept-placement':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:996: error: 'revenue-only' is not defined\n  994 |               go to  accept-placement.\n  995 | *>\n  996 >      if       revenue-only  and  Ledger-Place >  \"N\"\n  997 |        and    pc-code  not = \"00\"\n  998 |               move 61 to col2\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:991: error: invalid conditional expression\n  989 |      accept   ws-reply at curs with foreground-color 3 update.\n  990 |      move     function upper-case (ws-reply) to Ledger-Place.\n  991 >      if       Ledger-Place  <  \"A\"  or  >  \"Z\"\n  992 |               move 61 to col2\n  993 |               display \"Invalid Placement! [A - Z]\" at curs2 with foregrou..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'gl030c':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'Loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1298: error: invalid conditional expression\n 1296 |      if       Profit-Centres\n 1297 |               display \"P/C\" at 0417 with foreground-color 2.\n 1298 >      if       Branches\n 1299 |               display \"Branch\" at 0415 with foreground-color 2.\n 1300 |      display  \"-----------Name-----------  Type  Placement  Level\" at 042..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'accept-placement':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1417: error: invalid conditional expression\n 1415 |      accept   Ledger-Place at curs with foreground-color 3 update.\n 1416 |      move     function upper-case (Ledger-Place) to Ledger-Place.\n 1417 >      if       Ledger-Place  <  \"A\"  or  >  \"Z\"\n 1418 |               display \"Invalid Placement!\" at curs2 with foreground-color..\n 1419 |               go to  accept-placement.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'gl030e':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1599: error: 'print-file' is not defined\n 1597 | *>\n 1598 |      move     zero  to  truth.\n 1599 >      open     output  print-file.\n 1600 | *>\n 1601 |      if       Profit-Centres\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1599: error: 'print-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'P-Loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1624: error: 'WS-Ledger-Key9' is not defined\n 1622 |               go to End-Report\n 1623 |      end-if\n 1624 >      move     WS-TBL-Ledger (WS-TBL-Sub)  to WS-Ledger-Key9.\n 1625 |      perform  GL-Nominal-Read-Indexed.\n 1626 |      if       FS-Reply not = zero            *> cant read a record that s..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'Detail-Jump':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1655: error: 'print-record' is not defined\n 1653 |      move     ledger-name  to  l5-name.\n 1654 | *>\n 1655 >      write    print-record  from  line-5 after 1.\n 1656 |      add      1 to line-cnt.\n 1657 |      if       line-cnt > Page-Lines\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1657: error: 'Page-Lines' is not defined\n 1655 |      write    print-record  from  line-5 after 1.\n 1656 |      add      1 to line-cnt.\n 1657 >      if       line-cnt > Page-Lines\n 1658 |               perform  Page-Heading.\n 1659 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'End-Report':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1678: error: 'print-file' is not a file name\n 1676 | *>\n 1677 |  End-Report.\n 1678 >      close    print-file.\n 1679 |      call     \"SYSTEM\" using Print-Report.\n 1680 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1679: error: 'Print-Report' is not defined\n 1677 |  End-Report.\n 1678 |      close    print-file.\n 1679 >      call     \"SYSTEM\" using Print-Report.\n 1680 | *>\n 1681 |  Main-End.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'gl030f':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'main-target':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1723: error: invalid conditional expression\n 1721 |      move     prog-name to l1-prog.\n 1722 |      perform  GL-Nominal-Open-Input.             *> open input  ledger-fi..\n 1723 >      if       fs-reply not = zero\n 1724 |               display space at 0101 with erase eos\n 1725 |               display GL036 at 0901 with foreground-color 2\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1765: error: invalid conditional expression\n 1763 | *>\n 1764 |      if       Profit-Centres  or  Branches\n 1765 >               accept ledger-pc at 0435  with foreground-color 3 update.\n 1766 | *>\n 1767 |      move     WS-Ledger-Nos  to  save-ledger.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1780: error: 'fn-Not-Less-Than' is not defined\n 1778 | *>\n 1779 |      move     1 to File-Key-No.\n 1780 >      set      fn-Not-Less-Than to true.\n 1781 |      perform  GL-Nominal-Start.  *> start ledger-file key not < ledger-ke..\n 1782 |      if       FS-Reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'print-out':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1850: error: 'print-file' is not a file name\n 1848 | *>\n 1849 |  print-out.\n 1850 >      open     output  print-file.\n 1851 | *>\n 1852 |      if       Profit-Centres\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'End-Report':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1920: error: 'print-file' is not a file name\n 1918 | *>\n 1919 |  end-report.\n 1920 >      close    print-file.\n 1921 |      call     \"SYSTEM\" using Print-Report.\n 1922 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'display-chart':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'detail-display':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1947: error: invalid conditional expression\n 1945 |               display \"  P/C   \" at curs with foreground-color 2\n 1946 |      else\n 1947 >       if      Branches\n 1948 |               display \"Branch  \" at curs with foreground-color 2\n 1949 |       else\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'gl030g':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'print-out':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2065: error: 'print-file' is not a file name\n 2063 | *>\n 2064 |  print-out.\n 2065 >      open     output  print-file.\n 2066 | *>\n 2067 |      move     to-day  to  l11-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'End-Report':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2122: error: 'print-file' is not a file name\n 2120 | *>\n 2121 |  end-report.\n 2122 >      close    print-file.\n 2123 |      call     \"SYSTEM\" using Print-Report.\n 2124 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'zz050-Validate-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2355: error: 'Date-Form' is not defined\n 2353 | *>\n 2354 |      move     ws-test-date to ws-date.\n 2355 >      if       Date-Form = zero\n 2356 |               move 1 to Date-Form.\n 2357 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2357: error: 'Date-UK' is not defined\n 2355 |      if       Date-Form = zero\n 2356 |               move 1 to Date-Form.\n 2357 >      if       Date-UK\n 2358 |               go to zz050-test-date.\n 2359 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2359: error: 'Date-USA' is not defined\n 2357 |      if       Date-UK\n 2358 |               go to zz050-test-date.\n 2359 >      if       Date-USA                *> swap month and days\n 2360 |               move ws-days to ws-swap\n 2361 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'zz050-test-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2373: error: 'u-date' is not defined\n 2371 | *>\n 2372 |  zz050-test-date.\n 2373 >      move     ws-date to u-date.\n 2374 |      move     zero to u-bin.\n 2375 |      perform  maps03.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2374: error: 'u-bin' is not defined\n 2372 |  zz050-test-date.\n 2373 |      move     ws-date to u-date.\n 2374 >      move     zero to u-bin.\n 2375 |      perform  maps03.\n 2376 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'zz200-Copy-and-Move-Account':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'zz200-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2527: error: 'Saved-Ledger-Record' is not defined\n 2525 | *>   If Move was requested (F8) we will delete the original rec.\n 2526 | *>\n 2527 >      move     WS-Ledger-Record to Saved-Ledger-Record.\n 2528 |      if       Saved-Ledger-Balance not =  zero\n 2529 |           or  Saved-Ledger-Last not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2528: error: 'Saved-Ledger-Balance' is not defined\n 2526 | *>\n 2527 |      move     WS-Ledger-Record to Saved-Ledger-Record.\n 2528 >      if       Saved-Ledger-Balance not =  zero\n 2529 |           or  Saved-Ledger-Last not = zero\n 2530 |               display GL037    at line lin2 col  1 with erase eol\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2529: error: 'Saved-Ledger-Last' is not defined\n 2527 |      move     WS-Ledger-Record to Saved-Ledger-Record.\n 2528 |      if       Saved-Ledger-Balance not =  zero\n 2529 >           or  Saved-Ledger-Last not = zero\n 2530 |               display GL037    at line lin2 col  1 with erase eol\n 2531 |               display SY008    at line lin2 col 41\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2556: error: 'Saved-Quarters' is not defined\n 2554 |      move     Ledger-S-2   to Ledger-S.\n 2555 |      move     PC-Code      to Ledger-PC.\n 2556 >      initialise Saved-Quarters.\n 2557 |      perform  GL-Nominal-Write.\n 2558 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'maps03':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2575: error: 'maps03-ws' is not defined\n 2573 | *>*******************\n 2574 | *>\n 2575 >      call     \"maps04\"  using  maps03-ws.\n 2576 | *>\n 2577 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'gl030a':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:630: error: 'GL-Nominal-Open-Input' is not defined\n  628 | *>\n  629 |  main.\n  630 >      perform  GL-Nominal-Open-Input.          *> open input ledger-file.\n  631 |      if       fs-reply not = zero\n  632 |               perform  GL-Nominal-Open-Output      *>  open  output  ledg..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:632: error: 'GL-Nominal-Open-Output' is not defined\n  630 |      perform  GL-Nominal-Open-Input.          *> open input ledger-file.\n  631 |      if       fs-reply not = zero\n  632 >               perform  GL-Nominal-Open-Output      *>  open  output  ledg..\n  633 |               initialise WS-Ledger-Record\n  634 |               move low-values to ledger-name\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:640: error: 'GL-Nominal-Write' is not defined\n  638 |                    ledger-balance ledger-last ledger-q1 ledger-q2\n  639 |                    ledger-q3 ledger-q4\n  640 >               perform  GL-Nominal-Write.      *> write WS-Ledger-Record.\n  641 | *>\n  642 |  main-continue.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'main-continue':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:643: error: 'GL-Nominal-Close' is not defined\n  641 | *>\n  642 |  main-continue.\n  643 >      perform  GL-Nominal-Close.               *> close ledger-file.\n  644 |      perform  GL-Nominal-Open.                *> open i-o ledger-file.\n  645 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:644: error: 'GL-Nominal-Open' is not defined\n  642 |  main-continue.\n  643 |      perform  GL-Nominal-Close.               *> close ledger-file.\n  644 >      perform  GL-Nominal-Open.                *> open i-o ledger-file.\n  645 | *>\n  646 |      move     999999 to  WS-Ledger-nos.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:649: error: 'GL-Nominal-Read-Indexed' is not defined\n  647 |      move     zero   to  ledger-pc.\n  648 | *>\n  649 >      perform  GL-Nominal-Read-Indexed.   *> read ledger-file  record inva..\n  650 |      if       fs-reply = 21\n  651 |               move     255  to  we-error.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'rewrite-ledger':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:847: error: 'GL-Nominal-Rewrite' is not defined\n  845 | *>\n  846 |  rewrite-ledger.\n  847 >      perform  GL-Nominal-Rewrite.     *> rewrite WS-Ledger-Record.\n  848 | *>\n  849 |  Loop-3-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'ledger-delete':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1576: error: 'GL-Nominal-Delete' is not defined\n 1574 |               go to  main-exit.\n 1575 | *>\n 1576 >      perform  GL-Nominal-Delete.  *> delete ledger-file  record.\n 1577 | *>\n 1578 |  main-exit.   exit section.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in section 'gl030f':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl: in paragraph 'main-target':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1781: error: 'GL-Nominal-Start' is not defined\n 1779 |      move     1 to File-Key-No.\n 1780 |      set      fn-Not-Less-Than to true.\n 1781 >      perform  GL-Nominal-Start.  *> start ledger-file key not < ledger-ke..\n 1782 |      if       FS-Reply not = zero\n 1783 |               move  255  to  we-error.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1786: error: 'GL-Nominal-Read-Next' is not defined\n 1784 | *>\n 1785 |      if       we-error = zero\n 1786 >               perform  GL-Nominal-Read-Next      *>   read  ledger-file..\n 1787 |               if     fs-reply = 10\n 1788 |                      move 255 to we-error.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:147: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:160: error: selprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:176: error: fdprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:182: error: print-spool-command.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:187: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:188: error: glwspc.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:189: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:190: error: wsledger.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:216: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:381: error: wsledger.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:466: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:467: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:468: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2580: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:158: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:472: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:473: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:475: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:485: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:485: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:497: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:504: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:509: error: 'lin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:512: error: 'Profit-Centres' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:512: error: 'Branches' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:513: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:517: error: 'curs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:534: error: 'index-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:618: error: 'cole' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:633: error: 'WS-Ledger-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:634: error: 'ledger-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:635: error: 'WS-Ledger-nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:636: error: 'ledger-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:637: error: 'ledger-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:637: error: 'Ledger-Place' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:637: error: 'ledger-level' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-balance' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-last' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-q1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-q2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:639: error: 'ledger-q3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:639: error: 'ledger-q4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:651: error: 'we-error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:654: error: 'p-c-Branches' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:658: error: 'pc-ledg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:659: error: 'pc-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:661: error: 'pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:662: error: 'p-b-codes' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:692: error: 'curs2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:694: error: 'col2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:896: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:914: error: 'ledger-n' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:914: error: 'ledger-s' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:924: error: 'lin2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:936: error: 'sales-range' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:937: error: 'purchase-range' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:996: error: 'revenue-only' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:991: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1298: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1417: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1599: error: 'print-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1599: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1624: error: 'WS-Ledger-Key9' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1655: error: 'print-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1657: error: 'Page-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1678: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1679: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1723: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1765: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1780: error: 'fn-Not-Less-Than' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1850: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1920: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1947: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2065: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2122: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2355: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2357: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2359: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2373: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2374: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2527: error: 'Saved-Ledger-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2528: error: 'Saved-Ledger-Balance' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2529: error: 'Saved-Ledger-Last' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2556: error: 'Saved-Quarters' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2575: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:630: error: 'GL-Nominal-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:632: error: 'GL-Nominal-Open-Output' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:640: error: 'GL-Nominal-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:643: error: 'GL-Nominal-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:644: error: 'GL-Nominal-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:649: error: 'GL-Nominal-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:847: error: 'GL-Nominal-Rewrite' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1576: error: 'GL-Nominal-Delete' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1781: error: 'GL-Nominal-Start' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1786: error: 'GL-Nominal-Read-Next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:147: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:160: error: selprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:176: error: fdprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:182: error: print-spool-command.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:187: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:188: error: glwspc.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:189: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:190: error: wsledger.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:216: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:381: error: wsledger.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:466: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:467: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:468: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2580: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:158: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:472: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:473: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:475: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:485: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:485: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:497: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:504: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:509: error: 'lin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:512: error: 'Profit-Centres' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:512: error: 'Branches' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:513: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:517: error: 'curs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:534: error: 'index-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:618: error: 'cole' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:633: error: 'WS-Ledger-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:634: error: 'ledger-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:635: error: 'WS-Ledger-nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:636: error: 'ledger-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:637: error: 'ledger-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:637: error: 'Ledger-Place' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:637: error: 'ledger-level' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-balance' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-last' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-q1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:638: error: 'ledger-q2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:639: error: 'ledger-q3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:639: error: 'ledger-q4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:651: error: 'we-error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:654: error: 'p-c-Branches' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:658: error: 'pc-ledg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:659: error: 'pc-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:661: error: 'pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:662: error: 'p-b-codes' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:692: error: 'curs2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:694: error: 'col2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:896: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:914: error: 'ledger-n' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:914: error: 'ledger-s' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:924: error: 'lin2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:936: error: 'sales-range' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:937: error: 'purchase-range' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:996: error: 'revenue-only' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:991: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1298: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1417: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1599: error: 'print-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1599: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1624: error: 'WS-Ledger-Key9' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1655: error: 'print-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1657: error: 'Page-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1678: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1679: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1723: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1765: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1780: error: 'fn-Not-Less-Than' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1850: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1920: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1947: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2065: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2122: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2355: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2357: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2359: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2373: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2374: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2527: error: 'Saved-Ledger-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2528: error: 'Saved-Ledger-Balance' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2529: error: 'Saved-Ledger-Last' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2556: error: 'Saved-Quarters' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:2575: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:630: error: 'GL-Nominal-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:632: error: 'GL-Nominal-Open-Output' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:640: error: 'GL-Nominal-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:643: error: 'GL-Nominal-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:644: error: 'GL-Nominal-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:649: error: 'GL-Nominal-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:847: error: 'GL-Nominal-Rewrite' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1576: error: 'GL-Nominal-Delete' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1781: error: 'GL-Nominal-Start' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl030.cbl:1786: error: 'GL-Nominal-Read-Next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 361,
+    "cognitive": 865,
+    "halstead": {
+      "uniqueOperators": 15,
+      "uniqueOperands": 128,
+      "totalOperators": 1189,
+      "totalOperands": 497,
+      "vocabulary": 143,
+      "length": 1686,
+      "volume": 12072,
+      "difficulty": 29.12,
+      "effort": 351537,
+      "timeToProgram": 19530,
+      "deliveredBugs": 4.024
+    },
+    "maintainability": 23
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 1679
+      },
+      {
+        "target": "SYSTEM",
+        "line": 1921
+      },
+      {
+        "target": "SYSTEM",
+        "line": 2123
+      },
+      {
+        "target": "maps04",
+        "line": 2575
+      }
+    ],
+    "copies": [
+      {
+        "name": "&",
+        "line": 87
+      },
+      {
+        "name": "existing",
+        "line": 87
+      },
+      {
+        "name": "of",
+        "line": 138
+      },
+      {
+        "name": "envdiv",
+        "line": 147
+      },
+      {
+        "name": "selprint",
+        "line": 160
+      },
+      {
+        "name": "fdprint",
+        "line": 176
+      },
+      {
+        "name": "print-spool-command",
+        "line": 182
+      },
+      {
+        "name": "wsmaps03",
+        "line": 187
+      },
+      {
+        "name": "glwspc",
+        "line": 188
+      },
+      {
+        "name": "wsfnctn",
+        "line": 189
+      },
+      {
+        "name": "wsledger",
+        "line": 190
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 216
+      },
+      {
+        "name": "screenio",
+        "line": 251
+      },
+      {
+        "name": "wsledger",
+        "line": 376
+      },
+      {
+        "name": "wscall",
+        "line": 466
+      },
+      {
+        "name": "wssystem",
+        "line": 467
+      },
+      {
+        "name": "wsnames",
+        "line": 468
+      },
+      {
+        "name": "of",
+        "line": 2167
+      },
+      {
+        "name": "of",
+        "line": 2169
+      },
+      {
+        "name": "of",
+        "line": 2259
+      },
+      {
+        "name": "-",
+        "line": 2478
+      },
+      {
+        "name": "existing",
+        "line": 2478
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 2580
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-convert-date",
+        "line": 502
+      },
+      {
+        "target": "displaya",
+        "line": 514
+      },
+      {
+        "target": "displaya",
+        "line": 525
+      },
+      {
+        "target": "displaya",
+        "line": 530
+      },
+      {
+        "target": "displaya",
+        "line": 536
+      },
+      {
+        "target": "displaya",
+        "line": 541
+      },
+      {
+        "target": "displaya",
+        "line": 546
+      },
+      {
+        "target": "displaya",
+        "line": 552
+      },
+      {
+        "target": "displaya",
+        "line": 558
+      },
+      {
+        "target": "displaya",
+        "line": 564
+      },
+      {
+        "target": "displaya",
+        "line": 570
+      },
+      {
+        "target": "gl030a",
+        "line": 584
+      },
+      {
+        "target": "gl030b",
+        "line": 588
+      },
+      {
+        "target": "gl030c",
+        "line": 592
+      },
+      {
+        "target": "gl030e",
+        "line": 598
+      },
+      {
+        "target": "gl030f",
+        "line": 602
+      },
+      {
+        "target": "gl030g",
+        "line": 607
+      },
+      {
+        "target": "gl030h",
+        "line": 610
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 630
+      },
+      {
+        "target": "GL-Nominal-Open-Output",
+        "line": 632
+      },
+      {
+        "target": "GL-Nominal-Write",
+        "line": 640
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 643
+      },
+      {
+        "target": "GL-Nominal-Open",
+        "line": 644
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 649
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 666
+      },
+      {
+        "target": "write-ledger",
+        "line": 757
+      },
+      {
+        "target": "rewrite-ledger",
+        "line": 759
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 763
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 787
+      },
+      {
+        "target": "write-ledger",
+        "line": 816
+      },
+      {
+        "target": "rewrite-ledger",
+        "line": 818
+      },
+      {
+        "target": "GL-Nominal-Write",
+        "line": 844
+      },
+      {
+        "target": "GL-Nominal-Rewrite",
+        "line": 847
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 850
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 858
+      },
+      {
+        "target": "main",
+        "line": 860
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 861
+      },
+      {
+        "target": "GL-Nominal-Open",
+        "line": 862
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 871
+      },
+      {
+        "target": "PC-Code-Check",
+        "line": 953
+      },
+      {
+        "target": "detail-check",
+        "line": 1020
+      },
+      {
+        "target": "header-check",
+        "line": 1022
+      },
+      {
+        "target": "ledger-read",
+        "line": 1038
+      },
+      {
+        "target": "ledger-read",
+        "line": 1048
+      },
+      {
+        "target": "ledger-read",
+        "line": 1057
+      },
+      {
+        "target": "ledger-read",
+        "line": 1065
+      },
+      {
+        "target": "ledger-read",
+        "line": 1068
+      },
+      {
+        "target": "ledger-read",
+        "line": 1079
+      },
+      {
+        "target": "ledger-read",
+        "line": 1082
+      },
+      {
+        "target": "ledger-read",
+        "line": 1092
+      },
+      {
+        "target": "ledger-read",
+        "line": 1095
+      },
+      {
+        "target": "ledger-write",
+        "line": 1106
+      },
+      {
+        "target": "Loop-add",
+        "line": 1114
+      },
+      {
+        "target": "Loop-add",
+        "line": 1121
+      },
+      {
+        "target": "Loop-add",
+        "line": 1124
+      },
+      {
+        "target": "ledger-write",
+        "line": 1130
+      },
+      {
+        "target": "ledger-write",
+        "line": 1136
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 1160
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 1183
+      },
+      {
+        "target": "GL-Nominal-Write",
+        "line": 1206
+      },
+      {
+        "target": "aloop",
+        "line": 1243
+      },
+      {
+        "target": "aloop",
+        "line": 1246
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 1264
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 1269
+      },
+      {
+        "target": "GL-Nominal-Open",
+        "line": 1270
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 1279
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 1290
+      },
+      {
+        "target": "PC-Code-Check",
+        "line": 1340
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 1359
+      },
+      {
+        "target": "deletion",
+        "line": 1384
+      },
+      {
+        "target": "zz200-Copy-and-Move-Account",
+        "line": 1396
+      },
+      {
+        "target": "ledger-rewrite",
+        "line": 1448
+      },
+      {
+        "target": "Loop-add",
+        "line": 1456
+      },
+      {
+        "target": "Loop-add",
+        "line": 1463
+      },
+      {
+        "target": "Loop-add",
+        "line": 1466
+      },
+      {
+        "target": "ledger-rewrite",
+        "line": 1472
+      },
+      {
+        "target": "ledger-rewrite",
+        "line": 1478
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 1500
+      },
+      {
+        "target": "ledger-delete",
+        "line": 1513
+      },
+      {
+        "target": "Loop-add",
+        "line": 1521
+      },
+      {
+        "target": "Loop-add",
+        "line": 1528
+      },
+      {
+        "target": "Loop-add",
+        "line": 1531
+      },
+      {
+        "target": "ledger-delete",
+        "line": 1536
+      },
+      {
+        "target": "ledger-delete",
+        "line": 1541
+      },
+      {
+        "target": "GL-Nominal-Rewrite",
+        "line": 1553
+      },
+      {
+        "target": "GL-Nominal-Write",
+        "line": 1558
+      },
+      {
+        "target": "GL-Nominal-Delete",
+        "line": 1576
+      },
+      {
+        "target": "zz100-Load-Ledger-Table",
+        "line": 1586
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 1587
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 1594
+      },
+      {
+        "target": "page-heading",
+        "line": 1612
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 1625
+      },
+      {
+        "target": "Compute-Placement",
+        "line": 1650
+      },
+      {
+        "target": "Page-Heading",
+        "line": 1658
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 1684
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 1722
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 1730
+      },
+      {
+        "target": "gl030f-screen-clear",
+        "line": 1743
+      },
+      {
+        "target": "display-chart",
+        "line": 1777
+      },
+      {
+        "target": "GL-Nominal-Start",
+        "line": 1781
+      },
+      {
+        "target": "GL-Nominal-Read-Next",
+        "line": 1786
+      },
+      {
+        "target": "display-chart",
+        "line": 1802
+      },
+      {
+        "target": "GL-Nominal-Read-Next",
+        "line": 1815
+      },
+      {
+        "target": "ask-clear",
+        "line": 1831
+      },
+      {
+        "target": "d-head-1",
+        "line": 1838
+      },
+      {
+        "target": "second-head",
+        "line": 1840
+      },
+      {
+        "target": "display-chart",
+        "line": 1846
+      },
+      {
+        "target": "page-heading",
+        "line": 1863
+      },
+      {
+        "target": "GL-Nominal-Read-Next",
+        "line": 1866
+      },
+      {
+        "target": "Compute-Placement",
+        "line": 1886
+      },
+      {
+        "target": "page-heading",
+        "line": 1900
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 1924
+      },
+      {
+        "target": "Compute-Placement",
+        "line": 1985
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 2033
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 2040
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 2048
+      },
+      {
+        "target": "page-heading",
+        "line": 2070
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 2084
+      },
+      {
+        "target": "page-heading",
+        "line": 2097
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 2126
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 2139
+      },
+      {
+        "target": "ea-Export-CoA",
+        "line": 2155
+      },
+      {
+        "target": "fa-Import-CoA",
+        "line": 2157
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 2199
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 2203
+      },
+      {
+        "target": "until",
+        "line": 2208
+      },
+      {
+        "target": "GL-Nominal-Read-Next",
+        "line": 2209
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 2211
+      },
+      {
+        "target": "end-if",
+        "line": 2213
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 2225
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 2239
+      },
+      {
+        "target": "GL-Nominal-Open-Output",
+        "line": 2289
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 2293
+      },
+      {
+        "target": "GL-Nominal-Write",
+        "line": 2313
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 2317
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 2332
+      },
+      {
+        "target": "maps03",
+        "line": 2375
+      },
+      {
+        "target": "maps03",
+        "line": 2389
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 2451
+      },
+      {
+        "target": "varying",
+        "line": 2452
+      },
+      {
+        "target": "GL-Nominal-Read-Next",
+        "line": 2455
+      },
+      {
+        "target": "exit",
+        "line": 2457
+      },
+      {
+        "target": "end-if",
+        "line": 2458
+      },
+      {
+        "target": "cycle",
+        "line": 2462
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 2467
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 2543
+      },
+      {
+        "target": "GL-Nominal-Write",
+        "line": 2557
+      },
+      {
+        "target": "GL-Nominal-Delete",
+        "line": 2567
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Saved-CoA",
+        "line": 167
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 178
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

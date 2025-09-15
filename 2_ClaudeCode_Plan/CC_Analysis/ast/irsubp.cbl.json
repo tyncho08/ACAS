@@ -1,0 +1,137 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl",
+  "fileName": "irsubp.cbl",
+  "fileHash": "ccddb986eb8775a75a75bb8a750d14b091070ff76c1c736fecd967b3fbe8a183",
+  "timestamp": "2025-09-15T19:46:20.708Z",
+  "parseTime": 42,
+  "lines": {
+    "total": 167,
+    "code": 56,
+    "comment": 110,
+    "blank": 1
+  },
+  "programId": "irsubp",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:84: error: envdiv.cob: No such file or directory\n   82 | *>\n   83 |  environment division.\n   84 >  copy  \"envdiv.cob\".\n   85 |  input-output section.\n   86 |  file-control.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:115: error: irswspost.cob: No such file or directory\n  113 | *>--------------\n  114 | *>\n  115 >  copy \"irswspost.cob\".\n  116 |  copy \"wsfnctn.cob\".\n  117 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:116: error: wsfnctn.cob: No such file or directory\n  114 | *>\n  115 |  copy \"irswspost.cob\".\n  116 >  copy \"wsfnctn.cob\".\n  117 |  copy \"wsnames.cob\".\n  118 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:117: error: wsnames.cob: No such file or directory\n  115 |  copy \"irswspost.cob\".\n  116 |  copy \"wsfnctn.cob\".\n  117 >  copy \"wsnames.cob\".\n  118 | *>\n  119 |  procedure division using Posting-Record\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:90: error: 'fs-reply' is not defined\n   88 |      select Sorted-Posting-File assign File-38   *> \"postsort.dat\"\n   89 |                                 organization line sequential\n   90 >                                 file status fs-reply.\n   91 | *>\n   92 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:119: error: 'Posting-Record' is not defined\n  117 |  copy \"wsnames.cob\".\n  118 | *>\n  119 >  procedure division using Posting-Record\n  120 |                           File-Access\n  121 |                           File-Defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:120: error: 'File-Access' is not defined\n  118 | *>\n  119 |  procedure division using Posting-Record\n  120 >                           File-Access\n  121 |                           File-Defs.\n  122 | *>======================================\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:121: error: 'File-Defs' is not defined\n  119 |  procedure division using Posting-Record\n  120 |                           File-Access\n  121 >                           File-Defs.\n  122 | *>======================================\n  123 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl: in paragraph 'Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:130: error: 'we-error' is not defined\n  128 | *>  Keeping open output to clear the file but not currently used.\n  129 | *>\n  130 >      move     zero to we-error.\n  131 | *>\n  132 |      if       not fn-open\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:132: error: 'fn-open' is not defined\n  130 |      move     zero to we-error.\n  131 | *>\n  132 >      if       not fn-open\n  133 |               go to Close-1.\n  134 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:137: error: 'fn-input' is not defined\n  135 | *>   Open the file.\n  136 | *>\n  137 >      if       fn-input\n  138 |               open input  Sorted-Posting-File.\n  139 |      if       fn-output\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:139: error: 'fn-output' is not defined\n  137 |      if       fn-input\n  138 |               open input  Sorted-Posting-File.\n  139 >      if       fn-output\n  140 |               open output Sorted-Posting-File.\n  141 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl: in paragraph 'Close-1':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:149: error: 'fn-close' is not defined\n  147 | *>-----\n  148 | *>\n  149 >      if       fn-close\n  150 |               close Sorted-Posting-File\n  151 |               go to main-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:153: error: 'fn-read-next' is not defined\n  151 |               go to main-exit.\n  152 | *>\n  153 >      if       not fn-read-next\n  154 |               move 99 to WE-Error\n  155 |               go to Main-Exit.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:84: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:115: error: irswspost.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:116: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:117: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:90: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:119: error: 'Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:120: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:121: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:130: error: 'we-error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:132: error: 'fn-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:137: error: 'fn-input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:139: error: 'fn-output' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:149: error: 'fn-close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:153: error: 'fn-read-next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:84: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:115: error: irswspost.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:116: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:117: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:90: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:119: error: 'Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:120: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:121: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:130: error: 'we-error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:132: error: 'fn-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:137: error: 'fn-input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:139: error: 'fn-output' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:149: error: 'fn-close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl:153: error: 'fn-read-next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 12,
+    "cognitive": 31,
+    "halstead": {
+      "uniqueOperators": 5,
+      "uniqueOperands": 34,
+      "totalOperators": 25,
+      "totalOperands": 41,
+      "vocabulary": 39,
+      "length": 66,
+      "volume": 349,
+      "difficulty": 3.01,
+      "effort": 1052,
+      "timeToProgram": 58,
+      "deliveredBugs": 0.116
+    },
+    "maintainability": 81
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "books",
+        "line": 39
+      },
+      {
+        "name": "books",
+        "line": 46
+      },
+      {
+        "name": "of",
+        "line": 77
+      },
+      {
+        "name": "envdiv",
+        "line": 84
+      },
+      {
+        "name": "irswspost",
+        "line": 115
+      },
+      {
+        "name": "wsfnctn",
+        "line": 116
+      },
+      {
+        "name": "wsnames",
+        "line": 117
+      }
+    ],
+    "performs": []
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Sorted-Posting-File",
+        "line": 94
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 108
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

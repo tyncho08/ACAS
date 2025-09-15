@@ -1,0 +1,174 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl",
+  "fileName": "pl165.cbl",
+  "fileHash": "c452497cc526325d72c0355fe6ae845b7dadd40fb812696a5e970e263a726d93",
+  "timestamp": "2025-09-15T19:46:23.083Z",
+  "parseTime": 36,
+  "lines": {
+    "total": 221,
+    "code": 95,
+    "comment": 124,
+    "blank": 2
+  },
+  "programId": "pl165",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:81: error: envdiv.cob: No such file or directory\n   79 | *>===============================\n   80 | *>\n   81 >  copy \"envdiv.cob\".\n   82 |  input-output            section.\n   83 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:123: error: wsfnctn.cob: No such file or directory\n  121 |  77  prog-name           pic x(15) value \"PL165 (3.01.02)\".\n  122 | *>\n  123 >  copy \"wsfnctn.cob\".\n  124 |  copy \"wspl.cob\".\n  125 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:124: error: wspl.cob: No such file or directory\n  122 | *>\n  123 |  copy \"wsfnctn.cob\".\n  124 >  copy \"wspl.cob\".\n  125 | *>\n  126 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:156: error: Test-Data-Flags.cob: No such file or directory\n  154 |      03  ws-reply        pic x.\n  155 | *>\n  156 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  157 | *>\n  158 |  linkage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:161: error: wscall.cob: No such file or directory\n  159 | *>**************\n  160 | *>\n  161 >  copy \"wscall.cob\".\n  162 |  copy \"wssystem.cob\".\n  163 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:162: error: wssystem.cob: No such file or directory\n  160 | *>\n  161 |  copy \"wscall.cob\".\n  162 >  copy \"wssystem.cob\".\n  163 |  copy \"wsnames.cob\".\n  164 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:163: error: wsnames.cob: No such file or directory\n  161 |  copy \"wscall.cob\".\n  162 |  copy \"wssystem.cob\".\n  163 >  copy \"wsnames.cob\".\n  164 | *>\n  165 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:219: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  217 |      exit     section.\n  218 | *>\n  219 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  220 | *>\n  221 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:93: error: 'fs-reply' is not defined\n   91 |      select  sales-sort      assign        fn-sales,\n   92 |                              access        sequential,\n   93 >                              status        fs-reply.\n   94 | *>\n   95 | *> copy \"selpl.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:167: error: 'ws-calling-data' is not defined\n  165 |  01  to-day              pic x(10).\n  166 | *>\n  167 >  procedure division using ws-calling-data\n  168 |                           system-record\n  169 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:168: error: 'system-record' is not defined\n  166 | *>\n  167 |  procedure division using ws-calling-data\n  168 >                           system-record\n  169 |                           to-day\n  170 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:170: error: 'file-defs' is not defined\n  168 |                           system-record\n  169 |                           to-day\n  170 >                           file-defs.\n  171 | *>=======================================\n  172 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:175: error: 'FS-Cobol-Files-Used' is not defined\n  173 |  init01 section.\n  174 | *>\n  175 >      if       not FS-Cobol-Files-Used    *> well use fn-Read-By-Name (31)\n  176 |               goback returning 4\n  177 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl: in section 'input-to-sort':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl: in paragraph 'Input-To-Sort-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:200: error: 'WS-purch-key' is not defined\n  198 |               go to  its-exit.\n  199 | *>\n  200 >      move     WS-purch-key   to  sort-key.\n  201 |      move     purch-name  to  sort-name.\n  202 |      release  sort-record.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:201: error: 'purch-name' is not defined\n  199 | *>\n  200 |      move     WS-purch-key   to  sort-key.\n  201 >      move     purch-name  to  sort-name.\n  202 |      release  sort-record.\n  203 |      go       to input-to-sort-Main.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:179: error: 'Purch-Open-Input' is not defined\n  177 |      end-if.\n  178 | *>\n  179 >      perform  Purch-Open-Input.        *>  open     input  purchase-file.\n  180 |      open     output sales-sort.\n  181 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:189: error: 'Purch-Close' is not defined\n  187 | *>\n  188 |      close    sales-sort.         *>  purchase-file\n  189 >      perform  Purch-Close.\n  190 | *>\n  191 |  end-program.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl: in section 'input-to-sort':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl: in paragraph 'Input-To-Sort-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:196: error: 'Purch-Read-Next' is not defined\n  194 |  input-to-sort section.\n  195 |  Input-To-Sort-Main.\n  196 >      perform  Purch-Read-Next.        *> read purchase-file next record a..\n  197 |      if       fs-reply = 10\n  198 |               go to  its-exit.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:81: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:123: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:124: error: wspl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:156: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:161: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:162: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:163: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:219: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:93: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:167: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:168: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:170: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:175: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:200: error: 'WS-purch-key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:201: error: 'purch-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:179: error: 'Purch-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:189: error: 'Purch-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:196: error: 'Purch-Read-Next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:81: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:123: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:124: error: wspl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:156: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:161: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:162: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:163: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:219: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:93: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:167: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:168: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:170: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:175: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:200: error: 'WS-purch-key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:201: error: 'purch-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:179: error: 'Purch-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:189: error: 'Purch-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl165.cbl:196: error: 'Purch-Read-Next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 7,
+    "cognitive": 22,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 48,
+      "totalOperators": 23,
+      "totalOperands": 71,
+      "vocabulary": 56,
+      "length": 94,
+      "volume": 546,
+      "difficulty": 5.92,
+      "effort": 3230,
+      "timeToProgram": 179,
+      "deliveredBugs": 0.182
+    },
+    "maintainability": 80
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 72
+      },
+      {
+        "name": "envdiv",
+        "line": 81
+      },
+      {
+        "name": "selpl",
+        "line": 95
+      },
+      {
+        "name": "fdpl",
+        "line": 117
+      },
+      {
+        "name": "wsfnctn",
+        "line": 123
+      },
+      {
+        "name": "wspl",
+        "line": 124
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 156
+      },
+      {
+        "name": "wscall",
+        "line": 161
+      },
+      {
+        "name": "wssystem",
+        "line": 162
+      },
+      {
+        "name": "wsnames",
+        "line": 163
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 219
+      }
+    ],
+    "performs": [
+      {
+        "target": "Purch-Open-Input",
+        "line": 179
+      },
+      {
+        "target": "Purch-Close",
+        "line": 189
+      },
+      {
+        "target": "Purch-Read-Next",
+        "line": 196
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "sales-sort",
+        "line": 111
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 119
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

@@ -1,0 +1,382 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl",
+  "fileName": "pl050.cbl",
+  "fileHash": "3cff5727db0ca44c202a332800ea89b89e34bd7ed17e0a4de030de5537252bea",
+  "timestamp": "2025-09-15T19:46:21.719Z",
+  "parseTime": 98,
+  "lines": {
+    "total": 679,
+    "code": 439,
+    "comment": 237,
+    "blank": 3
+  },
+  "programId": "pl050",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:96: error: envdiv.cob: No such file or directory\n   94 | *>===============================\n   95 | *>\n   96 >  copy \"envdiv.cob\".\n   97 | \n   98 |  input-output            section.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:106: error: selprint.cob: No such file or directory\n  104 |  *> copy \"selpl.cob\".\n  105 |  *> copy \"selpinv.cob\".\n  106 >  copy \"selprint.cob\".\n  107 | *>\n  108 |  data                    division.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:116: error: fdprint.cob: No such file or directory\n  114 |  *> copy \"fdpl.cob\".\n  115 |  *> copy \"fdpinv.cob\".\n  116 >  copy \"fdprint.cob\".\n  117 |  working-storage section.\n  118 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:120: error: print-spool-command.cob: No such file or directory\n  118 | *>----------------------\n  119 |  77  prog-name           pic x(15) value \"PL050 (3.02.07)\".\n  120 >  copy \"print-spool-command.cob\".\n  121 |  copy \"wsmaps03.cob\".\n  122 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:121: error: wsmaps03.cob: No such file or directory\n  119 |  77  prog-name           pic x(15) value \"PL050 (3.02.07)\".\n  120 |  copy \"print-spool-command.cob\".\n  121 >  copy \"wsmaps03.cob\".\n  122 |  copy \"wsfnctn.cob\".\n  123 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:122: error: wsfnctn.cob: No such file or directory\n  120 |  copy \"print-spool-command.cob\".\n  121 |  copy \"wsmaps03.cob\".\n  122 >  copy \"wsfnctn.cob\".\n  123 | *>\n  124 | *>  EX FDs\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:126: error: wspl.cob: No such file or directory\n  124 | *>  EX FDs\n  125 | *>\n  126 >  copy \"wspl.cob\".\n  127 |  copy \"wsfdpinv.cob\". *> replacing Invoice-Record by WS-PInvoice-Record.\n  128 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:127: error: wsfdpinv.cob: No such file or directory\n  125 | *>\n  126 |  copy \"wspl.cob\".\n  127 >  copy \"wsfdpinv.cob\". *> replacing Invoice-Record by WS-PInvoice-Record.\n  128 | *>\n  129 | *> REMARK OUT, ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:180: error: plwspinv.cob: No such file or directory\n  178 | *>\n  179 |  *> copy \"wspinv.cob\".  *> replacing WS table.\n  180 >  copy \"plwspinv.cob\".   *> invoice table\n  181 | *>\n  182 |  01  ws-Test-Date            pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:206: error: Test-Data-Flags.cob: No such file or directory\n  204 |          05  ws-intl-days    pic xx.\n  205 | *>\n  206 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  207 | *>\n  208 |  01  File-Info                          value zero.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:322: error: wscall.cob: No such file or directory\n  320 | *>***************\n  321 | *>\n  322 >  copy \"wscall.cob\".\n  323 |  copy \"wssystem.cob\".\n  324 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:323: error: wssystem.cob: No such file or directory\n  321 | *>\n  322 |  copy \"wscall.cob\".\n  323 >  copy \"wssystem.cob\".\n  324 |  copy \"wsnames.cob\".\n  325 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:324: error: wsnames.cob: No such file or directory\n  322 |  copy \"wscall.cob\".\n  323 |  copy \"wssystem.cob\".\n  324 >  copy \"wsnames.cob\".\n  325 | *>\n  326 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:677: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  675 |      exit     section.\n  676 | *>\n  677 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  678 | *>\n  679 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:328: error: 'ws-calling-data' is not defined\n  326 |  01  to-day              pic x(10).\n  327 | *>\n  328 >  procedure division using ws-calling-data\n  329 |                           system-record\n  330 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:329: error: 'system-record' is not defined\n  327 | *>\n  328 |  procedure division using ws-calling-data\n  329 >                           system-record\n  330 |                           to-day\n  331 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:331: error: 'file-defs' is not defined\n  329 |                           system-record\n  330 |                           to-day\n  331 >                           file-defs.\n  332 | *>=======================================\n  333 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:335: error: 'Print-Spool-Name' is not defined\n  333 | *>\n  334 |  init01 section.\n  335 >      move     Print-Spool-Name to PSN.\n  336 |      move     spaces to print-out.\n  337 |      perform  varying a from 1 by 1 until a > 3\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:335: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:344: error: 'File-Key-No' is not defined\n  342 |      perform  zz070-Convert-Date.\n  343 |      move     ws-date to l1-date.\n  344 >      move     1  to File-Key-No.\n  345 | *>\n  346 |  Menu-Return.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in paragraph 'Menu-Return':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:351: error: 'FS-Cobol-Files-Used' is not defined\n  349 |      display  ws-date at 0171 with foreground-color 2.\n  350 | *>\n  351 >      if       FS-Cobol-Files-Used\n  352 |               call  \"CBL_CHECK_FILE_EXIST\" using File-26\n  353 |                                                  File-Info\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:352: error: 'File-26' is not defined\n  350 | *>\n  351 |      if       FS-Cobol-Files-Used\n  352 >               call  \"CBL_CHECK_FILE_EXIST\" using File-26\n  353 |                                                  File-Info\n  354 |               if    return-code not = zero          *> not = zero - No fi..\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:356: error: 'WS-Caller' is not defined\n  354 |               if    return-code not = zero          *> not = zero - No fi..\n  355 |                     display PL120   at 0501 with foreground-color 4\n  356 >                     if     WS-Caller not = \"xl150\"\n  357 |                            accept ws-reply at 0563 with foreground-color..\n  358 |                     end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:363: error: 'print-file' is not defined\n  361 |      perform  Purch-Open-Input.   *> open     input  purchase-file  invoi..\n  362 |      perform  PInvoice-Open-Input.\n  363 >      open     output print-file.\n  364 | *>\n  365 |      move     zero  to  j.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:363: error: 'print-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:370: error: 'FS-Reply' is not defined\n  368 |  loop.\n  369 |      perform  PInvoice-Read-Next.  *> read     invoice-file  next record..\n  370 >      if       FS-Reply not = zero\n  371 |               go to  main-end.\n  372 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:373: error: 'WS-PInvoice-Record' is not defined\n  371 |               go to  main-end.\n  372 | *>\n  373 >      move     WS-PInvoice-Record  to  PInvoice-Header.\n  374 | *>\n  375 |      if       ih-test not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:373: error: 'PInvoice-Header' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:375: error: 'ih-test' is not defined\n  373 |      move     WS-PInvoice-Record  to  PInvoice-Header.\n  374 | *>\n  375 >      if       ih-test not = zero\n  376 |               go to  loop.\n  377 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:380: error: 'applied' is not defined\n  378 | *> trap transactions which are already on the sales ledger.\n  379 | *>\n  380 >      if       applied\n  381 |               go to  loop.\n  382 |      move     zero  to l.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:383: error: 'ih-supplier' is not defined\n  381 |               go to  loop.\n  382 |      move     zero  to l.\n  383 >      move     ih-supplier  to  WS-Purch-Key  l5-cust.\n  384 | *>\n  385 |      move     space to ws-reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:383: error: 'WS-Purch-Key' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:393: error: 'purch-name' is not defined\n  391 |               move \"Supplier Unknown\" to l5-name\n  392 |               move 1 to ws-error\n  393 >      else     move purch-name  to  l5-name.\n  394 | *>\n  395 |      move     ih-invoice  to  l5-nos.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:395: error: 'ih-invoice' is not defined\n  393 |      else     move purch-name  to  l5-name.\n  394 | *>\n  395 >      move     ih-invoice  to  l5-nos.\n  396 |      move     ih-date  to  u-bin.\n  397 |      perform  zz060-Convert-Date.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:396: error: 'ih-date' is not defined\n  394 | *>\n  395 |      move     ih-invoice  to  l5-nos.\n  396 >      move     ih-date  to  u-bin.\n  397 |      perform  zz060-Convert-Date.\n  398 |      move     ws-date  to  l5-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:396: error: 'u-bin' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:400: error: 'ih-deduct-amt' is not defined\n  398 |      move     ws-date  to  l5-date.\n  399 | *>\n  400 >      move     ih-deduct-amt to ws-deduct-amt.\n  401 | *>\n  402 |      if       ih-type = 3\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:402: error: 'ih-type' is not defined\n  400 |      move     ih-deduct-amt to ws-deduct-amt.\n  401 | *>\n  402 >      if       ih-type = 3\n  403 |               multiply -1 by ih-net\n  404 |               multiply -1 by ih-carriage\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:403: error: 'ih-net' is not defined\n  401 | *>\n  402 |      if       ih-type = 3\n  403 >               multiply -1 by ih-net\n  404 |               multiply -1 by ih-carriage\n  405 |               multiply -1 by ih-vat\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:404: error: 'ih-carriage' is not defined\n  402 |      if       ih-type = 3\n  403 |               multiply -1 by ih-net\n  404 >               multiply -1 by ih-carriage\n  405 |               multiply -1 by ih-vat\n  406 |               multiply -1 by ih-c-vat.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:405: error: 'ih-vat' is not defined\n  403 |               multiply -1 by ih-net\n  404 |               multiply -1 by ih-carriage\n  405 >               multiply -1 by ih-vat\n  406 |               multiply -1 by ih-c-vat.\n  407 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:406: error: 'ih-c-vat' is not defined\n  404 |               multiply -1 by ih-carriage\n  405 |               multiply -1 by ih-vat\n  406 >               multiply -1 by ih-c-vat.\n  407 | *>\n  408 |      if       ih-type = 2\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:455: error: 'Page-Lines' is not defined\n  453 |      add      ih-vat ih-c-vat ih-net ih-carriage to total-grs (a).\n  454 | *>\n  455 >      if       line-cnt > Page-Lines\n  456 |               perform headings.\n  457 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:458: error: 'print-record' is not defined\n  456 |               perform headings.\n  457 | *>\n  458 >      write    print-record  from  line-5 after 2  lines.\n  459 |      add      2 to line-cnt.\n  460 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:463: error: 'ih-lines' is not defined\n  461 |      move     \"Y\" to Print-Out.\n  462 |      move     \"Y\" to first-time.\n  463 >      perform  analysis-print  ih-lines times.\n  464 |      perform  extra-analysis.\n  465 |      go       to loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:488: error: 'print-file' is not a file name\n  486 |      write    print-record after 1.\n  487 |      perform  compute-vatcodes 3 times.\n  488 >      close    print-file.\n  489 |      if       Print-Out = \"Y\"\n  490 |               call   \"SYSTEM\" using Print-Report.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:490: error: 'Print-Report' is not defined\n  488 |      close    print-file.\n  489 |      if       Print-Out = \"Y\"\n  490 >               call   \"SYSTEM\" using Print-Report.\n  491 | *>\n  492 |  menu-call.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in section 'headings':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in paragraph 'main12':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:503: error: 'usera' is not defined\n  501 |      move     j  to  l3-page.\n  502 | *>\n  503 >      move     usera to  l3-user.\n  504 |      if       j not = 1\n  505 |               write print-record from line-1 after page\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in section 'analysis-print':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:526: error: 'invoice-line' is not defined\n  524 |      perform  PInvoice-Read-Next. *> read     invoice-file  next record.\n  525 | *>\n  526 >      move     WS-PInvoice-Record  to  invoice-line (1).\n  527 |      move     il-product (1)  to  test-product.\n  528 |      if       il-comment\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:527: error: 'il-product' is not defined\n  525 | *>\n  526 |      move     WS-PInvoice-Record  to  invoice-line (1).\n  527 >      move     il-product (1)  to  test-product.\n  528 |      if       il-comment\n  529 |               go to  main-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:532: error: 'il-vat' is not defined\n  530 | *>\n  531 |      if       ih-type = 3\n  532 >               multiply -1 by il-vat (1)\n  533 |               multiply -1 by il-net (1).\n  534 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:533: error: 'il-net' is not defined\n  531 |      if       ih-type = 3\n  532 |               multiply -1 by il-vat (1)\n  533 >               multiply -1 by il-net (1).\n  534 | *>\n  535 |      move     il-pa (1)   to  la-code.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:535: error: 'il-pa' is not defined\n  533 |               multiply -1 by il-net (1).\n  534 | *>\n  535 >      move     il-pa (1)   to  la-code.\n  536 |      move     il-net (1)  to  la-amount.\n  537 |      move     il-vat-code (1) to k   la-vat.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:537: error: 'il-vat-code' is not defined\n  535 |      move     il-pa (1)   to  la-code.\n  536 |      move     il-net (1)  to  la-amount.\n  537 >      move     il-vat-code (1) to k   la-vat.\n  538 |      if       k > zero\n  539 |               add il-vat (1) to total-cvat (a, k).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in section 'compute-vatcodes':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:596: error: 'vat-rate' is not defined\n  594 |      add      1 to i.\n  595 |      move     i to l8-vat-code.\n  596 >      move     vat-rate (i) to l8-vat-rate.\n  597 |      move     total-cvat (1, i) to l8-amount1.\n  598 |      move     total-cvat (2, i) to l8-amount2.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in section 'zz060-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:614: error: 'u-date' is not defined\n  612 | *>\n  613 |      perform  maps04.\n  614 >      if       u-date = spaces\n  615 |               move spaces to ws-Date\n  616 |               go to zz060-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:619: error: 'Date-Form' is not defined\n  617 |      move     u-date to ws-date.\n  618 | *>\n  619 >      if       Date-Form = zero\n  620 |               move 1 to Date-Form.\n  621 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:621: error: 'Date-UK' is not defined\n  619 |      if       Date-Form = zero\n  620 |               move 1 to Date-Form.\n  621 >      if       Date-UK\n  622 |               go to zz060-Exit.\n  623 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:623: error: 'Date-USA' is not defined\n  621 |      if       Date-UK\n  622 |               go to zz060-Exit.\n  623 >      if       Date-USA                *> swap month and days\n  624 |               move ws-days to ws-swap\n  625 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in section 'maps04':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:672: error: 'maps03-ws' is not defined\n  670 | *>*******************\n  671 | *>\n  672 >      call     \"maps04\"  using  maps03-ws.\n  673 | *>\n  674 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in paragraph 'Menu-Return':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:361: error: 'Purch-Open-Input' is not defined\n  359 |                     goback.                         *> As no transactions..\n  360 | *>\n  361 >      perform  Purch-Open-Input.   *> open     input  purchase-file  invoi..\n  362 |      perform  PInvoice-Open-Input.\n  363 |      open     output print-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:362: error: 'PInvoice-Open-Input' is not defined\n  360 | *>\n  361 |      perform  Purch-Open-Input.   *> open     input  purchase-file  invoi..\n  362 >      perform  PInvoice-Open-Input.\n  363 |      open     output print-file.\n  364 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:369: error: 'PInvoice-Read-Next' is not defined\n  367 | *>\n  368 |  loop.\n  369 >      perform  PInvoice-Read-Next.  *> read     invoice-file  next record..\n  370 |      if       FS-Reply not = zero\n  371 |               go to  main-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:386: error: 'Purch-Read-Indexed' is not defined\n  384 | *>\n  385 |      move     space to ws-reply.\n  386 >      perform  Purch-Read-Indexed.  *> read     purchase-file   record inv..\n  387 |      if       FS-Reply not = zero\n  388 |               move \"X\" to ws-reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:469: error: 'Purch-Close' is not defined\n  467 |  main-end.\n  468 | *>\n  469 >      perform  Purch-Close.   *> close    purchase-file invoice-file.\n  470 |      perform  PInvoice-Close.\n  471 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:470: error: 'PInvoice-Close' is not defined\n  468 | *>\n  469 |      perform  Purch-Close.   *> close    purchase-file invoice-file.\n  470 >      perform  PInvoice-Close.\n  471 | *>\n  472 |      perform  main12 in headings.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:96: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:106: error: selprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:116: error: fdprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:120: error: print-spool-command.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:121: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:122: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:126: error: wspl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:127: error: wsfdpinv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:180: error: plwspinv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:206: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:322: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:323: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:324: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:677: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:328: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:329: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:331: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:335: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:335: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:344: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:351: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:352: error: 'File-26' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:356: error: 'WS-Caller' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:363: error: 'print-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:363: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:370: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:373: error: 'WS-PInvoice-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:373: error: 'PInvoice-Header' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:375: error: 'ih-test' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:380: error: 'applied' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:383: error: 'ih-supplier' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:383: error: 'WS-Purch-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:393: error: 'purch-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:395: error: 'ih-invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:396: error: 'ih-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:396: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:400: error: 'ih-deduct-amt' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:402: error: 'ih-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:403: error: 'ih-net' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:404: error: 'ih-carriage' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:405: error: 'ih-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:406: error: 'ih-c-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:455: error: 'Page-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:458: error: 'print-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:463: error: 'ih-lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:488: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:490: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:503: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:526: error: 'invoice-line' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:527: error: 'il-product' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:532: error: 'il-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:533: error: 'il-net' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:535: error: 'il-pa' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:537: error: 'il-vat-code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:596: error: 'vat-rate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:614: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:619: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:621: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:623: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:672: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:361: error: 'Purch-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:362: error: 'PInvoice-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:369: error: 'PInvoice-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:386: error: 'Purch-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:469: error: 'Purch-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:470: error: 'PInvoice-Close' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:96: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:106: error: selprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:116: error: fdprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:120: error: print-spool-command.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:121: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:122: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:126: error: wspl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:127: error: wsfdpinv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:180: error: plwspinv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:206: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:322: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:323: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:324: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:677: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:328: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:329: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:331: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:335: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:335: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:344: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:351: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:352: error: 'File-26' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:356: error: 'WS-Caller' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:363: error: 'print-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:363: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:370: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:373: error: 'WS-PInvoice-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:373: error: 'PInvoice-Header' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:375: error: 'ih-test' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:380: error: 'applied' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:383: error: 'ih-supplier' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:383: error: 'WS-Purch-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:393: error: 'purch-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:395: error: 'ih-invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:396: error: 'ih-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:396: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:400: error: 'ih-deduct-amt' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:402: error: 'ih-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:403: error: 'ih-net' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:404: error: 'ih-carriage' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:405: error: 'ih-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:406: error: 'ih-c-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:455: error: 'Page-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:458: error: 'print-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:463: error: 'ih-lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:488: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:490: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:503: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:526: error: 'invoice-line' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:527: error: 'il-product' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:532: error: 'il-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:533: error: 'il-net' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:535: error: 'il-pa' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:537: error: 'il-vat-code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:596: error: 'vat-rate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:614: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:619: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:621: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:623: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:672: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:361: error: 'Purch-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:362: error: 'PInvoice-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:369: error: 'PInvoice-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:386: error: 'Purch-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:469: error: 'Purch-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl050.cbl:470: error: 'PInvoice-Close' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 52,
+    "cognitive": 92,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 60,
+      "totalOperators": 225,
+      "totalOperands": 115,
+      "vocabulary": 72,
+      "length": 340,
+      "volume": 2098,
+      "difficulty": 11.5,
+      "effort": 24124,
+      "timeToProgram": 1340,
+      "deliveredBugs": 0.699
+    },
+    "maintainability": 70
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 352
+      },
+      {
+        "target": "SYSTEM",
+        "line": 490
+      },
+      {
+        "target": "maps04",
+        "line": 672
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 87
+      },
+      {
+        "name": "envdiv",
+        "line": 96
+      },
+      {
+        "name": "selpl",
+        "line": 104
+      },
+      {
+        "name": "selpinv",
+        "line": 105
+      },
+      {
+        "name": "selprint",
+        "line": 106
+      },
+      {
+        "name": "fdpl",
+        "line": 114
+      },
+      {
+        "name": "fdpinv",
+        "line": 115
+      },
+      {
+        "name": "fdprint",
+        "line": 116
+      },
+      {
+        "name": "print-spool-command",
+        "line": 120
+      },
+      {
+        "name": "wsmaps03",
+        "line": 121
+      },
+      {
+        "name": "wsfnctn",
+        "line": 122
+      },
+      {
+        "name": "wspl",
+        "line": 126
+      },
+      {
+        "name": "wsfdpinv",
+        "line": 127
+      },
+      {
+        "name": "wspinv",
+        "line": 179
+      },
+      {
+        "name": "plwspinv",
+        "line": 180
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 206
+      },
+      {
+        "name": "wscall",
+        "line": 322
+      },
+      {
+        "name": "wssystem",
+        "line": 323
+      },
+      {
+        "name": "wsnames",
+        "line": 324
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 677
+      }
+    ],
+    "performs": [
+      {
+        "target": "varying",
+        "line": 337
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "line": 342
+      },
+      {
+        "target": "Purch-Open-Input",
+        "line": 361
+      },
+      {
+        "target": "PInvoice-Open-Input",
+        "line": 362
+      },
+      {
+        "target": "headings",
+        "line": 366
+      },
+      {
+        "target": "PInvoice-Read-Next",
+        "line": 369
+      },
+      {
+        "target": "Purch-Read-Indexed",
+        "line": 386
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 397
+      },
+      {
+        "target": "headings",
+        "line": 456
+      },
+      {
+        "target": "analysis-print",
+        "line": 463
+      },
+      {
+        "target": "extra-analysis",
+        "line": 464
+      },
+      {
+        "target": "Purch-Close",
+        "line": 469
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 470
+      },
+      {
+        "target": "main12",
+        "line": 472
+      },
+      {
+        "target": "total-report",
+        "line": 477
+      },
+      {
+        "target": "compute-vatcodes",
+        "line": 487
+      },
+      {
+        "target": "PInvoice-Read-Next",
+        "line": 524
+      },
+      {
+        "target": "headings",
+        "line": 552
+      },
+      {
+        "target": "headings",
+        "line": 561
+      },
+      {
+        "target": "maps04",
+        "line": 613
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 117
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

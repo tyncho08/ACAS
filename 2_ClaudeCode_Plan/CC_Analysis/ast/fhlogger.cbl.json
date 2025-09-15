@@ -1,0 +1,135 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl",
+  "fileName": "fhlogger.cbl",
+  "fileHash": "85da026c7aa80c7a875064005cb9a5156ace6340a78d0024fa04ef3d32c45dec",
+  "timestamp": "2025-09-15T19:46:02.656Z",
+  "parseTime": 36,
+  "lines": {
+    "total": 258,
+    "code": 116,
+    "comment": 140,
+    "blank": 2
+  },
+  "programId": "fhlogger",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:107: error: envdiv.cob: No such file or directory\n  105 | *>\n  106 |  environment division.\n  107 >  copy \"envdiv.cob\".\n  108 | *>\n  109 |  input-output section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:181: error: wsfnctn.cob: No such file or directory\n  179 |  Linkage Section.\n  180 | *>**************\n  181 >  copy \"wsfnctn.cob\".\n  182 | *>\n  183 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:183: error: Test-Data-Flags.cob: No such file or directory\n  181 |  copy \"wsfnctn.cob\".\n  182 | *>\n  183 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  184 | *>\n  185 |  Procedure Division Using File-Access\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:185: error: 'File-Access' is not defined\n  183 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  184 | *>\n  185 >  Procedure Division Using File-Access\n  186 |                           ACAS-DAL-Common-data.\n  187 | *>********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:186: error: 'ACAS-DAL-Common-data' is not defined\n  184 | *>\n  185 |  Procedure Division Using File-Access\n  186 >                           ACAS-DAL-Common-data.\n  187 | *>********************************************\n  188 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl: in section 'Ca-Process-Logs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl: in paragraph 'Ca010-Create-Log-Rec':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:196: error: 'File-Function' is not defined\n  194 | *>  First test if FF and AT zero = close log file as requested by caller.\n  195 | *>\n  196 >      if       File-Function = zero\n  197 |         and   Access-Type   = zero\n  198 |          and  LFOF-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:197: error: 'Access-Type' is not defined\n  195 | *>\n  196 |      if       File-Function = zero\n  197 >         and   Access-Type   = zero\n  198 |          and  LFOF-Open\n  199 |               move zero to Log-File-Open-Flag\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:223: error: 'FS-Reply' is not defined\n  221 |      move     CDT-Date      to Log-Date.\n  222 |      move     CDT-Time      to Log-Time.\n  223 >      move     FS-Reply      to Log-FS-Error.\n  224 |      move     WE-Error      to Log-WE-Error.\n  225 |      move     ws-Log-System to Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:224: error: 'WE-Error' is not defined\n  222 |      move     CDT-Time      to Log-Time.\n  223 |      move     FS-Reply      to Log-FS-Error.\n  224 >      move     WE-Error      to Log-WE-Error.\n  225 |      move     ws-Log-System to Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL..\n  226 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:225: error: 'ws-Log-System' is not defined\n  223 |      move     FS-Reply      to Log-FS-Error.\n  224 |      move     WE-Error      to Log-WE-Error.\n  225 >      move     ws-Log-System to Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL..\n  226 | *>\n  227 | *>   need to change next one if used in the DAL, e.g., move \"22\" ...\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:229: error: 'WS-Log-File-no' is not defined\n  227 | *>   need to change next one if used in the DAL, e.g., move \"22\" ...\n  228 | *>\n  229 >      move     WS-Log-File-no  to Log-File-no.     *> char 1 = 1 flat, 2 =..\n  230 |      move     File-Function   to Log-Function.\n  231 |      move     ws-No-Paragraph to Log-Para.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:231: error: 'ws-No-Paragraph' is not defined\n  229 |      move     WS-Log-File-no  to Log-File-no.     *> char 1 = 1 flat, 2 =..\n  230 |      move     File-Function   to Log-Function.\n  231 >      move     ws-No-Paragraph to Log-Para.\n  232 |      move     Access-Type     to Log-Access.\n  233 |      move     WS-File-Key     to Log-Key.         *> caller must move thi..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:233: error: 'WS-File-Key' is not defined\n  231 |      move     ws-No-Paragraph to Log-Para.\n  232 |      move     Access-Type     to Log-Access.\n  233 >      move     WS-File-Key     to Log-Key.         *> caller must move thi..\n  234 |      move     WS-Log-Where    to Log-Where.\n  235 |      move     SQL-Err         to Log-Errno.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:234: error: 'WS-Log-Where' is not defined\n  232 |      move     Access-Type     to Log-Access.\n  233 |      move     WS-File-Key     to Log-Key.         *> caller must move thi..\n  234 >      move     WS-Log-Where    to Log-Where.\n  235 |      move     SQL-Err         to Log-Errno.\n  236 |      move     SQL-Msg         to Log-Msg.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:235: error: 'SQL-Err' is not defined\n  233 |      move     WS-File-Key     to Log-Key.         *> caller must move thi..\n  234 |      move     WS-Log-Where    to Log-Where.\n  235 >      move     SQL-Err         to Log-Errno.\n  236 |      move     SQL-Msg         to Log-Msg.\n  237 |      move     SQL-State       to Log-SQL-State.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:236: error: 'SQL-Msg' is not defined\n  234 |      move     WS-Log-Where    to Log-Where.\n  235 |      move     SQL-Err         to Log-Errno.\n  236 >      move     SQL-Msg         to Log-Msg.\n  237 |      move     SQL-State       to Log-SQL-State.\n  238 |      write    Log-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:237: error: 'SQL-State' is not defined\n  235 |      move     SQL-Err         to Log-Errno.\n  236 |      move     SQL-Msg         to Log-Msg.\n  237 >      move     SQL-State       to Log-SQL-State.\n  238 |      write    Log-Record.\n  239 |      if       FX-Reply not = zero         *> Poss. problems with open EXT..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:243: error: 'Accept-Reply' is not defined\n  241 |               display  FX-Reply at 2335\n  242 |               display  FH901    at 2401 with erase eol\n  243 >               accept   Accept-Reply at 2433\n  244 |               display  \" \"      at 2301 with erase eol\n  245 |               display  \" \"      at 2401 with erase eol\n/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:250: error: 'Log-File-Rec-Written' is not defined\n  248 |               go to    ca999-Exit.\n  249 | *>\n  250 >      add      1 to Log-File-Rec-Written.\n  251 | *>\n  252 |  ca999-Exit.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:107: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:181: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:183: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:185: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:186: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:196: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:197: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:223: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:224: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:225: error: 'ws-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:229: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:231: error: 'ws-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:233: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:234: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:235: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:236: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:237: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:243: error: 'Accept-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:250: error: 'Log-File-Rec-Written' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:107: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:181: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:183: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:185: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:186: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:196: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:197: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:223: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:224: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:225: error: 'ws-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:229: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:231: error: 'ws-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:233: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:234: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:235: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:236: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:237: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:243: error: 'Accept-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl:250: error: 'Log-File-Rec-Written' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 9,
+    "cognitive": 20,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 63,
+      "totalOperators": 52,
+      "totalOperands": 112,
+      "vocabulary": 71,
+      "length": 164,
+      "volume": 1009,
+      "difficulty": 7.11,
+      "effort": 7172,
+      "timeToProgram": 398,
+      "deliveredBugs": 0.336
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 100
+      },
+      {
+        "name": "envdiv",
+        "line": 107
+      },
+      {
+        "name": "wsfnctn",
+        "line": 181
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 183
+      }
+    ],
+    "performs": []
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Log-File",
+        "line": 125
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 155
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

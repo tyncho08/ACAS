@@ -1,0 +1,394 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl",
+  "fileName": "stockMT.cbl",
+  "fileHash": "0417596e9b8b74c99fc631c3a3877e7d8fd0471c1893f808eecc8421fa1bcfa2",
+  "timestamp": "2025-09-15T19:46:08.666Z",
+  "parseTime": 100,
+  "lines": {
+    "total": 3380,
+    "code": 2760,
+    "comment": 614,
+    "blank": 6
+  },
+  "programId": "stockMT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:161: error: ACAS-SQLstate-error-list.cob: No such file or directory\n  159 | *>                                     * = FS-Reply = 99.\n  160 | *>\n  161 >  copy \"ACAS-SQLstate-error-list.cob\".\n  162 | *>\n  163 | *>       During testing a log file will be created containing datetime st..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:298: error: mysql-variables.cpy: No such file or directory\n  296 | *>       ACASDB\n  297 | *>       TABLE=STOCK-REC,HV\n  298 >  COPY \"mysql-variables.cpy\".\n  299 | *>\n  300 | *>    Definitions for the STOCK-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:389: error: wsfnctn.cob: No such file or directory\n  387 | *>\n  388 | *>**********************************************************************\n  389 >  copy \"wsfnctn.cob\".                         *> File-Access\n  390 | *>\n  391 | *>**********************************************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:393: error: Test-Data-Flags.cob: No such file or directory\n  391 | *>**********************************************************************\n  392 | *>\n  393 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  394 | *>\n  395 | *>  Record definition for Cobol file here:\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:1237: error: mysql-procedures.cpy: No such file or directory\n 1235 | *>\n 1236 | *> /MYSQL PRO\\\n 1237 >  COPY \"mysql-procedures.cpy\".\n 1238 | *> /MYSQL-END\\\n 1239 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:495: error: 'Ws-Mysql-Error-Number' is not defined\n  493 |  01  Display-Message-2       foreground-color 2.\n  494 |      03      value \"SM004 SQL Err No.=\"            line 4 col  1.    *> s..\n  495 >      03  using Ws-Mysql-Error-Number   pic x(4)           col 19.    *>..\n  496 |      03      value \" Para=\"                               col 23.    *> s..\n  497 |      03  using WS-No-Paragraph         pic 9(3)           col 29.    *>..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:497: error: 'WS-No-Paragraph' is not defined\n  495 |      03  using Ws-Mysql-Error-Number   pic x(4)           col 19.    *>..\n  496 |      03      value \" Para=\"                               col 23.    *> s..\n  497 >      03  using WS-No-Paragraph         pic 9(3)           col 29.    *>..\n  498 |      03      value \" SQL Cmd=\"                            col 32.    *>..\n  499 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:499: error: 'Ws-Mysql-Command' is not defined\n  497 |      03  using WS-No-Paragraph         pic 9(3)           col 29.    *>..\n  498 |      03      value \" SQL Cmd=\"                            col 32.    *>..\n  499 >      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  500 |      03      value \"SQL Err Msg=\"                  line 7 col  1.    *>..\n  501 |      03  using Ws-Mysql-Error-Message  pic x(67)          col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:501: error: 'Ws-Mysql-Error-Message' is not defined\n  499 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  500 |      03      value \"SQL Err Msg=\"                  line 7 col  1.    *>..\n  501 >      03  using Ws-Mysql-Error-Message  pic x(67)          col 13.\n  502 | *>\n  503 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:504: error: 'File-Access' is not defined\n  502 | *>\n  503 | *>\n  504 >  PROCEDURE DIVISION   using File-Access\n  505 |                             ACAS-DAL-Common-data\n  506 |                             Stock-Rec.   *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:505: error: 'ACAS-DAL-Common-data' is not defined\n  503 | *>\n  504 |  PROCEDURE DIVISION   using File-Access\n  505 >                             ACAS-DAL-Common-data\n  506 |                             Stock-Rec.   *>  Ws record\n  507 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:526: error: 'WS-Log-Where' is not defined\n  524 |      move     spaces to WS-MYSQL-Error-Message\n  525 |                         WS-MYSQL-Error-Number\n  526 >                         WS-Log-Where\n  527 |                         WS-File-Key\n  528 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:527: error: 'WS-File-Key' is not defined\n  525 |                         WS-MYSQL-Error-Number\n  526 |                         WS-Log-Where\n  527 >                         WS-File-Key\n  528 |                         SQL-Msg\n  529 |                         SQL-Err\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:528: error: 'SQL-Msg' is not defined\n  526 |                         WS-Log-Where\n  527 |                         WS-File-Key\n  528 >                         SQL-Msg\n  529 |                         SQL-Err\n  530 |                         SQL-State.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:529: error: 'SQL-Err' is not defined\n  527 |                         WS-File-Key\n  528 |                         SQL-Msg\n  529 >                         SQL-Err\n  530 |                         SQL-State.\n  531 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:530: error: 'SQL-State' is not defined\n  528 |                         SQL-Msg\n  529 |                         SQL-Err\n  530 >                         SQL-State.\n  531 | *>\n  532 | *>   Now Test for valid key for start, read-indexed and delete\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:534: error: 'File-Function' is not defined\n  532 | *>   Now Test for valid key for start, read-indexed and delete\n  533 | *>\n  534 >      evaluate File-Function\n  535 |               when  4   *> fn-read-indexed\n  536 |               when  9   *> fn-start\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:537: error: 'File-Key-No' is not defined\n  535 |               when  4   *> fn-read-indexed\n  536 |               when  9   *> fn-start\n  537 >                 if     File-Key-No < 1 or > 4     *> chg 29/01/25\n  538 |                        move 998 to WE-Error       *> file seeks key type..\n  539 |                        move 99 to fs-reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:538: error: 'WE-Error' is not defined\n  536 |               when  9   *> fn-start\n  537 |                 if     File-Key-No < 1 or > 4     *> chg 29/01/25\n  538 >                        move 998 to WE-Error       *> file seeks key type..\n  539 |                        move 99 to fs-reply\n  540 |                        go   to ba999-end\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:539: error: 'fs-reply' is not defined\n  537 |                 if     File-Key-No < 1 or > 4     *> chg 29/01/25\n  538 |                        move 998 to WE-Error       *> file seeks key type..\n  539 >                        move 99 to fs-reply\n  540 |                        go   to ba999-end\n  541 |                 end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:581: error: 'DB-Schema' is not defined\n  579 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  580 |  *>\n  581 >      string   DB-Schema      delimited by space\n  582 |               X\"00\"          delimited by size\n  583 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:583: error: 'WS-MYSQL-BASE-NAME' is not defined\n  581 |      string   DB-Schema      delimited by space\n  582 |               X\"00\"          delimited by size\n  583 >                                into WS-MYSQL-BASE-NAME\n  584 |      end-string.\n  585 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:585: error: 'DB-Host' is not defined\n  583 |                                into WS-MYSQL-BASE-NAME\n  584 |      end-string.\n  585 >      string   DB-Host        delimited by space\n  586 |               X\"00\"          delimited by size\n  587 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:587: error: 'WS-MYSQL-HOST-NAME' is not defined\n  585 |      string   DB-Host        delimited by space\n  586 |               X\"00\"          delimited by size\n  587 >                                into WS-MYSQL-HOST-NAME\n  588 |      end-string.\n  589 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:589: error: 'DB-UName' is not defined\n  587 |                                into WS-MYSQL-HOST-NAME\n  588 |      end-string.\n  589 >      string   DB-UName       delimited by space\n  590 |               X\"00\"          delimited by size\n  591 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:591: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  589 |      string   DB-UName       delimited by space\n  590 |               X\"00\"          delimited by size\n  591 >                                into WS-MYSQL-IMPLEMENTATION\n  592 |      end-string.\n  593 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:593: error: 'DB-UPass' is not defined\n  591 |                                into WS-MYSQL-IMPLEMENTATION\n  592 |      end-string.\n  593 >      string   DB-UPass       delimited by space\n  594 |               X\"00\"          delimited by size\n  595 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:595: error: 'WS-MYSQL-PASSWORD' is not defined\n  593 |      string   DB-UPass       delimited by space\n  594 |               X\"00\"          delimited by size\n  595 >                                into WS-MYSQL-PASSWORD\n  596 |      end-string.\n  597 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:597: error: 'DB-Port' is not defined\n  595 |                                into WS-MYSQL-PASSWORD\n  596 |      end-string.\n  597 >      string   DB-Port        delimited by space\n  598 |               X\"00\"          delimited by size\n  599 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:599: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  597 |      string   DB-Port        delimited by space\n  598 |               X\"00\"          delimited by size\n  599 >                                into WS-MYSQL-PORT-NUMBER\n  600 |      end-string.\n  601 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:601: error: 'DB-Socket' is not defined\n  599 |                                into WS-MYSQL-PORT-NUMBER\n  600 |      end-string.\n  601 >      string   DB-Socket      delimited by space\n  602 |               X\"00\"          delimited by size\n  603 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:603: error: 'WS-MYSQL-SOCKET' is not defined\n  601 |      string   DB-Socket      delimited by space\n  602 |               X\"00\"          delimited by size\n  603 >                                into WS-MYSQL-SOCKET\n  604 |      end-string.\n  605 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:678: error: 'WS-MYSQL-RESULT' is not defined\n  676 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  677 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  678 >            MOVE WS-MYSQL-RESULT TO TP-STOCK-REC\n  679 | *>               /MYSQL-END\\\n  680 |               move     \"0000000000000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:681: error: 'Testing-2' is not defined\n  679 | *>               /MYSQL-END\\\n  680 |               move     \"0000000000000\" to WS-File-Key\n  681 >               if    Testing-2\n  682 |                     display Display-Message-1 with erase eos\n  683 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:687: error: 'WS-MYSQL-Count-Rows' is not defined\n  685 | *>  It could be an empty table so test for it\n  686 | *>\n  687 >               if       WS-MYSQL-Count-Rows = zero\n  688 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  689 |                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:689: error: 'WS-MYSQL-SQLstate' is not defined\n  687 |               if       WS-MYSQL-Count-Rows = zero\n  688 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  689 >                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n  690 |                        move  WS-MYSQL-SqlState   to SQL-State\n  691 |                        if    WS-MYSQL-Error-Number  not = \"0  \"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl: in paragraph 'ba060-Process-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:1007: error: 'access-type' is not defined\n 1005 | *>  Check for Param error 1st on start\n 1006 | *>\n 1007 >      if       access-type < 5 or > 8                   *> not using not <..\n 1008 |               move 99 to FS-Reply\n 1009 |               move 997 to WE-Error                     *> Invalid calling..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl: in paragraph 'ba999-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:1255: error: 'Testing-1' is not defined\n 1253 | *>  Any Clean ups before quiting    move data record ?????  do so at the..\n 1254 | *>\n 1255 >      if       Testing-1\n 1256 |               perform Ca-Process-Logs\n 1257 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:606: error: 'MYSQL-1000-OPEN' is not defined\n  604 |      end-string.\n  605 |      move     1 to ws-No-Paragraph.\n  606 >      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  607 |      if       fs-reply not = zero\n  608 |               go   to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:606: error: 'MYSQL-1090-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl: in paragraph 'ba030-Process-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:630: error: 'MYSQL-1980-CLOSE' is not defined\n  628 | *>    Close the Database\n  629 | *>\n  630 >            PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n  631 | *>  /MYSQL-END\\\n  632 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:630: error: 'MYSQL-1999-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:676: error: 'MYSQL-1210-COMMAND' is not defined\n  674 |              ws-Where (1:J)      *> STOCK-KEY > \"0000000000000\" ORDER BY..\n  675 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  676 >            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  677 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  678 |            MOVE WS-MYSQL-RESULT TO TP-STOCK-REC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:676: error: 'MYSQL-1219-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:677: error: 'MYSQL-1220-STORE-RESULT' is not defined\n  675 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  676 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  677 >            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  678 |            MOVE WS-MYSQL-RESULT TO TP-STOCK-REC\n  679 | *>               /MYSQL-END\\\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:677: error: 'MYSQL-1239-EXIT' is not defined\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:161: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:298: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:389: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:393: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:1237: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:495: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:497: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:499: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:501: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:504: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:505: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:526: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:527: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:528: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:529: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:530: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:534: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:537: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:538: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:539: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:581: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:583: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:585: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:587: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:589: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:591: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:593: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:595: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:597: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:599: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:601: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:603: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:678: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:681: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:687: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:689: error: 'WS-MYSQL-SQLstate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:1007: error: 'access-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:1255: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:606: error: 'MYSQL-1000-OPEN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:606: error: 'MYSQL-1090-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:630: error: 'MYSQL-1980-CLOSE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:630: error: 'MYSQL-1999-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:676: error: 'MYSQL-1210-COMMAND' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:676: error: 'MYSQL-1219-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:677: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:677: error: 'MYSQL-1239-EXIT' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:161: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:298: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:389: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:393: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:1237: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:495: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:497: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:499: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:501: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:504: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:505: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:526: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:527: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:528: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:529: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:530: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:534: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:537: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:538: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:539: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:581: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:583: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:585: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:587: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:589: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:591: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:593: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:595: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:597: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:599: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:601: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:603: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:678: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:681: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:687: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:689: error: 'WS-MYSQL-SQLstate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:1007: error: 'access-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:1255: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:606: error: 'MYSQL-1000-OPEN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:606: error: 'MYSQL-1090-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:630: error: 'MYSQL-1980-CLOSE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:630: error: 'MYSQL-1999-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:676: error: 'MYSQL-1210-COMMAND' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:676: error: 'MYSQL-1219-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:677: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockMT.cbl:677: error: 'MYSQL-1239-EXIT' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 110,
+    "cognitive": 211,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 314,
+      "totalOperators": 642,
+      "totalOperands": 6297,
+      "vocabulary": 326,
+      "length": 6939,
+      "volume": 57932,
+      "difficulty": 120.32,
+      "effort": 6970638,
+      "timeToProgram": 387258,
+      "deliveredBugs": 19.311
+    },
+    "maintainability": 52
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 688
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 689
+      },
+      {
+        "target": "MySQL_error",
+        "line": 693
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 721
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 813
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 814
+      },
+      {
+        "target": "MySQL_error",
+        "line": 817
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 893
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 978
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 979
+      },
+      {
+        "target": "MySQL_error",
+        "line": 984
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1084
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1085
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1088
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1109
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1110
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1113
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1167
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1168
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1171
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1211
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1212
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1215
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1248
+      },
+      {
+        "target": "fhlogger",
+        "line": 3374
+      }
+    ],
+    "copies": [
+      {
+        "name": "*>",
+        "line": 148
+      },
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 161
+      },
+      {
+        "name": "of",
+        "line": 196
+      },
+      {
+        "name": "envdiv",
+        "line": 203
+      },
+      {
+        "name": "mysql-variables",
+        "line": 298
+      },
+      {
+        "name": "wsfnctn",
+        "line": 389
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 393
+      },
+      {
+        "name": "Book",
+        "line": 396
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1237
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 579
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 606
+      },
+      {
+        "target": "ba998-Free",
+        "line": 622
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 630
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 676
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 677
+      },
+      {
+        "target": "ba999-End",
+        "line": 708
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 835
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 876
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 877
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 998
+      },
+      {
+        "target": "ba998-Free",
+        "line": 1016
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1074
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 1075
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 1102
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 1107
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1164
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 1186
+      },
+      {
+        "target": "bb300-Update",
+        "line": 1204
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 1256
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2402
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 3364
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 207
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

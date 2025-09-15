@@ -1,0 +1,223 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl",
+  "fileName": "stockRES.cbl",
+  "fileHash": "e310b0c0cf2034e13297eb481d881df188f385f5bb5d174b912251d1baf96bf7",
+  "timestamp": "2025-09-15T19:46:08.792Z",
+  "parseTime": 31,
+  "lines": {
+    "total": 235,
+    "code": 113,
+    "comment": 119,
+    "blank": 3
+  },
+  "programId": "stockRES",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:93: error: envdiv.cob: No such file or directory\n   91 | *>-------------------\n   92 | *>\n   93 >  copy \"envdiv.cob\".\n   94 |  input-output            section.\n   95 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:100: error: selstock.cob: No such file or directory\n   98 | *>-----------\n   99 | *>\n  100 >  copy \"selstock.cob\".\n  101 |      select  Stock-File-Seq     assign       \"stockctl.seq\"\n  102 |                                 organization  sequential\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:111: error: fdstock.cob: No such file or directory\n  109 | *>-----------\n  110 | *>\n  111 >  copy \"fdstock.cob\".\n  112 |  fd  Stock-File-Seq.\n  113 |  copy \"wsstock.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:113: error: wsstock.cob: No such file or directory\n  111 |  copy \"fdstock.cob\".\n  112 |  fd  Stock-File-Seq.\n  113 >  copy \"wsstock.cob\".\n  114 | *>\n  115 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory\n  134 |  01  SO-Print            pic x(160)    value spaces.\n  135 | *>\n  136 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  137 | *>\n  138 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:138: error: wsfnctn.cob: No such file or directory\n  136 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  137 | *>\n  138 >  copy \"wsfnctn.cob\".\n  139 |  copy \"wsnames.cob\".\n  140 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:139: error: wsnames.cob: No such file or directory\n  137 | *>\n  138 |  copy \"wsfnctn.cob\".\n  139 >  copy \"wsnames.cob\".\n  140 |  copy \"wscall.cob\".\n  141 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:140: error: wscall.cob: No such file or directory\n  138 |  copy \"wsfnctn.cob\".\n  139 |  copy \"wsnames.cob\".\n  140 >  copy \"wscall.cob\".\n  141 | *>\n  142 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:230: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  228 |      goback.\n  229 | *>\n  230 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_stockS now\n  231 | *>\n  232 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:115: error: RECORD description missing or invalid\n  113 |  copy \"wsstock.cob\".\n  114 | *>\n  115 >  working-storage section.\n  116 | *>----------------------\n  117 |  77  prog-name           pic x(24)    value \"stockRES (3.02.00)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:101: error: missing file description for FILE Stock-File-Seq\n   99 | *>\n  100 |  copy \"selstock.cob\".\n  101 >      select  Stock-File-Seq     assign       \"stockctl.seq\"\n  102 |                                 organization  sequential\n  103 |                                 status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:103: error: 'FS-Reply' is not defined\n  101 |      select  Stock-File-Seq     assign       \"stockctl.seq\"\n  102 |                                 organization  sequential\n  103 >                                 status        FS-Reply.\n  104 | *>\n  105 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:154: error: 'WS-Log-System' is not defined\n  152 |  aa000-Main-Start.\n  153 |      perform  zz020-Get-Program-Args.\n  154 >      move     5      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 |      move     12     to WS-Log-File-no.  *> for FHlogger\n  156 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:155: error: 'WS-Log-File-no' is not defined\n  153 |      perform  zz020-Get-Program-Args.\n  154 |      move     5      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 >      move     12     to WS-Log-File-no.  *> for FHlogger\n  156 | *>\n  157 |      move     spaces to SO-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:172: error: 'Stock-File' is not defined\n  170 |               perform  Call-Sysout\n  171 |               goback.\n  172 >      open     output   Stock-File.\n  173 |      if       FS-Reply not = zeros\n  174 |               move     spaces to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:172: error: 'Stock-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:180: error: 'File-11' is not defined\n  178 |               perform  Call-Sysout\n  179 | \n  180 >               move     File-11 to so-print\n  181 |               perform  Call-Sysout\n  182 | \n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:186: error: 'Stock-File' is not a file name\n  184 |               perform  Call-Sysout\n  185 |               close    Stock-File-Seq\n  186 >               close    Stock-File\n  187 |               goback.\n  188 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl: in paragraph 'aa010-Read-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:205: error: 'Stock-Record' is not defined\n  203 |               end-if\n  204 |               add      1 to WS-Rec-Cnt-In\n  205 >               write    Stock-Record from WS-Stock-record\n  206 |               if       FS-Reply not = zero\n  207 |                        move     SY006 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:205: error: 'WS-Stock-record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl: in paragraph 'aa020-Finish-Off':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:216: error: 'Stock-File' is not a file name\n  214 | aa020-Finish-Off.\n  215 |      close    Stock-File-Seq\n  216 >               Stock-File.\n  217 |      move     spaces to SO-Print.\n  218 |      string\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined\n  151 | *>\n  152 |  aa000-Main-Start.\n  153 >      perform  zz020-Get-Program-Args.\n  154 |      move     5      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 |      move     12     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:93: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:100: error: selstock.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:111: error: fdstock.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:113: error: wsstock.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:138: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:139: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:140: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:230: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:115: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:101: error: missing file description for FILE Stock-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:103: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:154: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:155: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:172: error: 'Stock-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:172: error: 'Stock-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:180: error: 'File-11' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:186: error: 'Stock-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:205: error: 'Stock-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:205: error: 'WS-Stock-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:216: error: 'Stock-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:93: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:100: error: selstock.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:111: error: fdstock.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:113: error: wsstock.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:138: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:139: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:140: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:230: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:115: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:101: error: missing file description for FILE Stock-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:103: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:154: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:155: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:172: error: 'Stock-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:172: error: 'Stock-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:180: error: 'File-11' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:186: error: 'Stock-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:205: error: 'Stock-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:205: error: 'WS-Stock-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:216: error: 'Stock-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/stockRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 9,
+    "cognitive": 19,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 56,
+      "totalOperators": 56,
+      "totalOperands": 106,
+      "vocabulary": 64,
+      "length": 162,
+      "volume": 972,
+      "difficulty": 7.57,
+      "effort": 7359,
+      "timeToProgram": 409,
+      "deliveredBugs": 0.324
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 233
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23
+      },
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 93
+      },
+      {
+        "name": "selstock",
+        "line": 100
+      },
+      {
+        "name": "fdstock",
+        "line": 111
+      },
+      {
+        "name": "wsstock",
+        "line": 113
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 136
+      },
+      {
+        "name": "wsfnctn",
+        "line": 138
+      },
+      {
+        "name": "wsnames",
+        "line": 139
+      },
+      {
+        "name": "wscall",
+        "line": 140
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 230
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 153
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 160
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 167
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 170
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 178
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 181
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 184
+      },
+      {
+        "target": "forever",
+        "line": 192
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 201
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 208
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 224
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 226
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Stock-File-Seq",
+        "line": 112
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 115
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

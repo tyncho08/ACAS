@@ -1,0 +1,431 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl",
+  "fileName": "sl190.cbl",
+  "fileHash": "f6f27e768e70afcccf380f488113ea63c52ae4c80eec315ab4715a61da90a1d1",
+  "timestamp": "2025-09-15T19:46:27.202Z",
+  "parseTime": 104,
+  "lines": {
+    "total": 909,
+    "code": 515,
+    "comment": 391,
+    "blank": 3
+  },
+  "programId": "sl190",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:153: error: slselois.cob: No such file or directory\n  151 | *> copy \"selsl.cob\".\n  152 | *> copy \"seloi3.cob\".\n  153 >  copy \"slselois.cob\".\n  154 | *>\n  155 |      select  letter-file-1     assign        file-21-a,\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:170: error: slfdois.cob: No such file or directory\n  168 | *> copy \"fdsl.cob\".\n  169 | *> copy \"fdoi3.cob\".\n  170 >  copy \"slfdois.cob\".\n  171 | *>\n  172 |  fd  letter-file-1.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:189: error: wsmaps03.cob: No such file or directory\n  187 | *>\n  188 |  77  Locale-Currency-Symbol pic x  value \"�\".  *> Change this for yours.\n  189 >  copy \"wsmaps03.cob\".\n  190 |  copy \"wsfnctn.cob\".\n  191 | *> copy \"wsoi.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:190: error: wsfnctn.cob: No such file or directory\n  188 |  77  Locale-Currency-Symbol pic x  value \"�\".  *> Change this for yours.\n  189 |  copy \"wsmaps03.cob\".\n  190 >  copy \"wsfnctn.cob\".\n  191 | *> copy \"wsoi.cob\".\n  192 |  copy \"slwsoi3.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:192: error: slwsoi3.cob: No such file or directory\n  190 |  copy \"wsfnctn.cob\".\n  191 | *> copy \"wsoi.cob\".\n  192 >  copy \"slwsoi3.cob\".\n  193 |  copy \"wssl.cob\".\n  194 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:193: error: wssl.cob: No such file or directory\n  191 | *> copy \"wsoi.cob\".\n  192 |  copy \"slwsoi3.cob\".\n  193 >  copy \"wssl.cob\".\n  194 | *>\n  195 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:229: error: Test-Data-Flags.cob: No such file or directory\n  227 |      05 filler           pic 9(2)  comp. *> Always 00\n  228 | *>\n  229 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  230 | *>\n  231 |  77  si-date              binary-long          value zero.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:339: error: wscall.cob: No such file or directory\n  337 | *>**************\n  338 | *>\n  339 >  copy \"wscall.cob\".\n  340 |  copy \"wssystem.cob\".\n  341 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:340: error: wssystem.cob: No such file or directory\n  338 | *>\n  339 |  copy \"wscall.cob\".\n  340 >  copy \"wssystem.cob\".\n  341 |  copy \"wsnames.cob\".\n  342 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:341: error: wsnames.cob: No such file or directory\n  339 |  copy \"wscall.cob\".\n  340 |  copy \"wssystem.cob\".\n  341 >  copy \"wsnames.cob\".\n  342 | *>\n  343 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:907: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  905 |      exit     section.\n  906 | *>\n  907 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  908 | *>\n  909 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:345: error: 'ws-calling-data' is not defined\n  343 |  01  to-day              pic x(10).\n  344 | *>\n  345 >  procedure division using ws-calling-data\n  346 |                           system-record\n  347 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:346: error: 'system-record' is not defined\n  344 | *>\n  345 |  procedure division using ws-calling-data\n  346 >                           system-record\n  347 |                           to-day\n  348 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:348: error: 'file-defs' is not defined\n  346 |                           system-record\n  347 |                           to-day\n  348 >                           file-defs.\n  349 | *>=======================================\n  350 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:352: error: 'FS-Cobol-Files-Used' is not defined\n  350 | *>\n  351 |  init01 section.\n  352 >      if       FS-Cobol-Files-Used\n  353 |               call  \"CBL_CHECK_FILE_EXIST\" using File-19    *> Open ITM3..\n  354 |                                                  File-Info\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:353: error: 'File-19' is not defined\n  351 |  init01 section.\n  352 |      if       FS-Cobol-Files-Used\n  353 >               call  \"CBL_CHECK_FILE_EXIST\" using File-19    *> Open ITM3..\n  354 |                                                  File-Info\n  355 |               if    return-code not = zero          *> not = zero - No fi..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in section 'Statements':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'date-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:412: error: 'u-bin' is not defined\n  410 |      move     ws-date to ws-test-date.\n  411 |      perform  zz050-Validate-Date.\n  412 >      if       u-bin  equal  zero\n  413 |               go to  date-input.\n  414 |      move     u-bin   to  pay-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'value-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:425: error: 'curs' is not defined\n  423 | *>**********\n  424 | *>\n  425 >      move     0750 to curs.\n  426 |      perform  accept-money.\n  427 |      move     amt-ok to pay-value.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'amounts-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:435: error: 'sl-days-1' is not defined\n  433 | *>\n  434 |      perform  zz100-Get-System-Record.   *> refresh rec 1\n  435 >      move     sl-days-1 to ws-days-1.\n  436 |      move     sl-days-2 to ws-days-2.\n  437 |      move     sl-days-3 to ws-days-3.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:436: error: 'sl-days-2' is not defined\n  434 |      perform  zz100-Get-System-Record.   *> refresh rec 1\n  435 |      move     sl-days-1 to ws-days-1.\n  436 >      move     sl-days-2 to ws-days-2.\n  437 |      move     sl-days-3 to ws-days-3.\n  438 |      display \"Low Date    - [  ]\" at 1820 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:437: error: 'sl-days-3' is not defined\n  435 |      move     sl-days-1 to ws-days-1.\n  436 |      move     sl-days-2 to ws-days-2.\n  437 >      move     sl-days-3 to ws-days-3.\n  438 |      display \"Low Date    - [  ]\" at 1820 with foreground-color 2.\n  439 |      display \"Medium Date - [  ]\" at 1920 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:457: error: 'open-item-file-s' is not defined\n  455 | *>\n  456 |      if       FS-Cobol-Files-Used\n  457 >               open     input  open-item-file-s\n  458 |               if       fs-reply not = zero\n  459 |                        close   open-item-file-s\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:457: error: 'open-item-file-s' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:458: error: 'fs-reply' is not defined\n  456 |      if       FS-Cobol-Files-Used\n  457 |               open     input  open-item-file-s\n  458 >               if       fs-reply not = zero\n  459 |                        close   open-item-file-s\n  460 |                        open output  open-item-file-s\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:459: error: 'open-item-file-s' is not a file name\n  457 |               open     input  open-item-file-s\n  458 |               if       fs-reply not = zero\n  459 >                        close   open-item-file-s\n  460 |                        open output  open-item-file-s\n  461 |                        close   open-item-file-s\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:460: error: 'open-item-file-s' is not a file name\n  458 |               if       fs-reply not = zero\n  459 |                        close   open-item-file-s\n  460 >                        open output  open-item-file-s\n  461 |                        close   open-item-file-s\n  462 |                        open     input  open-item-file-s\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:461: error: 'open-item-file-s' is not a file name\n  459 |                        close   open-item-file-s\n  460 |                        open output  open-item-file-s\n  461 >                        close   open-item-file-s\n  462 |                        open     input  open-item-file-s\n  463 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:462: error: 'open-item-file-s' is not a file name\n  460 |                        open output  open-item-file-s\n  461 |                        close   open-item-file-s\n  462 >                        open     input  open-item-file-s\n  463 |               end-if\n  464 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'read-sales':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:476: error: 'dunning-letters' is not defined\n  474 |               go to  main-end.\n  475 | *>\n  476 >      if       not dunning-letters\n  477 |               go to read-sales.\n  478 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:479: error: 'sales-unapplied' is not defined\n  477 |               go to read-sales.\n  478 | *>\n  479 >      subtract sales-unapplied from sales-current.\n  480 | *>\n  481 |      if       sales-current < 0.01   *> Do not process amount below this..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:479: error: 'sales-current' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:494: error: 'sales-address' is not defined\n  492 |                     go to  read-sales.\n  493 | *>\n  494 >      move     sales-address  to  address-A.\n  495 |      move     spaces to address-line.\n  496 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:498: error: 'sl-delim' is not defined\n  496 | *>\n  497 |      move     1  to  a.\n  498 >      unstring address-A  delimited  by  sl-delim into  address-line count..\n  499 |      move     address-line  to  lf-line1.\n  500 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'read-open-item':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:535: error: 'open-item-file-s' is not a file name\n  533 |                        go to Read-Loop-Tests\n  534 |               end-if\n  535 >               read  open-item-file-s  record at end\n  536 |                     perform  End-Statement\n  537 |                     close    open-item-file-s\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:537: error: 'open-item-file-s' is not a file name\n  535 |               read  open-item-file-s  record at end\n  536 |                     perform  End-Statement\n  537 >                     close    open-item-file-s\n  538 |                     go to    Main-End\n  539 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:541: error: 'open-item-record-s' is not defined\n  539 |      end-if\n  540 | *>\n  541 >      move     open-item-record-s  to  oi-header.\n  542 | *>\n  543 |  Read-Loop-Tests.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:541: error: 'oi-header' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'Read-Loop-Tests':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:544: error: 'oi-customer' is not defined\n  542 | *>\n  543 |  Read-Loop-Tests.\n  544 >      move     oi-customer  to  last-read.\n  545 | *>\n  546 |      if       last-read  >  WS-Sales-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:546: error: 'WS-Sales-Key' is not defined\n  544 |      move     oi-customer  to  last-read.\n  545 | *>\n  546 >      if       last-read  >  WS-Sales-Key\n  547 |               go to  end-statement.\n  548 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:555: error: 'oi-type' is not defined\n  553 | *> Here then o-i transaction is for this customer.\n  554 | *>\n  555 >      if       oi-type  not = 2                   *> not invoices / accoun..\n  556 |               move  spaces  to  last-read\n  557 |               go to  read-open-item.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:559: error: 's-closed' is not defined\n  557 |               go to  read-open-item.\n  558 | *>\n  559 >      if       s-closed\n  560 |               move spaces to last-read\n  561 |               go to read-open-item.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:563: error: 'oi-date' is not defined\n  561 |               go to read-open-item.\n  562 | *>\n  563 >      subtract oi-date  from  pay-date  giving  work-1.\n  564 | *>\n  565 |      if       work-1 >  store-work\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:605: error: 'open-item-file-s' is not a file name\n  603 | *>\n  604 |      if       FS-Cobol-Files-Used             *> Make it a null file\n  605 >               open  output open-item-file-s\n  606 |               close open-item-file-s\n  607 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:606: error: 'open-item-file-s' is not a file name\n  604 |      if       FS-Cobol-Files-Used             *> Make it a null file\n  605 |               open  output open-item-file-s\n  606 >               close open-item-file-s\n  607 |      end-if\n  608 |      perform  Sales-Close.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in section 'letter-out':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:647: error: 'sales-name' is not defined\n  645 |                     move  3  to  letter-nos.\n  646 | *>\n  647 >      move     sales-name  to  lf-name.\n  648 |      move     WS-Sales-Key  to  lf-account.\n  649 |      move     sales-current  to  lf-os.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in section 'zz050-Validate-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:730: error: 'Date-Form' is not defined\n  728 | *>\n  729 |      move     ws-test-date to ws-date.\n  730 >      if       Date-Form = zero\n  731 |               move 1 to Date-Form.\n  732 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:732: error: 'Date-UK' is not defined\n  730 |      if       Date-Form = zero\n  731 |               move 1 to Date-Form.\n  732 >      if       Date-UK\n  733 |               go to zz050-test-date.\n  734 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:734: error: 'Date-USA' is not defined\n  732 |      if       Date-UK\n  733 |               go to zz050-test-date.\n  734 >      if       Date-USA                *> swap month and days\n  735 |               move ws-days to ws-swap\n  736 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'zz050-test-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:748: error: 'u-date' is not defined\n  746 | *>\n  747 |  zz050-test-date.\n  748 >      move     ws-date to u-date.\n  749 |      move     zero to u-bin.\n  750 |      perform  maps04.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in section 'zz100-Get-System-Record':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'zz100-Open-System':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:844: error: 'File-System-Used' is not defined\n  842 | *>\n  843 |  zz100-Open-System.                *> First get system param cobol file\n  844 >      move     zeros to File-System-Used\n  845 |                        File-Duplicates-In-Use.\n  846 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:845: error: 'File-Duplicates-In-Use' is not defined\n  843 |  zz100-Open-System.                *> First get system param cobol file\n  844 |      move     zeros to File-System-Used\n  845 >                        File-Duplicates-In-Use.\n  846 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n  847 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:846: error: 'FA-RDBMS-Flat-Statuses' is not defined\n  844 |      move     zeros to File-System-Used\n  845 |                        File-Duplicates-In-Use.\n  846 >      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n  847 |      move     1 to File-Key-No.\n  848 |      perform  System-Open-Input.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:847: error: 'File-Key-No' is not defined\n  845 |                        File-Duplicates-In-Use.\n  846 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n  847 >      move     1 to File-Key-No.\n  848 |      perform  System-Open-Input.\n  849 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:851: error: 'ws-called' is not defined\n  849 |      if       fs-reply not = zero\n  850 |  *>             perform System-Close    *> SHOULDNT THIS BE USED ?\n  851 >               move    \"sys002\" to ws-called    *> create param file by re..\n  852 |               call    ws-called using ws-calling-data file-defs\n  853 |               perform  System-Open        *>  ditto\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in section 'maps04':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:902: error: 'maps03-ws' is not defined\n  900 | *>*******************\n  901 | *>\n  902 >      call     \"maps04\"  using  maps03-ws.\n  903 | *>\n  904 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in section 'Statements':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'amounts-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:465: error: 'OTM3-Open-Input' is not defined\n  463 |               end-if\n  464 |      else\n  465 >               perform  OTM3-Open-Input\n  466 |      end-if\n  467 |      perform  Sales-Open-Input.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:467: error: 'Sales-Open-Input' is not defined\n  465 |               perform  OTM3-Open-Input\n  466 |      end-if\n  467 >      perform  Sales-Open-Input.\n  468 | *>\n  469 |  read-sales.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'read-sales':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:472: error: 'Sales-Read-Next' is not defined\n  470 | *>*********\n  471 | *>\n  472 >      perform  Sales-Read-Next.           *> read sales-file next record a..\n  473 |      if       fs-reply = 10\n  474 |               go to  main-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'read-open-item':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:527: error: 'OTM3-Read-Next-Sorted-By-Cust' is not defined\n  525 |      if       last-read = spaces\n  526 |               if       NOT FS-Cobol-Files-Used\n  527 >                        perform OTM3-Read-Next-Sorted-By-Cust  *> not real..\n  528 |                        if      fs-reply not = zero     *> = 10   cust,dat..\n  529 |                                perform  End-Statement\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:530: error: 'OTM3-Close' is not defined\n  528 |                        if      fs-reply not = zero     *> = 10   cust,dat..\n  529 |                                perform  End-Statement\n  530 >                                perform OTM3-Close\n  531 |                                go to Main-End\n  532 |                        end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:608: error: 'Sales-Close' is not defined\n  606 |               close open-item-file-s\n  607 |      end-if\n  608 >      perform  Sales-Close.\n  609 | *>\n  610 |  main-exit.   exit section.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in section 'zz100-Get-System-Record':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'zz100-Open-System':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:848: error: 'System-Open-Input' is not defined\n  846 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n  847 |      move     1 to File-Key-No.\n  848 >      perform  System-Open-Input.\n  849 |      if       fs-reply not = zero\n  850 |  *>             perform System-Close    *> SHOULDNT THIS BE USED ?\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:853: error: 'System-Open' is not defined\n  851 |               move    \"sys002\" to ws-called    *> create param file by re..\n  852 |               call    ws-called using ws-calling-data file-defs\n  853 >               perform  System-Open        *>  ditto\n  854 |      end-if.\n  855 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in paragraph 'zz100-Get-Rec-1':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:861: error: 'System-Read-Indexed' is not defined\n  859 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n  860 |      move     1 to File-Key-No.\n  861 >      perform  System-Read-Indexed.        *> Read Cobol file params\n  862 |      if       fs-reply not = zero          *> should NOT happen as done i..\n  863 |               perform System-Close          *> open-system\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:863: error: 'System-Close' is not defined\n  861 |      perform  System-Read-Indexed.        *> Read Cobol file params\n  862 |      if       fs-reply not = zero          *> should NOT happen as done i..\n  863 >               perform System-Close          *> open-system\n  864 |               move    \"sys002\" to ws-called    *> create param file by re..\n  865 |               call    ws-called using ws-calling-data file-defs\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl: in section 'zz110-Update-System-Rec':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:881: error: 'System-Rewrite' is not defined\n  879 |               perform  System-Open\n  880 |               move     1 to File-Key-No\n  881 >               perform  System-Rewrite\n  882 |               perform  System-Close\n  883 |      end-if.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:153: error: slselois.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:170: error: slfdois.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:189: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:190: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:192: error: slwsoi3.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:193: error: wssl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:229: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:339: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:340: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:341: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:907: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:345: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:346: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:348: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:352: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:353: error: 'File-19' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:412: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:425: error: 'curs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:435: error: 'sl-days-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:436: error: 'sl-days-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:437: error: 'sl-days-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:457: error: 'open-item-file-s' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:457: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:458: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:459: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:460: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:461: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:462: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:476: error: 'dunning-letters' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:479: error: 'sales-unapplied' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:479: error: 'sales-current' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:494: error: 'sales-address' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:498: error: 'sl-delim' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:535: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:537: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:541: error: 'open-item-record-s' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:541: error: 'oi-header' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:544: error: 'oi-customer' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:546: error: 'WS-Sales-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:555: error: 'oi-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:559: error: 's-closed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:563: error: 'oi-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:605: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:606: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:647: error: 'sales-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:730: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:732: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:734: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:748: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:844: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:845: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:846: error: 'FA-RDBMS-Flat-Statuses' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:847: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:851: error: 'ws-called' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:902: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:465: error: 'OTM3-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:467: error: 'Sales-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:472: error: 'Sales-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:527: error: 'OTM3-Read-Next-Sorted-By-Cust' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:530: error: 'OTM3-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:608: error: 'Sales-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:848: error: 'System-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:853: error: 'System-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:861: error: 'System-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:863: error: 'System-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:881: error: 'System-Rewrite' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:153: error: slselois.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:170: error: slfdois.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:189: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:190: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:192: error: slwsoi3.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:193: error: wssl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:229: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:339: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:340: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:341: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:907: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:345: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:346: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:348: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:352: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:353: error: 'File-19' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:412: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:425: error: 'curs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:435: error: 'sl-days-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:436: error: 'sl-days-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:437: error: 'sl-days-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:457: error: 'open-item-file-s' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:457: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:458: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:459: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:460: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:461: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:462: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:476: error: 'dunning-letters' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:479: error: 'sales-unapplied' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:479: error: 'sales-current' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:494: error: 'sales-address' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:498: error: 'sl-delim' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:535: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:537: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:541: error: 'open-item-record-s' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:541: error: 'oi-header' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:544: error: 'oi-customer' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:546: error: 'WS-Sales-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:555: error: 'oi-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:559: error: 's-closed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:563: error: 'oi-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:605: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:606: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:647: error: 'sales-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:730: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:732: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:734: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:748: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:844: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:845: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:846: error: 'FA-RDBMS-Flat-Statuses' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:847: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:851: error: 'ws-called' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:902: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:465: error: 'OTM3-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:467: error: 'Sales-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:472: error: 'Sales-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:527: error: 'OTM3-Read-Next-Sorted-By-Cust' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:530: error: 'OTM3-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:608: error: 'Sales-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:848: error: 'System-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:853: error: 'System-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:861: error: 'System-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:863: error: 'System-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl190.cbl:881: error: 'System-Rewrite' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 77,
+    "cognitive": 181,
+    "halstead": {
+      "uniqueOperators": 11,
+      "uniqueOperands": 101,
+      "totalOperators": 276,
+      "totalOperands": 226,
+      "vocabulary": 112,
+      "length": 502,
+      "volume": 3417,
+      "difficulty": 12.31,
+      "effort": 42056,
+      "timeToProgram": 2336,
+      "deliveredBugs": 1.139
+    },
+    "maintainability": 65
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 353
+      },
+      {
+        "target": "maps04",
+        "line": 902
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 122
+      },
+      {
+        "name": "envdiv",
+        "line": 132
+      },
+      {
+        "name": "selsl",
+        "line": 151
+      },
+      {
+        "name": "seloi3",
+        "line": 152
+      },
+      {
+        "name": "slselois",
+        "line": 153
+      },
+      {
+        "name": "fdsl",
+        "line": 168
+      },
+      {
+        "name": "fdoi3",
+        "line": 169
+      },
+      {
+        "name": "slfdois",
+        "line": 170
+      },
+      {
+        "name": "wsmaps03",
+        "line": 189
+      },
+      {
+        "name": "wsfnctn",
+        "line": 190
+      },
+      {
+        "name": "wsoi",
+        "line": 191
+      },
+      {
+        "name": "slwsoi3",
+        "line": 192
+      },
+      {
+        "name": "wssl",
+        "line": 193
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 229
+      },
+      {
+        "name": "screenio",
+        "line": 321
+      },
+      {
+        "name": "wscall",
+        "line": 339
+      },
+      {
+        "name": "wssystem",
+        "line": 340
+      },
+      {
+        "name": "wsnames",
+        "line": 341
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 907
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 364
+      },
+      {
+        "target": "Statements",
+        "line": 368
+      },
+      {
+        "target": "zz050-Validate-Date",
+        "line": 411
+      },
+      {
+        "target": "accept-money",
+        "line": 426
+      },
+      {
+        "target": "zz100-Get-System-Record",
+        "line": 434
+      },
+      {
+        "target": "zz110-Update-System-Rec",
+        "line": 454
+      },
+      {
+        "target": "OTM3-Open-Input",
+        "line": 465
+      },
+      {
+        "target": "Sales-Open-Input",
+        "line": 467
+      },
+      {
+        "target": "Sales-Read-Next",
+        "line": 472
+      },
+      {
+        "target": "test-array",
+        "line": 490
+      },
+      {
+        "target": "OTM3-Read-Next-Sorted-By-Cust",
+        "line": 527
+      },
+      {
+        "target": "End-Statement",
+        "line": 529
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 530
+      },
+      {
+        "target": "End-Statement",
+        "line": 536
+      },
+      {
+        "target": "letter-out",
+        "line": 584
+      },
+      {
+        "target": "Sales-Close",
+        "line": 608
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 663
+      },
+      {
+        "target": "maps04",
+        "line": 750
+      },
+      {
+        "target": "maps04",
+        "line": 764
+      },
+      {
+        "target": "System-Open-Input",
+        "line": 848
+      },
+      {
+        "target": "System-Close",
+        "line": 850
+      },
+      {
+        "target": "System-Open",
+        "line": 853
+      },
+      {
+        "target": "System-Read-Indexed",
+        "line": 861
+      },
+      {
+        "target": "System-Close",
+        "line": 863
+      },
+      {
+        "target": "System-Open",
+        "line": 866
+      },
+      {
+        "target": "System-Open",
+        "line": 879
+      },
+      {
+        "target": "System-Rewrite",
+        "line": 881
+      },
+      {
+        "target": "System-Close",
+        "line": 882
+      },
+      {
+        "target": "System-Open",
+        "line": 891
+      },
+      {
+        "target": "System-Rewrite",
+        "line": 893
+      },
+      {
+        "target": "System-Close",
+        "line": 894
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "letter-file-1",
+        "line": 172
+      },
+      {
+        "name": "letter-file-2",
+        "line": 176
+      },
+      {
+        "name": "letter-file-3",
+        "line": 180
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 184
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

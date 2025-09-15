@@ -1,0 +1,105 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl",
+  "fileName": "maps09.cbl",
+  "fileHash": "e2cfa989546b7e1b0f0329716f57408ad9cdc2a09188d75c8453a9c90e9d53f5",
+  "timestamp": "2025-09-15T19:46:04.561Z",
+  "parseTime": 29,
+  "lines": {
+    "total": 146,
+    "code": 53,
+    "comment": 92,
+    "blank": 1
+  },
+  "programId": "maps09",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:67: error: envdiv.cob: No such file or directory\n   65 | *>===============================\n   66 | *>\n   67 >  copy  \"envdiv.cob\".\n   68 |  input-output            section.\n   69 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:90: error: wsmaps09.cob: No such file or directory\n   88 | *>--------------\n   89 | *>\n   90 >  copy  \"wsmaps09.cob\".\n   91 | *>\n   92 |  procedure division  using  maps09-ws.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:92: error: 'maps09-ws' is not defined\n   90 |  copy  \"wsmaps09.cob\".\n   91 | *>\n   92 >  procedure division  using  maps09-ws.\n   93 | *>===================================\n   94 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl: in paragraph 'main':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:98: error: 'customer-nos' is not defined\n   96 | *>---\n   97 | *>\n   98 >      move     customer-nos  to  work-array.\n   99 |      move     zero  to  suma.\n  100 |      perform  addition-loop through addition-end varying a from 1 by 1 un..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:103: error: 'maps09-reply' is not defined\n  101 | *>\n  102 |      if       suma = zero\n  103 >               move  \"N\"  to  maps09-reply\n  104 |               go to  main-exit.\n  105 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:110: error: 'check-digit' is not defined\n  108 | *>\n  109 |      if       maps09-reply = \"C\"\n  110 >               move   a   to  check-digit\n  111 |               move  \"Y\"  to  maps09-reply.\n  112 | *>\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:67: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:90: error: wsmaps09.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:92: error: 'maps09-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:98: error: 'customer-nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:103: error: 'maps09-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:110: error: 'check-digit' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:67: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:90: error: wsmaps09.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:92: error: 'maps09-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:98: error: 'customer-nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:103: error: 'maps09-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl:110: error: 'check-digit' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 10,
+    "cognitive": 26,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 28,
+      "totalOperators": 28,
+      "totalOperands": 38,
+      "vocabulary": 37,
+      "length": 66,
+      "volume": 344,
+      "difficulty": 6.11,
+      "effort": 2100,
+      "timeToProgram": 117,
+      "deliveredBugs": 0.115
+    },
+    "maintainability": 81
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 58
+      },
+      {
+        "name": "envdiv",
+        "line": 67
+      },
+      {
+        "name": "wsmaps09",
+        "line": 90
+      }
+    ],
+    "performs": [
+      {
+        "target": "addition-loop",
+        "line": 100
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 73
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

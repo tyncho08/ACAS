@@ -1,0 +1,147 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl",
+  "fileName": "pl800.cbl",
+  "fileHash": "f0cca23630d4e0c01415949bc7f7967f194075fc3dfbe5a5fd16a498a0a278c0",
+  "timestamp": "2025-09-15T19:46:23.364Z",
+  "parseTime": 38,
+  "lines": {
+    "total": 251,
+    "code": 105,
+    "comment": 145,
+    "blank": 1
+  },
+  "programId": "pl800",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:84: error: envdiv.cob: No such file or directory\n   82 | *>================================\n   83 | *>\n   84 >  copy \"envdiv.cob\".\n   85 | *>\n   86 |  data                    division.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:93: error: wsmaps03.cob: No such file or directory\n   91 |  77  prog-name               pic x(15) value \"PL800 (3.02.00)\".\n   92 | *>\n   93 >  copy \"wsmaps03.cob\".\n   94 |  copy \"wsfnctn.cob\".\n   95 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:94: error: wsfnctn.cob: No such file or directory\n   92 | *>\n   93 |  copy \"wsmaps03.cob\".\n   94 >  copy \"wsfnctn.cob\".\n   95 | *>\n   96 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:96: error: Test-Data-Flags.cob: No such file or directory\n   94 |  copy \"wsfnctn.cob\".\n   95 | *>\n   96 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n   97 | *>\n   98 |  01  ws-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:129: error: wscall.cob: No such file or directory\n  127 | *>***************\n  128 | *>\n  129 >  copy \"wscall.cob\".\n  130 |  copy \"wssystem.cob\".\n  131 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:130: error: wssystem.cob: No such file or directory\n  128 | *>\n  129 |  copy \"wscall.cob\".\n  130 >  copy \"wssystem.cob\".\n  131 |  copy \"wsnames.cob\".\n  132 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:131: error: wsnames.cob: No such file or directory\n  129 |  copy \"wscall.cob\".\n  130 |  copy \"wssystem.cob\".\n  131 >  copy \"wsnames.cob\".\n  132 | *>\n  133 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:135: error: 'ws-calling-data' is not defined\n  133 |  01  to-day              pic x(10).\n  134 | *>\n  135 >  procedure division using ws-calling-data\n  136 |                           system-record\n  137 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:136: error: 'system-record' is not defined\n  134 | *>\n  135 |  procedure division using ws-calling-data\n  136 >                           system-record\n  137 |                           to-day\n  138 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:138: error: 'file-defs' is not defined\n  136 |                           system-record\n  137 |                           to-day\n  138 >                           file-defs.\n  139 | *>=======================================\n  140 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl: in section 'Init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:151: error: 'ws-caller' is not defined\n  149 | *>\n  150 |      perform  zz070-Convert-Date.\n  151 >      move     ws-caller to ws-del-link.\n  152 |      move     ws-called to ws-caller.\n  153 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:151: error: 'ws-del-link' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:152: error: 'ws-called' is not defined\n  150 |      perform  zz070-Convert-Date.\n  151 |      move     ws-caller to ws-del-link.\n  152 >      move     ws-called to ws-caller.\n  153 | *>\n  154 |  Menu-Return.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl: in paragraph 'Menu-Exit':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:210: error: 'pass-value' is not defined\n  208 | *>\n  209 |  Menu-Exit.\n  210 >      move     zero        to  pass-value.\n  211 |      move     ws-caller   to ws-called.\n  212 |      move     ws-del-link to ws-caller.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl: in section 'zz070-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:231: error: 'Date-Form' is not defined\n  229 |      move     to-day to ws-date.\n  230 | *>\n  231 >      if       Date-Form = zero\n  232 |               move 1 to Date-Form.\n  233 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:233: error: 'Date-UK' is not defined\n  231 |      if       Date-Form = zero\n  232 |               move 1 to Date-Form.\n  233 >      if       Date-UK\n  234 |               go to zz070-Exit.\n  235 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:235: error: 'Date-USA' is not defined\n  233 |      if       Date-UK\n  234 |               go to zz070-Exit.\n  235 >      if       Date-USA                *> swap month and days\n  236 |               move ws-days to ws-swap\n  237 |               move ws-month to ws-days\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:84: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:93: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:94: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:96: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:129: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:130: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:131: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:135: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:136: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:138: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:151: error: 'ws-caller' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:151: error: 'ws-del-link' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:152: error: 'ws-called' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:210: error: 'pass-value' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:231: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:233: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:235: error: 'Date-USA' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:84: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:93: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:94: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:96: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:129: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:130: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:131: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:135: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:136: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:138: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:151: error: 'ws-caller' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:151: error: 'ws-del-link' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:152: error: 'ws-called' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:210: error: 'pass-value' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:231: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:233: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl:235: error: 'Date-USA' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 13,
+    "cognitive": 35,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 56,
+      "totalOperators": 57,
+      "totalOperands": 92,
+      "vocabulary": 64,
+      "length": 149,
+      "volume": 894,
+      "difficulty": 6.57,
+      "effort": 5875,
+      "timeToProgram": 326,
+      "deliveredBugs": 0.298
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 75
+      },
+      {
+        "name": "envdiv",
+        "line": 84
+      },
+      {
+        "name": "wsmaps03",
+        "line": 93
+      },
+      {
+        "name": "wsfnctn",
+        "line": 94
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 96
+      },
+      {
+        "name": "wscall",
+        "line": 129
+      },
+      {
+        "name": "wssystem",
+        "line": 130
+      },
+      {
+        "name": "wsnames",
+        "line": 131
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 150
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 89
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

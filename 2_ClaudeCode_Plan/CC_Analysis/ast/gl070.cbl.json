@@ -1,0 +1,395 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl",
+  "fileName": "gl070.cbl",
+  "fileHash": "2268581a0b0084820db63e537b80ea89559d1431ef65c70600df39b573799191",
+  "timestamp": "2025-09-15T19:46:18.451Z",
+  "parseTime": 78,
+  "lines": {
+    "total": 614,
+    "code": 356,
+    "comment": 257,
+    "blank": 1
+  },
+  "programId": "gl070",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:87: error: envdiv.cob: No such file or directory\n   85 | *>===============================\n   86 | *>\n   87 >  copy \"envdiv.cob\".\n   88 |  input-output            section.\n   89 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:126: error: wsmaps03.cob: No such file or directory\n  124 |  77  prog-name               pic x(15)  value \"gl070 (3.02.03)\".\n  125 | *>\n  126 >  copy \"wsmaps03.cob\".\n  127 |  copy \"wsfnctn.cob\".\n  128 |  copy \"wsbatch.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:127: error: wsfnctn.cob: No such file or directory\n  125 | *>\n  126 |  copy \"wsmaps03.cob\".\n  127 >  copy \"wsfnctn.cob\".\n  128 |  copy \"wsbatch.cob\".\n  129 |  copy \"wspost.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:128: error: wsbatch.cob: No such file or directory\n  126 |  copy \"wsmaps03.cob\".\n  127 |  copy \"wsfnctn.cob\".\n  128 >  copy \"wsbatch.cob\".\n  129 |  copy \"wspost.cob\".\n  130 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:129: error: wspost.cob: No such file or directory\n  127 |  copy \"wsfnctn.cob\".\n  128 |  copy \"wsbatch.cob\".\n  129 >  copy \"wspost.cob\".\n  130 | *>\n  131 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:155: error: Test-Data-Flags.cob: No such file or directory\n  153 |      03  WS-OTM5-Record         pic x.\n  154 | *>\n  155 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  156 | *>\n  157 |  01  work-fields.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:240: error: wscall.cob: No such file or directory\n  238 | *>**************\n  239 | *>\n  240 >  copy \"wscall.cob\".\n  241 |  copy \"wssystem.cob\".\n  242 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:241: error: wssystem.cob: No such file or directory\n  239 | *>\n  240 |  copy \"wscall.cob\".\n  241 >  copy \"wssystem.cob\".\n  242 |  copy \"wsnames.cob\".\n  243 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:242: error: wsnames.cob: No such file or directory\n  240 |  copy \"wscall.cob\".\n  241 |  copy \"wssystem.cob\".\n  242 >  copy \"wsnames.cob\".\n  243 | *>\n  244 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:612: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  610 |      exit     section.\n  611 | *>\n  612 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  613 | *>\n  614 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:96: error: 'fs-reply' is not defined\n   94 |      select  pre-trans  assign  pre-trans-name,\n   95 |                         access  sequential\n   96 >                         status  fs-reply\n   97 |                         organization  line sequential.\n   98 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:246: error: 'ws-calling-data' is not defined\n  244 |  01  to-day              pic x(10).\n  245 | *>\n  246 >  procedure division using ws-calling-data\n  247 |                           system-record\n  248 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:247: error: 'system-record' is not defined\n  245 | *>\n  246 |  procedure division using ws-calling-data\n  247 >                           system-record\n  248 |                           to-day\n  249 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:249: error: 'file-defs' is not defined\n  247 |                           system-record\n  248 |                           to-day\n  249 >                           file-defs.\n  250 | *>***************************************\n  251 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:273: error: 'File-Key-No' is not defined\n  271 |      perform  zz070-convert-date.\n  272 |      move     ws-date to l3-date.\n  273 >      move     1  to File-Key-No.\n  274 | *>\n  275 |  menu-input.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in paragraph 'menu-input2':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:290: error: 'ws-term-code' is not defined\n  288 |      if       a = 1\n  289 |               perform gl060a\n  290 >               move 5 to ws-term-code\n  291 |               go to  main-exit.\n  292 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in section 'gl071a':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:313: error: 'bcycle' is not defined\n  311 |               go to  end-run.\n  312 | *>\n  313 >      if       bcycle not = scycle\n  314 |               go to  loop.\n  315 |      if       status-open\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:313: error: 'scycle' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:315: error: 'status-open' is not defined\n  313 |      if       bcycle not = scycle\n  314 |               go to  loop.\n  315 >      if       status-open\n  316 |               move  1  to  a.\n  317 |      go       to loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in section 'gl060a':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:341: error: 'lin' is not defined\n  339 |      display  line-4 at 0501 with foreground-color 2.\n  340 |      display  line-5 at 0601 with foreground-color 2.\n  341 >      move     7  to   lin.\n  342 |      move     1 to cole.\n  343 |      perform  GL-Batch-Open-Input.           *> open     input  batch-fil..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:342: error: 'cole' is not defined\n  340 |      display  line-5 at 0601 with foreground-color 2.\n  341 |      move     7  to   lin.\n  342 >      move     1 to cole.\n  343 |      perform  GL-Batch-Open-Input.           *> open     input  batch-fil..\n  344 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:355: error: 'gl-batch' is not defined\n  353 |               go to  loop.\n  354 | *>\n  355 >      if       gl-batch\n  356 |               move  \" G/L\"  to  l6-ledger.\n  357 |      if       pl-batch\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:357: error: 'pl-batch' is not defined\n  355 |      if       gl-batch\n  356 |               move  \" G/L\"  to  l6-ledger.\n  357 >      if       pl-batch\n  358 |               move  \" P/L\"  to  l6-ledger.\n  359 |      if       sl-batch\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:359: error: 'sl-batch' is not defined\n  357 |      if       pl-batch\n  358 |               move  \" P/L\"  to  l6-ledger.\n  359 >      if       sl-batch\n  360 |               move  \" S/L\"  to  l6-ledger.\n  361 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:362: error: 'WS-Batch-Nos' is not defined\n  360 |               move  \" S/L\"  to  l6-ledger.\n  361 | *>\n  362 >      move     WS-Batch-Nos     to  l6-batch.\n  363 | *>\n  364 |      if       stored not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:364: error: 'stored' is not defined\n  362 |      move     WS-Batch-Nos     to  l6-batch.\n  363 | *>\n  364 >      if       stored not = zero\n  365 |               move  stored  to  u-bin\n  366 |               perform  zz060-Convert-Date\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:365: error: 'u-bin' is not defined\n  363 | *>\n  364 |      if       stored not = zero\n  365 >               move  stored  to  u-bin\n  366 |               perform  zz060-Convert-Date\n  367 |               go to next-1.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:369: error: 'posted' is not defined\n  367 |               go to next-1.\n  368 | *>\n  369 >      if       posted not = zero\n  370 |               move  posted  to  u-bin\n  371 |               perform  zz060-Convert-Date\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:374: error: 'proofed' is not defined\n  372 |               go to next-1.\n  373 | *>\n  374 >      if       proofed not = zero\n  375 |               move  proofed  to  u-bin\n  376 |               perform  zz060-Convert-Date\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:379: error: 'entered' is not defined\n  377 |               go to next-1.\n  378 | *>\n  379 >      if       entered not = zero\n  380 |               move  entered  to  u-bin\n  381 |               perform  zz060-Convert-Date.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in paragraph 'next-1':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:391: error: 'status-closed' is not defined\n  389 |               move  \"Open\"  to  l6-status.\n  390 | *>\n  391 >      if       status-closed\n  392 |        and    waiting\n  393 |               move  \"Waiting\"  to  l6-status.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:392: error: 'waiting' is not defined\n  390 | *>\n  391 |      if       status-closed\n  392 >        and    waiting\n  393 |               move  \"Waiting\"  to  l6-status.\n  394 |      if       status-closed\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:388: error: invalid conditional expression\n  386 |      move     ws-date  to  l6-date.\n  387 | *>\n  388 >      if       status-open\n  389 |               move  \"Open\"  to  l6-status.\n  390 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:395: error: 'processed' is not defined\n  393 |               move  \"Waiting\"  to  l6-status.\n  394 |      if       status-closed\n  395 >        and    processed\n  396 |               move  \"Processed\"  to  l6-status.\n  397 |      if       status-closed\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:396: error: invalid conditional expression\n  394 |      if       status-closed\n  395 |        and    processed\n  396 >               move  \"Processed\"  to  l6-status.\n  397 |      if       status-closed\n  398 |        and    archived\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:398: error: 'archived' is not defined\n  396 |               move  \"Processed\"  to  l6-status.\n  397 |      if       status-closed\n  398 >        and    archived\n  399 |               move  \"Archived\"  to  l6-status.\n  400 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:399: error: invalid conditional expression\n  397 |      if       status-closed\n  398 |        and    archived\n  399 >               move  \"Archived\"  to  l6-status.\n  400 | *>\n  401 |      move     items  to  l6-items l7-items.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:401: error: 'items' is not defined\n  399 |               move  \"Archived\"  to  l6-status.\n  400 | *>\n  401 >      move     items  to  l6-items l7-items.\n  402 |      move     input-gross  to  l6-gross.\n  403 |      move     input-vat    to  l6-vat.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:402: error: 'input-gross' is not defined\n  400 | *>\n  401 |      move     items  to  l6-items l7-items.\n  402 >      move     input-gross  to  l6-gross.\n  403 |      move     input-vat    to  l6-vat.\n  404 |      move     actual-gross  to  l7-gross.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:403: error: 'input-vat' is not defined\n  401 |      move     items  to  l6-items l7-items.\n  402 |      move     input-gross  to  l6-gross.\n  403 >      move     input-vat    to  l6-vat.\n  404 |      move     actual-gross  to  l7-gross.\n  405 |      move     actual-vat    to  l7-vat.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:404: error: 'actual-gross' is not defined\n  402 |      move     input-gross  to  l6-gross.\n  403 |      move     input-vat    to  l6-vat.\n  404 >      move     actual-gross  to  l7-gross.\n  405 |      move     actual-vat    to  l7-vat.\n  406 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:405: error: 'actual-vat' is not defined\n  403 |      move     input-vat    to  l6-vat.\n  404 |      move     actual-gross  to  l7-gross.\n  405 >      move     actual-vat    to  l7-vat.\n  406 | *>\n  407 |      add      0100 curs giving curs2.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:407: error: 'curs' is not defined\n  405 |      move     actual-vat    to  l7-vat.\n  406 | *>\n  407 >      add      0100 curs giving curs2.\n  408 | *>\n  409 |      display  line-6 at curs2 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:407: error: 'curs2' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:410: error: 'lin2' is not defined\n  408 | *>\n  409 |      display  line-6 at curs2 with foreground-color 2.\n  410 >      add      1 to lin2.\n  411 |      display  line-7 at curs2 with foreground-color 2.\n  412 |      add      3  to  lin.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in section 'gl071b':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:458: error: invalid conditional expression\n  456 |               go to  end-run.\n  457 | *>\n  458 >      if       bcycle not = scycle\n  459 |               go to  loop.\n  460 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in section 'gl071b-pre-process':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:491: error: 'WS-Post-Key' is not defined\n  489 |               go to  main-exit.\n  490 | *>\n  491 >      if       WS-Post-Key = zero\n  492 |               go to  loop.\n  493 |      if       batch  not = WS-Batch-Nos\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:493: error: 'batch' is not defined\n  491 |      if       WS-Post-Key = zero\n  492 |               go to  loop.\n  493 >      if       batch  not = WS-Batch-Nos\n  494 |               go to  loop.\n  495 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:497: error: 'post-number' is not defined\n  495 | *>\n  496 |      move     batch        to  pre-batch.\n  497 >      move     post-number  to  pre-post.\n  498 |      move     post-code in WS-Posting-Record   to  pre-code.\n  499 |      move     post-date    to  pre-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:498: error: 'post-code IN WS-Posting-Record' is not defined\n  496 |      move     batch        to  pre-batch.\n  497 |      move     post-number  to  pre-post.\n  498 >      move     post-code in WS-Posting-Record   to  pre-code.\n  499 |      move     post-date    to  pre-date.\n  500 |      move     post-legend  to  pre-legend.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:499: error: 'post-date' is not defined\n  497 |      move     post-number  to  pre-post.\n  498 |      move     post-code in WS-Posting-Record   to  pre-code.\n  499 >      move     post-date    to  pre-date.\n  500 |      move     post-legend  to  pre-legend.\n  501 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:500: error: 'post-legend' is not defined\n  498 |      move     post-code in WS-Posting-Record   to  pre-code.\n  499 |      move     post-date    to  pre-date.\n  500 >      move     post-legend  to  pre-legend.\n  501 | *>\n  502 |      move     post-dr      to  pre-ac.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:502: error: 'post-dr' is not defined\n  500 |      move     post-legend  to  pre-legend.\n  501 | *>\n  502 >      move     post-dr      to  pre-ac.\n  503 |      move     dr-pc        to  pre-pc.\n  504 |      if       post-vat-side = \"CR\"\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:503: error: 'dr-pc' is not defined\n  501 | *>\n  502 |      move     post-dr      to  pre-ac.\n  503 >      move     dr-pc        to  pre-pc.\n  504 |      if       post-vat-side = \"CR\"\n  505 |               add  post-amount  vat-amount  giving  pre-amount\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:504: error: 'post-vat-side' is not defined\n  502 |      move     post-dr      to  pre-ac.\n  503 |      move     dr-pc        to  pre-pc.\n  504 >      if       post-vat-side = \"CR\"\n  505 |               add  post-amount  vat-amount  giving  pre-amount\n  506 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:505: error: 'post-amount' is not defined\n  503 |      move     dr-pc        to  pre-pc.\n  504 |      if       post-vat-side = \"CR\"\n  505 >               add  post-amount  vat-amount  giving  pre-amount\n  506 |      else\n  507 |               move post-amount  to  pre-amount.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:505: error: 'vat-amount' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:511: error: 'post-cr' is not defined\n  509 |      write    pre-trans-record.\n  510 | *>\n  511 >      move     post-cr      to  pre-ac.\n  512 |      move     cr-pc        to  pre-pc.\n  513 |      if       post-vat-side = \"DR\"\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:512: error: 'cr-pc' is not defined\n  510 | *>\n  511 |      move     post-cr      to  pre-ac.\n  512 >      move     cr-pc        to  pre-pc.\n  513 |      if       post-vat-side = \"DR\"\n  514 |               add  post-amount  vat-amount  giving  pre-amount\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:522: error: 'vat-ac IN WS-Posting-Record' is not defined\n  520 |      write    pre-trans-record.\n  521 | *>\n  522 >      if       vat-ac of WS-Posting-Record = zero\n  523 |            or vat-amount = zero\n  524 |               go to  loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:527: error: 'vat-pc' is not defined\n  525 | *>\n  526 |      move     vat-ac of WS-Posting-Record  to  pre-ac.\n  527 >      move     vat-pc           to      pre-pc.\n  528 |      move     vat-amount       to      pre-amount.\n  529 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in section 'zz060-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:549: error: 'u-date' is not defined\n  547 | *>\n  548 |      perform  maps03.\n  549 >      if       u-date = spaces\n  550 |               move spaces to ws-Date\n  551 |               go to zz060-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:554: error: 'Date-Form' is not defined\n  552 |      move     u-date to ws-date.\n  553 | *>\n  554 >      if       Date-Form = zero\n  555 |               move 1 to Date-Form.\n  556 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:556: error: 'Date-UK' is not defined\n  554 |      if       Date-Form = zero\n  555 |               move 1 to Date-Form.\n  556 >      if       Date-UK\n  557 |               go to zz060-Exit.\n  558 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:558: error: 'Date-USA' is not defined\n  556 |      if       Date-UK\n  557 |               go to zz060-Exit.\n  558 >      if       Date-USA                *> swap month and days\n  559 |               move ws-days to ws-swap\n  560 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in section 'maps03':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:607: error: 'maps03-ws' is not defined\n  605 | *>*******************\n  606 | *>\n  607 >      call     \"maps04\"  using  maps03-ws.\n  608 | *>\n  609 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in section 'gl071a':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:304: error: 'GL-Batch-Open-Input' is not defined\n  302 | *>*************\n  303 | *>\n  304 >      perform  GL-Batch-Open-Input.           *> open     input  batch-fil..\n  305 | *>\n  306 |  loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:309: error: 'GL-Batch-Read-Next' is not defined\n  307 | *>***\n  308 | *>\n  309 >      perform  GL-Batch-Read-Next.          *> read     batch-file  next r..\n  310 |      if       fs-reply = 10\n  311 |               go to  end-run.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in paragraph 'end-run':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:322: error: 'GL-Batch-Close' is not defined\n  320 | *>******\n  321 | *>\n  322 >      perform  GL-Batch-Close.              *> close    batch-file.\n  323 | *>\n  324 |  main-exit.   exit section.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in section 'gl071b':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:467: error: 'GL-Posting-Close' is not defined\n  465 | *>\n  466 |      perform  gl071b-pre-process.\n  467 >      perform  GL-Posting-Close.                 *> close    posting-file.\n  468 |      go       to loop.\n  469 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in section 'gl071b-pre-process':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:482: error: 'GL-Posting-Open-Input' is not defined\n  480 | *>\n  481 |      move     WS-Batch-Nos  to  pre-batch.\n  482 >      perform  GL-Posting-Open-Input.            *> open     input  postin..\n  483 | *>\n  484 |  loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:487: error: 'GL-Posting-Read-Next' is not defined\n  485 | *>***\n  486 | *>\n  487 >      perform  GL-Posting-Read-Next.             *> read     posting-file..\n  488 |      if       fs-reply = 10\n  489 |               go to  main-exit.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:87: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:126: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:127: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:128: error: wsbatch.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:129: error: wspost.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:155: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:240: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:241: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:242: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:612: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:96: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:246: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:247: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:249: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:273: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:290: error: 'ws-term-code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:313: error: 'bcycle' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:313: error: 'scycle' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:315: error: 'status-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:341: error: 'lin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:342: error: 'cole' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:355: error: 'gl-batch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:357: error: 'pl-batch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:359: error: 'sl-batch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:362: error: 'WS-Batch-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:364: error: 'stored' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:365: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:369: error: 'posted' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:374: error: 'proofed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:379: error: 'entered' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:391: error: 'status-closed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:392: error: 'waiting' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:388: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:395: error: 'processed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:396: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:398: error: 'archived' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:399: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:401: error: 'items' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:402: error: 'input-gross' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:403: error: 'input-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:404: error: 'actual-gross' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:405: error: 'actual-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:407: error: 'curs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:407: error: 'curs2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:410: error: 'lin2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:458: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:491: error: 'WS-Post-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:493: error: 'batch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:497: error: 'post-number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:498: error: 'post-code IN WS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:499: error: 'post-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:500: error: 'post-legend' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:502: error: 'post-dr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:503: error: 'dr-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:504: error: 'post-vat-side' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:505: error: 'post-amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:505: error: 'vat-amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:511: error: 'post-cr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:512: error: 'cr-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:522: error: 'vat-ac IN WS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:527: error: 'vat-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:549: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:554: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:556: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:558: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:607: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:304: error: 'GL-Batch-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:309: error: 'GL-Batch-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:322: error: 'GL-Batch-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:467: error: 'GL-Posting-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:482: error: 'GL-Posting-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:487: error: 'GL-Posting-Read-Next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:87: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:126: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:127: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:128: error: wsbatch.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:129: error: wspost.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:155: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:240: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:241: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:242: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:612: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:96: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:246: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:247: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:249: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:273: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:290: error: 'ws-term-code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:313: error: 'bcycle' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:313: error: 'scycle' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:315: error: 'status-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:341: error: 'lin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:342: error: 'cole' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:355: error: 'gl-batch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:357: error: 'pl-batch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:359: error: 'sl-batch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:362: error: 'WS-Batch-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:364: error: 'stored' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:365: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:369: error: 'posted' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:374: error: 'proofed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:379: error: 'entered' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:391: error: 'status-closed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:392: error: 'waiting' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:388: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:395: error: 'processed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:396: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:398: error: 'archived' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:399: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:401: error: 'items' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:402: error: 'input-gross' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:403: error: 'input-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:404: error: 'actual-gross' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:405: error: 'actual-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:407: error: 'curs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:407: error: 'curs2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:410: error: 'lin2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:458: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:491: error: 'WS-Post-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:493: error: 'batch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:497: error: 'post-number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:498: error: 'post-code IN WS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:499: error: 'post-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:500: error: 'post-legend' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:502: error: 'post-dr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:503: error: 'dr-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:504: error: 'post-vat-side' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:505: error: 'post-amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:505: error: 'vat-amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:511: error: 'post-cr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:512: error: 'cr-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:522: error: 'vat-ac IN WS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:527: error: 'vat-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:549: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:554: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:556: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:558: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:607: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:304: error: 'GL-Batch-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:309: error: 'GL-Batch-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:322: error: 'GL-Batch-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:467: error: 'GL-Posting-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:482: error: 'GL-Posting-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl070.cbl:487: error: 'GL-Posting-Read-Next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 65,
+    "cognitive": 167,
+    "halstead": {
+      "uniqueOperators": 13,
+      "uniqueOperands": 54,
+      "totalOperators": 200,
+      "totalOperands": 113,
+      "vocabulary": 67,
+      "length": 313,
+      "volume": 1899,
+      "difficulty": 13.6,
+      "effort": 25826,
+      "timeToProgram": 1435,
+      "deliveredBugs": 0.633
+    },
+    "maintainability": 68
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 607
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 78
+      },
+      {
+        "name": "envdiv",
+        "line": 87
+      },
+      {
+        "name": "selpost",
+        "line": 99
+      },
+      {
+        "name": "selbatch",
+        "line": 100
+      },
+      {
+        "name": "fdpost",
+        "line": 119
+      },
+      {
+        "name": "fdbatch",
+        "line": 120
+      },
+      {
+        "name": "wsmaps03",
+        "line": 126
+      },
+      {
+        "name": "wsfnctn",
+        "line": 127
+      },
+      {
+        "name": "wsbatch",
+        "line": 128
+      },
+      {
+        "name": "wspost",
+        "line": 129
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 155
+      },
+      {
+        "name": "screenio",
+        "line": 171
+      },
+      {
+        "name": "wscall",
+        "line": 240
+      },
+      {
+        "name": "wssystem",
+        "line": 241
+      },
+      {
+        "name": "wsnames",
+        "line": 242
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 612
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-convert-date",
+        "line": 271
+      },
+      {
+        "target": "gl071a",
+        "line": 286
+      },
+      {
+        "target": "gl060a",
+        "line": 289
+      },
+      {
+        "target": "gl071b",
+        "line": 294
+      },
+      {
+        "target": "GL-Batch-Open-Input",
+        "line": 304
+      },
+      {
+        "target": "GL-Batch-Read-Next",
+        "line": 309
+      },
+      {
+        "target": "GL-Batch-Close",
+        "line": 322
+      },
+      {
+        "target": "menu-input",
+        "line": 329
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 331
+      },
+      {
+        "target": "GL-Batch-Open-Input",
+        "line": 343
+      },
+      {
+        "target": "GL-Batch-Read-Next",
+        "line": 348
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 366
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 371
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 376
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 381
+      },
+      {
+        "target": "screen-clear",
+        "line": 427
+      },
+      {
+        "target": "GL-Batch-Close",
+        "line": 441
+      },
+      {
+        "target": "GL-Batch-Open-Input",
+        "line": 449
+      },
+      {
+        "target": "GL-Batch-Read-Next",
+        "line": 454
+      },
+      {
+        "target": "gl071b-pre-process",
+        "line": 466
+      },
+      {
+        "target": "GL-Posting-Close",
+        "line": 467
+      },
+      {
+        "target": "GL-Batch-Close",
+        "line": 474
+      },
+      {
+        "target": "GL-Posting-Open-Input",
+        "line": 482
+      },
+      {
+        "target": "GL-Posting-Read-Next",
+        "line": 487
+      },
+      {
+        "target": "maps03",
+        "line": 548
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "pre-trans",
+        "line": 107
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 121
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

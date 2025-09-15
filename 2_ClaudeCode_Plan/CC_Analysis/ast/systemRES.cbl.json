@@ -1,0 +1,219 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl",
+  "fileName": "systemRES.cbl",
+  "fileHash": "a7ff51fe64334f6761f32eee13eb848515c69a5722a7d16fbdeec1f58d434953",
+  "timestamp": "2025-09-15T19:46:09.758Z",
+  "parseTime": 40,
+  "lines": {
+    "total": 314,
+    "code": 170,
+    "comment": 143,
+    "blank": 1
+  },
+  "programId": "SystemRES",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:111: error: envdiv.cob: No such file or directory\n  109 | *>-------------------\n  110 | *>\n  111 >  copy \"envdiv.cob\".\n  112 |  input-output            section.\n  113 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:118: error: selsys.cob: No such file or directory\n  116 | *>-----------\n  117 | *>\n  118 >  copy \"selsys.cob\".\n  119 |      select  System-File-Seq assign        \"system.seq\"\n  120 |                              organization  sequential\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:129: error: fdsys.cob: No such file or directory\n  127 | *>-----------\n  128 | *>\n  129 >  copy \"fdsys.cob\".\n  130 |  fd   system-file-seq.\n  131 |  copy \"wssystem.cob\"  replacing System-Record by System-Record-Seq\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:141: error: wssystem.cob: No such file or directory\n  139 |                                RDBMS-Port    by WS-RDBMS-Port\n  140 |                                RDBMS-Host    by WS-RDBMS-Host\n  141 >                                RDBMS-Socket  by WS-RDBMS-Socket.\n  142 | *>\n  143 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:170: error: Test-Data-Flags.cob: No such file or directory\n  168 |  01  SO-Print            pic x(160)    value spaces.\n  169 | *>\n  170 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  171 | *>\n  172 |  copy \"wssystem.cob\"  replacing System-Record by WS-System-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:172: error: wssystem.cob: No such file or directory\n  170 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  171 | *>\n  172 >  copy \"wssystem.cob\"  replacing System-Record by WS-System-Record.\n  173 |  copy \"wsdflt.cob\".   *> rec 2 - defaults\n  174 |  copy \"wsfinal.cob\".  *> rec 3 - Final accounts\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:173: error: wsdflt.cob: No such file or directory\n  171 | *>\n  172 |  copy \"wssystem.cob\"  replacing System-Record by WS-System-Record.\n  173 >  copy \"wsdflt.cob\".   *> rec 2 - defaults\n  174 |  copy \"wsfinal.cob\".  *> rec 3 - Final accounts\n  175 |  copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:174: error: wsfinal.cob: No such file or directory\n  172 |  copy \"wssystem.cob\"  replacing System-Record by WS-System-Record.\n  173 |  copy \"wsdflt.cob\".   *> rec 2 - defaults\n  174 >  copy \"wsfinal.cob\".  *> rec 3 - Final accounts\n  175 |  copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n  176 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:175: error: wssys4.cob: No such file or directory\n  173 |  copy \"wsdflt.cob\".   *> rec 2 - defaults\n  174 |  copy \"wsfinal.cob\".  *> rec 3 - Final accounts\n  175 >  copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n  176 |  copy \"wsfnctn.cob\".\n  177 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:176: error: wsfnctn.cob: No such file or directory\n  174 |  copy \"wsfinal.cob\".  *> rec 3 - Final accounts\n  175 |  copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n  176 >  copy \"wsfnctn.cob\".\n  177 |  copy \"wsnames.cob\".\n  178 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:177: error: wsnames.cob: No such file or directory\n  175 |  copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n  176 |  copy \"wsfnctn.cob\".\n  177 >  copy \"wsnames.cob\".\n  178 |  copy \"wscall.cob\".\n  179 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:178: error: wscall.cob: No such file or directory\n  176 |  copy \"wsfnctn.cob\".\n  177 |  copy \"wsnames.cob\".\n  178 >  copy \"wscall.cob\".\n  179 | *>\n  180 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:309: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  307 |      goback.\n  308 | *>\n  309 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  310 | *>\n  311 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:143: error: RECORD description missing or invalid\n  141 |                                RDBMS-Socket  by WS-RDBMS-Socket.\n  142 | *>\n  143 >  working-storage section.\n  144 | *>----------------------\n  145 |  77  prog-name           pic x(20)    value \"SystemRES (3.02.03)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:119: error: missing file description for FILE System-File-Seq\n  117 | *>\n  118 |  copy \"selsys.cob\".\n  119 >      select  System-File-Seq assign        \"system.seq\"\n  120 |                              organization  sequential\n  121 |                              status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:121: error: 'FS-Reply' is not defined\n  119 |      select  System-File-Seq assign        \"system.seq\"\n  120 |                              organization  sequential\n  121 >                              status        FS-Reply.\n  122 | *>\n  123 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:197: error: 'WS-Log-System' is not defined\n  195 |  aa000-Main-Start.\n  196 |      perform  zz020-Get-Program-Args.\n  197 >      move     0      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  198 |      move     10     to WS-Log-File-no.  *> for FHlogger\n  199 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:198: error: 'WS-Log-File-no' is not defined\n  196 |      perform  zz020-Get-Program-Args.\n  197 |      move     0      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  198 >      move     10     to WS-Log-File-no.  *> for FHlogger\n  199 | *>\n  200 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:208: error: 'System-File' is not defined\n  206 |               display SY004     at 0401\n  207 |               accept  fs-reply  at 0440\n  208 >               close System-File\n  209 |               move 128 to return-code\n  210 |               goback\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:208: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:213: error: 'WS-System-Record' is not defined\n  211 |      end-if\n  212 |      initialise                    *> initialise all secondary records in..\n  213 >               WS-System-Record\n  214 |               Default-Record\n  215 |               Final-Record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:214: error: 'Default-Record' is not defined\n  212 |      initialise                    *> initialise all secondary records in..\n  213 |               WS-System-Record\n  214 >               Default-Record\n  215 |               Final-Record\n  216 |               System-Record-4 with filler.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:215: error: 'Final-Record' is not defined\n  213 |               WS-System-Record\n  214 |               Default-Record\n  215 >               Final-Record\n  216 |               System-Record-4 with filler.\n  217 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:216: error: 'System-Record-4' is not defined\n  214 |               Default-Record\n  215 |               Final-Record\n  216 >               System-Record-4 with filler.\n  217 | *>\n  218 |      read     system-file-Seq next record into WS-System-Record at end\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:229: error: 'System-record-Seq' is not defined\n  227 |               add     1 to ws-Rec-Cnt-In\n  228 |      end-if\n  229 >      display System-record-Seq at 0101 with erase eos.\n  230 |      display \"System Rec\" at 2201.\n  231 |      display sy008 at 2301 with erase eol.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:276: error: 'System-File' is not a file name\n  274 |      accept fs-reply at 2334.\n  275 | *>\n  276 >      open     output System-File.\n  277 | *>\n  278 |      move     1 to rrn.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:278: error: 'rrn' is not defined\n  276 |      open     output System-File.\n  277 | *>\n  278 >      move     1 to rrn.\n  279 |      write    System-Record from System-Record.   *> rec 1\n  280 |      add      1 to WS-Rec-Cnt-Out.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:279: error: 'System-Record' is not defined\n  277 | *>\n  278 |      move     1 to rrn.\n  279 >      write    System-Record from System-Record.   *> rec 1\n  280 |      add      1 to WS-Rec-Cnt-Out.\n  281 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:295: error: 'System-File' is not a file name\n  293 | *>\n  294 |      close    System-File-Seq\n  295 >               System-File.\n  296 |      move     spaces to SO-Print.\n  297 |      string\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:196: error: 'zz020-Get-Program-Args' is not defined\n  194 | *>\n  195 |  aa000-Main-Start.\n  196 >      perform  zz020-Get-Program-Args.\n  197 |      move     0      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  198 |      move     10     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:111: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:118: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:129: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:141: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:170: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:172: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:173: error: wsdflt.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:174: error: wsfinal.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:175: error: wssys4.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:176: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:177: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:178: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:309: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:143: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:119: error: missing file description for FILE System-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:121: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:197: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:198: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:208: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:208: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:213: error: 'WS-System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:214: error: 'Default-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:215: error: 'Final-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:216: error: 'System-Record-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:229: error: 'System-record-Seq' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:276: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:278: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:279: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:295: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:196: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:111: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:118: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:129: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:141: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:170: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:172: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:173: error: wsdflt.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:174: error: wsfinal.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:175: error: wssys4.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:176: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:177: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:178: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:309: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:143: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:119: error: missing file description for FILE System-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:121: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:197: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:198: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:208: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:208: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:213: error: 'WS-System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:214: error: 'Default-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:215: error: 'Final-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:216: error: 'System-Record-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:229: error: 'System-record-Seq' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:276: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:278: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:279: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:295: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl:196: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 7,
+    "cognitive": 5,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 73,
+      "totalOperators": 52,
+      "totalOperands": 148,
+      "vocabulary": 81,
+      "length": 200,
+      "volume": 1268,
+      "difficulty": 8.11,
+      "effort": 10283,
+      "timeToProgram": 571,
+      "deliveredBugs": 0.423
+    },
+    "maintainability": 77
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 312
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 24
+      },
+      {
+        "name": "of",
+        "line": 101
+      },
+      {
+        "name": "envdiv",
+        "line": 111
+      },
+      {
+        "name": "selsys",
+        "line": 118
+      },
+      {
+        "name": "fdsys",
+        "line": 129
+      },
+      {
+        "name": "wssystem",
+        "line": 131
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 170
+      },
+      {
+        "name": "wssystem",
+        "line": 172
+      },
+      {
+        "name": "wsdflt",
+        "line": 173
+      },
+      {
+        "name": "wsfinal",
+        "line": 174
+      },
+      {
+        "name": "wssys4",
+        "line": 175
+      },
+      {
+        "name": "wsfnctn",
+        "line": 176
+      },
+      {
+        "name": "wsnames",
+        "line": 177
+      },
+      {
+        "name": "wscall",
+        "line": 178
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 309
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 196
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 303
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 305
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "system-file-seq",
+        "line": 130
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 143
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

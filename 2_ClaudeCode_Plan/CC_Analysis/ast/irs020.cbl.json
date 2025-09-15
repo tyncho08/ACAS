@@ -1,0 +1,491 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl",
+  "fileName": "irs020.cbl",
+  "fileHash": "3dbcc81e03bbe7ecd59a0372619f1660481193609e6bc352198564752d25ce32",
+  "timestamp": "2025-09-15T19:46:19.540Z",
+  "parseTime": 177,
+  "lines": {
+    "total": 1142,
+    "code": 808,
+    "comment": 332,
+    "blank": 2
+  },
+  "programId": "irs020",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:130: error: envdiv.cob: No such file or directory\n  128 | *>\n  129 |  environment division.\n  130 >  copy  \"envdiv.cob\".\n  131 | *>\n  132 |  input-output section.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:147: error: irsprint-spool-command-p.cob: No such file or directory\n  145 |  working-storage section.\n  146 |  01  prog-name           pic x(16)    value \"irs020 (3.02.18)\".\n  147 >  copy \"irsprint-spool-command-p.cob\".\n  148 | *>\n  149 |  01  filler.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:179: error: irswsnl.cob: No such file or directory\n  177 |          05  WS-Alpha-Cd1 pic x occurs 26.\n  178 | *>\n  179 >  copy  \"irswsnl.cob\"   replacing NL-Record by WS-IRSNL-Record.\n  180 |  copy  \"wsfnctn.cob\".\n  181 |  copy  \"irswsdflt.cob\" replacing Default-Record by WS-IRS-Default-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:180: error: wsfnctn.cob: No such file or directory\n  178 | *>\n  179 |  copy  \"irswsnl.cob\"   replacing NL-Record by WS-IRSNL-Record.\n  180 >  copy  \"wsfnctn.cob\".\n  181 |  copy  \"irswsdflt.cob\" replacing Default-Record by WS-IRS-Default-Record.\n  182 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:181: error: irswsdflt.cob: No such file or directory\n  179 |  copy  \"irswsnl.cob\"   replacing NL-Record by WS-IRSNL-Record.\n  180 |  copy  \"wsfnctn.cob\".\n  181 >  copy  \"irswsdflt.cob\" replacing Default-Record by WS-IRS-Default-Record.\n  182 | *>\n  183 | *>                  finals not in use at present but included ?\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:184: error: irswsfinal.cob: No such file or directory\n  182 | *>\n  183 | *>                  finals not in use at present but included ?\n  184 >  copy  \"irswsfinal.cob\".\n  185 | *>\n  186 |  01  filler.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:254: error: Test-Data-Flags.cob: No such file or directory\n  252 |  *>    03  Final-Record          pic x.\n  253 | *>\n  254 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  255 | *>\n  256 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:276: error: irswssystem.cob: No such file or directory\n  274 |  linkage section.\n  275 |  copy  \"irswssystem.cob\"\n  276 >               replacing system-record  by IRS-System-Params. *> (01 level..\n  277 | *>\n  278 |  copy \"wssystem.cob\"    *> NEW for v3.02\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:306: error: wssystem.cob: No such file or directory\n  304 |                         PL-App-Created by IRS-PL-App-Created\n  305 |                         PL-Approp-AC   by IRS-PL-Approp-AC\n  306 >                         1st-Time-Flag  by IRS-First-Time-Flag.\n  307 | *>\n  308 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:308: error: wsnames.cob: No such file or directory\n  306 |                         1st-Time-Flag  by IRS-First-Time-Flag.\n  307 | *>\n  308 >  copy \"wsnames.cob\".\n  309 | *>\n  310 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1140: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory\n 1138 |      exit.\n 1139 | *>\n 1140 >  copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n 1141 | *>\n 1142 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:319: error: 'run-date' is not defined\n  317 |                                background-color cob-color-blue\n  318 |                                         reverse-video.\n  319 >      03  pic x(8) from run-date            line 1 col 73.\n  320 |      03  value \"Client -\"                  line 3 col 1.\n  321 |      03  pic x(29) from client             line 3 col 10\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:321: error: 'client' is not defined\n  319 |      03  pic x(8) from run-date            line 1 col 73.\n  320 |      03  value \"Client -\"                  line 3 col 1.\n  321 >      03  pic x(29) from client             line 3 col 10\n  322 |                                foreground-color cob-color-cyan.\n  323 |      03  value \"Start date -\"              line 3 col 39.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:324: error: 'start-date' is not defined\n  322 |                                foreground-color cob-color-cyan.\n  323 |      03  value \"Start date -\"              line 3 col 39.\n  324 >      03  pic x(8) from start-date          line 3 col 52\n  325 |                                foreground-color cob-color-cyan.\n  326 |      03  value \"End date -\"                line 3 col 62.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:327: error: 'end-date' is not defined\n  325 |                                foreground-color cob-color-cyan.\n  326 |      03  value \"End date -\"                line 3 col 62.\n  327 >      03  pic x(8) from end-date            line 3 col 73\n  328 |                                foreground-color cob-color-cyan.\n  329 |      03  value \"Select the required function by number    [\"\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:473: error: 'ar1-1' is not defined\n  471 |      03  value \"Fixed     Assets\"          line  5 col 41.\n  472 |      03  value \"<A>   [\"                   line  6 col  3.\n  473 >      03  pic x(24) using ar1-1             line  6 col 10 foreground-colo..\n  474 |      03  value \"] [\"                       line  6 col 34.\n  475 |      03  pic x     using ar2-1             line  6 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:475: error: 'ar2-1' is not defined\n  473 |      03  pic x(24) using ar1-1             line  6 col 10 foreground-colo..\n  474 |      03  value \"] [\"                       line  6 col 34.\n  475 >      03  pic x     using ar2-1             line  6 col 37 foreground-colo..\n  476 |      03  value \"]    <O>   [\"              line  6 col 38.\n  477 |      03  pic x(24) using ar1-15            line  6 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:477: error: 'ar1-15' is not defined\n  475 |      03  pic x     using ar2-1             line  6 col 37 foreground-colo..\n  476 |      03  value \"]    <O>   [\"              line  6 col 38.\n  477 >      03  pic x(24) using ar1-15            line  6 col 50 foreground-colo..\n  478 |      03  value \"] [\"                       line  6 col 74.\n  479 |      03  pic x     using ar2-15            line  6 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:479: error: 'ar2-15' is not defined\n  477 |      03  pic x(24) using ar1-15            line  6 col 50 foreground-colo..\n  478 |      03  value \"] [\"                       line  6 col 74.\n  479 >      03  pic x     using ar2-15            line  6 col 77 foreground-colo..\n  480 |      03  value \"]\"                         line  6 col 78.\n  481 |      03  value \"<B>   [\"                   line  7 col  3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:482: error: 'ar1-2' is not defined\n  480 |      03  value \"]\"                         line  6 col 78.\n  481 |      03  value \"<B>   [\"                   line  7 col  3.\n  482 >      03  pic x(24) using ar1-2             line  7 col 10 foreground-colo..\n  483 |      03  value \"] [\"                       line  7 col 34.\n  484 |      03  pic x     using ar2-2             line  7 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:484: error: 'ar2-2' is not defined\n  482 |      03  pic x(24) using ar1-2             line  7 col 10 foreground-colo..\n  483 |      03  value \"] [\"                       line  7 col 34.\n  484 >      03  pic x     using ar2-2             line  7 col 37 foreground-colo..\n  485 |      03  value \"]    <P>   [\"              line  7 col 38.\n  486 |      03  pic x(24) using ar1-16            line  7 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:486: error: 'ar1-16' is not defined\n  484 |      03  pic x     using ar2-2             line  7 col 37 foreground-colo..\n  485 |      03  value \"]    <P>   [\"              line  7 col 38.\n  486 >      03  pic x(24) using ar1-16            line  7 col 50 foreground-colo..\n  487 |      03  value \"] [\"                       line  7 col 74.\n  488 |      03  pic x     using ar2-16            line  7 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:488: error: 'ar2-16' is not defined\n  486 |      03  pic x(24) using ar1-16            line  7 col 50 foreground-colo..\n  487 |      03  value \"] [\"                       line  7 col 74.\n  488 >      03  pic x     using ar2-16            line  7 col 77 foreground-colo..\n  489 |      03  value \"]\"                         line  7 col 78.\n  490 |      03  value \"<C>   [\"                   line  8 col  3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:491: error: 'ar1-3' is not defined\n  489 |      03  value \"]\"                         line  7 col 78.\n  490 |      03  value \"<C>   [\"                   line  8 col  3.\n  491 >      03  pic x(24) using ar1-3             line  8 col 10 foreground-colo..\n  492 |      03  value \"] [\"                       line  8 col 34.\n  493 |      03  pic x     using ar2-3             line  8 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:493: error: 'ar2-3' is not defined\n  491 |      03  pic x(24) using ar1-3             line  8 col 10 foreground-colo..\n  492 |      03  value \"] [\"                       line  8 col 34.\n  493 >      03  pic x     using ar2-3             line  8 col 37 foreground-colo..\n  494 |      03  value \"]    <Q>   [\"              line  8 col 38.\n  495 |      03  pic x(24) using ar1-17            line  8 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:495: error: 'ar1-17' is not defined\n  493 |      03  pic x     using ar2-3             line  8 col 37 foreground-colo..\n  494 |      03  value \"]    <Q>   [\"              line  8 col 38.\n  495 >      03  pic x(24) using ar1-17            line  8 col 50 foreground-colo..\n  496 |      03  value \"] [\"                       line  8 col 74.\n  497 |      03  pic x     using ar2-17            line  8 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:497: error: 'ar2-17' is not defined\n  495 |      03  pic x(24) using ar1-17            line  8 col 50 foreground-colo..\n  496 |      03  value \"] [\"                       line  8 col 74.\n  497 >      03  pic x     using ar2-17            line  8 col 77 foreground-colo..\n  498 |      03  value \"]\"                         line  8 col 78.\n  499 |      03  value \"<D>   [\"                   line  9 col  3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:500: error: 'ar1-4' is not defined\n  498 |      03  value \"]\"                         line  8 col 78.\n  499 |      03  value \"<D>   [\"                   line  9 col  3.\n  500 >      03  pic x(24) using ar1-4             line  9 col 10 foreground-colo..\n  501 |      03  value \"] [\"                       line  9 col 34.\n  502 |      03  pic x     using ar2-4             line  9 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:502: error: 'ar2-4' is not defined\n  500 |      03  pic x(24) using ar1-4             line  9 col 10 foreground-colo..\n  501 |      03  value \"] [\"                       line  9 col 34.\n  502 >      03  pic x     using ar2-4             line  9 col 37 foreground-colo..\n  503 |      03  value \"]\"                         line  9 col 38.\n  504 |      03  value \"Direct Cost Accounts\"      line 10 col  1.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:507: error: 'ar1-5' is not defined\n  505 |      03  value \"Current Assets\"            line 10 col 41.\n  506 |      03  value \"<E>   [\"                   line 11 col  3.\n  507 >      03  pic x(24) using ar1-5             line 11 col 10 foreground-colo..\n  508 |      03  value \"] [\"                       line 11 col 34.\n  509 |      03  pic x     using ar2-5             line 11 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:509: error: 'ar2-5' is not defined\n  507 |      03  pic x(24) using ar1-5             line 11 col 10 foreground-colo..\n  508 |      03  value \"] [\"                       line 11 col 34.\n  509 >      03  pic x     using ar2-5             line 11 col 37 foreground-colo..\n  510 |      03  value \"]    <R>   [\"              line 11 col 38.\n  511 |      03  pic x(24) using ar1-18            line 11 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:511: error: 'ar1-18' is not defined\n  509 |      03  pic x     using ar2-5             line 11 col 37 foreground-colo..\n  510 |      03  value \"]    <R>   [\"              line 11 col 38.\n  511 >      03  pic x(24) using ar1-18            line 11 col 50 foreground-colo..\n  512 |      03  value \"] [\"                       line 11 col 74.\n  513 |      03  pic x     using ar2-18            line 11 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:513: error: 'ar2-18' is not defined\n  511 |      03  pic x(24) using ar1-18            line 11 col 50 foreground-colo..\n  512 |      03  value \"] [\"                       line 11 col 74.\n  513 >      03  pic x     using ar2-18            line 11 col 77 foreground-colo..\n  514 |      03  value \"]\"                         line 11 col 78.\n  515 |      03  value \"<F>   [\"                   line 12 col  3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:516: error: 'ar1-6' is not defined\n  514 |      03  value \"]\"                         line 11 col 78.\n  515 |      03  value \"<F>   [\"                   line 12 col  3.\n  516 >      03  pic x(24) using ar1-6             line 12 col 10 foreground-colo..\n  517 |      03  value \"] [\"                       line 12 col 34.\n  518 |      03  pic x     using ar2-6             line 12 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:518: error: 'ar2-6' is not defined\n  516 |      03  pic x(24) using ar1-6             line 12 col 10 foreground-colo..\n  517 |      03  value \"] [\"                       line 12 col 34.\n  518 >      03  pic x     using ar2-6             line 12 col 37 foreground-colo..\n  519 |      03  value \"]    <S>   [\"              line 12 col 38.\n  520 |      03  pic x(24) using ar1-19            line 12 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:520: error: 'ar1-19' is not defined\n  518 |      03  pic x     using ar2-6             line 12 col 37 foreground-colo..\n  519 |      03  value \"]    <S>   [\"              line 12 col 38.\n  520 >      03  pic x(24) using ar1-19            line 12 col 50 foreground-colo..\n  521 |      03  value \"] [\"                       line 12 col 74.\n  522 |      03  pic x     using ar2-19            line 12 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:522: error: 'ar2-19' is not defined\n  520 |      03  pic x(24) using ar1-19            line 12 col 50 foreground-colo..\n  521 |      03  value \"] [\"                       line 12 col 74.\n  522 >      03  pic x     using ar2-19            line 12 col 77 foreground-colo..\n  523 |      03  value \"]\"                         line 12 col 78.\n  524 |      03  value \"<G>   [\"                   line 13 col  3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:525: error: 'ar1-7' is not defined\n  523 |      03  value \"]\"                         line 12 col 78.\n  524 |      03  value \"<G>   [\"                   line 13 col  3.\n  525 >      03  pic x(24) using ar1-7             line 13 col 10 foreground-colo..\n  526 |      03  value \"] [\"                       line 13 col 34.\n  527 |      03  pic x     using ar2-7             line 13 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:527: error: 'ar2-7' is not defined\n  525 |      03  pic x(24) using ar1-7             line 13 col 10 foreground-colo..\n  526 |      03  value \"] [\"                       line 13 col 34.\n  527 >      03  pic x     using ar2-7             line 13 col 37 foreground-colo..\n  528 |      03  value \"]    <T>   [\"              line 13 col 38.\n  529 |      03  pic x(24) using ar1-20            line 13 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:529: error: 'ar1-20' is not defined\n  527 |      03  pic x     using ar2-7             line 13 col 37 foreground-colo..\n  528 |      03  value \"]    <T>   [\"              line 13 col 38.\n  529 >      03  pic x(24) using ar1-20            line 13 col 50 foreground-colo..\n  530 |      03  value \"] [\"                       line 13 col 74.\n  531 |      03  pic x     using ar2-20            line 13 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:531: error: 'ar2-20' is not defined\n  529 |      03  pic x(24) using ar1-20            line 13 col 50 foreground-colo..\n  530 |      03  value \"] [\"                       line 13 col 74.\n  531 >      03  pic x     using ar2-20            line 13 col 77 foreground-colo..\n  532 |      03  value \"]\"                         line 13 col 78.\n  533 |      03  value \"<H>   [\"                   line 14 col  3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:534: error: 'ar1-8' is not defined\n  532 |      03  value \"]\"                         line 13 col 78.\n  533 |      03  value \"<H>   [\"                   line 14 col  3.\n  534 >      03  pic x(24) using ar1-8             line 14 col 10 foreground-colo..\n  535 |      03  value \"] [\"                       line 14 col 34.\n  536 |      03  pic x     using ar2-8             line 14 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:536: error: 'ar2-8' is not defined\n  534 |      03  pic x(24) using ar1-8             line 14 col 10 foreground-colo..\n  535 |      03  value \"] [\"                       line 14 col 34.\n  536 >      03  pic x     using ar2-8             line 14 col 37 foreground-colo..\n  537 |      03  value \"]\"                         line 14 col 38.\n  538 |      03  value \"Sundry Income Accounts\"    line 15 col  1.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:541: error: 'ar1-9' is not defined\n  539 |      03  value \"Current Liabilities\"       line 15 col 41.\n  540 |      03  value \"<I>   [\"                   line 16 col  3.\n  541 >      03  pic x(24) using ar1-9             line 16 col 10 foreground-colo..\n  542 |      03  value \"] [\"                       line 16 col 34.\n  543 |      03  pic x     using ar2-9             line 16 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:543: error: 'ar2-9' is not defined\n  541 |      03  pic x(24) using ar1-9             line 16 col 10 foreground-colo..\n  542 |      03  value \"] [\"                       line 16 col 34.\n  543 >      03  pic x     using ar2-9             line 16 col 37 foreground-colo..\n  544 |      03  value \"]    <U>   [\"              line 16 col 38.\n  545 |      03  pic x(24) using ar1-21            line 16 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:545: error: 'ar1-21' is not defined\n  543 |      03  pic x     using ar2-9             line 16 col 37 foreground-colo..\n  544 |      03  value \"]    <U>   [\"              line 16 col 38.\n  545 >      03  pic x(24) using ar1-21            line 16 col 50 foreground-colo..\n  546 |      03  value \"] [\"                       line 16 col 74.\n  547 |      03  pic x     using ar2-21            line 16 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:547: error: 'ar2-21' is not defined\n  545 |      03  pic x(24) using ar1-21            line 16 col 50 foreground-colo..\n  546 |      03  value \"] [\"                       line 16 col 74.\n  547 >      03  pic x     using ar2-21            line 16 col 77 foreground-colo..\n  548 |      03  value \"]\"                         line 16 col 78.\n  549 |      03  value \"<J>   [\"                   line 17 col  3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:550: error: 'ar1-10' is not defined\n  548 |      03  value \"]\"                         line 16 col 78.\n  549 |      03  value \"<J>   [\"                   line 17 col  3.\n  550 >      03  pic x(24) using ar1-10            line 17 col 10 foreground-colo..\n  551 |      03  value \"] [\"                       line 17 col 34.\n  552 |      03  pic x     using ar2-10            line 17 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:552: error: 'ar2-10' is not defined\n  550 |      03  pic x(24) using ar1-10            line 17 col 10 foreground-colo..\n  551 |      03  value \"] [\"                       line 17 col 34.\n  552 >      03  pic x     using ar2-10            line 17 col 37 foreground-colo..\n  553 |      03  value \"]    <V>   [\"              line 17 col 38.\n  554 |      03  pic x(24) using ar1-22            line 17 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:554: error: 'ar1-22' is not defined\n  552 |      03  pic x     using ar2-10            line 17 col 37 foreground-colo..\n  553 |      03  value \"]    <V>   [\"              line 17 col 38.\n  554 >      03  pic x(24) using ar1-22            line 17 col 50 foreground-colo..\n  555 |      03  value \"] [\"                       line 17 col 74.\n  556 |      03  pic x     using ar2-22            line 17 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:556: error: 'ar2-22' is not defined\n  554 |      03  pic x(24) using ar1-22            line 17 col 50 foreground-colo..\n  555 |      03  value \"] [\"                       line 17 col 74.\n  556 >      03  pic x     using ar2-22            line 17 col 77 foreground-colo..\n  557 |      03  value \"]\"                         line 17 col 78.\n  558 |      03  value \"Indirect Cost Accounts\"    line 18 col  1.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:561: error: 'ar1-11' is not defined\n  559 |      03  value \"Capital Accounts\"          line 18 col 41.\n  560 |      03  value \"<K>   [\"                   line 19 col  3.\n  561 >      03  pic x(24) using ar1-11            line 19 col 10 foreground-colo..\n  562 |      03  value \"] [\"                       line 19 col 34.\n  563 |      03  pic x     using ar2-11            line 19 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:563: error: 'ar2-11' is not defined\n  561 |      03  pic x(24) using ar1-11            line 19 col 10 foreground-colo..\n  562 |      03  value \"] [\"                       line 19 col 34.\n  563 >      03  pic x     using ar2-11            line 19 col 37 foreground-colo..\n  564 |      03  value \"]    <W>   [\"              line 19 col 38.\n  565 |      03  pic x(24) using ar1-23            line 19 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:565: error: 'ar1-23' is not defined\n  563 |      03  pic x     using ar2-11            line 19 col 37 foreground-colo..\n  564 |      03  value \"]    <W>   [\"              line 19 col 38.\n  565 >      03  pic x(24) using ar1-23            line 19 col 50 foreground-colo..\n  566 |      03  value \"] [\"                       line 19 col 74.\n  567 |      03  pic x     using ar2-23            line 19 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:567: error: 'ar2-23' is not defined\n  565 |      03  pic x(24) using ar1-23            line 19 col 50 foreground-colo..\n  566 |      03  value \"] [\"                       line 19 col 74.\n  567 >      03  pic x     using ar2-23            line 19 col 77 foreground-colo..\n  568 |      03  value \"]\"                         line 19 col 78.\n  569 |      03  value \"<L>   [\"                   line 20 col  3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:570: error: 'ar1-12' is not defined\n  568 |      03  value \"]\"                         line 19 col 78.\n  569 |      03  value \"<L>   [\"                   line 20 col  3.\n  570 >      03  pic x(24) using ar1-12            line 20 col 10 foreground-colo..\n  571 |      03  value \"] [\"                       line 20 col 34.\n  572 |      03  pic x     using ar2-12            line 20 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:572: error: 'ar2-12' is not defined\n  570 |      03  pic x(24) using ar1-12            line 20 col 10 foreground-colo..\n  571 |      03  value \"] [\"                       line 20 col 34.\n  572 >      03  pic x     using ar2-12            line 20 col 37 foreground-colo..\n  573 |      03  value \"]    <X>   [\"              line 20 col 38.\n  574 |      03  pic x(24) using ar1-24            line 20 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:574: error: 'ar1-24' is not defined\n  572 |      03  pic x     using ar2-12            line 20 col 37 foreground-colo..\n  573 |      03  value \"]    <X>   [\"              line 20 col 38.\n  574 >      03  pic x(24) using ar1-24            line 20 col 50 foreground-colo..\n  575 |      03  value \"] [\"                       line 20 col 74.\n  576 |      03  pic x     using ar2-24            line 20 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:576: error: 'ar2-24' is not defined\n  574 |      03  pic x(24) using ar1-24            line 20 col 50 foreground-colo..\n  575 |      03  value \"] [\"                       line 20 col 74.\n  576 >      03  pic x     using ar2-24            line 20 col 77 foreground-colo..\n  577 |      03  value \"]\"                         line 20 col 78.\n  578 |      03  value \"<M>   [\"                   line 21 col  3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:579: error: 'ar1-13' is not defined\n  577 |      03  value \"]\"                         line 20 col 78.\n  578 |      03  value \"<M>   [\"                   line 21 col  3.\n  579 >      03  pic x(24) using ar1-13            line 21 col 10 foreground-colo..\n  580 |      03  value \"] [\"                       line 21 col 34.\n  581 |      03  pic x     using ar2-13            line 21 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:581: error: 'ar2-13' is not defined\n  579 |      03  pic x(24) using ar1-13            line 21 col 10 foreground-colo..\n  580 |      03  value \"] [\"                       line 21 col 34.\n  581 >      03  pic x     using ar2-13            line 21 col 37 foreground-colo..\n  582 |      03  value \"]    <Y>   [\"              line 21 col 38.\n  583 |      03  pic x(24) using ar1-25            line 21 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:583: error: 'ar1-25' is not defined\n  581 |      03  pic x     using ar2-13            line 21 col 37 foreground-colo..\n  582 |      03  value \"]    <Y>   [\"              line 21 col 38.\n  583 >      03  pic x(24) using ar1-25            line 21 col 50 foreground-colo..\n  584 |      03  value \"] [\"                       line 21 col 74.\n  585 |      03  pic x     using ar2-25            line 21 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:585: error: 'ar2-25' is not defined\n  583 |      03  pic x(24) using ar1-25            line 21 col 50 foreground-colo..\n  584 |      03  value \"] [\"                       line 21 col 74.\n  585 >      03  pic x     using ar2-25            line 21 col 77 foreground-colo..\n  586 |      03  value \"]\"                         line 21 col 78.\n  587 |      03  value \"<N>   [\"                   line 22 col  3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:588: error: 'ar1-14' is not defined\n  586 |      03  value \"]\"                         line 21 col 78.\n  587 |      03  value \"<N>   [\"                   line 22 col  3.\n  588 >      03  pic x(24) using ar1-14            line 22 col 10 foreground-colo..\n  589 |      03  value \"] [\"                       line 22 col 34.\n  590 |      03  pic x     using ar2-14            line 22 col 37 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:590: error: 'ar2-14' is not defined\n  588 |      03  pic x(24) using ar1-14            line 22 col 10 foreground-colo..\n  589 |      03  value \"] [\"                       line 22 col 34.\n  590 >      03  pic x     using ar2-14            line 22 col 37 foreground-colo..\n  591 |      03  value \"]    <Z>   [\"              line 22 col 38.\n  592 |      03  pic x(24) using ar1-26            line 22 col 50 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:592: error: 'ar1-26' is not defined\n  590 |      03  pic x     using ar2-14            line 22 col 37 foreground-colo..\n  591 |      03  value \"]    <Z>   [\"              line 22 col 38.\n  592 >      03  pic x(24) using ar1-26            line 22 col 50 foreground-colo..\n  593 |      03  value \"] [\"                       line 22 col 74.\n  594 |      03  pic x     using ar2-26            line 22 col 77 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:594: error: 'ar2-26' is not defined\n  592 |      03  pic x(24) using ar1-26            line 22 col 50 foreground-colo..\n  593 |      03  value \"] [\"                       line 22 col 74.\n  594 >      03  pic x     using ar2-26            line 22 col 77 foreground-colo..\n  595 |      03  value \"]\"                         line 22 col 78.\n  596 |      03  value \"P & L Appropriation Account [\"  line 23 col  1.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:597: error: 'PL-Approp-AC6' is not defined\n  595 |      03  value \"]\"                         line 22 col 78.\n  596 |      03  value \"P & L Appropriation Account [\"  line 23 col  1.\n  597 >      03  pic 9(6) using PL-Approp-AC6      line 23 col 30 foreground-colo..\n  598 |      03  value \"]\"                         line 23 col 36.\n  599 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:600: error: 'IRS-System-Params' is not defined\n  598 |      03  value \"]\"                         line 23 col 36.\n  599 | *>\n  600 >  procedure division using IRS-System-Params\n  601 |                           WS-System-Record\n  602 |                           File-Defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:601: error: 'WS-System-Record' is not defined\n  599 | *>\n  600 |  procedure division using IRS-System-Params\n  601 >                           WS-System-Record\n  602 |                           File-Defs.\n  603 | *>*****************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:602: error: 'File-Defs' is not defined\n  600 |  procedure division using IRS-System-Params\n  601 |                           WS-System-Record\n  602 >                           File-Defs.\n  603 | *>*****************************************\n  604 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:613: error: 'Print-Spool-Name' is not defined\n  611 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n  612 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  613 >      move     Print-Spool-Name to PSN.\n  614 | *>\n  615 |      move     1 to File-Key-No.               *> 1 = Primary\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:613: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:615: error: 'File-Key-No' is not defined\n  613 |      move     Print-Spool-Name to PSN.\n  614 | *>\n  615 >      move     1 to File-Key-No.               *> 1 = Primary\n  616 | *>\n  617 |  main-loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in section 'Set-Up':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in paragraph 'main-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:665: error: 'cole' is not defined\n  663 |      perform  varying w from 1 by 1 until w > 16\n  664 |               add w 16 giving y\n  665 >               move 1 to cole\n  666 |               add 6 w giving lin\n  667 |               display w at curs with foreground-color 2\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:666: error: 'lin' is not defined\n  664 |               add w 16 giving y\n  665 |               move 1 to cole\n  666 >               add 6 w giving lin\n  667 |               display w at curs with foreground-color 2\n  668 |               move 41 to cole\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:667: error: 'curs' is not defined\n  665 |               move 1 to cole\n  666 |               add 6 w giving lin\n  667 >               display w at curs with foreground-color 2\n  668 |               move 41 to cole\n  669 |               display y at curs with foreground-color 2\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in paragraph 'get-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:677: error: 'curs2' is not defined\n  675 | *>\n  676 |      display  w at curs with foreground-color 2.\n  677 >      add      4  curs giving curs2.\n  678 |      move     def-acs (w) to ws-acs.\n  679 |      accept   ws-acs at curs2 with update foreground-color cob-color-cyan..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:678: error: 'def-acs' is not defined\n  676 |      display  w at curs with foreground-color 2.\n  677 |      add      4  curs giving curs2.\n  678 >      move     def-acs (w) to ws-acs.\n  679 |      accept   ws-acs at curs2 with update foreground-color cob-color-cyan..\n  680 |      move     ws-acs to def-acs (w).\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:686: error: 'nl-owning' is not defined\n  684 |               move 20  to  lin\n  685 |               go to get-input.\n  686 >      move     def-acs (w)  to  nl-owning.\n  687 |      move     zero  to  nl-sub-nominal.\n  688 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:687: error: 'nl-sub-nominal' is not defined\n  685 |               go to get-input.\n  686 |      move     def-acs (w)  to  nl-owning.\n  687 >      move     zero  to  nl-sub-nominal.\n  688 | *>\n  689 | *> get code description.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:693: error: 'we-error' is not defined\n  691 |  *>    move     4  to  file-function.\n  692 |      perform  acasirsub1-Read-Indexed.\n  693 >      if       we-error  =  2\n  694 |               go to get-input.\n  695 |      add      10  curs giving curs2.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:696: error: 'nl-name' is not defined\n  694 |               go to get-input.\n  695 |      add      10  curs giving curs2.\n  696 >      display  nl-name at curs2  with foreground-color cob-color-cyan.\n  697 |      add      22 to col2.\n  698 |      display  \"[  ]\"  at curs2 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:697: error: 'col2' is not defined\n  695 |      add      10  curs giving curs2.\n  696 |      display  nl-name at curs2  with foreground-color cob-color-cyan.\n  697 >      add      22 to col2.\n  698 |      display  \"[  ]\"  at curs2 with foreground-color 2.\n  699 |      add      1 to col2.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:700: error: 'def-codes' is not defined\n  698 |      display  \"[  ]\"  at curs2 with foreground-color 2.\n  699 |      add      1 to col2.\n  700 >      move     def-codes (w) to ws-codes.\n  701 | *>\n  702 |      if       w < 30\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in paragraph 'vat-check':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:723: error: 'def-vat' is not defined\n  721 | *>\n  722 |      add      38    curs giving curs2.\n  723 >      move     def-vat (w) to ws-vat2.\n  724 |      if       w < 30\n  725 |               accept ws-vat2 at curs2 with foreground-color 3\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in section 'Set-Up-Finished':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in paragraph 'Setup-Fin-Retry':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:884: error: 'PL-App-Created' is not defined\n  882 | *>\n  883 |  Setup-Fin-Retry.\n  884 >      if       PL-App-Created not = \"1\"\n  885 |               move zeros to PL-App-Created PL-Approp-AC\n  886 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:885: error: 'PL-Approp-AC' is not defined\n  883 |  Setup-Fin-Retry.\n  884 |      if       PL-App-Created not = \"1\"\n  885 >               move zeros to PL-App-Created PL-Approp-AC\n  886 |      end-if\n  887 |      accept   Finished-Account-Setup-Screen-1.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in section 'Listing':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:940: error: 'suser' is not defined\n  938 |      move     client   to  p-client\n  939 |                            p-Client-2.\n  940 >      move     suser    to  p-user.\n  941 |      accept   hdtime from time.\n  942 |      if       hdtime not = \"00000000\"\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:997: error: 'ar1-fields' is not defined\n  995 |      perform  acasirsub5-Read-Next.\n  996 | *>\n  997 >      if       ar1-fields = spaces\n  998 |               go to Print-Fini.\n  999 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1019: error: 'ar1' is not defined\n 1017 |      move     14 to B.\n 1018 |      perform  varying A from 1 by 1 until A > 13\n 1019 >               move ar1 (A) to PAR-1 (1)             *> Desc\n 1020 |               move ar1 (B) to PAR-1 (2)\n 1021 |               move ar2 (A) to PAR-2 (1)             *> Sign\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1021: error: 'ar2' is not defined\n 1019 |               move ar1 (A) to PAR-1 (1)             *> Desc\n 1020 |               move ar1 (B) to PAR-1 (2)\n 1021 >               move ar2 (A) to PAR-2 (1)             *> Sign\n 1022 |               move ar2 (B) to PAR-2 (2)\n 1023 |               move WS-Alpha-CD1 (A) to POS-1(1)     *> A/c Type\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in paragraph 'Print-Fini':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1031: error: 'Print-Report' is not defined\n 1029 |  Print-Fini.\n 1030 |      close    print-file.\n 1031 >      call     \"SYSTEM\" using Print-Report.\n 1032 | *>\n 1033 |  list-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in section 'file-init':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1046: error: 'WS-IRS-Default-Record' is not defined\n 1044 | *>              move \"Z\" to ws-reply\n 1045 | *>              go to main-exit.\n 1046 >      initialize WS-IRS-Default-Record.\n 1047 |  *>    move     5 to file-function.\n 1048 |      perform  acasirsub3-Write.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in section 'Input-Headings':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1063: error: 'FS-Reply' is not defined\n 1061 | *>  Test that dflt data exists [11/12/16] - bug finding ?\n 1062 | *>\n 1063 >      if       FS-Reply not = zero\n 1064 |               display IR913 at 2301\n 1065 |               display FS-Reply at 2349\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in section 'Set-Up':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in paragraph 'get-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:692: error: 'acasirsub1-Read-Indexed' is not defined\n  690 | *>\n  691 |  *>    move     4  to  file-function.\n  692 >      perform  acasirsub1-Read-Indexed.\n  693 |      if       we-error  =  2\n  694 |               go to get-input.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in paragraph 'end-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:750: error: 'acasirsub1-Close' is not defined\n  748 | *>\n  749 |  *>                                   move     2  to  file-function.\n  750 >      perform  acasirsub1-Close.\n  751 |  *>                                   move     5  to  file-function.\n  752 |      perform  acasirsub3-Write.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:752: error: 'acasirsub3-Write' is not defined\n  750 |      perform  acasirsub1-Close.\n  751 |  *>                                   move     5  to  file-function.\n  752 >      perform  acasirsub3-Write.\n  753 | *>\n  754 | *>  Check that default a/cs 30, 31 & 32 have been set up.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in section 'Set-Up-Finished':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:871: error: 'acasirsub5-Read-Next' is not defined\n  869 | *>\n  870 |  *>    move     3  to  file-function.             *> open & read\n  871 >      perform  acasirsub5-Read-Next.\n  872 | *>\n  873 |      if       we-error not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:881: error: 'acasirsub1-Open-Input' is not defined\n  879 |      end-if\n  880 |  *>    move     1  to  file-function access-type.      *> open input Nomi..\n  881 >      perform  acasirsub1-Open-Input.\n  882 | *>\n  883 |  Setup-Fin-Retry.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in paragraph 'Setup-Fin-Retry':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:905: error: 'acasirsub5-Write' is not defined\n  903 | *>\n  904 |  *>    move     5 to file-function.\n  905 >      perform  acasirsub5-Write.    *> write and close Final\n  906 |  *>    move     2 to file-function.                         *> close Nomi..\n  907 |      perform  acasirsub1-Close.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl: in section 'Listing':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:964: error: 'acasirsub3-Read-Next' is not defined\n  962 | *>\n  963 |  *>    move     3  to  file-function.\n  964 >      perform  acasirsub3-Read-Next.\n  965 | *>\n  966 | *> Now print them\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:130: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:147: error: irsprint-spool-command-p.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:179: error: irswsnl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:180: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:181: error: irswsdflt.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:184: error: irswsfinal.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:254: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:276: error: irswssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:306: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:308: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1140: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:319: error: 'run-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:321: error: 'client' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:324: error: 'start-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:327: error: 'end-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:473: error: 'ar1-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:475: error: 'ar2-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:477: error: 'ar1-15' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:479: error: 'ar2-15' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:482: error: 'ar1-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:484: error: 'ar2-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:486: error: 'ar1-16' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:488: error: 'ar2-16' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:491: error: 'ar1-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:493: error: 'ar2-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:495: error: 'ar1-17' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:497: error: 'ar2-17' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:500: error: 'ar1-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:502: error: 'ar2-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:507: error: 'ar1-5' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:509: error: 'ar2-5' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:511: error: 'ar1-18' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:513: error: 'ar2-18' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:516: error: 'ar1-6' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:518: error: 'ar2-6' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:520: error: 'ar1-19' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:522: error: 'ar2-19' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:525: error: 'ar1-7' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:527: error: 'ar2-7' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:529: error: 'ar1-20' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:531: error: 'ar2-20' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:534: error: 'ar1-8' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:536: error: 'ar2-8' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:541: error: 'ar1-9' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:543: error: 'ar2-9' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:545: error: 'ar1-21' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:547: error: 'ar2-21' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:550: error: 'ar1-10' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:552: error: 'ar2-10' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:554: error: 'ar1-22' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:556: error: 'ar2-22' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:561: error: 'ar1-11' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:563: error: 'ar2-11' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:565: error: 'ar1-23' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:567: error: 'ar2-23' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:570: error: 'ar1-12' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:572: error: 'ar2-12' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:574: error: 'ar1-24' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:576: error: 'ar2-24' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:579: error: 'ar1-13' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:581: error: 'ar2-13' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:583: error: 'ar1-25' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:585: error: 'ar2-25' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:588: error: 'ar1-14' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:590: error: 'ar2-14' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:592: error: 'ar1-26' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:594: error: 'ar2-26' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:597: error: 'PL-Approp-AC6' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:600: error: 'IRS-System-Params' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:601: error: 'WS-System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:602: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:613: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:613: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:615: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:665: error: 'cole' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:666: error: 'lin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:667: error: 'curs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:677: error: 'curs2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:678: error: 'def-acs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:686: error: 'nl-owning' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:687: error: 'nl-sub-nominal' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:693: error: 'we-error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:696: error: 'nl-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:697: error: 'col2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:700: error: 'def-codes' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:723: error: 'def-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:884: error: 'PL-App-Created' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:885: error: 'PL-Approp-AC' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:940: error: 'suser' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:997: error: 'ar1-fields' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1019: error: 'ar1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1021: error: 'ar2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1031: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1046: error: 'WS-IRS-Default-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1063: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:692: error: 'acasirsub1-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:750: error: 'acasirsub1-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:752: error: 'acasirsub3-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:871: error: 'acasirsub5-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:881: error: 'acasirsub1-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:905: error: 'acasirsub5-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:964: error: 'acasirsub3-Read-Next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:130: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:147: error: irsprint-spool-command-p.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:179: error: irswsnl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:180: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:181: error: irswsdflt.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:184: error: irswsfinal.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:254: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:276: error: irswssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:306: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:308: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1140: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:319: error: 'run-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:321: error: 'client' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:324: error: 'start-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:327: error: 'end-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:473: error: 'ar1-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:475: error: 'ar2-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:477: error: 'ar1-15' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:479: error: 'ar2-15' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:482: error: 'ar1-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:484: error: 'ar2-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:486: error: 'ar1-16' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:488: error: 'ar2-16' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:491: error: 'ar1-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:493: error: 'ar2-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:495: error: 'ar1-17' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:497: error: 'ar2-17' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:500: error: 'ar1-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:502: error: 'ar2-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:507: error: 'ar1-5' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:509: error: 'ar2-5' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:511: error: 'ar1-18' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:513: error: 'ar2-18' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:516: error: 'ar1-6' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:518: error: 'ar2-6' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:520: error: 'ar1-19' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:522: error: 'ar2-19' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:525: error: 'ar1-7' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:527: error: 'ar2-7' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:529: error: 'ar1-20' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:531: error: 'ar2-20' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:534: error: 'ar1-8' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:536: error: 'ar2-8' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:541: error: 'ar1-9' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:543: error: 'ar2-9' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:545: error: 'ar1-21' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:547: error: 'ar2-21' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:550: error: 'ar1-10' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:552: error: 'ar2-10' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:554: error: 'ar1-22' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:556: error: 'ar2-22' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:561: error: 'ar1-11' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:563: error: 'ar2-11' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:565: error: 'ar1-23' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:567: error: 'ar2-23' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:570: error: 'ar1-12' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:572: error: 'ar2-12' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:574: error: 'ar1-24' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:576: error: 'ar2-24' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:579: error: 'ar1-13' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:581: error: 'ar2-13' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:583: error: 'ar1-25' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:585: error: 'ar2-25' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:588: error: 'ar1-14' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:590: error: 'ar2-14' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:592: error: 'ar1-26' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:594: error: 'ar2-26' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:597: error: 'PL-Approp-AC6' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:600: error: 'IRS-System-Params' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:601: error: 'WS-System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:602: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:613: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:613: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:615: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:665: error: 'cole' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:666: error: 'lin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:667: error: 'curs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:677: error: 'curs2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:678: error: 'def-acs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:686: error: 'nl-owning' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:687: error: 'nl-sub-nominal' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:693: error: 'we-error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:696: error: 'nl-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:697: error: 'col2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:700: error: 'def-codes' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:723: error: 'def-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:884: error: 'PL-App-Created' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:885: error: 'PL-Approp-AC' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:940: error: 'suser' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:997: error: 'ar1-fields' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1019: error: 'ar1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1021: error: 'ar2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1031: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1046: error: 'WS-IRS-Default-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:1063: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:692: error: 'acasirsub1-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:750: error: 'acasirsub1-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:752: error: 'acasirsub3-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:871: error: 'acasirsub5-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:881: error: 'acasirsub1-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:905: error: 'acasirsub5-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs020.cbl:964: error: 'acasirsub3-Read-Next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 70,
+    "cognitive": 168,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 114,
+      "totalOperators": 304,
+      "totalOperands": 391,
+      "vocabulary": 126,
+      "length": 695,
+      "volume": 4849,
+      "difficulty": 20.58,
+      "effort": 99792,
+      "timeToProgram": 5544,
+      "deliveredBugs": 1.616
+    },
+    "maintainability": 65
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "irsubn",
+        "line": 74
+      },
+      {
+        "target": "SYSTEM",
+        "line": 1031
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 123
+      },
+      {
+        "name": "envdiv",
+        "line": 130
+      },
+      {
+        "name": "irsprint-spool-command-p",
+        "line": 147
+      },
+      {
+        "name": "irswsnl",
+        "line": 179
+      },
+      {
+        "name": "wsfnctn",
+        "line": 180
+      },
+      {
+        "name": "irswsdflt",
+        "line": 181
+      },
+      {
+        "name": "irswsfinal",
+        "line": 184
+      },
+      {
+        "name": "screenio",
+        "line": 245
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 254
+      },
+      {
+        "name": "irswssystem",
+        "line": 275
+      },
+      {
+        "name": "wssystem",
+        "line": 278
+      },
+      {
+        "name": "wsnames",
+        "line": 308
+      },
+      {
+        "name": "Proc-ZZ100-ACAS-IRS-Calls",
+        "line": 1140
+      }
+    ],
+    "performs": [
+      {
+        "target": "acasirsubn",
+        "line": 75
+      },
+      {
+        "target": "Set-Up",
+        "line": 624
+      },
+      {
+        "target": "Amend",
+        "line": 627
+      },
+      {
+        "target": "Show",
+        "line": 630
+      },
+      {
+        "target": "Listing",
+        "line": 633
+      },
+      {
+        "target": "Set-Up-Finished",
+        "line": 636
+      },
+      {
+        "target": "file-init",
+        "line": 657
+      },
+      {
+        "target": "varying",
+        "line": 663
+      },
+      {
+        "target": "perform",
+        "line": 670
+      },
+      {
+        "target": "acasirsub1-Read-Indexed",
+        "line": 692
+      },
+      {
+        "target": "acasirsub1-Close",
+        "line": 750
+      },
+      {
+        "target": "acasirsub3-Write",
+        "line": 752
+      },
+      {
+        "target": "amend",
+        "line": 764
+      },
+      {
+        "target": "varying",
+        "line": 774
+      },
+      {
+        "target": "perform",
+        "line": 781
+      },
+      {
+        "target": "acasirsub1-Read-Indexed",
+        "line": 817
+      },
+      {
+        "target": "acasirsub1-Close",
+        "line": 856
+      },
+      {
+        "target": "acasirsub3-Write",
+        "line": 858
+      },
+      {
+        "target": "acasirsub5-Read-Next",
+        "line": 871
+      },
+      {
+        "target": "acasirsub1-Open-Input",
+        "line": 881
+      },
+      {
+        "target": "acasirsub1-Read-Indexed",
+        "line": 893
+      },
+      {
+        "target": "acasirsub5-Write",
+        "line": 905
+      },
+      {
+        "target": "acasirsub1-Close",
+        "line": 907
+      },
+      {
+        "target": "Input-Headings",
+        "line": 917
+      },
+      {
+        "target": "acasirsub1-Close",
+        "line": 926
+      },
+      {
+        "target": "acasirsub1-Open-Input",
+        "line": 951
+      },
+      {
+        "target": "acasirsub3-Read-Next",
+        "line": 964
+      },
+      {
+        "target": "varying",
+        "line": 968
+      },
+      {
+        "target": "acasirsub1-Read-Indexed",
+        "line": 979
+      },
+      {
+        "target": "acasirsub1-Close",
+        "line": 990
+      },
+      {
+        "target": "acasirsub5-Read-Next",
+        "line": 995
+      },
+      {
+        "target": "varying",
+        "line": 1018
+      },
+      {
+        "target": "acasirsub3-Write",
+        "line": 1048
+      },
+      {
+        "target": "acasirsub3-Read-Next",
+        "line": 1059
+      },
+      {
+        "target": "acasirsub1-Open-Input",
+        "line": 1081
+      },
+      {
+        "target": "acasirsub1-Read-Indexed",
+        "line": 1107
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "print-file",
+        "line": 141
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 145
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

@@ -1,0 +1,205 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl",
+  "fileName": "irsnominalUNL.cbl",
+  "fileHash": "620da6e32e145b062f011de5d87ba9f77a0618e86f65b7ee83d722bb51e0d956",
+  "timestamp": "2025-09-15T19:46:04.093Z",
+  "parseTime": 31,
+  "lines": {
+    "total": 226,
+    "code": 106,
+    "comment": 119,
+    "blank": 1
+  },
+  "programId": "irsnominalUNL",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:93: error: envdiv.cob: No such file or directory\n   91 | *>-------------------\n   92 | *>\n   93 >  copy \"envdiv.cob\".\n   94 |  input-output            section.\n   95 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:117: error: irsfdwsnl.cob: No such file or directory\n  115 | *>\n  116 |  fd  nominal-ledger.\n  117 >  copy \"irsfdwsnl.cob\" replacing Record-1 by Nominal-Record.\n  118 |  fd  irsnominal-File-Seq.\n  119 |  copy \"irswsnl.cob\" replacing NL-Record by WS-Nominal-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:119: error: irswsnl.cob: No such file or directory\n  117 |  copy \"irsfdwsnl.cob\" replacing Record-1 by Nominal-Record.\n  118 |  fd  irsnominal-File-Seq.\n  119 >  copy \"irswsnl.cob\" replacing NL-Record by WS-Nominal-Record.\n  120 | *>\n  121 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:142: error: Test-Data-Flags.cob: No such file or directory\n  140 |  01  SO-Print            pic x(160)    value spaces.\n  141 | *>\n  142 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  143 | *>\n  144 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:144: error: wsfnctn.cob: No such file or directory\n  142 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  143 | *>\n  144 >  copy \"wsfnctn.cob\".\n  145 |  copy \"wsnames.cob\".\n  146 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:145: error: wsnames.cob: No such file or directory\n  143 | *>\n  144 |  copy \"wsfnctn.cob\".\n  145 >  copy \"wsnames.cob\".\n  146 |  copy \"wscall.cob\".\n  147 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:146: error: wscall.cob: No such file or directory\n  144 |  copy \"wsfnctn.cob\".\n  145 |  copy \"wsnames.cob\".\n  146 >  copy \"wscall.cob\".\n  147 | *>\n  148 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:221: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  219 |      goback.\n  220 | *>\n  221 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_irsnominalS now\n  222 | *>\n  223 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:118: error: RECORD description missing or invalid\n  116 |  fd  nominal-ledger.\n  117 |  copy \"irsfdwsnl.cob\" replacing Record-1 by Nominal-Record.\n  118 >  fd  irsnominal-File-Seq.\n  119 |  copy \"irswsnl.cob\" replacing NL-Record by WS-Nominal-Record.\n  120 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:121: error: RECORD description missing or invalid\n  119 |  copy \"irswsnl.cob\" replacing NL-Record by WS-Nominal-Record.\n  120 | *>\n  121 >  working-storage section.\n  122 | *>----------------------\n  123 |  77  prog-name           pic x(23)    value \"irsnominalUNL (3.02.00)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:100: error: missing file description for FILE nominal-ledger\n   98 | *>-----------\n   99 | *>\n  100 >      select nominal-ledger  assign       File-34   *> nl-file\n  101 |                             organization indexed\n  102 |                             access       dynamic\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:103: error: 'key-1' is not defined\n  101 |                             organization indexed\n  102 |                             access       dynamic\n  103 >                             record       key-1\n  104 |                             status       fs-reply.\n  105 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:106: error: missing file description for FILE irsnominal-File-Seq\n  104 |                             status       fs-reply.\n  105 | *>\n  106 >      select  irsnominal-File-Seq  assign      \"irsacnts.seq\"\n  107 |                                 organization  sequential\n  108 |                                 status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:104: error: 'fs-reply' is not defined\n  102 |                             access       dynamic\n  103 |                             record       key-1\n  104 >                             status       fs-reply.\n  105 | *>\n  106 |      select  irsnominal-File-Seq  assign      \"irsacnts.seq\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:160: error: 'WS-Log-System' is not defined\n  158 |  aa000-Main-Start.\n  159 |      perform  zz020-Get-Program-Args.\n  160 >      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  161 |      move     11     to WS-Log-File-no.  *> for FHlogger\n  162 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:161: error: 'WS-Log-File-no' is not defined\n  159 |      perform  zz020-Get-Program-Args.\n  160 |      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  161 >      move     11     to WS-Log-File-no.  *> for FHlogger\n  162 | *>\n  163 |      move     spaces to SO-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl: in paragraph 'aa010-Read-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:196: error: 'WS-Nominal-Record' is not defined\n  194 |               end-if\n  195 |               add      1 to WS-Rec-Cnt-In\n  196 >               write    WS-Nominal-Record from Nominal-Record\n  197 |               if       FS-Reply not = zero\n  198 |                        move     SY006 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:196: error: 'Nominal-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:159: error: 'zz020-Get-Program-Args' is not defined\n  157 | *>\n  158 |  aa000-Main-Start.\n  159 >      perform  zz020-Get-Program-Args.\n  160 |      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  161 |      move     11     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:93: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:117: error: irsfdwsnl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:119: error: irswsnl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:142: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:144: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:145: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:146: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:221: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:118: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:121: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:100: error: missing file description for FILE nominal-ledger",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:103: error: 'key-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:106: error: missing file description for FILE irsnominal-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:104: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:160: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:161: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:196: error: 'WS-Nominal-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:196: error: 'Nominal-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:159: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:93: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:117: error: irsfdwsnl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:119: error: irswsnl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:142: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:144: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:145: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:146: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:221: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:118: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:121: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:100: error: missing file description for FILE nominal-ledger",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:103: error: 'key-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:106: error: missing file description for FILE irsnominal-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:104: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:160: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:161: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:196: error: 'WS-Nominal-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:196: error: 'Nominal-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL.cbl:159: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 8,
+    "cognitive": 18,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 57,
+      "totalOperators": 47,
+      "totalOperands": 102,
+      "vocabulary": 65,
+      "length": 149,
+      "volume": 897,
+      "difficulty": 7.16,
+      "effort": 6423,
+      "timeToProgram": 357,
+      "deliveredBugs": 0.299
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 224
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23
+      },
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 93
+      },
+      {
+        "name": "irsfdwsnl",
+        "line": 117
+      },
+      {
+        "name": "irswsnl",
+        "line": 119
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 142
+      },
+      {
+        "name": "wsfnctn",
+        "line": 144
+      },
+      {
+        "name": "wsnames",
+        "line": 145
+      },
+      {
+        "name": "wscall",
+        "line": 146
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 221
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 159
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 166
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 173
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 176
+      },
+      {
+        "target": "forever",
+        "line": 183
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 192
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 199
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 215
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 217
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "nominal-ledger",
+        "line": 116
+      },
+      {
+        "name": "irsnominal-File-Seq",
+        "line": 118
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 121
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

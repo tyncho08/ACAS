@@ -1,0 +1,1665 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl",
+  "fileName": "xl150.cbl",
+  "fileHash": "a1b905ec7a3d627d972657eb5eb3a8f9d138923c19d2e81bab118abd723e3c6f",
+  "timestamp": "2025-09-15T19:46:10.121Z",
+  "parseTime": 243,
+  "lines": {
+    "total": 2256,
+    "code": 1461,
+    "comment": 756,
+    "blank": 39
+  },
+  "programId": "xl150",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:332: error: envdiv.cob: No such file or directory\n  330 | *>===============================\n  331 | *>\n  332 >  copy \"envdiv.cob\".\n  333 |  input-output            Section.\n  334 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:339: error: slselois.cob: No such file or directory\n  337 | *>-----------\n  338 | *>\n  339 >  copy \"slselois.cob\".\n  340 | *>\n  341 |      select Temp-Sales-File     assign file-21\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:359: error: slfdois.cob: No such file or directory\n  357 | *>-----------\n  358 | *>\n  359 >  COPY \"slfdois.cob\".  *> this is the longer one by 5 bytes (118 -113)\n  360 | *>\n  361 |  copy \"fdsl.cob\"    replacing\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:370: error: fdsl.cob: No such file or directory\n  368 |                           Sales-Average   by temp-sales-Average\n  369 |                           Sales-Activety  by temp-sales-Activety\n  370 >                           STurnover-Q     by temp-STurnover-Q.\n  371 | *>\n  372 |  fd  temp-invoice-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:389: error: fdpl.cob: No such file or directory\n  387 |                           purch-average   by temp-Purch-Average\n  388 |                           purch-activety  by temp-Purch-Activety\n  389 >                           pturnover-q     by temp-STurnover-Q.\n  390 | \n  391 |  working-storage Section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:410: error: wsmaps03.cob: No such file or directory\n  408 |  01  Saved-CD-Args       pic x(13).\n  409 | *>\n  410 >  copy \"wsmaps03.cob\".\n  411 |  copy \"wsfnctn.cob\".\n  412 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:411: error: wsfnctn.cob: No such file or directory\n  409 | *>\n  410 |  copy \"wsmaps03.cob\".\n  411 >  copy \"wsfnctn.cob\".\n  412 | *>\n  413 |  copy \"wsval.cob\".   *> DONE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:413: error: wsval.cob: No such file or directory\n  411 |  copy \"wsfnctn.cob\".\n  412 | *>\n  413 >  copy \"wsval.cob\".   *> DONE\n  414 | *>\n  415 | *> SL\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:417: error: wssl.cob: No such file or directory\n  415 | *> SL\n  416 | *>\n  417 >  COPY \"wssl.cob\".    *> WS-Sales-Record (WS-Sales-Key) of 300 bytes - Tes..\n  418 | *>\n  419 |  COPY \"slwsoi3.cob\".    *> WS-OTM3-Record, redefs o-t-m-3 & OI-Header (sl..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:419: error: slwsoi3.cob: No such file or directory\n  417 |  COPY \"wssl.cob\".    *> WS-Sales-Record (WS-Sales-Key) of 300 bytes - Tes..\n  418 | *>\n  419 >  COPY \"slwsoi3.cob\".    *> WS-OTM3-Record, redefs o-t-m-3 & OI-Header (sl..\n  420 | *>   Moves to ; OR from  so remove these moves.  */\n  421 |  copy \"slwssoi.cob\"  replacing\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:428: error: slwssoi.cob: No such file or directory\n  426 |                     si-s-closed   by ss-closed\n  427 |                     si-deduct-amt by soi-deduct-amt\n  428 >                     si-applied    by soi-applied.\n  429 | *>\n  430 |  COPY \"slwsinv2.cob\"  replacing\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:434: error: slwsinv2.cob: No such file or directory\n  432 |                           Invoice-Key    by Sinvoice-Key\n  433 |                           Invoice-Nos    by Sinvoice-Nos\n  434 >                           Item-Nos       by Sitem-Nos.\n  435 |  01  WS-Invoice-Record  redefines SInvoice-Record\n  436 |                         pic x(137).      *> Needed for FH.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:438: error: slwsinv.cob: No such file or directory\n  436 |                         pic x(137).      *> Needed for FH.\n  437 | *>\n  438 >  copy \"slwsinv.cob\".  *> Holds header (SInvoice-Header) and 40 lines (SIn..\n  439 | *>                        as sih-                           sil-\n  440 | *> PL / BL\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:442: error: wspl.cob: No such file or directory\n  440 | *> PL / BL\n  441 | *>\n  442 >  COPY \"wspl.cob\".    *> WS-Purch-Record (WS-Purch-Key) of 302 bytes - Tes..\n  443 | *>\n  444 |  COPY \"plwsoi5B.cob\".  *> WS-OTM5-Record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:444: error: plwsoi5B.cob: No such file or directory\n  442 |  COPY \"wspl.cob\".    *> WS-Purch-Record (WS-Purch-Key) of 302 bytes - Tes..\n  443 | *>\n  444 >  COPY \"plwsoi5B.cob\".  *> WS-OTM5-Record\n  445 |  copy \"plwssoi.cob\"  replacing\n  446 |                     ==si-header==  by ==poi-header redefines WS-OTM5-Reco..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:453: error: plwssoi.cob: No such file or directory\n  451 |                     si-s-closed   by ps-closed\n  452 |                     si-deduct-amt by poi-deduct-amt\n  453 >                     si-applied    by poi-applied.\n  454 | *>\n  455 |  COPY \"plwspinv2.cob\"   replacing\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:458: error: plwspinv2.cob: No such file or directory\n  456 |                           invoice-key    by Pinvoice-Key\n  457 |                           invoice-nos    by Pinvoice-Nos\n  458 >                           item-nos       by Pitem-Nos.\n  459 | *>\n  460 |  copy \"plwspinv.cob\"  replacing\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:466: error: plwspinv.cob: No such file or directory\n  464 |                     applied          by papplied\n  465 |                     ih-lines         by pih-lines\n  466 >                     ih-day-book-flag by pih-day-book-flag.\n  467 | *>\n  468 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:492: error: Test-Data-Flags.cob: No such file or directory\n  490 | *>     03  WS-OTM5-Record         pic x.\n  491 | *>\n  492 >  copy \"Test-Data-Flags.cob\".  *> set sw-Testing to zero to stop logging.\n  493 | *>\n  494 |  01  File-Info                          value zero.       *> Layout as pe..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:592: error: wscall.cob: No such file or directory\n  590 | *>**************\n  591 | *>\n  592 >  copy \"wscall.cob\".\n  593 |  copy \"wssystem.cob\".\n  594 |  copy \"wssys4.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:593: error: wssystem.cob: No such file or directory\n  591 | *>\n  592 |  copy \"wscall.cob\".\n  593 >  copy \"wssystem.cob\".\n  594 |  copy \"wssys4.cob\".\n  595 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:594: error: wssys4.cob: No such file or directory\n  592 |  copy \"wscall.cob\".\n  593 |  copy \"wssystem.cob\".\n  594 >  copy \"wssys4.cob\".\n  595 |  copy \"wsnames.cob\".\n  596 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:595: error: wsnames.cob: No such file or directory\n  593 |  copy \"wssystem.cob\".\n  594 |  copy \"wssys4.cob\".\n  595 >  copy \"wsnames.cob\".\n  596 | *>\n  597 |  01  To-Day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1734: error: FileStat-Msgs.cpy: No such file or directory\n 1732 |  AB995-Eval-Status.\n 1733 |   copy \"FileStat-Msgs.cpy\" replacing STATUS by FS-Reply\n 1734 >                                      MSG by WS-Msg.\n 1735 |      if       Error-Code not zero\n 1736 |               evaluate  Error-Code\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:2252: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n 2250 |      exit     Section.\n 2251 | *>\n 2252 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n 2253 | *>\n 2254 |  copy \"Proc-ACAS-FH-Calls.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:2254: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n 2252 |  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n 2253 | *>\n 2254 >  copy \"Proc-ACAS-FH-Calls.cob\".\n 2255 | *>\n 2256 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:435: error: 'SInvoice-Record' is not defined\n  433 |                           Invoice-Nos    by Sinvoice-Nos\n  434 |                           Item-Nos       by Sitem-Nos.\n  435 >  01  WS-Invoice-Record  redefines SInvoice-Record\n  436 |                         pic x(137).      *> Needed for FH.\n  437 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:341: error: missing file description for FILE Temp-Sales-File\n  339 |  copy \"slselois.cob\".\n  340 | *>\n  341 >      select Temp-Sales-File     assign file-21\n  342 |                                 ACcess sequential\n  343 |                                 status FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:345: error: missing file description for FILE Temp-Purchase-File\n  343 |                                 status FS-Reply.\n  344 | *>\n  345 >      select Temp-Purchase-File  assign file-21\n  346 |                                 ACcess sequential\n  347 |                                 status FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:343: error: 'FS-Reply' is not defined\n  341 |      select Temp-Sales-File     assign file-21\n  342 |                                 ACcess sequential\n  343 >                                 status FS-Reply.\n  344 | *>\n  345 |      select Temp-Purchase-File  assign file-21\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:599: error: 'WS-Calling-Data' is not defined\n  597 |  01  To-Day              pic x(10).\n  598 | *>\n  599 >  procedure division using WS-Calling-Data\n  600 |                           System-Record\n  601 |                           System-Record-4\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:600: error: 'System-Record' is not defined\n  598 | *>\n  599 |  procedure division using WS-Calling-Data\n  600 >                           System-Record\n  601 |                           System-Record-4\n  602 |                           To-Day\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:601: error: 'System-Record-4' is not defined\n  599 |  procedure division using WS-Calling-Data\n  600 |                           System-Record\n  601 >                           System-Record-4\n  602 |                           To-Day\n  603 |                           File-Defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:603: error: 'File-Defs' is not defined\n  601 |                           System-Record-4\n  602 |                           To-Day\n  603 >                           File-Defs.\n  604 | *>=======================================\n  605 |  aa00-Main Section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in section 'aa00-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:642: error: 'u-bin' is not defined\n  640 | *> get today as binary to use in compares with data files\n  641 | *>\n  642 >      move     zero  to  u-bin.\n  643 |      move     to-day to u-Date.\n  644 |      call     \"maps04\"  using  maps03-ws.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:643: error: 'u-Date' is not defined\n  641 | *>\n  642 |      move     zero  to  u-bin.\n  643 >      move     to-day to u-Date.\n  644 |      call     \"maps04\"  using  maps03-ws.\n  645 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:644: error: 'maps03-ws' is not defined\n  642 |      move     zero  to  u-bin.\n  643 |      move     to-day to u-Date.\n  644 >      call     \"maps04\"  using  maps03-ws.\n  645 | *>\n  646 |  aa010-Acpt-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa010-Acpt-Reply':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:655: error: 'WS-CD-Args' is not defined\n  653 | *>   purchase NULL xl150spx\n  654 | *>\n  655 >      if       function lower-case (WS-CD-Args (1:5)) not = \"xl150\"\n  656 |               go to aa012-Display-Warnings.\n  657 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa015-Recheck-for-Issues':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:685: error: 'WS-Term-Code' is not defined\n  683 | *>      or standalone and if not, will run sl130 and/or pl130 if not run.\n  684 | *>\n  685 >      move     zeros to WS-Term-Code.\n  686 |      if       S-Flag-A = 1             *> Sales    or\n  687 |           or  P-Flag-A = 1             *> Purchase Analysis not run.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:686: error: 'S-Flag-A' is not defined\n  684 | *>\n  685 |      move     zeros to WS-Term-Code.\n  686 >      if       S-Flag-A = 1             *> Sales    or\n  687 |           or  P-Flag-A = 1             *> Purchase Analysis not run.\n  688 |               display XL103   at 1401 with foreground-color 4\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:687: error: 'P-Flag-A' is not defined\n  685 |      move     zeros to WS-Term-Code.\n  686 |      if       S-Flag-A = 1             *> Sales    or\n  687 >           or  P-Flag-A = 1             *> Purchase Analysis not run.\n  688 |               display XL103   at 1401 with foreground-color 4\n  689 |               display XL108   at 1501 with foreground-color 2\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:692: error: 'WS-Called' is not defined\n  690 |               if       S-Flag-A = 1\n  691 |                        move WS-Calling-Data to WS-Backup-Calling-Data\n  692 >                        move \"sl130\" to WS-Called\n  693 |                        move \"xl150\" to WS-Caller\n  694 |                        call WS-caller using  WS-calling-data\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:693: error: 'WS-Caller' is not defined\n  691 |                        move WS-Calling-Data to WS-Backup-Calling-Data\n  692 |                        move \"sl130\" to WS-Called\n  693 >                        move \"xl150\" to WS-Caller\n  694 |                        call WS-caller using  WS-calling-data\n  695 |                                              System-Record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:722: error: 'S-Flag-I' is not defined\n  720 | *> Now the Errors that the user MUST fix, e.g., by running uncompleted pr..\n  721 | *>\n  722 >      if       S-Flag-I = 1      *> Sales Ledger    - Unposted invoices ex..\n  723 |         or    P-Flag-I = 1      *> Purchase Ledger - Unposted invoices ex..\n  724 |               display XL101 at 1101 with foreground-color 4\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:723: error: 'P-Flag-I' is not defined\n  721 | *>\n  722 |      if       S-Flag-I = 1      *> Sales Ledger    - Unposted invoices ex..\n  723 >         or    P-Flag-I = 1      *> Purchase Ledger - Unposted invoices ex..\n  724 |               display XL101 at 1101 with foreground-color 4\n  725 |               move \"Y\" to WS-Found-Error\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:727: error: 'S-Flag-P' is not defined\n  725 |               move \"Y\" to WS-Found-Error\n  726 |      end-if\n  727 >      if      (S-Flag-P = 1 or 2)        *>  Sales   or\n  728 |          or  (P-Flag-P = 1 or 2)        *>  Purchase payments Proofed not..\n  729 |               display XL102 at 1201 with foreground-color 4\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:728: error: 'P-Flag-P' is not defined\n  726 |      end-if\n  727 |      if      (S-Flag-P = 1 or 2)        *>  Sales   or\n  728 >          or  (P-Flag-P = 1 or 2)        *>  Purchase payments Proofed not..\n  729 |               display XL102 at 1201 with foreground-color 4\n  730 |               move \"Y\" to WS-Found-Error\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa020-Request-Ledgers':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:760: error: 'S-L' is not defined\n  758 |               go to aa025-OTM-Checks.\n  759 | *>\n  760 >      if       S-L\n  761 |               display \"Do you wish to run Sales Ledger? (Y/N) - [ ]\"   at..\n  762 |               ACcept WS-Reply at 1843 with foreground-color 6 UPPER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:765: error: 'B-L' is not defined\n  763 |               if  WS-Reply = \"Y\"\n  764 |                   move 1 to SL-EoC.\n  765 >      if       B-L\n  766 |               display \"Do you wish to run Purchase Ledger? (Y/N) - [ ]\" a..\n  767 |               ACcept WS-Reply at 1946 with foreground-color 6 UPPER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa025-OTM-Checks':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:777: error: 'FS-Cobol-Files-Used' is not defined\n  775 | *>\n  776 |  aa025-OTM-Checks.\n  777 >      if       FS-Cobol-Files-Used\n  778 |               call  \"CBL_CHECK_FILE_EXIST\" using File-29     *> OTM5 (Pur..\n  779 |                                                  File-Info\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:778: error: 'File-29' is not defined\n  776 |  aa025-OTM-Checks.\n  777 |      if       FS-Cobol-Files-Used\n  778 >               call  \"CBL_CHECK_FILE_EXIST\" using File-29     *> OTM5 (Pur..\n  779 |                                                  File-Info\n  780 |               if    return-code not = zero  and PL-EoC = 1   *> not = zer..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:785: error: 'File-19' is not defined\n  783 | *>\n  784 |      if       FS-Cobol-Files-Used\n  785 >               call  \"CBL_CHECK_FILE_EXIST\" using File-19     *> OTM3 (Sal..\n  786 |                                                  File-Info\n  787 |               if    return-code not = zero and SL-EoC = 1    *> not = zer..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa030-Display-Heads':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:803: error: 'File-Key-No' is not defined\n  801 |      perform  zz070-Convert-Date.\n  802 |      display  WS-Date at 0171 with foreground-color 2.\n  803 >      move     1  to File-Key-No.\n  804 | *>\n  805 |  aa040-Display-End.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa040-Display-End':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:809: error: 'S-End-Cycle-Date' is not defined\n  807 |      if       SL-EoC = 1\n  808 |               perform AB00-SL-Processing\n  809 >               move u-bin to S-End-Cycle-Date.\n  810 |      if       PL-EoC = 1\n  811 |               perform AC00-PL-Processing\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:812: error: 'BL-End-Cycle-Date' is not defined\n  810 |      if       PL-EoC = 1\n  811 |               perform AC00-PL-Processing\n  812 >               move u-bin to BL-End-Cycle-Date.\n  813 | *>\n  814 |  aa050-EOY-Processing.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa100-Phase-6':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:863: error: 'Temp-Sales-Record' is not defined\n  861 |                        go to aa991-File-Error-Exit\n  862 |               end-if\n  863 >               write    Temp-Sales-Record from WS-Sales-Record\n  864 |               if       FS-Reply not = zero\n  865 |                        perform aa802-Error-on-Write-Temp-Sales\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:863: error: 'WS-Sales-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa110-Phase-7':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:913: error: 'Open-Item-File-S' is not defined\n  911 |  aa110-Phase-7.\n  912 |      display  \"7A\" at 1207 with foreground-color 2.\n  913 >      open     output Open-Item-File-S.\n  914 |      if       FS-Reply not = zero\n  915 |               perform aa815-Error-on-Open-Temp-OTM3\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:913: error: 'Open-Item-File-S' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:916: error: 'Open-Item-File-S' is not a file name\n  914 |      if       FS-Reply not = zero\n  915 |               perform aa815-Error-on-Open-Temp-OTM3\n  916 >               close Open-Item-File-S\n  917 |               go to aa991-File-Error-Exit\n  918 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:923: error: 'Open-Item-File-S' is not a file name\n  921 |               perform aa814-Error-on-Open-OTM3\n  922 |               perform  OTM3-Close\n  923 >               close Open-Item-File-S\n  924 |               go to aa991-File-Error-Exit\n  925 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:934: error: 'Open-Item-File-S' is not a file name\n  932 |                        perform aa800-Error-on-Read-OTM3\n  933 |                        perform  OTM3-Close\n  934 >                        close Open-Item-File-S\n  935 |                        go to aa991-File-Error-Exit\n  936 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:937: error: 'Open-Item-Record-S' is not defined\n  935 |                        go to aa991-File-Error-Exit\n  936 |               end-if\n  937 >               write  Open-Item-Record-S from WS-OTM3-Record\n  938 |               if       FS-Reply not = zero\n  939 |                        perform aa806-Error-on-Write-Temp-OTM3\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:937: error: 'WS-OTM3-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:941: error: 'Open-Item-File-S' is not a file name\n  939 |                        perform aa806-Error-on-Write-Temp-OTM3\n  940 |                        perform  OTM3-Close\n  941 >                        close Open-Item-File-S\n  942 |                        go to aa991-File-Error-Exit\n  943 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:945: error: 'Open-Item-File-S' is not a file name\n  943 |               end-if\n  944 |      end-perform\n  945 >      close    Open-Item-File-S.\n  946 |      perform  OTM3-Close.\n  947 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:948: error: 'Open-Item-File-S' is not a file name\n  946 |      perform  OTM3-Close.\n  947 | *>\n  948 >      open     input Open-Item-File-S.\n  949 |      if       FS-Reply not = zero\n  950 |               perform aa815-Error-on-Open-Temp-OTM3\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:951: error: 'Open-Item-File-S' is not a file name\n  949 |      if       FS-Reply not = zero\n  950 |               perform aa815-Error-on-Open-Temp-OTM3\n  951 >               close Open-Item-File-S\n  952 |               go to aa991-File-Error-Exit\n  953 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:957: error: 'Open-Item-File-S' is not a file name\n  955 |      if       FS-Reply not = zero\n  956 |               perform aa814-Error-on-Open-OTM3\n  957 >               close Open-Item-File-S\n  958 |               perform  OTM3-Close\n  959 |               go to aa991-File-Error-Exit\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:963: error: 'Open-Item-File-S' is not a file name\n  961 |      display  \"B\" at 1208 with foreground-color 2.\n  962 |      perform  until FS-Reply = 10\n  963 >               read Open-Item-File-S into WS-OTM3-Record at end\n  964 |                    exit perform\n  965 |               end-read\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:968: error: 'Open-Item-File-S' is not a file name\n  966 |               if       FS-Reply not = zero\n  967 |                        perform aa807-Error-on-Read-Temp-OTM3\n  968 >                        close Open-Item-File-S\n  969 |                        perform  OTM3-Close\n  970 |                        go to aa991-File-Error-Exit\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:975: error: 'Open-Item-File-S' is not a file name\n  973 |               if       FS-Reply not = zero\n  974 |                        perform aa805-Error-on-Write-OTM3\n  975 >                        close Open-Item-File-S\n  976 |                        perform  OTM3-Close\n  977 |                        go to aa991-File-Error-Exit\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:981: error: 'Open-Item-File-S' is not a file name\n  979 |      end-perform\n  980 |      perform  OTM3-Close.\n  981 >      close    Open-Item-File-S.\n  982 |      open     output Open-Item-File-S.     *> Clear the temp OTM file.\n  983 |      close    Open-Item-File-S.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:982: error: 'Open-Item-File-S' is not a file name\n  980 |      perform  OTM3-Close.\n  981 |      close    Open-Item-File-S.\n  982 >      open     output Open-Item-File-S.     *> Clear the temp OTM file.\n  983 |      close    Open-Item-File-S.\n  984 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:983: error: 'Open-Item-File-S' is not a file name\n  981 |      close    Open-Item-File-S.\n  982 |      open     output Open-Item-File-S.     *> Clear the temp OTM file.\n  983 >      close    Open-Item-File-S.\n  984 | *>\n  985 |  aa120-Phase-8.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa130-Phase-9':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1093: error: 'Temp-Purch-Record' is not defined\n 1091 |                        go to aa991-File-Error-Exit\n 1092 |               end-if\n 1093 >               write    Temp-Purch-Record from WS-Purch-Record\n 1094 |               if       FS-Reply not = zero\n 1095 |                        perform aa902-Error-on-Write-Temp-Purchase\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1093: error: 'WS-Purch-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa140-Phase-10':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1143: error: 'Open-Item-File-S' is not a file name\n 1141 |  aa140-Phase-10.\n 1142 |      display  \"10A\" at 1207 with foreground-color 2.\n 1143 >      open     output Open-Item-File-S.\n 1144 |      if       FS-Reply not = zero\n 1145 |               perform aa915-Error-on-Open-Temp-OTM5\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1146: error: 'Open-Item-File-S' is not a file name\n 1144 |      if       FS-Reply not = zero\n 1145 |               perform aa915-Error-on-Open-Temp-OTM5\n 1146 >               close Open-Item-File-S\n 1147 |               go to aa991-File-Error-Exit\n 1148 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1153: error: 'Open-Item-File-S' is not a file name\n 1151 |               perform aa914-Error-on-Open-OTM5\n 1152 |               perform  OTM5-Close\n 1153 >               close Open-Item-File-S\n 1154 |               go to aa991-File-Error-Exit\n 1155 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1164: error: 'Open-Item-File-S' is not a file name\n 1162 |                        perform aa900-Error-on-Read-OTM5\n 1163 |                        perform  OTM5-Close\n 1164 >                        close Open-Item-File-S\n 1165 |                        go to aa991-File-Error-Exit\n 1166 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1167: error: 'WS-OTM5-Record' is not defined\n 1165 |                        go to aa991-File-Error-Exit\n 1166 |               end-if\n 1167 >               write  Open-Item-Record-S from WS-OTM5-Record\n 1168 |               if       FS-Reply not = zero\n 1169 |                        perform aa906-Error-on-Write-Temp-OTM5\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1171: error: 'Open-Item-File-S' is not a file name\n 1169 |                        perform aa906-Error-on-Write-Temp-OTM5\n 1170 |                        perform  OTM5-Close\n 1171 >                        close Open-Item-File-S\n 1172 |                        go to aa991-File-Error-Exit\n 1173 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1175: error: 'Open-Item-File-S' is not a file name\n 1173 |               end-if\n 1174 |      end-perform\n 1175 >      close    Open-Item-File-S.\n 1176 |      perform  OTM5-Close.\n 1177 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1178: error: 'Open-Item-File-S' is not a file name\n 1176 |      perform  OTM5-Close.\n 1177 | *>\n 1178 >      open     input Open-Item-File-S.\n 1179 |      if       FS-Reply not = zero\n 1180 |               perform aa915-Error-on-Open-Temp-OTM5\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1181: error: 'Open-Item-File-S' is not a file name\n 1179 |      if       FS-Reply not = zero\n 1180 |               perform aa915-Error-on-Open-Temp-OTM5\n 1181 >               close Open-Item-File-S\n 1182 |               go to aa991-File-Error-Exit\n 1183 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1187: error: 'Open-Item-File-S' is not a file name\n 1185 |      if       FS-Reply not = zero\n 1186 |               perform aa914-Error-on-Open-OTM5\n 1187 >               close Open-Item-File-S\n 1188 |               perform  OTM5-Close\n 1189 |               go to aa991-File-Error-Exit\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1193: error: 'Open-Item-File-S' is not a file name\n 1191 |      display  \"B\" at 1209 with foreground-color 2.\n 1192 |      perform  until FS-Reply = 10\n 1193 >               read Open-Item-File-S into WS-OTM5-Record at end\n 1194 |                    exit perform\n 1195 |               end-read\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1198: error: 'Open-Item-File-S' is not a file name\n 1196 |               if       FS-Reply not = zero\n 1197 |                        perform aa907-Error-on-Read-Temp-OTM5\n 1198 >                        close Open-Item-File-S\n 1199 |                        perform  OTM5-Close\n 1200 |                        go to aa991-File-Error-Exit\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1205: error: 'Open-Item-File-S' is not a file name\n 1203 |               if       FS-Reply not = zero\n 1204 |                        perform aa905-Error-on-Write-OTM5\n 1205 >                        close Open-Item-File-S\n 1206 |                        perform  OTM5-Close\n 1207 |                        go to aa991-File-Error-Exit\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1211: error: 'Open-Item-File-S' is not a file name\n 1209 |      end-perform\n 1210 |      perform  OTM5-Close.\n 1211 >      close    Open-Item-File-S.\n 1212 |      open     output Open-Item-File-S.     *> Clear the temp OTM file.\n 1213 |      close    Open-Item-File-S.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1212: error: 'Open-Item-File-S' is not a file name\n 1210 |      perform  OTM5-Close.\n 1211 |      close    Open-Item-File-S.\n 1212 >      open     output Open-Item-File-S.     *> Clear the temp OTM file.\n 1213 |      close    Open-Item-File-S.\n 1214 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1213: error: 'Open-Item-File-S' is not a file name\n 1211 |      close    Open-Item-File-S.\n 1212 |      open     output Open-Item-File-S.     *> Clear the temp OTM file.\n 1213 >      close    Open-Item-File-S.\n 1214 | *>\n 1215 |  aa150-Phase-11.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa150-Phase-11':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1242: error: 'WS-PInvoice-Record' is not defined\n 1240 |                        go to aa991-File-Error-Exit\n 1241 |               end-if\n 1242 >               write  Temp-Invoice-Record from WS-PInvoice-Record\n 1243 |               if       FS-Reply not = zero\n 1244 |                        perform aa909-Error-on-Write-Temp-PInvoices\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'aa970-Menu-Exit':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1497: error: 'oi-3-flag' is not defined\n 1495 | *>\n 1496 |      if       SL-EoC = 1\n 1497 >               move \"Y\" to oi-3-flag. *> sl060 sets S-Flag-I=2,S-Flag-A=1\n 1498 |      if       PL-EoC = 1\n 1499 |               move \"Y\" to oi-5-flag. *> pl060 sets P-Flag-I=2(invoice lin..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1499: error: 'oi-5-flag' is not defined\n 1497 |               move \"Y\" to oi-3-flag. *> sl060 sets S-Flag-I=2,S-Flag-A=1\n 1498 |      if       PL-EoC = 1\n 1499 >               move \"Y\" to oi-5-flag. *> pl060 sets P-Flag-I=2(invoice lin..\n 1500 | *>\n 1501 |  aa980-Menu-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in section 'AB00-SL-Processing':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'AB010-Phase-1-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1556: error: 'Sales-Current' is not defined\n 1554 |               go to  AB020-Phase-1-End.\n 1555 | *> Not live ?\n 1556 >      if       Sales-Current = zero\n 1557 |          and  Sales-Last    = zero\n 1558 |          and  Sales-Unapplied = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1557: error: 'Sales-Last' is not defined\n 1555 | *> Not live ?\n 1556 |      if       Sales-Current = zero\n 1557 >          and  Sales-Last    = zero\n 1558 |          and  Sales-Unapplied = zero\n 1559 |               move zero to  Sales-Status.  *> no activity so Set status t..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1558: error: 'Sales-Unapplied' is not defined\n 1556 |      if       Sales-Current = zero\n 1557 |          and  Sales-Last    = zero\n 1558 >          and  Sales-Unapplied = zero\n 1559 |               move zero to  Sales-Status.  *> no activity so Set status t..\n 1560 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1559: error: 'Sales-Status' is not defined\n 1557 |          and  Sales-Last    = zero\n 1558 |          and  Sales-Unapplied = zero\n 1559 >               move zero to  Sales-Status.  *> no activity so Set status t..\n 1560 | *>\n 1561 |      if       Sales-Current is negative\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1569: error: 'Current-Quarter' is not defined\n 1567 | *>\n 1568 |      if       new-quarter = 1\n 1569 >               move  zero  to  STurnover-Q (Current-Quarter).\n 1570 | *>\n 1571 |      if       New-Year = 1\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1569: error: 'STurnover-Q' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1572: error: 'Sales-Average' is not defined\n 1570 | *>\n 1571 |      if       New-Year = 1\n 1572 >               move zero to Sales-Average\n 1573 |                            Sales-Activety.\n 1574 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1573: error: 'Sales-Activety' is not defined\n 1571 |      if       New-Year = 1\n 1572 |               move zero to Sales-Average\n 1573 >                            Sales-Activety.\n 1574 | *>\n 1575 |      perform  Sales-Rewrite.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'AB060-Phase-2-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1596: error: 'ss-closed' is not defined\n 1594 |  *>     move     WS-OTM3-Record to Soi-Header.    *> is redefines\n 1595 | *>\n 1596 >      if       ss-closed\n 1597 |               perform AE00-Kill-Invoices    *> all for inv. no.\n 1598 |               perform  OTM3-Delete       *> new 19/01/18\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1604: error: 'soi-type' is not defined\n 1602 |               go to AB060-Phase-2-Read.\n 1603 | *>\n 1604 >      if       soi-type = 1        *> receipt (not wanted)\n 1605 |  *> NEW CODE 19/01/18\n 1606 |               perform  OTM3-Delete\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1613: error: 'soi-deduct-amt' is not defined\n 1611 | *>\n 1612 |      if       soi-type = 5 or 6   *> payment or Jnl unapplied cash\n 1613 >               move zero to soi-deduct-amt.\n 1614 | *>\n 1615 |      move     \"Z\" to soi-applied.             *> UC 18/01/18\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1615: error: 'soi-applied' is not defined\n 1613 |               move zero to soi-deduct-amt.\n 1614 | *>\n 1615 >      move     \"Z\" to soi-applied.             *> UC 18/01/18\n 1616 |      move     zero  to  soi-p-c.\n 1617 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1616: error: 'soi-p-c' is not defined\n 1614 | *>\n 1615 |      move     \"Z\" to soi-applied.             *> UC 18/01/18\n 1616 >      move     zero  to  soi-p-c.\n 1617 | *>\n 1618 |      perform  OTM3-Rewrite.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'AB100-Phase-3-Begin':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1637: error: 'pf-retention' is not defined\n 1635 |      display  \"4A\" at 1207 with foreground-color 2.\n 1636 | *>\n 1637 >      subtract pf-retention from u-bin giving pf-Test.\n 1638 |      subtract 92           from u-bin giving inv-Test.\n 1639 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'AB110-Phase-4-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1647: error: 'SInvoice-Header' is not defined\n 1645 |      if       FS-Reply = 10\n 1646 |               go to AB140-Phase-4-End.\n 1647 >      move     SInvoice-Record to SInvoice-Header.\n 1648 | *>\n 1649 |      if       sih-Test not = zero              *> Keep it.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1649: error: 'sih-Test' is not defined\n 1647 |      move     SInvoice-Record to SInvoice-Header.\n 1648 | *>\n 1649 >      if       sih-Test not = zero              *> Keep it.\n 1650 |               go to AB110-Phase-4-Read.      *>   go to AB120-Copy-Record..\n 1651 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1652: error: 'sapplied' is not defined\n 1650 |               go to AB110-Phase-4-Read.      *>   go to AB120-Copy-Record..\n 1651 | *>\n 1652 >      if       not sapplied                     *> Keep it.\n 1653 |               go to AB110-Phase-4-Read.     *> go to AB120-Copy-Record-Ou..\n 1654 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1655: error: 'sih-type' is not defined\n 1653 |               go to AB110-Phase-4-Read.     *> go to AB120-Copy-Record-Ou..\n 1654 | *>\n 1655 >      if       sih-type = 4 and              *> Kill out of date Proformas\n 1656 |               pf-Test > sih-Date           *> perform AB130-Skip-Reader s..\n 1657 |        if     FS-Cobol-Files-Used                     *>    go to AB120-C..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1656: error: 'sih-Date' is not defined\n 1654 | *>\n 1655 |      if       sih-type = 4 and              *> Kill out of date Proformas\n 1656 >               pf-Test > sih-Date           *> perform AB130-Skip-Reader s..\n 1657 |        if     FS-Cobol-Files-Used                     *>    go to AB120-C..\n 1658 |               perform  varying  Sitem-Nos from zero by 1\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1658: error: 'Sitem-Nos' is not defined\n 1656 |               pf-Test > sih-Date           *> perform AB130-Skip-Reader s..\n 1657 |        if     FS-Cobol-Files-Used                     *>    go to AB120-C..\n 1658 >               perform  varying  Sitem-Nos from zero by 1\n 1659 |                         until   Sitem-Nos > Sih-Lines\n 1660 |                        perform  Invoice-Delete\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1659: error: 'Sih-Lines' is not defined\n 1657 |        if     FS-Cobol-Files-Used                     *>    go to AB120-C..\n 1658 |               perform  varying  Sitem-Nos from zero by 1\n 1659 >                         until   Sitem-Nos > Sih-Lines\n 1660 |                        perform  Invoice-Delete\n 1661 |               end-perform\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1668: error: 'sih-day-book-flag' is not defined\n 1666 | *>\n 1667 |      if       sih-type < 4\n 1668 >               move \"B\" to sih-day-book-flag.\n 1669 | *>\n 1670 |      if       sih-lines not = zero and\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'AB170-Phase-6-Sys4-Reset':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1725: error: 'SL-os-bal-This-month' is not defined\n 1723 | *>\n 1724 |      display  \"5 \" at 1207 with foreground-color 2.\n 1725 >      move     SL-os-bal-This-month to SL-os-bal-Last-month.\n 1726 |      move     zeros to SL-os-bal-This-month       SL-variance\n 1727 |                        SL-invoices-This-month     SL-payments\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1725: error: 'SL-os-bal-Last-month' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1726: error: 'SL-variance' is not defined\n 1724 |      display  \"5 \" at 1207 with foreground-color 2.\n 1725 |      move     SL-os-bal-This-month to SL-os-bal-Last-month.\n 1726 >      move     zeros to SL-os-bal-This-month       SL-variance\n 1727 |                        SL-invoices-This-month     SL-payments\n 1728 |                        SL-credit-deductions       SL-cn-unappl-This-month\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1727: error: 'SL-invoices-This-month' is not defined\n 1725 |      move     SL-os-bal-This-month to SL-os-bal-Last-month.\n 1726 |      move     zeros to SL-os-bal-This-month       SL-variance\n 1727 >                        SL-invoices-This-month     SL-payments\n 1728 |                        SL-credit-deductions       SL-cn-unappl-This-month\n 1729 |                        SL-credit-notes-This-month.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1727: error: 'SL-payments' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1728: error: 'SL-credit-deductions' is not defined\n 1726 |      move     zeros to SL-os-bal-This-month       SL-variance\n 1727 |                        SL-invoices-This-month     SL-payments\n 1728 >                        SL-credit-deductions       SL-cn-unappl-This-month\n 1729 |                        SL-credit-notes-This-month.\n 1730 |      go       to AB999-main-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1728: error: 'SL-cn-unappl-This-month' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1729: error: 'SL-credit-notes-This-month' is not defined\n 1727 |                        SL-invoices-This-month     SL-payments\n 1728 |                        SL-credit-deductions       SL-cn-unappl-This-month\n 1729 >                        SL-credit-notes-This-month.\n 1730 |      go       to AB999-main-exit.\n 1731 |  *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in section 'AE00-Kill-Invoices':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1802: error: 'soi-invoice' is not defined\n 1800 |               go to AE999-Kill-Exit.\n 1801 | *>\n 1802 >      move     soi-invoice to Sinvoice-Nos.  *> set for header from OTM3-r..\n 1803 |      move     zeros       to Sitem-Nos.\n 1804 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1802: error: 'Sinvoice-Nos' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in section 'AC00-PL-Processing':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl: in paragraph 'AC010-Phase-1-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1862: error: 'Purch-Current' is not defined\n 1860 |               go to  AC020-Phase-1-End.\n 1861 | *>\n 1862 >      if       Purch-Current = zero\n 1863 |          and  Purch-Last    = zero\n 1864 |          and  Purch-Unapplied = zero\ncobc: too many errors [-fmax-errors=128]\n\ncobc: aborting compile of /Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl at line 1862 (PROGRAM-ID: xl150)\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:332: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:339: error: slselois.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:359: error: slfdois.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:370: error: fdsl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:389: error: fdpl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:410: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:411: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:413: error: wsval.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:417: error: wssl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:419: error: slwsoi3.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:428: error: slwssoi.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:434: error: slwsinv2.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:438: error: slwsinv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:442: error: wspl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:444: error: plwsoi5B.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:453: error: plwssoi.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:458: error: plwspinv2.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:466: error: plwspinv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:492: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:592: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:593: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:594: error: wssys4.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:595: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1734: error: FileStat-Msgs.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:2252: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:2254: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:435: error: 'SInvoice-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:341: error: missing file description for FILE Temp-Sales-File",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:345: error: missing file description for FILE Temp-Purchase-File",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:343: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:599: error: 'WS-Calling-Data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:600: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:601: error: 'System-Record-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:603: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:642: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:643: error: 'u-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:644: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:655: error: 'WS-CD-Args' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:685: error: 'WS-Term-Code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:686: error: 'S-Flag-A' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:687: error: 'P-Flag-A' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:692: error: 'WS-Called' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:693: error: 'WS-Caller' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:722: error: 'S-Flag-I' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:723: error: 'P-Flag-I' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:727: error: 'S-Flag-P' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:728: error: 'P-Flag-P' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:760: error: 'S-L' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:765: error: 'B-L' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:777: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:778: error: 'File-29' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:785: error: 'File-19' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:803: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:809: error: 'S-End-Cycle-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:812: error: 'BL-End-Cycle-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:863: error: 'Temp-Sales-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:863: error: 'WS-Sales-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:913: error: 'Open-Item-File-S' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:913: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:916: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:923: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:934: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:937: error: 'Open-Item-Record-S' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:937: error: 'WS-OTM3-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:941: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:945: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:948: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:951: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:957: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:963: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:968: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:975: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:981: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:982: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:983: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1093: error: 'Temp-Purch-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1093: error: 'WS-Purch-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1143: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1146: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1153: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1164: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1167: error: 'WS-OTM5-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1171: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1175: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1178: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1181: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1187: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1193: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1198: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1205: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1211: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1212: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1213: error: 'Open-Item-File-S' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1242: error: 'WS-PInvoice-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1497: error: 'oi-3-flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1499: error: 'oi-5-flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1556: error: 'Sales-Current' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1557: error: 'Sales-Last' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1558: error: 'Sales-Unapplied' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1559: error: 'Sales-Status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1569: error: 'Current-Quarter' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1569: error: 'STurnover-Q' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1572: error: 'Sales-Average' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1573: error: 'Sales-Activety' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1596: error: 'ss-closed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1604: error: 'soi-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1613: error: 'soi-deduct-amt' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1615: error: 'soi-applied' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1616: error: 'soi-p-c' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1637: error: 'pf-retention' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1647: error: 'SInvoice-Header' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1649: error: 'sih-Test' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1652: error: 'sapplied' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1655: error: 'sih-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1656: error: 'sih-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1658: error: 'Sitem-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1659: error: 'Sih-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1668: error: 'sih-day-book-flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1725: error: 'SL-os-bal-This-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1725: error: 'SL-os-bal-Last-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1726: error: 'SL-variance' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1727: error: 'SL-invoices-This-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1727: error: 'SL-payments' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1728: error: 'SL-credit-deductions' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1728: error: 'SL-cn-unappl-This-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1729: error: 'SL-credit-notes-This-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1802: error: 'soi-invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1802: error: 'Sinvoice-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1862: error: 'Purch-Current' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:332: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:339: error: slselois.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:359: error: slfdois.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:370: error: fdsl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:389: error: fdpl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:410: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:411: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:413: error: wsval.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:417: error: wssl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:419: error: slwsoi3.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:428: error: slwssoi.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:434: error: slwsinv2.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:438: error: slwsinv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:442: error: wspl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:444: error: plwsoi5B.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:453: error: plwssoi.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:458: error: plwspinv2.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:466: error: plwspinv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:492: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:592: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:593: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:594: error: wssys4.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:595: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1734: error: FileStat-Msgs.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:2252: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:2254: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:435: error: 'SInvoice-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:341: error: missing file description for FILE Temp-Sales-File",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:345: error: missing file description for FILE Temp-Purchase-File",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:343: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:599: error: 'WS-Calling-Data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:600: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:601: error: 'System-Record-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:603: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:642: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:643: error: 'u-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:644: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:655: error: 'WS-CD-Args' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:685: error: 'WS-Term-Code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:686: error: 'S-Flag-A' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:687: error: 'P-Flag-A' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:692: error: 'WS-Called' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:693: error: 'WS-Caller' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:722: error: 'S-Flag-I' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:723: error: 'P-Flag-I' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:727: error: 'S-Flag-P' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:728: error: 'P-Flag-P' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:760: error: 'S-L' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:765: error: 'B-L' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:777: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:778: error: 'File-29' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:785: error: 'File-19' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:803: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:809: error: 'S-End-Cycle-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:812: error: 'BL-End-Cycle-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:863: error: 'Temp-Sales-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:863: error: 'WS-Sales-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:913: error: 'Open-Item-File-S' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:913: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:916: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:923: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:934: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:937: error: 'Open-Item-Record-S' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:937: error: 'WS-OTM3-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:941: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:945: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:948: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:951: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:957: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:963: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:968: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:975: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:981: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:982: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:983: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1093: error: 'Temp-Purch-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1093: error: 'WS-Purch-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1143: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1146: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1153: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1164: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1167: error: 'WS-OTM5-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1171: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1175: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1178: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1181: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1187: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1193: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1198: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1205: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1211: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1212: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1213: error: 'Open-Item-File-S' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1242: error: 'WS-PInvoice-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1497: error: 'oi-3-flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1499: error: 'oi-5-flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1556: error: 'Sales-Current' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1557: error: 'Sales-Last' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1558: error: 'Sales-Unapplied' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1559: error: 'Sales-Status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1569: error: 'Current-Quarter' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1569: error: 'STurnover-Q' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1572: error: 'Sales-Average' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1573: error: 'Sales-Activety' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1596: error: 'ss-closed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1604: error: 'soi-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1613: error: 'soi-deduct-amt' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1615: error: 'soi-applied' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1616: error: 'soi-p-c' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1637: error: 'pf-retention' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1647: error: 'SInvoice-Header' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1649: error: 'sih-Test' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1652: error: 'sapplied' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1655: error: 'sih-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1656: error: 'sih-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1658: error: 'Sitem-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1659: error: 'Sih-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1668: error: 'sih-day-book-flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1725: error: 'SL-os-bal-This-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1725: error: 'SL-os-bal-Last-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1726: error: 'SL-variance' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1727: error: 'SL-invoices-This-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1727: error: 'SL-payments' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1728: error: 'SL-credit-deductions' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1728: error: 'SL-cn-unappl-This-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1729: error: 'SL-credit-notes-This-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1802: error: 'soi-invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1802: error: 'Sinvoice-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/xl150.cbl:1862: error: 'Purch-Current' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 344,
+    "cognitive": 879,
+    "halstead": {
+      "uniqueOperators": 14,
+      "uniqueOperands": 249,
+      "totalOperators": 1104,
+      "totalOperands": 1108,
+      "vocabulary": 263,
+      "length": 2212,
+      "volume": 17782,
+      "difficulty": 31.15,
+      "effort": 553887,
+      "timeToProgram": 30772,
+      "deliveredBugs": 5.927
+    },
+    "maintainability": 24
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 644
+      },
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 778
+      },
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 785
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 323
+      },
+      {
+        "name": "envdiv",
+        "line": 332
+      },
+      {
+        "name": "slselois",
+        "line": 339
+      },
+      {
+        "name": "slfdois",
+        "line": 359
+      },
+      {
+        "name": "fdsl",
+        "line": 361
+      },
+      {
+        "name": "fdpl",
+        "line": 380
+      },
+      {
+        "name": "wsmaps03",
+        "line": 410
+      },
+      {
+        "name": "wsfnctn",
+        "line": 411
+      },
+      {
+        "name": "wsval",
+        "line": 413
+      },
+      {
+        "name": "wssl",
+        "line": 417
+      },
+      {
+        "name": "slwsoi3",
+        "line": 419
+      },
+      {
+        "name": "slwssoi",
+        "line": 421
+      },
+      {
+        "name": "slwsinv2",
+        "line": 430
+      },
+      {
+        "name": "slwsinv",
+        "line": 438
+      },
+      {
+        "name": "wspl",
+        "line": 442
+      },
+      {
+        "name": "plwsoi5B",
+        "line": 444
+      },
+      {
+        "name": "plwssoi",
+        "line": 445
+      },
+      {
+        "name": "plwspinv2",
+        "line": 455
+      },
+      {
+        "name": "plwspinv",
+        "line": 460
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 492
+      },
+      {
+        "name": "wscall",
+        "line": 592
+      },
+      {
+        "name": "wssystem",
+        "line": 593
+      },
+      {
+        "name": "wssys4",
+        "line": 594
+      },
+      {
+        "name": "wsnames",
+        "line": 595
+      },
+      {
+        "name": "FileStat-Msgs",
+        "line": 1733
+      },
+      {
+        "name": "to",
+        "line": 1808
+      },
+      {
+        "name": "to",
+        "line": 2046
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 2252
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 2254
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 624
+      },
+      {
+        "target": "aa030-Display-Heads",
+        "line": 638
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "line": 801
+      },
+      {
+        "target": "BD00-Check-End-of-Cycle",
+        "line": 806
+      },
+      {
+        "target": "AB00-SL-Processing",
+        "line": 808
+      },
+      {
+        "target": "AC00-PL-Processing",
+        "line": 811
+      },
+      {
+        "target": "Sales-Open-Input",
+        "line": 838
+      },
+      {
+        "target": "aa812-Error-on-Open-Sales",
+        "line": 840
+      },
+      {
+        "target": "Sales-Close",
+        "line": 841
+      },
+      {
+        "target": "aa813-Error-on-Open-Temp-Sales",
+        "line": 846
+      },
+      {
+        "target": "Sales-Close",
+        "line": 848
+      },
+      {
+        "target": "until",
+        "line": 852
+      },
+      {
+        "target": "Sales-Read-Next",
+        "line": 853
+      },
+      {
+        "target": "end-if",
+        "line": 855
+      },
+      {
+        "target": "aa801-Error-on-Read-Sales",
+        "line": 858
+      },
+      {
+        "target": "Sales-Close",
+        "line": 860
+      },
+      {
+        "target": "aa802-Error-on-Write-Temp-Sales",
+        "line": 865
+      },
+      {
+        "target": "Sales-Close",
+        "line": 867
+      },
+      {
+        "target": "close",
+        "line": 870
+      },
+      {
+        "target": "Sales-Close",
+        "line": 872
+      },
+      {
+        "target": "aa813-Error-on-Open-Temp-Sales",
+        "line": 877
+      },
+      {
+        "target": "Sales-Open-Output",
+        "line": 881
+      },
+      {
+        "target": "aa812-Error-on-Open-Sales",
+        "line": 883
+      },
+      {
+        "target": "Sales-Close",
+        "line": 885
+      },
+      {
+        "target": "until",
+        "line": 888
+      },
+      {
+        "target": "end-read",
+        "line": 890
+      },
+      {
+        "target": "aa803-Error-on-Read-Temp-Sales",
+        "line": 893
+      },
+      {
+        "target": "Sales-Close",
+        "line": 895
+      },
+      {
+        "target": "Sales-Write",
+        "line": 898
+      },
+      {
+        "target": "aa804-Error-on-Write-Sales",
+        "line": 900
+      },
+      {
+        "target": "Sales-Close",
+        "line": 902
+      },
+      {
+        "target": "perform",
+        "line": 905
+      },
+      {
+        "target": "aa815-Error-on-Open-Temp-OTM3",
+        "line": 915
+      },
+      {
+        "target": "OTM3-Open-Input",
+        "line": 919
+      },
+      {
+        "target": "aa814-Error-on-Open-OTM3",
+        "line": 921
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 922
+      },
+      {
+        "target": "until",
+        "line": 926
+      },
+      {
+        "target": "OTM3-Read-Next",
+        "line": 927
+      },
+      {
+        "target": "end-if",
+        "line": 929
+      },
+      {
+        "target": "aa800-Error-on-Read-OTM3",
+        "line": 932
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 933
+      },
+      {
+        "target": "aa806-Error-on-Write-Temp-OTM3",
+        "line": 939
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 940
+      },
+      {
+        "target": "close",
+        "line": 944
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 946
+      },
+      {
+        "target": "aa815-Error-on-Open-Temp-OTM3",
+        "line": 950
+      },
+      {
+        "target": "OTM3-Open-Output",
+        "line": 954
+      },
+      {
+        "target": "aa814-Error-on-Open-OTM3",
+        "line": 956
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 958
+      },
+      {
+        "target": "until",
+        "line": 962
+      },
+      {
+        "target": "end-read",
+        "line": 964
+      },
+      {
+        "target": "aa807-Error-on-Read-Temp-OTM3",
+        "line": 967
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 969
+      },
+      {
+        "target": "OTM3-Write",
+        "line": 972
+      },
+      {
+        "target": "aa805-Error-on-Write-OTM3",
+        "line": 974
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 976
+      },
+      {
+        "target": "perform",
+        "line": 979
+      },
+      {
+        "target": "Invoice-Open-Input",
+        "line": 987
+      },
+      {
+        "target": "aa816-Error-on-Open-SInvoices",
+        "line": 989
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 990
+      },
+      {
+        "target": "aa817-Error-on-Open-Temp-SInvoices",
+        "line": 995
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 997
+      },
+      {
+        "target": "until",
+        "line": 1001
+      },
+      {
+        "target": "Invoice-Read-Next",
+        "line": 1002
+      },
+      {
+        "target": "end-if",
+        "line": 1004
+      },
+      {
+        "target": "aa808-Error-on-Read-SInvoices",
+        "line": 1007
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 1009
+      },
+      {
+        "target": "aa809-Error-on-Write-Temp-SInvoices",
+        "line": 1014
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 1016
+      },
+      {
+        "target": "close",
+        "line": 1019
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 1021
+      },
+      {
+        "target": "aa817-Error-on-Open-Temp-SInvoices",
+        "line": 1026
+      },
+      {
+        "target": "Invoice-Open-Output",
+        "line": 1030
+      },
+      {
+        "target": "aa816-Error-on-Open-SInvoices",
+        "line": 1032
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 1034
+      },
+      {
+        "target": "until",
+        "line": 1037
+      },
+      {
+        "target": "end-read",
+        "line": 1039
+      },
+      {
+        "target": "aa810-Error-on-Read-Temp-SInvoices",
+        "line": 1042
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 1044
+      },
+      {
+        "target": "Invoice-Write",
+        "line": 1047
+      },
+      {
+        "target": "aa811-Error-on-Write-SInvoices",
+        "line": 1049
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 1051
+      },
+      {
+        "target": "perform",
+        "line": 1054
+      },
+      {
+        "target": "Purch-Open-Input",
+        "line": 1068
+      },
+      {
+        "target": "aa912-Error-on-Open-Purchase",
+        "line": 1070
+      },
+      {
+        "target": "Purch-Close",
+        "line": 1071
+      },
+      {
+        "target": "aa913-Error-on-Open-Temp-Purchase",
+        "line": 1076
+      },
+      {
+        "target": "Purch-Close",
+        "line": 1078
+      },
+      {
+        "target": "until",
+        "line": 1082
+      },
+      {
+        "target": "Purch-Read-Next",
+        "line": 1083
+      },
+      {
+        "target": "end-if",
+        "line": 1085
+      },
+      {
+        "target": "aa901-Error-on-Read-Purchase",
+        "line": 1088
+      },
+      {
+        "target": "Purch-Close",
+        "line": 1090
+      },
+      {
+        "target": "aa902-Error-on-Write-Temp-Purchase",
+        "line": 1095
+      },
+      {
+        "target": "Purch-Close",
+        "line": 1097
+      },
+      {
+        "target": "close",
+        "line": 1100
+      },
+      {
+        "target": "Purch-Close",
+        "line": 1102
+      },
+      {
+        "target": "aa913-Error-on-Open-Temp-Purchase",
+        "line": 1107
+      },
+      {
+        "target": "Purch-Open-Output",
+        "line": 1111
+      },
+      {
+        "target": "aa912-Error-on-Open-Purchase",
+        "line": 1113
+      },
+      {
+        "target": "Purch-Close",
+        "line": 1115
+      },
+      {
+        "target": "until",
+        "line": 1118
+      },
+      {
+        "target": "end-read",
+        "line": 1120
+      },
+      {
+        "target": "aa903-Error-on-Read-Temp-Purchase",
+        "line": 1123
+      },
+      {
+        "target": "Purch-Close",
+        "line": 1125
+      },
+      {
+        "target": "Purch-Write",
+        "line": 1128
+      },
+      {
+        "target": "aa904-Error-on-Write-Purchase",
+        "line": 1130
+      },
+      {
+        "target": "Purch-Close",
+        "line": 1132
+      },
+      {
+        "target": "perform",
+        "line": 1135
+      },
+      {
+        "target": "aa915-Error-on-Open-Temp-OTM5",
+        "line": 1145
+      },
+      {
+        "target": "OTM5-Open-Input",
+        "line": 1149
+      },
+      {
+        "target": "aa914-Error-on-Open-OTM5",
+        "line": 1151
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 1152
+      },
+      {
+        "target": "until",
+        "line": 1156
+      },
+      {
+        "target": "OTM5-Read-Next",
+        "line": 1157
+      },
+      {
+        "target": "end-if",
+        "line": 1159
+      },
+      {
+        "target": "aa900-Error-on-Read-OTM5",
+        "line": 1162
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 1163
+      },
+      {
+        "target": "aa906-Error-on-Write-Temp-OTM5",
+        "line": 1169
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 1170
+      },
+      {
+        "target": "close",
+        "line": 1174
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 1176
+      },
+      {
+        "target": "aa915-Error-on-Open-Temp-OTM5",
+        "line": 1180
+      },
+      {
+        "target": "OTM5-Open-Output",
+        "line": 1184
+      },
+      {
+        "target": "aa914-Error-on-Open-OTM5",
+        "line": 1186
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 1188
+      },
+      {
+        "target": "until",
+        "line": 1192
+      },
+      {
+        "target": "end-read",
+        "line": 1194
+      },
+      {
+        "target": "aa907-Error-on-Read-Temp-OTM5",
+        "line": 1197
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 1199
+      },
+      {
+        "target": "OTM5-Write",
+        "line": 1202
+      },
+      {
+        "target": "aa905-Error-on-Write-OTM5",
+        "line": 1204
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 1206
+      },
+      {
+        "target": "perform",
+        "line": 1209
+      },
+      {
+        "target": "PInvoice-Open-Input",
+        "line": 1217
+      },
+      {
+        "target": "aa916-Error-on-Open-PInvoices",
+        "line": 1219
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 1220
+      },
+      {
+        "target": "aa917-Error-on-Open-Temp-PInvoices",
+        "line": 1225
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 1227
+      },
+      {
+        "target": "until",
+        "line": 1231
+      },
+      {
+        "target": "PInvoice-Read-Next",
+        "line": 1232
+      },
+      {
+        "target": "end-if",
+        "line": 1234
+      },
+      {
+        "target": "aa908-Error-on-Read-PInvoices",
+        "line": 1237
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 1239
+      },
+      {
+        "target": "aa909-Error-on-Write-Temp-PInvoices",
+        "line": 1244
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 1246
+      },
+      {
+        "target": "close",
+        "line": 1249
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 1251
+      },
+      {
+        "target": "aa917-Error-on-Open-Temp-PInvoices",
+        "line": 1256
+      },
+      {
+        "target": "PInvoice-Open-Output",
+        "line": 1260
+      },
+      {
+        "target": "aa916-Error-on-Open-PInvoices",
+        "line": 1262
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 1264
+      },
+      {
+        "target": "until",
+        "line": 1267
+      },
+      {
+        "target": "end-read",
+        "line": 1269
+      },
+      {
+        "target": "aa910-Error-on-Read-Temp-PInvoices",
+        "line": 1272
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 1274
+      },
+      {
+        "target": "PInvoice-Write",
+        "line": 1277
+      },
+      {
+        "target": "aa911-Error-on-Write-PInvoices",
+        "line": 1279
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 1281
+      },
+      {
+        "target": "perform",
+        "line": 1284
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1299
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1304
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1309
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1314
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1319
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1324
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1329
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1334
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1339
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1344
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1349
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1354
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1359
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1364
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1369
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1374
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1379
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1384
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1391
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1396
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1401
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1406
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1411
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1416
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1421
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1426
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1431
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1436
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1441
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1446
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1451
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1456
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1461
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1466
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1471
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1476
+      },
+      {
+        "target": "AB995-Eval-Status",
+        "line": 1482
+      },
+      {
+        "target": "Sales-Open",
+        "line": 1549
+      },
+      {
+        "target": "Sales-Read-Next",
+        "line": 1552
+      },
+      {
+        "target": "Sales-Rewrite",
+        "line": 1575
+      },
+      {
+        "target": "Sales-Close",
+        "line": 1581
+      },
+      {
+        "target": "OTM3-Open",
+        "line": 1587
+      },
+      {
+        "target": "Invoice-Open",
+        "line": 1588
+      },
+      {
+        "target": "OTM3-Read-Next",
+        "line": 1591
+      },
+      {
+        "target": "AE00-Kill-Invoices",
+        "line": 1597
+      },
+      {
+        "target": "OTM3-Delete",
+        "line": 1598
+      },
+      {
+        "target": "OTM3-Delete",
+        "line": 1606
+      },
+      {
+        "target": "OTM3-Rewrite",
+        "line": 1618
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 1625
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 1626
+      },
+      {
+        "target": "BA00-Value-Reset",
+        "line": 1634
+      },
+      {
+        "target": "Invoice-Open",
+        "line": 1640
+      },
+      {
+        "target": "Invoice-Read-Next",
+        "line": 1644
+      },
+      {
+        "target": "AB130-Skip-Reader",
+        "line": 1656
+      },
+      {
+        "target": "varying",
+        "line": 1658
+      },
+      {
+        "target": "Invoice-Delete",
+        "line": 1660
+      },
+      {
+        "target": "else",
+        "line": 1661
+      },
+      {
+        "target": "Invoice-Delete-All",
+        "line": 1663
+      },
+      {
+        "target": "AB130-Skip-Reader",
+        "line": 1672
+      },
+      {
+        "target": "varying",
+        "line": 1673
+      },
+      {
+        "target": "Invoice-Delete",
+        "line": 1675
+      },
+      {
+        "target": "move",
+        "line": 1676
+      },
+      {
+        "target": "Invoice-Rewrite",
+        "line": 1679
+      },
+      {
+        "target": "AB130-Skip-Reader",
+        "line": 1683
+      },
+      {
+        "target": "varying",
+        "line": 1685
+      },
+      {
+        "target": "Invoice-Delete",
+        "line": 1687
+      },
+      {
+        "target": "else",
+        "line": 1688
+      },
+      {
+        "target": "Invoice-Delete-All",
+        "line": 1690
+      },
+      {
+        "target": "Invoice-Delete",
+        "line": 1701
+      },
+      {
+        "target": "Invoice-Rewrite",
+        "line": 1708
+      },
+      {
+        "target": "Invoice-Read-Next",
+        "line": 1712
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 1718
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1768
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 1769
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 1770
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1776
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 1777
+      },
+      {
+        "target": "Invoice-Close",
+        "line": 1778
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 1784
+      },
+      {
+        "target": "Sales-Close",
+        "line": 1785
+      },
+      {
+        "target": "Invoice-Read-Indexed",
+        "line": 1805
+      },
+      {
+        "target": "Invoice-Delete",
+        "line": 1811
+      },
+      {
+        "target": "Invoice-Delete-All",
+        "line": 1813
+      },
+      {
+        "target": "AE020-Actual-Delete",
+        "line": 1821
+      },
+      {
+        "target": "Invoice-Read-Indexed",
+        "line": 1826
+      },
+      {
+        "target": "Invoice-Delete",
+        "line": 1831
+      },
+      {
+        "target": "Invoice-Delete",
+        "line": 1838
+      },
+      {
+        "target": "Purch-Open",
+        "line": 1855
+      },
+      {
+        "target": "Purch-Read-Next",
+        "line": 1858
+      },
+      {
+        "target": "Purch-Rewrite",
+        "line": 1881
+      },
+      {
+        "target": "Purch-Close",
+        "line": 1887
+      },
+      {
+        "target": "OTM5-Open",
+        "line": 1893
+      },
+      {
+        "target": "Purch-Open",
+        "line": 1894
+      },
+      {
+        "target": "OTM5-Read-Next",
+        "line": 1897
+      },
+      {
+        "target": "AD00-kill-invoicep",
+        "line": 1904
+      },
+      {
+        "target": "OTM5-Delete",
+        "line": 1905
+      },
+      {
+        "target": "OTM5-Delete",
+        "line": 1912
+      },
+      {
+        "target": "OTM5-Rewrite",
+        "line": 1923
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 1930
+      },
+      {
+        "target": "Pinvoice-Close",
+        "line": 1931
+      },
+      {
+        "target": "BA00-Value-Reset",
+        "line": 1936
+      },
+      {
+        "target": "Pinvoice-Open",
+        "line": 1939
+      },
+      {
+        "target": "Pinvoice-Read-Next",
+        "line": 1943
+      },
+      {
+        "target": "AC130-Skip-Reader",
+        "line": 1955
+      },
+      {
+        "target": "varying",
+        "line": 1957
+      },
+      {
+        "target": "PInvoice-Delete",
+        "line": 1959
+      },
+      {
+        "target": "else",
+        "line": 1960
+      },
+      {
+        "target": "PInvoice-Delete-All",
+        "line": 1962
+      },
+      {
+        "target": "AC130-Skip-Reader",
+        "line": 1973
+      },
+      {
+        "target": "varying",
+        "line": 1974
+      },
+      {
+        "target": "PInvoice-Delete",
+        "line": 1976
+      },
+      {
+        "target": "move",
+        "line": 1977
+      },
+      {
+        "target": "PInvoice-Rewrite",
+        "line": 1984
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 1992
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 2006
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 2007
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 2008
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 2014
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 2015
+      },
+      {
+        "target": "PInvoice-Close",
+        "line": 2016
+      },
+      {
+        "target": "aa950-Display-File-Error",
+        "line": 2022
+      },
+      {
+        "target": "Purch-Close",
+        "line": 2023
+      },
+      {
+        "target": "PInvoice-Read-Indexed",
+        "line": 2043
+      },
+      {
+        "target": "PInvoice-Delete",
+        "line": 2049
+      },
+      {
+        "target": "PInvoice-Delete-All",
+        "line": 2051
+      },
+      {
+        "target": "AD020-Actual-Delete",
+        "line": 2059
+      },
+      {
+        "target": "PInvoice-Read-Indexed",
+        "line": 2064
+      },
+      {
+        "target": "PInvoice-Delete",
+        "line": 2069
+      },
+      {
+        "target": "PInvoice-Delete",
+        "line": 2076
+      },
+      {
+        "target": "BD010-Monthly-Check",
+        "line": 2086
+      },
+      {
+        "target": "BD020-Weekly-Check",
+        "line": 2089
+      },
+      {
+        "target": "BD030-Query-Check",
+        "line": 2091
+      },
+      {
+        "target": "Value-Open-Output",
+        "line": 2169
+      },
+      {
+        "target": "Value-Delete-All",
+        "line": 2172
+      },
+      {
+        "target": "Value-Open",
+        "line": 2189
+      },
+      {
+        "target": "Value-Read-Next",
+        "line": 2192
+      },
+      {
+        "target": "Value-ReWrite",
+        "line": 2204
+      },
+      {
+        "target": "Value-Close",
+        "line": 2211
+      },
+      {
+        "target": "Value-Close",
+        "line": 2217
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "temp-invoice-file",
+        "line": 372
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 390
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

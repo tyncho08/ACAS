@@ -1,0 +1,290 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl",
+  "fileName": "st050.cbl",
+  "fileHash": "38612094758484672c86aaaa73989aa7230d3a9469d85f293785ce6b94b4ecca",
+  "timestamp": "2025-09-15T19:46:30.301Z",
+  "parseTime": 55,
+  "lines": {
+    "total": 534,
+    "code": 301,
+    "comment": 229,
+    "blank": 4
+  },
+  "programId": "st050",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:139: error: envdiv.cob: No such file or directory\n  137 | *>================================\n  138 | *>\n  139 >  copy \"envdiv.cob\".\n  140 |  input-output            section.\n  141 | *>-------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:202: error: wsfnctn.cob: No such file or directory\n  200 |          05  ws-intl-days    pic xx.\n  201 | *>\n  202 >  copy \"wsfnctn.cob\".\n  203 |  copy \"wsstock.cob\".     *> 3.02\n  204 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:203: error: wsstock.cob: No such file or directory\n  201 | *>\n  202 |  copy \"wsfnctn.cob\".\n  203 >  copy \"wsstock.cob\".     *> 3.02\n  204 | *>\n  205 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:230: error: Test-Data-Flags.cob: No such file or directory\n  228 |      03  WS-OTM5-Record         pic x.\n  229 | *>\n  230 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  231 | *>\n  232 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:250: error: wscall.cob: No such file or directory\n  248 | *>**************\n  249 | *>\n  250 >  copy \"wscall.cob\".\n  251 |  copy \"wssystem.cob\".\n  252 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:251: error: wssystem.cob: No such file or directory\n  249 | *>\n  250 |  copy \"wscall.cob\".\n  251 >  copy \"wssystem.cob\".\n  252 |  copy \"wsnames.cob\".\n  253 |  01  To-Day             pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:252: error: wsnames.cob: No such file or directory\n  250 |  copy \"wscall.cob\".\n  251 |  copy \"wssystem.cob\".\n  252 >  copy \"wsnames.cob\".\n  253 |  01  To-Day             pic x(10).\n  254 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:497: error: FileStat-Msgs.cpy: No such file or directory\n  495 |  ba030-Eval-Status.\n  496 |  copy \"FileStat-Msgs.cpy\"   replacing STATUS by fs-Reply\n  497 >                                       MSG by Eval-Msg.\n  498 | *>\n  499 |  ba999-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:532: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  530 |      exit     section.\n  531 | *>\n  532 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  533 | *>\n  534 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:149: error: 'fs-reply' is not defined\n  147 |      select   Temp-Stock-File      assign  file-9\n  148 |                                    access  sequential\n  149 >                                    status  fs-reply.\n  150 | \n  151 |  data                    division.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:255: error: 'ws-calling-data' is not defined\n  253 |  01  To-Day             pic x(10).\n  254 | *>\n  255 >  procedure division using ws-calling-data\n  256 |                           system-record\n  257 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:256: error: 'system-record' is not defined\n  254 | *>\n  255 |  procedure division using ws-calling-data\n  256 >                           system-record\n  257 |                           to-day\n  258 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:258: error: 'file-defs' is not defined\n  256 |                           system-record\n  257 |                           to-day\n  258 >                           file-defs.\n  259 | *>***************************************\n  260 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in section 'aa000-Core':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:284: error: 'WS-Stock-Record' is not defined\n  282 | *>      if not program, MUST be changed to fix and recompiled\n  283 | *>\n  284 >      move     function length (WS-Stock-Record) to a.\n  285 |      move     function length (Temp-Stock-Record) to b.\n  286 |      if       a not = b\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:297: error: 'FS-Cobol-Files-Used' is not defined\n  295 |               go to aa999-Exit.\n  296 | *>\n  297 >      if       not FS-Cobol-Files-Used                  *> dup processing..\n  298 |               display ST507   at 0101 with foreground-color 2 erase eos\n  299 |               display \" \"     at 0201\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in section 'ba000-Process-Stock-Comp':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in paragraph 'ba000-Process-Stock-Comp-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:390: error: 'Stock-Value' is not defined\n  388 |               go to ba010-Build-Stock.\n  389 | *>\n  390 >      compute  Stock-Value = Stock-Held * Stock-Cost.\n  391 | *>\n  392 | *> Here any record clean ups if needed - You might want to NOT do any of..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:390: error: 'Stock-Held' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:390: error: 'Stock-Cost' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:394: error: 'Stock-Construct-Bundle' is not defined\n  392 | *> Here any record clean ups if needed - You might want to NOT do any of..\n  393 | *>\n  394 >      move     zeros to Stock-Construct-Bundle\n  395 |                        Stock-Under-Construction\n  396 |                        Stock-Work-in-Progress\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:395: error: 'Stock-Under-Construction' is not defined\n  393 | *>\n  394 |      move     zeros to Stock-Construct-Bundle\n  395 >                        Stock-Under-Construction\n  396 |                        Stock-Work-in-Progress\n  397 |                        Stock-Adds\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:396: error: 'Stock-Work-in-Progress' is not defined\n  394 |      move     zeros to Stock-Construct-Bundle\n  395 |                        Stock-Under-Construction\n  396 >                        Stock-Work-in-Progress\n  397 |                        Stock-Adds\n  398 |                        Stock-Deducts\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:397: error: 'Stock-Adds' is not defined\n  395 |                        Stock-Under-Construction\n  396 |                        Stock-Work-in-Progress\n  397 >                        Stock-Adds\n  398 |                        Stock-Deducts\n  399 |                        Stock-Wip-Adds\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:398: error: 'Stock-Deducts' is not defined\n  396 |                        Stock-Work-in-Progress\n  397 |                        Stock-Adds\n  398 >                        Stock-Deducts\n  399 |                        Stock-Wip-Adds\n  400 |                        Stock-Wip-Deds\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:399: error: 'Stock-Wip-Adds' is not defined\n  397 |                        Stock-Adds\n  398 |                        Stock-Deducts\n  399 >                        Stock-Wip-Adds\n  400 |                        Stock-Wip-Deds\n  401 |                        Stock-Last-Actual-Cost.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:400: error: 'Stock-Wip-Deds' is not defined\n  398 |                        Stock-Deducts\n  399 |                        Stock-Wip-Adds\n  400 >                        Stock-Wip-Deds\n  401 |                        Stock-Last-Actual-Cost.\n  402 |      perform  varying C from 1 by 1 until C > 12\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:401: error: 'Stock-Last-Actual-Cost' is not defined\n  399 |                        Stock-Wip-Adds\n  400 |                        Stock-Wip-Deds\n  401 >                        Stock-Last-Actual-Cost.\n  402 |      perform  varying C from 1 by 1 until C > 12\n  403 |               move zeros to Stock-TD-Adds (C)\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:403: error: 'Stock-TD-Adds' is not defined\n  401 |                        Stock-Last-Actual-Cost.\n  402 |      perform  varying C from 1 by 1 until C > 12\n  403 >               move zeros to Stock-TD-Adds (C)\n  404 |                             Stock-TD-Deds (C)\n  405 |                             Stock-TD-Wip-Adds (C)\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:404: error: 'Stock-TD-Deds' is not defined\n  402 |      perform  varying C from 1 by 1 until C > 12\n  403 |               move zeros to Stock-TD-Adds (C)\n  404 >                             Stock-TD-Deds (C)\n  405 |                             Stock-TD-Wip-Adds (C)\n  406 |                             Stock-TD-Wip-Deds (C)\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:405: error: 'Stock-TD-Wip-Adds' is not defined\n  403 |               move zeros to Stock-TD-Adds (C)\n  404 |                             Stock-TD-Deds (C)\n  405 >                             Stock-TD-Wip-Adds (C)\n  406 |                             Stock-TD-Wip-Deds (C)\n  407 |      end-perform.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:406: error: 'Stock-TD-Wip-Deds' is not defined\n  404 |                             Stock-TD-Deds (C)\n  405 |                             Stock-TD-Wip-Adds (C)\n  406 >                             Stock-TD-Wip-Deds (C)\n  407 |      end-perform.\n  408 |      add      1 to a.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in paragraph 'ba020-Read-Temp':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:470: error: 'WS-Stock-Key' is not defined\n  468 |               display ST003   at line ws-lines col 01\n  469 |               accept ws-reply at line ws-lines col 30\n  470 >                  display WS-Stock-Key at line ws-lines col 41\n  471 |                  display WS-Stock-Abrev-Key at line ws-lines col 55\n  472 |                  go to ba020-Read-Temp.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:471: error: 'WS-Stock-Abrev-Key' is not defined\n  469 |               accept ws-reply at line ws-lines col 30\n  470 |                  display WS-Stock-Key at line ws-lines col 41\n  471 >                  display WS-Stock-Abrev-Key at line ws-lines col 55\n  472 |                  go to ba020-Read-Temp.\n  473 | \n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in section 'zz070-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:512: error: 'Date-Form' is not defined\n  510 |      move     to-day to ws-date.\n  511 | *>\n  512 >      if       Date-Form = zero\n  513 |               move 1 to Date-Form.\n  514 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:514: error: 'Date-UK' is not defined\n  512 |      if       Date-Form = zero\n  513 |               move 1 to Date-Form.\n  514 >      if       Date-UK\n  515 |               go to zz070-Exit.\n  516 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:516: error: 'Date-USA' is not defined\n  514 |      if       Date-UK\n  515 |               go to zz070-Exit.\n  516 >      if       Date-USA                *> swap month and days\n  517 |               move ws-days to ws-swap\n  518 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in section 'aa000-Core':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in paragraph 'aa030-U-Sure':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:340: error: 'Stock-Open-Input' is not defined\n  338 |               go to aa999-exit.\n  339 | *>\n  340 >      perform  Stock-Open-Input.      *>  open     input Stock-File.\n  341 |      if       fs-reply not = zero\n  342 |               display ST501 at line ws-23-lines col 1 with foreground-col..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in section 'ba000-Process-Stock-Comp':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in paragraph 'ba000-Process-Stock-Comp-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:379: error: 'Stock-Read-Next' is not defined\n  377 | *>\n  378 |  ba000-Process-Stock-Comp-Main.\n  379 >      perform  Stock-Read-Next.\n  380 |      if       FS-Reply = 10\n  381 |               perform Stock-Close\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:381: error: 'Stock-Close' is not defined\n  379 |      perform  Stock-Read-Next.\n  380 |      if       FS-Reply = 10\n  381 >               perform Stock-Close\n  382 |               close Temp-Stock-File\n  383 |               display \"Stock in : \" at 1401 with erase eol\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in paragraph 'ba010-Build-Stock':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:435: error: 'Stock-Open-Output' is not defined\n  433 |               go to ba999-Exit.\n  434 | *>\n  435 >      perform  Stock-Open-Output.\n  436 |      if       fs-reply not = zero\n  437 |               display ST506 at line ws-23-lines col 1 with foreground-col..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl: in paragraph 'ba020-Read-Temp':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:462: error: 'Stock-Write' is not defined\n  460 | *>\n  461 |      move     Temp-Stock-Record to WS-Stock-Record.\n  462 >      perform  Stock-Write.         *> write    Stock-Record from Temp-Sto..\n  463 |      if       FS-Reply = 21 or = 22\n  464 |               display ST000 at line ws-23-lines col 1 with foreground-col..\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:139: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:202: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:203: error: wsstock.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:230: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:250: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:251: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:252: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:497: error: FileStat-Msgs.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:532: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:149: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:255: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:256: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:258: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:284: error: 'WS-Stock-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:297: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:390: error: 'Stock-Value' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:390: error: 'Stock-Held' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:390: error: 'Stock-Cost' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:394: error: 'Stock-Construct-Bundle' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:395: error: 'Stock-Under-Construction' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:396: error: 'Stock-Work-in-Progress' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:397: error: 'Stock-Adds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:398: error: 'Stock-Deducts' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:399: error: 'Stock-Wip-Adds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:400: error: 'Stock-Wip-Deds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:401: error: 'Stock-Last-Actual-Cost' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:403: error: 'Stock-TD-Adds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:404: error: 'Stock-TD-Deds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:405: error: 'Stock-TD-Wip-Adds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:406: error: 'Stock-TD-Wip-Deds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:470: error: 'WS-Stock-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:471: error: 'WS-Stock-Abrev-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:512: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:514: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:516: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:340: error: 'Stock-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:379: error: 'Stock-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:381: error: 'Stock-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:435: error: 'Stock-Open-Output' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:462: error: 'Stock-Write' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:139: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:202: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:203: error: wsstock.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:230: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:250: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:251: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:252: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:497: error: FileStat-Msgs.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:532: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:149: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:255: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:256: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:258: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:284: error: 'WS-Stock-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:297: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:390: error: 'Stock-Value' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:390: error: 'Stock-Held' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:390: error: 'Stock-Cost' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:394: error: 'Stock-Construct-Bundle' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:395: error: 'Stock-Under-Construction' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:396: error: 'Stock-Work-in-Progress' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:397: error: 'Stock-Adds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:398: error: 'Stock-Deducts' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:399: error: 'Stock-Wip-Adds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:400: error: 'Stock-Wip-Deds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:401: error: 'Stock-Last-Actual-Cost' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:403: error: 'Stock-TD-Adds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:404: error: 'Stock-TD-Deds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:405: error: 'Stock-TD-Wip-Adds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:406: error: 'Stock-TD-Wip-Deds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:470: error: 'WS-Stock-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:471: error: 'WS-Stock-Abrev-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:512: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:514: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:516: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:340: error: 'Stock-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:379: error: 'Stock-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:381: error: 'Stock-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:435: error: 'Stock-Open-Output' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st050.cbl:462: error: 'Stock-Write' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 40,
+    "cognitive": 120,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 78,
+      "totalOperators": 124,
+      "totalOperands": 203,
+      "vocabulary": 90,
+      "length": 327,
+      "volume": 2123,
+      "difficulty": 15.62,
+      "effort": 33149,
+      "timeToProgram": 1842,
+      "deliveredBugs": 0.708
+    },
+    "maintainability": 71
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 130
+      },
+      {
+        "name": "envdiv",
+        "line": 139
+      },
+      {
+        "name": "selstock",
+        "line": 146
+      },
+      {
+        "name": "fdstock",
+        "line": 157
+      },
+      {
+        "name": "wsfnctn",
+        "line": 202
+      },
+      {
+        "name": "wsstock",
+        "line": 203
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 230
+      },
+      {
+        "name": "wscall",
+        "line": 250
+      },
+      {
+        "name": "wssystem",
+        "line": 251
+      },
+      {
+        "name": "wsnames",
+        "line": 252
+      },
+      {
+        "name": "FileStat-Msgs",
+        "line": 496
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 532
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 278
+      },
+      {
+        "target": "ba010-Build-Stock",
+        "line": 337
+      },
+      {
+        "target": "Stock-Open-Input",
+        "line": 340
+      },
+      {
+        "target": "ba030-Eval-Status",
+        "line": 344
+      },
+      {
+        "target": "ba030-Eval-Status",
+        "line": 354
+      },
+      {
+        "target": "ba000-Process-Stock-Comp",
+        "line": 362
+      },
+      {
+        "target": "Stock-Read-Next",
+        "line": 379
+      },
+      {
+        "target": "Stock-Close",
+        "line": 381
+      },
+      {
+        "target": "varying",
+        "line": 402
+      },
+      {
+        "target": "ba030-Eval-Status",
+        "line": 414
+      },
+      {
+        "target": "Stock-Close",
+        "line": 418
+      },
+      {
+        "target": "ba030-Eval-Status",
+        "line": 429
+      },
+      {
+        "target": "Stock-Open-Output",
+        "line": 435
+      },
+      {
+        "target": "ba030-Eval-Status",
+        "line": 439
+      },
+      {
+        "target": "Stock-Close",
+        "line": 449
+      },
+      {
+        "target": "Stock-Write",
+        "line": 462
+      },
+      {
+        "target": "ba030-Eval-Status",
+        "line": 466
+      },
+      {
+        "target": "Stock-Close",
+        "line": 474
+      },
+      {
+        "target": "ba030-Eval-Status",
+        "line": 481
+      },
+      {
+        "target": "Stock-Close",
+        "line": 489
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Temp-Stock-File",
+        "line": 158
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 162
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

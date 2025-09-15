@@ -1,0 +1,439 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl",
+  "fileName": "sldelinvnosLD.cbl",
+  "fileHash": "362e7abfe36f0cfbb979330daf38dfee87e0850d724764f0ede465733b97be2f",
+  "timestamp": "2025-09-15T19:46:07.683Z",
+  "parseTime": 55,
+  "lines": {
+    "total": 504,
+    "code": 304,
+    "comment": 199,
+    "blank": 1
+  },
+  "programId": "sldelinvnosLD",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:123: error: envdiv.cob: No such file or directory\n  121 | *>-------------------\n  122 | *>\n  123 >  copy \"envdiv.cob\".\n  124 |  input-output            section.\n  125 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:130: error: selsys.cob: No such file or directory\n  128 | *>-----------\n  129 | *>\n  130 >  copy \"selsys.cob\".\n  131 |  data division.\n  132 | *>------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:137: error: fdsys.cob: No such file or directory\n  135 | *>-----------\n  136 | *>\n  137 >  copy \"fdsys.cob\".\n  138 |  working-storage section.\n  139 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:173: error: Test-Data-Flags.cob: No such file or directory\n  171 |      03  WS-Socket       pic x(64).\n  172 | *>\n  173 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  174 | *>\n  175 | *>  Record definition for Cobol file here:\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:177: error: wsdnos.cob: No such file or directory\n  175 | *>  Record definition for Cobol file here:\n  176 | *>\n  177 >  copy \"wsdnos.cob\".\n  178 | *>\n  179 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:179: error: wsfnctn.cob: No such file or directory\n  177 |  copy \"wsdnos.cob\".\n  178 | *>\n  179 >  copy \"wsfnctn.cob\".\n  180 |  copy \"wsnames.cob\".\n  181 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:180: error: wsnames.cob: No such file or directory\n  178 | *>\n  179 |  copy \"wsfnctn.cob\".\n  180 >  copy \"wsnames.cob\".\n  181 |  copy \"wscall.cob\".\n  182 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:181: error: wscall.cob: No such file or directory\n  179 |  copy \"wsfnctn.cob\".\n  180 |  copy \"wsnames.cob\".\n  181 >  copy \"wscall.cob\".\n  182 | *>\n  183 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:499: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  497 |      goback.\n  498 | *>\n  499 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  500 | *>\n  501 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:210: error: 'WS-Log-System' is not defined\n  208 |      move     Prog-Name to So-Print.\n  209 |      perform  Call-Sysout.\n  210 >      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  211 |      move     13     to WS-Log-File-No.  *> RDB, File/Table within sub Sy..\n  212 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:211: error: 'WS-Log-File-No' is not defined\n  209 |      perform  Call-Sysout.\n  210 |      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  211 >      move     13     to WS-Log-File-No.  *> RDB, File/Table within sub Sy..\n  212 | *>\n  213 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:215: error: 'System-File' is not defined\n  213 | *>  Get the system param for the various RDB fields\n  214 | *>\n  215 >      open     input System-File.\n  216 |      if       fs-reply not = zero\n  217 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:215: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:216: error: 'fs-reply' is not defined\n  214 | *>\n  215 |      open     input System-File.\n  216 >      if       fs-reply not = zero\n  217 |               display Prog-Name at 0101 with erase eos\n  218 |               display SY001     at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:221: error: 'System-File' is not a file name\n  219 |               display fs-reply  at 0428\n  220 |               display SY004     at 0501\n  221 >               close System-File\n  222 |               move 128 to return-code\n  223 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:224: error: 'rrn' is not defined\n  222 |               move 128 to return-code\n  223 |               goback.\n  224 >      move     1 to rrn.     *> Read the system parameter record (1)\n  225 |      read     system-file record.\n  226 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:225: error: 'System-File' is not a file name\n  223 |               goback.\n  224 |      move     1 to rrn.     *> Read the system parameter record (1)\n  225 >      read     system-file record.\n  226 |      if       fs-reply not = zero\n  227 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:231: error: 'System-File' is not a file name\n  229 |               display fs-reply       at 0428\n  230 |               display \"Not set up ?\" at 0431\n  231 >               close System-File\n  232 |               move 128 to return-code\n  233 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:237: error: 'RDBMS-DB-Name' is not defined\n  235 | *>  Load up the DB settings from the system record as its not passed on.\n  236 | *>\n  237 >      if       RDBMS-DB-Name = spaces\n  238 |          or   FS-Cobol-Files-Used\n  239 |               display Prog-Name    *>  at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:238: error: 'FS-Cobol-Files-Used' is not defined\n  236 | *>\n  237 |      if       RDBMS-DB-Name = spaces\n  238 >          or   FS-Cobol-Files-Used\n  239 |               display Prog-Name    *>  at 0101 with erase eos\n  240 |               display SY019\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:246: error: 'System-File' is not a file name\n  244 |               if       WS-RDB-Return = 8\n  245 |                        display \"acas.param file NOT found - Aborted\"\n  246 >                        close  System-File\n  247 |                        goback\n  248 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:251: error: 'System-File' is not a file name\n  249 |               if       WS-RDB-Return = 1\n  250 |                        display \"Invalid keyword terminator found - Aborte..\n  251 >                        close  System-File\n  252 |                        goback\n  253 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:256: error: 'System-File' is not a file name\n  254 |               if       WS-RDB-Return = 2\n  255 |                        display \"Invalid keyword found - Aborted\"\n  256 >                        close  System-File\n  257 |                        goback\n  258 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:261: error: 'RDBMS-Host' is not defined\n  259 |               if       WS-RDB-Return = zeros\n  260 |                        display \"acas-param file found and being used \"\n  261 >                        move     WS-Host-Name      to RDBMS-Host\n  262 |                        move     WS-Implementation to RDBMS-User\n  263 |                        move     WS-Password       to RDBMS-Passwd\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:262: error: 'RDBMS-User' is not defined\n  260 |                        display \"acas-param file found and being used \"\n  261 |                        move     WS-Host-Name      to RDBMS-Host\n  262 >                        move     WS-Implementation to RDBMS-User\n  263 |                        move     WS-Password       to RDBMS-Passwd\n  264 |                        move     WS-Base-Name      to RDBMS-DB-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:263: error: 'RDBMS-Passwd' is not defined\n  261 |                        move     WS-Host-Name      to RDBMS-Host\n  262 |                        move     WS-Implementation to RDBMS-User\n  263 >                        move     WS-Password       to RDBMS-Passwd\n  264 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  265 |                        move     WS-Port-Number    to RDBMS-Port\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:265: error: 'RDBMS-Port' is not defined\n  263 |                        move     WS-Password       to RDBMS-Passwd\n  264 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  265 >                        move     WS-Port-Number    to RDBMS-Port\n  266 |                        move     WS-Socket         to RDBMS-Socket\n  267 |                       display \"User = \"   RDBMS-User\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:266: error: 'RDBMS-Socket' is not defined\n  264 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  265 |                        move     WS-Port-Number    to RDBMS-Port\n  266 >                        move     WS-Socket         to RDBMS-Socket\n  267 |                       display \"User = \"   RDBMS-User\n  268 |                       display \"Host = \"   RDBMS-Host\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:287: error: 'System-File' is not a file name\n  285 |               display \"Socket = \" RDBMS-Socket\n  286 |               stop \"SY008 Note message & Hit return\"\n  287 >               close System-File\n  288 |               move 64 to Return-Code\n  289 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'aa010-Proc-Override':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:295: error: 'File-System-Used' is not defined\n  293 | *>  Over-ride processes for acas017/sldelinvnosMT for Dup modes\n  294 | *>\n  295 >      move     zero to File-System-Used\n  296 |                       File-Duplicates-In-Use\n  297 |                       FA-File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:296: error: 'File-Duplicates-In-Use' is not defined\n  294 | *>\n  295 |      move     zero to File-System-Used\n  296 >                       File-Duplicates-In-Use\n  297 |                       FA-File-System-Used\n  298 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:297: error: 'FA-File-System-Used' is not defined\n  295 |      move     zero to File-System-Used\n  296 |                       File-Duplicates-In-Use\n  297 >                       FA-File-System-Used\n  298 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  299 |      move     zero to Log-file-rec-written.        *> for logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:298: error: 'FA-File-Duplicates-In-Use' is not defined\n  296 |                       File-Duplicates-In-Use\n  297 |                       FA-File-System-Used\n  298 >                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  299 |      move     zero to Log-file-rec-written.        *> for logging.\n  300 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:299: error: 'Log-file-rec-written' is not defined\n  297 |                       FA-File-System-Used\n  298 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  299 >      move     zero to Log-file-rec-written.        *> for logging.\n  300 | *>\n  301 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:301: error: 'File-Key-No' is not defined\n  299 |      move     zero to Log-file-rec-written.        *> for logging.\n  300 | *>\n  301 >      move     1 to File-Key-No.\n  302 |      perform  acas017-Open-Input.      *> open input Cobol Delinvnos FILE\n  303 |      if       FS-Reply = 35\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:311: error: 'System-File' is not a file name\n  309 |               move    \"CLOSE   \" to SO-Print\n  310 |               perform call-Sysout\n  311 >               close System-File\n  312 |               perform acas017-Close\n  313 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:322: error: 'System-File' is not a file name\n  320 |               move \"CLOSE   \" to SO-Print\n  321 |               perform call-Sysout\n  322 >               close System-File\n  323 |               perform acas017-Close\n  324 |               move 16 to return-code    *> data file problem\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:330: error: 'Access-Type' is not defined\n  328 |                    FA-File-System-Used.            *> RDB in use\n  329 |      perform  acas017-Open.                     *> Open/Init RDB via FH -..\n  330 >      move     zero to Access-Type.\n  331 |      go       to aa010-Read.\n  332 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'acas017':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:334: error: 'System-Record' is not defined\n  332 | *>\n  333 |  acas017.\n  334 >      call     \"acas017\" using System-Record\n  335 |                               WS-Del-Inv-Nos-Record\n  336 |                               File-Access\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:335: error: 'WS-Del-Inv-Nos-Record' is not defined\n  333 |  acas017.\n  334 |      call     \"acas017\" using System-Record\n  335 >                               WS-Del-Inv-Nos-Record\n  336 |                               File-Access\n  337 |                               File-Defs\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:336: error: 'File-Access' is not defined\n  334 |      call     \"acas017\" using System-Record\n  335 |                               WS-Del-Inv-Nos-Record\n  336 >                               File-Access\n  337 |                               File-Defs\n  338 |                               ACAS-DAL-Common-Data.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:337: error: 'File-Defs' is not defined\n  335 |                               WS-Del-Inv-Nos-Record\n  336 |                               File-Access\n  337 >                               File-Defs\n  338 |                               ACAS-DAL-Common-Data.\n  339 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:338: error: 'ACAS-DAL-Common-Data' is not defined\n  336 |                               File-Access\n  337 |                               File-Defs\n  338 >                               ACAS-DAL-Common-Data.\n  339 | *>\n  340 |  acas017-Open.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'acas017-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:341: error: 'fn-open' is not defined\n  339 | *>\n  340 |  acas017-Open.\n  341 >      set      fn-open to true.\n  342 |      set      fn-i-o  to true.\n  343 |      perform  acas017.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:342: error: 'fn-i-o' is not defined\n  340 |  acas017-Open.\n  341 |      set      fn-open to true.\n  342 >      set      fn-i-o  to true.\n  343 |      perform  acas017.\n  344 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'acas017-Open-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:348: error: 'fn-input' is not defined\n  346 |  acas017-Open-Input.\n  347 |      set      fn-open  to true.\n  348 >      set      fn-input to true.\n  349 |      perform  acas017.\n  350 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'acas017-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:353: error: 'fn-Close' is not defined\n  351 | *>\n  352 |  acas017-Close.\n  353 >      set      fn-Close to true.\n  354 |      perform  acas017.\n  355 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'acas017-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:357: error: 'fn-Read-Next' is not defined\n  355 | *>\n  356 |  acas017-Read-Next.\n  357 >      set      fn-Read-Next to true.\n  358 |      perform  acas017.\n  359 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'acas017-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:361: error: 'fn-Write' is not defined\n  359 | *>\n  360 |  acas017-Write.\n  361 >      set      fn-Write to true.\n  362 |      perform  acas017.\n  363 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'acas017-Rewrite':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:365: error: 'fn-re-write' is not defined\n  363 | *>\n  364 |  acas017-Rewrite.\n  365 >      set      fn-re-write to true.\n  366 |      perform  acas017.\n  367 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'aa010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:391: error: 'Sql-State' is not defined\n  389 |                    FA-File-System-Used.\n  390 |      perform  acas017-Write.\n  391 >      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  392 |          or   fs-reply = 22  or = 99                   *> Check for dup k..\n  393 |          or   SQL-Err (1:4) = \"1062\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:393: error: 'SQL-Err' is not defined\n  391 |      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  392 |          or   fs-reply = 22  or = 99                   *> Check for dup k..\n  393 >          or   SQL-Err (1:4) = \"1062\"\n  394 |                          or = \"1022\"\n  395 |               move    zeros to FS-Reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:396: error: 'WE-Error' is not defined\n  394 |                          or = \"1022\"\n  395 |               move    zeros to FS-Reply\n  396 >                                WE-Error\n  397 |               perform acas017-Rewrite\n  398 |               if      FS-Reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:401: error: 'WS-File-Key' is not defined\n  399 |                       move spaces to SO-Print\n  400 |                       string  SL010\n  401 >                                WS-File-Key into SO-Print\n  402 |                       perform call-Sysout\n  403 |                       move    SL099 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:421: error: 'SQL-Msg' is not defined\n  419 |               string SL018 SQL-Err into SO-Print\n  420 |               perform Call-Sysout\n  421 >               move SQL-Msg to SO-Print\n  422 |               perform Call-Sysout\n  423 |               move SQL-State to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'aa999-Finish':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:487: error: 'File-Function' is not defined\n  485 |                    FA-File-System-Used.\n  486 |      move     zero to Access-Type.\n  487 >      move     2 to File-Function.\n  488 |      perform  acas017-Close.                     *> Close RDB\n  489 |      close    System-File.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:489: error: 'System-File' is not a file name\n  487 |      move     2 to File-Function.\n  488 |      perform  acas017-Close.                     *> Close RDB\n  489 >      close    System-File.\n  490 |      move     zero to File-System-Used\n  491 |                    FA-File-System-Used.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:207: error: 'zz020-Get-Program-Args' is not defined\n  205 | *>\n  206 |  aa000-main-start.\n  207 >      perform  zz020-Get-Program-Args.\n  208 |      move     Prog-Name to So-Print.\n  209 |      perform  Call-Sysout.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:123: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:130: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:137: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:173: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:177: error: wsdnos.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:179: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:180: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:181: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:499: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:210: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:211: error: 'WS-Log-File-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:215: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:215: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:216: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:221: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:224: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:225: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:231: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:237: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:238: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:246: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:251: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:256: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:261: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:262: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:263: error: 'RDBMS-Passwd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:265: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:266: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:287: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:295: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:296: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:297: error: 'FA-File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:298: error: 'FA-File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:299: error: 'Log-file-rec-written' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:301: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:311: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:322: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:330: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:334: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:335: error: 'WS-Del-Inv-Nos-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:336: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:337: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:338: error: 'ACAS-DAL-Common-Data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:341: error: 'fn-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:342: error: 'fn-i-o' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:348: error: 'fn-input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:353: error: 'fn-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:357: error: 'fn-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:361: error: 'fn-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:365: error: 'fn-re-write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:391: error: 'Sql-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:393: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:396: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:401: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:421: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:487: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:489: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:207: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:123: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:130: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:137: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:173: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:177: error: wsdnos.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:179: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:180: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:181: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:499: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:210: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:211: error: 'WS-Log-File-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:215: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:215: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:216: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:221: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:224: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:225: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:231: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:237: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:238: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:246: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:251: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:256: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:261: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:262: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:263: error: 'RDBMS-Passwd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:265: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:266: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:287: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:295: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:296: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:297: error: 'FA-File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:298: error: 'FA-File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:299: error: 'Log-file-rec-written' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:301: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:311: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:322: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:330: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:334: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:335: error: 'WS-Del-Inv-Nos-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:336: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:337: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:338: error: 'ACAS-DAL-Common-Data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:341: error: 'fn-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:342: error: 'fn-i-o' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:348: error: 'fn-input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:353: error: 'fn-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:357: error: 'fn-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:361: error: 'fn-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:365: error: 'fn-re-write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:391: error: 'Sql-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:393: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:396: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:401: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:421: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:487: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:489: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sldelinvnosLD.cbl:207: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 31,
+    "cognitive": 57,
+    "halstead": {
+      "uniqueOperators": 10,
+      "uniqueOperands": 74,
+      "totalOperators": 191,
+      "totalOperands": 256,
+      "vocabulary": 84,
+      "length": 447,
+      "volume": 2857,
+      "difficulty": 17.3,
+      "effort": 49425,
+      "timeToProgram": 2746,
+      "deliveredBugs": 0.952
+    },
+    "maintainability": 72
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas-get-params",
+        "line": 242
+      },
+      {
+        "target": "acas017",
+        "line": 334
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 438
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 448
+      },
+      {
+        "target": "ACAS-Sysout",
+        "line": 502
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 113
+      },
+      {
+        "name": "envdiv",
+        "line": 123
+      },
+      {
+        "name": "selsys",
+        "line": 130
+      },
+      {
+        "name": "fdsys",
+        "line": 137
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 173
+      },
+      {
+        "name": "wsdnos",
+        "line": 177
+      },
+      {
+        "name": "wsfnctn",
+        "line": 179
+      },
+      {
+        "name": "wsnames",
+        "line": 180
+      },
+      {
+        "name": "wscall",
+        "line": 181
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 499
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 207
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 209
+      },
+      {
+        "target": "acas017-Open-Input",
+        "line": 302
+      },
+      {
+        "target": "call-Sysout",
+        "line": 308
+      },
+      {
+        "target": "call-Sysout",
+        "line": 310
+      },
+      {
+        "target": "acas017-Close",
+        "line": 312
+      },
+      {
+        "target": "call-Sysout",
+        "line": 319
+      },
+      {
+        "target": "call-Sysout",
+        "line": 321
+      },
+      {
+        "target": "acas017-Close",
+        "line": 323
+      },
+      {
+        "target": "acas017-Open",
+        "line": 329
+      },
+      {
+        "target": "acas017",
+        "line": 343
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 344
+      },
+      {
+        "target": "acas017",
+        "line": 349
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 350
+      },
+      {
+        "target": "acas017",
+        "line": 354
+      },
+      {
+        "target": "acas017",
+        "line": 358
+      },
+      {
+        "target": "acas017",
+        "line": 362
+      },
+      {
+        "target": "acas017",
+        "line": 366
+      },
+      {
+        "target": "acas017-Read-Next",
+        "line": 374
+      },
+      {
+        "target": "call-Sysout",
+        "line": 382
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 383
+      },
+      {
+        "target": "acas017-Write",
+        "line": 390
+      },
+      {
+        "target": "acas017-Rewrite",
+        "line": 397
+      },
+      {
+        "target": "call-Sysout",
+        "line": 402
+      },
+      {
+        "target": "call-Sysout",
+        "line": 404
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 414
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 417
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 420
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 422
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 424
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 425
+      },
+      {
+        "target": "call-Sysout",
+        "line": 457
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 460
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 463
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 465
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 467
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 469
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 470
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 479
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 482
+      },
+      {
+        "target": "acas017-Close",
+        "line": 488
+      },
+      {
+        "target": "acas017-close",
+        "line": 492
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 494
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 496
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 138
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>                rollback\n*>...",
+        "line": 435
+      },
+      {
+        "content": "*>                commit\n*>...",
+        "line": 445
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

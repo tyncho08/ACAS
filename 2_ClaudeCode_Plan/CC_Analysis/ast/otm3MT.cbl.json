@@ -1,0 +1,540 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl",
+  "fileName": "otm3MT.cbl",
+  "fileHash": "2be7ac4d35483fd6b3280e760e825ba8a84fab896ed6c200675acfa312aac73a",
+  "timestamp": "2025-09-15T19:46:04.941Z",
+  "parseTime": 141,
+  "lines": {
+    "total": 2192,
+    "code": 1617,
+    "comment": 570,
+    "blank": 5
+  },
+  "programId": "otm3MT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:168: error: ACAS-SQLstate-error-list.cob: No such file or directory\n  166 | *>                          SQL-State = In support of SQL-Err for dup key..\n  167 | *>\n  168 >  copy \"ACAS-SQLstate-error-list.cob\".\n  169 | *>\n  170 | *>       During testing a log file will be created containing datetime st..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:210: error: envdiv.cob: No such file or directory\n  208 | *>\n  209 |  environment division.\n  210 >  copy \"envdiv.cob\".\n  211 | *>\n  212 |  input-output section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:295: error: mysql-variables.cpy: No such file or directory\n  293 | *>       ACASDB\n  294 | *>       TABLE=SAITM3-REC,HV\n  295 >  COPY \"mysql-variables.cpy\".\n  296 | *>\n  297 | *>    Definitions for the SAITM3-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:335: error: wsfnctn.cob: No such file or directory\n  333 | *>\n  334 | *>**********************************************************************\n  335 >  copy \"wsfnctn.cob\".                         *> File-Access\n  336 | *>\n  337 | *>**********************************************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:339: error: Test-Data-Flags.cob: No such file or directory\n  337 | *>**********************************************************************\n  338 | *>\n  339 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  340 | *>\n  341 | *>  Using the first record but not the 2nd as it uses occurs 40 but\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:345: error: slwsoi.cob: No such file or directory\n  343 | *>\n  344 |  copy \"slwsoi.cob\" replacing OI-Header\n  345 >                by WS-OTM3-Record.\n  346 | *>\n  347 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1305: error: mysql-procedures.cpy: No such file or directory\n 1303 | *>\n 1304 | *> /MYSQL PRO\\\n 1305 >  COPY \"mysql-procedures.cpy\".\n 1306 | *> /MYSQL-END\\\n 1307 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:356: error: 'Ws-Mysql-Error-Number' is not defined\n  354 |  01  Display-Message-2       foreground-color 2.\n  355 |      03      value \"SM004 SQL Err No.=\"           line 4 col  1.\n  356 >      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.\n  357 |      03      value \" Para=\"                              col 23.\n  358 |      03  using WS-No-Paragraph         pic 9(3)          col 29.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:358: error: 'WS-No-Paragraph' is not defined\n  356 |      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.\n  357 |      03      value \" Para=\"                              col 23.\n  358 >      03  using WS-No-Paragraph         pic 9(3)          col 29.\n  359 |      03      value \" SQL Cmd=\"                           col 32.\n  360 |      03  using Ws-Mysql-Command        pic x(199)        col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:360: error: 'Ws-Mysql-Command' is not defined\n  358 |      03  using WS-No-Paragraph         pic 9(3)          col 29.\n  359 |      03      value \" SQL Cmd=\"                           col 32.\n  360 >      03  using Ws-Mysql-Command        pic x(199)        col 41.\n  361 |      03      value \"SQL Err Msg=\"                 line 7 col  1.\n  362 |      03  using Ws-Mysql-Error-Message  pic x(67)         col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:362: error: 'Ws-Mysql-Error-Message' is not defined\n  360 |      03  using Ws-Mysql-Command        pic x(199)        col 41.\n  361 |      03      value \"SQL Err Msg=\"                 line 7 col  1.\n  362 >      03  using Ws-Mysql-Error-Message  pic x(67)         col 13.\n  363 | *>\n  364 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:365: error: 'File-Access' is not defined\n  363 | *>\n  364 | *>\n  365 >  PROCEDURE DIVISION   using File-Access\n  366 |                             ACAS-DAL-Common-data\n  367 |                             WS-OTM3-Record.   *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:366: error: 'ACAS-DAL-Common-data' is not defined\n  364 | *>\n  365 |  PROCEDURE DIVISION   using File-Access\n  366 >                             ACAS-DAL-Common-data\n  367 |                             WS-OTM3-Record.   *>  Ws record\n  368 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:367: error: 'WS-OTM3-Record' is not defined\n  365 |  PROCEDURE DIVISION   using File-Access\n  366 |                             ACAS-DAL-Common-data\n  367 >                             WS-OTM3-Record.   *>  Ws record\n  368 | *>**********************************************\n  369 |  ba-ACAS-DAL-Process  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:385: error: 'SQL-State' is not defined\n  383 |  ba010-Initialise.\n  384 | *>\n  385 >      move     zero   to SQL-State.\n  386 | *>                        We-Error\n  387 | *>                        Fs-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:391: error: 'WS-Log-Where' is not defined\n  389 |      move     spaces to WS-MYSQL-Error-Message\n  390 |                         WS-MYSQL-Error-Number\n  391 >                         WS-Log-Where\n  392 |                         WS-File-Key\n  393 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:392: error: 'WS-File-Key' is not defined\n  390 |                         WS-MYSQL-Error-Number\n  391 |                         WS-Log-Where\n  392 >                         WS-File-Key\n  393 |                         SQL-Msg\n  394 |                         SQL-Err.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:393: error: 'SQL-Msg' is not defined\n  391 |                         WS-Log-Where\n  392 |                         WS-File-Key\n  393 >                         SQL-Msg\n  394 |                         SQL-Err.\n  395 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:394: error: 'SQL-Err' is not defined\n  392 |                         WS-File-Key\n  393 |                         SQL-Msg\n  394 >                         SQL-Err.\n  395 | *>\n  396 | *>   Now Test for valid key for start, read-indexed and delete\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:404: error: 'File-Function' is not defined\n  402 | *>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  403 | *>\n  404 >      evaluate File-Function\n  405 |         when  1\n  406 |               go to ba020-Process-Open         *> Coded / D.tested\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:434: error: 'DB-Schema' is not defined\n  432 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  433 |  *>\n  434 >      string   DB-Schema      delimited by space\n  435 |               X\"00\"          delimited by size\n  436 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:436: error: 'WS-MYSQL-BASE-NAME' is not defined\n  434 |      string   DB-Schema      delimited by space\n  435 |               X\"00\"          delimited by size\n  436 >                                into WS-MYSQL-BASE-NAME\n  437 |      end-string.\n  438 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:438: error: 'DB-Host' is not defined\n  436 |                                into WS-MYSQL-BASE-NAME\n  437 |      end-string.\n  438 >      string   DB-Host        delimited by space\n  439 |               X\"00\"          delimited by size\n  440 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:440: error: 'WS-MYSQL-HOST-NAME' is not defined\n  438 |      string   DB-Host        delimited by space\n  439 |               X\"00\"          delimited by size\n  440 >                                into WS-MYSQL-HOST-NAME\n  441 |      end-string.\n  442 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:442: error: 'DB-UName' is not defined\n  440 |                                into WS-MYSQL-HOST-NAME\n  441 |      end-string.\n  442 >      string   DB-UName       delimited by space\n  443 |               X\"00\"          delimited by size\n  444 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:444: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  442 |      string   DB-UName       delimited by space\n  443 |               X\"00\"          delimited by size\n  444 >                                into WS-MYSQL-IMPLEMENTATION\n  445 |      end-string.\n  446 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:446: error: 'DB-UPass' is not defined\n  444 |                                into WS-MYSQL-IMPLEMENTATION\n  445 |      end-string.\n  446 >      string   DB-UPass       delimited by space\n  447 |               X\"00\"          delimited by size\n  448 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:448: error: 'WS-MYSQL-PASSWORD' is not defined\n  446 |      string   DB-UPass       delimited by space\n  447 |               X\"00\"          delimited by size\n  448 >                                into WS-MYSQL-PASSWORD\n  449 |      end-string.\n  450 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:450: error: 'DB-Port' is not defined\n  448 |                                into WS-MYSQL-PASSWORD\n  449 |      end-string.\n  450 >      string   DB-Port        delimited by space\n  451 |               X\"00\"          delimited by size\n  452 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:452: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  450 |      string   DB-Port        delimited by space\n  451 |               X\"00\"          delimited by size\n  452 >                                into WS-MYSQL-PORT-NUMBER\n  453 |      end-string.\n  454 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:454: error: 'DB-Socket' is not defined\n  452 |                                into WS-MYSQL-PORT-NUMBER\n  453 |      end-string.\n  454 >      string   DB-Socket      delimited by space\n  455 |               X\"00\"          delimited by size\n  456 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:456: error: 'WS-MYSQL-SOCKET' is not defined\n  454 |      string   DB-Socket      delimited by space\n  455 |               X\"00\"          delimited by size\n  456 >                                into WS-MYSQL-SOCKET\n  457 |      end-string.\n  458 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:460: error: 'fs-reply' is not defined\n  458 |      move     1 to ws-No-Paragraph.\n  459 |      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  460 >      if       fs-reply not = zero\n  461 |               go   to ba999-end.\n  462 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:529: error: 'WS-MYSQL-RESULT' is not defined\n  527 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  528 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  529 >            MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n  530 | *>               /MYSQL-END\\\n  531 |            move    \"000000000000000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:532: error: 'Testing-2' is not defined\n  530 | *>               /MYSQL-END\\\n  531 |            move    \"000000000000000\" to WS-File-Key\n  532 >               if    Testing-2\n  533 |                     display Display-Message-1 with erase eos\n  534 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:538: error: 'WS-MYSQL-Count-Rows' is not defined\n  536 | *>  It could be an empty table so test for it\n  537 | *>\n  538 >               if       WS-MYSQL-Count-Rows = zero\n  539 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  540 |                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:540: error: 'WS-MYSQL-SQLstate' is not defined\n  538 |               if       WS-MYSQL-Count-Rows = zero\n  539 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  540 >                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n  541 |                        move  WS-MYSQL-SqlState   to SQL-State\n  542 |                        if    WS-MYSQL-Error-Number  not = \"0  \"    *> set..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:548: error: 'WE-Error' is not defined\n  546 |                        end-if       *> do not really need to do this mean..\n  547 |                        move 10 to fs-reply\n  548 >                        move 10 to WE-Error        *> should be 0 'JIC' li..\n  549 |                        move    \"No Data\" to WS-File-Key\n  550 |                        go to ba999-End       *> can clear the dup code af..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in paragraph 'ba060-Process-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:759: error: 'access-type' is not defined\n  757 | *>  Check for Param error 1st on start\n  758 | *>\n  759 >      if       access-type < 5 or > 8                   *> not using not <..\n  760 |               move 99 to FS-Reply\n  761 |               move 997 to WE-Error                     *> Invalid calling..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in paragraph 'ba070-Process-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:863: error: 'OI-Key' is not defined\n  861 |  ba070-Process-Write.             *> dry test... - Has rg01 requirements.\n  862 |      perform  bb000-HV-Load.                       *>  move WS-OTM3-Recor..\n  863 >      move     OI-Key to WS-File-Key.\n  864 |      move     zero to FS-Reply\n  865 |                       WE-Error\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in paragraph 'ba999-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1323: error: 'Testing-1' is not defined\n 1321 | *>  Any Clean ups before quiting    move data record ?????  do so at the..\n 1322 | *>\n 1323 >      if       Testing-1\n 1324 |               perform Ca-Process-Logs\n 1325 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in section 'bb000-HV-Load':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1340: error: 'OI-Invoice' is not defined\n 1338 |      initialize TD-SAITM3-REC.\n 1339 | *>\n 1340 >      move     OI-Invoice  to HV-OI3-INVOICE\n 1341 |                              WS-Temp-Ed-Invoice.\n 1342 |      move     OI-Customer to HV-OI3-CUSTOMER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1342: error: 'OI-Customer' is not defined\n 1340 |      move     OI-Invoice  to HV-OI3-INVOICE\n 1341 |                              WS-Temp-Ed-Invoice.\n 1342 >      move     OI-Customer to HV-OI3-CUSTOMER\n 1343 |                              WS-Temp-Ed-Customer.\n 1344 |      move     WS-Temp-Ed-Key  to HV-OI3-KEY\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1346: error: 'OI-B-Nos' is not defined\n 1344 |      move     WS-Temp-Ed-Key  to HV-OI3-KEY\n 1345 | *>\n 1346 >      move     OI-B-Nos        to HV-OI3-BATCH-NOS\n 1347 |                                  WS-Temp-ED-Batch-Nos.\n 1348 |      move     OI-B-Item       to HV-OI3-BATCH-ITEM\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1348: error: 'OI-B-Item' is not defined\n 1346 |      move     OI-B-Nos        to HV-OI3-BATCH-NOS\n 1347 |                                  WS-Temp-ED-Batch-Nos.\n 1348 >      move     OI-B-Item       to HV-OI3-BATCH-ITEM\n 1349 |                                  WS-Temp-ED-Batch-Item.\n 1350 |      move     WS-Temp-ED-Batch9 to HV-OI3-BATCH.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1352: error: 'OI-Date' is not defined\n 1350 |      move     WS-Temp-ED-Batch9 to HV-OI3-BATCH.\n 1351 | *>\n 1352 >      move     OI-Date         to HV-OI3-DAT\n 1353 |      move     OI-Type         to HV-OI3-TYPE\n 1354 |      move     OI-Description  to HV-OI3-DESCRIPTION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1353: error: 'OI-Type' is not defined\n 1351 | *>\n 1352 |      move     OI-Date         to HV-OI3-DAT\n 1353 >      move     OI-Type         to HV-OI3-TYPE\n 1354 |      move     OI-Description  to HV-OI3-DESCRIPTION\n 1355 |      move     OI-Hold-Flag    to HV-OI3-HOLD-FLAG\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1354: error: 'OI-Description' is not defined\n 1352 |      move     OI-Date         to HV-OI3-DAT\n 1353 |      move     OI-Type         to HV-OI3-TYPE\n 1354 >      move     OI-Description  to HV-OI3-DESCRIPTION\n 1355 |      move     OI-Hold-Flag    to HV-OI3-HOLD-FLAG\n 1356 |      move     OI-Unapl        to HV-OI3-UNAPL\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1355: error: 'OI-Hold-Flag' is not defined\n 1353 |      move     OI-Type         to HV-OI3-TYPE\n 1354 |      move     OI-Description  to HV-OI3-DESCRIPTION\n 1355 >      move     OI-Hold-Flag    to HV-OI3-HOLD-FLAG\n 1356 |      move     OI-Unapl        to HV-OI3-UNAPL\n 1357 |      move     OI-P-C          to HV-OI3-P-C\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1356: error: 'OI-Unapl' is not defined\n 1354 |      move     OI-Description  to HV-OI3-DESCRIPTION\n 1355 |      move     OI-Hold-Flag    to HV-OI3-HOLD-FLAG\n 1356 >      move     OI-Unapl        to HV-OI3-UNAPL\n 1357 |      move     OI-P-C          to HV-OI3-P-C\n 1358 |      move     OI-Net          to HV-OI3-NET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1357: error: 'OI-P-C' is not defined\n 1355 |      move     OI-Hold-Flag    to HV-OI3-HOLD-FLAG\n 1356 |      move     OI-Unapl        to HV-OI3-UNAPL\n 1357 >      move     OI-P-C          to HV-OI3-P-C\n 1358 |      move     OI-Net          to HV-OI3-NET\n 1359 |      move     OI-Extra        to HV-OI3-EXTRA\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1358: error: 'OI-Net' is not defined\n 1356 |      move     OI-Unapl        to HV-OI3-UNAPL\n 1357 |      move     OI-P-C          to HV-OI3-P-C\n 1358 >      move     OI-Net          to HV-OI3-NET\n 1359 |      move     OI-Extra        to HV-OI3-EXTRA\n 1360 |      move     OI-Carriage     to HV-OI3-CARRIAGE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1359: error: 'OI-Extra' is not defined\n 1357 |      move     OI-P-C          to HV-OI3-P-C\n 1358 |      move     OI-Net          to HV-OI3-NET\n 1359 >      move     OI-Extra        to HV-OI3-EXTRA\n 1360 |      move     OI-Carriage     to HV-OI3-CARRIAGE\n 1361 |      move     OI-Vat          to HV-OI3-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1360: error: 'OI-Carriage' is not defined\n 1358 |      move     OI-Net          to HV-OI3-NET\n 1359 |      move     OI-Extra        to HV-OI3-EXTRA\n 1360 >      move     OI-Carriage     to HV-OI3-CARRIAGE\n 1361 |      move     OI-Vat          to HV-OI3-VAT\n 1362 |      move     OI-Discount     to HV-OI3-DISCOUNT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1361: error: 'OI-Vat' is not defined\n 1359 |      move     OI-Extra        to HV-OI3-EXTRA\n 1360 |      move     OI-Carriage     to HV-OI3-CARRIAGE\n 1361 >      move     OI-Vat          to HV-OI3-VAT\n 1362 |      move     OI-Discount     to HV-OI3-DISCOUNT\n 1363 |      move     OI-E-Vat        to HV-OI3-E-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1362: error: 'OI-Discount' is not defined\n 1360 |      move     OI-Carriage     to HV-OI3-CARRIAGE\n 1361 |      move     OI-Vat          to HV-OI3-VAT\n 1362 >      move     OI-Discount     to HV-OI3-DISCOUNT\n 1363 |      move     OI-E-Vat        to HV-OI3-E-VAT\n 1364 |      move     OI-C-Vat        to HV-OI3-C-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1363: error: 'OI-E-Vat' is not defined\n 1361 |      move     OI-Vat          to HV-OI3-VAT\n 1362 |      move     OI-Discount     to HV-OI3-DISCOUNT\n 1363 >      move     OI-E-Vat        to HV-OI3-E-VAT\n 1364 |      move     OI-C-Vat        to HV-OI3-C-VAT\n 1365 |      move     OI-Paid         to HV-OI3-PAID\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1364: error: 'OI-C-Vat' is not defined\n 1362 |      move     OI-Discount     to HV-OI3-DISCOUNT\n 1363 |      move     OI-E-Vat        to HV-OI3-E-VAT\n 1364 >      move     OI-C-Vat        to HV-OI3-C-VAT\n 1365 |      move     OI-Paid         to HV-OI3-PAID\n 1366 |      move     OI-Status       to HV-OI3-STATUS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1365: error: 'OI-Paid' is not defined\n 1363 |      move     OI-E-Vat        to HV-OI3-E-VAT\n 1364 |      move     OI-C-Vat        to HV-OI3-C-VAT\n 1365 >      move     OI-Paid         to HV-OI3-PAID\n 1366 |      move     OI-Status       to HV-OI3-STATUS\n 1367 |      move     OI-Deduct-Days  to HV-OI3-DEDUCT-DAYS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1366: error: 'OI-Status' is not defined\n 1364 |      move     OI-C-Vat        to HV-OI3-C-VAT\n 1365 |      move     OI-Paid         to HV-OI3-PAID\n 1366 >      move     OI-Status       to HV-OI3-STATUS\n 1367 |      move     OI-Deduct-Days  to HV-OI3-DEDUCT-DAYS\n 1368 |      move     OI-Deduct-Amt   to HV-OI3-DEDUCT-AMT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1367: error: 'OI-Deduct-Days' is not defined\n 1365 |      move     OI-Paid         to HV-OI3-PAID\n 1366 |      move     OI-Status       to HV-OI3-STATUS\n 1367 >      move     OI-Deduct-Days  to HV-OI3-DEDUCT-DAYS\n 1368 |      move     OI-Deduct-Amt   to HV-OI3-DEDUCT-AMT\n 1369 |      move     OI-Deduct-Vat   to HV-OI3-DEDUCT-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1368: error: 'OI-Deduct-Amt' is not defined\n 1366 |      move     OI-Status       to HV-OI3-STATUS\n 1367 |      move     OI-Deduct-Days  to HV-OI3-DEDUCT-DAYS\n 1368 >      move     OI-Deduct-Amt   to HV-OI3-DEDUCT-AMT\n 1369 |      move     OI-Deduct-Vat   to HV-OI3-DEDUCT-VAT\n 1370 |      move     OI-Days         to HV-OI3-DAYS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1369: error: 'OI-Deduct-Vat' is not defined\n 1367 |      move     OI-Deduct-Days  to HV-OI3-DEDUCT-DAYS\n 1368 |      move     OI-Deduct-Amt   to HV-OI3-DEDUCT-AMT\n 1369 >      move     OI-Deduct-Vat   to HV-OI3-DEDUCT-VAT\n 1370 |      move     OI-Days         to HV-OI3-DAYS\n 1371 |      move     OI-CR           to HV-OI3-CR\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1370: error: 'OI-Days' is not defined\n 1368 |      move     OI-Deduct-Amt   to HV-OI3-DEDUCT-AMT\n 1369 |      move     OI-Deduct-Vat   to HV-OI3-DEDUCT-VAT\n 1370 >      move     OI-Days         to HV-OI3-DAYS\n 1371 |      move     OI-CR           to HV-OI3-CR\n 1372 |      move     OI-Applied      to HV-OI3-APPLIED\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1371: error: 'OI-CR' is not defined\n 1369 |      move     OI-Deduct-Vat   to HV-OI3-DEDUCT-VAT\n 1370 |      move     OI-Days         to HV-OI3-DAYS\n 1371 >      move     OI-CR           to HV-OI3-CR\n 1372 |      move     OI-Applied      to HV-OI3-APPLIED\n 1373 |      move     OI-Date-Cleared to HV-OI3-DATE-CLEARED.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1372: error: 'OI-Applied' is not defined\n 1370 |      move     OI-Days         to HV-OI3-DAYS\n 1371 |      move     OI-CR           to HV-OI3-CR\n 1372 >      move     OI-Applied      to HV-OI3-APPLIED\n 1373 |      move     OI-Date-Cleared to HV-OI3-DATE-CLEARED.\n 1374 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1373: error: 'OI-Date-Cleared' is not defined\n 1371 |      move     OI-CR           to HV-OI3-CR\n 1372 |      move     OI-Applied      to HV-OI3-APPLIED\n 1373 >      move     OI-Date-Cleared to HV-OI3-DATE-CLEARED.\n 1374 | *>\n 1375 |  bb000-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:459: error: 'MYSQL-1000-OPEN' is not defined\n  457 |      end-string.\n  458 |      move     1 to ws-No-Paragraph.\n  459 >      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  460 |      if       fs-reply not = zero\n  461 |               go   to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:459: error: 'MYSQL-1090-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in paragraph 'ba030-Process-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:483: error: 'MYSQL-1980-CLOSE' is not defined\n  481 | *>    Close the Database\n  482 | *>\n  483 >            PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n  484 | *>  /MYSQL-END\\\n  485 |      go      to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:483: error: 'MYSQL-1999-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:527: error: 'MYSQL-1210-COMMAND' is not defined\n  525 |              ws-Where (1:J)\n  526 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  527 >            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  528 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  529 |            MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:527: error: 'MYSQL-1219-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:528: error: 'MYSQL-1220-STORE-RESULT' is not defined\n  526 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  527 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  528 >            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  529 |            MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n  530 | *>               /MYSQL-END\\\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:528: error: 'MYSQL-1239-EXIT' is not defined\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:168: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:210: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:295: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:335: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:339: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:345: error: slwsoi.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1305: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:356: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:358: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:360: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:362: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:365: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:366: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:367: error: 'WS-OTM3-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:385: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:391: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:392: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:393: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:394: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:404: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:434: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:436: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:438: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:440: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:442: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:444: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:446: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:448: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:450: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:452: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:454: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:456: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:460: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:529: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:532: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:538: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:540: error: 'WS-MYSQL-SQLstate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:548: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:759: error: 'access-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:863: error: 'OI-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1323: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1340: error: 'OI-Invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1342: error: 'OI-Customer' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1346: error: 'OI-B-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1348: error: 'OI-B-Item' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1352: error: 'OI-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1353: error: 'OI-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1354: error: 'OI-Description' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1355: error: 'OI-Hold-Flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1356: error: 'OI-Unapl' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1357: error: 'OI-P-C' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1358: error: 'OI-Net' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1359: error: 'OI-Extra' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1360: error: 'OI-Carriage' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1361: error: 'OI-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1362: error: 'OI-Discount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1363: error: 'OI-E-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1364: error: 'OI-C-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1365: error: 'OI-Paid' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1366: error: 'OI-Status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1367: error: 'OI-Deduct-Days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1368: error: 'OI-Deduct-Amt' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1369: error: 'OI-Deduct-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1370: error: 'OI-Days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1371: error: 'OI-CR' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1372: error: 'OI-Applied' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1373: error: 'OI-Date-Cleared' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:459: error: 'MYSQL-1000-OPEN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:459: error: 'MYSQL-1090-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:483: error: 'MYSQL-1980-CLOSE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:483: error: 'MYSQL-1999-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:527: error: 'MYSQL-1210-COMMAND' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:527: error: 'MYSQL-1219-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:528: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:528: error: 'MYSQL-1239-EXIT' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:168: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:210: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:295: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:335: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:339: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:345: error: slwsoi.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1305: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:356: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:358: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:360: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:362: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:365: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:366: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:367: error: 'WS-OTM3-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:385: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:391: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:392: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:393: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:394: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:404: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:434: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:436: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:438: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:440: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:442: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:444: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:446: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:448: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:450: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:452: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:454: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:456: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:460: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:529: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:532: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:538: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:540: error: 'WS-MYSQL-SQLstate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:548: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:759: error: 'access-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:863: error: 'OI-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1323: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1340: error: 'OI-Invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1342: error: 'OI-Customer' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1346: error: 'OI-B-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1348: error: 'OI-B-Item' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1352: error: 'OI-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1353: error: 'OI-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1354: error: 'OI-Description' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1355: error: 'OI-Hold-Flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1356: error: 'OI-Unapl' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1357: error: 'OI-P-C' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1358: error: 'OI-Net' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1359: error: 'OI-Extra' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1360: error: 'OI-Carriage' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1361: error: 'OI-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1362: error: 'OI-Discount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1363: error: 'OI-E-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1364: error: 'OI-C-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1365: error: 'OI-Paid' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1366: error: 'OI-Status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1367: error: 'OI-Deduct-Days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1368: error: 'OI-Deduct-Amt' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1369: error: 'OI-Deduct-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1370: error: 'OI-Days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1371: error: 'OI-CR' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1372: error: 'OI-Applied' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:1373: error: 'OI-Date-Cleared' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:459: error: 'MYSQL-1000-OPEN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:459: error: 'MYSQL-1090-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:483: error: 'MYSQL-1980-CLOSE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:483: error: 'MYSQL-1999-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:527: error: 'MYSQL-1210-COMMAND' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:527: error: 'MYSQL-1219-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:528: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl:528: error: 'MYSQL-1239-EXIT' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 145,
+    "cognitive": 267,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 220,
+      "totalOperators": 571,
+      "totalOperands": 3118,
+      "vocabulary": 232,
+      "length": 3689,
+      "volume": 28988,
+      "difficulty": 85.04,
+      "effort": 2465042,
+      "timeToProgram": 136947,
+      "deliveredBugs": 9.663
+    },
+    "maintainability": 49
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 539
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 540
+      },
+      {
+        "target": "MySQL_error",
+        "line": 544
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 576
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 618
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 619
+      },
+      {
+        "target": "MySQL_error",
+        "line": 622
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 698
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 732
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 733
+      },
+      {
+        "target": "MySQL_error",
+        "line": 737
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 836
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 837
+      },
+      {
+        "target": "MySQL_error",
+        "line": 840
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 872
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 873
+      },
+      {
+        "target": "MySQL_error",
+        "line": 877
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 926
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 927
+      },
+      {
+        "target": "MySQL_error",
+        "line": 930
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 970
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 971
+      },
+      {
+        "target": "MySQL_error",
+        "line": 974
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1038
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1039
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1043
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 1074
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1115
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1116
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1119
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1192
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1193
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1197
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 1228
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1269
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1270
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1273
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1316
+      },
+      {
+        "target": "fhlogger",
+        "line": 2186
+      }
+    ],
+    "copies": [
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 168
+      },
+      {
+        "name": "of",
+        "line": 203
+      },
+      {
+        "name": "envdiv",
+        "line": 210
+      },
+      {
+        "name": "mysql-variables",
+        "line": 295
+      },
+      {
+        "name": "wsfnctn",
+        "line": 335
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 339
+      },
+      {
+        "name": "slwsoi",
+        "line": 344
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1305
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 432
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 459
+      },
+      {
+        "target": "ba998-Free",
+        "line": 475
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 483
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 527
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 528
+      },
+      {
+        "target": "ba999-End",
+        "line": 559
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 640
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 681
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 682
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 749
+      },
+      {
+        "target": "ba998-Free",
+        "line": 752
+      },
+      {
+        "target": "ba998-Free",
+        "line": 768
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 826
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 827
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 862
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 870
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 923
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 944
+      },
+      {
+        "target": "bb300-Update",
+        "line": 963
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1026
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 1027
+      },
+      {
+        "target": "ba999-End",
+        "line": 1058
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 1137
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1180
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 1181
+      },
+      {
+        "target": "ba999-End",
+        "line": 1212
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 1291
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 1324
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1791
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2176
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 214
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

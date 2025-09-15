@@ -1,0 +1,211 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl",
+  "fileName": "otm3UNL.cbl",
+  "fileHash": "de0f6ee7b96e82682e0506536274c458d5cc8eafa0292aa3802f338d1db812a1",
+  "timestamp": "2025-09-15T19:46:05.162Z",
+  "parseTime": 34,
+  "lines": {
+    "total": 222,
+    "code": 103,
+    "comment": 118,
+    "blank": 1
+  },
+  "programId": "otm3UNL",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:93: error: envdiv.cob: No such file or directory\n   91 | *>-------------------\n   92 | *>\n   93 >  copy \"envdiv.cob\".\n   94 |  input-output            section.\n   95 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:100: error: slseloi3.cob: No such file or directory\n   98 | *>-----------\n   99 | *>\n  100 >  copy \"slseloi3.cob\".\n  101 |      select  otm3-File-Seq  assign          \"openitm3.seq\"\n  102 |                                 organization  sequential\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:111: error: slfdoi3.cob: No such file or directory\n  109 | *>-----------\n  110 | *>\n  111 >  copy \"slfdoi3.cob\" replacing Open-Item-Record-3 by OTM3-Record.\n  112 |  fd  otm3-File-Seq.\n  113 |  copy \"slwsoi.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:113: error: slwsoi.cob: No such file or directory\n  111 |  copy \"slfdoi3.cob\" replacing Open-Item-Record-3 by OTM3-Record.\n  112 |  fd  otm3-File-Seq.\n  113 >  copy \"slwsoi.cob\".\n  114 |  01  WS-OTM3-Record redefines OI-Header\n  115 |                          pic x(118).\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:138: error: Test-Data-Flags.cob: No such file or directory\n  136 |  01  SO-Print            pic x(160)    value spaces.\n  137 | *>\n  138 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  139 | *>\n  140 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:140: error: wsfnctn.cob: No such file or directory\n  138 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  139 | *>\n  140 >  copy \"wsfnctn.cob\".\n  141 |  copy \"wsnames.cob\".\n  142 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:141: error: wsnames.cob: No such file or directory\n  139 | *>\n  140 |  copy \"wsfnctn.cob\".\n  141 >  copy \"wsnames.cob\".\n  142 |  copy \"wscall.cob\".\n  143 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:142: error: wscall.cob: No such file or directory\n  140 |  copy \"wsfnctn.cob\".\n  141 |  copy \"wsnames.cob\".\n  142 >  copy \"wscall.cob\".\n  143 | *>\n  144 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:217: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  215 |      goback.\n  216 | *>\n  217 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_otm3S now\n  218 | *>\n  219 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:114: error: 'OI-Header' is not defined\n  112 |  fd  otm3-File-Seq.\n  113 |  copy \"slwsoi.cob\".\n  114 >  01  WS-OTM3-Record redefines OI-Header\n  115 |                          pic x(118).\n  116 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:117: error: RECORD description missing or invalid\n  115 |                          pic x(118).\n  116 | *>\n  117 >  working-storage section.\n  118 | *>----------------------\n  119 |  77  prog-name           pic x(22)    value \"otm3UNL (3.02.00)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:101: error: missing file description for FILE otm3-File-Seq\n   99 | *>\n  100 |  copy \"slseloi3.cob\".\n  101 >      select  otm3-File-Seq  assign          \"openitm3.seq\"\n  102 |                                 organization  sequential\n  103 |                                 status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:103: error: 'FS-Reply' is not defined\n  101 |      select  otm3-File-Seq  assign          \"openitm3.seq\"\n  102 |                                 organization  sequential\n  103 >                                 status        FS-Reply.\n  104 | *>\n  105 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:156: error: 'WS-Log-System' is not defined\n  154 |  aa000-Main-Start.\n  155 |      perform  zz020-Get-Program-Args.\n  156 >      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  157 |      move     15     to WS-Log-File-no.  *> for FHlogger\n  158 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:157: error: 'WS-Log-File-no' is not defined\n  155 |      perform  zz020-Get-Program-Args.\n  156 |      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  157 >      move     15     to WS-Log-File-no.  *> for FHlogger\n  158 | *>\n  159 |      move     spaces to SO-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:166: error: 'Open-Item-File-3' is not defined\n  164 | *> BYPASS ALL THE STANDARD CODING AS JUST WRITE THE REC OUT\n  165 | *>\n  166 >      open     input    Open-Item-File-3.\n  167 |      if       FS-Reply not = zeros\n  168 |               move     \"No otm3 file to process\" to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:166: error: 'Open-Item-File-3' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:170: error: 'Open-Item-File-3' is not a file name\n  168 |               move     \"No otm3 file to process\" to SO-Print\n  169 |               perform  Call-Sysout\n  170 >               close    Open-Item-File-3\n  171 |               move     \"CLOSE \" to SO-Print\n  172 |               perform  Call-Sysout\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl: in paragraph 'aa010-Read-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:180: error: 'Open-Item-File-3' is not a file name\n  178 |  aa010-Read-Recs.\n  179 |      perform  forever\n  180 >               read     Open-Item-File-3 next record at end\n  181 |                        go to aa020-Finish-Off\n  182 |               end-read\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:192: error: 'OTM3-Record' is not defined\n  190 |               end-if\n  191 |               add      1 to WS-Rec-Cnt-In\n  192 >               write    WS-OTM3-Record from OTM3-Record\n  193 |               if       FS-Reply not = zero\n  194 |                        move     SY006 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl: in paragraph 'aa020-Finish-Off':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:203: error: 'Open-Item-File-3' is not a file name\n  201 | aa020-Finish-Off.\n  202 |      close    OTM3-File-Seq\n  203 >               Open-Item-File-3.\n  204 |      move     spaces to SO-Print.\n  205 |      string\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:155: error: 'zz020-Get-Program-Args' is not defined\n  153 | *>\n  154 |  aa000-Main-Start.\n  155 >      perform  zz020-Get-Program-Args.\n  156 |      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  157 |      move     15     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:93: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:100: error: slseloi3.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:111: error: slfdoi3.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:113: error: slwsoi.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:138: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:140: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:141: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:142: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:217: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:114: error: 'OI-Header' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:117: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:101: error: missing file description for FILE otm3-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:103: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:156: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:157: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:166: error: 'Open-Item-File-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:166: error: 'Open-Item-File-3' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:170: error: 'Open-Item-File-3' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:180: error: 'Open-Item-File-3' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:192: error: 'OTM3-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:203: error: 'Open-Item-File-3' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:155: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:93: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:100: error: slseloi3.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:111: error: slfdoi3.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:113: error: slwsoi.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:138: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:140: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:141: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:142: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:217: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:114: error: 'OI-Header' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:117: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:101: error: missing file description for FILE otm3-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:103: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:156: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:157: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:166: error: 'Open-Item-File-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:166: error: 'Open-Item-File-3' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:170: error: 'Open-Item-File-3' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:180: error: 'Open-Item-File-3' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:192: error: 'OTM3-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:203: error: 'Open-Item-File-3' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3UNL.cbl:155: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 8,
+    "cognitive": 18,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 59,
+      "totalOperators": 47,
+      "totalOperands": 106,
+      "vocabulary": 67,
+      "length": 153,
+      "volume": 928,
+      "difficulty": 7.19,
+      "effort": 6670,
+      "timeToProgram": 371,
+      "deliveredBugs": 0.309
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 220
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23
+      },
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 93
+      },
+      {
+        "name": "slseloi3",
+        "line": 100
+      },
+      {
+        "name": "slfdoi3",
+        "line": 111
+      },
+      {
+        "name": "slwsoi",
+        "line": 113
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 138
+      },
+      {
+        "name": "wsfnctn",
+        "line": 140
+      },
+      {
+        "name": "wsnames",
+        "line": 141
+      },
+      {
+        "name": "wscall",
+        "line": 142
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 217
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 155
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 162
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 169
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 172
+      },
+      {
+        "target": "forever",
+        "line": 179
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 188
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 195
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 211
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 213
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "otm3-File-Seq",
+        "line": 112
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 117
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

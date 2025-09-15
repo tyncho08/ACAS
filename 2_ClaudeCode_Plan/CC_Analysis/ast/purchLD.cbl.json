@@ -1,0 +1,477 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl",
+  "fileName": "purchLD.cbl",
+  "fileHash": "c46602e480da3734cd1d20ec4d34b33e67c402e46c232866fa77f5443f686e15",
+  "timestamp": "2025-09-15T19:46:06.585Z",
+  "parseTime": 55,
+  "lines": {
+    "total": 536,
+    "code": 334,
+    "comment": 201,
+    "blank": 1
+  },
+  "programId": "purchLD",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:124: error: envdiv.cob: No such file or directory\n  122 | *>-------------------\n  123 | *>\n  124 >  copy \"envdiv.cob\".\n  125 |  input-output            section.\n  126 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:131: error: selsys.cob: No such file or directory\n  129 | *>-----------\n  130 | *>\n  131 >  copy \"selsys.cob\".\n  132 |  data division.\n  133 | *>------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:138: error: fdsys.cob: No such file or directory\n  136 | *>-----------\n  137 | *>\n  138 >  copy \"fdsys.cob\".\n  139 |  working-storage section.\n  140 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:173: error: Test-Data-Flags.cob: No such file or directory\n  171 |      03  WS-Socket       pic x(64).\n  172 | *>\n  173 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  174 | *>\n  175 |  copy \"wspl.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:175: error: wspl.cob: No such file or directory\n  173 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  174 | *>\n  175 >  copy \"wspl.cob\".\n  176 |  copy \"wsfnctn.cob\".\n  177 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:176: error: wsfnctn.cob: No such file or directory\n  174 | *>\n  175 |  copy \"wspl.cob\".\n  176 >  copy \"wsfnctn.cob\".\n  177 |  copy \"wsnames.cob\".\n  178 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:177: error: wsnames.cob: No such file or directory\n  175 |  copy \"wspl.cob\".\n  176 |  copy \"wsfnctn.cob\".\n  177 >  copy \"wsnames.cob\".\n  178 |  copy \"wscall.cob\".\n  179 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:178: error: wscall.cob: No such file or directory\n  176 |  copy \"wsfnctn.cob\".\n  177 |  copy \"wsnames.cob\".\n  178 >  copy \"wscall.cob\".\n  179 | *>\n  180 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:531: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  529 |      goback.\n  530 | *>\n  531 >  copy \"Proc-Get-Env-Set-Files.cob\".\n  532 | *>\n  533 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:207: error: 'WS-Log-System' is not defined\n  205 |      move     Prog-Name to So-Print.\n  206 |      perform  Call-Sysout.\n  207 >      move     4      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  208 |      move     11     to WS-Log-File-No.  *> Cobol/RDB, File/Table within..\n  209 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:208: error: 'WS-Log-File-No' is not defined\n  206 |      perform  Call-Sysout.\n  207 |      move     4      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  208 >      move     11     to WS-Log-File-No.  *> Cobol/RDB, File/Table within..\n  209 | *>\n  210 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:212: error: 'System-File' is not defined\n  210 | *>  Get the system param for the various RDB fields\n  211 | *>\n  212 >      open     input System-File.\n  213 |      if       fs-reply not = zero\n  214 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:212: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:213: error: 'fs-reply' is not defined\n  211 | *>\n  212 |      open     input System-File.\n  213 >      if       fs-reply not = zero\n  214 |               display Prog-Name at 0101 with erase eos\n  215 |               display SY001    at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:218: error: 'System-File' is not a file name\n  216 |               display fs-reply at 0428\n  217 |               display SY004    at 0501\n  218 >               close System-File\n  219 |               move 128 to return-code\n  220 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:221: error: 'rrn' is not defined\n  219 |               move 128 to return-code\n  220 |               goback.\n  221 >      move     1 to rrn.\n  222 |      read     system-file record.\n  223 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:222: error: 'System-File' is not a file name\n  220 |               goback.\n  221 |      move     1 to rrn.\n  222 >      read     system-file record.\n  223 |      if       fs-reply not = zero\n  224 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:228: error: 'System-File' is not a file name\n  226 |               display fs-reply       at 0428\n  227 |               display \"Not set up ?\" at 0431\n  228 >               close System-File\n  229 |               move 128 to return-code\n  230 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:234: error: 'RDBMS-DB-Name' is not defined\n  232 | *>  Load up the DB settings from the system record as its not passed on.\n  233 | *>\n  234 >      if       RDBMS-DB-Name = spaces\n  235 |          or   FS-Cobol-Files-Used\n  236 |               display Prog-Name    *>  at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:235: error: 'FS-Cobol-Files-Used' is not defined\n  233 | *>\n  234 |      if       RDBMS-DB-Name = spaces\n  235 >          or   FS-Cobol-Files-Used\n  236 |               display Prog-Name    *>  at 0101 with erase eos\n  237 |               display SY019\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:243: error: 'System-File' is not a file name\n  241 |               if       WS-RDB-Return = 8\n  242 |                        display \"acas.param file NOT found - Aborted\"\n  243 >                        close  System-File\n  244 |                        goback\n  245 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:248: error: 'System-File' is not a file name\n  246 |               if       WS-RDB-Return = 1\n  247 |                        display \"Invalid keyword terminator found - Aborte..\n  248 >                        close  System-File\n  249 |                        goback\n  250 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:253: error: 'System-File' is not a file name\n  251 |               if       WS-RDB-Return = 2\n  252 |                        display \"Invalid keyword found - Aborted\"\n  253 >                        close  System-File\n  254 |                        goback\n  255 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:258: error: 'RDBMS-Host' is not defined\n  256 |               if       WS-RDB-Return = zeros\n  257 |                        display \"acas-param file found and being used \"\n  258 >                        move     WS-Host-Name      to RDBMS-Host\n  259 |                        move     WS-Implementation to RDBMS-User\n  260 |                        move     WS-Password       to RDBMS-Passwd\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:259: error: 'RDBMS-User' is not defined\n  257 |                        display \"acas-param file found and being used \"\n  258 |                        move     WS-Host-Name      to RDBMS-Host\n  259 >                        move     WS-Implementation to RDBMS-User\n  260 |                        move     WS-Password       to RDBMS-Passwd\n  261 |                        move     WS-Base-Name      to RDBMS-DB-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:260: error: 'RDBMS-Passwd' is not defined\n  258 |                        move     WS-Host-Name      to RDBMS-Host\n  259 |                        move     WS-Implementation to RDBMS-User\n  260 >                        move     WS-Password       to RDBMS-Passwd\n  261 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  262 |                        move     WS-Port-Number    to RDBMS-Port\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:262: error: 'RDBMS-Port' is not defined\n  260 |                        move     WS-Password       to RDBMS-Passwd\n  261 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  262 >                        move     WS-Port-Number    to RDBMS-Port\n  263 |                        move     WS-Socket         to RDBMS-Socket\n  264 |                       display \"User = \"   RDBMS-User\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:263: error: 'RDBMS-Socket' is not defined\n  261 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  262 |                        move     WS-Port-Number    to RDBMS-Port\n  263 >                        move     WS-Socket         to RDBMS-Socket\n  264 |                       display \"User = \"   RDBMS-User\n  265 |                       display \"Host = \"   RDBMS-Host\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:284: error: 'System-File' is not a file name\n  282 |               display \"Socket = \" RDBMS-Socket\n  283 |               stop \"SY008 Note message & Hit return\"\n  284 >               close System-File\n  285 |               move 64 to Return-Code\n  286 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'aa010-Proc-Override':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:292: error: 'File-System-Used' is not defined\n  290 | *>  Over-ride processes for acas022/purchMT for Dup modes\n  291 | *>\n  292 >      move     zero to File-System-Used\n  293 |                       File-Duplicates-In-Use\n  294 |                       FA-File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:293: error: 'File-Duplicates-In-Use' is not defined\n  291 | *>\n  292 |      move     zero to File-System-Used\n  293 >                       File-Duplicates-In-Use\n  294 |                       FA-File-System-Used\n  295 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:294: error: 'FA-File-System-Used' is not defined\n  292 |      move     zero to File-System-Used\n  293 |                       File-Duplicates-In-Use\n  294 >                       FA-File-System-Used\n  295 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  296 |      move     zero to Log-file-rec-written.        *> for logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:295: error: 'FA-File-Duplicates-In-Use' is not defined\n  293 |                       File-Duplicates-In-Use\n  294 |                       FA-File-System-Used\n  295 >                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  296 |      move     zero to Log-file-rec-written.        *> for logging.\n  297 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:296: error: 'Log-file-rec-written' is not defined\n  294 |                       FA-File-System-Used\n  295 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  296 >      move     zero to Log-file-rec-written.        *> for logging.\n  297 | *>\n  298 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:298: error: 'File-Key-No' is not defined\n  296 |      move     zero to Log-file-rec-written.        *> for logging.\n  297 | *>\n  298 >      move     1 to File-Key-No.\n  299 |      perform  acas022-Open-Input.      *> open input Cobol Purchase FILE\n  300 |      if       FS-Reply = 35\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:308: error: 'System-File' is not a file name\n  306 |               move    \"CLOSE   \" to SO-Print\n  307 |               perform call-Sysout\n  308 >               close System-File\n  309 |               perform acas022-Close\n  310 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:320: error: 'System-File' is not a file name\n  318 |               move \"CLOSE   \" to SO-Print\n  319 |               perform call-Sysout\n  320 >               close System-File\n  321 |               perform acas022-Close\n  322 |               move 16 to return-code\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:337: error: 'System-File' is not a file name\n  335 |               move    \"CLOSE   \" to SO-Print\n  336 |               perform call-Sysout\n  337 >               close System-File\n  338 |               perform  acas022-Close\n  339 |               move     zero to File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:345: error: 'Access-Type' is not defined\n  343 |               goback\n  344 |      end-if.\n  345 >      move     zero to Access-Type.\n  346 |      go       to aa010-Read.\n  347 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'acas022':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:349: error: 'System-Record' is not defined\n  347 | *>\n  348 |  acas022.\n  349 >      call     \"acas022\" using System-Record\n  350 |                               WS-Purch-Record\n  351 |                               File-Access\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:350: error: 'WS-Purch-Record' is not defined\n  348 |  acas022.\n  349 |      call     \"acas022\" using System-Record\n  350 >                               WS-Purch-Record\n  351 |                               File-Access\n  352 |                               File-Defs\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:351: error: 'File-Access' is not defined\n  349 |      call     \"acas022\" using System-Record\n  350 |                               WS-Purch-Record\n  351 >                               File-Access\n  352 |                               File-Defs\n  353 |                               ACAS-DAL-Common-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:352: error: 'File-Defs' is not defined\n  350 |                               WS-Purch-Record\n  351 |                               File-Access\n  352 >                               File-Defs\n  353 |                               ACAS-DAL-Common-data.\n  354 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:353: error: 'ACAS-DAL-Common-data' is not defined\n  351 |                               File-Access\n  352 |                               File-Defs\n  353 >                               ACAS-DAL-Common-data.\n  354 | *>\n  355 |  acas022-Open.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'acas022-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:356: error: 'fn-open' is not defined\n  354 | *>\n  355 |  acas022-Open.\n  356 >      set      fn-open to true.\n  357 |      set      fn-i-o  to true.\n  358 |      perform  acas022.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:357: error: 'fn-i-o' is not defined\n  355 |  acas022-Open.\n  356 |      set      fn-open to true.\n  357 >      set      fn-i-o  to true.\n  358 |      perform  acas022.\n  359 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'acas022-Open-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:363: error: 'fn-input' is not defined\n  361 |  acas022-Open-Input.\n  362 |      set      fn-open  to true.\n  363 >      set      fn-input to true.\n  364 |      perform  acas022.\n  365 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'acas022-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:368: error: 'fn-Close' is not defined\n  366 | *>\n  367 |  acas022-Close.\n  368 >      set      fn-Close to true.\n  369 |      perform  acas022.\n  370 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'acas022-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:372: error: 'fn-Read-Next' is not defined\n  370 | *>\n  371 |  acas022-Read-Next.\n  372 >      set      fn-Read-Next to true.\n  373 |      perform  acas022.\n  374 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'acas022-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:376: error: 'fn-Write' is not defined\n  374 | *>\n  375 |  acas022-Write.\n  376 >      set      fn-Write to true.\n  377 |      perform  acas022.\n  378 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'acas022-Rewrite':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:380: error: 'fn-re-Write' is not defined\n  378 | *>\n  379 |  acas022-Rewrite.\n  380 >      set      fn-re-Write to true.\n  381 |      perform  acas022.\n  382 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'aa010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:406: error: 'Sql-State' is not defined\n  404 |                    FA-File-System-Used.\n  405 |      perform  acas022-Write.\n  406 >      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  407 |          or   fs-reply = 22  or = 99            *> Check for dup key/reco..\n  408 |          or   SQL-Err (1:4) = \"1062\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:408: error: 'SQL-Err' is not defined\n  406 |      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  407 |          or   fs-reply = 22  or = 99            *> Check for dup key/reco..\n  408 >          or   SQL-Err (1:4) = \"1062\"\n  409 |                            or \"1022\"\n  410 |               move    zeros to FS-Reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:411: error: 'WE-Error' is not defined\n  409 |                            or \"1022\"\n  410 |               move    zeros to FS-Reply\n  411 >                                WE-Error\n  412 |               perform acas022-Rewrite\n  413 |               if      FS-Reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:416: error: 'WS-File-Key' is not defined\n  414 |                       move spaces to SO-Print\n  415 |                       string  SL010\n  416 >                                WS-File-Key\n  417 |                                  \" FS-Reply = \" FS-Reply into SO-Print\n  418 |                       perform call-Sysout\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:431: error: 'SQL-Msg' is not defined\n  429 |                       string SL018 SQL-Err into SO-Print\n  430 |                       perform Call-Sysout\n  431 >                       move SQL-Msg to SO-Print\n  432 |                       perform Call-Sysout\n  433 |                       move SQL-State to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'aa999-Finish':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:519: error: 'File-Function' is not defined\n  517 |                    FA-File-System-Used.\n  518 |      move     zero to Access-Type.\n  519 >      move     2 to File-Function.\n  520 |      perform  acas022-Close.                     *> Close RDB\n  521 |      close    System-File.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:521: error: 'System-File' is not a file name\n  519 |      move     2 to File-Function.\n  520 |      perform  acas022-Close.                     *> Close RDB\n  521 >      close    System-File.\n  522 |      move     zero to File-System-Used\n  523 |                    FA-File-System-Used.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:204: error: 'zz020-Get-Program-Args' is not defined\n  202 | *>\n  203 |  aa000-main-start.\n  204 >      perform  zz020-Get-Program-Args.\n  205 |      move     Prog-Name to So-Print.\n  206 |      perform  Call-Sysout.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:124: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:131: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:138: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:173: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:175: error: wspl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:176: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:177: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:178: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:531: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:207: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:208: error: 'WS-Log-File-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:212: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:212: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:213: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:218: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:221: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:222: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:228: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:234: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:235: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:243: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:248: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:253: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:258: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:259: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:260: error: 'RDBMS-Passwd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:262: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:263: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:284: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:292: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:293: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:294: error: 'FA-File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:295: error: 'FA-File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:296: error: 'Log-file-rec-written' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:298: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:308: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:320: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:337: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:345: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:349: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:350: error: 'WS-Purch-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:351: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:352: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:353: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:356: error: 'fn-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:357: error: 'fn-i-o' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:363: error: 'fn-input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:368: error: 'fn-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:372: error: 'fn-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:376: error: 'fn-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:380: error: 'fn-re-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:406: error: 'Sql-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:408: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:411: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:416: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:431: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:519: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:521: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:204: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:124: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:131: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:138: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:173: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:175: error: wspl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:176: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:177: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:178: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:531: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:207: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:208: error: 'WS-Log-File-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:212: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:212: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:213: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:218: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:221: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:222: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:228: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:234: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:235: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:243: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:248: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:253: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:258: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:259: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:260: error: 'RDBMS-Passwd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:262: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:263: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:284: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:292: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:293: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:294: error: 'FA-File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:295: error: 'FA-File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:296: error: 'Log-file-rec-written' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:298: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:308: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:320: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:337: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:345: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:349: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:350: error: 'WS-Purch-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:351: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:352: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:353: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:356: error: 'fn-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:357: error: 'fn-i-o' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:363: error: 'fn-input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:368: error: 'fn-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:372: error: 'fn-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:376: error: 'fn-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:380: error: 'fn-re-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:406: error: 'Sql-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:408: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:411: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:416: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:431: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:519: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:521: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/purchLD.cbl:204: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 32,
+    "cognitive": 58,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 84,
+      "totalOperators": 220,
+      "totalOperands": 284,
+      "vocabulary": 93,
+      "length": 504,
+      "volume": 3296,
+      "difficulty": 15.21,
+      "effort": 50142,
+      "timeToProgram": 2786,
+      "deliveredBugs": 1.099
+    },
+    "maintainability": 71
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas-get-params",
+        "line": 239
+      },
+      {
+        "target": "acas022",
+        "line": 349
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 469
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 479
+      },
+      {
+        "target": "ACAS-Sysout",
+        "line": 534
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 114
+      },
+      {
+        "name": "envdiv",
+        "line": 124
+      },
+      {
+        "name": "selsys",
+        "line": 131
+      },
+      {
+        "name": "fdsys",
+        "line": 138
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 173
+      },
+      {
+        "name": "wspl",
+        "line": 175
+      },
+      {
+        "name": "wsfnctn",
+        "line": 176
+      },
+      {
+        "name": "wsnames",
+        "line": 177
+      },
+      {
+        "name": "wscall",
+        "line": 178
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 531
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 204
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 206
+      },
+      {
+        "target": "acas022-Open-Input",
+        "line": 299
+      },
+      {
+        "target": "call-Sysout",
+        "line": 305
+      },
+      {
+        "target": "call-Sysout",
+        "line": 307
+      },
+      {
+        "target": "acas022-Close",
+        "line": 309
+      },
+      {
+        "target": "call-Sysout",
+        "line": 317
+      },
+      {
+        "target": "call-Sysout",
+        "line": 319
+      },
+      {
+        "target": "acas022-Close",
+        "line": 321
+      },
+      {
+        "target": "acas022-Open",
+        "line": 328
+      },
+      {
+        "target": "call-Sysout",
+        "line": 334
+      },
+      {
+        "target": "call-Sysout",
+        "line": 336
+      },
+      {
+        "target": "acas022-Close",
+        "line": 338
+      },
+      {
+        "target": "acas022-Close",
+        "line": 341
+      },
+      {
+        "target": "acas022",
+        "line": 358
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 359
+      },
+      {
+        "target": "acas022",
+        "line": 364
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 365
+      },
+      {
+        "target": "acas022",
+        "line": 369
+      },
+      {
+        "target": "acas022",
+        "line": 373
+      },
+      {
+        "target": "acas022",
+        "line": 377
+      },
+      {
+        "target": "acas022",
+        "line": 381
+      },
+      {
+        "target": "acas022-Read-Next",
+        "line": 389
+      },
+      {
+        "target": "call-Sysout",
+        "line": 397
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 398
+      },
+      {
+        "target": "acas022-Write",
+        "line": 405
+      },
+      {
+        "target": "acas022-Rewrite",
+        "line": 412
+      },
+      {
+        "target": "call-Sysout",
+        "line": 418
+      },
+      {
+        "target": "call-Sysout",
+        "line": 420
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 424
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 427
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 430
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 432
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 434
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 445
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 448
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 451
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 453
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 455
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 456
+      },
+      {
+        "target": "call-Sysout",
+        "line": 488
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 491
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 494
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 496
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 498
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 500
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 501
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 510
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 513
+      },
+      {
+        "target": "acas022-Close",
+        "line": 520
+      },
+      {
+        "target": "acas022-close",
+        "line": 524
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 526
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 528
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 139
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>                rollback\n*>...",
+        "line": 466
+      },
+      {
+        "content": "*>                commit\n*>...",
+        "line": 476
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

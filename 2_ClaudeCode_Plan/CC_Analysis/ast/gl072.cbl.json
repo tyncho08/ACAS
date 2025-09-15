@@ -1,0 +1,351 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl",
+  "fileName": "gl072.cbl",
+  "fileHash": "b06e2d81edc3a3f8a4392a37a7f22ea4d5db5cd9b000f8df508c63a9a785130e",
+  "timestamp": "2025-09-15T19:46:18.588Z",
+  "parseTime": 71,
+  "lines": {
+    "total": 500,
+    "code": 302,
+    "comment": 197,
+    "blank": 1
+  },
+  "programId": "gl072",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:89: error: envdiv.cob: No such file or directory\n   87 | *>===============================\n   88 | *>\n   89 >  copy \"envdiv.cob\".\n   90 |  input-output            section.\n   91 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:102: error: selprint.cob: No such file or directory\n  100 | *> copy \"seledger.cob\".\n  101 | *> copy \"selbatch.cob\".\n  102 >  copy \"selprint.cob\".\n  103 |  data                    division.\n  104 | *>===============================\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:124: error: fdprint.cob: No such file or directory\n  122 | *> copy \"fdledger.cob\".\n  123 | *> copy \"fdbatch.cob\".\n  124 >  copy \"fdprint.cob\"  replacing ==x(132)== by ==x(120)==.\n  125 |  working-storage section.\n  126 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:129: error: print-spool-command.cob: No such file or directory\n  127 | *>\n  128 |  77  prog-name           pic x(15)       value \"gl072 (3.02.06)\".\n  129 >  copy \"print-spool-command.cob\".\n  130 |  copy \"wsfnctn.cob\".\n  131 |  copy \"wsledger.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:130: error: wsfnctn.cob: No such file or directory\n  128 |  77  prog-name           pic x(15)       value \"gl072 (3.02.06)\".\n  129 |  copy \"print-spool-command.cob\".\n  130 >  copy \"wsfnctn.cob\".\n  131 |  copy \"wsledger.cob\".\n  132 |  copy \"wsbatch.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:131: error: wsledger.cob: No such file or directory\n  129 |  copy \"print-spool-command.cob\".\n  130 |  copy \"wsfnctn.cob\".\n  131 >  copy \"wsledger.cob\".\n  132 |  copy \"wsbatch.cob\".\n  133 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:132: error: wsbatch.cob: No such file or directory\n  130 |  copy \"wsfnctn.cob\".\n  131 |  copy \"wsledger.cob\".\n  132 >  copy \"wsbatch.cob\".\n  133 | *>\n  134 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:158: error: Test-Data-Flags.cob: No such file or directory\n  156 |      03  WS-OTM5-Record         pic x.\n  157 | *>\n  158 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  159 | *>\n  160 |  01  filler.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:257: error: wscall.cob: No such file or directory\n  255 | *>--------------\n  256 | *>\n  257 >  copy \"wscall.cob\".\n  258 |  copy \"wssystem.cob\".\n  259 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:258: error: wssystem.cob: No such file or directory\n  256 | *>\n  257 |  copy \"wscall.cob\".\n  258 >  copy \"wssystem.cob\".\n  259 |  copy \"wsnames.cob\".\n  260 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:259: error: wsnames.cob: No such file or directory\n  257 |  copy \"wscall.cob\".\n  258 |  copy \"wssystem.cob\".\n  259 >  copy \"wsnames.cob\".\n  260 | *>\n  261 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:498: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  496 |      exit     section.\n  497 | *>\n  498 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  499 | *>\n  500 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:98: error: 'fs-reply' is not defined\n   96 |      select  post-trans  assign  post-trans-name\n   97 |                          access  sequential\n   98 >                          status  fs-reply\n   99 |                          organization  line sequential.\n  100 | *> copy \"seledger.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:263: error: 'ws-calling-data' is not defined\n  261 |  01  to-day              pic x(10).\n  262 | *>\n  263 >  procedure division using ws-calling-data\n  264 |                           system-record\n  265 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:264: error: 'system-record' is not defined\n  262 | *>\n  263 |  procedure division using ws-calling-data\n  264 >                           system-record\n  265 |                           to-day\n  266 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:266: error: 'file-defs' is not defined\n  264 |                           system-record\n  265 |                           to-day\n  266 >                           file-defs.\n  267 | *>***************************************\n  268 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in section 'gl072-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:272: error: 'Print-Spool-Name' is not defined\n  270 | *>*****************\n  271 | *>\n  272 >      move     Print-Spool-Name to PSN.\n  273 |      move     1  to File-Key-No.\n  274 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:272: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:273: error: 'File-Key-No' is not defined\n  271 | *>\n  272 |      move     Print-Spool-Name to PSN.\n  273 >      move     1  to File-Key-No.\n  274 | *>\n  275 |      display  \"Phase - 4.  Transaction Update\" at 0801 with foreground-co..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:280: error: 'print-file' is not defined\n  278 |      perform  GL-Nominal-Open.\n  279 |      open     input  post-trans.\n  280 >      open     output print-file.\n  281 | *>\n  282 |      move     zero  to  save-batch save-ledger.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:280: error: 'print-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:297: error: 'we-error' is not defined\n  295 |      if       post-batch not = save-batch\n  296 |        and    save-batch not = zero\n  297 >        and    we-error   not = 999\n  298 |               perform  end-account\n  299 |               perform  end-batch\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:332: error: 'ledger-balance' is not defined\n  330 | *>\n  331 |      move     post-legend  to  l6-legend.\n  332 >      add      post-amount  to  ledger-balance.\n  333 | *>\n  334 |      write    print-record  from  line-6 after 1.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:334: error: 'print-record' is not defined\n  332 |      add      post-amount  to  ledger-balance.\n  333 | *>\n  334 >      write    print-record  from  line-6 after 1.\n  335 |      add      1 to line-cnt.\n  336 |      if       line-cnt > Page-Lines\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:336: error: 'Page-Lines' is not defined\n  334 |      write    print-record  from  line-6 after 1.\n  335 |      add      1 to line-cnt.\n  336 >      if       line-cnt > Page-Lines\n  337 |               perform  end-account\n  338 |               perform  headings\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in paragraph 'headings':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:356: error: 'scycle' is not defined\n  354 |      add      1  to  y.\n  355 |      move     y  to  l1-page.\n  356 >      move     scycle  to  l3-cycle.\n  357 |      move     post-batch  to  l3-batch.\n  358 |      if       y not = 1\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in paragraph 'end-batch':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:376: error: 'cleared-status' is not defined\n  374 | *>********\n  375 | *>\n  376 >      move     1  to  cleared-status.\n  377 |      move     run-date  to  posted.\n  378 |      perform  GL-Batch-Rewrite.               *> rewrite  batch-record.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:377: error: 'run-date' is not defined\n  375 | *>\n  376 |      move     1  to  cleared-status.\n  377 >      move     run-date  to  posted.\n  378 |      perform  GL-Batch-Rewrite.               *> rewrite  batch-record.\n  379 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:377: error: 'posted' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in paragraph 'end-account':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:387: error: 'WS-Ledger-Nos' is not defined\n  385 |      write    print-record  from  line-7 after 1.\n  386 |      add      1 to line-cnt.\n  387 >      divide   WS-Ledger-Nos  by  100  giving  l6-account.\n  388 |      move     ledger-pc       to  l6-pc.\n  389 |      move     ledger-balance  to  l6-balance.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:388: error: 'ledger-pc' is not defined\n  386 |      add      1 to line-cnt.\n  387 |      divide   WS-Ledger-Nos  by  100  giving  l6-account.\n  388 >      move     ledger-pc       to  l6-pc.\n  389 |      move     ledger-balance  to  l6-balance.\n  390 |      move     tot-dr          to  l6-debit.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:393: error: 'ledger-name' is not defined\n  391 |      move     tot-cr          to  l6-credit.\n  392 |      move     to-day          to  l6-date.\n  393 >      move     ledger-name     to  l6-legend.\n  394 |      move     zero            to  l6-tran.\n  395 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in paragraph 'new-account':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:406: error: 'WS-Ledger-Key' is not defined\n  404 | *>**********\n  405 | *>\n  406 >      move     post-ledger  to  WS-Ledger-Key.\n  407 | *>\n  408 |      if       read-ledger not = \"R\"\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in paragraph 'end-run':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:441: error: 'print-file' is not a file name\n  439 | *>******\n  440 | *>\n  441 >      close    post-trans print-file.                   *> close  batch-fi..\n  442 |      perform  GL-Batch-Close.\n  443 |      perform  GL-Nominal-Close.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:444: error: 'Print-Report' is not defined\n  442 |      perform  GL-Batch-Close.\n  443 |      perform  GL-Nominal-Close.\n  444 >      call     \"SYSTEM\" using Print-Report.\n  445 | *>\n  446 |  main-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in section 'get-batch':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:452: error: 'WS-Ledger' is not defined\n  450 | *>==============================\n  451 | *>\n  452 >      move     1           to  WS-Ledger.\n  453 |      move     post-batch  to  save-batch  WS-Batch-Nos.\n  454 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:453: error: 'WS-Batch-Nos' is not defined\n  451 | *>\n  452 |      move     1           to  WS-Ledger.\n  453 >      move     post-batch  to  save-batch  WS-Batch-Nos.\n  454 | *>\n  455 |      perform  GL-Batch-Read-Next.                       *> read     batch..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:457: error: 'description IN WS-Batch-Record' is not defined\n  455 |      perform  GL-Batch-Read-Next.                       *> read     batch..\n  456 | *>\n  457 >      move     description of WS-Batch-Record to  l3-desc.\n  458 | *>\n  459 |      if       not waiting\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:459: error: 'waiting' is not defined\n  457 |      move     description of WS-Batch-Record to  l3-desc.\n  458 | *>\n  459 >      if       not waiting\n  460 |               move  999  to  we-error\n  461 |               move  0    to  save-batch\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in section 'zz070-convert-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:478: error: 'Date-Form' is not defined\n  476 |      move     to-day to ws-date.\n  477 | *>\n  478 >      if       Date-Form = zero\n  479 |               move 1 to Date-Form.\n  480 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:480: error: 'Date-UK' is not defined\n  478 |      if       Date-Form = zero\n  479 |               move 1 to Date-Form.\n  480 >      if       Date-UK\n  481 |               go to zz070-Exit.\n  482 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:482: error: 'Date-USA' is not defined\n  480 |      if       Date-UK\n  481 |               go to zz070-Exit.\n  482 >      if       Date-USA                *> swap month and days\n  483 |               move ws-days to ws-swap\n  484 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in section 'gl072-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:277: error: 'GL-Batch-Open' is not defined\n  275 |      display  \"Phase - 4.  Transaction Update\" at 0801 with foreground-co..\n  276 |      move     prog-name to l1-prog.\n  277 >      perform  GL-Batch-Open.               *> open     i-o  batch-file le..\n  278 |      perform  GL-Nominal-Open.\n  279 |      open     input  post-trans.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:278: error: 'GL-Nominal-Open' is not defined\n  276 |      move     prog-name to l1-prog.\n  277 |      perform  GL-Batch-Open.               *> open     i-o  batch-file le..\n  278 >      perform  GL-Nominal-Open.\n  279 |      open     input  post-trans.\n  280 |      open     output print-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in paragraph 'end-batch':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:378: error: 'GL-Batch-Rewrite' is not defined\n  376 |      move     1  to  cleared-status.\n  377 |      move     run-date  to  posted.\n  378 >      perform  GL-Batch-Rewrite.               *> rewrite  batch-record.\n  379 | *>\n  380 |  end-account.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in paragraph 'end-account':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:383: error: 'GL-Nominal-Rewrite' is not defined\n  381 | *>**********\n  382 | *>\n  383 >      perform  GL-Nominal-Rewrite.             *> rewrite  ledger-record.\n  384 | *>\n  385 |      write    print-record  from  line-7 after 1.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in paragraph 'new-account':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:409: error: 'GL-Nominal-Read-Next' is not defined\n  407 | *>\n  408 |      if       read-ledger not = \"R\"\n  409 >               perform  GL-Nominal-Read-Next.             *> read  ledger-..\n  410 | *>\n  411 |      if       read-ledger not = \"R\"\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in paragraph 'end-run':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:442: error: 'GL-Batch-Close' is not defined\n  440 | *>\n  441 |      close    post-trans print-file.                   *> close  batch-fi..\n  442 >      perform  GL-Batch-Close.\n  443 |      perform  GL-Nominal-Close.\n  444 |      call     \"SYSTEM\" using Print-Report.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:443: error: 'GL-Nominal-Close' is not defined\n  441 |      close    post-trans print-file.                   *> close  batch-fi..\n  442 |      perform  GL-Batch-Close.\n  443 >      perform  GL-Nominal-Close.\n  444 |      call     \"SYSTEM\" using Print-Report.\n  445 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl: in section 'get-batch':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:455: error: 'GL-Batch-Read-Next' is not defined\n  453 |      move     post-batch  to  save-batch  WS-Batch-Nos.\n  454 | *>\n  455 >      perform  GL-Batch-Read-Next.                       *> read     batch..\n  456 | *>\n  457 |      move     description of WS-Batch-Record to  l3-desc.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:89: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:102: error: selprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:124: error: fdprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:129: error: print-spool-command.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:130: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:131: error: wsledger.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:132: error: wsbatch.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:158: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:257: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:258: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:259: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:498: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:98: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:263: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:264: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:266: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:272: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:272: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:273: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:280: error: 'print-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:280: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:297: error: 'we-error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:332: error: 'ledger-balance' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:334: error: 'print-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:336: error: 'Page-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:356: error: 'scycle' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:376: error: 'cleared-status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:377: error: 'run-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:377: error: 'posted' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:387: error: 'WS-Ledger-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:388: error: 'ledger-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:393: error: 'ledger-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:406: error: 'WS-Ledger-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:441: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:444: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:452: error: 'WS-Ledger' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:453: error: 'WS-Batch-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:457: error: 'description IN WS-Batch-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:459: error: 'waiting' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:478: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:480: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:482: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:277: error: 'GL-Batch-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:278: error: 'GL-Nominal-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:378: error: 'GL-Batch-Rewrite' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:383: error: 'GL-Nominal-Rewrite' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:409: error: 'GL-Nominal-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:442: error: 'GL-Batch-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:443: error: 'GL-Nominal-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:455: error: 'GL-Batch-Read-Next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:89: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:102: error: selprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:124: error: fdprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:129: error: print-spool-command.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:130: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:131: error: wsledger.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:132: error: wsbatch.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:158: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:257: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:258: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:259: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:498: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:98: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:263: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:264: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:266: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:272: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:272: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:273: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:280: error: 'print-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:280: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:297: error: 'we-error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:332: error: 'ledger-balance' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:334: error: 'print-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:336: error: 'Page-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:356: error: 'scycle' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:376: error: 'cleared-status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:377: error: 'run-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:377: error: 'posted' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:387: error: 'WS-Ledger-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:388: error: 'ledger-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:393: error: 'ledger-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:406: error: 'WS-Ledger-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:441: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:444: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:452: error: 'WS-Ledger' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:453: error: 'WS-Batch-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:457: error: 'description IN WS-Batch-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:459: error: 'waiting' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:478: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:480: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:482: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:277: error: 'GL-Batch-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:278: error: 'GL-Nominal-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:378: error: 'GL-Batch-Rewrite' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:383: error: 'GL-Nominal-Rewrite' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:409: error: 'GL-Nominal-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:442: error: 'GL-Batch-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:443: error: 'GL-Nominal-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl072.cbl:455: error: 'GL-Batch-Read-Next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 27,
+    "cognitive": 53,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 47,
+      "totalOperators": 140,
+      "totalOperands": 94,
+      "vocabulary": 59,
+      "length": 234,
+      "volume": 1377,
+      "difficulty": 12,
+      "effort": 16518,
+      "timeToProgram": 918,
+      "deliveredBugs": 0.459
+    },
+    "maintainability": 74
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 444
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 80
+      },
+      {
+        "name": "envdiv",
+        "line": 89
+      },
+      {
+        "name": "seledger",
+        "line": 100
+      },
+      {
+        "name": "selbatch",
+        "line": 101
+      },
+      {
+        "name": "selprint",
+        "line": 102
+      },
+      {
+        "name": "fdledger",
+        "line": 122
+      },
+      {
+        "name": "fdbatch",
+        "line": 123
+      },
+      {
+        "name": "fdprint",
+        "line": 124
+      },
+      {
+        "name": "print-spool-command",
+        "line": 129
+      },
+      {
+        "name": "wsfnctn",
+        "line": 130
+      },
+      {
+        "name": "wsledger",
+        "line": 131
+      },
+      {
+        "name": "wsbatch",
+        "line": 132
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 158
+      },
+      {
+        "name": "screenio",
+        "line": 178
+      },
+      {
+        "name": "wscall",
+        "line": 257
+      },
+      {
+        "name": "wssystem",
+        "line": 258
+      },
+      {
+        "name": "wsnames",
+        "line": 259
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 498
+      }
+    ],
+    "performs": [
+      {
+        "target": "GL-Batch-Open",
+        "line": 277
+      },
+      {
+        "target": "GL-Nominal-Open",
+        "line": 278
+      },
+      {
+        "target": "end-account",
+        "line": 288
+      },
+      {
+        "target": "end-batch",
+        "line": 289
+      },
+      {
+        "target": "end-account",
+        "line": 298
+      },
+      {
+        "target": "end-batch",
+        "line": 299
+      },
+      {
+        "target": "headings",
+        "line": 301
+      },
+      {
+        "target": "headings",
+        "line": 305
+      },
+      {
+        "target": "end-account",
+        "line": 312
+      },
+      {
+        "target": "new-account",
+        "line": 313
+      },
+      {
+        "target": "new-account",
+        "line": 316
+      },
+      {
+        "target": "end-account",
+        "line": 337
+      },
+      {
+        "target": "headings",
+        "line": 338
+      },
+      {
+        "target": "new-account",
+        "line": 340
+      },
+      {
+        "target": "get-batch",
+        "line": 347
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 352
+      },
+      {
+        "target": "GL-Batch-Rewrite",
+        "line": 378
+      },
+      {
+        "target": "GL-Nominal-Rewrite",
+        "line": 383
+      },
+      {
+        "target": "GL-Nominal-Read-Next",
+        "line": 409
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 419
+      },
+      {
+        "target": "GL-Batch-Close",
+        "line": 442
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 443
+      },
+      {
+        "target": "GL-Batch-Read-Next",
+        "line": 455
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "post-trans",
+        "line": 109
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 125
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

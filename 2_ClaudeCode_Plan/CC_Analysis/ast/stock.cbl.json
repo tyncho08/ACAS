@@ -1,0 +1,430 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl",
+  "fileName": "stock.cbl",
+  "fileHash": "16faf8fc2e093ea6b165bb0531aaf95516c9cfcdae067354db74db4ae1e7072c",
+  "timestamp": "2025-09-15T19:46:30.461Z",
+  "parseTime": 82,
+  "lines": {
+    "total": 731,
+    "code": 422,
+    "comment": 307,
+    "blank": 2
+  },
+  "programId": "stock",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:146: error: envdiv.cob: No such file or directory\n  144 | *>===============================\n  145 | *>\n  146 >  copy \"envdiv.cob\".\n  147 |  input-output            section.\n  148 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:177: error: sys-params-versioning.cob: No such file or directory\n  175 | *>   Using a file update program.\n  176 | *>\n  177 >  copy \"sys-params-versioning.cob\".\n  178 | *>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  179 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:241: error: wsmaps01.cob: No such file or directory\n  239 |          05  ws-intl-days    pic xx.\n  240 | *>\n  241 >  copy \"wsmaps01.cob\".\n  242 |  copy \"wsmaps03.cob\".\n  243 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:242: error: wsmaps03.cob: No such file or directory\n  240 | *>\n  241 |  copy \"wsmaps01.cob\".\n  242 >  copy \"wsmaps03.cob\".\n  243 |  copy \"wscall.cob\".\n  244 |  copy \"wstime.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:243: error: wscall.cob: No such file or directory\n  241 |  copy \"wsmaps01.cob\".\n  242 |  copy \"wsmaps03.cob\".\n  243 >  copy \"wscall.cob\".\n  244 |  copy \"wstime.cob\".\n  245 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:244: error: wstime.cob: No such file or directory\n  242 |  copy \"wsmaps03.cob\".\n  243 |  copy \"wscall.cob\".\n  244 >  copy \"wstime.cob\".\n  245 |  copy \"wsfnctn.cob\".\n  246 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:245: error: wsfnctn.cob: No such file or directory\n  243 |  copy \"wscall.cob\".\n  244 |  copy \"wstime.cob\".\n  245 >  copy \"wsfnctn.cob\".\n  246 |  copy \"wsnames.cob\".\n  247 |  copy \"wssystem.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:246: error: wsnames.cob: No such file or directory\n  244 |  copy \"wstime.cob\".\n  245 |  copy \"wsfnctn.cob\".\n  246 >  copy \"wsnames.cob\".\n  247 |  copy \"wssystem.cob\".\n  248 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:247: error: wssystem.cob: No such file or directory\n  245 |  copy \"wsfnctn.cob\".\n  246 |  copy \"wsnames.cob\".\n  247 >  copy \"wssystem.cob\".\n  248 | *>\n  249 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:274: error: Test-Data-Flags.cob: No such file or directory\n  272 |      03  WS-OTM5-Record         pic x.\n  273 | *>\n  274 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  275 | *>\n  276 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:684: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  682 |      goback.\n  683 | *>\n  684 >  copy \"Proc-Get-Env-Set-Files.cob\".\n  685 | *>\n  686 |  zz060-Convert-Date        section.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:729: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  727 |      exit     section.\n  728 | *>\n  729 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  730 | *>\n  731 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in section 'aa000-General-Control':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:303: error: 'wse-date-block' is not defined\n  301 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n  302 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  303 >      move     function current-date to wse-date-block.\n  304 | *>\n  305 |      accept   ws-env-lines   from lines.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in paragraph 'aa005-Open-System':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:319: error: 'File-System-Used' is not defined\n  317 | *>\n  318 |  aa005-Open-System.                              *> First get system para..\n  319 >      move     zeros to File-System-Used\n  320 |                        File-Duplicates-In-Use.\n  321 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:320: error: 'File-Duplicates-In-Use' is not defined\n  318 |  aa005-Open-System.                              *> First get system para..\n  319 |      move     zeros to File-System-Used\n  320 >                        File-Duplicates-In-Use.\n  321 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n  322 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:321: error: 'FA-RDBMS-Flat-Statuses' is not defined\n  319 |      move     zeros to File-System-Used\n  320 |                        File-Duplicates-In-Use.\n  321 >      move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n  322 |      move     1 to File-Key-No.\n  323 |      perform  System-Open-Input.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:322: error: 'File-Key-No' is not defined\n  320 |                        File-Duplicates-In-Use.\n  321 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n  322 >      move     1 to File-Key-No.\n  323 |      perform  System-Open-Input.\n  324 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:324: error: 'fs-reply' is not defined\n  322 |      move     1 to File-Key-No.\n  323 |      perform  System-Open-Input.\n  324 >      if       fs-reply not = zero\n  325 |  *>             perform System-Close\n  326 |               move    \"sys002\" to ws-called      *> create param file by..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:326: error: 'ws-called' is not defined\n  324 |      if       fs-reply not = zero\n  325 |  *>             perform System-Close\n  326 >               move    \"sys002\" to ws-called      *> create param file by..\n  327 |               call    ws-called using ws-calling-data file-defs\n  328 |               perform System-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:327: error: 'ws-calling-data' is not defined\n  325 |  *>             perform System-Close\n  326 |               move    \"sys002\" to ws-called      *> create param file by..\n  327 >               call    ws-called using ws-calling-data file-defs\n  328 |               perform System-Open\n  329 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:327: error: 'file-defs' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in paragraph 'aa010-Get-System-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:344: error: 'System-Record' is not defined\n  342 |               go to aa010-Get-System-Recs\n  343 |      end-if.\n  344 >      move     System-Record to WS-Temp-System-Rec.   *> save in case of s..\n  345 | *>\n  346 | *> BY PASS THIS CODE AS THE FILE WILL ALWAYS BE CURRENT.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:383: error: 'File-15' is not defined\n  381 | *>  If not, run program to create the defaults one's.\n  382 | *>\n  383 >      call     \"CBL_CHECK_FILE_EXIST\" using File-15      *> Analysis\n  384 |                                            File-Info.\n  385 |      if       return-code not = zero                        *> not = zero..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:386: error: 'ws-Process-Func' is not defined\n  384 |                                            File-Info.\n  385 |      if       return-code not = zero                        *> not = zero..\n  386 >               move 1 to ws-Process-Func\n  387 |               call \"sl070\" using ws-calling-data system-record to-day fil..\n  388 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:390: error: 'run-date' is not defined\n  388 |      end-if\n  389 | *>\n  390 >      move     run-date to u-bin.\n  391 |      call     \"maps04\" using maps03-ws.\n  392 |      move     u-date to to-day.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:390: error: 'u-bin' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:391: error: 'maps03-ws' is not defined\n  389 | *>\n  390 |      move     run-date to u-bin.\n  391 >      call     \"maps04\" using maps03-ws.\n  392 |      move     u-date to to-day.\n  393 |      perform  zz060-Convert-Date.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:392: error: 'u-date' is not defined\n  390 |      move     run-date to u-bin.\n  391 |      call     \"maps04\" using maps03-ws.\n  392 >      move     u-date to to-day.\n  393 |      perform  zz060-Convert-Date.\n  394 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:395: error: 'Stock' is not defined\n  393 |      perform  zz060-Convert-Date.\n  394 | *>\n  395 >      if       not Stock\n  396 |               set Stock to true.\n  397 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:398: error: 'op-system' is not defined\n  396 |               set Stock to true.\n  397 | *>\n  398 >      if       op-system = zero\n  399 |               move \"O/S\" to op-display.\n  400 |      if       Linux    move \"Linux\"   to op-display\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:400: error: 'Linux' is not defined\n  398 |      if       op-system = zero\n  399 |               move \"O/S\" to op-display.\n  400 >      if       Linux    move \"Linux\"   to op-display\n  401 |      else if  Windows  move \"Windows\" to op-display\n  402 |      else if  Mac      move \"Mac\"     to op-display\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:401: error: 'Windows' is not defined\n  399 |               move \"O/S\" to op-display.\n  400 |      if       Linux    move \"Linux\"   to op-display\n  401 >      else if  Windows  move \"Windows\" to op-display\n  402 |      else if  Mac      move \"Mac\"     to op-display\n  403 |      else if  OS2      move \"OS/2\"    to op-display\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:402: error: 'Mac' is not defined\n  400 |      if       Linux    move \"Linux\"   to op-display\n  401 |      else if  Windows  move \"Windows\" to op-display\n  402 >      else if  Mac      move \"Mac\"     to op-display\n  403 |      else if  OS2      move \"OS/2\"    to op-display\n  404 |      else if  Unix     move \"Unix\"    to op-display\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:403: error: 'OS2' is not defined\n  401 |      else if  Windows  move \"Windows\" to op-display\n  402 |      else if  Mac      move \"Mac\"     to op-display\n  403 >      else if  OS2      move \"OS/2\"    to op-display\n  404 |      else if  Unix     move \"Unix\"    to op-display\n  405 |      else if  Dos      move \"Dos\"     to op-display.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:404: error: 'Unix' is not defined\n  402 |      else if  Mac      move \"Mac\"     to op-display\n  403 |      else if  OS2      move \"OS/2\"    to op-display\n  404 >      else if  Unix     move \"Unix\"    to op-display\n  405 |      else if  Dos      move \"Dos\"     to op-display.\n  406 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:405: error: 'Dos' is not defined\n  403 |      else if  OS2      move \"OS/2\"    to op-display\n  404 |      else if  Unix     move \"Unix\"    to op-display\n  405 >      else if  Dos      move \"Dos\"     to op-display.\n  406 | *>\n  407 |      if       Dos or Windows\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:405: error: invalid conditional expression\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:409: error: invalid conditional expression\n  407 |      if       Dos or Windows\n  408 |               move Windows-Backup-Script-Name to Script-Name\n  409 >      else if  OS2\n  410 |               move OS2-Backup-Script-Name     to Script-Name\n  411 |      else if  Linux or Unix or Mac\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:441: error: 'WS-CD-Args' is not defined\n  439 | *>  But check if audit reports has been run if not, do so.\n  440 | *>\n  441 >      if       WS-CD-Args (1:5) = \"st040\"\n  442 |        if     WS-CD-Args (7:1) < 1 or > 3           *> (6:1) dont care bu..\n  443 |               display st403  at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:447: error: 'Stk-Activity-Rep-Run' is not defined\n  445 | *>\n  446 |      if       WS-CD-Args (1:5) = \"st020\" or \"st040\"\n  447 >       if      Stk-Activity-Rep-Run = zero           *> Process audit repo..\n  448 |         and   Stk-Audit-Used = 1                    *> if not run and Aud..\n  449 |               move     WS-CD-Args  to Saved-CD-Args             *> save t..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:448: error: 'Stk-Audit-Used' is not defined\n  446 |      if       WS-CD-Args (1:5) = \"st020\" or \"st040\"\n  447 |       if      Stk-Activity-Rep-Run = zero           *> Process audit repo..\n  448 >         and   Stk-Audit-Used = 1                    *> if not run and Aud..\n  449 |               move     WS-CD-Args  to Saved-CD-Args             *> save t..\n  450 |               move     spaces  to WS-CD-Args\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:452: error: 'WS-Caller' is not defined\n  450 |               move     spaces  to WS-CD-Args\n  451 |               move     \"st020\" to WS-CD-Args (1:5)\n  452 >               move     \"stock\" to WS-Caller\n  453 |               move     zeros   to WS-Term-Code\n  454 |               move     spaces  to WS-Del-Link\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:453: error: 'WS-Term-Code' is not defined\n  451 |               move     \"st020\" to WS-CD-Args (1:5)\n  452 |               move     \"stock\" to WS-Caller\n  453 >               move     zeros   to WS-Term-Code\n  454 |               move     spaces  to WS-Del-Link\n  455 |               move     5       to WS-Process-Func   *> Audit report only\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:454: error: 'WS-Del-Link' is not defined\n  452 |               move     \"stock\" to WS-Caller\n  453 |               move     zeros   to WS-Term-Code\n  454 >               move     spaces  to WS-Del-Link\n  455 |               move     5       to WS-Process-Func   *> Audit report only\n  456 |               move     zero    to WS-Sub-Function   *> doesnt matter as c..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:456: error: 'WS-Sub-Function' is not defined\n  454 |               move     spaces  to WS-Del-Link\n  455 |               move     5       to WS-Process-Func   *> Audit report only\n  456 >               move     zero    to WS-Sub-Function   *> doesnt matter as c..\n  457 |               perform  Load00\n  458 |               if       ws-term-code > 7\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in paragraph 'aa030-display-menu':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:480: error: 'usera' is not defined\n  478 | *>\n  479 |  aa030-display-menu.\n  480 >      display  usera at 0101 with erase eos foreground-color 3.\n  481 |      move     to-day to u-date.\n  482 |      move     \"stock\" to ws-caller.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:485: error: 'maps-ser-nn' is not defined\n  483 |      move     spaces to ws-called ws-del-link menu-reply.\n  484 |      move     zeros to ws-term-code.\n  485 >      move     maps-ser-nn to curs2.\n  486 |      display  maps-ser-xx at 2474 with foreground-color 3.\n  487 |      display  curs2 at 2476 with foreground-color 3.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:485: error: 'curs2' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:486: error: 'maps-ser-xx' is not defined\n  484 |      move     zeros to ws-term-code.\n  485 |      move     maps-ser-nn to curs2.\n  486 >      display  maps-ser-xx at 2474 with foreground-color 3.\n  487 |      display  curs2 at 2476 with foreground-color 3.\n  488 |      display  \"Copyright (c) 1976-\" at 2401 with foreground-color 3.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:489: error: 'wse-year' is not defined\n  487 |      display  curs2 at 2476 with foreground-color 3.\n  488 |      display  \"Copyright (c) 1976-\" at 2401 with foreground-color 3.\n  489 >      display  wse-year at 2420 with foreground-color 3.\n  490 |      display  \" Applewood Computers\" at 2424 with foreground-color 3.\n  491 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in paragraph 'aa035-Conv-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:496: error: 'Date-Form' is not defined\n  494 | *> Convert from UK to selected form\n  495 | *>\n  496 >      if       Date-Form not > zero and < 4\n  497 |               move 1 to Date-Form.\n  498 |      if       Date-USA\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:498: error: 'Date-USA' is not defined\n  496 |      if       Date-Form not > zero and < 4\n  497 |               move 1 to Date-Form.\n  498 >      if       Date-USA\n  499 |               move u-date to ws-date\n  500 |               move ws-days to ws-swap\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:505: error: 'Date-Intl' is not defined\n  503 |               move ws-date to u-date\n  504 |      end-if\n  505 >      if       Date-Intl\n  506 |               move \"ccyy/mm/dd\" to ws-date   *> swap Intl to UK form\n  507 |               move u-date (7:4) to ws-Intl-Year\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in paragraph 'aa040-Display-Go':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:521: error: 'wsb-time' is not defined\n  519 |      display  \"Stock Control System Menu\"    at 0328 with foreground-colo..\n  520 | *>\n  521 >      accept   wsb-time from time.\n  522 |      if       wsb-time not = \"00000000\"\n  523 |               move wsb-hh to wsd-hh\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:523: error: 'wsb-hh' is not defined\n  521 |      accept   wsb-time from time.\n  522 |      if       wsb-time not = \"00000000\"\n  523 >               move wsb-hh to wsd-hh\n  524 |               move wsb-mm to wsd-mm\n  525 |               move wsb-ss to wsd-ss\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:523: error: 'wsd-hh' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:524: error: 'wsb-mm' is not defined\n  522 |      if       wsb-time not = \"00000000\"\n  523 |               move wsb-hh to wsd-hh\n  524 >               move wsb-mm to wsd-mm\n  525 |               move wsb-ss to wsd-ss\n  526 |               display \"at \"    at 0355 with foreground-color 2\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:524: error: 'wsd-mm' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:525: error: 'wsb-ss' is not defined\n  523 |               move wsb-hh to wsd-hh\n  524 |               move wsb-mm to wsd-mm\n  525 >               move wsb-ss to wsd-ss\n  526 |               display \"at \"    at 0355 with foreground-color 2\n  527 |               display wsd-time at 0358 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:525: error: 'wsd-ss' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:527: error: 'wsd-time' is not defined\n  525 |               move wsb-ss to wsd-ss\n  526 |               display \"at \"    at 0355 with foreground-color 2\n  527 >               display wsd-time at 0358 with foreground-color 2.\n  528 | *>\n  529 |      accept   wsa-date from date.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:529: error: 'wsa-date' is not defined\n  527 |               display wsd-time at 0358 with foreground-color 2.\n  528 | *>\n  529 >      accept   wsa-date from date.\n  530 |      if       wsa-date not = \"000000\"\n  531 |               move wsa-yy to u-year\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:531: error: 'wsa-yy' is not defined\n  529 |      accept   wsa-date from date.\n  530 |      if       wsa-date not = \"000000\"\n  531 >               move wsa-yy to u-year\n  532 |               move wsa-mm to u-month\n  533 |               move wsa-dd to u-days\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:531: error: 'u-year' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:532: error: 'wsa-mm' is not defined\n  530 |      if       wsa-date not = \"000000\"\n  531 |               move wsa-yy to u-year\n  532 >               move wsa-mm to u-month\n  533 |               move wsa-dd to u-days\n  534 |               display \"on \" at 0367 with foreground-color 2\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:532: error: 'u-month' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:533: error: 'wsa-dd' is not defined\n  531 |               move wsa-yy to u-year\n  532 |               move wsa-mm to u-month\n  533 >               move wsa-dd to u-days\n  534 |               display \"on \" at 0367 with foreground-color 2\n  535 |               perform aa035-Conv-Date\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:533: error: 'u-days' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:550: error: 'Param-Restrict' is not defined\n  548 |      display  Batch-Text                         at 1345 with foreground-..\n  549 |      display  \"(Y)  Stock File Compression\"      at 1404 with foreground-..\n  550 >      if       Param-Restrict not = \"Y\"\n  551 |               display  \"(Z)  System Set Up\"      at 1444 with foreground-..\n  552 | \n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in paragraph 'aa070-Pre-OverRewrite':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:594: error: invalid conditional expression\n  592 |  *>\n  593 |      move     1 to File-Key-No.\n  594 >      if       File-System-Used NOT = zero   *> Force RDB processing\n  595 |               move     \"66\" to FA-RDBMS-Flat-Statuses\n  596 |               perform  System-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:618: error: invalid conditional expression\n  616 |      else\n  617 |       if      Dos or Windows                             *> whats the cor..\n  618 >               move Script-Name to Full-Backup-Script\n  619 |       else\n  620 |        if     OS2                                        *> whats the cor..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in section 'zz060-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:703: error: 'Date-UK' is not defined\n  701 |      if       Date-Form = zero\n  702 |               move 1 to Date-Form.\n  703 >      if       Date-UK\n  704 |               go to zz060-Exit.\n  705 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in section 'aa000-General-Control':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:316: error: 'zz020-Get-Program-Args' is not defined\n  314 |               goback.\n  315 | *>\n  316 >      perform  zz020-Get-Program-Args.     *>  all in copybook Proc-ACAS-F..\n  317 | *>\n  318 |  aa005-Open-System.                              *> First get system para..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in paragraph 'aa005-Open-System':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:323: error: 'System-Open-Input' is not defined\n  321 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n  322 |      move     1 to File-Key-No.\n  323 >      perform  System-Open-Input.\n  324 |      if       fs-reply not = zero\n  325 |  *>             perform System-Close\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:328: error: 'System-Open' is not defined\n  326 |               move    \"sys002\" to ws-called      *> create param file by..\n  327 |               call    ws-called using ws-calling-data file-defs\n  328 >               perform System-Open\n  329 |      end-if.\n  330 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in paragraph 'aa010-Get-System-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:336: error: 'System-Read-Indexed' is not defined\n  334 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n  335 |      move     1 to File-Key-No.\n  336 >      perform  System-Read-Indexed.               *> Read Cobol file\n  337 |      if       fs-reply not = zero                *> should NOT happen\n  338 |               perform System-Close\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:338: error: 'System-Close' is not defined\n  336 |      perform  System-Read-Indexed.               *> Read Cobol file\n  337 |      if       fs-reply not = zero                *> should NOT happen\n  338 >               perform System-Close\n  339 |               move    \"sys002\" to ws-called    *> create param file by re..\n  340 |               call    ws-called using ws-calling-data file-defs\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl: in paragraph 'aa060-Call-System-Setup':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:580: error: 'System-Rewrite' is not defined\n  578 |      move     1 to File-Key-No.\n  579 |      perform  System-Open.\n  580 >      perform  System-Rewrite.                           *> in case of any..\n  581 |      perform  System-Close.\n  582 | *>\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:146: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:177: error: sys-params-versioning.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:241: error: wsmaps01.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:242: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:243: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:244: error: wstime.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:245: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:246: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:247: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:274: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:684: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:729: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:303: error: 'wse-date-block' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:319: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:320: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:321: error: 'FA-RDBMS-Flat-Statuses' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:322: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:324: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:326: error: 'ws-called' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:327: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:327: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:344: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:383: error: 'File-15' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:386: error: 'ws-Process-Func' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:390: error: 'run-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:390: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:391: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:392: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:395: error: 'Stock' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:398: error: 'op-system' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:400: error: 'Linux' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:401: error: 'Windows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:402: error: 'Mac' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:403: error: 'OS2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:404: error: 'Unix' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:405: error: 'Dos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:405: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:409: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:441: error: 'WS-CD-Args' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:447: error: 'Stk-Activity-Rep-Run' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:448: error: 'Stk-Audit-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:452: error: 'WS-Caller' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:453: error: 'WS-Term-Code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:454: error: 'WS-Del-Link' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:456: error: 'WS-Sub-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:480: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:485: error: 'maps-ser-nn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:485: error: 'curs2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:486: error: 'maps-ser-xx' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:489: error: 'wse-year' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:496: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:498: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:505: error: 'Date-Intl' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:521: error: 'wsb-time' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:523: error: 'wsb-hh' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:523: error: 'wsd-hh' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:524: error: 'wsb-mm' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:524: error: 'wsd-mm' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:525: error: 'wsb-ss' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:525: error: 'wsd-ss' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:527: error: 'wsd-time' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:529: error: 'wsa-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:531: error: 'wsa-yy' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:531: error: 'u-year' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:532: error: 'wsa-mm' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:532: error: 'u-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:533: error: 'wsa-dd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:533: error: 'u-days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:550: error: 'Param-Restrict' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:594: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:618: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:703: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:316: error: 'zz020-Get-Program-Args' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:323: error: 'System-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:328: error: 'System-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:336: error: 'System-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:338: error: 'System-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:580: error: 'System-Rewrite' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:146: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:177: error: sys-params-versioning.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:241: error: wsmaps01.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:242: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:243: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:244: error: wstime.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:245: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:246: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:247: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:274: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:684: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:729: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:303: error: 'wse-date-block' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:319: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:320: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:321: error: 'FA-RDBMS-Flat-Statuses' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:322: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:324: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:326: error: 'ws-called' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:327: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:327: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:344: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:383: error: 'File-15' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:386: error: 'ws-Process-Func' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:390: error: 'run-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:390: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:391: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:392: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:395: error: 'Stock' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:398: error: 'op-system' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:400: error: 'Linux' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:401: error: 'Windows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:402: error: 'Mac' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:403: error: 'OS2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:404: error: 'Unix' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:405: error: 'Dos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:405: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:409: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:441: error: 'WS-CD-Args' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:447: error: 'Stk-Activity-Rep-Run' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:448: error: 'Stk-Audit-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:452: error: 'WS-Caller' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:453: error: 'WS-Term-Code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:454: error: 'WS-Del-Link' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:456: error: 'WS-Sub-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:480: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:485: error: 'maps-ser-nn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:485: error: 'curs2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:486: error: 'maps-ser-xx' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:489: error: 'wse-year' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:496: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:498: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:505: error: 'Date-Intl' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:521: error: 'wsb-time' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:523: error: 'wsb-hh' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:523: error: 'wsd-hh' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:524: error: 'wsb-mm' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:524: error: 'wsd-mm' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:525: error: 'wsb-ss' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:525: error: 'wsd-ss' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:527: error: 'wsd-time' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:529: error: 'wsa-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:531: error: 'wsa-yy' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:531: error: 'u-year' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:532: error: 'wsa-mm' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:532: error: 'u-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:533: error: 'wsa-dd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:533: error: 'u-days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:550: error: 'Param-Restrict' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:594: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:618: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:703: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:316: error: 'zz020-Get-Program-Args' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:323: error: 'System-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:328: error: 'System-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:336: error: 'System-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:338: error: 'System-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl:580: error: 'System-Rewrite' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 74,
+    "cognitive": 163,
+    "halstead": {
+      "uniqueOperators": 11,
+      "uniqueOperands": 100,
+      "totalOperators": 270,
+      "totalOperands": 239,
+      "vocabulary": 111,
+      "length": 509,
+      "volume": 3458,
+      "difficulty": 13.15,
+      "effort": 45460,
+      "timeToProgram": 2526,
+      "deliveredBugs": 1.153
+    },
+    "maintainability": 65
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 383
+      },
+      {
+        "target": "sl070",
+        "line": 387
+      },
+      {
+        "target": "maps04",
+        "line": 391
+      },
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 418
+      },
+      {
+        "target": "SYSTEM",
+        "line": 622
+      },
+      {
+        "target": "maps04",
+        "line": 724
+      }
+    ],
+    "copies": [
+      {
+        "name": "proc",
+        "line": 74
+      },
+      {
+        "name": "of",
+        "line": 137
+      },
+      {
+        "name": "envdiv",
+        "line": 146
+      },
+      {
+        "name": "selsys",
+        "line": 153
+      },
+      {
+        "name": "fdsys",
+        "line": 160
+      },
+      {
+        "name": "sys-params-versioning",
+        "line": 177
+      },
+      {
+        "name": "wsmaps01",
+        "line": 241
+      },
+      {
+        "name": "wsmaps03",
+        "line": 242
+      },
+      {
+        "name": "wscall",
+        "line": 243
+      },
+      {
+        "name": "wstime",
+        "line": 244
+      },
+      {
+        "name": "wsfnctn",
+        "line": 245
+      },
+      {
+        "name": "wsnames",
+        "line": 246
+      },
+      {
+        "name": "wssystem",
+        "line": 247
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 274
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 684
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 729
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 316
+      },
+      {
+        "target": "System-Open-Input",
+        "line": 323
+      },
+      {
+        "target": "System-Close",
+        "line": 325
+      },
+      {
+        "target": "System-Open",
+        "line": 328
+      },
+      {
+        "target": "System-Read-Indexed",
+        "line": 336
+      },
+      {
+        "target": "System-Close",
+        "line": 338
+      },
+      {
+        "target": "System-Open",
+        "line": 341
+      },
+      {
+        "target": "System-Close",
+        "line": 356
+      },
+      {
+        "target": "System-Open",
+        "line": 360
+      },
+      {
+        "target": "System-Read-Indexed",
+        "line": 361
+      },
+      {
+        "target": "System-Write",
+        "line": 364
+      },
+      {
+        "target": "System-Close",
+        "line": 370
+      },
+      {
+        "target": "System-Close",
+        "line": 375
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 393
+      },
+      {
+        "target": "Load00",
+        "line": 457
+      },
+      {
+        "target": "Load00",
+        "line": 471
+      },
+      {
+        "target": "aa035-Conv-Date",
+        "line": 535
+      },
+      {
+        "target": "System-Open",
+        "line": 579
+      },
+      {
+        "target": "System-Rewrite",
+        "line": 580
+      },
+      {
+        "target": "System-Close",
+        "line": 581
+      },
+      {
+        "target": "System-Open",
+        "line": 596
+      },
+      {
+        "target": "System-Rewrite",
+        "line": 597
+      },
+      {
+        "target": "System-Close",
+        "line": 598
+      },
+      {
+        "target": "System-Open",
+        "line": 604
+      },
+      {
+        "target": "System-Rewrite",
+        "line": 605
+      },
+      {
+        "target": "System-Close",
+        "line": 606
+      },
+      {
+        "target": "maps04",
+        "line": 695
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 161
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

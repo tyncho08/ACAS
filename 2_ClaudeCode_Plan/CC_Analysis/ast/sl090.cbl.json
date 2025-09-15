@@ -1,0 +1,205 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl",
+  "fileName": "sl090.cbl",
+  "fileHash": "6d5a5419bda72e66c5ae4448d46ee75557b7a52857e2de633150ebda1f8db4c1",
+  "timestamp": "2025-09-15T19:46:26.005Z",
+  "parseTime": 46,
+  "lines": {
+    "total": 279,
+    "code": 130,
+    "comment": 148,
+    "blank": 1
+  },
+  "programId": "sl090",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:90: error: envdiv.cob: No such file or directory\n   88 | *>===============================\n   89 | *>\n   90 >  copy \"envdiv.cob\".\n   91 |  input-output            section.\n   92 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:98: error: slselois.cob: No such file or directory\n   96 | *>\n   97 | *> copy \"seloi3.cob\".\n   98 >  copy \"slselois.cob\".\n   99 | *>\n  100 |      select       sort-file   assign  file-21.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:109: error: slfdois.cob: No such file or directory\n  107 | *> copy \"fdoi3.cob\".\n  108 | *>\n  109 >  copy \"slfdois.cob\".\n  110 | *>\n  111 |  sd  sort-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:130: error: wsfnctn.cob: No such file or directory\n  128 |  77  ws-reply             pic x.\n  129 |  *>\n  130 >  copy \"wsfnctn.cob\".\n  131 |  copy \"slwsoi3.cob\".\n  132 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:131: error: slwsoi3.cob: No such file or directory\n  129 |  *>\n  130 |  copy \"wsfnctn.cob\".\n  131 >  copy \"slwsoi3.cob\".\n  132 | *>\n  133 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:176: error: Test-Data-Flags.cob: No such file or directory\n  174 |      03  SL143B          pic x(11) value \"& Sorted - \".\n  175 | *>\n  176 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  177 | *>\n  178 |  linkage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:181: error: wscall.cob: No such file or directory\n  179 | *>**************\n  180 | *>\n  181 >  copy \"wscall.cob\".\n  182 |  copy \"wssystem.cob\".\n  183 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:182: error: wssystem.cob: No such file or directory\n  180 | *>\n  181 |  copy \"wscall.cob\".\n  182 >  copy \"wssystem.cob\".\n  183 |  copy \"wsnames.cob\".\n  184 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:183: error: wsnames.cob: No such file or directory\n  181 |  copy \"wscall.cob\".\n  182 |  copy \"wssystem.cob\".\n  183 >  copy \"wsnames.cob\".\n  184 | *>\n  185 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:277: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  275 |  main-exit.   exit section.\n  276 | *>\n  277 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  278 | *>\n  279 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:187: error: 'ws-calling-data' is not defined\n  185 |  01  to-day              pic x(10).\n  186 | *>\n  187 >  procedure division using ws-calling-data\n  188 |                           system-record\n  189 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:188: error: 'system-record' is not defined\n  186 | *>\n  187 |  procedure division using ws-calling-data\n  188 >                           system-record\n  189 |                           to-day\n  190 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:190: error: 'file-defs' is not defined\n  188 |                           system-record\n  189 |                           to-day\n  190 >                           file-defs.\n  191 | *>=======================================\n  192 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:197: error: 'FS-Cobol-Files-Used' is not defined\n  195 | *>  First check if not using Cobol files - then sort not needed.\n  196 | *>\n  197 >      if       not FS-Cobol-Files-Used  *> Will use fn-Read-Next-Sorted-By..\n  198 |               goback returning 4\n  199 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:204: error: 'Open-Item-Record-3' is not defined\n  202 | *>\n  203 |      display  prog-name at 0101 with erase eos.\n  204 >      move     function length (Open-Item-Record-3) to ws-ITM3-Length.\n  205 |      move     function length (Sort-Record)        to ws-ITMS-Length.\n  206 |      if       ws-ITM3-Length NOT = ws-ITMS-Length\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:218: error: 'S-Flag-P' is not defined\n  216 | *> Good, we can continue\n  217 | *>\n  218 >      if       S-Flag-P = 0    *> do we have data ?\n  219 |               display SL142  at 0501\n  220 |               display SL003  at 2401\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:224: error: 'oi-3-flag' is not defined\n  222 |               go to menu-exit.\n  223 | *>\n  224 >      move     \"Y\" to oi-3-flag.\n  225 |      perform  sorting-1.\n  226 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl: in section 'sorting-1':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:240: error: 'open-item-file-s' is not defined\n  238 |                                   s-invoice\n  239 |               input procedure is input-to-sort\n  240 >               giving  open-item-file-s.\n  241 | *>\n  242 |  main-exit.   exit section.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:240: error: 'open-item-file-s' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl: in section 'input-to-sort':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:249: error: 'fs-reply' is not defined\n  247 | *>\n  248 |      perform  OTM3-Open-Input.        *> open input  open-item-file-3.\n  249 >      if       fs-reply not = zero\n  250 |               perform  OTM3-Close     *> close open-item-file-3\n  251 |               open output open-item-file-s  *> create empty file\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:251: error: 'open-item-file-s' is not a file name\n  249 |      if       fs-reply not = zero\n  250 |               perform  OTM3-Close     *> close open-item-file-3\n  251 >               open output open-item-file-s  *> create empty file\n  252 |               close open-item-file-s\n  253 |               go to main-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:252: error: 'open-item-file-s' is not a file name\n  250 |               perform  OTM3-Close     *> close open-item-file-3\n  251 |               open output open-item-file-s  *> create empty file\n  252 >               close open-item-file-s\n  253 |               go to main-exit.\n  254 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl: in paragraph 'process-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:262: error: 'oi-type' is not defined\n  260 |               go to  end-of-input.\n  261 | *>\n  262 >      if       oi-type = 1 or 3                    *> Ignore Receipts & Cr..\n  263 |               go to process-input.\n  264 |      if       zero = oi-b-nos and oi-b-item       *> batch data zero so n..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:264: error: 'oi-b-nos' is not defined\n  262 |      if       oi-type = 1 or 3                    *> Ignore Receipts & Cr..\n  263 |               go to process-input.\n  264 >      if       zero = oi-b-nos and oi-b-item       *> batch data zero so n..\n  265 |               go to process-input.\n  266 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:264: error: 'oi-b-item' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:248: error: 'OTM3-Open-Input' is not defined\n  246 | *>==============================\n  247 | *>\n  248 >      perform  OTM3-Open-Input.        *> open input  open-item-file-3.\n  249 |      if       fs-reply not = zero\n  250 |               perform  OTM3-Close     *> close open-item-file-3\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:250: error: 'OTM3-Close' is not defined\n  248 |      perform  OTM3-Open-Input.        *> open input  open-item-file-3.\n  249 |      if       fs-reply not = zero\n  250 >               perform  OTM3-Close     *> close open-item-file-3\n  251 |               open output open-item-file-s  *> create empty file\n  252 |               close open-item-file-s\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl: in paragraph 'process-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:258: error: 'OTM3-Read-Next' is not defined\n  256 | *>************\n  257 | *>\n  258 >      perform  OTM3-Read-Next.     *>  read open-item-file-3 next record a..\n  259 |      if       fs-reply = 10\n  260 |               go to  end-of-input.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:90: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:98: error: slselois.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:109: error: slfdois.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:130: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:131: error: slwsoi3.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:176: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:181: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:182: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:183: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:277: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:187: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:188: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:190: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:197: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:204: error: 'Open-Item-Record-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:218: error: 'S-Flag-P' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:224: error: 'oi-3-flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:240: error: 'open-item-file-s' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:240: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:249: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:251: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:252: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:262: error: 'oi-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:264: error: 'oi-b-nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:264: error: 'oi-b-item' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:248: error: 'OTM3-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:250: error: 'OTM3-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:258: error: 'OTM3-Read-Next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:90: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:98: error: slselois.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:109: error: slfdois.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:130: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:131: error: slwsoi3.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:176: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:181: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:182: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:183: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:277: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:187: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:188: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:190: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:197: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:204: error: 'Open-Item-Record-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:218: error: 'S-Flag-P' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:224: error: 'oi-3-flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:240: error: 'open-item-file-s' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:240: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:249: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:251: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:252: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:262: error: 'oi-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:264: error: 'oi-b-nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:264: error: 'oi-b-item' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:248: error: 'OTM3-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:250: error: 'OTM3-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl:258: error: 'OTM3-Read-Next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 14,
+    "cognitive": 37,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 60,
+      "totalOperators": 40,
+      "totalOperands": 103,
+      "vocabulary": 68,
+      "length": 143,
+      "volume": 871,
+      "difficulty": 6.87,
+      "effort": 5977,
+      "timeToProgram": 332,
+      "deliveredBugs": 0.29
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 81
+      },
+      {
+        "name": "envdiv",
+        "line": 90
+      },
+      {
+        "name": "seloi3",
+        "line": 97
+      },
+      {
+        "name": "slselois",
+        "line": 98
+      },
+      {
+        "name": "fdoi3",
+        "line": 107
+      },
+      {
+        "name": "slfdois",
+        "line": 109
+      },
+      {
+        "name": "wsfnctn",
+        "line": 130
+      },
+      {
+        "name": "slwsoi3",
+        "line": 131
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 176
+      },
+      {
+        "name": "wscall",
+        "line": 181
+      },
+      {
+        "name": "wssystem",
+        "line": 182
+      },
+      {
+        "name": "wsnames",
+        "line": 183
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 277
+      }
+    ],
+    "performs": [
+      {
+        "target": "sorting-1",
+        "line": 225
+      },
+      {
+        "target": "OTM3-Open-Input",
+        "line": 248
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 250
+      },
+      {
+        "target": "OTM3-Read-Next",
+        "line": 258
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 273
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 123
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

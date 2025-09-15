@@ -1,0 +1,459 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl",
+  "fileName": "plinvoiceLD.cbl",
+  "fileHash": "4b14650f141ded44d383091153b0050f810100ab4594cd70890b8375bb27be45",
+  "timestamp": "2025-09-15T19:46:06.217Z",
+  "parseTime": 58,
+  "lines": {
+    "total": 515,
+    "code": 320,
+    "comment": 193,
+    "blank": 2
+  },
+  "programId": "plinvoiceLD",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:116: error: envdiv.cob: No such file or directory\n  114 | *>-------------------\n  115 | *>\n  116 >  copy \"envdiv.cob\".\n  117 |  input-output            section.\n  118 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:123: error: selsys.cob: No such file or directory\n  121 | *>-----------\n  122 | *>\n  123 >  copy \"selsys.cob\".\n  124 |  data division.\n  125 | *>------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:130: error: fdsys.cob: No such file or directory\n  128 | *>-----------\n  129 | *>\n  130 >  copy \"fdsys.cob\".\n  131 |  working-storage section.\n  132 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:165: error: Test-Data-Flags.cob: No such file or directory\n  163 |      03  WS-Socket       pic x(64).\n  164 | *>\n  165 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  166 | *>\n  167 | *>  Record definition for Cobol file here:\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:169: error: plwspinv2.cob: No such file or directory\n  167 | *>  Record definition for Cobol file here:\n  168 | *>\n  169 >  copy \"plwspinv2.cob\".  *> WS-PInvoice-Record\n  170 | *> 01  WS-Invoice-Record redefines Invoice-Record\n  171 | *>                         pic x(137).\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:173: error: wsfnctn.cob: No such file or directory\n  171 | *>                         pic x(137).\n  172 |  *>\n  173 >  copy \"wsfnctn.cob\".\n  174 |  copy \"wsnames.cob\".\n  175 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:174: error: wsnames.cob: No such file or directory\n  172 |  *>\n  173 |  copy \"wsfnctn.cob\".\n  174 >  copy \"wsnames.cob\".\n  175 |  copy \"wscall.cob\".\n  176 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:175: error: wscall.cob: No such file or directory\n  173 |  copy \"wsfnctn.cob\".\n  174 |  copy \"wsnames.cob\".\n  175 >  copy \"wscall.cob\".\n  176 | *>\n  177 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:510: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  508 |      goback.\n  509 | *>\n  510 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  511 | *>\n  512 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:206: error: 'WS-Log-System' is not defined\n  204 |      move     Prog-Name to So-Print.\n  205 |      perform  Call-Sysout.\n  206 >      move     4      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  207 |      move     12     to WS-Log-File-No.  *> Cobol/RDB, File/Table within..\n  208 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:207: error: 'WS-Log-File-No' is not defined\n  205 |      perform  Call-Sysout.\n  206 |      move     4      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  207 >      move     12     to WS-Log-File-No.  *> Cobol/RDB, File/Table within..\n  208 | *>\n  209 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:211: error: 'System-File' is not defined\n  209 | *>  Get the system param for the various RDB fields\n  210 | *>\n  211 >      open     input System-File.\n  212 |      if       fs-reply not = zero\n  213 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:211: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:212: error: 'fs-reply' is not defined\n  210 | *>\n  211 |      open     input System-File.\n  212 >      if       fs-reply not = zero\n  213 |               display Prog-Name at 0101 with erase eos\n  214 |               display SY001    at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:217: error: 'System-File' is not a file name\n  215 |               display fs-reply at 0428\n  216 |               display SY004    at 0501\n  217 >               close System-File\n  218 |               move 128 to return-code\n  219 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:220: error: 'rrn' is not defined\n  218 |               move 128 to return-code\n  219 |               goback.\n  220 >      move     1 to rrn.     *> Read the system parameter record (1)\n  221 |      read     system-file record.\n  222 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:221: error: 'System-File' is not a file name\n  219 |               goback.\n  220 |      move     1 to rrn.     *> Read the system parameter record (1)\n  221 >      read     system-file record.\n  222 |      if       fs-reply not = zero\n  223 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:227: error: 'System-File' is not a file name\n  225 |               display fs-reply at 0428\n  226 |               display \"Not set up ?\" at 0431\n  227 >               close System-File\n  228 |               move 128 to return-code\n  229 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:233: error: 'RDBMS-DB-Name' is not defined\n  231 | *>  Load up the DB settings from the system record as its not passed on.\n  232 | *>\n  233 >      if       RDBMS-DB-Name = spaces\n  234 |          or   FS-Cobol-Files-Used\n  235 |               display Prog-Name    *>  at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:234: error: 'FS-Cobol-Files-Used' is not defined\n  232 | *>\n  233 |      if       RDBMS-DB-Name = spaces\n  234 >          or   FS-Cobol-Files-Used\n  235 |               display Prog-Name    *>  at 0101 with erase eos\n  236 |               display SY019\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:242: error: 'System-File' is not a file name\n  240 |               if       WS-RDB-Return = 8\n  241 |                        display \"acas.param file NOT found - Aborted\"\n  242 >                        close  System-File\n  243 |                        goback\n  244 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:247: error: 'System-File' is not a file name\n  245 |               if       WS-RDB-Return = 1\n  246 |                        display \"Invalid keyword terminator found - Aborte..\n  247 >                        close  System-File\n  248 |                        goback\n  249 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:252: error: 'System-File' is not a file name\n  250 |               if       WS-RDB-Return = 2\n  251 |                        display \"Invalid keyword found - Aborted\"\n  252 >                        close  System-File\n  253 |                        goback\n  254 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:257: error: 'RDBMS-Host' is not defined\n  255 |               if       WS-RDB-Return = zeros\n  256 |                        display \"acas-param file found and being used \"\n  257 >                        move     WS-Host-Name      to RDBMS-Host\n  258 |                        move     WS-Implementation to RDBMS-User\n  259 |                        move     WS-Password       to RDBMS-Passwd\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:258: error: 'RDBMS-User' is not defined\n  256 |                        display \"acas-param file found and being used \"\n  257 |                        move     WS-Host-Name      to RDBMS-Host\n  258 >                        move     WS-Implementation to RDBMS-User\n  259 |                        move     WS-Password       to RDBMS-Passwd\n  260 |                        move     WS-Base-Name      to RDBMS-DB-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:259: error: 'RDBMS-Passwd' is not defined\n  257 |                        move     WS-Host-Name      to RDBMS-Host\n  258 |                        move     WS-Implementation to RDBMS-User\n  259 >                        move     WS-Password       to RDBMS-Passwd\n  260 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  261 |                        move     WS-Port-Number    to RDBMS-Port\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:261: error: 'RDBMS-Port' is not defined\n  259 |                        move     WS-Password       to RDBMS-Passwd\n  260 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  261 >                        move     WS-Port-Number    to RDBMS-Port\n  262 |                        move     WS-Socket         to RDBMS-Socket\n  263 |                       display \"User = \"   RDBMS-User\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:262: error: 'RDBMS-Socket' is not defined\n  260 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  261 |                        move     WS-Port-Number    to RDBMS-Port\n  262 >                        move     WS-Socket         to RDBMS-Socket\n  263 |                       display \"User = \"   RDBMS-User\n  264 |                       display \"Host = \"   RDBMS-Host\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:283: error: 'System-File' is not a file name\n  281 |               display \"Socket = \" RDBMS-Socket\n  282 |               stop \"SY008 Note message & Hit return\"\n  283 >               close System-File\n  284 |               move 64 to Return-Code\n  285 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'aa010-Proc-Override':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:291: error: 'File-System-Used' is not defined\n  289 | *>  Over-ride processes for acas026/InvoiceMT for Dup modes\n  290 | *>\n  291 >      move     zero to File-System-Used\n  292 |                       File-Duplicates-In-Use\n  293 |                       FA-File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:292: error: 'File-Duplicates-In-Use' is not defined\n  290 | *>\n  291 |      move     zero to File-System-Used\n  292 >                       File-Duplicates-In-Use\n  293 |                       FA-File-System-Used\n  294 |                       FA-File-Duplicates-In-Use.   *> Cobol file in use\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:293: error: 'FA-File-System-Used' is not defined\n  291 |      move     zero to File-System-Used\n  292 |                       File-Duplicates-In-Use\n  293 >                       FA-File-System-Used\n  294 |                       FA-File-Duplicates-In-Use.   *> Cobol file in use\n  295 |      move     zero to Log-file-rec-written.        *>  for logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:294: error: 'FA-File-Duplicates-In-Use' is not defined\n  292 |                       File-Duplicates-In-Use\n  293 |                       FA-File-System-Used\n  294 >                       FA-File-Duplicates-In-Use.   *> Cobol file in use\n  295 |      move     zero to Log-file-rec-written.        *>  for logging.\n  296 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:295: error: 'Log-file-rec-written' is not defined\n  293 |                       FA-File-System-Used\n  294 |                       FA-File-Duplicates-In-Use.   *> Cobol file in use\n  295 >      move     zero to Log-file-rec-written.        *>  for logging.\n  296 | *>\n  297 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:297: error: 'File-Key-No' is not defined\n  295 |      move     zero to Log-file-rec-written.        *>  for logging.\n  296 | *>\n  297 >      move     1 to File-Key-No.\n  298 |      perform  acas026-Open-Input.      *> open input Cobol Invoice FILE\n  299 |      if       FS-Reply = 35\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:307: error: 'System-File' is not a file name\n  305 |               move    \"CLOSE   \" to SO-Print\n  306 |               perform call-Sysout\n  307 >               close System-File\n  308 |               perform acas026-Close\n  309 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:319: error: 'System-File' is not a file name\n  317 |               move \"CLOSE   \" to SO-Print\n  318 |               perform call-Sysout\n  319 >               close System-File\n  320 |               perform acas026-Close\n  321 |               move     zero to File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:333: error: 'System-File' is not a file name\n  331 |               move PL915 to SO-Print\n  332 |               perform call-Sysout\n  333 >               close System-File\n  334 |               move     zero to File-System-Used\n  335 |                                FA-File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'acas026':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:343: error: 'System-Record' is not defined\n  341 | *>\n  342 |  acas026.\n  343 >      call     \"acas026\" using System-Record\n  344 |                               WS-PInvoice-Record\n  345 |                               File-Access\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:344: error: 'WS-PInvoice-Record' is not defined\n  342 |  acas026.\n  343 |      call     \"acas026\" using System-Record\n  344 >                               WS-PInvoice-Record\n  345 |                               File-Access\n  346 |                               File-Defs\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:345: error: 'File-Access' is not defined\n  343 |      call     \"acas026\" using System-Record\n  344 |                               WS-PInvoice-Record\n  345 >                               File-Access\n  346 |                               File-Defs\n  347 |                               ACAS-DAL-Common-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:346: error: 'File-Defs' is not defined\n  344 |                               WS-PInvoice-Record\n  345 |                               File-Access\n  346 >                               File-Defs\n  347 |                               ACAS-DAL-Common-data.\n  348 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:347: error: 'ACAS-DAL-Common-data' is not defined\n  345 |                               File-Access\n  346 |                               File-Defs\n  347 >                               ACAS-DAL-Common-data.\n  348 | *>\n  349 |  acas026-Open.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'acas026-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:350: error: 'fn-open' is not defined\n  348 | *>\n  349 |  acas026-Open.\n  350 >      set      fn-open to true.\n  351 |      set      fn-i-o  to true.\n  352 |      perform  acas026.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:351: error: 'fn-i-o' is not defined\n  349 |  acas026-Open.\n  350 |      set      fn-open to true.\n  351 >      set      fn-i-o  to true.\n  352 |      perform  acas026.\n  353 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'acas026-Open-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:357: error: 'fn-input' is not defined\n  355 |  acas026-Open-Input.\n  356 |      set      fn-open  to true.\n  357 >      set      fn-input to true.\n  358 |      perform  acas026.\n  359 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'acas026-Open-Output':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:363: error: 'fn-output' is not defined\n  361 |  acas026-Open-Output.\n  362 |      set      fn-open  to true.\n  363 >      set      fn-output to true.\n  364 |      perform  acas026.\n  365 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'acas026-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:368: error: 'fn-Close' is not defined\n  366 | *>\n  367 |  acas026-Close.\n  368 >      set      fn-Close to true.\n  369 |      perform  acas026.\n  370 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'acas026-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:372: error: 'fn-Read-Next' is not defined\n  370 | *>\n  371 |  acas026-Read-Next.\n  372 >      set      fn-Read-Next to true.\n  373 |      perform  acas026.\n  374 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'acas026-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:376: error: 'fn-Write' is not defined\n  374 | *>\n  375 |  acas026-Write.\n  376 >      set      fn-Write to true.\n  377 |      perform  acas026.\n  378 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'acas026-Rewrite':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:380: error: 'fn-re-write' is not defined\n  378 | *>\n  379 |  acas026-Rewrite.\n  380 >      set      fn-re-write to true.\n  381 |      perform  acas026.\n  382 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'aa010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:401: error: 'Sql-State' is not defined\n  399 |                    FA-File-System-Used.\n  400 |      perform  acas026-Write.\n  401 >      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  402 |          or   fs-reply = 22  or = 99                    *> Check for dup..\n  403 |          or   SQL-Err (1:4) = \"1062\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:403: error: 'SQL-Err' is not defined\n  401 |      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  402 |          or   fs-reply = 22  or = 99                    *> Check for dup..\n  403 >          or   SQL-Err (1:4) = \"1062\"\n  404 |                          or = \"1022\"\n  405 |               move    zeros to FS-Reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:406: error: 'WE-Error' is not defined\n  404 |                          or = \"1022\"\n  405 |               move    zeros to FS-Reply\n  406 >                                WE-Error\n  407 |               perform acas026-Rewrite  *> in case it has been rerun.\n  408 |               if      FS-Reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:411: error: 'WS-File-Key' is not defined\n  409 |                       move spaces to SO-Print\n  410 |                       string  PL914\n  411 >                                WS-File-Key into SO-Print\n  412 |                       perform call-Sysout\n  413 |                       move    PL999 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:431: error: 'SQL-Msg' is not defined\n  429 |               string PL918 SQL-Err into SO-Print\n  430 |               perform Call-Sysout\n  431 >               move SQL-Msg to SO-Print\n  432 |               perform Call-Sysout\n  433 |               move SQL-State to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'aa999-Finish':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:497: error: 'Access-Type' is not defined\n  495 |      move     1 to File-System-Used\n  496 |                    FA-File-System-Used.\n  497 >      move     zero to Access-Type.\n  498 |      move     2 to File-Function.\n  499 |      perform  acas026-Close.                     *> Close RDB\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:498: error: 'File-Function' is not defined\n  496 |                    FA-File-System-Used.\n  497 |      move     zero to Access-Type.\n  498 >      move     2 to File-Function.\n  499 |      perform  acas026-Close.                     *> Close RDB\n  500 |      close    System-File.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:500: error: 'System-File' is not a file name\n  498 |      move     2 to File-Function.\n  499 |      perform  acas026-Close.                     *> Close RDB\n  500 >      close    System-File.\n  501 |      move     zero to File-System-Used\n  502 |                    FA-File-System-Used.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:203: error: 'zz020-Get-Program-Args' is not defined\n  201 | *>\n  202 |  aa000-main-start.\n  203 >      perform  zz020-Get-Program-Args.\n  204 |      move     Prog-Name to So-Print.\n  205 |      perform  Call-Sysout.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:116: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:123: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:130: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:165: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:169: error: plwspinv2.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:173: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:174: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:175: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:510: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:206: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:207: error: 'WS-Log-File-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:211: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:211: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:212: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:217: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:220: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:221: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:227: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:233: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:234: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:242: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:247: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:252: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:257: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:258: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:259: error: 'RDBMS-Passwd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:261: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:262: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:283: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:291: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:292: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:293: error: 'FA-File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:294: error: 'FA-File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:295: error: 'Log-file-rec-written' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:297: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:307: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:319: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:333: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:343: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:344: error: 'WS-PInvoice-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:345: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:346: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:347: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:350: error: 'fn-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:351: error: 'fn-i-o' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:357: error: 'fn-input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:363: error: 'fn-output' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:368: error: 'fn-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:372: error: 'fn-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:376: error: 'fn-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:380: error: 'fn-re-write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:401: error: 'Sql-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:403: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:406: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:411: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:431: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:497: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:498: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:500: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:203: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:116: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:123: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:130: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:165: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:169: error: plwspinv2.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:173: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:174: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:175: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:510: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:206: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:207: error: 'WS-Log-File-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:211: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:211: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:212: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:217: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:220: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:221: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:227: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:233: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:234: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:242: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:247: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:252: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:257: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:258: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:259: error: 'RDBMS-Passwd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:261: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:262: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:283: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:291: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:292: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:293: error: 'FA-File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:294: error: 'FA-File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:295: error: 'Log-file-rec-written' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:297: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:307: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:319: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:333: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:343: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:344: error: 'WS-PInvoice-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:345: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:346: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:347: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:350: error: 'fn-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:351: error: 'fn-i-o' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:357: error: 'fn-input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:363: error: 'fn-output' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:368: error: 'fn-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:372: error: 'fn-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:376: error: 'fn-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:380: error: 'fn-re-write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:401: error: 'Sql-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:403: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:406: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:411: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:431: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:497: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:498: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:500: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plinvoiceLD.cbl:203: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 32,
+    "cognitive": 58,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 74,
+      "totalOperators": 198,
+      "totalOperands": 267,
+      "vocabulary": 83,
+      "length": 465,
+      "volume": 2964,
+      "difficulty": 16.24,
+      "effort": 48131,
+      "timeToProgram": 2674,
+      "deliveredBugs": 0.988
+    },
+    "maintainability": 71
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas-get-params",
+        "line": 238
+      },
+      {
+        "target": "acas026",
+        "line": 343
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 449
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 459
+      },
+      {
+        "target": "ACAS-Sysout",
+        "line": 513
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 106
+      },
+      {
+        "name": "envdiv",
+        "line": 116
+      },
+      {
+        "name": "selsys",
+        "line": 123
+      },
+      {
+        "name": "fdsys",
+        "line": 130
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 165
+      },
+      {
+        "name": "plwspinv2",
+        "line": 169
+      },
+      {
+        "name": "wsfnctn",
+        "line": 173
+      },
+      {
+        "name": "wsnames",
+        "line": 174
+      },
+      {
+        "name": "wscall",
+        "line": 175
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 510
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 203
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 205
+      },
+      {
+        "target": "acas026-Open-Input",
+        "line": 298
+      },
+      {
+        "target": "call-Sysout",
+        "line": 304
+      },
+      {
+        "target": "call-Sysout",
+        "line": 306
+      },
+      {
+        "target": "acas026-Close",
+        "line": 308
+      },
+      {
+        "target": "call-Sysout",
+        "line": 316
+      },
+      {
+        "target": "call-Sysout",
+        "line": 318
+      },
+      {
+        "target": "acas026-Close",
+        "line": 320
+      },
+      {
+        "target": "acas026-close",
+        "line": 323
+      },
+      {
+        "target": "acas026-Open-Output",
+        "line": 329
+      },
+      {
+        "target": "call-Sysout",
+        "line": 332
+      },
+      {
+        "target": "acas026-Close",
+        "line": 336
+      },
+      {
+        "target": "acas026",
+        "line": 352
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 353
+      },
+      {
+        "target": "acas026",
+        "line": 358
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 359
+      },
+      {
+        "target": "acas026",
+        "line": 364
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 365
+      },
+      {
+        "target": "acas026",
+        "line": 369
+      },
+      {
+        "target": "acas026",
+        "line": 373
+      },
+      {
+        "target": "acas026",
+        "line": 377
+      },
+      {
+        "target": "acas026",
+        "line": 381
+      },
+      {
+        "target": "acas026-Read-Next",
+        "line": 386
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 393
+      },
+      {
+        "target": "acas026-Write",
+        "line": 400
+      },
+      {
+        "target": "acas026-Rewrite",
+        "line": 407
+      },
+      {
+        "target": "call-Sysout",
+        "line": 412
+      },
+      {
+        "target": "call-Sysout",
+        "line": 414
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 424
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 427
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 430
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 432
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 434
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 435
+      },
+      {
+        "target": "call-Sysout",
+        "line": 468
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 471
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 474
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 476
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 478
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 480
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 481
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 490
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 493
+      },
+      {
+        "target": "acas026-Close",
+        "line": 499
+      },
+      {
+        "target": "acas026-close",
+        "line": 503
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 505
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 507
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 131
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>                rollback\n*>...",
+        "line": 446
+      },
+      {
+        "content": "*>                commit\n*>...",
+        "line": 456
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

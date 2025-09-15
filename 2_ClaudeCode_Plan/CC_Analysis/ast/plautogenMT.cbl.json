@@ -1,0 +1,709 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl",
+  "fileName": "plautogenMT.cbl",
+  "fileHash": "3e7dc5b900d0c4f25567be8b27141715f081bb0c8959ceb84411af87be3ad106",
+  "timestamp": "2025-09-15T19:46:05.914Z",
+  "parseTime": 166,
+  "lines": {
+    "total": 3284,
+    "code": 2348,
+    "comment": 932,
+    "blank": 4
+  },
+  "programId": "plautogenMT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:236: error: envdiv.cob: No such file or directory\n  234 | *>\n  235 |  environment division.\n  236 >  copy \"envdiv.cob\".\n  237 | *>\n  238 |  input-output section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:363: error: mysql-variables.cpy: No such file or directory\n  361 | *>       TABLE=PUAUTOGEN-REC,HV\n  362 | *>       TABLE=PUAUTOGEN-LINES-REC,HV1\n  363 >  COPY \"mysql-variables.cpy\".\n  364 | *>\n  365 | *>    Definitions for the PUAUTOGEN-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:427: error: wsfnctn.cob: No such file or directory\n  425 | *>\n  426 | *>**********************************************************************\n  427 >  copy \"wsfnctn.cob\".                         *> File-Access\n  428 | *>\n  429 | *>**********************************************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:431: error: Test-Data-Flags.cob: No such file or directory\n  429 | *>**********************************************************************\n  430 | *>\n  431 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  432 | *>\n  433 | *>  Using the first record but not the 2nd as it uses occurs 40 but\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:439: error: plwspinv.cob: No such file or directory\n  437 |                                  leading ==ih-==  by ==WS-ih-==\n  438 |                                   ==occurs 40.==  by ==.==\n  439 >                                   ==il-==         by ==Un-Used-il-==.\n  440 | *>\n  441 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1404: error: mysql-procedures.cpy: No such file or directory\n 1402 | *>\n 1403 | *> /MYSQL PRO\\\n 1404 >  COPY \"mysql-procedures.cpy\".\n 1405 | *> /MYSQL-END\\\n 1406 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:450: error: 'Ws-Mysql-Error-Number' is not defined\n  448 |  01  Display-Message-2       foreground-color 2.\n  449 |      03      value \"SM004 SQL Err No.=\"           line 4 col  1.\n  450 >      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.\n  451 |      03      value \" Para=\"                              col 23.\n  452 |      03  using WS-No-Paragraph         pic 9(3)          col 29.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:452: error: 'WS-No-Paragraph' is not defined\n  450 |      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.\n  451 |      03      value \" Para=\"                              col 23.\n  452 >      03  using WS-No-Paragraph         pic 9(3)          col 29.\n  453 |      03      value \" SQL Cmd=\"                           col 32.\n  454 |      03  using Ws-Mysql-Command        pic x(199)        col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:454: error: 'Ws-Mysql-Command' is not defined\n  452 |      03  using WS-No-Paragraph         pic 9(3)          col 29.\n  453 |      03      value \" SQL Cmd=\"                           col 32.\n  454 >      03  using Ws-Mysql-Command        pic x(199)        col 41.\n  455 |      03      value \"SQL Err Msg=\"                 line 7 col  1.\n  456 |      03  using Ws-Mysql-Error-Message  pic x(67)         col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:456: error: 'Ws-Mysql-Error-Message' is not defined\n  454 |      03  using Ws-Mysql-Command        pic x(199)        col 41.\n  455 |      03      value \"SQL Err Msg=\"                 line 7 col  1.\n  456 >      03  using Ws-Mysql-Error-Message  pic x(67)         col 13.\n  457 | *>\n  458 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:459: error: 'File-Access' is not defined\n  457 | *>\n  458 | *>\n  459 >  PROCEDURE DIVISION   using File-Access\n  460 |                             ACAS-DAL-Common-data\n  461 |                             WS-Invoice-Record.   *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:460: error: 'ACAS-DAL-Common-data' is not defined\n  458 | *>\n  459 |  PROCEDURE DIVISION   using File-Access\n  460 >                             ACAS-DAL-Common-data\n  461 |                             WS-Invoice-Record.   *>  Ws record\n  462 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:461: error: 'WS-Invoice-Record' is not defined\n  459 |  PROCEDURE DIVISION   using File-Access\n  460 |                             ACAS-DAL-Common-data\n  461 >                             WS-Invoice-Record.   *>  Ws record\n  462 | *>**********************************************\n  463 |  ba-ACAS-DAL-Process  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:479: error: 'SQL-State' is not defined\n  477 |  ba010-Initialise.\n  478 | *>\n  479 >      move     zero   to SQL-State.\n  480 | *>\n  481 | *>                        We-Error\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:486: error: 'WS-Log-Where' is not defined\n  484 |      move     spaces to WS-MYSQL-Error-Message\n  485 |                         WS-MYSQL-Error-Number\n  486 >                         WS-Log-Where\n  487 |                         WS-File-Key\n  488 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:487: error: 'WS-File-Key' is not defined\n  485 |                         WS-MYSQL-Error-Number\n  486 |                         WS-Log-Where\n  487 >                         WS-File-Key\n  488 |                         SQL-Msg\n  489 |                         SQL-Err.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:488: error: 'SQL-Msg' is not defined\n  486 |                         WS-Log-Where\n  487 |                         WS-File-Key\n  488 >                         SQL-Msg\n  489 |                         SQL-Err.\n  490 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:489: error: 'SQL-Err' is not defined\n  487 |                         WS-File-Key\n  488 |                         SQL-Msg\n  489 >                         SQL-Err.\n  490 | *>\n  491 | *>  Work out what is being requested and convert to action!!\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:496: error: 'File-Function' is not defined\n  494 | *>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  495 | *>\n  496 >      evaluate File-Function\n  497 |         when  1\n  498 |               go to ba020-Process-Open          *> Coded / D.tested\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:551: error: 'DB-Schema' is not defined\n  549 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  550 |  *>\n  551 >      string   DB-Schema      delimited by space\n  552 |               X\"00\"          delimited by size\n  553 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:553: error: 'WS-MYSQL-BASE-NAME' is not defined\n  551 |      string   DB-Schema      delimited by space\n  552 |               X\"00\"          delimited by size\n  553 >                                into WS-MYSQL-BASE-NAME\n  554 |      end-string.\n  555 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:555: error: 'DB-Host' is not defined\n  553 |                                into WS-MYSQL-BASE-NAME\n  554 |      end-string.\n  555 >      string   DB-Host        delimited by space\n  556 |               X\"00\"          delimited by size\n  557 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:557: error: 'WS-MYSQL-HOST-NAME' is not defined\n  555 |      string   DB-Host        delimited by space\n  556 |               X\"00\"          delimited by size\n  557 >                                into WS-MYSQL-HOST-NAME\n  558 |      end-string.\n  559 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:559: error: 'DB-UName' is not defined\n  557 |                                into WS-MYSQL-HOST-NAME\n  558 |      end-string.\n  559 >      string   DB-UName       delimited by space\n  560 |               X\"00\"          delimited by size\n  561 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:561: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  559 |      string   DB-UName       delimited by space\n  560 |               X\"00\"          delimited by size\n  561 >                                into WS-MYSQL-IMPLEMENTATION\n  562 |      end-string.\n  563 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:563: error: 'DB-UPass' is not defined\n  561 |                                into WS-MYSQL-IMPLEMENTATION\n  562 |      end-string.\n  563 >      string   DB-UPass       delimited by space\n  564 |               X\"00\"          delimited by size\n  565 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:565: error: 'WS-MYSQL-PASSWORD' is not defined\n  563 |      string   DB-UPass       delimited by space\n  564 |               X\"00\"          delimited by size\n  565 >                                into WS-MYSQL-PASSWORD\n  566 |      end-string.\n  567 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:567: error: 'DB-Port' is not defined\n  565 |                                into WS-MYSQL-PASSWORD\n  566 |      end-string.\n  567 >      string   DB-Port        delimited by space\n  568 |               X\"00\"          delimited by size\n  569 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:569: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  567 |      string   DB-Port        delimited by space\n  568 |               X\"00\"          delimited by size\n  569 >                                into WS-MYSQL-PORT-NUMBER\n  570 |      end-string.\n  571 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:571: error: 'DB-Socket' is not defined\n  569 |                                into WS-MYSQL-PORT-NUMBER\n  570 |      end-string.\n  571 >      string   DB-Socket      delimited by space\n  572 |               X\"00\"          delimited by size\n  573 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:573: error: 'WS-MYSQL-SOCKET' is not defined\n  571 |      string   DB-Socket      delimited by space\n  572 |               X\"00\"          delimited by size\n  573 >                                into WS-MYSQL-SOCKET\n  574 |      end-string.\n  575 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:577: error: 'fs-reply' is not defined\n  575 |      move     1 to ws-No-Paragraph.\n  576 |      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  577 >      if       fs-reply not = zero\n  578 |               go   to ba999-end.\n  579 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:652: error: 'WS-MYSQL-RESULT' is not defined\n  650 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  651 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  652 >            MOVE WS-MYSQL-RESULT TO TP-PUAUTOGEN-REC\n  653 | *>               /MYSQL-END\\\n  654 |            move    \"0000000000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:655: error: 'Testing-2' is not defined\n  653 | *>               /MYSQL-END\\\n  654 |            move    \"0000000000\" to WS-File-Key\n  655 >               if    Testing-2\n  656 |                     display Display-Message-1 with erase eos\n  657 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:661: error: 'WS-MYSQL-Count-Rows' is not defined\n  659 | *>  It could be an empty table so test for it\n  660 | *>\n  661 >               if       WS-MYSQL-Count-Rows = zero\n  662 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  663 |                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:663: error: 'WS-MYSQL-SQLstate' is not defined\n  661 |               if       WS-MYSQL-Count-Rows = zero\n  662 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  663 >                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n  664 |                        move  WS-MYSQL-SqlState   to SQL-State\n  665 |                        if    WS-MYSQL-Error-Number  not = \"0  \"    *> set..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:671: error: 'WE-Error' is not defined\n  669 |                        end-if       *> do not really need to do this mean..\n  670 |                        move 10 to fs-reply\n  671 >                        move 10 to WE-Error        *> should be 0 'JIC' li..\n  672 |                        move    \"No Data\" to WS-File-Key\n  673 |                        go to ba999-End       *> can clear the dup code af..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in paragraph 'ba041-Reread':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:702: error: 'FN-Read-Next-Header' is not defined\n  700 | *>  but 1st support for Read-Next-Header to bypass line processing.\n  701 | *>\n  702 >      if       FN-Read-Next-Header\n  703 |               go to ba042-Fetch.\n  704 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:706: error: 'WS-ih-Test' is not defined\n  704 | *>\n  705 |      if       WS-Last-Read-Line < WS-Actual-Lines-In-Row\n  706 >               add 1 WS-Last-Read-Line giving   WS-ih-Test\n  707 |               move  WS-Last-Read-Invoice    to WS-ih-Invoice\n  708 |               perform bc050-Process-Read-Indexed thru bc059-Exit\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:707: error: 'WS-ih-Invoice' is not defined\n  705 |      if       WS-Last-Read-Line < WS-Actual-Lines-In-Row\n  706 |               add 1 WS-Last-Read-Line giving   WS-ih-Test\n  707 >               move  WS-Last-Read-Invoice    to WS-ih-Invoice\n  708 |               perform bc050-Process-Read-Indexed thru bc059-Exit\n  709 |               if     fs-Reply not = zero    *> = 23    *> no row found\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:712: error: 'WS-Invoice-Key' is not defined\n  710 |                      initialise WS-Invoice-Record\n  711 |                      move spaces to WS-File-Key\n  712 >                      string WS-Invoice-Key\n  713 |                             \" Not Found\"\n  714 |                                  into WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in paragraph 'ba060-Process-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:936: error: 'access-type' is not defined\n  934 | *>  Check for Param error 1st on start\n  935 | *>\n  936 >      if       access-type < 5 or > 8                   *> not using not <..\n  937 |               move 99 to FS-Reply\n  938 |               move 997 to WE-Error                     *> Invalid calling..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1061: error: 'WS-Mysql-Save-Result' is not defined\n 1059 | *>    Save the pointers (PUAUTOGEN-REC) [ and we will restore at end ]\n 1060 | *>\n 1061 >      move     WS-Mysql-Result     to WS-Mysql-Save-Result.     *> primary..\n 1062 |      move     WS-Mysql-Count-Rows to WS-Mysql-Save-Count-Rows.\n 1063 |      move     zero to WS-Mysql-Count-Rows.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1062: error: 'WS-Mysql-Save-Count-Rows' is not defined\n 1060 | *>\n 1061 |      move     WS-Mysql-Result     to WS-Mysql-Save-Result.     *> primary..\n 1062 >      move     WS-Mysql-Count-Rows to WS-Mysql-Save-Count-Rows.\n 1063 |      move     zero to WS-Mysql-Count-Rows.\n 1064 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1117: error: 'WS-Mysql-Save-Result-RG1' is not defined\n 1115 | *>  ALL this does depend on application code  in slnnn ???? <<<<<<<\n 1116 | *>\n 1117 >      move     WS-Mysql-Result to WS-Mysql-Save-Result-RG1.    *> RG 1 Tb2\n 1118 |      move     WS-Mysql-Count-Rows to WS-Mysql-Save-Count-Rows-RG1.\n 1119 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1118: error: 'WS-Mysql-Save-Count-Rows-RG1' is not defined\n 1116 | *>\n 1117 |      move     WS-Mysql-Result to WS-Mysql-Save-Result-RG1.    *> RG 1 Tb2\n 1118 >      move     WS-Mysql-Count-Rows to WS-Mysql-Save-Count-Rows-RG1.\n 1119 | *>\n 1120 | *> Restore the Primary table pointer & row count.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in paragraph 'ba999-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1422: error: 'Testing-1' is not defined\n 1420 | *>  Any Clean ups before quiting    move data record ?????  do so at the..\n 1421 | *>\n 1422 >      if       Testing-1\n 1423 |               perform Ca-Process-Logs\n 1424 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in section 'bb000-HV-Load':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1443: error: 'WS-ih-Supplier' is not defined\n 1441 |      move     WS-ih-Invoice       to HV-IH-INVOICE.\n 1442 |      move     WS-ih-Test          to HV-IH-TEST.\n 1443 >      move     WS-ih-Supplier      to HV-IH-SUPPLIER\n 1444 |      move     WS-ih-Date          to HV-IH-DAT\n 1445 |      move     WS-ih-Freq          to HV-IH-FREQ\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1444: error: 'WS-ih-Date' is not defined\n 1442 |      move     WS-ih-Test          to HV-IH-TEST.\n 1443 |      move     WS-ih-Supplier      to HV-IH-SUPPLIER\n 1444 >      move     WS-ih-Date          to HV-IH-DAT\n 1445 |      move     WS-ih-Freq          to HV-IH-FREQ\n 1446 |      move     WS-ih-Repeat        to HV-IH-REPEAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1445: error: 'WS-ih-Freq' is not defined\n 1443 |      move     WS-ih-Supplier      to HV-IH-SUPPLIER\n 1444 |      move     WS-ih-Date          to HV-IH-DAT\n 1445 >      move     WS-ih-Freq          to HV-IH-FREQ\n 1446 |      move     WS-ih-Repeat        to HV-IH-REPEAT\n 1447 |      move     WS-ih-Last-Date     to HV-IH-LAST-DATE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1446: error: 'WS-ih-Repeat' is not defined\n 1444 |      move     WS-ih-Date          to HV-IH-DAT\n 1445 |      move     WS-ih-Freq          to HV-IH-FREQ\n 1446 >      move     WS-ih-Repeat        to HV-IH-REPEAT\n 1447 |      move     WS-ih-Last-Date     to HV-IH-LAST-DATE\n 1448 |      move     WS-ih-Type          to HV-IH-TYPE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1447: error: 'WS-ih-Last-Date' is not defined\n 1445 |      move     WS-ih-Freq          to HV-IH-FREQ\n 1446 |      move     WS-ih-Repeat        to HV-IH-REPEAT\n 1447 >      move     WS-ih-Last-Date     to HV-IH-LAST-DATE\n 1448 |      move     WS-ih-Type          to HV-IH-TYPE\n 1449 |      move     WS-ih-Ref           to HV-IH-REF\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1448: error: 'WS-ih-Type' is not defined\n 1446 |      move     WS-ih-Repeat        to HV-IH-REPEAT\n 1447 |      move     WS-ih-Last-Date     to HV-IH-LAST-DATE\n 1448 >      move     WS-ih-Type          to HV-IH-TYPE\n 1449 |      move     WS-ih-Ref           to HV-IH-REF\n 1450 |      move     WS-ih-P-C           to HV-IH-P-C\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1449: error: 'WS-ih-Ref' is not defined\n 1447 |      move     WS-ih-Last-Date     to HV-IH-LAST-DATE\n 1448 |      move     WS-ih-Type          to HV-IH-TYPE\n 1449 >      move     WS-ih-Ref           to HV-IH-REF\n 1450 |      move     WS-ih-P-C           to HV-IH-P-C\n 1451 |      move     WS-ih-Net           to HV-IH-NET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1450: error: 'WS-ih-P-C' is not defined\n 1448 |      move     WS-ih-Type          to HV-IH-TYPE\n 1449 |      move     WS-ih-Ref           to HV-IH-REF\n 1450 >      move     WS-ih-P-C           to HV-IH-P-C\n 1451 |      move     WS-ih-Net           to HV-IH-NET\n 1452 |      move     WS-ih-Extra         to HV-IH-EXTRA\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1451: error: 'WS-ih-Net' is not defined\n 1449 |      move     WS-ih-Ref           to HV-IH-REF\n 1450 |      move     WS-ih-P-C           to HV-IH-P-C\n 1451 >      move     WS-ih-Net           to HV-IH-NET\n 1452 |      move     WS-ih-Extra         to HV-IH-EXTRA\n 1453 |      move     WS-ih-Carriage      to HV-IH-CARRIAGE\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1452: error: 'WS-ih-Extra' is not defined\n 1450 |      move     WS-ih-P-C           to HV-IH-P-C\n 1451 |      move     WS-ih-Net           to HV-IH-NET\n 1452 >      move     WS-ih-Extra         to HV-IH-EXTRA\n 1453 |      move     WS-ih-Carriage      to HV-IH-CARRIAGE\n 1454 |      move     WS-ih-Vat           to HV-IH-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1453: error: 'WS-ih-Carriage' is not defined\n 1451 |      move     WS-ih-Net           to HV-IH-NET\n 1452 |      move     WS-ih-Extra         to HV-IH-EXTRA\n 1453 >      move     WS-ih-Carriage      to HV-IH-CARRIAGE\n 1454 |      move     WS-ih-Vat           to HV-IH-VAT\n 1455 |      move     WS-ih-Discount      to HV-IH-DISCOUNT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1454: error: 'WS-ih-Vat' is not defined\n 1452 |      move     WS-ih-Extra         to HV-IH-EXTRA\n 1453 |      move     WS-ih-Carriage      to HV-IH-CARRIAGE\n 1454 >      move     WS-ih-Vat           to HV-IH-VAT\n 1455 |      move     WS-ih-Discount      to HV-IH-DISCOUNT\n 1456 |      move     WS-ih-E-Vat         to HV-IH-E-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1455: error: 'WS-ih-Discount' is not defined\n 1453 |      move     WS-ih-Carriage      to HV-IH-CARRIAGE\n 1454 |      move     WS-ih-Vat           to HV-IH-VAT\n 1455 >      move     WS-ih-Discount      to HV-IH-DISCOUNT\n 1456 |      move     WS-ih-E-Vat         to HV-IH-E-VAT\n 1457 |      move     WS-ih-C-Vat         to HV-IH-C-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1456: error: 'WS-ih-E-Vat' is not defined\n 1454 |      move     WS-ih-Vat           to HV-IH-VAT\n 1455 |      move     WS-ih-Discount      to HV-IH-DISCOUNT\n 1456 >      move     WS-ih-E-Vat         to HV-IH-E-VAT\n 1457 |      move     WS-ih-C-Vat         to HV-IH-C-VAT\n 1458 |      move     WS-ih-Status        to HV-IH-STATUS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1457: error: 'WS-ih-C-Vat' is not defined\n 1455 |      move     WS-ih-Discount      to HV-IH-DISCOUNT\n 1456 |      move     WS-ih-E-Vat         to HV-IH-E-VAT\n 1457 >      move     WS-ih-C-Vat         to HV-IH-C-VAT\n 1458 |      move     WS-ih-Status        to HV-IH-STATUS\n 1459 |      move     WS-ih-Lines         to HV-IH-LINES\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1458: error: 'WS-ih-Status' is not defined\n 1456 |      move     WS-ih-E-Vat         to HV-IH-E-VAT\n 1457 |      move     WS-ih-C-Vat         to HV-IH-C-VAT\n 1458 >      move     WS-ih-Status        to HV-IH-STATUS\n 1459 |      move     WS-ih-Lines         to HV-IH-LINES\n 1460 |      move     WS-ih-Deduct-Days   to HV-IH-DEDUCT-DAYS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1459: error: 'WS-ih-Lines' is not defined\n 1457 |      move     WS-ih-C-Vat         to HV-IH-C-VAT\n 1458 |      move     WS-ih-Status        to HV-IH-STATUS\n 1459 >      move     WS-ih-Lines         to HV-IH-LINES\n 1460 |      move     WS-ih-Deduct-Days   to HV-IH-DEDUCT-DAYS\n 1461 |      move     WS-ih-Deduct-Amt    to HV-IH-DEDUCT-AMT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1460: error: 'WS-ih-Deduct-Days' is not defined\n 1458 |      move     WS-ih-Status        to HV-IH-STATUS\n 1459 |      move     WS-ih-Lines         to HV-IH-LINES\n 1460 >      move     WS-ih-Deduct-Days   to HV-IH-DEDUCT-DAYS\n 1461 |      move     WS-ih-Deduct-Amt    to HV-IH-DEDUCT-AMT\n 1462 |      move     WS-ih-Deduct-Vat    to HV-IH-DEDUCT-VAT\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1461: error: 'WS-ih-Deduct-Amt' is not defined\n 1459 |      move     WS-ih-Lines         to HV-IH-LINES\n 1460 |      move     WS-ih-Deduct-Days   to HV-IH-DEDUCT-DAYS\n 1461 >      move     WS-ih-Deduct-Amt    to HV-IH-DEDUCT-AMT\n 1462 |      move     WS-ih-Deduct-Vat    to HV-IH-DEDUCT-VAT\n 1463 |      move     WS-ih-Days          to HV-IH-DAYS\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1462: error: 'WS-ih-Deduct-Vat' is not defined\n 1460 |      move     WS-ih-Deduct-Days   to HV-IH-DEDUCT-DAYS\n 1461 |      move     WS-ih-Deduct-Amt    to HV-IH-DEDUCT-AMT\n 1462 >      move     WS-ih-Deduct-Vat    to HV-IH-DEDUCT-VAT\n 1463 |      move     WS-ih-Days          to HV-IH-DAYS\n 1464 |      move     WS-ih-CR            to HV-IH-CR\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1463: error: 'WS-ih-Days' is not defined\n 1461 |      move     WS-ih-Deduct-Amt    to HV-IH-DEDUCT-AMT\n 1462 |      move     WS-ih-Deduct-Vat    to HV-IH-DEDUCT-VAT\n 1463 >      move     WS-ih-Days          to HV-IH-DAYS\n 1464 |      move     WS-ih-CR            to HV-IH-CR\n 1465 |      move     WS-ih-Day-Book-Flag to HV-IH-DAY-BOOK-FLAG\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1464: error: 'WS-ih-CR' is not defined\n 1462 |      move     WS-ih-Deduct-Vat    to HV-IH-DEDUCT-VAT\n 1463 |      move     WS-ih-Days          to HV-IH-DAYS\n 1464 >      move     WS-ih-CR            to HV-IH-CR\n 1465 |      move     WS-ih-Day-Book-Flag to HV-IH-DAY-BOOK-FLAG\n 1466 |      move     WS-ih-Update        to HV-IH-UPDATE.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1465: error: 'WS-ih-Day-Book-Flag' is not defined\n 1463 |      move     WS-ih-Days          to HV-IH-DAYS\n 1464 |      move     WS-ih-CR            to HV-IH-CR\n 1465 >      move     WS-ih-Day-Book-Flag to HV-IH-DAY-BOOK-FLAG\n 1466 |      move     WS-ih-Update        to HV-IH-UPDATE.\n 1467 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1466: error: 'WS-ih-Update' is not defined\n 1464 |      move     WS-ih-CR            to HV-IH-CR\n 1465 |      move     WS-ih-Day-Book-Flag to HV-IH-DAY-BOOK-FLAG\n 1466 >      move     WS-ih-Update        to HV-IH-UPDATE.\n 1467 | *>\n 1468 |  bb000-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:576: error: 'MYSQL-1000-OPEN' is not defined\n  574 |      end-string.\n  575 |      move     1 to ws-No-Paragraph.\n  576 >      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  577 |      if       fs-reply not = zero\n  578 |               go   to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:576: error: 'MYSQL-1090-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in paragraph 'ba030-Process-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:600: error: 'MYSQL-1980-CLOSE' is not defined\n  598 | *>    Close the Database\n  599 | *>\n  600 >            PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n  601 | *>  /MYSQL-END\\\n  602 |      go      to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:600: error: 'MYSQL-1999-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:650: error: 'MYSQL-1210-COMMAND' is not defined\n  648 |              ws-Where (1:J)\n  649 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  650 >            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  651 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  652 |            MOVE WS-MYSQL-RESULT TO TP-PUAUTOGEN-REC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:650: error: 'MYSQL-1219-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:651: error: 'MYSQL-1220-STORE-RESULT' is not defined\n  649 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  650 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  651 >            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  652 |            MOVE WS-MYSQL-RESULT TO TP-PUAUTOGEN-REC\n  653 | *>               /MYSQL-END\\\n/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:651: error: 'MYSQL-1239-EXIT' is not defined\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:236: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:363: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:427: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:431: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:439: error: plwspinv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1404: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:450: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:452: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:454: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:456: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:459: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:460: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:461: error: 'WS-Invoice-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:479: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:486: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:487: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:488: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:489: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:496: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:551: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:553: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:555: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:557: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:559: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:561: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:563: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:565: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:567: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:569: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:571: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:573: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:577: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:652: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:655: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:661: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:663: error: 'WS-MYSQL-SQLstate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:671: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:702: error: 'FN-Read-Next-Header' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:706: error: 'WS-ih-Test' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:707: error: 'WS-ih-Invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:712: error: 'WS-Invoice-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:936: error: 'access-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1061: error: 'WS-Mysql-Save-Result' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1062: error: 'WS-Mysql-Save-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1117: error: 'WS-Mysql-Save-Result-RG1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1118: error: 'WS-Mysql-Save-Count-Rows-RG1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1422: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1443: error: 'WS-ih-Supplier' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1444: error: 'WS-ih-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1445: error: 'WS-ih-Freq' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1446: error: 'WS-ih-Repeat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1447: error: 'WS-ih-Last-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1448: error: 'WS-ih-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1449: error: 'WS-ih-Ref' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1450: error: 'WS-ih-P-C' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1451: error: 'WS-ih-Net' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1452: error: 'WS-ih-Extra' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1453: error: 'WS-ih-Carriage' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1454: error: 'WS-ih-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1455: error: 'WS-ih-Discount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1456: error: 'WS-ih-E-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1457: error: 'WS-ih-C-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1458: error: 'WS-ih-Status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1459: error: 'WS-ih-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1460: error: 'WS-ih-Deduct-Days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1461: error: 'WS-ih-Deduct-Amt' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1462: error: 'WS-ih-Deduct-Vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1463: error: 'WS-ih-Days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1464: error: 'WS-ih-CR' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1465: error: 'WS-ih-Day-Book-Flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1466: error: 'WS-ih-Update' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:576: error: 'MYSQL-1000-OPEN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:576: error: 'MYSQL-1090-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:600: error: 'MYSQL-1980-CLOSE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:600: error: 'MYSQL-1999-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:650: error: 'MYSQL-1210-COMMAND' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:650: error: 'MYSQL-1219-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:651: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:651: error: 'MYSQL-1239-EXIT' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:236: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:363: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:427: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:431: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:439: error: plwspinv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1404: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:450: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:452: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:454: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:456: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:459: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:460: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:461: error: 'WS-Invoice-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:479: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:486: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:487: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:488: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:489: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:496: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:551: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:553: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:555: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:557: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:559: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:561: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:563: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:565: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:567: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:569: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:571: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:573: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:577: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:652: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:655: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:661: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:663: error: 'WS-MYSQL-SQLstate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:671: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:702: error: 'FN-Read-Next-Header' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:706: error: 'WS-ih-Test' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:707: error: 'WS-ih-Invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:712: error: 'WS-Invoice-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:936: error: 'access-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1061: error: 'WS-Mysql-Save-Result' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1062: error: 'WS-Mysql-Save-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1117: error: 'WS-Mysql-Save-Result-RG1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1118: error: 'WS-Mysql-Save-Count-Rows-RG1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1422: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1443: error: 'WS-ih-Supplier' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1444: error: 'WS-ih-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1445: error: 'WS-ih-Freq' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1446: error: 'WS-ih-Repeat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1447: error: 'WS-ih-Last-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1448: error: 'WS-ih-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1449: error: 'WS-ih-Ref' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1450: error: 'WS-ih-P-C' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1451: error: 'WS-ih-Net' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1452: error: 'WS-ih-Extra' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1453: error: 'WS-ih-Carriage' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1454: error: 'WS-ih-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1455: error: 'WS-ih-Discount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1456: error: 'WS-ih-E-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1457: error: 'WS-ih-C-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1458: error: 'WS-ih-Status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1459: error: 'WS-ih-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1460: error: 'WS-ih-Deduct-Days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1461: error: 'WS-ih-Deduct-Amt' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1462: error: 'WS-ih-Deduct-Vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1463: error: 'WS-ih-Days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1464: error: 'WS-ih-CR' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1465: error: 'WS-ih-Day-Book-Flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:1466: error: 'WS-ih-Update' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:576: error: 'MYSQL-1000-OPEN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:576: error: 'MYSQL-1090-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:600: error: 'MYSQL-1980-CLOSE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:600: error: 'MYSQL-1999-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:650: error: 'MYSQL-1210-COMMAND' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:650: error: 'MYSQL-1219-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:651: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/plautogenMT.cbl:651: error: 'MYSQL-1239-EXIT' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 171,
+    "cognitive": 296,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 292,
+      "totalOperators": 809,
+      "totalOperands": 4919,
+      "vocabulary": 304,
+      "length": 5728,
+      "volume": 47244,
+      "difficulty": 101.08,
+      "effort": 4775216,
+      "timeToProgram": 265290,
+      "deliveredBugs": 15.748
+    },
+    "maintainability": 44
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 662
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 663
+      },
+      {
+        "target": "MySQL_error",
+        "line": 667
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 732
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 779
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 780
+      },
+      {
+        "target": "MySQL_error",
+        "line": 783
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 866
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 905
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 906
+      },
+      {
+        "target": "MySQL_error",
+        "line": 910
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1015
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1016
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1019
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1091
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1092
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1095
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1150
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1151
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1155
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1217
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1218
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1221
+      },
+      {
+        "target": "MySQL_query",
+        "line": 1263
+      },
+      {
+        "target": "MySQL_query",
+        "line": 1272
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1314
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1315
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1318
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1375
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1376
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1379
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1415
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 2461
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 2462
+      },
+      {
+        "target": "MySQL_error",
+        "line": 2466
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 2501
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 2558
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 2559
+      },
+      {
+        "target": "MySQL_error",
+        "line": 2564
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 2629
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 2630
+      },
+      {
+        "target": "MySQL_error",
+        "line": 2633
+      },
+      {
+        "target": "MySQL_query",
+        "line": 2675
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 2726
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 2727
+      },
+      {
+        "target": "MySQL_error",
+        "line": 2730
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 2779
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 2780
+      },
+      {
+        "target": "MySQL_error",
+        "line": 2783
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 3271
+      },
+      {
+        "target": "fhlogger",
+        "line": 3278
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 229
+      },
+      {
+        "name": "envdiv",
+        "line": 236
+      },
+      {
+        "name": "mysql-variables",
+        "line": 363
+      },
+      {
+        "name": "wsfnctn",
+        "line": 427
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 431
+      },
+      {
+        "name": "plwspinv",
+        "line": 436
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1404
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 549
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 576
+      },
+      {
+        "target": "ba998-Free",
+        "line": 592
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 600
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 650
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 651
+      },
+      {
+        "target": "ba999-End",
+        "line": 683
+      },
+      {
+        "target": "bc050-Process-Read-Indexed",
+        "line": 708
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 801
+      },
+      {
+        "target": "bc050-Process-Read-Indexed",
+        "line": 812
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 849
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 850
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 922
+      },
+      {
+        "target": "ba999-End",
+        "line": 924
+      },
+      {
+        "target": "ba998-Free",
+        "line": 927
+      },
+      {
+        "target": "ba998-Free",
+        "line": 945
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1005
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 1006
+      },
+      {
+        "target": "ba999-End",
+        "line": 1036
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1077
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 1078
+      },
+      {
+        "target": "bc070-Process-Write",
+        "line": 1135
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 1140
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 1148
+      },
+      {
+        "target": "ba999-End",
+        "line": 1165
+      },
+      {
+        "target": "bc080-Process-Delete",
+        "line": 1177
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1214
+      },
+      {
+        "target": "ba999-End",
+        "line": 1232
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1311
+      },
+      {
+        "target": "ba999-End",
+        "line": 1331
+      },
+      {
+        "target": "bc085-Process-Delete-ALL",
+        "line": 1335
+      },
+      {
+        "target": "bc090-Process-ReWrite",
+        "line": 1344
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 1349
+      },
+      {
+        "target": "bb300-Update",
+        "line": 1368
+      },
+      {
+        "target": "ba999-End",
+        "line": 1391
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 1423
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1942
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2376
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2452
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 2453
+      },
+      {
+        "target": "ba999-End",
+        "line": 2488
+      },
+      {
+        "target": "bc100-UnloadHVs-rg1",
+        "line": 2522
+      },
+      {
+        "target": "ba999-End",
+        "line": 2541
+      },
+      {
+        "target": "bc000-HV-Load-rg1",
+        "line": 2548
+      },
+      {
+        "target": "bc200-Insert-rg1",
+        "line": 2555
+      },
+      {
+        "target": "ba999-End",
+        "line": 2583
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2623
+      },
+      {
+        "target": "ba999-End",
+        "line": 2652
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2715
+      },
+      {
+        "target": "ba999-End",
+        "line": 2736
+      },
+      {
+        "target": "ba999-End",
+        "line": 2743
+      },
+      {
+        "target": "bc000-HV-Load-rg1",
+        "line": 2751
+      },
+      {
+        "target": "bc300-Update-rg1",
+        "line": 2772
+      },
+      {
+        "target": "ba999-End",
+        "line": 2789
+      },
+      {
+        "target": "ba999-End",
+        "line": 2796
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 3059
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 3256
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 240
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "code converting to Cobol calls etc.\n*>                       see the RDB specific ACAS notes.\n*>\n*> ...",
+        "line": 93
+      },
+      {
+        "content": "*>              DELETE\n*>              FROM PUAUTOGEN-LINES-REC WHERE IL-INVOICE = {key value (1:8)}...",
+        "line": 1248
+      },
+      {
+        "content": "*>              DELETE\n*>              FROM PUAUTOGEN-LINES-REC WHERE 'IL-INVOICE' = WS-ih-Invoice\n*...",
+        "line": 2661
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

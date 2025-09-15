@@ -1,0 +1,576 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl",
+  "fileName": "gl051.cbl",
+  "fileHash": "d64cecd18895c0396cf1af274ecc612c5aca2e86cc6ae89ad36b7a53355cd6d1",
+  "timestamp": "2025-09-15T19:46:18.178Z",
+  "parseTime": 140,
+  "lines": {
+    "total": 1284,
+    "code": 817,
+    "comment": 466,
+    "blank": 1
+  },
+  "programId": "gl051",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:103: error: envdiv.cob: No such file or directory\n  101 | *>===============================\n  102 | *>\n  103 >  copy \"envdiv.cob\".\n  104 |  input-output            section.\n  105 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:113: error: selprint.cob: No such file or directory\n  111 | *> copy \"selbatch.cob\".\n  112 | *> copy \"selpost.cob\".\n  113 >  copy \"selprint.cob\".\n  114 |  data                    division.\n  115 | *>===============================\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:123: error: fdprint.cob: No such file or directory\n  121 | *> copy \"fdbatch.cob\".\n  122 | *> copy \"fdpost.cob\".\n  123 >  copy \"fdprint.cob\".\n  124 |  working-storage section.\n  125 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:128: error: print-spool-command.cob: No such file or directory\n  126 | *>\n  127 |  77  prog-name           pic x(15)    value \"gl051 (3.02.06)\".\n  128 >  copy \"print-spool-command.cob\".\n  129 |  copy \"wsmaps03.cob\".\n  130 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:129: error: wsmaps03.cob: No such file or directory\n  127 |  77  prog-name           pic x(15)    value \"gl051 (3.02.06)\".\n  128 |  copy \"print-spool-command.cob\".\n  129 >  copy \"wsmaps03.cob\".\n  130 |  copy \"wsfnctn.cob\".\n  131 |  copy \"wsledger.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:130: error: wsfnctn.cob: No such file or directory\n  128 |  copy \"print-spool-command.cob\".\n  129 |  copy \"wsmaps03.cob\".\n  130 >  copy \"wsfnctn.cob\".\n  131 |  copy \"wsledger.cob\".\n  132 |  copy \"wsbatch.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:131: error: wsledger.cob: No such file or directory\n  129 |  copy \"wsmaps03.cob\".\n  130 |  copy \"wsfnctn.cob\".\n  131 >  copy \"wsledger.cob\".\n  132 |  copy \"wsbatch.cob\".\n  133 |  copy \"wspost.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:132: error: wsbatch.cob: No such file or directory\n  130 |  copy \"wsfnctn.cob\".\n  131 |  copy \"wsledger.cob\".\n  132 >  copy \"wsbatch.cob\".\n  133 |  copy \"wspost.cob\".\n  134 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:133: error: wspost.cob: No such file or directory\n  131 |  copy \"wsledger.cob\".\n  132 |  copy \"wsbatch.cob\".\n  133 >  copy \"wspost.cob\".\n  134 | *>\n  135 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:159: error: Test-Data-Flags.cob: No such file or directory\n  157 |      03  WS-OTM5-Record         pic x.\n  158 | *>\n  159 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  160 | *>\n  161 |  01  accept-terminator-array pic 9(4).\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:348: error: wscall.cob: No such file or directory\n  346 | *>**************\n  347 | *>\n  348 >  copy \"wscall.cob\".\n  349 |  copy \"wssystem.cob\".\n  350 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:349: error: wssystem.cob: No such file or directory\n  347 | *>\n  348 |  copy \"wscall.cob\".\n  349 >  copy \"wssystem.cob\".\n  350 |  copy \"wsnames.cob\".\n  351 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:350: error: wsnames.cob: No such file or directory\n  348 |  copy \"wscall.cob\".\n  349 |  copy \"wssystem.cob\".\n  350 >  copy \"wsnames.cob\".\n  351 | *>\n  352 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1282: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n 1280 |      exit     section.\n 1281 | *>\n 1282 >  copy \"Proc-ACAS-FH-Calls.cob\".\n 1283 | *>\n 1284 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:354: error: 'ws-calling-data' is not defined\n  352 |  01  to-day              pic x(10).\n  353 | *>\n  354 >  procedure division using ws-calling-data\n  355 |                           system-record\n  356 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:355: error: 'system-record' is not defined\n  353 | *>\n  354 |  procedure division using ws-calling-data\n  355 >                           system-record\n  356 |                           to-day\n  357 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:357: error: 'file-defs' is not defined\n  355 |                           system-record\n  356 |                           to-day\n  357 >                           file-defs.\n  358 | *>=======================================\n  359 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'gl051-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'Menu-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:369: error: 'Print-Spool-Name' is not defined\n  367 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n  368 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  369 >      move     Print-Spool-Name to PSN.\n  370 |      perform  zz070-convert-date.\n  371 |      move     ws-date to l3-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:369: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:372: error: 'usera' is not defined\n  370 |      perform  zz070-convert-date.\n  371 |      move     ws-date to l3-date.\n  372 >      move     usera to l3-user.\n  373 |      move     1  to File-Key-No.\n  374 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:373: error: 'File-Key-No' is not defined\n  371 |      move     ws-date to l3-date.\n  372 |      move     usera to l3-user.\n  373 >      move     1  to File-Key-No.\n  374 | *>\n  375 |      move     zero to z.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:394: error: 'WS-Batch-Nos' is not defined\n  392 |      if       ws-menu = 1  or  3\n  393 |               perform  get-batch\n  394 >               if    WS-Batch-Nos = zero\n  395 |                      perform  GL-Batch-Close                *> close  bat..\n  396 |                      go to  menu-input.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:409: error: 'batch-start' is not defined\n  407 |      if       ws-menu = 4\n  408 |               move zero to save-batch\n  409 >               move 1  to  batch-start\n  410 |               move 99  to  z\n  411 |               perform gl050d.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:414: error: 'u-bin' is not defined\n  412 | *>\n  413 |      if       ws-menu not = 1\n  414 >               move  u-bin  to  proofed.\n  415 | *>\n  416 |      perform  GL-Batch-Rewrite.                *> rewrite  batch-record..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:414: error: 'proofed' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'get-batch':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:430: error: 'WS-Ledger' is not defined\n  428 | *>********\n  429 | *>\n  430 >      move     1 to  WS-Ledger .\n  431 | *>\n  432 |      display  \"Enter Batch Number :- [     ]\" at 1801 with foreground-col..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:439: error: 'fs-reply' is not defined\n  437 | *>\n  438 |      perform  GL-Batch-Read-Indexed.   *> read batch-file  record  invali..\n  439 >      if       fs-reply = 21\n  440 |               go to  get-batch.\n  441 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'accept-money8s2':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:450: error: 'curs2' is not defined\n  448 |      move     amt-wk-pence8s to ws-pence8s.\n  449 |      move     amt-wk-pds8s   to ws-pound8s.\n  450 >      display  ws-amount-screen-display8s at curs2  with foreground-color..\n  451 |      accept   ws-amount-screen-accept8s at curs2  with foreground-color 3..\n  452 |      move     ws-pound8s to amt-wk-pds8s.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'proof-all':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:485: error: 'bcycle IN WS-Batch-Record' is not defined\n  483 |               go to  proof-end.\n  484 | *>\n  485 >      if       bcycle of WS-Batch-Record not = scycle of system-record\n  486 |               go to  loop.\n  487 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:485: error: 'scycle IN system-record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:488: error: 'waiting' is not defined\n  486 |               go to  loop.\n  487 | *>\n  488 >      if       not  waiting\n  489 |               go to  loop.\n  490 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'gl050c':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'define-vat-rate':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:523: error: 'vat-rate' is not defined\n  521 |               go to  define-vat-rate.\n  522 | *>\n  523 >      move     vat-rate (v)  to  display-vat ws-vat-rate.\n  524 |      display  display-vat at 0417 with foreground-color 2.\n  525 |      display  \"% ok (Y/N) :- [Y]\" at 0422 with foreground-color 6.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:537: error: 'bdefault' is not defined\n  535 |      display \"/\"               at 0474 with foreground-color 2.\n  536 |      display  \"Default    - \"  at 0656 with foreground-color 2.\n  537 >      display  bdefault         at 0669 with foreground-color 2.\n  538 |      display  \"Contra A/C - \"  at 0856 with foreground-color 2.\n  539 |      display  batch-def-ac     at 0869 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:539: error: 'batch-def-ac' is not defined\n  537 |      display  bdefault         at 0669 with foreground-color 2.\n  538 |      display  \"Contra A/C - \"  at 0856 with foreground-color 2.\n  539 >      display  batch-def-ac     at 0869 with foreground-color 2.\n  540 | *>\n  541 |      if       batch-def-pc not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:541: error: 'batch-def-pc' is not defined\n  539 |      display  batch-def-ac     at 0869 with foreground-color 2.\n  540 | *>\n  541 >      if       batch-def-pc not = zero\n  542 |               display \"/\"          at 0875 with foreground-color 2\n  543 |               display batch-def-pc at 0876 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:546: error: 'batch-def-vat' is not defined\n  544 | *>\n  545 |      display  \"Vat A/C    - \" at 1056 with foreground-color 2.\n  546 >      display  batch-def-vat   at 1069 with foreground-color 2.\n  547 |      display  \"Convention - \" at 1256 with foreground-color 2.\n  548 |      display  convention      at 1269 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:548: error: 'convention' is not defined\n  546 |      display  batch-def-vat   at 1069 with foreground-color 2.\n  547 |      display  \"Convention - \" at 1256 with foreground-color 2.\n  548 >      display  convention      at 1269 with foreground-color 2.\n  549 | *>\n  550 |      perform  GL-Posting-Open.            *> open i-o posting-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:557: error: 'profit-centres' is not defined\n  555 |      display  \"Date           [          ]\"  at 0601  with foreground-col..\n  556 |      display  \"Account        [       ]\"     at 0801     with foreground-..\n  557 >      if       profit-centres\n  558 |               display \"Profit Centre  [  ]\"  at 1001  with foreground-col..\n  559 |      if       branches\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:559: error: 'branches' is not defined\n  557 |      if       profit-centres\n  558 |               display \"Profit Centre  [  ]\"  at 1001  with foreground-col..\n  559 >      if       branches\n  560 |               display \"Branch         [  ]\"  at 1001  with foreground-col..\n  561 |      display  \"Amount         [           ]\" at 1201 with foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:562: error: 'auto-vat' is not defined\n  560 |               display \"Branch         [  ]\"  at 1001  with foreground-col..\n  561 |      display  \"Amount         [           ]\" at 1201 with foreground-colo..\n  562 >      if       auto-vat\n  563 |               display \"VAT Code       [ ]  {P or M or space}\"\n  564 |                                              at 1401 with foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'read-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:580: error: 'batch' is not defined\n  578 |               go to  main-exit.\n  579 | *>\n  580 >      if       batch not = WS-Batch-Nos\n  581 |               go to  read-loop.\n  582 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'accept-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:587: error: 'post-date' is not defined\n  585 | *>\n  586 |  *>    display  post-date at 0617 with foreground-color 3.\n  587 >      accept   post-date at 0617 with foreground-color 3 update.\n  588 | *>\n  589 |      if       cob-crt-status = cob-scr-esc\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:605: error: 'post-dr' is not defined\n  603 | *>\n  604 |      if       convention = \"DR\"\n  605 >               divide post-dr by 100 giving acc-ok\n  606 |               move  dr-pc    to  array-pc\n  607 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:606: error: 'dr-pc' is not defined\n  604 |      if       convention = \"DR\"\n  605 |               divide post-dr by 100 giving acc-ok\n  606 >               move  dr-pc    to  array-pc\n  607 |      else\n  608 |               divide post-cr by 100 giving acc-ok\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:608: error: 'post-cr' is not defined\n  606 |               move  dr-pc    to  array-pc\n  607 |      else\n  608 >               divide post-cr by 100 giving acc-ok\n  609 |               move  cr-pc    to  array-pc.\n  610 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:609: error: 'cr-pc' is not defined\n  607 |      else\n  608 |               divide post-cr by 100 giving acc-ok\n  609 >               move  cr-pc    to  array-pc.\n  610 | *>\n  611 |  get-account.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'get-account':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:629: error: 'we-error' is not defined\n  627 | *>\n  628 |      perform  get-description.\n  629 >      if       we-error not = zero\n  630 |               go to get-account.\n  631 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'accept-amount':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:662: error: 'post-amount' is not defined\n  660 | *>\n  661 |      move     1217 to curs2.\n  662 >      move     post-amount to amt-ok8s.\n  663 |      perform  accept-money8s2.\n  664 |      move     amt-ok8s to post-amount.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'accept-vat':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:709: error: 'vat-amount' is not defined\n  707 | *>\n  708 |      if       array-vat = space\n  709 >               move zero to vat-amount\n  710 |               go to accept-narative.\n  711 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'accept-narative':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:743: error: 'post-legend' is not defined\n  741 | *>\n  742 |      display  \"                  \" at 1439.\n  743 >      display  post-legend at 1817 with foreground-color 3.\n  744 |      accept   post-legend  at 1817 with foreground-color 3 update.\n  745 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'help-outline':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:768: error: 'lin' is not defined\n  766 | *>===========\n  767 | *>\n  768 >      move     14  to  lin.\n  769 |      move     54  to  cole.\n  770 |      display  display-plus-27 at 1454.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:769: error: 'cole' is not defined\n  767 | *>\n  768 |      move     14  to  lin.\n  769 >      move     54  to  cole.\n  770 |      display  display-plus-27 at 1454.\n  771 |      display  display-plus-27 at 2354.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'h-o-loop2':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:777: error: 'curs' is not defined\n  775 |      add      1  to  lin.\n  776 |      move     54 to cole.\n  777 >      display  \"+\" at curs with foreground-color 2.\n  778 |      move     80 to cole.\n  779 |      display  \"+\" at curs with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'get-description':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:804: error: 'WS-Ledger-Nos' is not defined\n  802 | *>\n  803 |      move     zero  to  we-error.\n  804 >      multiply account-in by 100 giving WS-Ledger-Nos.\n  805 |      move     array-pc    to  ledger-pc.\n  806 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:805: error: 'ledger-pc' is not defined\n  803 |      move     zero  to  we-error.\n  804 |      multiply account-in by 100 giving WS-Ledger-Nos.\n  805 >      move     array-pc    to  ledger-pc.\n  806 | *>\n  807 |      perform  GL-Nominal-Read-Indexed.   *> read ledger-file  record  inv..\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:812: error: 'ledger-name' is not defined\n  810 | *>\n  811 |      if       we-error = zero\n  812 >               display ledger-name at 0826 with foreground-color 3\n  813 |      else\n  814 |               move  0  to  trutht\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'batch-amendment':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'items-in':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:894: error: 'items' is not defined\n  892 | *>\n  893 |  *>    display  items at 1920 with foreground-color 3.\n  894 >      accept   items at 1920 with foreground-color 3 update.\n  895 | *>\n  896 |      if       cob-crt-status = cob-scr-esc\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'gross-in':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:906: error: 'input-gross' is not defined\n  904 | *>\n  905 |      move     2020 to curs2.\n  906 >      move     input-gross to amt-ok9.\n  907 |      perform  accept-money9.\n  908 |      move     amt-ok9 to input-gross.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'vat-in':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:920: error: 'input-vat' is not defined\n  918 | *>\n  919 |      move     2120 to curs2.\n  920 >      move     input-vat to amt-ok9.\n  921 |      perform  accept-money9.\n  922 |      move     amt-ok9 to input-vat.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'desc-in':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:931: error: 'description' is not defined\n  929 | *>\n  930 |  *>   display  description at 2220 with foreground-color 3.\n  931 >      accept   description at 2220 with foreground-color 3 update.\n  932 | *>\n  933 |      if       cob-crt-status not = cob-scr-esc\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'gl050d':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:966: error: 'print-file' is not defined\n  964 | *>\n  965 |      move     prog-name to l1-prog.\n  966 >      open     output  print-file.\n  967 |      move     zero  to  page-nos.\n  968 |      move     1     to  trutht.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:966: error: 'print-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'disp-head-skip':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:983: error: 'actual-gross' is not defined\n  981 |      perform  GL-Nominal-Open-Input.      *> open input  posting-file led..\n  982 |      perform  GL-Posting-Open-Input.\n  983 >      move     zero  to  actual-gross actual-vat.\n  984 |      perform  batch-print.\n  985 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:983: error: 'actual-vat' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'main-exit':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:989: error: 'print-file' is not a file name\n  987 | *>********\n  988 | *>\n  989 >      close    print-file.\n  990 |      perform  GL-Posting-Close.          *> close posting-file ledger-fil..\n  991 |      perform  GL-Nominal-Close.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:992: error: 'Print-Report' is not defined\n  990 |      perform  GL-Posting-Close.          *> close posting-file ledger-fil..\n  991 |      perform  GL-Nominal-Close.\n  992 >      call     \"SYSTEM\" using Print-Report.\n  993 | *>\n  994 |  end-routine. exit section.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'batch-print':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1020: error: 'entered' is not defined\n 1018 |               move   batch  to  l4-batch save-batch WS-Batch-Nos\n 1019 |               perform get-a-batch\n 1020 >               move  entered  to  u-bin\n 1021 |               perform zz060-Convert-Date\n 1022 |               move ws-date  to  l4-date\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1024: error: 'print-record' is not defined\n 1022 |               move ws-date  to  l4-date\n 1023 |               move description to l4-desc\n 1024 >               write  print-record  from  line-4  after  2\n 1025 |               add 2 to line-cnt\n 1026 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1033: error: 'post-number' is not defined\n 1031 |               go to  loop.\n 1032 | *>\n 1033 >      move     post-number  to  l7-number.\n 1034 |      move     post-code in WS-Posting-Record   to  l7-code.\n 1035 |      move     post-date    to  l7-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1034: error: 'post-code IN WS-Posting-Record' is not defined\n 1032 | *>\n 1033 |      move     post-number  to  l7-number.\n 1034 >      move     post-code in WS-Posting-Record   to  l7-code.\n 1035 |      move     post-date    to  l7-date.\n 1036 |      divide   post-dr  by  100  giving  l7-dr.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1045: error: 'vat-ac IN WS-Posting-Record' is not defined\n 1043 |      move     spaces       to  l7-side.\n 1044 | *>\n 1045 >      divide   vat-ac of WS-Posting-Record by 100 giving l7-vat-ac.\n 1046 |      move     vat-pc  to  l7-vat-pc.\n 1047 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1046: error: 'vat-pc' is not defined\n 1044 | *>\n 1045 |      divide   vat-ac of WS-Posting-Record by 100 giving l7-vat-ac.\n 1046 >      move     vat-pc  to  l7-vat-pc.\n 1047 | *>\n 1048 |      if       vat-ac of WS-Posting-Record not equal  zero\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1049: error: 'post-vat-side' is not defined\n 1047 | *>\n 1048 |      if       vat-ac of WS-Posting-Record not equal  zero\n 1049 >               move    post-vat-side  to  l7-side.\n 1050 | *>\n 1051 |      move     post-legend  to  l7-legend.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1061: error: 'Page-Lines' is not defined\n 1059 |               write print-record from line-error after 1\n 1060 |               add 1 to line-cnt.\n 1061 >      if       line-cnt > Page-Lines - 6\n 1062 |               perform  headings.\n 1063 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'end-batch':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1103: error: 'batch-status' is not defined\n 1101 |               go to  main-exit.\n 1102 |      if       not truet\n 1103 >               move  0  to  batch-status\n 1104 |               go to  main-exit.\n 1105 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'zz050-Validate-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1184: error: 'Date-Form' is not defined\n 1182 | *>\n 1183 |      move     ws-test-date to ws-date.\n 1184 >      if       Date-Form = zero\n 1185 |               move 1 to Date-Form.\n 1186 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1186: error: 'Date-UK' is not defined\n 1184 |      if       Date-Form = zero\n 1185 |               move 1 to Date-Form.\n 1186 >      if       Date-UK\n 1187 |               go to zz050-test-date.\n 1188 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1188: error: 'Date-USA' is not defined\n 1186 |      if       Date-UK\n 1187 |               go to zz050-test-date.\n 1188 >      if       Date-USA                *> swap month and days\n 1189 |               move ws-days to ws-swap\n 1190 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'zz050-test-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1202: error: 'u-date' is not defined\n 1200 | *>\n 1201 |  zz050-test-date.\n 1202 >      move     ws-date to u-date.\n 1203 |      move     zero to u-bin.\n 1204 |      perform  maps03.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'maps03':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1277: error: 'maps03-ws' is not defined\n 1275 | *>*******************\n 1276 | *>\n 1277 >      call     \"maps04\"  using  maps03-ws.\n 1278 | *>\n 1279 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'gl051-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'Menu-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:390: error: 'GL-Batch-Open' is not defined\n  388 |      if       ws-menu = 9\n  389 |               go to  menu-exit.\n  390 >      perform  GL-Batch-Open.           *> open  i-o batch-file.\n  391 | *>\n  392 |      if       ws-menu = 1  or  3\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:395: error: 'GL-Batch-Close' is not defined\n  393 |               perform  get-batch\n  394 |               if    WS-Batch-Nos = zero\n  395 >                      perform  GL-Batch-Close                *> close  bat..\n  396 |                      go to  menu-input.\n  397 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:416: error: 'GL-Batch-Rewrite' is not defined\n  414 |               move  u-bin  to  proofed.\n  415 | *>\n  416 >      perform  GL-Batch-Rewrite.                *> rewrite  batch-record..\n  417 |      perform  GL-Batch-Close.                  *> close    batch-file.\n  418 |      go       to menu-input.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'get-batch':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:438: error: 'GL-Batch-Read-Indexed' is not defined\n  436 |               go to  end-get-batch.\n  437 | *>\n  438 >      perform  GL-Batch-Read-Indexed.   *> read batch-file  record  invali..\n  439 |      if       fs-reply = 21\n  440 |               go to  get-batch.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'proof-all':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:481: error: 'GL-Batch-Read-Next' is not defined\n  479 | *>***\n  480 | *>\n  481 >      perform  GL-Batch-Read-Next.   *> read batch-file  next record  at e..\n  482 |      if       fs-reply = 10\n  483 |               go to  proof-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'gl050c':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:511: error: 'GL-Nominal-Open-Input' is not defined\n  509 |               go to  main-exit.\n  510 | *>\n  511 >      perform  GL-Nominal-Open-Input.          *> open input ledger-file.\n  512 | *>\n  513 |  define-vat-rate.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'define-vat-rate':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:550: error: 'GL-Posting-Open' is not defined\n  548 |      display  convention      at 1269 with foreground-color 2.\n  549 | *>\n  550 >      perform  GL-Posting-Open.            *> open i-o posting-file.\n  551 | *>\n  552 |  loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'read-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:576: error: 'GL-Posting-Read-Next' is not defined\n  574 | *>********\n  575 | *>\n  576 >      perform  GL-Posting-Read-Next.      *> read     posting-file  next r..\n  577 |      if       fs-reply = 10\n  578 |               go to  main-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'loop-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:762: error: 'GL-Posting-Rewrite' is not defined\n  760 | *>*******\n  761 | *>\n  762 >      perform  GL-Posting-Rewrite.           *> rewrite WS-Posting-Record.\n  763 |      go       to loop.\n  764 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'get-description':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:807: error: 'GL-Nominal-Read-Indexed' is not defined\n  805 |      move     array-pc    to  ledger-pc.\n  806 | *>\n  807 >      perform  GL-Nominal-Read-Indexed.   *> read ledger-file  record  inv..\n  808 |      if       fs-reply = 21\n  809 |               move  255  to  we-error.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'main-exit':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:820: error: 'GL-Nominal-Close' is not defined\n  818 | *>********\n  819 | *>\n  820 >      perform  GL-Nominal-Close.         *> close ledger-file posting-file..\n  821 |      perform  GL-Posting-Close.\n  822 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:821: error: 'GL-Posting-Close' is not defined\n  819 | *>\n  820 |      perform  GL-Nominal-Close.         *> close ledger-file posting-file..\n  821 >      perform  GL-Posting-Close.\n  822 | *>\n  823 |  end-routine. exit section.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in section 'gl050d':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl: in paragraph 'disp-head-skip':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:982: error: 'GL-Posting-Open-Input' is not defined\n  980 | *>\n  981 |      perform  GL-Nominal-Open-Input.      *> open input  posting-file led..\n  982 >      perform  GL-Posting-Open-Input.\n  983 |      move     zero  to  actual-gross actual-vat.\n  984 |      perform  batch-print.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:103: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:113: error: selprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:123: error: fdprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:128: error: print-spool-command.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:129: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:130: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:131: error: wsledger.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:132: error: wsbatch.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:133: error: wspost.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:159: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:348: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:349: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:350: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1282: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:354: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:355: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:357: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:369: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:369: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:372: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:373: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:394: error: 'WS-Batch-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:409: error: 'batch-start' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:414: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:414: error: 'proofed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:430: error: 'WS-Ledger' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:439: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:450: error: 'curs2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:485: error: 'bcycle IN WS-Batch-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:485: error: 'scycle IN system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:488: error: 'waiting' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:523: error: 'vat-rate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:537: error: 'bdefault' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:539: error: 'batch-def-ac' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:541: error: 'batch-def-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:546: error: 'batch-def-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:548: error: 'convention' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:557: error: 'profit-centres' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:559: error: 'branches' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:562: error: 'auto-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:580: error: 'batch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:587: error: 'post-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:605: error: 'post-dr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:606: error: 'dr-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:608: error: 'post-cr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:609: error: 'cr-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:629: error: 'we-error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:662: error: 'post-amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:709: error: 'vat-amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:743: error: 'post-legend' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:768: error: 'lin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:769: error: 'cole' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:777: error: 'curs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:804: error: 'WS-Ledger-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:805: error: 'ledger-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:812: error: 'ledger-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:894: error: 'items' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:906: error: 'input-gross' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:920: error: 'input-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:931: error: 'description' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:966: error: 'print-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:966: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:983: error: 'actual-gross' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:983: error: 'actual-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:989: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:992: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1020: error: 'entered' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1024: error: 'print-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1033: error: 'post-number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1034: error: 'post-code IN WS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1045: error: 'vat-ac IN WS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1046: error: 'vat-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1049: error: 'post-vat-side' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1061: error: 'Page-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1103: error: 'batch-status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1184: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1186: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1188: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1202: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1277: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:390: error: 'GL-Batch-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:395: error: 'GL-Batch-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:416: error: 'GL-Batch-Rewrite' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:438: error: 'GL-Batch-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:481: error: 'GL-Batch-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:511: error: 'GL-Nominal-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:550: error: 'GL-Posting-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:576: error: 'GL-Posting-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:762: error: 'GL-Posting-Rewrite' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:807: error: 'GL-Nominal-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:820: error: 'GL-Nominal-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:821: error: 'GL-Posting-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:982: error: 'GL-Posting-Open-Input' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:103: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:113: error: selprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:123: error: fdprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:128: error: print-spool-command.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:129: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:130: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:131: error: wsledger.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:132: error: wsbatch.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:133: error: wspost.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:159: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:348: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:349: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:350: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1282: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:354: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:355: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:357: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:369: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:369: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:372: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:373: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:394: error: 'WS-Batch-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:409: error: 'batch-start' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:414: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:414: error: 'proofed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:430: error: 'WS-Ledger' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:439: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:450: error: 'curs2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:485: error: 'bcycle IN WS-Batch-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:485: error: 'scycle IN system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:488: error: 'waiting' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:523: error: 'vat-rate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:537: error: 'bdefault' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:539: error: 'batch-def-ac' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:541: error: 'batch-def-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:546: error: 'batch-def-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:548: error: 'convention' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:557: error: 'profit-centres' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:559: error: 'branches' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:562: error: 'auto-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:580: error: 'batch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:587: error: 'post-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:605: error: 'post-dr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:606: error: 'dr-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:608: error: 'post-cr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:609: error: 'cr-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:629: error: 'we-error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:662: error: 'post-amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:709: error: 'vat-amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:743: error: 'post-legend' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:768: error: 'lin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:769: error: 'cole' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:777: error: 'curs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:804: error: 'WS-Ledger-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:805: error: 'ledger-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:812: error: 'ledger-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:894: error: 'items' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:906: error: 'input-gross' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:920: error: 'input-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:931: error: 'description' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:966: error: 'print-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:966: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:983: error: 'actual-gross' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:983: error: 'actual-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:989: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:992: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1020: error: 'entered' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1024: error: 'print-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1033: error: 'post-number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1034: error: 'post-code IN WS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1045: error: 'vat-ac IN WS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1046: error: 'vat-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1049: error: 'post-vat-side' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1061: error: 'Page-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1103: error: 'batch-status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1184: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1186: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1188: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1202: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:1277: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:390: error: 'GL-Batch-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:395: error: 'GL-Batch-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:416: error: 'GL-Batch-Rewrite' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:438: error: 'GL-Batch-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:481: error: 'GL-Batch-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:511: error: 'GL-Nominal-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:550: error: 'GL-Posting-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:576: error: 'GL-Posting-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:762: error: 'GL-Posting-Rewrite' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:807: error: 'GL-Nominal-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:820: error: 'GL-Nominal-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:821: error: 'GL-Posting-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl051.cbl:982: error: 'GL-Posting-Open-Input' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 164,
+    "cognitive": 429,
+    "halstead": {
+      "uniqueOperators": 15,
+      "uniqueOperands": 91,
+      "totalOperators": 456,
+      "totalOperands": 288,
+      "vocabulary": 106,
+      "length": 744,
+      "volume": 5006,
+      "difficulty": 23.74,
+      "effort": 118814,
+      "timeToProgram": 6601,
+      "deliveredBugs": 1.669
+    },
+    "maintainability": 52
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 571
+      },
+      {
+        "target": "SYSTEM",
+        "line": 992
+      },
+      {
+        "target": "maps04",
+        "line": 1277
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 94
+      },
+      {
+        "name": "envdiv",
+        "line": 103
+      },
+      {
+        "name": "seledger",
+        "line": 110
+      },
+      {
+        "name": "selbatch",
+        "line": 111
+      },
+      {
+        "name": "selpost",
+        "line": 112
+      },
+      {
+        "name": "selprint",
+        "line": 113
+      },
+      {
+        "name": "fdledger",
+        "line": 120
+      },
+      {
+        "name": "fdbatch",
+        "line": 121
+      },
+      {
+        "name": "fdpost",
+        "line": 122
+      },
+      {
+        "name": "fdprint",
+        "line": 123
+      },
+      {
+        "name": "print-spool-command",
+        "line": 128
+      },
+      {
+        "name": "wsmaps03",
+        "line": 129
+      },
+      {
+        "name": "wsfnctn",
+        "line": 130
+      },
+      {
+        "name": "wsledger",
+        "line": 131
+      },
+      {
+        "name": "wsbatch",
+        "line": 132
+      },
+      {
+        "name": "wspost",
+        "line": 133
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 159
+      },
+      {
+        "name": "screenio",
+        "line": 162
+      },
+      {
+        "name": "wscall",
+        "line": 348
+      },
+      {
+        "name": "wssystem",
+        "line": 349
+      },
+      {
+        "name": "wsnames",
+        "line": 350
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 1282
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-convert-date",
+        "line": 370
+      },
+      {
+        "target": "GL-Batch-Open",
+        "line": 390
+      },
+      {
+        "target": "get-batch",
+        "line": 393
+      },
+      {
+        "target": "GL-Batch-Close",
+        "line": 395
+      },
+      {
+        "target": "gl050c",
+        "line": 399
+      },
+      {
+        "target": "gl050d",
+        "line": 402
+      },
+      {
+        "target": "proof-all",
+        "line": 405
+      },
+      {
+        "target": "gl050d",
+        "line": 411
+      },
+      {
+        "target": "GL-Batch-Rewrite",
+        "line": 416
+      },
+      {
+        "target": "GL-Batch-Close",
+        "line": 417
+      },
+      {
+        "target": "GL-Batch-Read-Indexed",
+        "line": 438
+      },
+      {
+        "target": "GL-Batch-Read-Next",
+        "line": 481
+      },
+      {
+        "target": "gl050d",
+        "line": 491
+      },
+      {
+        "target": "GL-Batch-Rewrite",
+        "line": 492
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 502
+      },
+      {
+        "target": "help-outline",
+        "line": 505
+      },
+      {
+        "target": "batch-amendment",
+        "line": 506
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 511
+      },
+      {
+        "target": "GL-Posting-Open",
+        "line": 550
+      },
+      {
+        "target": "GL-Posting-Read-Next",
+        "line": 576
+      },
+      {
+        "target": "zz050-Validate-Date",
+        "line": 594
+      },
+      {
+        "target": "accept-account",
+        "line": 615
+      },
+      {
+        "target": "get-description",
+        "line": 628
+      },
+      {
+        "target": "accept-money8s2",
+        "line": 663
+      },
+      {
+        "target": "net",
+        "line": 701
+      },
+      {
+        "target": "gross",
+        "line": 705
+      },
+      {
+        "target": "accept-money8s2",
+        "line": 720
+      },
+      {
+        "target": "GL-Posting-Rewrite",
+        "line": 762
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 807
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 820
+      },
+      {
+        "target": "GL-Posting-Close",
+        "line": 821
+      },
+      {
+        "target": "accept-money9",
+        "line": 907
+      },
+      {
+        "target": "accept-money9",
+        "line": 921
+      },
+      {
+        "target": "help-outline",
+        "line": 956
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 974
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 981
+      },
+      {
+        "target": "GL-Posting-Open-Input",
+        "line": 982
+      },
+      {
+        "target": "batch-print",
+        "line": 984
+      },
+      {
+        "target": "GL-Posting-Close",
+        "line": 990
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 991
+      },
+      {
+        "target": "headings",
+        "line": 1003
+      },
+      {
+        "target": "GL-Posting-Read-Next",
+        "line": 1009
+      },
+      {
+        "target": "get-a-batch",
+        "line": 1019
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 1021
+      },
+      {
+        "target": "get-description",
+        "line": 1055
+      },
+      {
+        "target": "headings",
+        "line": 1062
+      },
+      {
+        "target": "GL-Batch-Read-Indexed",
+        "line": 1071
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 1083
+      },
+      {
+        "target": "headings",
+        "line": 1113
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 1143
+      },
+      {
+        "target": "GL-Nominal-Read-Indexed",
+        "line": 1157
+      },
+      {
+        "target": "maps03",
+        "line": 1204
+      },
+      {
+        "target": "maps03",
+        "line": 1218
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 124
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

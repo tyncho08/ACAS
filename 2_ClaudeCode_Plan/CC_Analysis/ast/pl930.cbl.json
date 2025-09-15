@@ -1,0 +1,322 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl",
+  "fileName": "pl930.cbl",
+  "fileHash": "f16a8c7e335e5aa0b63ae8cab50a7e3b7de9018891330ba169841ca0ea04d873",
+  "timestamp": "2025-09-15T19:46:23.610Z",
+  "parseTime": 53,
+  "lines": {
+    "total": 495,
+    "code": 301,
+    "comment": 192,
+    "blank": 2
+  },
+  "programId": "pl930",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:87: error: envdiv.cob: No such file or directory\n   85 | *>===============================\n   86 | *>\n   87 >  copy \"envdiv.cob\".\n   88 |  input-output            section.\n   89 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:96: error: selprint.cob: No such file or directory\n   94 | *> copy \"selpl.cob\".\n   95 | *> copy \"selpay.cob\".\n   96 >  copy \"selprint.cob\".\n   97 |  data                    division.\n   98 | *>===============================\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:105: error: fdprint.cob: No such file or directory\n  103 | *> copy \"fdpl.cob\".\n  104 | *> copy \"fdpay.cob\".\n  105 >  copy \"fdprint.cob\".\n  106 | *>\n  107 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:110: error: print-spool-command.cob: No such file or directory\n  108 | *>----------------------\n  109 |  77  prog-name           pic x(15) value \"PL930 (3.02.09)\".\n  110 >  copy \"print-spool-command.cob\".\n  111 | *>\n  112 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:112: error: wsfnctn.cob: No such file or directory\n  110 |  copy \"print-spool-command.cob\".\n  111 | *>\n  112 >  copy \"wsfnctn.cob\".\n  113 | *> copy \"wsoi.cob\".\n  114 |  copy \"plwsoi.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:114: error: plwsoi.cob: No such file or directory\n  112 |  copy \"wsfnctn.cob\".\n  113 | *> copy \"wsoi.cob\".\n  114 >  copy \"plwsoi.cob\".\n  115 | *>\n  116 | *> Ex FDs\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:118: error: wspl.cob: No such file or directory\n  116 | *> Ex FDs\n  117 | *>\n  118 >  copy \"wspl.cob\".     *> WS-Purch-Record.\n  119 |  copy \"plwspay.cob\".  *> Pay-Record.\n  120 |  01  WS-Pay-Record  redefines Pay-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:119: error: plwspay.cob: No such file or directory\n  117 | *>\n  118 |  copy \"wspl.cob\".     *> WS-Purch-Record.\n  119 >  copy \"plwspay.cob\".  *> Pay-Record.\n  120 |  01  WS-Pay-Record  redefines Pay-Record.\n  121 |      03  filler     pic x(238).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:147: error: Test-Data-Flags.cob: No such file or directory\n  145 |      03  WS-OTM5-Record         pic x.\n  146 | *>\n  147 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  148 | *>\n  149 |  01  ws-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:178: error: wsmaps03.cob: No such file or directory\n  176 |          05  filler          pic x.\n  177 |          05  ws-intl-days    pic xx.\n  178 >  copy \"wsmaps03.cob\".\n  179 | *>\n  180 | *> 01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:250: error: wscall.cob: No such file or directory\n  248 | *>==============\n  249 | *>\n  250 >  copy \"wscall.cob\".\n  251 |  copy \"wssystem.cob\".\n  252 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:251: error: wssystem.cob: No such file or directory\n  249 | *>\n  250 |  copy \"wscall.cob\".\n  251 >  copy \"wssystem.cob\".\n  252 |  copy \"wsnames.cob\".\n  253 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:252: error: wsnames.cob: No such file or directory\n  250 |  copy \"wscall.cob\".\n  251 |  copy \"wssystem.cob\".\n  252 >  copy \"wsnames.cob\".\n  253 | *>\n  254 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:493: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  491 |      exit     section.\n  492 | *>\n  493 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  494 | *>\n  495 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:120: error: 'Pay-Record' is not defined\n  118 |  copy \"wspl.cob\".     *> WS-Purch-Record.\n  119 |  copy \"plwspay.cob\".  *> Pay-Record.\n  120 >  01  WS-Pay-Record  redefines Pay-Record.\n  121 |      03  filler     pic x(238).\n  122 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:256: error: 'ws-calling-data' is not defined\n  254 |  01  to-day              pic x(10).\n  255 | *>\n  256 >  procedure division using ws-calling-data\n  257 |                           system-record\n  258 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:257: error: 'system-record' is not defined\n  255 | *>\n  256 |  procedure division using ws-calling-data\n  257 >                           system-record\n  258 |                           to-day\n  259 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:259: error: 'file-defs' is not defined\n  257 |                           system-record\n  258 |                           to-day\n  259 >                           file-defs.\n  260 | *>=======================================\n  261 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in section 'init-process':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:271: error: 'File-Key-No' is not defined\n  269 | *> Put the above back it even if does not show up on screen.\n  270 | *>\n  271 >      move     1 to File-Key-No.  *> Good for all files/tables used here.\n  272 |      move     prog-name  to  l1-prog.\n  273 |      perform  zz070-Convert-Date.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:275: error: 'usera' is not defined\n  273 |      perform  zz070-Convert-Date.\n  274 |      move     ws-date     to  l1-date.\n  275 >      move     usera to  l2-user.\n  276 | *>\n  277 |      move     Print-Spool-Name to PSN.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:277: error: 'Print-Spool-Name' is not defined\n  275 |      move     usera to  l2-user.\n  276 | *>\n  277 >      move     Print-Spool-Name to PSN.\n  278 |      perform  Purch-Open-Input.  *> open input purchase-file  pay-file.\n  279 |      perform  Payments-Open-Input.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:277: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:280: error: 'print-file' is not defined\n  278 |      perform  Purch-Open-Input.  *> open input purchase-file  pay-file.\n  279 |      perform  Payments-Open-Input.\n  280 >      open     output print-file.\n  281 |      perform  headings.\n  282 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:280: error: 'print-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in paragraph 'read-purchase':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:285: error: 'fs-reply' is not defined\n  283 |  read-purchase.\n  284 |     perform   Payments-Read-Next.  *> read pay-file  next  record at end\n  285 >     if        fs-reply = 10\n  286 |               go to  main-end.\n  287 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in paragraph 'skip-pay-read':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:291: error: 'print-record' is not defined\n  289 | *>\n  290 |      if       line-cnt not = 5\n  291 >               move  spaces  to  print-record\n  292 |               write print-record after 1.\n  293 |      add      1 to line-cnt.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:294: error: 'pay-supl-key' is not defined\n  292 |               write print-record after 1.\n  293 |      add      1 to line-cnt.\n  294 >      move     pay-supl-key  to  WS-Purch-Key.\n  295 |      perform  Purch-Read-Indexed.  *> read purchase-file invalid key\n  296 |      if       fs-reply = 21 or = 23\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:294: error: 'WS-Purch-Key' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:297: error: 'purch-name' is not defined\n  295 |      perform  Purch-Read-Indexed.  *> read purchase-file invalid key\n  296 |      if       fs-reply = 21 or = 23\n  297 >               move all \"Z\" to WS-Purch-Key purch-name.\n  298 |      move     WS-Purch-Key  to  l5-key.\n  299 |      move     purch-name to  l5-supplier.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:303: error: 'pay-nos' is not defined\n  301 |      move     spaces  to  l5-key.\n  302 |      move     1  to  z.\n  303 >      move     pay-nos to a.\n  304 |      string   pay-supl-key delimited by size\n  305 |               \"/\"          delimited by size\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in paragraph 'print-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:310: error: 'pay-value' is not defined\n  308 | *>\n  309 |  print-loop.\n  310 >      if       pay-value (z) = zero\n  311 |               go to  loop-back.\n  312 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:313: error: 'pay-sortcode' is not defined\n  311 |               go to  loop-back.\n  312 | *>\n  313 >      if       pay-sortcode not = zero\n  314 |               move \"B\" to l5-method\n  315 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:318: error: 'pay-invoice' is not defined\n  316 |               move \"C\" to l5-method\n  317 |      end-if\n  318 >      move     pay-invoice (z) to l5-invoice.\n  319 |      move     pay-folio (z)   to l5-folio.\n  320 |      move     pay-date        to u-bin.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:319: error: 'pay-folio' is not defined\n  317 |      end-if\n  318 |      move     pay-invoice (z) to l5-invoice.\n  319 >      move     pay-folio (z)   to l5-folio.\n  320 |      move     pay-date        to u-bin.\n  321 |      perform  zz060-Convert-Date.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:320: error: 'pay-date' is not defined\n  318 |      move     pay-invoice (z) to l5-invoice.\n  319 |      move     pay-folio (z)   to l5-folio.\n  320 >      move     pay-date        to u-bin.\n  321 |      perform  zz060-Convert-Date.\n  322 |      move     ws-date  to  l5-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:320: error: 'u-bin' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:324: error: 'pay-period' is not defined\n  322 |      move     ws-date  to  l5-date.\n  323 | *>\n  324 >      if       pay-period (z) = zero\n  325 |               move  pay-value (z)  to  bal-0\n  326 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:353: error: 'Page-Lines' is not defined\n  351 |      write    print-record  from  line-5 after 1.\n  352 |      add      1 to line-cnt.\n  353 >      if       line-cnt > Page-Lines\n  354 |               perform  headings.\n  355 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in paragraph 'loop-back':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:365: error: 'pay-cont' is not defined\n  363 |      if       z  <  10\n  364 |               go to  print-loop.\n  365 >      if       pay-cont = \"C\"\n  366 |               go to process-cont.\n  367 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:392: error: 'print-file' is not a file name\n  390 |      write    print-record  from  line-7 after 1.\n  391 |      write    print-record  from  line-6 after 1.\n  392 >      close    print-file.    *> purchase-file pay-file.\n  393 |      perform  Purch-Close.\n  394 |      perform  Payments-Close.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:395: error: 'Print-Report' is not defined\n  393 |      perform  Purch-Close.\n  394 |      perform  Payments-Close.\n  395 >      call     \"SYSTEM\" using Print-Report.\n  396 |      exit     program.\n  397 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in section 'zz060-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:430: error: 'u-date' is not defined\n  428 | *>\n  429 |      perform  maps04.\n  430 >      if       u-date = spaces\n  431 |               move spaces to ws-Date\n  432 |               go to zz060-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:435: error: 'Date-Form' is not defined\n  433 |      move     u-date to ws-date.\n  434 | *>\n  435 >      if       Date-Form = zero\n  436 |               move 1 to Date-Form.\n  437 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:437: error: 'Date-UK' is not defined\n  435 |      if       Date-Form = zero\n  436 |               move 1 to Date-Form.\n  437 >      if       Date-UK\n  438 |               go to zz060-Exit.\n  439 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:439: error: 'Date-USA' is not defined\n  437 |      if       Date-UK\n  438 |               go to zz060-Exit.\n  439 >      if       Date-USA                *> swap month and days\n  440 |               move ws-days to ws-swap\n  441 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in section 'maps04':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:488: error: 'maps03-ws' is not defined\n  486 | *>*******************\n  487 | *>\n  488 >      call     \"maps04\"  using  maps03-ws.\n  489 | *>\n  490 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in section 'init-process':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:278: error: 'Purch-Open-Input' is not defined\n  276 | *>\n  277 |      move     Print-Spool-Name to PSN.\n  278 >      perform  Purch-Open-Input.  *> open input purchase-file  pay-file.\n  279 |      perform  Payments-Open-Input.\n  280 |      open     output print-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:279: error: 'Payments-Open-Input' is not defined\n  277 |      move     Print-Spool-Name to PSN.\n  278 |      perform  Purch-Open-Input.  *> open input purchase-file  pay-file.\n  279 >      perform  Payments-Open-Input.\n  280 |      open     output print-file.\n  281 |      perform  headings.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in paragraph 'read-purchase':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:284: error: 'Payments-Read-Next' is not defined\n  282 | *>\n  283 |  read-purchase.\n  284 >     perform   Payments-Read-Next.  *> read pay-file  next  record at end\n  285 |     if        fs-reply = 10\n  286 |               go to  main-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in paragraph 'skip-pay-read':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:295: error: 'Purch-Read-Indexed' is not defined\n  293 |      add      1 to line-cnt.\n  294 |      move     pay-supl-key  to  WS-Purch-Key.\n  295 >      perform  Purch-Read-Indexed.  *> read purchase-file invalid key\n  296 |      if       fs-reply = 21 or = 23\n  297 |               move all \"Z\" to WS-Purch-Key purch-name.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:393: error: 'Purch-Close' is not defined\n  391 |      write    print-record  from  line-6 after 1.\n  392 |      close    print-file.    *> purchase-file pay-file.\n  393 >      perform  Purch-Close.\n  394 |      perform  Payments-Close.\n  395 |      call     \"SYSTEM\" using Print-Report.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:394: error: 'Payments-Close' is not defined\n  392 |      close    print-file.    *> purchase-file pay-file.\n  393 |      perform  Purch-Close.\n  394 >      perform  Payments-Close.\n  395 |      call     \"SYSTEM\" using Print-Report.\n  396 |      exit     program.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:87: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:96: error: selprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:105: error: fdprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:110: error: print-spool-command.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:112: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:114: error: plwsoi.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:118: error: wspl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:119: error: plwspay.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:147: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:178: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:250: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:251: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:252: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:493: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:120: error: 'Pay-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:256: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:257: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:259: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:271: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:275: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:277: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:277: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:280: error: 'print-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:280: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:285: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:291: error: 'print-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:294: error: 'pay-supl-key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:294: error: 'WS-Purch-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:297: error: 'purch-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:303: error: 'pay-nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:310: error: 'pay-value' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:313: error: 'pay-sortcode' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:318: error: 'pay-invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:319: error: 'pay-folio' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:320: error: 'pay-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:320: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:324: error: 'pay-period' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:353: error: 'Page-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:365: error: 'pay-cont' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:392: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:395: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:430: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:435: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:437: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:439: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:488: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:278: error: 'Purch-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:279: error: 'Payments-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:284: error: 'Payments-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:295: error: 'Purch-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:393: error: 'Purch-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:394: error: 'Payments-Close' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:87: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:96: error: selprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:105: error: fdprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:110: error: print-spool-command.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:112: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:114: error: plwsoi.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:118: error: wspl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:119: error: plwspay.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:147: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:178: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:250: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:251: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:252: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:493: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:120: error: 'Pay-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:256: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:257: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:259: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:271: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:275: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:277: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:277: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:280: error: 'print-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:280: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:285: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:291: error: 'print-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:294: error: 'pay-supl-key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:294: error: 'WS-Purch-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:297: error: 'purch-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:303: error: 'pay-nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:310: error: 'pay-value' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:313: error: 'pay-sortcode' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:318: error: 'pay-invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:319: error: 'pay-folio' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:320: error: 'pay-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:320: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:324: error: 'pay-period' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:353: error: 'Page-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:365: error: 'pay-cont' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:392: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:395: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:430: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:435: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:437: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:439: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:488: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:278: error: 'Purch-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:279: error: 'Payments-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:284: error: 'Payments-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:295: error: 'Purch-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:393: error: 'Purch-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl:394: error: 'Payments-Close' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 38,
+    "cognitive": 87,
+    "halstead": {
+      "uniqueOperators": 10,
+      "uniqueOperands": 46,
+      "totalOperators": 158,
+      "totalOperands": 94,
+      "vocabulary": 56,
+      "length": 252,
+      "volume": 1463,
+      "difficulty": 10.22,
+      "effort": 14953,
+      "timeToProgram": 831,
+      "deliveredBugs": 0.488
+    },
+    "maintainability": 73
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 395
+      },
+      {
+        "target": "maps04",
+        "line": 488
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 77
+      },
+      {
+        "name": "envdiv",
+        "line": 87
+      },
+      {
+        "name": "selpl",
+        "line": 94
+      },
+      {
+        "name": "selpay",
+        "line": 95
+      },
+      {
+        "name": "selprint",
+        "line": 96
+      },
+      {
+        "name": "fdpl",
+        "line": 103
+      },
+      {
+        "name": "fdpay",
+        "line": 104
+      },
+      {
+        "name": "fdprint",
+        "line": 105
+      },
+      {
+        "name": "print-spool-command",
+        "line": 110
+      },
+      {
+        "name": "wsfnctn",
+        "line": 112
+      },
+      {
+        "name": "wsoi",
+        "line": 113
+      },
+      {
+        "name": "plwsoi",
+        "line": 114
+      },
+      {
+        "name": "wspl",
+        "line": 118
+      },
+      {
+        "name": "plwspay",
+        "line": 119
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 147
+      },
+      {
+        "name": "wsmaps03",
+        "line": 178
+      },
+      {
+        "name": "wscall",
+        "line": 250
+      },
+      {
+        "name": "wssystem",
+        "line": 251
+      },
+      {
+        "name": "wsnames",
+        "line": 252
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 493
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 266
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "line": 273
+      },
+      {
+        "target": "Purch-Open-Input",
+        "line": 278
+      },
+      {
+        "target": "Payments-Open-Input",
+        "line": 279
+      },
+      {
+        "target": "headings",
+        "line": 281
+      },
+      {
+        "target": "Payments-Read-Next",
+        "line": 284
+      },
+      {
+        "target": "Purch-Read-Indexed",
+        "line": 295
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 321
+      },
+      {
+        "target": "headings",
+        "line": 354
+      },
+      {
+        "target": "Payments-Read-Next",
+        "line": 373
+      },
+      {
+        "target": "Purch-Close",
+        "line": 393
+      },
+      {
+        "target": "Payments-Close",
+        "line": 394
+      },
+      {
+        "target": "maps04",
+        "line": 429
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 107
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

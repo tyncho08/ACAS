@@ -1,0 +1,217 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl",
+  "fileName": "slautogenRES.cbl",
+  "fileHash": "bb3255e4d514c13f081ceb09b9ec14a22678aa75247be7ae6b1696ed97d38a0e",
+  "timestamp": "2025-09-15T19:46:07.599Z",
+  "parseTime": 32,
+  "lines": {
+    "total": 231,
+    "code": 111,
+    "comment": 119,
+    "blank": 1
+  },
+  "programId": "slautogenRES",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:93: error: envdiv.cob: No such file or directory\n   91 | *>-------------------\n   92 | *>\n   93 >  copy \"envdiv.cob\".\n   94 |  input-output            section.\n   95 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:100: error: slSELautogen.cob: No such file or directory\n   98 | *>-----------\n   99 | *>\n  100 >  copy \"slSELautogen.cob\".\n  101 |      select  Agen-Invoice-File-Seq  assign    \"slautogen.seq\"\n  102 |                                 organization  sequential\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:111: error: slFDautogen.cob: No such file or directory\n  109 | *>-----------\n  110 | *>\n  111 >  copy \"slFDautogen.cob\".\n  112 |  fd  Agen-Invoice-File-Seq.\n  113 |  copy \"slwsinv.cob\" replacing SInvoice-Header by WS-Invoice-Record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:114: error: slwsinv.cob: No such file or directory\n  112 |  fd  Agen-Invoice-File-Seq.\n  113 |  copy \"slwsinv.cob\" replacing SInvoice-Header by WS-Invoice-Record\n  114 >                               SInvoice-Bodies by WS-Invoice-Bodies.\n  115 | *>\n  116 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:137: error: Test-Data-Flags.cob: No such file or directory\n  135 |  01  SO-Print            pic x(160)    value spaces.\n  136 | *>\n  137 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  138 | *>\n  139 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:139: error: wsfnctn.cob: No such file or directory\n  137 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  138 | *>\n  139 >  copy \"wsfnctn.cob\".\n  140 |  copy \"wsnames.cob\".\n  141 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:140: error: wsnames.cob: No such file or directory\n  138 | *>\n  139 |  copy \"wsfnctn.cob\".\n  140 >  copy \"wsnames.cob\".\n  141 |  copy \"wscall.cob\".\n  142 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:141: error: wscall.cob: No such file or directory\n  139 |  copy \"wsfnctn.cob\".\n  140 |  copy \"wsnames.cob\".\n  141 >  copy \"wscall.cob\".\n  142 | *>\n  143 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:226: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  224 |      goback.\n  225 | *>\n  226 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_slautogenS now\n  227 | *>\n  228 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:116: error: RECORD description missing or invalid\n  114 |                               SInvoice-Bodies by WS-Invoice-Bodies.\n  115 | *>\n  116 >  working-storage section.\n  117 | *>----------------------\n  118 |  77  prog-name           pic x(22)    value \"slautogenRES (3.02.00)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:101: error: missing file description for FILE Agen-Invoice-File-Seq\n   99 | *>\n  100 |  copy \"slSELautogen.cob\".\n  101 >      select  Agen-Invoice-File-Seq  assign    \"slautogen.seq\"\n  102 |                                 organization  sequential\n  103 |                                 status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:103: error: 'FS-Reply' is not defined\n  101 |      select  Agen-Invoice-File-Seq  assign    \"slautogen.seq\"\n  102 |                                 organization  sequential\n  103 >                                 status        FS-Reply.\n  104 | *>\n  105 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:155: error: 'WS-Log-System' is not defined\n  153 |  aa000-Main-Start.\n  154 |      perform  zz020-Get-Program-Args.\n  155 >      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  156 |      move     16     to WS-Log-File-no.  *> for FHlogger\n  157 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:156: error: 'WS-Log-File-no' is not defined\n  154 |      perform  zz020-Get-Program-Args.\n  155 |      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  156 >      move     16     to WS-Log-File-no.  *> for FHlogger\n  157 | *>\n  158 |      move     spaces to SO-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:169: error: 'Agen-Invoice-File' is not defined\n  167 |               move     \"No slautogen file to process\" to SO-Print\n  168 |               perform  Call-Sysout\n  169 >               close    Agen-Invoice-File\n  170 |               move     \"CLOSE \" to SO-Print\n  171 |               perform  Call-Sysout\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:169: error: 'Agen-Invoice-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:174: error: 'Agen-Invoice-File' is not a file name\n  172 |               goback\n  173 |      end-if.\n  174 >      open     output   Agen-Invoice-File.\n  175 |      if       FS-Reply not = zeros\n  176 |               move     spaces to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl: in paragraph 'aa010-Read-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:201: error: 'Agen-Invoice-Record' is not defined\n  199 |               end-if\n  200 |               add      1 to WS-Rec-Cnt-In\n  201 >               write    Agen-Invoice-Record from WS-Invoice-Record\n  202 |               if       FS-Reply not = zero\n  203 |                        move     SY006 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:201: error: 'WS-Invoice-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl: in paragraph 'aa020-Finish-Off':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:212: error: 'Agen-Invoice-File' is not a file name\n  210 | aa020-Finish-Off.\n  211 |      close    Agen-Invoice-File-Seq\n  212 >               Agen-Invoice-File.\n  213 |      move     spaces to SO-Print.\n  214 |      string\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:154: error: 'zz020-Get-Program-Args' is not defined\n  152 | *>\n  153 |  aa000-Main-Start.\n  154 >      perform  zz020-Get-Program-Args.\n  155 |      move     3      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  156 |      move     16     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:93: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:100: error: slSELautogen.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:111: error: slFDautogen.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:114: error: slwsinv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:137: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:139: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:140: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:141: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:226: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:116: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:101: error: missing file description for FILE Agen-Invoice-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:103: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:155: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:156: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:169: error: 'Agen-Invoice-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:169: error: 'Agen-Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:174: error: 'Agen-Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:201: error: 'Agen-Invoice-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:201: error: 'WS-Invoice-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:212: error: 'Agen-Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:154: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:93: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:100: error: slSELautogen.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:111: error: slFDautogen.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:114: error: slwsinv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:137: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:139: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:140: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:141: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:226: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:116: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:101: error: missing file description for FILE Agen-Invoice-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:103: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:155: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:156: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:169: error: 'Agen-Invoice-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:169: error: 'Agen-Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:174: error: 'Agen-Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:201: error: 'Agen-Invoice-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:201: error: 'WS-Invoice-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:212: error: 'Agen-Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slautogenRES.cbl:154: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 9,
+    "cognitive": 19,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 56,
+      "totalOperators": 54,
+      "totalOperands": 108,
+      "vocabulary": 64,
+      "length": 162,
+      "volume": 972,
+      "difficulty": 7.71,
+      "effort": 7498,
+      "timeToProgram": 417,
+      "deliveredBugs": 0.324
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 229
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23
+      },
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 93
+      },
+      {
+        "name": "slSELautogen",
+        "line": 100
+      },
+      {
+        "name": "slFDautogen",
+        "line": 111
+      },
+      {
+        "name": "slwsinv",
+        "line": 113
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 137
+      },
+      {
+        "name": "wsfnctn",
+        "line": 139
+      },
+      {
+        "name": "wsnames",
+        "line": 140
+      },
+      {
+        "name": "wscall",
+        "line": 141
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 226
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 154
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 161
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 168
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 171
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 180
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 182
+      },
+      {
+        "target": "forever",
+        "line": 188
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 197
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 204
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 220
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 222
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Agen-Invoice-File-Seq",
+        "line": 112
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 116
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

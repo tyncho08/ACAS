@@ -1,0 +1,608 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl",
+  "fileName": "irs.cbl",
+  "fileHash": "2ad12908be3145b307e99a2cbac76d3411f542a3be33d34838868bd0d3712598",
+  "timestamp": "2025-09-15T19:46:19.196Z",
+  "parseTime": 142,
+  "lines": {
+    "total": 1040,
+    "code": 607,
+    "comment": 432,
+    "blank": 1
+  },
+  "programId": "irs",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:227: error: envdiv.cob: No such file or directory\n  225 | *>*******************\n  226 | *>\n  227 >  copy \"envdiv.cob\".\n  228 |  data division.\n  229 | *>************\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:257: error: sys-params-versioning.cob: No such file or directory\n  255 | *>   Using a file update program.\n  256 | *>\n  257 >  copy \"sys-params-versioning.cob\".\n  258 | *>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  259 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:331: error: wsmaps03.cob: No such file or directory\n  329 |  *>    03  ws-work2        pic s9(5)   comp.\n  330 | *>\n  331 >  copy \"wsmaps03.cob\".\n  332 |  copy \"wscall.cob\".\n  333 |  copy \"wstime.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:332: error: wscall.cob: No such file or directory\n  330 | *>\n  331 |  copy \"wsmaps03.cob\".\n  332 >  copy \"wscall.cob\".\n  333 |  copy \"wstime.cob\".\n  334 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:333: error: wstime.cob: No such file or directory\n  331 |  copy \"wsmaps03.cob\".\n  332 |  copy \"wscall.cob\".\n  333 >  copy \"wstime.cob\".\n  334 |  copy \"wsfnctn.cob\".\n  335 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:334: error: wsfnctn.cob: No such file or directory\n  332 |  copy \"wscall.cob\".\n  333 |  copy \"wstime.cob\".\n  334 >  copy \"wsfnctn.cob\".\n  335 | *>\n  336 |  01  WS-Work-Fields.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:390: error: wssystem.cob: No such file or directory\n  388 |                         PL-App-Created by IRS-PL-App-Created\n  389 |                         PL-Approp-AC   by IRS-PL-Approp-AC\n  390 >                         1st-Time-Flag  by IRS-First-Time-Flag.\n  391 | *>\n  392 |  copy \"irswssystem.cob\"\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:393: error: irswssystem.cob: No such file or directory\n  391 | *>\n  392 |  copy \"irswssystem.cob\"\n  393 >               replacing system-record  by IRS-System-Params. *> (01 level..\n  394 | *>\n  395 |  copy \"wsnames.cob\".      *> Ditto\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:395: error: wsnames.cob: No such file or directory\n  393 |               replacing system-record  by IRS-System-Params. *> (01 level..\n  394 | *>\n  395 >  copy \"wsnames.cob\".      *> Ditto\n  396 | *>\n  397 |  01  Dummies-For-Unused-FH-Calls.      *> IRS call blk at zz100-ACAS-IRS-..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:404: error: Test-Data-Flags.cob: No such file or directory\n  402 |      03  Final-Record          pic x.\n  403 | *>\n  404 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  405 | *>\n  406 |  01  to-day              pic x(10).                   *> in acas format\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:1036: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory\n 1034 |      exit     section.\n 1035 | *>\n 1036 >  copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n 1037 | *>\n 1038 |  copy \"Proc-Get-Env-Set-Files.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:1038: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n 1036 |  copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n 1037 | *>\n 1038 >  copy \"Proc-Get-Env-Set-Files.cob\".\n 1039 | *>\n 1040 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:434: error: 'Run-Date' is not defined\n  432 |      03  pic x(14) from prog-name          line  1 col 1     blank screen..\n  433 |      03  value \"IRS System Menu\"                   col 34 foreground-colo..\n  434 >      03  pic x(8) from Run-Date                    col 73.  *> uses the I..\n  435 |      03  value \"Client -\"                  line  3 col 1.\n  436 |      03  pic x(29) from Client                     col 10 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:436: error: 'Client' is not defined\n  434 |      03  pic x(8) from Run-Date                    col 73.  *> uses the I..\n  435 |      03  value \"Client -\"                  line  3 col 1.\n  436 >      03  pic x(29) from Client                     col 10 foreground-colo..\n  437 |      03  value \"Start date -\"                      col 39.\n  438 |      03  pic x(8) from Start-Date                  col 52 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:438: error: 'Start-Date' is not defined\n  436 |      03  pic x(29) from Client                     col 10 foreground-colo..\n  437 |      03  value \"Start date -\"                      col 39.\n  438 >      03  pic x(8) from Start-Date                  col 52 foreground-colo..\n  439 |      03  value \"End date -\"                        col 62.\n  440 |      03  pic x(8) from End-Date                    col 73 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:440: error: 'End-Date' is not defined\n  438 |      03  pic x(8) from Start-Date                  col 52 foreground-colo..\n  439 |      03  value \"End date -\"                        col 62.\n  440 >      03  pic x(8) from End-Date                    col 73 foreground-colo..\n  441 |      03  value \"Select the required function    [\"\n  442 |                                            line  5 col 1.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:466: error: 'wse-year' is not defined\n  464 |                                                 highlight foreground-colo..\n  465 |      03  value \"Copyright (c) 1976-\"       line 24 col 01 foreground-colo..\n  466 >      03  pic 9(4)  from wse-year                   col 20 foreground-colo..\n  467 |      03  value \" Applewood Computers\"              col 24 foreground-colo..\n  468 |      03  pic xx    from maps-ser-xx                col 74 foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:468: error: 'maps-ser-xx' is not defined\n  466 |      03  pic 9(4)  from wse-year                   col 20 foreground-colo..\n  467 |      03  value \" Applewood Computers\"              col 24 foreground-colo..\n  468 >      03  pic xx    from maps-ser-xx                col 74 foreground-colo..\n  469 |      03  pic 9(4)  from curs2                      col 76 foreground-colo..\n  470 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:469: error: 'curs2' is not defined\n  467 |      03  value \" Applewood Computers\"              col 24 foreground-colo..\n  468 |      03  pic xx    from maps-ser-xx                col 74 foreground-colo..\n  469 >      03  pic 9(4)  from curs2                      col 76 foreground-colo..\n  470 | *>\n  471 |  procedure division.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in section 'irs-main':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:481: error: 'wse-date-block' is not defined\n  479 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n  480 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  481 >      move     function current-date to wse-date-block.\n  482 |      perform  zz020-Get-Program-Args.\n  483 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'aa005-Open-System':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:496: error: 'File-System-Used' is not defined\n  494 | *>\n  495 |  aa005-Open-System.                    *> First get system param cobol fi..\n  496 >      move     zeros to File-System-Used\n  497 |                        File-Duplicates-In-Use.\n  498 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:497: error: 'File-Duplicates-In-Use' is not defined\n  495 |  aa005-Open-System.                    *> First get system param cobol fi..\n  496 |      move     zeros to File-System-Used\n  497 >                        File-Duplicates-In-Use.\n  498 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n  499 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:498: error: 'FA-RDBMS-Flat-Statuses' is not defined\n  496 |      move     zeros to File-System-Used\n  497 |                        File-Duplicates-In-Use.\n  498 >      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n  499 |      move     1 to File-Key-No.\n  500 |      perform  acas000-open-Input.      *> as Input as I/o may create\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:499: error: 'File-Key-No' is not defined\n  497 |                        File-Duplicates-In-Use.\n  498 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n  499 >      move     1 to File-Key-No.\n  500 |      perform  acas000-open-Input.      *> as Input as I/o may create\n  501 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:501: error: 'fs-reply' is not defined\n  499 |      move     1 to File-Key-No.\n  500 |      perform  acas000-open-Input.      *> as Input as I/o may create\n  501 >      if       fs-reply not = zero\n  502 |  *>             perform acas000-close\n  503 |               move    \"sys002\" to ws-called     *> create param file by r..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:503: error: 'ws-called' is not defined\n  501 |      if       fs-reply not = zero\n  502 |  *>             perform acas000-close\n  503 >               move    \"sys002\" to ws-called     *> create param file by r..\n  504 |               call    ws-called using ws-calling-data file-defs\n  505 |               perform acas000-open\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:504: error: 'ws-calling-data' is not defined\n  502 |  *>             perform acas000-close\n  503 |               move    \"sys002\" to ws-called     *> create param file by r..\n  504 >               call    ws-called using ws-calling-data file-defs\n  505 |               perform acas000-open\n  506 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:504: error: 'file-defs' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'aa010-Get-System-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:521: error: 'WS-System-Record' is not defined\n  519 |               go to aa010-Get-System-Recs\n  520 |      end-if.\n  521 >      move     WS-System-Record to WS-Temp-System-Rec.   *> save in case o..\n  522 | *>\n  523 | *> BY PASS THIS CODE AS THE FILE WILL ALWAYS BE CURRENT.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:561: error: 'ACAS-Run-Date' is not defined\n  559 | *>  Back to work.\n  560 | *>\n  561 >      move     ACAS-Run-Date to u-bin.\n  562 |      call     \"maps04\" using maps03-ws.\n  563 |      move     u-date to to-day.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:561: error: 'u-bin' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:562: error: 'maps03-ws' is not defined\n  560 | *>\n  561 |      move     ACAS-Run-Date to u-bin.\n  562 >      call     \"maps04\" using maps03-ws.\n  563 |      move     u-date to to-day.\n  564 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:563: error: 'u-date' is not defined\n  561 |      move     ACAS-Run-Date to u-bin.\n  562 |      call     \"maps04\" using maps03-ws.\n  563 >      move     u-date to to-day.\n  564 | *>\n  565 |      if       ACAS-Op-System = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:565: error: 'ACAS-Op-System' is not defined\n  563 |      move     u-date to to-day.\n  564 | *>\n  565 >      if       ACAS-Op-System = zero\n  566 |               move \"O/S\" to op-display.\n  567 |      if       Linux    move \"Linux\"   to op-display\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:567: error: 'Linux' is not defined\n  565 |      if       ACAS-Op-System = zero\n  566 |               move \"O/S\" to op-display.\n  567 >      if       Linux    move \"Linux\"   to op-display\n  568 |      else if  Windows  move \"Windows\" to op-display\n  569 |      else if  Mac      move \"Mac\"     to op-display\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:568: error: 'Windows' is not defined\n  566 |               move \"O/S\" to op-display.\n  567 |      if       Linux    move \"Linux\"   to op-display\n  568 >      else if  Windows  move \"Windows\" to op-display\n  569 |      else if  Mac      move \"Mac\"     to op-display\n  570 |      else if  Dos      move \"Dos\"     to op-display\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:569: error: 'Mac' is not defined\n  567 |      if       Linux    move \"Linux\"   to op-display\n  568 |      else if  Windows  move \"Windows\" to op-display\n  569 >      else if  Mac      move \"Mac\"     to op-display\n  570 |      else if  Dos      move \"Dos\"     to op-display\n  571 |      else if  OS2      move \"OS/2\"    to op-display\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:570: error: 'Dos' is not defined\n  568 |      else if  Windows  move \"Windows\" to op-display\n  569 |      else if  Mac      move \"Mac\"     to op-display\n  570 >      else if  Dos      move \"Dos\"     to op-display\n  571 |      else if  OS2      move \"OS/2\"    to op-display\n  572 |      else if  Unix     move \"Unix\"    to op-display.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:571: error: 'OS2' is not defined\n  569 |      else if  Mac      move \"Mac\"     to op-display\n  570 |      else if  Dos      move \"Dos\"     to op-display\n  571 >      else if  OS2      move \"OS/2\"    to op-display\n  572 |      else if  Unix     move \"Unix\"    to op-display.\n  573 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:572: error: 'Unix' is not defined\n  570 |      else if  Dos      move \"Dos\"     to op-display\n  571 |      else if  OS2      move \"OS/2\"    to op-display\n  572 >      else if  Unix     move \"Unix\"    to op-display.\n  573 | *>\n  574 |      if       Dos or Windows\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:572: error: invalid conditional expression\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:578: error: invalid conditional expression\n  576 |               move Windows-Pre-EOY-Script-Name  to Script-Pre-EOY-Name\n  577 |               move Windows-Post-EOY-Script-Name to Script-Post-EOY-Name\n  578 >      else if  OS2\n  579 |               move OS2-Backup-Script-Name       to Script-Name\n  580 |               move OS2-Pre-EOY-Script-Name      to Script-Pre-EOY-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'Main-Loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:640: error: 'maps-ser-nn' is not defined\n  638 |  Main-Loop.\n  639 |      move     space to Menu-Reply.\n  640 >      move     maps-ser-nn to curs2.\n  641 |      display  Menu-Screen-1.\n  642 |      if       Param-Restrict = \"N\"\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:642: error: 'Param-Restrict' is not defined\n  640 |      move     maps-ser-nn to curs2.\n  641 |      display  Menu-Screen-1.\n  642 >      if       Param-Restrict = \"N\"\n  643 |               display  spaces at 2001 with erase eol.\n  644 |      accept   Menu-Screen-1.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:655: error: 'IRS-System-Params' is not defined\n  653 |      if       Menu-Reply = \"2\"\n  654 |            or Cob-Crt-Status = Cob-Scr-F2\n  655 >               call   \"irs010\" using IRS-System-Params\n  656 |                                     WS-System-Record   *> ACAS system rec..\n  657 |                                     file-defs\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:742: error: 'ws-term-code' is not defined\n  740 |      if       Menu-Reply = \"Z\"\n  741 |               move     \"00\" to  FA-RDBMS-Flat-Statuses  *> Force Cobol pr..\n  742 >               move     zero to ws-term-code\n  743 |               move     1 to File-Key-No\n  744 |               perform  acas000-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'EOJ':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:771: error: invalid conditional expression\n  769 |      perform  acas000-Rewrite.         *> In case of any changes\n  770 |      perform  acas000-Close.\n  771 >      if       File-System-Used NOT = zero   *> Force RDB processing\n  772 |               move     \"66\" to FA-RDBMS-Flat-Statuses\n  773 |               perform  acas000-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:786: error: invalid conditional expression\n  784 |               else\n  785 |                if      Dos or Windows\n  786 >                        move Script-Name to Full-Backup-Script\n  787 |                else\n  788 |                 if     OS2\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'EOJ-Pre':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:817: error: invalid conditional expression\n  815 |               perform  acas000-Rewrite\n  816 |               perform  acas000-Close\n  817 >               if       File-System-Used NOT = zero   *> Force RDB process..\n  818 |                        move     \"66\" to FA-RDBMS-Flat-Statuses\n  819 |                        perform  acas000-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:831: error: invalid conditional expression\n  829 |               else\n  830 |                if      Dos or Windows\n  831 >                        move Script-Pre-EOY-Name to Run-Pre-Backup\n  832 |                else\n  833 |                 if     OS2\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'EOJ-Post':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:833: error: invalid conditional expression\n  831 |                        move Script-Pre-EOY-Name to Run-Pre-Backup\n  832 |                else\n  833 >                 if     OS2\n  834 |                        move Script-Pre-EOY-Name to Run-Pre-Backup\n  835 |                 end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:853: error: invalid conditional expression\n  851 |               else\n  852 |                if      Dos or Windows\n  853 >                        move Script-Name to Run-Post-Backup\n  854 |                else\n  855 |                 if     OS2\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in section 'zz060-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:878: error: 'Date-Form' is not defined\n  876 |      move     u-date to ws-date.\n  877 | *>\n  878 >      if       Date-Form = zero\n  879 |               move 1 to Date-Form.\n  880 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:880: error: 'Date-UK' is not defined\n  878 |      if       Date-Form = zero\n  879 |               move 1 to Date-Form.\n  880 >      if       Date-UK\n  881 |               go to zz060-Exit.\n  882 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:882: error: 'Date-USA' is not defined\n  880 |      if       Date-UK\n  881 |               go to zz060-Exit.\n  882 >      if       Date-USA                *> swap month and days\n  883 |               move ws-days to ws-swap\n  884 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in section 'zz090-Set-Up-IRS-System-Data':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'zz090-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:937: error: 'ACAS-Pass-Word' is not defined\n  935 |      initialise IRS-System-Params with filler.\n  936 | *>\n  937 >      move     ACAS-Pass-Word to Pass-Word.\n  938 |      move     ACAS-Suser     to Suser.\n  939 |      move     ACAS-Address-1 to Address-1.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:937: error: 'Pass-Word' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:938: error: 'ACAS-Suser' is not defined\n  936 | *>\n  937 |      move     ACAS-Pass-Word to Pass-Word.\n  938 >      move     ACAS-Suser     to Suser.\n  939 |      move     ACAS-Address-1 to Address-1.\n  940 |      move     ACAS-Address-2 to Address-2.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:938: error: 'Suser' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:939: error: 'ACAS-Address-1' is not defined\n  937 |      move     ACAS-Pass-Word to Pass-Word.\n  938 |      move     ACAS-Suser     to Suser.\n  939 >      move     ACAS-Address-1 to Address-1.\n  940 |      move     ACAS-Address-2 to Address-2.\n  941 |      move     ACAS-Address-3 to Address-3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:939: error: 'Address-1' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:940: error: 'ACAS-Address-2' is not defined\n  938 |      move     ACAS-Suser     to Suser.\n  939 |      move     ACAS-Address-1 to Address-1.\n  940 >      move     ACAS-Address-2 to Address-2.\n  941 |      move     ACAS-Address-3 to Address-3.\n  942 |      move     ACAS-Address-4 to Address-4.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:940: error: 'Address-2' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:941: error: 'ACAS-Address-3' is not defined\n  939 |      move     ACAS-Address-1 to Address-1.\n  940 |      move     ACAS-Address-2 to Address-2.\n  941 >      move     ACAS-Address-3 to Address-3.\n  942 |      move     ACAS-Address-4 to Address-4.\n  943 |      move     Vat-Rate-1     to Vat in IRS-System-Params.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:941: error: 'Address-3' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:942: error: 'ACAS-Address-4' is not defined\n  940 |      move     ACAS-Address-2 to Address-2.\n  941 |      move     ACAS-Address-3 to Address-3.\n  942 >      move     ACAS-Address-4 to Address-4.\n  943 |      move     Vat-Rate-1     to Vat in IRS-System-Params.\n  944 |      move     Vat-Rate-2     to Vat2.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:942: error: 'Address-4' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:943: error: 'Vat-Rate-1' is not defined\n  941 |      move     ACAS-Address-3 to Address-3.\n  942 |      move     ACAS-Address-4 to Address-4.\n  943 >      move     Vat-Rate-1     to Vat in IRS-System-Params.\n  944 |      move     Vat-Rate-2     to Vat2.\n  945 |      move     Vat-Rate-3     to Vat3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:943: error: 'Vat IN IRS-System-Params' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:944: error: 'Vat-Rate-2' is not defined\n  942 |      move     ACAS-Address-4 to Address-4.\n  943 |      move     Vat-Rate-1     to Vat in IRS-System-Params.\n  944 >      move     Vat-Rate-2     to Vat2.\n  945 |      move     Vat-Rate-3     to Vat3.\n  946 |      move     ACAS-Print-Spool-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:944: error: 'Vat2' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:945: error: 'Vat-Rate-3' is not defined\n  943 |      move     Vat-Rate-1     to Vat in IRS-System-Params.\n  944 |      move     Vat-Rate-2     to Vat2.\n  945 >      move     Vat-Rate-3     to Vat3.\n  946 |      move     ACAS-Print-Spool-Name\n  947 |                              to Print-Spool-Name.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:945: error: 'Vat3' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:946: error: 'ACAS-Print-Spool-Name' is not defined\n  944 |      move     Vat-Rate-2     to Vat2.\n  945 |      move     Vat-Rate-3     to Vat3.\n  946 >      move     ACAS-Print-Spool-Name\n  947 |                              to Print-Spool-Name.\n  948 |      move     ACAS-Op-System to System-Ops.      *> but move this in as U..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:947: error: 'Print-Spool-Name' is not defined\n  945 |      move     Vat-Rate-3     to Vat3.\n  946 |      move     ACAS-Print-Spool-Name\n  947 >                              to Print-Spool-Name.\n  948 |      move     ACAS-Op-System to System-Ops.      *> but move this in as U..\n  949 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:948: error: 'System-Ops' is not defined\n  946 |      move     ACAS-Print-Spool-Name\n  947 |                              to Print-Spool-Name.\n  948 >      move     ACAS-Op-System to System-Ops.      *> but move this in as U..\n  949 | *>\n  950 | *>  This block from IRS within ACAS param record at IRS-Entry-Block.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:953: error: 'IRS-Client' is not defined\n  951 | *>   Field names have been changed at the COPY verb to prevent duplicates..\n  952 | *>\n  953 >      move     IRS-Client            to Client.\n  954 |      move     IRS-Next-Post         to Next-Post\n  955 |                                        WS-Next-Post. *> used after irs030..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:954: error: 'IRS-Next-Post' is not defined\n  952 | *>\n  953 |      move     IRS-Client            to Client.\n  954 >      move     IRS-Next-Post         to Next-Post\n  955 |                                        WS-Next-Post. *> used after irs030..\n  956 |      move     IRS-Pass-Value        to Pass-Value\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:954: error: 'Next-Post' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:956: error: 'IRS-Pass-Value' is not defined\n  954 |      move     IRS-Next-Post         to Next-Post\n  955 |                                        WS-Next-Post. *> used after irs030..\n  956 >      move     IRS-Pass-Value        to Pass-Value\n  957 |                                        WS-Pass-Value.\n  958 |      move     IRS-Save-Sequ         to Save-Sequ\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:956: error: 'Pass-Value' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:958: error: 'IRS-Save-Sequ' is not defined\n  956 |      move     IRS-Pass-Value        to Pass-Value\n  957 |                                        WS-Pass-Value.\n  958 >      move     IRS-Save-Sequ         to Save-Sequ\n  959 |                                        WS-Save-Sequ.\n  960 |      move     IRS-System-Work-Group to System-Work-Group\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:958: error: 'Save-Sequ' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:960: error: 'IRS-System-Work-Group' is not defined\n  958 |      move     IRS-Save-Sequ         to Save-Sequ\n  959 |                                        WS-Save-Sequ.\n  960 >      move     IRS-System-Work-Group to System-Work-Group\n  961 |                                        WS-System-Work-Group.\n  962 |      move     IRS-PL-App-Created    to PL-App-Created\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:960: error: 'System-Work-Group' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:962: error: 'IRS-PL-App-Created' is not defined\n  960 |      move     IRS-System-Work-Group to System-Work-Group\n  961 |                                        WS-System-Work-Group.\n  962 >      move     IRS-PL-App-Created    to PL-App-Created\n  963 |                                        WS-PL-App-Created.\n  964 |      move     IRS-PL-Approp-AC      to PL-Approp-AC\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:962: error: 'PL-App-Created' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:964: error: 'IRS-PL-Approp-AC' is not defined\n  962 |      move     IRS-PL-App-Created    to PL-App-Created\n  963 |                                        WS-PL-App-Created.\n  964 >      move     IRS-PL-Approp-AC      to PL-Approp-AC\n  965 |                                        WS-PL-Approp-AC.\n  966 |      move     IRS-First-Time-Flag   to First-Time-Flag\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:964: error: 'PL-Approp-AC' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:966: error: 'IRS-First-Time-Flag' is not defined\n  964 |      move     IRS-PL-Approp-AC      to PL-Approp-AC\n  965 |                                        WS-PL-Approp-AC.\n  966 >      move     IRS-First-Time-Flag   to First-Time-Flag\n  967 |                                        WS-First-Time-Flag.\n  968 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:966: error: 'First-Time-Flag' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'zz090-Proc-Start-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:982: error: 'ACAS-Start-Date' is not defined\n  980 | *>\n  981 |  zz090-Proc-Start-Date.\n  982 >      move     ACAS-Start-Date to u-bin.\n  983 |      perform  maps04.\n  984 |      string   u-date (1:6)     delimited by size\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'zz090-Proc-End-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:989: error: 'ACAS-End-Date' is not defined\n  987 |      end-string.\n  988 |  zz090-Proc-End-Date.\n  989 >      move     ACAS-End-Date to u-bin.\n  990 |      perform  maps04.\n  991 |      string   u-date (1:6)     delimited by size\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in section 'irs-main':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:482: error: 'zz020-Get-Program-Args' is not defined\n  480 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  481 |      move     function current-date to wse-date-block.\n  482 >      perform  zz020-Get-Program-Args.\n  483 | *>\n  484 |      accept   ws-env-lines   from lines.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'aa005-Open-System':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:500: error: 'acas000-open-Input' is not defined\n  498 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n  499 |      move     1 to File-Key-No.\n  500 >      perform  acas000-open-Input.      *> as Input as I/o may create\n  501 |      if       fs-reply not = zero\n  502 |  *>             perform acas000-close\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:505: error: 'acas000-open' is not defined\n  503 |               move    \"sys002\" to ws-called     *> create param file by r..\n  504 |               call    ws-called using ws-calling-data file-defs\n  505 >               perform acas000-open\n  506 |      end-if.\n  507 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'aa010-Get-System-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:513: error: 'acas000-Read-Indexed' is not defined\n  511 |      move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n  512 |      move     1 to File-Key-No.\n  513 >      perform  acas000-Read-Indexed.        *> Read Cobol file\n  514 |      if       fs-reply not = zero          *> should NOT happen\n  515 |               perform acas000-close\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:515: error: 'acas000-close' is not defined\n  513 |      perform  acas000-Read-Indexed.        *> Read Cobol file\n  514 |      if       fs-reply not = zero          *> should NOT happen\n  515 >               perform acas000-close\n  516 |               move    \"sys002\" to ws-called    *> create param file by re..\n  517 |               call    ws-called using ws-calling-data file-defs\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl: in paragraph 'Main-Loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:745: error: 'acas000-Rewrite' is not defined\n  743 |               move     1 to File-Key-No\n  744 |               perform  acas000-Open\n  745 >               perform  acas000-Rewrite                           *> in ca..\n  746 |               perform  acas000-Close\n  747 |               move    \"sys002\" to ws-called     *> create param file by r..\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:227: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:257: error: sys-params-versioning.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:331: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:332: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:333: error: wstime.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:334: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:390: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:393: error: irswssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:395: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:404: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:1036: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:1038: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:434: error: 'Run-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:436: error: 'Client' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:438: error: 'Start-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:440: error: 'End-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:466: error: 'wse-year' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:468: error: 'maps-ser-xx' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:469: error: 'curs2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:481: error: 'wse-date-block' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:496: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:497: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:498: error: 'FA-RDBMS-Flat-Statuses' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:499: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:501: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:503: error: 'ws-called' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:504: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:504: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:521: error: 'WS-System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:561: error: 'ACAS-Run-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:561: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:562: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:563: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:565: error: 'ACAS-Op-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:567: error: 'Linux' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:568: error: 'Windows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:569: error: 'Mac' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:570: error: 'Dos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:571: error: 'OS2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:572: error: 'Unix' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:572: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:578: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:640: error: 'maps-ser-nn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:642: error: 'Param-Restrict' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:655: error: 'IRS-System-Params' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:742: error: 'ws-term-code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:771: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:786: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:817: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:831: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:833: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:853: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:878: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:880: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:882: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:937: error: 'ACAS-Pass-Word' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:937: error: 'Pass-Word' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:938: error: 'ACAS-Suser' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:938: error: 'Suser' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:939: error: 'ACAS-Address-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:939: error: 'Address-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:940: error: 'ACAS-Address-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:940: error: 'Address-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:941: error: 'ACAS-Address-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:941: error: 'Address-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:942: error: 'ACAS-Address-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:942: error: 'Address-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:943: error: 'Vat-Rate-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:943: error: 'Vat IN IRS-System-Params' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:944: error: 'Vat-Rate-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:944: error: 'Vat2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:945: error: 'Vat-Rate-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:945: error: 'Vat3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:946: error: 'ACAS-Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:947: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:948: error: 'System-Ops' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:953: error: 'IRS-Client' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:954: error: 'IRS-Next-Post' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:954: error: 'Next-Post' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:956: error: 'IRS-Pass-Value' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:956: error: 'Pass-Value' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:958: error: 'IRS-Save-Sequ' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:958: error: 'Save-Sequ' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:960: error: 'IRS-System-Work-Group' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:960: error: 'System-Work-Group' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:962: error: 'IRS-PL-App-Created' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:962: error: 'PL-App-Created' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:964: error: 'IRS-PL-Approp-AC' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:964: error: 'PL-Approp-AC' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:966: error: 'IRS-First-Time-Flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:966: error: 'First-Time-Flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:982: error: 'ACAS-Start-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:989: error: 'ACAS-End-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:482: error: 'zz020-Get-Program-Args' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:500: error: 'acas000-open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:505: error: 'acas000-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:513: error: 'acas000-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:515: error: 'acas000-close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:745: error: 'acas000-Rewrite' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:227: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:257: error: sys-params-versioning.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:331: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:332: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:333: error: wstime.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:334: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:390: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:393: error: irswssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:395: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:404: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:1036: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:1038: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:434: error: 'Run-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:436: error: 'Client' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:438: error: 'Start-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:440: error: 'End-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:466: error: 'wse-year' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:468: error: 'maps-ser-xx' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:469: error: 'curs2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:481: error: 'wse-date-block' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:496: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:497: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:498: error: 'FA-RDBMS-Flat-Statuses' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:499: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:501: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:503: error: 'ws-called' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:504: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:504: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:521: error: 'WS-System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:561: error: 'ACAS-Run-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:561: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:562: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:563: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:565: error: 'ACAS-Op-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:567: error: 'Linux' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:568: error: 'Windows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:569: error: 'Mac' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:570: error: 'Dos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:571: error: 'OS2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:572: error: 'Unix' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:572: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:578: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:640: error: 'maps-ser-nn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:642: error: 'Param-Restrict' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:655: error: 'IRS-System-Params' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:742: error: 'ws-term-code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:771: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:786: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:817: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:831: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:833: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:853: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:878: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:880: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:882: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:937: error: 'ACAS-Pass-Word' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:937: error: 'Pass-Word' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:938: error: 'ACAS-Suser' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:938: error: 'Suser' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:939: error: 'ACAS-Address-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:939: error: 'Address-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:940: error: 'ACAS-Address-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:940: error: 'Address-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:941: error: 'ACAS-Address-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:941: error: 'Address-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:942: error: 'ACAS-Address-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:942: error: 'Address-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:943: error: 'Vat-Rate-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:943: error: 'Vat IN IRS-System-Params' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:944: error: 'Vat-Rate-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:944: error: 'Vat2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:945: error: 'Vat-Rate-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:945: error: 'Vat3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:946: error: 'ACAS-Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:947: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:948: error: 'System-Ops' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:953: error: 'IRS-Client' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:954: error: 'IRS-Next-Post' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:954: error: 'Next-Post' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:956: error: 'IRS-Pass-Value' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:956: error: 'Pass-Value' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:958: error: 'IRS-Save-Sequ' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:958: error: 'Save-Sequ' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:960: error: 'IRS-System-Work-Group' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:960: error: 'System-Work-Group' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:962: error: 'IRS-PL-App-Created' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:962: error: 'PL-App-Created' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:964: error: 'IRS-PL-Approp-AC' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:964: error: 'PL-Approp-AC' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:966: error: 'IRS-First-Time-Flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:966: error: 'First-Time-Flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:982: error: 'ACAS-Start-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:989: error: 'ACAS-End-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:482: error: 'zz020-Get-Program-Args' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:500: error: 'acas000-open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:505: error: 'acas000-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:513: error: 'acas000-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:515: error: 'acas000-close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl:745: error: 'acas000-Rewrite' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 91,
+    "cognitive": 126,
+    "halstead": {
+      "uniqueOperators": 11,
+      "uniqueOperands": 151,
+      "totalOperators": 358,
+      "totalOperands": 526,
+      "vocabulary": 162,
+      "length": 884,
+      "volume": 6488,
+      "difficulty": 19.16,
+      "effort": 124311,
+      "timeToProgram": 6906,
+      "deliveredBugs": 2.163
+    },
+    "maintainability": 61
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 562
+      },
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 594
+      },
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 612
+      },
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 621
+      },
+      {
+        "target": "irs000",
+        "line": 628
+      },
+      {
+        "target": "irs000",
+        "line": 648
+      },
+      {
+        "target": "irs010",
+        "line": 655
+      },
+      {
+        "target": "irs020",
+        "line": 662
+      },
+      {
+        "target": "irs030",
+        "line": 669
+      },
+      {
+        "target": "irs040",
+        "line": 676
+      },
+      {
+        "target": "irs050",
+        "line": 683
+      },
+      {
+        "target": "irs065",
+        "line": 695
+      },
+      {
+        "target": "irs060",
+        "line": 699
+      },
+      {
+        "target": "irs070",
+        "line": 712
+      },
+      {
+        "target": "irs085",
+        "line": 722
+      },
+      {
+        "target": "irs090",
+        "line": 726
+      },
+      {
+        "target": "irs080",
+        "line": 734
+      },
+      {
+        "target": "SYSTEM",
+        "line": 793
+      },
+      {
+        "target": "SYSTEM",
+        "line": 838
+      },
+      {
+        "target": "SYSTEM",
+        "line": 860
+      },
+      {
+        "target": "maps04",
+        "line": 901
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 218
+      },
+      {
+        "name": "envdiv",
+        "line": 227
+      },
+      {
+        "name": "sys-params-versioning",
+        "line": 257
+      },
+      {
+        "name": "screenio",
+        "line": 297
+      },
+      {
+        "name": "wsmaps03",
+        "line": 331
+      },
+      {
+        "name": "wscall",
+        "line": 332
+      },
+      {
+        "name": "wstime",
+        "line": 333
+      },
+      {
+        "name": "wsfnctn",
+        "line": 334
+      },
+      {
+        "name": "wssystem",
+        "line": 362
+      },
+      {
+        "name": "irswssystem",
+        "line": 392
+      },
+      {
+        "name": "wsnames",
+        "line": 395
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 404
+      },
+      {
+        "name": "verb",
+        "line": 951
+      },
+      {
+        "name": "verb",
+        "line": 1007
+      },
+      {
+        "name": "Proc-ZZ100-ACAS-IRS-Calls",
+        "line": 1036
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 1038
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 482
+      },
+      {
+        "target": "acas000-open-Input",
+        "line": 500
+      },
+      {
+        "target": "acas000-close",
+        "line": 502
+      },
+      {
+        "target": "acas000-open",
+        "line": 505
+      },
+      {
+        "target": "acas000-Read-Indexed",
+        "line": 513
+      },
+      {
+        "target": "acas000-close",
+        "line": 515
+      },
+      {
+        "target": "acas000-open",
+        "line": 518
+      },
+      {
+        "target": "acas000-Close",
+        "line": 533
+      },
+      {
+        "target": "acas000-Open",
+        "line": 537
+      },
+      {
+        "target": "acas000-Read-Indexed",
+        "line": 538
+      },
+      {
+        "target": "acas000-Write",
+        "line": 541
+      },
+      {
+        "target": "acas000-Close",
+        "line": 547
+      },
+      {
+        "target": "acas000-Close",
+        "line": 552
+      },
+      {
+        "target": "zz090-Set-Up-IRS-System-Data",
+        "line": 557
+      },
+      {
+        "target": "maps04",
+        "line": 634
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 636
+      },
+      {
+        "target": "zz090-Proc-Run-Date",
+        "line": 651
+      },
+      {
+        "target": "EOJ-Pre",
+        "line": 692
+      },
+      {
+        "target": "EOJ-Post",
+        "line": 706
+      },
+      {
+        "target": "acas000-Open",
+        "line": 744
+      },
+      {
+        "target": "acas000-Rewrite",
+        "line": 745
+      },
+      {
+        "target": "acas000-Close",
+        "line": 746
+      },
+      {
+        "target": "acas000-Open",
+        "line": 761
+      },
+      {
+        "target": "acas000-Read-Indexed",
+        "line": 762
+      },
+      {
+        "target": "acas000-Close",
+        "line": 763
+      },
+      {
+        "target": "zz095-Restore-IRS-System-Data",
+        "line": 765
+      },
+      {
+        "target": "acas000-Open",
+        "line": 768
+      },
+      {
+        "target": "acas000-Rewrite",
+        "line": 769
+      },
+      {
+        "target": "acas000-Close",
+        "line": 770
+      },
+      {
+        "target": "acas000-Open",
+        "line": 773
+      },
+      {
+        "target": "acas000-Rewrite",
+        "line": 774
+      },
+      {
+        "target": "acas000-Close",
+        "line": 775
+      },
+      {
+        "target": "acas000-Open",
+        "line": 808
+      },
+      {
+        "target": "acas000-Read-Indexed",
+        "line": 809
+      },
+      {
+        "target": "acas000-Close",
+        "line": 810
+      },
+      {
+        "target": "zz095-Restore-IRS-System-Data",
+        "line": 811
+      },
+      {
+        "target": "acas000-Open",
+        "line": 814
+      },
+      {
+        "target": "acas000-Rewrite",
+        "line": 815
+      },
+      {
+        "target": "acas000-Close",
+        "line": 816
+      },
+      {
+        "target": "acas000-Open",
+        "line": 819
+      },
+      {
+        "target": "acas000-Rewrite",
+        "line": 820
+      },
+      {
+        "target": "acas000-Close",
+        "line": 821
+      },
+      {
+        "target": "maps04",
+        "line": 872
+      },
+      {
+        "target": "maps04",
+        "line": 975
+      },
+      {
+        "target": "maps04",
+        "line": 983
+      },
+      {
+        "target": "maps04",
+        "line": 990
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 231
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

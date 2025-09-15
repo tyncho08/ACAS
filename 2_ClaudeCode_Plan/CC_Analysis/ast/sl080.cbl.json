@@ -1,0 +1,404 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl",
+  "fileName": "sl080.cbl",
+  "fileHash": "df43b98c15049a6eb5018f0f7de587fa2e5db83e340ffa3a477d190b7fbba1b7",
+  "timestamp": "2025-09-15T19:46:25.770Z",
+  "parseTime": 114,
+  "lines": {
+    "total": 879,
+    "code": 534,
+    "comment": 344,
+    "blank": 1
+  },
+  "programId": "sl080",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:121: error: envdiv.cob: No such file or directory\n  119 | *>===============================\n  120 | *>\n  121 >  copy \"envdiv.cob\".\n  122 |  input-output            section.\n  123 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:143: error: wsmaps03.cob: No such file or directory\n  141 |   77  prog-name           pic x(15)      value \"SL080 (3.02.12)\".\n  142 | *>\n  143 >  copy \"wsmaps03.cob\".\n  144 |  copy \"wsfnctn.cob\".\n  145 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:144: error: wsfnctn.cob: No such file or directory\n  142 | *>\n  143 |  copy \"wsmaps03.cob\".\n  144 >  copy \"wsfnctn.cob\".\n  145 | *>\n  146 |  01  ws-amount-screen-display.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:162: error: wssl.cob: No such file or directory\n  160 | *>\n  161 | *> copy \"wsoi.cob\".\n  162 >  copy \"wssl.cob\".\n  163 |  copy \"slwsoi3.cob\".\n  164 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:163: error: slwsoi3.cob: No such file or directory\n  161 | *> copy \"wsoi.cob\".\n  162 |  copy \"wssl.cob\".\n  163 >  copy \"slwsoi3.cob\".\n  164 | *>\n  165 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:275: error: Test-Data-Flags.cob: No such file or directory\n  273 |  01  error-code          pic 999.\n  274 | *>\n  275 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  276 | *>\n  277 |  linkage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:280: error: wscall.cob: No such file or directory\n  278 | *>**************\n  279 | *>\n  280 >  copy \"wscall.cob\".\n  281 |  copy \"wssystem.cob\".\n  282 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:281: error: wssystem.cob: No such file or directory\n  279 | *>\n  280 |  copy \"wscall.cob\".\n  281 >  copy \"wssystem.cob\".\n  282 |  copy \"wsnames.cob\".\n  283 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:282: error: wsnames.cob: No such file or directory\n  280 |  copy \"wscall.cob\".\n  281 |  copy \"wssystem.cob\".\n  282 >  copy \"wsnames.cob\".\n  283 | *>\n  284 |  01  today               pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:877: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  875 |      exit     section.\n  876 | *>\n  877 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  878 | *>\n  879 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:286: error: 'ws-calling-data' is not defined\n  284 |  01  today               pic x(10).\n  285 | *>\n  286 >  procedure division using ws-calling-data\n  287 |                           system-record\n  288 |                           today\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:287: error: 'system-record' is not defined\n  285 | *>\n  286 |  procedure division using ws-calling-data\n  287 >                           system-record\n  288 |                           today\n  289 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:289: error: 'file-defs' is not defined\n  287 |                           system-record\n  288 |                           today\n  289 >                           file-defs.\n  290 | *>=======================================\n  291 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:305: error: 'S-Flag-I' is not defined\n  303 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  304 | *>\n  305 >      if       S-Flag-I = 1\n  306 |               display SL121   at 0501\n  307 |               display SL116   at line ws-lines col 1  *> 2401\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:311: error: 'FS-Cobol-Files-Used' is not defined\n  309 |               go to main-exit.\n  310 | *>\n  311 >      if       FS-Cobol-Files-Used\n  312 |               call  \"CBL_CHECK_FILE_EXIST\" using File-19    *> Open ITM3..\n  313 |                                                  File-Info\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:312: error: 'File-19' is not defined\n  310 | *>\n  311 |      if       FS-Cobol-Files-Used\n  312 >               call  \"CBL_CHECK_FILE_EXIST\" using File-19    *> Open ITM3..\n  313 |                                                  File-Info\n  314 |               if    return-code not = zero          *> not = zero - No fi..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'menu-exit':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:342: error: 'first-sl-batch' is not defined\n  340 | *>\n  341 |      perform  display-heads.\n  342 >      add      1  to first-sl-batch.\n  343 |      move     \"Y\" to oi-3-flag.\n  344 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:343: error: 'oi-3-flag' is not defined\n  341 |      perform  display-heads.\n  342 |      add      1  to first-sl-batch.\n  343 >      move     \"Y\" to oi-3-flag.\n  344 | *>\n  345 |  main-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in section 'New-Payment':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'New-Payment-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:356: error: 'lin' is not defined\n  354 | *>\n  355 |  New-Payment-Main.\n  356 >      move     4  to  lin.\n  357 |      perform  display-heads.\n  358 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'date-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:377: error: 'u-bin' is not defined\n  375 | *>\n  376 |      move     ws-date to ws-test-date.\n  377 >      move     zero  to  u-bin.\n  378 |      perform  zz050-Validate-Date.\n  379 |      if       u-bin = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:383: error: 'u-date' is not defined\n  381 | *>\n  382 |      move     u-bin  to  pay-date.\n  383 >      move     u-date to  to-day.\n  384 | *>\n  385 |  customer-input.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'customer-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:402: error: 'WS-Sales-Key' is not defined\n  400 | *>\n  401 |      move     1  to  c-check.\n  402 >      move     pay-customer  to  WS-Sales-Key.\n  403 | *>\n  404 |      perform  Sales-Read-Indexed.     *>  read sales-file record invalid..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:405: error: 'fs-reply' is not defined\n  403 | *>\n  404 |      perform  Sales-Read-Indexed.     *>  read sales-file record invalid..\n  405 >      if       fs-reply = 21\n  406 |               move  zero  to  c-check.\n  407 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:411: error: 'sales-address' is not defined\n  409 |               go to  customer-input.\n  410 | *>\n  411 >      move     sales-address  to  address-a.\n  412 |      display  sales-name at 0401 with foreground-color 3.\n  413 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:412: error: 'sales-name' is not defined\n  410 | *>\n  411 |      move     sales-address  to  address-a.\n  412 >      display  sales-name at 0401 with foreground-color 3.\n  413 | *>\n  414 |      move     1  to  z.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:415: error: 'sl-delim' is not defined\n  413 | *>\n  414 |      move     1  to  z.\n  415 >      unstring address-a  delimited by sl-delim into  address-line count z..\n  416 |      display  address-line at 0501 with foreground-color 3.\n  417 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:432: error: 'sales-current' is not defined\n  430 |      move     spaces  to  address-line.\n  431 | *>\n  432 >      move     sales-current  to  display-s.\n  433 |      display  \"Current Balance - \" at 1001  with foreground-color 2.\n  434 |      display  display-s at 1019 with foreground-color 3.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:437: error: 'sales-unapplied' is not defined\n  435 | *>\n  436 |      move     5 to transaction-type.\n  437 >      if       sales-unapplied = zero\n  438 |               go to value-input.\n  439 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'accept-unappl-reqst':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:461: error: 'curs' is not defined\n  459 |      move     6 to transaction-type.\n  460 |      display  \" \" at 1601 with erase eol.\n  461 >      move     0749 to curs.\n  462 | *>\n  463 |  accept-unappl-money.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'value-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:488: error: 's-flag-p' is not defined\n  486 |               go to  main-exit.\n  487 | *>\n  488 >      move     1 to s-flag-p.\n  489 |      add      pay-value  to  batch-value.\n  490 |      move     batch-value  to  display-s.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in section 'Payment-Appropriate':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:553: error: 'oi3-invoice' is not defined\n  551 |      display  \"Deduction Taken\" at 1258                with foreground-co..\n  552 | *>\n  553 >      move     zero  to  approp-amount oi3-invoice.\n  554 |      move     14  to  lin.\n  555 |      move     pay-customer to oi3-customer.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:555: error: 'oi3-customer' is not defined\n  553 |      move     zero  to  approp-amount oi3-invoice.\n  554 |      move     14  to  lin.\n  555 >      move     pay-customer to oi3-customer.\n  556 |      set      fn-not-less-than to true.\n  557 |      perform  OTM3-Start.      *> start open-item-file-3 key not < oi3-ke..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:556: error: 'fn-not-less-than' is not defined\n  554 |      move     14  to  lin.\n  555 |      move     pay-customer to oi3-customer.\n  556 >      set      fn-not-less-than to true.\n  557 |      perform  OTM3-Start.      *> start open-item-file-3 key not < oi3-ke..\n  558 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'pay-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:568: error: 'oi-type' is not defined\n  566 |   *>   move     open-item-record-3  to  oi-header. *> redefined.\n  567 | *>\n  568 >      if       oi-type not = 2\n  569 |               go to  pay-loop.\n  570 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:571: error: 'oi-customer' is not defined\n  569 |               go to  pay-loop.\n  570 | *>\n  571 >      if       oi-customer not = pay-customer\n  572 |               go to main-end.\n  573 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:574: error: 'oi-b-nos' is not defined\n  572 |               go to main-end.\n  573 | *>\n  574 >      if       oi-b-nos not = zero\n  575 |               go to pay-loop.\n  576 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-net' is not defined\n  575 |               go to pay-loop.\n  576 | *>\n  577 >      add      oi-net  oi-extra  oi-carriage  oi-vat oi-c-vat\n  578 |               oi-discount  oi-e-vat giving work-net.\n  579 |      add      oi-deduct-amt  oi-deduct-vat  giving work-ded.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-extra' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-carriage' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-vat' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-c-vat' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:578: error: 'oi-discount' is not defined\n  576 | *>\n  577 |      add      oi-net  oi-extra  oi-carriage  oi-vat oi-c-vat\n  578 >               oi-discount  oi-e-vat giving work-net.\n  579 |      add      oi-deduct-amt  oi-deduct-vat  giving work-ded.\n  580 |      add      work-net work-ded giving test-amount.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:578: error: 'oi-e-vat' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:579: error: 'oi-deduct-amt' is not defined\n  577 |      add      oi-net  oi-extra  oi-carriage  oi-vat oi-c-vat\n  578 |               oi-discount  oi-e-vat giving work-net.\n  579 >      add      oi-deduct-amt  oi-deduct-vat  giving work-ded.\n  580 |      add      work-net work-ded giving test-amount.\n  581 |      if       test-amount = oi-paid\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:579: error: 'oi-deduct-vat' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:581: error: 'oi-paid' is not defined\n  579 |      add      oi-deduct-amt  oi-deduct-vat  giving work-ded.\n  580 |      add      work-net work-ded giving test-amount.\n  581 >      if       test-amount = oi-paid\n  582 |         and   oi-status = zero\n  583 |               move pay-date to oi-date-cleared\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:582: error: 'oi-status' is not defined\n  580 |      add      work-net work-ded giving test-amount.\n  581 |      if       test-amount = oi-paid\n  582 >         and   oi-status = zero\n  583 |               move pay-date to oi-date-cleared\n  584 |               move 1 to oi-status\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:583: error: 'oi-date-cleared' is not defined\n  581 |      if       test-amount = oi-paid\n  582 |         and   oi-status = zero\n  583 >               move pay-date to oi-date-cleared\n  584 |               move 1 to oi-status\n  585 |               perform OTM3-Rewrite   *> rewrite open-item-record-3 from o..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'pay-details':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:594: error: 'cole' is not defined\n  592 | *>**********\n  593 | *>\n  594 >      move     1 to cole.\n  595 |      display  \" \" at curs with erase eol.\n  596 |      move     oi-invoice to display-inv.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:596: error: 'oi-invoice' is not defined\n  594 |      move     1 to cole.\n  595 |      display  \" \" at curs with erase eol.\n  596 >      move     oi-invoice to display-inv.\n  597 |      display  display-inv at curs with foreground-color 3.\n  598 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:599: error: 'oi-date' is not defined\n  597 |      display  display-inv at curs with foreground-color 3.\n  598 | *>\n  599 >      move     oi-date  to  u-bin.\n  600 |      perform  zz060-Convert-Date.\n  601 |      move     11 to cole.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:607: error: 'oi-deduct-days' is not defined\n  605 |      move     work-ded to work-2.\n  606 | *>\n  607 >      add      1  oi-deduct-days  to  u-bin.\n  608 |      add      work-2  to  work-1.\n  609 |      if       u-bin  >  pay-date\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:647: error: 'oi-b-item' is not defined\n  645 | *>\n  646 |      move     first-sl-batch  to  oi-b-nos.\n  647 >      move     k  to  oi-b-item.\n  648 | *>\n  649 |  get-agreement.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'end-line':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:697: error: 'oi-p-c' is not defined\n  695 | *>\n  696 |      add      pay-paid  to  oi-paid.\n  697 >      add      pay-paid  to  oi-p-c.\n  698 |      multiply 100 by pay-paid giving oi-cr.\n  699 |      add      oi-deduct-amt oi-deduct-vat to work-net.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:698: error: 'oi-cr' is not defined\n  696 |      add      pay-paid  to  oi-paid.\n  697 |      add      pay-paid  to  oi-p-c.\n  698 >      multiply 100 by pay-paid giving oi-cr.\n  699 |      add      oi-deduct-amt oi-deduct-vat to work-net.\n  700 |      if       oi-paid = work-net\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:740: error: 'oi-days' is not defined\n  738 |      move     zero to oi-extra oi-carriage oi-vat oi-discount\n  739 |                       oi-e-vat  oi-c-vat  oi-status.\n  740 >      move     zero to oi-cr oi-days oi-deduct-vat\n  741 |                       oi-deduct-days oi-p-c.\n  742 |      move     spaces to oi-description oi-applied oi-unapl\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:742: error: 'oi-description' is not defined\n  740 |      move     zero to oi-cr oi-days oi-deduct-vat\n  741 |                       oi-deduct-days oi-p-c.\n  742 >      move     spaces to oi-description oi-applied oi-unapl\n  743 |                          oi-hold-flag.\n  744 |      move     pay-customer  to  oi-customer.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:742: error: 'oi-applied' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:742: error: 'oi-unapl' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:743: error: 'oi-hold-flag' is not defined\n  741 |                       oi-deduct-days oi-p-c.\n  742 |      move     spaces to oi-description oi-applied oi-unapl\n  743 >                          oi-hold-flag.\n  744 |      move     pay-customer  to  oi-customer.\n  745 |      move     pay-date  to  oi-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:748: error: 'oi-approp' is not defined\n  746 |      move     transaction-type to  oi-type.\n  747 |      move     pay-value to  oi-paid.\n  748 >      move     approp-amount  to  oi-approp.\n  749 |      move     deduct-taken   to  oi-deduct-amt.\n  750 |      move     first-sl-batch  to  oi-b-nos.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in section 'zz050-Validate-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:779: error: 'Date-Form' is not defined\n  777 | *>\n  778 |      move     ws-test-date to ws-date.\n  779 >      if       Date-Form = zero\n  780 |               move 1 to Date-Form.\n  781 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:781: error: 'Date-UK' is not defined\n  779 |      if       Date-Form = zero\n  780 |               move 1 to Date-Form.\n  781 >      if       Date-UK\n  782 |               go to zz050-test-date.\n  783 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:783: error: 'Date-USA' is not defined\n  781 |      if       Date-UK\n  782 |               go to zz050-test-date.\n  783 >      if       Date-USA                *> swap month and days\n  784 |               move ws-days to ws-swap\n  785 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in section 'maps04':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:872: error: 'maps03-ws' is not defined\n  870 | *>*******************\n  871 | *>\n  872 >      call     \"maps04\"  using  maps03-ws.\n  873 | *>\n  874 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'dh-exit':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:332: error: 'OTM3-Open' is not defined\n  330 | *>\n  331 |      move     zero  to  k.\n  332 >      perform  OTM3-Open.    *> open i-o open-item-file-3  sales-file\n  333 |      perform  Sales-Open.\n  334 |      perform  New-Payment.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:333: error: 'Sales-Open' is not defined\n  331 |      move     zero  to  k.\n  332 |      perform  OTM3-Open.    *> open i-o open-item-file-3  sales-file\n  333 >      perform  Sales-Open.\n  334 |      perform  New-Payment.\n  335 |      perform  OTM3-Close.   *> close open-item-file-3 sales-file\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:335: error: 'OTM3-Close' is not defined\n  333 |      perform  Sales-Open.\n  334 |      perform  New-Payment.\n  335 >      perform  OTM3-Close.   *> close open-item-file-3 sales-file\n  336 |      perform  Sales-Close.\n  337 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:336: error: 'Sales-Close' is not defined\n  334 |      perform  New-Payment.\n  335 |      perform  OTM3-Close.   *> close open-item-file-3 sales-file\n  336 >      perform  Sales-Close.\n  337 | *>\n  338 |  menu-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in section 'New-Payment':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'customer-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:404: error: 'Sales-Read-Indexed' is not defined\n  402 |      move     pay-customer  to  WS-Sales-Key.\n  403 | *>\n  404 >      perform  Sales-Read-Indexed.     *>  read sales-file record invalid..\n  405 |      if       fs-reply = 21\n  406 |               move  zero  to  c-check.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'accept-unappl-money':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:474: error: 'Sales-Rewrite' is not defined\n  472 |      subtract amt-ok from sales-unapplied.\n  473 |      move     amt-ok to pay-value.\n  474 >      perform  Sales-Rewrite.                *>  rewrite  sales-record.\n  475 |      go       to set-batch-item.\n  476 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in section 'Payment-Appropriate':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:557: error: 'OTM3-Start' is not defined\n  555 |      move     pay-customer to oi3-customer.\n  556 |      set      fn-not-less-than to true.\n  557 >      perform  OTM3-Start.      *> start open-item-file-3 key not < oi3-ke..\n  558 | *>\n  559 |  pay-loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'pay-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:562: error: 'OTM3-Read-Next' is not defined\n  560 | *>*******\n  561 | *>\n  562 >      perform  OTM3-Read-Next.   *>  read open-item-file-3 next record  at..\n  563 |      if       fs-reply = 10\n  564 |               go to  main-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:585: error: 'OTM3-Rewrite' is not defined\n  583 |               move pay-date to oi-date-cleared\n  584 |               move 1 to oi-status\n  585 >               perform OTM3-Rewrite   *> rewrite open-item-record-3 from o..\n  586 |               go to pay-loop.\n  587 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:755: error: 'OTM3-Write' is not defined\n  753 |      add      oi-b-item to oi-invoice.\n  754 | *>\n  755 >      perform  OTM3-Write.      *> write open-item-record-3 from oi-header..\n  756 |      move     zero  to  approp-amount  deduct-taken.\n  757 | *>\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:121: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:143: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:144: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:162: error: wssl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:163: error: slwsoi3.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:275: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:280: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:281: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:282: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:877: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:286: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:287: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:289: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:305: error: 'S-Flag-I' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:311: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:312: error: 'File-19' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:342: error: 'first-sl-batch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:343: error: 'oi-3-flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:356: error: 'lin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:377: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:383: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:402: error: 'WS-Sales-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:405: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:411: error: 'sales-address' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:412: error: 'sales-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:415: error: 'sl-delim' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:432: error: 'sales-current' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:437: error: 'sales-unapplied' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:461: error: 'curs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:488: error: 's-flag-p' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:553: error: 'oi3-invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:555: error: 'oi3-customer' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:556: error: 'fn-not-less-than' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:568: error: 'oi-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:571: error: 'oi-customer' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:574: error: 'oi-b-nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-net' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-extra' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-carriage' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-c-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:578: error: 'oi-discount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:578: error: 'oi-e-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:579: error: 'oi-deduct-amt' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:579: error: 'oi-deduct-vat' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:581: error: 'oi-paid' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:582: error: 'oi-status' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:583: error: 'oi-date-cleared' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:594: error: 'cole' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:596: error: 'oi-invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:599: error: 'oi-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:607: error: 'oi-deduct-days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:647: error: 'oi-b-item' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:697: error: 'oi-p-c' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:698: error: 'oi-cr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:740: error: 'oi-days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:742: error: 'oi-description' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:742: error: 'oi-applied' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:742: error: 'oi-unapl' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:743: error: 'oi-hold-flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:748: error: 'oi-approp' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:779: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:781: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:783: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:872: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:332: error: 'OTM3-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:333: error: 'Sales-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:335: error: 'OTM3-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:336: error: 'Sales-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:404: error: 'Sales-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:474: error: 'Sales-Rewrite' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:557: error: 'OTM3-Start' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:562: error: 'OTM3-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:585: error: 'OTM3-Rewrite' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:755: error: 'OTM3-Write' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:121: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:143: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:144: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:162: error: wssl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:163: error: slwsoi3.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:275: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:280: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:281: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:282: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:877: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:286: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:287: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:289: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:305: error: 'S-Flag-I' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:311: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:312: error: 'File-19' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:342: error: 'first-sl-batch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:343: error: 'oi-3-flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:356: error: 'lin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:377: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:383: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:402: error: 'WS-Sales-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:405: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:411: error: 'sales-address' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:412: error: 'sales-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:415: error: 'sl-delim' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:432: error: 'sales-current' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:437: error: 'sales-unapplied' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:461: error: 'curs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:488: error: 's-flag-p' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:553: error: 'oi3-invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:555: error: 'oi3-customer' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:556: error: 'fn-not-less-than' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:568: error: 'oi-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:571: error: 'oi-customer' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:574: error: 'oi-b-nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-net' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-extra' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-carriage' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:577: error: 'oi-c-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:578: error: 'oi-discount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:578: error: 'oi-e-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:579: error: 'oi-deduct-amt' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:579: error: 'oi-deduct-vat' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:581: error: 'oi-paid' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:582: error: 'oi-status' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:583: error: 'oi-date-cleared' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:594: error: 'cole' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:596: error: 'oi-invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:599: error: 'oi-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:607: error: 'oi-deduct-days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:647: error: 'oi-b-item' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:697: error: 'oi-p-c' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:698: error: 'oi-cr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:740: error: 'oi-days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:742: error: 'oi-description' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:742: error: 'oi-applied' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:742: error: 'oi-unapl' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:743: error: 'oi-hold-flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:748: error: 'oi-approp' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:779: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:781: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:783: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:872: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:332: error: 'OTM3-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:333: error: 'Sales-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:335: error: 'OTM3-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:336: error: 'Sales-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:404: error: 'Sales-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:474: error: 'Sales-Rewrite' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:557: error: 'OTM3-Start' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:562: error: 'OTM3-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:585: error: 'OTM3-Rewrite' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl080.cbl:755: error: 'OTM3-Write' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 99,
+    "cognitive": 268,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 63,
+      "totalOperators": 320,
+      "totalOperands": 148,
+      "vocabulary": 75,
+      "length": 468,
+      "volume": 2915,
+      "difficulty": 14.1,
+      "effort": 41089,
+      "timeToProgram": 2283,
+      "deliveredBugs": 0.972
+    },
+    "maintainability": 62
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 312
+      },
+      {
+        "target": "maps04",
+        "line": 872
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 112
+      },
+      {
+        "name": "envdiv",
+        "line": 121
+      },
+      {
+        "name": "selsl",
+        "line": 128
+      },
+      {
+        "name": "seloi3",
+        "line": 129
+      },
+      {
+        "name": "fdsl",
+        "line": 137
+      },
+      {
+        "name": "fdoi3",
+        "line": 138
+      },
+      {
+        "name": "wsmaps03",
+        "line": 143
+      },
+      {
+        "name": "wsfnctn",
+        "line": 144
+      },
+      {
+        "name": "wsoi",
+        "line": 161
+      },
+      {
+        "name": "wssl",
+        "line": 162
+      },
+      {
+        "name": "slwsoi3",
+        "line": 163
+      },
+      {
+        "name": "screenio",
+        "line": 238
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 275
+      },
+      {
+        "name": "wscall",
+        "line": 280
+      },
+      {
+        "name": "wssystem",
+        "line": 281
+      },
+      {
+        "name": "wsnames",
+        "line": 282
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 877
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 326
+      },
+      {
+        "target": "OTM3-Open",
+        "line": 332
+      },
+      {
+        "target": "Sales-Open",
+        "line": 333
+      },
+      {
+        "target": "New-Payment",
+        "line": 334
+      },
+      {
+        "target": "OTM3-Close",
+        "line": 335
+      },
+      {
+        "target": "Sales-Close",
+        "line": 336
+      },
+      {
+        "target": "display-heads",
+        "line": 341
+      },
+      {
+        "target": "display-heads",
+        "line": 357
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "line": 368
+      },
+      {
+        "target": "zz050-Validate-Date",
+        "line": 378
+      },
+      {
+        "target": "Sales-Read-Indexed",
+        "line": 404
+      },
+      {
+        "target": "accept-money2",
+        "line": 466
+      },
+      {
+        "target": "Sales-Rewrite",
+        "line": 474
+      },
+      {
+        "target": "accept-money",
+        "line": 481
+      },
+      {
+        "target": "Payment-Appropriate",
+        "line": 507
+      },
+      {
+        "target": "erase-screen",
+        "line": 509
+      },
+      {
+        "target": "OTM3-Start",
+        "line": 557
+      },
+      {
+        "target": "OTM3-Read-Next",
+        "line": 562
+      },
+      {
+        "target": "OTM3-Rewrite",
+        "line": 585
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "line": 600
+      },
+      {
+        "target": "accept-money2",
+        "line": 635
+      },
+      {
+        "target": "OTM3-Rewrite",
+        "line": 704
+      },
+      {
+        "target": "OTM3-Write",
+        "line": 755
+      },
+      {
+        "target": "maps04",
+        "line": 799
+      },
+      {
+        "target": "maps04",
+        "line": 813
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 139
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

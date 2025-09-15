@@ -1,0 +1,417 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl",
+  "fileName": "sl160.cbl",
+  "fileHash": "5ab48f86436ae9fbd63a07f7ee4d86084ae0004cd56728a5d45121cddc995a0d",
+  "timestamp": "2025-09-15T19:46:26.820Z",
+  "parseTime": 103,
+  "lines": {
+    "total": 916,
+    "code": 620,
+    "comment": 295,
+    "blank": 1
+  },
+  "programId": "sl160",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:98: error: envdiv.cob: No such file or directory\n   96 | *>===============================\n   97 | *>\n   98 >  copy \"envdiv.cob\".\n   99 |  input-output            section.\n  100 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:107: error: selprint.cob: No such file or directory\n  105 | *> copy \"selsl.cob\".\n  106 | *> copy \"seldel.cob\".\n  107 >  copy \"selprint.cob\".\n  108 | *>\n  109 |      select  sales-sort      assign        fn-sales,\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:119: error: fdprint.cob: No such file or directory\n  117 | *>-----------\n  118 | *>\n  119 >  copy \"fdprint.cob\".\n  120 | *> copy \"fdsl.cob\".\n  121 | *> copy \"fddel.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:131: error: print-spool-command.cob: No such file or directory\n  129 | *>----------------------\n  130 |  77  prog-name          pic x(15) value \"SL160 (3.02.20)\".\n  131 >  copy \"print-spool-command.cob\".\n  132 |  copy \"wsmaps03.cob\".\n  133 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:132: error: wsmaps03.cob: No such file or directory\n  130 |  77  prog-name          pic x(15) value \"SL160 (3.02.20)\".\n  131 |  copy \"print-spool-command.cob\".\n  132 >  copy \"wsmaps03.cob\".\n  133 |  copy \"wsfnctn.cob\".\n  134 |  copy \"wsmaps09.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:133: error: wsfnctn.cob: No such file or directory\n  131 |  copy \"print-spool-command.cob\".\n  132 |  copy \"wsmaps03.cob\".\n  133 >  copy \"wsfnctn.cob\".\n  134 |  copy \"wsmaps09.cob\".\n  135 |  copy \"wssl.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:134: error: wsmaps09.cob: No such file or directory\n  132 |  copy \"wsmaps03.cob\".\n  133 |  copy \"wsfnctn.cob\".\n  134 >  copy \"wsmaps09.cob\".\n  135 |  copy \"wssl.cob\".\n  136 |  copy \"wsdel.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:135: error: wssl.cob: No such file or directory\n  133 |  copy \"wsfnctn.cob\".\n  134 |  copy \"wsmaps09.cob\".\n  135 >  copy \"wssl.cob\".\n  136 |  copy \"wsdel.cob\".\n  137 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:136: error: wsdel.cob: No such file or directory\n  134 |  copy \"wsmaps09.cob\".\n  135 |  copy \"wssl.cob\".\n  136 >  copy \"wsdel.cob\".\n  137 | *>\n  138 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:162: error: Test-Data-Flags.cob: No such file or directory\n  160 |      03  WS-OTM5-Record         pic x.\n  161 | *>\n  162 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  163 | *>\n  164 |  01  fn-sales            pic x(12)      value \"custsort.tmp\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:299: error: wscall.cob: No such file or directory\n  297 | *>**************\n  298 | *>\n  299 >  copy \"wscall.cob\".\n  300 |  copy \"wssystem.cob\".\n  301 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:300: error: wssystem.cob: No such file or directory\n  298 | *>\n  299 |  copy \"wscall.cob\".\n  300 >  copy \"wssystem.cob\".\n  301 |  copy \"wsnames.cob\".\n  302 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:301: error: wsnames.cob: No such file or directory\n  299 |  copy \"wscall.cob\".\n  300 |  copy \"wssystem.cob\".\n  301 >  copy \"wsnames.cob\".\n  302 | *>\n  303 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:914: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  912 |      exit     section.\n  913 | *>\n  914 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  915 | *>\n  916 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:111: error: 'fs-reply' is not defined\n  109 |      select  sales-sort      assign        fn-sales,\n  110 |                              access        sequential,\n  111 >                              status        fs-reply.\n  112 | *>\n  113 |  data                    division.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:357: error: 'ws-calling-data' is not defined\n  355 |      03  value \"Enter date & operator\"                     col 39.\n  356 | *>\n  357 >  procedure division using ws-calling-data\n  358 |                           system-record\n  359 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:358: error: 'system-record' is not defined\n  356 | *>\n  357 |  procedure division using ws-calling-data\n  358 >                           system-record\n  359 |                           to-day\n  360 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:360: error: 'file-defs' is not defined\n  358 |                           system-record\n  359 |                           to-day\n  360 >                           file-defs.\n  361 | *>=======================================\n  362 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:367: error: 'usera' is not defined\n  365 |      perform  zz070-Convert-Date.\n  366 |      move     ws-date to  l1-date.\n  367 >      move     usera   to  l3-user.\n  368 | *> Force Esc, PgUp, PgDown, PrtSC to be detected\n  369 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:371: error: 'Print-Spool-Name' is not defined\n  369 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n  370 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  371 >      move     Print-Spool-Name to PSN.\n  372 |      move     1 to File-Key-No.\n  373 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:371: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:372: error: 'File-Key-No' is not defined\n  370 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  371 |      move     Print-Spool-Name to PSN.\n  372 >      move     1 to File-Key-No.\n  373 | *>\n  374 |      perform  Report1.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in section 'Report1':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:393: error: 'print-file' is not defined\n  391 |      perform  Report-Produce.\n  392 | *>\n  393 >      close    print-file.             *>   sales-sort.  (Closed on read a..\n  394 |      perform  Sales-Close.\n  395 |      perform  Delivery-Close.         *> close    sales-file delivery-fil..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:393: error: 'print-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:396: error: 'Print-Report' is not defined\n  394 |      perform  Sales-Close.\n  395 |      perform  Delivery-Close.         *> close    sales-file delivery-fil..\n  396 >      call     \"SYSTEM\" using Print-Report.\n  397 |      if       FS-Cobol-Files-Used             *> Make it a null file\n  398 |               open     output sales-sort      *>  but only if processing\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:397: error: 'FS-Cobol-Files-Used' is not defined\n  395 |      perform  Delivery-Close.         *> close    sales-file delivery-fil..\n  396 |      call     \"SYSTEM\" using Print-Report.\n  397 >      if       FS-Cobol-Files-Used             *> Make it a null file\n  398 |               open     output sales-sort      *>  but only if processing\n  399 |               close    sales-sort             *>   Cobol files.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in section 'Report-Selection':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in paragraph 'Accept-Data':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:472: error: 'u-bin' is not defined\n  470 |      move     Enter-Date-In to ws-Test-date.\n  471 |      perform  zz050-Validate-Date.\n  472 >      if       u-bin = zero\n  473 |               display SL005 at 2361  with foreground-color 2    *> this m..\n  474 |               go to Accept-Data.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in section 'Report-Produce':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:486: error: 'print-file' is not a file name\n  484 |      if       FS-Cobol-Files-Used\n  485 |               open     input   sales-sort.\n  486 >      open     output  print-file.\n  487 |      move     zero  to  a.\n  488 |      perform  Headings.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in paragraph 'Read-Loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:513: error: 'WS-Sales-Key' is not defined\n  511 |               go to  End-Report.\n  512 | *>\n  513 >      move     sales-sort-key  to  WS-Sales-Key.\n  514 | *>\n  515 |  Read-Loop-Tests.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in paragraph 'Select-Criteria-Tests-Continued':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:536: error: 'customer-dead' is not defined\n  534 |  Select-Criteria-Tests-Continued.\n  535 |      if       Status-In = \"L\"\n  536 >       and     customer-dead\n  537 |               go to  Read-Loop\n  538 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:540: error: 'customer-live' is not defined\n  538 |      else\n  539 |        if     Status-In = \"D\"\n  540 >         and   customer-live\n  541 |               go to  Read-Loop.\n  542 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:545: error: 'sales-credit' is not defined\n  543 |      if       Credit-Op not = space\n  544 |               move  Credit-In     to  Test-1\n  545 >               move  sales-credit  to  Test-2\n  546 |               move  Credit-Op     to  Test-Op\n  547 |               perform  Test-Num\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:553: error: 'sales-activety' is not defined\n  551 |      if       Invoice-Op not = space\n  552 |               move  Invoice-In     to  Test-1\n  553 >               move  sales-activety to  Test-2\n  554 |               move  Invoice-Op     to  Test-Op\n  555 |               perform  Test-Num\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:561: error: 'sales-average' is not defined\n  559 |      if       Average-Op not = space\n  560 |               move  Average-In    to  Test-1\n  561 >               move  sales-average to  Test-2\n  562 |               move  Average-Op    to  Test-Op\n  563 |               perform  Test-Num\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:568: error: 'sales-current' is not defined\n  566 | *>\n  567 |      if       Overdue-Op not = space\n  568 >         and   sales-current  >  0.00\n  569 |               move  Overdue-In    to  Test-1\n  570 |               subtract  sales-last-inv  from  run-date giving  Test-2\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:570: error: 'sales-last-inv' is not defined\n  568 |         and   sales-current  >  0.00\n  569 |               move  Overdue-In    to  Test-1\n  570 >               subtract  sales-last-inv  from  run-date giving  Test-2\n  571 |               move  Overdue-Op    to  Test-Op\n  572 |               perform  Test-Num\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:570: error: 'run-date' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:578: error: 'sales-create-date' is not defined\n  576 |      if       Enter-Date-Op not = space\n  577 |               move  ws-enter-date     to  Test-1\n  578 >               move  sales-create-date to  Test-2\n  579 |               move  Enter-Date-Op     to  Test-Op\n  580 |               perform  Test-Num\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in paragraph 'Headings':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:614: error: 'print-record' is not defined\n  612 |      move     a  to  l3-page.\n  613 |      if       a not = 1\n  614 >               write print-record  from  line-1 after page\n  615 |               write print-record  from  line-3 after 1\n  616 |               move  spaces  to  print-record\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in paragraph 'Listing':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:631: error: 'Page-Lines' is not defined\n  629 | *>******\n  630 | *>\n  631 >      if       line-cnt > Page-Lines\n  632 |               perform Headings.\n  633 |      move     WS-Sales-Key  to  l6-key.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:640: error: 'sales-name' is not defined\n  638 |               move  \"Dormant\" to  l6-status.\n  639 | *>\n  640 >      move     sales-name     to  l6-name.\n  641 |      move     sales-address  to  l7-address.\n  642 |      inspect  l7-address  replacing  all  sl-delim  by  \",\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:641: error: 'sales-address' is not defined\n  639 | *>\n  640 |      move     sales-name     to  l6-name.\n  641 >      move     sales-address  to  l7-address.\n  642 |      inspect  l7-address  replacing  all  sl-delim  by  \",\".\n  643 |      if       sales-ext = spaces\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:642: error: 'sl-delim' is not defined\n  640 |      move     sales-name     to  l6-name.\n  641 |      move     sales-address  to  l7-address.\n  642 >      inspect  l7-address  replacing  all  sl-delim  by  \",\".\n  643 |      if       sales-ext = spaces\n  644 |               move sales-phone to l6-phone\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:643: error: 'sales-ext' is not defined\n  641 |      move     sales-address  to  l7-address.\n  642 |      inspect  l7-address  replacing  all  sl-delim  by  \",\".\n  643 >      if       sales-ext = spaces\n  644 |               move sales-phone to l6-phone\n  645 |        else\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:644: error: 'sales-phone' is not defined\n  642 |      inspect  l7-address  replacing  all  sl-delim  by  \",\".\n  643 |      if       sales-ext = spaces\n  644 >               move sales-phone to l6-phone\n  645 |        else\n  646 |               move 1 to y\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:655: error: 'sales-fax' is not defined\n  653 |                                  into l6-phone with pointer y.\n  654 | *>\n  655 >      move     sales-fax to l6-fax.\n  656 |      move     Sales-Partial-Ship-Flag to L6-BO.\n  657 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:656: error: 'Sales-Partial-Ship-Flag' is not defined\n  654 | *>\n  655 |      move     sales-fax to l6-fax.\n  656 >      move     Sales-Partial-Ship-Flag to L6-BO.\n  657 | *>\n  658 |      if       late-charges\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:658: error: 'late-charges' is not defined\n  656 |      move     Sales-Partial-Ship-Flag to L6-BO.\n  657 | *>\n  658 >      if       late-charges\n  659 |               move  \"Y\"     to  l6-charges\n  660 |        else\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:663: error: 'dunning-letters' is not defined\n  661 |               move  spaces  to  l6-charges.\n  662 | *>\n  663 >      if       dunning-letters\n  664 |               move  \"Y\"     to  l6-letter\n  665 |        else\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:668: error: 'sales-limit' is not defined\n  666 |               move  spaces  to  l6-letter.\n  667 | *>\n  668 >      move     sales-limit   to  l6-limit.\n  669 |      move     sales-credit  to  l6-credit.\n  670 |      move     sales-discount to l6-discount.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:670: error: 'sales-discount' is not defined\n  668 |      move     sales-limit   to  l6-limit.\n  669 |      move     sales-credit  to  l6-credit.\n  670 >      move     sales-discount to l6-discount.\n  671 | *>\n  672 |      if       line-cnt > Page-Lines - 3\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:678: error: 'delivery-tag' is not defined\n  676 |      write    print-record  from  line-7 after 1.\n  677 | *>\n  678 >      if       delivery-tag  >  zero\n  679 |               perform  Delivery-Print.\n  680 |      if       Notes-Tag > zero\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:680: error: 'Notes-Tag' is not defined\n  678 |      if       delivery-tag  >  zero\n  679 |               perform  Delivery-Print.\n  680 >      if       Notes-Tag > zero\n  681 |               perform  Notes-Print.\n  682 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in paragraph 'Delivery-Print':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:692: error: 'WS-Deliv-Sales-Key' is not defined\n  690 | *>*************\n  691 | *>\n  692 >      move     WS-Sales-Key to WS-Deliv-Sales-Key.\n  693 |      move     \"D\"       to WS-Deliv-Key-Type.\n  694 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:693: error: 'WS-Deliv-Key-Type' is not defined\n  691 | *>\n  692 |      move     WS-Sales-Key to WS-Deliv-Sales-Key.\n  693 >      move     \"D\"       to WS-Deliv-Key-Type.\n  694 | *>\n  695 |      perform  Delivery-Read-Indexed.        *> read delivery-file  invali..\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:697: error: 'deliv-name' is not defined\n  695 |      perform  Delivery-Read-Indexed.        *> read delivery-file  invali..\n  696 |      if       fs-reply = 21\n  697 >               move  \"Record not found\"  to deliv-name\n  698 |                                            deliv-address.\n  699 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:698: error: 'deliv-address' is not defined\n  696 |      if       fs-reply = 21\n  697 |               move  \"Record not found\"  to deliv-name\n  698 >                                            deliv-address.\n  699 | *>\n  700 |      move     \"   Deliver\"   to  l6-key.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in section 'zz050-Validate-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:851: error: 'Date-Form' is not defined\n  849 | *>\n  850 |      move     ws-Test-date to ws-date.\n  851 >      if       Date-Form = zero\n  852 |               move 1 to Date-Form.\n  853 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:853: error: 'Date-UK' is not defined\n  851 |      if       Date-Form = zero\n  852 |               move 1 to Date-Form.\n  853 >      if       Date-UK\n  854 |               go to zz050-Test-date.\n  855 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:855: error: 'Date-USA' is not defined\n  853 |      if       Date-UK\n  854 |               go to zz050-Test-date.\n  855 >      if       Date-USA                *> swap month and days\n  856 |               move ws-days to ws-swap\n  857 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in paragraph 'zz050-Test-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:869: error: 'u-date' is not defined\n  867 | *>\n  868 |  zz050-Test-date.\n  869 >      move     ws-date to u-date.\n  870 |      move     zero to u-bin.\n  871 |      perform  maps04.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in section 'maps04':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:909: error: 'maps03-ws' is not defined\n  907 | *>*******************\n  908 | *>\n  909 >      call     \"maps04\"  using  maps03-ws.\n  910 | *>\n  911 |  maps04-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in section 'Report1':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:386: error: 'Sales-Open-Input' is not defined\n  384 | *>===================\n  385 | *>\n  386 >      perform  Sales-Open-Input.\n  387 |      perform  Delivery-Open-Input.    *> open input  sales-file delivery-..\n  388 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:387: error: 'Delivery-Open-Input' is not defined\n  385 | *>\n  386 |      perform  Sales-Open-Input.\n  387 >      perform  Delivery-Open-Input.    *> open input  sales-file delivery-..\n  388 | *>\n  389 |      perform  Report-Selection.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:394: error: 'Sales-Close' is not defined\n  392 | *>\n  393 |      close    print-file.             *>   sales-sort.  (Closed on read a..\n  394 >      perform  Sales-Close.\n  395 |      perform  Delivery-Close.         *> close    sales-file delivery-fil..\n  396 |      call     \"SYSTEM\" using Print-Report.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:395: error: 'Delivery-Close' is not defined\n  393 |      close    print-file.             *>   sales-sort.  (Closed on read a..\n  394 |      perform  Sales-Close.\n  395 >      perform  Delivery-Close.         *> close    sales-file delivery-fil..\n  396 |      call     \"SYSTEM\" using Print-Report.\n  397 |      if       FS-Cobol-Files-Used             *> Make it a null file\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in section 'Report-Produce':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in paragraph 'Read-Loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:503: error: 'Sales-Read-Next-Sorted-By-Name' is not defined\n  501 | *>\n  502 |      if       NOT FS-Cobol-Files-Used\n  503 >               perform Sales-Read-Next-Sorted-By-Name\n  504 |               if      fs-reply not = zero        *>   = 10\n  505 |                       go to  End-Report\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in paragraph 'Read-Loop-Tests':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:527: error: 'Sales-Read-Indexed' is not defined\n  525 |               go   to Select-Criteria-Tests-Continued.\n  526 | *>\n  527 >      perform  Sales-Read-Indexed.    *> read sales-file invalid key\n  528 |      if       fs-reply = 21                *> tested for but should not h..\n  529 |               display SL170        at 2301 with foreground-color 4\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl: in paragraph 'Delivery-Print':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:695: error: 'Delivery-Read-Indexed' is not defined\n  693 |      move     \"D\"       to WS-Deliv-Key-Type.\n  694 | *>\n  695 >      perform  Delivery-Read-Indexed.        *> read delivery-file  invali..\n  696 |      if       fs-reply = 21\n  697 |               move  \"Record not found\"  to deliv-name\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:98: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:107: error: selprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:119: error: fdprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:131: error: print-spool-command.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:132: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:133: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:134: error: wsmaps09.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:135: error: wssl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:136: error: wsdel.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:162: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:299: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:300: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:301: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:914: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:111: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:357: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:358: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:360: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:367: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:371: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:371: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:372: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:393: error: 'print-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:393: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:396: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:397: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:472: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:486: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:513: error: 'WS-Sales-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:536: error: 'customer-dead' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:540: error: 'customer-live' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:545: error: 'sales-credit' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:553: error: 'sales-activety' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:561: error: 'sales-average' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:568: error: 'sales-current' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:570: error: 'sales-last-inv' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:570: error: 'run-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:578: error: 'sales-create-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:614: error: 'print-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:631: error: 'Page-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:640: error: 'sales-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:641: error: 'sales-address' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:642: error: 'sl-delim' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:643: error: 'sales-ext' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:644: error: 'sales-phone' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:655: error: 'sales-fax' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:656: error: 'Sales-Partial-Ship-Flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:658: error: 'late-charges' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:663: error: 'dunning-letters' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:668: error: 'sales-limit' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:670: error: 'sales-discount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:678: error: 'delivery-tag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:680: error: 'Notes-Tag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:692: error: 'WS-Deliv-Sales-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:693: error: 'WS-Deliv-Key-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:697: error: 'deliv-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:698: error: 'deliv-address' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:851: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:853: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:855: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:869: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:909: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:386: error: 'Sales-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:387: error: 'Delivery-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:394: error: 'Sales-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:395: error: 'Delivery-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:503: error: 'Sales-Read-Next-Sorted-By-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:527: error: 'Sales-Read-Indexed' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:695: error: 'Delivery-Read-Indexed' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:98: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:107: error: selprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:119: error: fdprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:131: error: print-spool-command.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:132: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:133: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:134: error: wsmaps09.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:135: error: wssl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:136: error: wsdel.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:162: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:299: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:300: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:301: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:914: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:111: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:357: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:358: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:360: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:367: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:371: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:371: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:372: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:393: error: 'print-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:393: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:396: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:397: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:472: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:486: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:513: error: 'WS-Sales-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:536: error: 'customer-dead' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:540: error: 'customer-live' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:545: error: 'sales-credit' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:553: error: 'sales-activety' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:561: error: 'sales-average' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:568: error: 'sales-current' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:570: error: 'sales-last-inv' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:570: error: 'run-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:578: error: 'sales-create-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:614: error: 'print-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:631: error: 'Page-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:640: error: 'sales-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:641: error: 'sales-address' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:642: error: 'sl-delim' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:643: error: 'sales-ext' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:644: error: 'sales-phone' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:655: error: 'sales-fax' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:656: error: 'Sales-Partial-Ship-Flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:658: error: 'late-charges' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:663: error: 'dunning-letters' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:668: error: 'sales-limit' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:670: error: 'sales-discount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:678: error: 'delivery-tag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:680: error: 'Notes-Tag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:692: error: 'WS-Deliv-Sales-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:693: error: 'WS-Deliv-Key-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:697: error: 'deliv-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:698: error: 'deliv-address' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:851: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:853: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:855: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:869: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:909: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:386: error: 'Sales-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:387: error: 'Delivery-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:394: error: 'Sales-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:395: error: 'Delivery-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:503: error: 'Sales-Read-Next-Sorted-By-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:527: error: 'Sales-Read-Indexed' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl160.cbl:695: error: 'Delivery-Read-Indexed' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 106,
+    "cognitive": 211,
+    "halstead": {
+      "uniqueOperators": 11,
+      "uniqueOperands": 63,
+      "totalOperators": 301,
+      "totalOperands": 180,
+      "vocabulary": 74,
+      "length": 481,
+      "volume": 2987,
+      "difficulty": 15.71,
+      "effort": 46935,
+      "timeToProgram": 2607,
+      "deliveredBugs": 0.996
+    },
+    "maintainability": 61
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 396
+      },
+      {
+        "target": "maps04",
+        "line": 909
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 89
+      },
+      {
+        "name": "envdiv",
+        "line": 98
+      },
+      {
+        "name": "selsl",
+        "line": 105
+      },
+      {
+        "name": "seldel",
+        "line": 106
+      },
+      {
+        "name": "selprint",
+        "line": 107
+      },
+      {
+        "name": "fdprint",
+        "line": 119
+      },
+      {
+        "name": "fdsl",
+        "line": 120
+      },
+      {
+        "name": "fddel",
+        "line": 121
+      },
+      {
+        "name": "print-spool-command",
+        "line": 131
+      },
+      {
+        "name": "wsmaps03",
+        "line": 132
+      },
+      {
+        "name": "wsfnctn",
+        "line": 133
+      },
+      {
+        "name": "wsmaps09",
+        "line": 134
+      },
+      {
+        "name": "wssl",
+        "line": 135
+      },
+      {
+        "name": "wsdel",
+        "line": 136
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 162
+      },
+      {
+        "name": "screenio",
+        "line": 222
+      },
+      {
+        "name": "wscall",
+        "line": 299
+      },
+      {
+        "name": "wssystem",
+        "line": 300
+      },
+      {
+        "name": "wsnames",
+        "line": 301
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 914
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 365
+      },
+      {
+        "target": "Report1",
+        "line": 374
+      },
+      {
+        "target": "Sales-Open-Input",
+        "line": 386
+      },
+      {
+        "target": "Delivery-Open-Input",
+        "line": 387
+      },
+      {
+        "target": "Report-Selection",
+        "line": 389
+      },
+      {
+        "target": "Report-Heading-setup",
+        "line": 390
+      },
+      {
+        "target": "Report-Produce",
+        "line": 391
+      },
+      {
+        "target": "Sales-Close",
+        "line": 394
+      },
+      {
+        "target": "Delivery-Close",
+        "line": 395
+      },
+      {
+        "target": "zz050-Validate-Date",
+        "line": 471
+      },
+      {
+        "target": "Headings",
+        "line": 488
+      },
+      {
+        "target": "Sales-Read-Next-Sorted-By-Name",
+        "line": 503
+      },
+      {
+        "target": "Sales-Read-Indexed",
+        "line": 527
+      },
+      {
+        "target": "Test-Num",
+        "line": 547
+      },
+      {
+        "target": "Test-Num",
+        "line": 555
+      },
+      {
+        "target": "Test-Num",
+        "line": 563
+      },
+      {
+        "target": "Test-Num",
+        "line": 572
+      },
+      {
+        "target": "Test-Num",
+        "line": 580
+      },
+      {
+        "target": "Listing",
+        "line": 584
+      },
+      {
+        "target": "Headings",
+        "line": 632
+      },
+      {
+        "target": "Headings",
+        "line": 673
+      },
+      {
+        "target": "Delivery-Print",
+        "line": 679
+      },
+      {
+        "target": "Notes-Print",
+        "line": 681
+      },
+      {
+        "target": "Headings",
+        "line": 687
+      },
+      {
+        "target": "Delivery-Read-Indexed",
+        "line": 695
+      },
+      {
+        "target": "Delivery-Read-Indexed",
+        "line": 722
+      },
+      {
+        "target": "maps04",
+        "line": 871
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "sales-sort",
+        "line": 123
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 128
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

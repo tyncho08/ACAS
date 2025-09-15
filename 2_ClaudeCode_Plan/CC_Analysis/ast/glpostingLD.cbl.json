@@ -1,0 +1,465 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl",
+  "fileName": "glpostingLD.cbl",
+  "fileHash": "6cda63acbed77f03c90e03ef37ab20ed41e6bc1bbdc1671101363d851647d1b6",
+  "timestamp": "2025-09-15T19:46:03.143Z",
+  "parseTime": 57,
+  "lines": {
+    "total": 526,
+    "code": 323,
+    "comment": 202,
+    "blank": 1
+  },
+  "programId": "glpostingLD",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:124: error: envdiv.cob: No such file or directory\n  122 | *>-------------------\n  123 | *>\n  124 >  copy \"envdiv.cob\".\n  125 |  input-output            section.\n  126 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:131: error: selsys.cob: No such file or directory\n  129 | *>-----------\n  130 | *>\n  131 >  copy \"selsys.cob\".\n  132 |  data division.\n  133 | *>------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:138: error: fdsys.cob: No such file or directory\n  136 | *>-----------\n  137 | *>\n  138 >  copy \"fdsys.cob\".\n  139 |  working-storage section.\n  140 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:174: error: Test-Data-Flags.cob: No such file or directory\n  172 |      03  WS-Socket       pic x(64).\n  173 | *>\n  174 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  175 | *>\n  176 | *>  Record definition for Cobol file here:\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:178: error: wspost.cob: No such file or directory\n  176 | *>  Record definition for Cobol file here:\n  177 | *>\n  178 >  copy \"wspost.cob\".\n  179 | *>\n  180 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:180: error: wsfnctn.cob: No such file or directory\n  178 |  copy \"wspost.cob\".\n  179 | *>\n  180 >  copy \"wsfnctn.cob\".\n  181 |  copy \"wsnames.cob\".\n  182 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:181: error: wsnames.cob: No such file or directory\n  179 | *>\n  180 |  copy \"wsfnctn.cob\".\n  181 >  copy \"wsnames.cob\".\n  182 |  copy \"wscall.cob\".\n  183 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:182: error: wscall.cob: No such file or directory\n  180 |  copy \"wsfnctn.cob\".\n  181 |  copy \"wsnames.cob\".\n  182 >  copy \"wscall.cob\".\n  183 | *>\n  184 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:521: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  519 |      goback.\n  520 | *>\n  521 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  522 | *>\n  523 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:213: error: 'WS-Log-System' is not defined\n  211 |      move     Prog-Name to So-Print.\n  212 |      perform  Call-Sysout.\n  213 >      move     2      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  214 |      move     12     to WS-Log-File-No.  *> RDB, File/Table within sub Sy..\n  215 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:214: error: 'WS-Log-File-No' is not defined\n  212 |      perform  Call-Sysout.\n  213 |      move     2      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  214 >      move     12     to WS-Log-File-No.  *> RDB, File/Table within sub Sy..\n  215 | *>\n  216 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:218: error: 'System-File' is not defined\n  216 | *>  Get the system param for the various RDB fields\n  217 | *>\n  218 >      open     input System-File.\n  219 |      if       fs-reply not = zero\n  220 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:218: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:219: error: 'fs-reply' is not defined\n  217 | *>\n  218 |      open     input System-File.\n  219 >      if       fs-reply not = zero\n  220 |               display Prog-Name at 0101 with erase eos\n  221 |               display SY001     at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:224: error: 'System-File' is not a file name\n  222 |               display fs-reply  at 0428\n  223 |               display SY004     at 0501\n  224 >               close System-File\n  225 |               move 128 to return-code\n  226 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:227: error: 'rrn' is not defined\n  225 |               move 128 to return-code\n  226 |               goback.\n  227 >      move     1 to rrn.     *> Read the system parameter record (1)\n  228 |      read     system-file record.\n  229 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:228: error: 'System-File' is not a file name\n  226 |               goback.\n  227 |      move     1 to rrn.     *> Read the system parameter record (1)\n  228 >      read     system-file record.\n  229 |      if       fs-reply not = zero\n  230 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:234: error: 'System-File' is not a file name\n  232 |               display fs-reply        at 0428\n  233 |               display \"Not set up ?\"  at 0431\n  234 >               close System-File\n  235 |               move 128 to return-code\n  236 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:240: error: 'RDBMS-DB-Name' is not defined\n  238 | *>  Load up the DB settings from the system record as its not passed on.\n  239 | *>\n  240 >      if       RDBMS-DB-Name = spaces\n  241 |          or   FS-Cobol-Files-Used\n  242 |               display Prog-Name    *>  at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:241: error: 'FS-Cobol-Files-Used' is not defined\n  239 | *>\n  240 |      if       RDBMS-DB-Name = spaces\n  241 >          or   FS-Cobol-Files-Used\n  242 |               display Prog-Name    *>  at 0101 with erase eos\n  243 |               display SY019\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:249: error: 'System-File' is not a file name\n  247 |               if       WS-RDB-Return = 8\n  248 |                        display \"acas.param file NOT found - Aborted\"\n  249 >                        close  System-File\n  250 |                        goback\n  251 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:254: error: 'System-File' is not a file name\n  252 |               if       WS-RDB-Return = 1\n  253 |                        display \"Invalid keyword terminator found - Aborte..\n  254 >                        close  System-File\n  255 |                        goback\n  256 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:259: error: 'System-File' is not a file name\n  257 |               if       WS-RDB-Return = 2\n  258 |                        display \"Invalid keyword found - Aborted\"\n  259 >                        close  System-File\n  260 |                        goback\n  261 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:264: error: 'RDBMS-Host' is not defined\n  262 |               if       WS-RDB-Return = zeros\n  263 |                        display \"acas-param file found and being used \"\n  264 >                        move     WS-Host-Name      to RDBMS-Host\n  265 |                        move     WS-Implementation to RDBMS-User\n  266 |                        move     WS-Password       to RDBMS-Passwd\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:265: error: 'RDBMS-User' is not defined\n  263 |                        display \"acas-param file found and being used \"\n  264 |                        move     WS-Host-Name      to RDBMS-Host\n  265 >                        move     WS-Implementation to RDBMS-User\n  266 |                        move     WS-Password       to RDBMS-Passwd\n  267 |                        move     WS-Base-Name      to RDBMS-DB-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:266: error: 'RDBMS-Passwd' is not defined\n  264 |                        move     WS-Host-Name      to RDBMS-Host\n  265 |                        move     WS-Implementation to RDBMS-User\n  266 >                        move     WS-Password       to RDBMS-Passwd\n  267 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  268 |                        move     WS-Port-Number    to RDBMS-Port\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:268: error: 'RDBMS-Port' is not defined\n  266 |                        move     WS-Password       to RDBMS-Passwd\n  267 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  268 >                        move     WS-Port-Number    to RDBMS-Port\n  269 |                        move     WS-Socket         to RDBMS-Socket\n  270 |                       display \"User = \"   RDBMS-User\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:269: error: 'RDBMS-Socket' is not defined\n  267 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  268 |                        move     WS-Port-Number    to RDBMS-Port\n  269 >                        move     WS-Socket         to RDBMS-Socket\n  270 |                       display \"User = \"   RDBMS-User\n  271 |                       display \"Host = \"   RDBMS-Host\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:291: error: 'System-File' is not a file name\n  289 |               display \"Host = \"   RDBMS-Host\n  290 |               display \"Socket = \" RDBMS-Socket\n  291 >               close System-File\n  292 |               move 64 to Return-Code\n  293 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'aa010-Proc-Override':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:299: error: 'File-System-Used' is not defined\n  297 | *>  Over-ride processes for acas006/glpostingMT for Dup modes\n  298 | *>\n  299 >      move     zero to File-System-Used\n  300 |                       File-Duplicates-In-Use\n  301 |                       FA-File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:300: error: 'File-Duplicates-In-Use' is not defined\n  298 | *>\n  299 |      move     zero to File-System-Used\n  300 >                       File-Duplicates-In-Use\n  301 |                       FA-File-System-Used\n  302 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:301: error: 'FA-File-System-Used' is not defined\n  299 |      move     zero to File-System-Used\n  300 |                       File-Duplicates-In-Use\n  301 >                       FA-File-System-Used\n  302 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  303 |      move     zero to Log-file-rec-written.        *> for logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:302: error: 'FA-File-Duplicates-In-Use' is not defined\n  300 |                       File-Duplicates-In-Use\n  301 |                       FA-File-System-Used\n  302 >                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  303 |      move     zero to Log-file-rec-written.        *> for logging.\n  304 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:303: error: 'Log-file-rec-written' is not defined\n  301 |                       FA-File-System-Used\n  302 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  303 >      move     zero to Log-file-rec-written.        *> for logging.\n  304 | *>\n  305 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:305: error: 'File-Key-No' is not defined\n  303 |      move     zero to Log-file-rec-written.        *> for logging.\n  304 | *>\n  305 >      move     1 to File-Key-No.\n  306 |      perform  acas006-Open-Input.\n  307 |      if       FS-Reply = 35\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:317: error: 'System-File' is not a file name\n  315 |               move    \"CLOSE   \" to SO-Print\n  316 |               perform call-Sysout\n  317 >               close System-File\n  318 |               perform acas006-Close\n  319 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:330: error: 'System-File' is not a file name\n  328 |               move    \"CLOSE   \" to SO-Print\n  329 |               perform call-Sysout\n  330 >               close System-File\n  331 |               perform acas006-Close\n  332 |               move 16 to return-code\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:344: error: 'System-File' is not a file name\n  342 |               move \"CLOSE   \" to SO-Print\n  343 |               perform call-Sysout\n  344 >               close System-File\n  345 |               perform acas006-Close\n  346 |               move zero to File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:352: error: 'Access-Type' is not defined\n  350 |               goback\n  351 |      end-if.\n  352 >      move     zero to Access-Type.\n  353 |      go       to aa010-Read.\n  354 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'acas006':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:356: error: 'System-Record' is not defined\n  354 | *>\n  355 |  acas006.\n  356 >      call     \"acas006\" using System-Record\n  357 |                               WS-Posting-Record\n  358 |                               File-Access\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:357: error: 'WS-Posting-Record' is not defined\n  355 |  acas006.\n  356 |      call     \"acas006\" using System-Record\n  357 >                               WS-Posting-Record\n  358 |                               File-Access\n  359 |                               File-Defs\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:358: error: 'File-Access' is not defined\n  356 |      call     \"acas006\" using System-Record\n  357 |                               WS-Posting-Record\n  358 >                               File-Access\n  359 |                               File-Defs\n  360 |                               ACAS-DAL-Common-Data.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:359: error: 'File-Defs' is not defined\n  357 |                               WS-Posting-Record\n  358 |                               File-Access\n  359 >                               File-Defs\n  360 |                               ACAS-DAL-Common-Data.\n  361 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:360: error: 'ACAS-DAL-Common-Data' is not defined\n  358 |                               File-Access\n  359 |                               File-Defs\n  360 >                               ACAS-DAL-Common-Data.\n  361 | *>\n  362 |  acas006-Open.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'acas006-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:363: error: 'fn-open' is not defined\n  361 | *>\n  362 |  acas006-Open.\n  363 >      set      fn-open to true.\n  364 |      set      fn-i-o  to true.\n  365 |      perform  acas006.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:364: error: 'fn-i-o' is not defined\n  362 |  acas006-Open.\n  363 |      set      fn-open to true.\n  364 >      set      fn-i-o  to true.\n  365 |      perform  acas006.\n  366 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'acas006-Open-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:370: error: 'fn-input' is not defined\n  368 |  acas006-Open-Input.\n  369 |      set      fn-open  to true.\n  370 >      set      fn-input to true.\n  371 |      perform  acas006.\n  372 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'acas006-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:375: error: 'fn-Close' is not defined\n  373 | *>\n  374 |  acas006-Close.\n  375 >      set      fn-Close to true.\n  376 |      perform  acas006.\n  377 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'acas006-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:379: error: 'fn-Read-Next' is not defined\n  377 | *>\n  378 |  acas006-Read-Next.\n  379 >      set      fn-Read-Next to true.\n  380 |      perform  acas006.\n  381 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'acas006-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:383: error: 'fn-Write' is not defined\n  381 | *>\n  382 |  acas006-Write.\n  383 >      set      fn-Write to true.\n  384 |      perform  acas006.\n  385 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'acas006-Rewrite':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:387: error: 'fn-re-write' is not defined\n  385 | *>\n  386 |  acas006-Rewrite.\n  387 >      set      fn-re-write to true.\n  388 |      perform  acas006.\n  389 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'aa010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:413: error: 'Sql-State' is not defined\n  411 |                    FA-File-System-Used.\n  412 |      perform  acas006-Write.\n  413 >      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  414 |          or   fs-reply = 22 or 99                    *> Check for dup key..\n  415 |          or   SQL-Err (1:4) = \"1062\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:415: error: 'SQL-Err' is not defined\n  413 |      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  414 |          or   fs-reply = 22 or 99                    *> Check for dup key..\n  415 >          or   SQL-Err (1:4) = \"1062\"\n  416 |                          or = \"1022\"\n  417 |               move    zeros to FS-Reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:418: error: 'WE-Error' is not defined\n  416 |                          or = \"1022\"\n  417 |               move    zeros to FS-Reply\n  418 >                                WE-Error\n  419 |               perform acas006-Rewrite\n  420 |               if      FS-Reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:423: error: 'WS-File-Key' is not defined\n  421 |                       move spaces to SO-Print\n  422 |                       string  GL014\n  423 >                                WS-File-Key into SO-Print\n  424 |                       perform call-Sysout\n  425 |                       move    GL099 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:443: error: 'SQL-Msg' is not defined\n  441 |               string GL018 SQL-Err into SO-Print\n  442 |               perform call-Sysout\n  443 >               move SQL-Msg to SO-Print\n  444 |               perform call-Sysout\n  445 |               move SQL-State to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'aa999-Finish':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:509: error: 'File-Function' is not defined\n  507 |                    FA-File-System-Used.\n  508 |      move     zero to Access-Type.\n  509 >      move     2 to File-Function.\n  510 |      perform  acas006-Close.                     *> Close RDB\n  511 |      close    System-File.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:511: error: 'System-File' is not a file name\n  509 |      move     2 to File-Function.\n  510 |      perform  acas006-Close.                     *> Close RDB\n  511 >      close    System-File.\n  512 |      move     zero to File-System-Used\n  513 |                    FA-File-System-Used.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:210: error: 'zz020-Get-Program-Args' is not defined\n  208 | *>\n  209 |  aa000-main-start.\n  210 >      perform  zz020-Get-Program-Args.\n  211 |      move     Prog-Name to So-Print.\n  212 |      perform  Call-Sysout.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:124: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:131: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:138: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:174: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:178: error: wspost.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:180: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:181: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:182: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:521: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:213: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:214: error: 'WS-Log-File-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:218: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:218: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:219: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:224: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:227: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:228: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:234: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:240: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:241: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:249: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:254: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:259: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:264: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:265: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:266: error: 'RDBMS-Passwd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:268: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:269: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:291: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:299: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:300: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:301: error: 'FA-File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:302: error: 'FA-File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:303: error: 'Log-file-rec-written' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:305: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:317: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:330: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:344: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:352: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:356: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:357: error: 'WS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:358: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:359: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:360: error: 'ACAS-DAL-Common-Data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:363: error: 'fn-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:364: error: 'fn-i-o' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:370: error: 'fn-input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:375: error: 'fn-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:379: error: 'fn-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:383: error: 'fn-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:387: error: 'fn-re-write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:413: error: 'Sql-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:415: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:418: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:423: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:443: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:509: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:511: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:210: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:124: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:131: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:138: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:174: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:178: error: wspost.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:180: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:181: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:182: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:521: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:213: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:214: error: 'WS-Log-File-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:218: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:218: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:219: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:224: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:227: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:228: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:234: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:240: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:241: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:249: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:254: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:259: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:264: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:265: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:266: error: 'RDBMS-Passwd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:268: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:269: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:291: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:299: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:300: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:301: error: 'FA-File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:302: error: 'FA-File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:303: error: 'Log-file-rec-written' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:305: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:317: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:330: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:344: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:352: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:356: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:357: error: 'WS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:358: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:359: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:360: error: 'ACAS-DAL-Common-Data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:363: error: 'fn-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:364: error: 'fn-i-o' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:370: error: 'fn-input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:375: error: 'fn-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:379: error: 'fn-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:383: error: 'fn-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:387: error: 'fn-re-write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:413: error: 'Sql-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:415: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:418: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:423: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:443: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:509: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:511: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingLD.cbl:210: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 32,
+    "cognitive": 58,
+    "halstead": {
+      "uniqueOperators": 10,
+      "uniqueOperands": 75,
+      "totalOperators": 209,
+      "totalOperands": 269,
+      "vocabulary": 85,
+      "length": 478,
+      "volume": 3064,
+      "difficulty": 17.93,
+      "effort": 54942,
+      "timeToProgram": 3052,
+      "deliveredBugs": 1.021
+    },
+    "maintainability": 71
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas-get-params",
+        "line": 245
+      },
+      {
+        "target": "acas006",
+        "line": 356
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 460
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 470
+      },
+      {
+        "target": "ACAS-Sysout",
+        "line": 524
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 114
+      },
+      {
+        "name": "envdiv",
+        "line": 124
+      },
+      {
+        "name": "selsys",
+        "line": 131
+      },
+      {
+        "name": "fdsys",
+        "line": 138
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 174
+      },
+      {
+        "name": "wspost",
+        "line": 178
+      },
+      {
+        "name": "wsfnctn",
+        "line": 180
+      },
+      {
+        "name": "wsnames",
+        "line": 181
+      },
+      {
+        "name": "wscall",
+        "line": 182
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 521
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 210
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 212
+      },
+      {
+        "target": "acas006-Open-Input",
+        "line": 306
+      },
+      {
+        "target": "call-Sysout",
+        "line": 309
+      },
+      {
+        "target": "call-Sysout",
+        "line": 314
+      },
+      {
+        "target": "call-Sysout",
+        "line": 316
+      },
+      {
+        "target": "acas006-Close",
+        "line": 318
+      },
+      {
+        "target": "call-Sysout",
+        "line": 322
+      },
+      {
+        "target": "call-Sysout",
+        "line": 327
+      },
+      {
+        "target": "call-Sysout",
+        "line": 329
+      },
+      {
+        "target": "acas006-Close",
+        "line": 331
+      },
+      {
+        "target": "acas006-Open",
+        "line": 338
+      },
+      {
+        "target": "call-Sysout",
+        "line": 341
+      },
+      {
+        "target": "call-Sysout",
+        "line": 343
+      },
+      {
+        "target": "acas006-Close",
+        "line": 345
+      },
+      {
+        "target": "acas006-Close",
+        "line": 348
+      },
+      {
+        "target": "acas006",
+        "line": 365
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 366
+      },
+      {
+        "target": "acas006",
+        "line": 371
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 372
+      },
+      {
+        "target": "acas006",
+        "line": 376
+      },
+      {
+        "target": "acas006",
+        "line": 380
+      },
+      {
+        "target": "acas006",
+        "line": 384
+      },
+      {
+        "target": "acas006",
+        "line": 388
+      },
+      {
+        "target": "acas006-Read-Next",
+        "line": 396
+      },
+      {
+        "target": "call-Sysout",
+        "line": 404
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 405
+      },
+      {
+        "target": "acas006-Write",
+        "line": 412
+      },
+      {
+        "target": "acas006-Rewrite",
+        "line": 419
+      },
+      {
+        "target": "call-Sysout",
+        "line": 424
+      },
+      {
+        "target": "call-Sysout",
+        "line": 426
+      },
+      {
+        "target": "call-Sysout",
+        "line": 436
+      },
+      {
+        "target": "call-Sysout",
+        "line": 439
+      },
+      {
+        "target": "call-Sysout",
+        "line": 442
+      },
+      {
+        "target": "call-Sysout",
+        "line": 444
+      },
+      {
+        "target": "call-Sysout",
+        "line": 446
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 447
+      },
+      {
+        "target": "call-Sysout",
+        "line": 479
+      },
+      {
+        "target": "call-Sysout",
+        "line": 482
+      },
+      {
+        "target": "call-Sysout",
+        "line": 485
+      },
+      {
+        "target": "call-Sysout",
+        "line": 487
+      },
+      {
+        "target": "call-Sysout",
+        "line": 489
+      },
+      {
+        "target": "call-Sysout",
+        "line": 491
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 492
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 501
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 504
+      },
+      {
+        "target": "acas006-Close",
+        "line": 510
+      },
+      {
+        "target": "acas006-close",
+        "line": 514
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 516
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 518
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 139
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>                rollback\n*>...",
+        "line": 457
+      },
+      {
+        "content": "*>                commit\n*>...",
+        "line": 467
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

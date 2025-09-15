@@ -1,0 +1,146 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl",
+  "fileName": "pl900.cbl",
+  "fileHash": "6a36d88f5bae62569b29802af27e7434bcf1da9b68f985d4399ef125f11245b2",
+  "timestamp": "2025-09-15T19:46:23.409Z",
+  "parseTime": 35,
+  "lines": {
+    "total": 244,
+    "code": 117,
+    "comment": 126,
+    "blank": 1
+  },
+  "programId": "pl900",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:83: error: envdiv.cob: No such file or directory\n   81 | *>===============================\n   82 | *>\n   83 >  copy \"envdiv.cob\".\n   84 |  input-output            section.\n   85 |  file-control.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:96: error: wsmaps03.cob: No such file or directory\n   94 |  77  prog-name          pic x(15) value \"PL900 (3.02.05)\".\n   95 |  77  menu-reply         pic x     value zero.\n   96 >  copy \"wsmaps03.cob\".\n   97 | *>\n   98 |  01  ws-Test-Date            pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:122: error: Test-Data-Flags.cob: No such file or directory\n  120 |          05  ws-intl-days    pic xx.\n  121 | *>\n  122 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  123 | *>\n  124 |  *> 01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:133: error: wscall.cob: No such file or directory\n  131 | *>==============\n  132 | *>\n  133 >  copy \"wscall.cob\".\n  134 |  copy \"wssystem.cob\".\n  135 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:134: error: wssystem.cob: No such file or directory\n  132 | *>\n  133 |  copy \"wscall.cob\".\n  134 >  copy \"wssystem.cob\".\n  135 |  copy \"wsnames.cob\".\n  136 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:135: error: wsnames.cob: No such file or directory\n  133 |  copy \"wscall.cob\".\n  134 |  copy \"wssystem.cob\".\n  135 >  copy \"wsnames.cob\".\n  136 | *>\n  137 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:139: error: 'ws-calling-data' is not defined\n  137 |  01  to-day              pic x(10).\n  138 | *>\n  139 >  procedure  division using ws-calling-data\n  140 |                            system-record\n  141 |                            to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:140: error: 'system-record' is not defined\n  138 | *>\n  139 |  procedure  division using ws-calling-data\n  140 >                            system-record\n  141 |                            to-day\n  142 |                            file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:142: error: 'file-defs' is not defined\n  140 |                            system-record\n  141 |                            to-day\n  142 >                            file-defs.\n  143 | *>========================================\n  144 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl: in paragraph 'main':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:146: error: 'ws-caller' is not defined\n  144 | *>\n  145 |  main.\n  146 >      move     ws-caller to ws-del-link.\n  147 |      move     ws-called to ws-caller.\n  148 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:146: error: 'ws-del-link' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:147: error: 'ws-called' is not defined\n  145 |  main.\n  146 |      move     ws-caller to ws-del-link.\n  147 >      move     ws-called to ws-caller.\n  148 | *>\n  149 |  menu-start.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl: in section 'zz070-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:216: error: 'Date-Form' is not defined\n  214 |      move     to-day to ws-date.\n  215 | *>\n  216 >      if       Date-Form = zero\n  217 |               move 1 to Date-Form.\n  218 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:218: error: 'Date-UK' is not defined\n  216 |      if       Date-Form = zero\n  217 |               move 1 to Date-Form.\n  218 >      if       Date-UK\n  219 |               go to zz070-Exit.\n  220 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:220: error: 'Date-USA' is not defined\n  218 |      if       Date-UK\n  219 |               go to zz070-Exit.\n  220 >      if       Date-USA                *> swap month and days\n  221 |               move ws-days to ws-swap\n  222 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl: in section 'maps04':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:239: error: 'maps03-ws' is not defined\n  237 | *>*******************\n  238 | *>\n  239 >      call     \"maps04\"  using  maps03-ws.\n  240 | *>\n  241 |  maps04-exit.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:83: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:96: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:122: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:133: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:134: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:135: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:139: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:140: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:142: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:146: error: 'ws-caller' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:146: error: 'ws-del-link' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:147: error: 'ws-called' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:216: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:218: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:220: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:239: error: 'maps03-ws' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:83: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:96: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:122: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:133: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:134: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:135: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:139: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:140: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:142: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:146: error: 'ws-caller' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:146: error: 'ws-del-link' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:147: error: 'ws-called' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:216: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:218: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:220: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl900.cbl:239: error: 'maps03-ws' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 24,
+    "cognitive": 65,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 34,
+      "totalOperators": 58,
+      "totalOperands": 51,
+      "vocabulary": 42,
+      "length": 109,
+      "volume": 588,
+      "difficulty": 6,
+      "effort": 3527,
+      "timeToProgram": 196,
+      "deliveredBugs": 0.196
+    },
+    "maintainability": 77
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 239
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 74
+      },
+      {
+        "name": "envdiv",
+        "line": 83
+      },
+      {
+        "name": "wsmaps03",
+        "line": 96
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 122
+      },
+      {
+        "name": "wscall",
+        "line": 133
+      },
+      {
+        "name": "wssystem",
+        "line": 134
+      },
+      {
+        "name": "wsnames",
+        "line": 135
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 153
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 92
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

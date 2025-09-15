@@ -1,0 +1,419 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl",
+  "fileName": "slpostingMT.cbl",
+  "fileHash": "87bfec32824fba5c4fd960bc69654719ac5f377883937af763250ce19661ad99",
+  "timestamp": "2025-09-15T19:46:08.396Z",
+  "parseTime": 84,
+  "lines": {
+    "total": 1337,
+    "code": 849,
+    "comment": 485,
+    "blank": 3
+  },
+  "programId": "slpostingMT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:147: error: ACAS-SQLstate-error-list.cob: No such file or directory\n  145 | *>                                     * = FS-Reply = 99.\n  146 | *>\n  147 >  copy \"ACAS-SQLstate-error-list.cob\".\n  148 | *>\n  149 | *>       During testing a log file will be created containing datetime st..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:259: error: mysql-variables.cpy: No such file or directory\n  257 | *>       ACASDB\n  258 | *>       TABLE=PSIRSPOST-REC,HV\n  259 >  COPY \"mysql-variables.cpy\".\n  260 | *>\n  261 | *>    Definitions for the PSIRSPOST-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:281: error: wsfnctn.cob: No such file or directory\n  279 | *>\n  280 | *>**********************************************************************\n  281 >  copy \"wsfnctn.cob\".                         *> File-Access\n  282 | *>\n  283 | *>**********************************************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:285: error: Test-Data-Flags.cob: No such file or directory\n  283 | *>**********************************************************************\n  284 | *>\n  285 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  286 | *>\n  287 | *>  Record definition for Cobol file here:\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:289: error: wspost-irs.cob: No such file or directory\n  287 | *>  Record definition for Cobol file here:\n  288 | *>\n  289 >  copy \"wspost-irs.cob\".\n  290 | *>\n  291 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:966: error: mysql-procedures.cpy: No such file or directory\n  964 | *>\n  965 | *> /MYSQL PRO\\\n  966 >  COPY \"mysql-procedures.cpy\".\n  967 | *> /MYSQL-END\\\n  968 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:300: error: 'Ws-Mysql-Error-Number' is not defined\n  298 |  01  Display-Message-2       foreground-color 2.\n  299 |      03      value \"SM004 SQL Err No.=\"            line 4 col  1.    *> s..\n  300 >      03  using Ws-Mysql-Error-Number   pic x(4)           col 19.    *>..\n  301 |      03      value \" Para=\"                               col 23.    *> s..\n  302 |      03  using WS-No-Paragraph         pic 9(3)           col 29.    *>..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:302: error: 'WS-No-Paragraph' is not defined\n  300 |      03  using Ws-Mysql-Error-Number   pic x(4)           col 19.    *>..\n  301 |      03      value \" Para=\"                               col 23.    *> s..\n  302 >      03  using WS-No-Paragraph         pic 9(3)           col 29.    *>..\n  303 |      03      value \" SQL Cmd=\"                            col 32.    *>..\n  304 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:304: error: 'Ws-Mysql-Command' is not defined\n  302 |      03  using WS-No-Paragraph         pic 9(3)           col 29.    *>..\n  303 |      03      value \" SQL Cmd=\"                            col 32.    *>..\n  304 >      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  305 |      03      value \"SQL Err Msg=\"                  line 7 col  1.    *>..\n  306 |      03  using Ws-Mysql-Error-Message  pic x(67)          col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:306: error: 'Ws-Mysql-Error-Message' is not defined\n  304 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  305 |      03      value \"SQL Err Msg=\"                  line 7 col  1.    *>..\n  306 >      03  using Ws-Mysql-Error-Message  pic x(67)          col 13.\n  307 | *>\n  308 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:309: error: 'File-Access' is not defined\n  307 | *>\n  308 | *>\n  309 >  PROCEDURE DIVISION   using File-Access\n  310 |                             ACAS-DAL-Common-data\n  311 |                             WS-IRS-Posting-Record.   *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:310: error: 'ACAS-DAL-Common-data' is not defined\n  308 | *>\n  309 |  PROCEDURE DIVISION   using File-Access\n  310 >                             ACAS-DAL-Common-data\n  311 |                             WS-IRS-Posting-Record.   *>  Ws record\n  312 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:311: error: 'WS-IRS-Posting-Record' is not defined\n  309 |  PROCEDURE DIVISION   using File-Access\n  310 |                             ACAS-DAL-Common-data\n  311 >                             WS-IRS-Posting-Record.   *>  Ws record\n  312 | *>**********************************************\n  313 |  ba-ACAS-DAL-Process  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:331: error: 'WS-Log-Where' is not defined\n  329 |      move     spaces to WS-MYSQL-Error-Message\n  330 |                         WS-MYSQL-Error-Number\n  331 >                         WS-Log-Where\n  332 |                         WS-File-Key\n  333 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:332: error: 'WS-File-Key' is not defined\n  330 |                         WS-MYSQL-Error-Number\n  331 |                         WS-Log-Where\n  332 >                         WS-File-Key\n  333 |                         SQL-Msg\n  334 |                         SQL-Err.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:333: error: 'SQL-Msg' is not defined\n  331 |                         WS-Log-Where\n  332 |                         WS-File-Key\n  333 >                         SQL-Msg\n  334 |                         SQL-Err.\n  335 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:334: error: 'SQL-Err' is not defined\n  332 |                         WS-File-Key\n  333 |                         SQL-Msg\n  334 >                         SQL-Err.\n  335 | *>\n  336 | *>   Now Test for valid key for start, read-indexed and delete\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:344: error: 'File-Function' is not defined\n  342 | *>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  343 | *>\n  344 >      evaluate File-Function\n  345 |         when  1\n  346 |               go to ba020-Process-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:372: error: 'DB-Schema' is not defined\n  370 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  371 |  *>\n  372 >      string   DB-Schema      delimited by space\n  373 |               X\"00\"          delimited by size\n  374 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:374: error: 'WS-MYSQL-BASE-NAME' is not defined\n  372 |      string   DB-Schema      delimited by space\n  373 |               X\"00\"          delimited by size\n  374 >                                into WS-MYSQL-BASE-NAME\n  375 |      end-string.\n  376 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:376: error: 'DB-Host' is not defined\n  374 |                                into WS-MYSQL-BASE-NAME\n  375 |      end-string.\n  376 >      string   DB-Host        delimited by space\n  377 |               X\"00\"          delimited by size\n  378 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:378: error: 'WS-MYSQL-HOST-NAME' is not defined\n  376 |      string   DB-Host        delimited by space\n  377 |               X\"00\"          delimited by size\n  378 >                                into WS-MYSQL-HOST-NAME\n  379 |      end-string.\n  380 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:380: error: 'DB-UName' is not defined\n  378 |                                into WS-MYSQL-HOST-NAME\n  379 |      end-string.\n  380 >      string   DB-UName       delimited by space\n  381 |               X\"00\"          delimited by size\n  382 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:382: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  380 |      string   DB-UName       delimited by space\n  381 |               X\"00\"          delimited by size\n  382 >                                into WS-MYSQL-IMPLEMENTATION\n  383 |      end-string.\n  384 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:384: error: 'DB-UPass' is not defined\n  382 |                                into WS-MYSQL-IMPLEMENTATION\n  383 |      end-string.\n  384 >      string   DB-UPass       delimited by space\n  385 |               X\"00\"          delimited by size\n  386 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:386: error: 'WS-MYSQL-PASSWORD' is not defined\n  384 |      string   DB-UPass       delimited by space\n  385 |               X\"00\"          delimited by size\n  386 >                                into WS-MYSQL-PASSWORD\n  387 |      end-string.\n  388 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:388: error: 'DB-Port' is not defined\n  386 |                                into WS-MYSQL-PASSWORD\n  387 |      end-string.\n  388 >      string   DB-Port        delimited by space\n  389 |               X\"00\"          delimited by size\n  390 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:390: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  388 |      string   DB-Port        delimited by space\n  389 |               X\"00\"          delimited by size\n  390 >                                into WS-MYSQL-PORT-NUMBER\n  391 |      end-string.\n  392 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:392: error: 'DB-Socket' is not defined\n  390 |                                into WS-MYSQL-PORT-NUMBER\n  391 |      end-string.\n  392 >      string   DB-Socket      delimited by space\n  393 |               X\"00\"          delimited by size\n  394 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:394: error: 'WS-MYSQL-SOCKET' is not defined\n  392 |      string   DB-Socket      delimited by space\n  393 |               X\"00\"          delimited by size\n  394 >                                into WS-MYSQL-SOCKET\n  395 |      end-string.\n  396 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:398: error: 'fs-reply' is not defined\n  396 |      move     1 to ws-No-Paragraph.\n  397 |      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  398 >      if       fs-reply not = zero\n  399 |               go   to ba999-end.\n  400 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:468: error: 'WS-MYSQL-RESULT' is not defined\n  466 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  467 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  468 >            MOVE WS-MYSQL-RESULT TO TP-PSIRSPOST-REC\n  469 | *>               /MYSQL-END\\\n  470 |            move    \"00000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:471: error: 'Testing-2' is not defined\n  469 | *>               /MYSQL-END\\\n  470 |            move    \"00000\" to WS-File-Key\n  471 >               if    Testing-2\n  472 |                     display Display-Message-1 with erase eos\n  473 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:477: error: 'WS-MYSQL-Count-Rows' is not defined\n  475 | *>  It could be an empty table so test for it\n  476 | *>\n  477 >               if       WS-MYSQL-Count-Rows = zero\n  478 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  479 |                        if    WS-MYSQL-Error-Number  not = \"0  \"    *> set..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:485: error: 'WE-Error' is not defined\n  483 |                        end-if       *> do not really need to do this mean..\n  484 |                        move 10 to fs-reply\n  485 >                        move 10 to WE-Error\n  486 |                        move    \"No Data\" to WS-File-Key\n  487 |                        go to ba998-Free       *> can clear the dup code a..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in paragraph 'ba050-Process-Read-Indexed':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:556: error: 'File-Key-No' is not defined\n  554 | *>  Sets up key and compare data\n  555 | *>\n  556 >      set      KOR-x1 to File-Key-No\n  557 |      move     KOR-offset (KOR-x1) to K\n  558 |      move     KOR-length (KOR-x1) to L\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in paragraph 'ba060-Process-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:650: error: 'access-type' is not defined\n  648 | *>  Check for Param error 1st on start\n  649 | *>\n  650 >      if       access-type < 5 or > 8                   *> not using not <..\n  651 |               move 99 to FS-Reply\n  652 |               move 997 to WE-Error                     *> Invalid calling..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in paragraph 'ba080-Process-Delete':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:815: error: 'Testing-1' is not defined\n  813 |                     move 995 to WE-Error\n  814 |               end-if\n  815 >               if       Testing-1\n  816 |                        perform Ca-Process-Logs\n  817 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in paragraph 'ba085-Process-DELETE-ALL':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:849: error: 'WS-IRS-Batch' is not defined\n  847 | *>\n  848 |  *>>    add      1  to WS-IRS-Post-Number.    *> as its the last posting\n  849 >      move     99999 to WS-IRS-Batch\n  850 |                        WS-IRS-Post-Number.\n  851 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:850: error: 'WS-IRS-Post-Number' is not defined\n  848 |  *>>    add      1  to WS-IRS-Post-Number.    *> as its the last posting\n  849 |      move     99999 to WS-IRS-Batch\n  850 >                        WS-IRS-Post-Number.\n  851 | *>\n  852 |      set      KOR-x1 to File-Key-No\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:863: error: 'WS-IRS-Post-Key' is not defined\n  861 |               '<\"'                  delimited by size\n  862 |  *>             Posting-Record (K:L)    delimited by size\n  863 >               WS-IRS-Post-Key              delimited by size\n  864 |               '\"'                   delimited by size\n  865 |                       into WS-Where\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in section 'bb000-HV-Load':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1001: error: 'WS-IRS-Post-Code' is not defined\n  999 |      initialize TD-PSIRSPOST-REC.\n 1000 |      move     WS-IRS-Post-Key      to HV-IRS-POST-KEY.\n 1001 >      move     WS-IRS-Post-Code     to HV-IRS-POST-CODE.\n 1002 |      move     WS-IRS-Post-Date     to HV-IRS-POST-DAT.\n 1003 |      move     WS-IRS-Post-DR       to HV-IRS-POST-DR.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1002: error: 'WS-IRS-Post-Date' is not defined\n 1000 |      move     WS-IRS-Post-Key      to HV-IRS-POST-KEY.\n 1001 |      move     WS-IRS-Post-Code     to HV-IRS-POST-CODE.\n 1002 >      move     WS-IRS-Post-Date     to HV-IRS-POST-DAT.\n 1003 |      move     WS-IRS-Post-DR       to HV-IRS-POST-DR.\n 1004 |      move     WS-IRS-Post-CR       to HV-IRS-POST-CR.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1003: error: 'WS-IRS-Post-DR' is not defined\n 1001 |      move     WS-IRS-Post-Code     to HV-IRS-POST-CODE.\n 1002 |      move     WS-IRS-Post-Date     to HV-IRS-POST-DAT.\n 1003 >      move     WS-IRS-Post-DR       to HV-IRS-POST-DR.\n 1004 |      move     WS-IRS-Post-CR       to HV-IRS-POST-CR.\n 1005 |      move     WS-IRS-Post-Amount   to HV-IRS-POST-AMOUNT.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1004: error: 'WS-IRS-Post-CR' is not defined\n 1002 |      move     WS-IRS-Post-Date     to HV-IRS-POST-DAT.\n 1003 |      move     WS-IRS-Post-DR       to HV-IRS-POST-DR.\n 1004 >      move     WS-IRS-Post-CR       to HV-IRS-POST-CR.\n 1005 |      move     WS-IRS-Post-Amount   to HV-IRS-POST-AMOUNT.\n 1006 |      move     WS-IRS-Post-Legend   to HV-IRS-POST-LEGEND.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1005: error: 'WS-IRS-Post-Amount' is not defined\n 1003 |      move     WS-IRS-Post-DR       to HV-IRS-POST-DR.\n 1004 |      move     WS-IRS-Post-CR       to HV-IRS-POST-CR.\n 1005 >      move     WS-IRS-Post-Amount   to HV-IRS-POST-AMOUNT.\n 1006 |      move     WS-IRS-Post-Legend   to HV-IRS-POST-LEGEND.\n 1007 |      move     WS-IRS-Vat-AC-Def    to HV-IRS-VAT-AC-DEF.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1006: error: 'WS-IRS-Post-Legend' is not defined\n 1004 |      move     WS-IRS-Post-CR       to HV-IRS-POST-CR.\n 1005 |      move     WS-IRS-Post-Amount   to HV-IRS-POST-AMOUNT.\n 1006 >      move     WS-IRS-Post-Legend   to HV-IRS-POST-LEGEND.\n 1007 |      move     WS-IRS-Vat-AC-Def    to HV-IRS-VAT-AC-DEF.\n 1008 |      move     WS-IRS-Post-Vat-Side to HV-IRS-POST-VAT-SIDE.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1007: error: 'WS-IRS-Vat-AC-Def' is not defined\n 1005 |      move     WS-IRS-Post-Amount   to HV-IRS-POST-AMOUNT.\n 1006 |      move     WS-IRS-Post-Legend   to HV-IRS-POST-LEGEND.\n 1007 >      move     WS-IRS-Vat-AC-Def    to HV-IRS-VAT-AC-DEF.\n 1008 |      move     WS-IRS-Post-Vat-Side to HV-IRS-POST-VAT-SIDE.\n 1009 |      move     WS-IRS-Vat-Amount    to HV-IRS-VAT-AMOUNT.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1008: error: 'WS-IRS-Post-Vat-Side' is not defined\n 1006 |      move     WS-IRS-Post-Legend   to HV-IRS-POST-LEGEND.\n 1007 |      move     WS-IRS-Vat-AC-Def    to HV-IRS-VAT-AC-DEF.\n 1008 >      move     WS-IRS-Post-Vat-Side to HV-IRS-POST-VAT-SIDE.\n 1009 |      move     WS-IRS-Vat-Amount    to HV-IRS-VAT-AMOUNT.\n 1010 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1009: error: 'WS-IRS-Vat-Amount' is not defined\n 1007 |      move     WS-IRS-Vat-AC-Def    to HV-IRS-VAT-AC-DEF.\n 1008 |      move     WS-IRS-Post-Vat-Side to HV-IRS-POST-VAT-SIDE.\n 1009 >      move     WS-IRS-Vat-Amount    to HV-IRS-VAT-AMOUNT.\n 1010 | *>\n 1011 | *> Loading HVs implies a non-Fetch action. RGs are handled separately for\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:397: error: 'MYSQL-1000-OPEN' is not defined\n  395 |      end-string.\n  396 |      move     1 to ws-No-Paragraph.\n  397 >      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  398 |      if       fs-reply not = zero\n  399 |               go   to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:397: error: 'MYSQL-1090-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in paragraph 'ba030-Process-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:421: error: 'MYSQL-1980-CLOSE' is not defined\n  419 | *>    Close the Database\n  420 | *>\n  421 >            PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n  422 | *>  /MYSQL-END\\\n  423 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:421: error: 'MYSQL-1999-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:466: error: 'MYSQL-1210-COMMAND' is not defined\n  464 |              ws-Where (1:J)      *> IRS-POST-KEY > \"0000000000\" ORDER BY..\n  465 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  466 >            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  467 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  468 |            MOVE WS-MYSQL-RESULT TO TP-PSIRSPOST-REC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:466: error: 'MYSQL-1219-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:467: error: 'MYSQL-1220-STORE-RESULT' is not defined\n  465 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  466 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  467 >            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  468 |            MOVE WS-MYSQL-RESULT TO TP-PSIRSPOST-REC\n  469 | *>               /MYSQL-END\\\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:467: error: 'MYSQL-1239-EXIT' is not defined\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:147: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:259: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:281: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:285: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:289: error: wspost-irs.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:966: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:300: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:302: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:304: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:306: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:309: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:310: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:311: error: 'WS-IRS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:331: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:332: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:333: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:334: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:344: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:372: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:374: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:376: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:378: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:380: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:382: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:384: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:386: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:388: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:390: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:392: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:394: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:398: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:468: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:471: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:477: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:485: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:556: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:650: error: 'access-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:815: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:849: error: 'WS-IRS-Batch' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:850: error: 'WS-IRS-Post-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:863: error: 'WS-IRS-Post-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1001: error: 'WS-IRS-Post-Code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1002: error: 'WS-IRS-Post-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1003: error: 'WS-IRS-Post-DR' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1004: error: 'WS-IRS-Post-CR' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1005: error: 'WS-IRS-Post-Amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1006: error: 'WS-IRS-Post-Legend' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1007: error: 'WS-IRS-Vat-AC-Def' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1008: error: 'WS-IRS-Post-Vat-Side' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1009: error: 'WS-IRS-Vat-Amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:397: error: 'MYSQL-1000-OPEN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:397: error: 'MYSQL-1090-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:421: error: 'MYSQL-1980-CLOSE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:421: error: 'MYSQL-1999-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:466: error: 'MYSQL-1210-COMMAND' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:466: error: 'MYSQL-1219-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:467: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:467: error: 'MYSQL-1239-EXIT' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:147: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:259: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:281: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:285: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:289: error: wspost-irs.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:966: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:300: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:302: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:304: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:306: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:309: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:310: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:311: error: 'WS-IRS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:331: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:332: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:333: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:334: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:344: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:372: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:374: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:376: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:378: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:380: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:382: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:384: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:386: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:388: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:390: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:392: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:394: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:398: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:468: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:471: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:477: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:485: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:556: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:650: error: 'access-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:815: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:849: error: 'WS-IRS-Batch' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:850: error: 'WS-IRS-Post-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:863: error: 'WS-IRS-Post-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1001: error: 'WS-IRS-Post-Code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1002: error: 'WS-IRS-Post-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1003: error: 'WS-IRS-Post-DR' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1004: error: 'WS-IRS-Post-CR' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1005: error: 'WS-IRS-Post-Amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1006: error: 'WS-IRS-Post-Legend' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1007: error: 'WS-IRS-Vat-AC-Def' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1008: error: 'WS-IRS-Post-Vat-Side' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:1009: error: 'WS-IRS-Vat-Amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:397: error: 'MYSQL-1000-OPEN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:397: error: 'MYSQL-1090-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:421: error: 'MYSQL-1980-CLOSE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:421: error: 'MYSQL-1999-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:466: error: 'MYSQL-1210-COMMAND' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:466: error: 'MYSQL-1219-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:467: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingMT.cbl:467: error: 'MYSQL-1239-EXIT' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 107,
+    "cognitive": 216,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 189,
+      "totalOperators": 402,
+      "totalOperands": 1475,
+      "vocabulary": 201,
+      "length": 1877,
+      "volume": 14361,
+      "difficulty": 46.83,
+      "effort": 672461,
+      "timeToProgram": 37359,
+      "deliveredBugs": 4.787
+    },
+    "maintainability": 56
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 478
+      },
+      {
+        "target": "MySQL_error",
+        "line": 481
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 503
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 526
+      },
+      {
+        "target": "MySQL_error",
+        "line": 528
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 605
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 621
+      },
+      {
+        "target": "MySQL_error",
+        "line": 626
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 727
+      },
+      {
+        "target": "MySQL_error",
+        "line": 729
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 755
+      },
+      {
+        "target": "MySQL_error",
+        "line": 757
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 807
+      },
+      {
+        "target": "MySQL_error",
+        "line": 809
+      },
+      {
+        "target": "MySQL_query",
+        "line": 843
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 893
+      },
+      {
+        "target": "MySQL_error",
+        "line": 895
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 942
+      },
+      {
+        "target": "MySQL_error",
+        "line": 944
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 977
+      },
+      {
+        "target": "fhlogger",
+        "line": 1331
+      }
+    ],
+    "copies": [
+      {
+        "name": "*>",
+        "line": 134
+      },
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 147
+      },
+      {
+        "name": "of",
+        "line": 182
+      },
+      {
+        "name": "envdiv",
+        "line": 189
+      },
+      {
+        "name": "mysql-variables",
+        "line": 259
+      },
+      {
+        "name": "wsfnctn",
+        "line": 281
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 285
+      },
+      {
+        "name": "wspost-irs",
+        "line": 289
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 966
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 370
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 397
+      },
+      {
+        "target": "ba998-Free",
+        "line": 413
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 421
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 466
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 467
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 545
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 588
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 589
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 640
+      },
+      {
+        "target": "ba998-Free",
+        "line": 659
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 717
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 718
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 747
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 753
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 804
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 816
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 890
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 902
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 911
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 917
+      },
+      {
+        "target": "bb300-Update",
+        "line": 935
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 985
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1176
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1321
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 193
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>              DELETE\n*>              FROM PSIRSPOST-REC\n*>...",
+        "line": 829
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

@@ -1,0 +1,135 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob",
+  "fileName": "Proc-Get-Env-Set-Files.cob",
+  "fileHash": "ab742b4a08d8cc37998de25beacb34dc5d2eb9234a9e309c26ede341aa4581e8",
+  "timestamp": "2025-09-15T19:46:10.712Z",
+  "parseTime": 36,
+  "lines": {
+    "total": 149,
+    "code": 79,
+    "comment": 69,
+    "blank": 1
+  },
+  "programId": null,
+  "divisions": {
+    "identification": false,
+    "environment": false,
+    "data": false,
+    "procedure": false
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:2: note: free format detected\n    1 | *>\n    2 > *> 28/10/16 vbc - .00  Made a copybook to make it easier for maintenance\n    3 | *>                     All msgs start with SY00.\n    4 | *>                     Rem out all refs to ACAS_IRS as all files in same..\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: PROGRAM-ID header missing\n   15 | *> 31/05/23 vbc - .05  USe TRIM when getting ACAS-LEDGER content.\n   16 | *>\n   17 >  zz010-Get-Env-Set-Files section.\n   18 | *>******************************\n   19 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: ENVIRONMENT DIVISION header missing\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: CONFIGURATION SECTION header missing\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: SPECIAL-NAMES header missing\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: invalid system-name 'zz010-Get-Env-Set-Files'\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: syntax error, unexpected SECTION, expecting CRT or Identifier\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:20: error: PROCEDURE DIVISION header missing\n   18 | *>******************************\n   19 | *>\n   20 >      accept   ACAS_LEDGERS from Environment \"ACAS_LEDGERS\".\n   21 |      accept   ACAS_BIN     from Environment \"ACAS_BIN\".\n   22 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:20: error: 'ACAS_LEDGERS' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:21: error: 'ACAS_BIN' is not defined\n   19 | *>\n   20 |      accept   ACAS_LEDGERS from Environment \"ACAS_LEDGERS\".\n   21 >      accept   ACAS_BIN     from Environment \"ACAS_BIN\".\n   22 | *>\n   23 |      if       ACAS_LEDGERS (1:1) = spaces\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:25: error: 'SY009' is not defined\n   23 |      if       ACAS_LEDGERS (1:1) = spaces\n   24 |            or ACAS_BIN (1:1) = spaces\n   25 >               display SY009   at 0505 with erase eos highlight\n   26 |               display SY008   at 1210 with           foreground-color 3 h..\n   27 |               accept ws-reply at 1243\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:26: error: 'SY008' is not defined\n   24 |            or ACAS_BIN (1:1) = spaces\n   25 |               display SY009   at 0505 with erase eos highlight\n   26 >               display SY008   at 1210 with           foreground-color 3 h..\n   27 |               accept ws-reply at 1243\n   28 |               stop run\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:27: error: 'ws-reply' is not defined\n   25 |               display SY009   at 0505 with erase eos highlight\n   26 |               display SY008   at 1210 with           foreground-color 3 h..\n   27 >               accept ws-reply at 1243\n   28 |               stop run\n   29 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:31: error: 'OS-Delimiter' is not defined\n   29 |      end-if\n   30 |      if       ACAS_LEDGERS (1:1) = \"\\\" or \"/\"          *> Its Windows or..\n   31 >               move ACAS_LEDGERS (1:1) to OS-Delimiter      *> \"  (4 edito..\n   32 |      end-if.\n   33 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob: in section 'zz020-Get-Program-Args':\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:47: error: 'Arg-Test' is not defined\n   45 | *>     'NONE', 'NULL', 'ACAS_LEDGERS='\n   46 | *>\n   47 >      move     spaces to Arg-Test\n   48 |                         WS-CD-Args in WS-Calling-Data.\n   49 |      move     1 to z.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:48: error: 'WS-CD-Args IN WS-Calling-Data' is not defined\n   46 | *>\n   47 |      move     spaces to Arg-Test\n   48 >                         WS-CD-Args in WS-Calling-Data.\n   49 |      move     1 to z.\n   50 |      accept   Arg-Vals from command-line.\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:49: error: 'z' is not defined\n   47 |      move     spaces to Arg-Test\n   48 |                         WS-CD-Args in WS-Calling-Data.\n   49 >      move     1 to z.\n   50 |      accept   Arg-Vals from command-line.\n   51 |      unstring Arg-Vals delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:50: error: 'Arg-Vals' is not defined\n   48 |                         WS-CD-Args in WS-Calling-Data.\n   49 |      move     1 to z.\n   50 >      accept   Arg-Vals from command-line.\n   51 |      unstring Arg-Vals delimited by space\n   52 |                into Arg-Test\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:75: error: 'SY007' is not defined\n   73 |      if       Arg-Test (1:12) not = \"ACAS_LEDGERS\"\n   74 |          and  Arg-Test (1:4) not = \"NULL\" and not = \"NONE\"\n   75 >               display SY007           at 0101 with erase eos foreground-c..\n   76 |               display \"Arg-No=\"       at 0501 with foreground-color 2\n   77 |               display Arg-Number      at 0508 with foreground-color 2\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:77: error: 'Arg-Number' is not defined\n   75 |               display SY007           at 0101 with erase eos foreground-c..\n   76 |               display \"Arg-No=\"       at 0501 with foreground-color 2\n   77 >               display Arg-Number      at 0508 with foreground-color 2\n   78 |               display \"Arg Val=\"      at 0601 with foreground-color 2\n   79 |               display Arg-Test (1:40) at 0609 with foreground-color 2\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob: in paragraph 'zz020-Set-the-Paths':\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:122: error: 'File-Defs-os-Delimiter' is not defined\n  120 |               go to zz020-Exit                        *> so done already\n  121 |      end-if\n  122 >      if       File-Defs-os-Delimiter = \"\\\" or \"/\"     *> shows its been d..\n  123 |               go to zz020-Exit.\n  124 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:128: error: 'File-Defs-Count' is not defined\n  126 | *>\n  127 |      move     zero to z.\n  128 >      perform  File-Defs-Count times\n  129 |               add 1 to z\n  130 |               move space to Arg-Test\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:133: error: 'System-File-Names' is not defined\n  131 |               string ACAS_LEDGERS          delimited by space\n  132 |                      OS-Delimiter          delimited by size\n  133 >                      System-File-Names (z) delimited by space\n  134 |                                              into Arg-Test\n  135 |               end-string\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:141: error: 'ACAS-Path' is not defined\n  139 |      move     OS-Delimiter to File-Defs-os-Delimiter.    *> in wsnames sh..\n  140 | *>\n  141 >      move     spaces to ACAS-Path.\n  142 |      string   ACAS_LEDGERS          delimited by space\n  143 |               OS-Delimiter          delimited by size\n/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:40: error: 'zz010-Get-Env-Set-Files' is not defined\n   38 | *>**********************************\n   39 | *>\n   40 >      perform  zz010-Get-Env-Set-Files.          *> This must be set so ge..\n   41 | *>\n   42 | *> See if we have temporary overrides that have been supplied when callin..\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: PROGRAM-ID header missing",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: ENVIRONMENT DIVISION header missing",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: CONFIGURATION SECTION header missing",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: SPECIAL-NAMES header missing",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: invalid system-name 'zz010-Get-Env-Set-Files'",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: syntax error, unexpected SECTION, expecting CRT or Identifier",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:20: error: PROCEDURE DIVISION header missing",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:20: error: 'ACAS_LEDGERS' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:21: error: 'ACAS_BIN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:25: error: 'SY009' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:26: error: 'SY008' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:27: error: 'ws-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:31: error: 'OS-Delimiter' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:47: error: 'Arg-Test' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:48: error: 'WS-CD-Args IN WS-Calling-Data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:49: error: 'z' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:50: error: 'Arg-Vals' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:75: error: 'SY007' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:77: error: 'Arg-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:122: error: 'File-Defs-os-Delimiter' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:128: error: 'File-Defs-Count' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:133: error: 'System-File-Names' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:141: error: 'ACAS-Path' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:40: error: 'zz010-Get-Env-Set-Files' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: PROGRAM-ID header missing",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: ENVIRONMENT DIVISION header missing",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: CONFIGURATION SECTION header missing",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: SPECIAL-NAMES header missing",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: invalid system-name 'zz010-Get-Env-Set-Files'",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:17: error: syntax error, unexpected SECTION, expecting CRT or Identifier",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:20: error: PROCEDURE DIVISION header missing",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:20: error: 'ACAS_LEDGERS' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:21: error: 'ACAS_BIN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:25: error: 'SY009' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:26: error: 'SY008' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:27: error: 'ws-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:31: error: 'OS-Delimiter' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:47: error: 'Arg-Test' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:48: error: 'WS-CD-Args IN WS-Calling-Data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:49: error: 'z' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:50: error: 'Arg-Vals' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:75: error: 'SY007' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:77: error: 'Arg-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:122: error: 'File-Defs-os-Delimiter' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:128: error: 'File-Defs-Count' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:133: error: 'System-File-Names' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:141: error: 'ACAS-Path' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/copybooks/Proc-Get-Env-Set-Files.cob:40: error: 'zz010-Get-Env-Set-Files' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 15,
+    "cognitive": 27,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 28,
+      "totalOperators": 60,
+      "totalOperands": 44,
+      "vocabulary": 36,
+      "length": 104,
+      "volume": 538,
+      "difficulty": 6.29,
+      "effort": 3380,
+      "timeToProgram": 188,
+      "deliveredBugs": 0.179
+    },
+    "maintainability": 79
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [],
+    "performs": [
+      {
+        "target": "zz010-Get-Env-Set-Files",
+        "line": 40
+      },
+      {
+        "target": "is",
+        "line": 115
+      },
+      {
+        "target": "File-Defs-Count",
+        "line": 128
+      },
+      {
+        "target": "move",
+        "line": 137
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.2
+}

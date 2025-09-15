@@ -1,0 +1,433 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl",
+  "fileName": "sys4LD.cbl",
+  "fileHash": "10df4f95c280431dcb9ac112658ac64e34d86f4efd82f4e727c226e4dfa8d1bc",
+  "timestamp": "2025-09-15T19:46:09.182Z",
+  "parseTime": 69,
+  "lines": {
+    "total": 505,
+    "code": 304,
+    "comment": 200,
+    "blank": 1
+  },
+  "programId": "sys4LD",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:119: error: envdiv.cob: No such file or directory\n  117 | *>-------------------\n  118 | *>\n  119 >  copy \"envdiv.cob\".\n  120 |  input-output            section.\n  121 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:126: error: selsys.cob: No such file or directory\n  124 | *>-----------\n  125 | *>\n  126 >  copy \"selsys.cob\".\n  127 |  data division.\n  128 | *>------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:133: error: fdsys.cob: No such file or directory\n  131 | *>-----------\n  132 | *>\n  133 >  copy \"fdsys.cob\".\n  134 |  working-storage section.\n  135 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:168: error: Test-Data-Flags.cob: No such file or directory\n  166 |      03  WS-Socket       pic x(64).\n  167 | *>\n  168 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  169 | *>\n  170 |  copy \"wssystem.cob\" replacing System-Record by WS-System-Record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:180: error: wssystem.cob: No such file or directory\n  178 |                                RDBMS-Port    by WS-RDBMS-Port\n  179 |                                RDBMS-Host    by WS-RDBMS-Host\n  180 >                                RDBMS-Socket  by WS-RDBMS-Socket.\n  181 |  copy \"wssys4.cob\".\n  182 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:181: error: wssys4.cob: No such file or directory\n  179 |                                RDBMS-Host    by WS-RDBMS-Host\n  180 |                                RDBMS-Socket  by WS-RDBMS-Socket.\n  181 >  copy \"wssys4.cob\".\n  182 |  copy \"wsfnctn.cob\".\n  183 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:182: error: wsfnctn.cob: No such file or directory\n  180 |                                RDBMS-Socket  by WS-RDBMS-Socket.\n  181 |  copy \"wssys4.cob\".\n  182 >  copy \"wsfnctn.cob\".\n  183 |  copy \"wsnames.cob\".\n  184 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:183: error: wsnames.cob: No such file or directory\n  181 |  copy \"wssys4.cob\".\n  182 |  copy \"wsfnctn.cob\".\n  183 >  copy \"wsnames.cob\".\n  184 |  copy \"wscall.cob\".\n  185 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:184: error: wscall.cob: No such file or directory\n  182 |  copy \"wsfnctn.cob\".\n  183 |  copy \"wsnames.cob\".\n  184 >  copy \"wscall.cob\".\n  185 | *>\n  186 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:500: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  498 |      goback.\n  499 | *>\n  500 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  501 | *>\n  502 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:213: error: 'WS-Log-System' is not defined\n  211 |      move     Prog-Name to So-Print.\n  212 |      perform  Call-Sysout.\n  213 >      move     0      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  214 |      move     20     to WS-Log-File-no.  *> Cobol/RDB, File/Table within..\n  215 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:214: error: 'WS-Log-File-no' is not defined\n  212 |      perform  Call-Sysout.\n  213 |      move     0      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  214 >      move     20     to WS-Log-File-no.  *> Cobol/RDB, File/Table within..\n  215 | *>\n  216 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:218: error: 'System-File' is not defined\n  216 | *>  Get the system param for the various RDB fields\n  217 | *>\n  218 >      open     input System-File.\n  219 |      if       fs-reply not = zero\n  220 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:218: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:219: error: 'fs-reply' is not defined\n  217 | *>\n  218 |      open     input System-File.\n  219 >      if       fs-reply not = zero\n  220 |               display Prog-Name at 0101 with erase eos\n  221 |               display SY001       at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:224: error: 'System-File' is not a file name\n  222 |               display fs-reply    at 0428\n  223 |               display SY004       at 0501\n  224 >               close System-File\n  225 |               move 128 to return-code\n  226 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:227: error: 'rrn' is not defined\n  225 |               move 128 to return-code\n  226 |               goback.\n  227 >      move     4 to rrn.\n  228 |      read     System-File record.\n  229 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:228: error: 'System-File' is not a file name\n  226 |               goback.\n  227 |      move     4 to rrn.\n  228 >      read     System-File record.\n  229 |      if       fs-reply not = zero\n  230 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:234: error: 'System-File' is not a file name\n  232 |               display fs-reply       at 0428\n  233 |               display \"Not set up ?\" at 0431\n  234 >               close System-File\n  235 |               move 128 to return-code\n  236 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:237: error: 'System-Record' is not defined\n  235 |               move 128 to return-code\n  236 |               goback.\n  237 >      move     System-Record to System-Record-4.\n  238 |      move     1  to  rrn.\n  239 |      read     System-File  record.       *> read the system parameter rec..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:237: error: 'System-Record-4' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:239: error: 'System-File' is not a file name\n  237 |      move     System-Record to System-Record-4.\n  238 |      move     1  to  rrn.\n  239 >      read     System-File  record.       *> read the system parameter rec..\n  240 |      move     System-Record to WS-System-Record.\n  241 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:240: error: 'WS-System-Record' is not defined\n  238 |      move     1  to  rrn.\n  239 |      read     System-File  record.       *> read the system parameter rec..\n  240 >      move     System-Record to WS-System-Record.\n  241 |      if       fs-reply not = zero\n  242 |               display SY001          at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:245: error: 'System-File' is not a file name\n  243 |               display fs-reply       at 0428\n  244 |               display \"Not set up ?\" at 0431\n  245 >               close System-File\n  246 |               move 128 to return-code\n  247 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:251: error: 'RDBMS-DB-Name' is not defined\n  249 | *>  Load up the DB settings from the system record as its not passed on.\n  250 | *>\n  251 >      if       RDBMS-DB-Name = spaces\n  252 |          or   FS-Cobol-Files-Used\n  253 |               display Prog-Name    *>  at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:252: error: 'FS-Cobol-Files-Used' is not defined\n  250 | *>\n  251 |      if       RDBMS-DB-Name = spaces\n  252 >          or   FS-Cobol-Files-Used\n  253 |               display Prog-Name    *>  at 0101 with erase eos\n  254 |               display SY019\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:260: error: 'System-File' is not a file name\n  258 |               if       WS-RDB-Return = 8\n  259 |                        display \"acas.param file NOT found - Aborted\"\n  260 >                        close  System-File\n  261 |                        goback\n  262 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:265: error: 'System-File' is not a file name\n  263 |               if       WS-RDB-Return = 1\n  264 |                        display \"Invalid keyword terminator found - Aborte..\n  265 >                        close  System-File\n  266 |                        goback\n  267 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:270: error: 'System-File' is not a file name\n  268 |               if       WS-RDB-Return = 2\n  269 |                        display \"Invalid keyword found - Aborted\"\n  270 >                        close  System-File\n  271 |                        goback\n  272 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:275: error: 'RDBMS-Host' is not defined\n  273 |               if       WS-RDB-Return = zeros\n  274 |                        display \"acas-param file found and being used \"\n  275 >                        move     WS-Host-Name      to RDBMS-Host\n  276 |                        move     WS-Implementation to RDBMS-User\n  277 |                        move     WS-Password       to RDBMS-Passwd\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:276: error: 'RDBMS-User' is not defined\n  274 |                        display \"acas-param file found and being used \"\n  275 |                        move     WS-Host-Name      to RDBMS-Host\n  276 >                        move     WS-Implementation to RDBMS-User\n  277 |                        move     WS-Password       to RDBMS-Passwd\n  278 |                        move     WS-Base-Name      to RDBMS-DB-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:277: error: 'RDBMS-Passwd' is not defined\n  275 |                        move     WS-Host-Name      to RDBMS-Host\n  276 |                        move     WS-Implementation to RDBMS-User\n  277 >                        move     WS-Password       to RDBMS-Passwd\n  278 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  279 |                        move     WS-Port-Number    to RDBMS-Port\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:279: error: 'RDBMS-Port' is not defined\n  277 |                        move     WS-Password       to RDBMS-Passwd\n  278 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  279 >                        move     WS-Port-Number    to RDBMS-Port\n  280 |                        move     WS-Socket         to RDBMS-Socket\n  281 |                       display \"User = \"   RDBMS-User\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:280: error: 'RDBMS-Socket' is not defined\n  278 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  279 |                        move     WS-Port-Number    to RDBMS-Port\n  280 >                        move     WS-Socket         to RDBMS-Socket\n  281 |                       display \"User = \"   RDBMS-User\n  282 |                       display \"Host = \"   RDBMS-Host\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:301: error: 'System-File' is not a file name\n  299 |               display \"Socket = \" RDBMS-Socket\n  300 |               stop \"SY008 Note message & Hit return\"\n  301 >               close System-File\n  302 |               move 64 to Return-Code\n  303 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl: in paragraph 'aa010-Proc-Override':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:309: error: 'File-System-Used' is not defined\n  307 | *>  Over-ride processes for acas000/sys4MT for Dup modes\n  308 | *>\n  309 >      move     zero to File-System-Used\n  310 |                       File-Duplicates-In-Use\n  311 |                       FA-File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:310: error: 'File-Duplicates-In-Use' is not defined\n  308 | *>\n  309 |      move     zero to File-System-Used\n  310 >                       File-Duplicates-In-Use\n  311 |                       FA-File-System-Used\n  312 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:311: error: 'FA-File-System-Used' is not defined\n  309 |      move     zero to File-System-Used\n  310 |                       File-Duplicates-In-Use\n  311 >                       FA-File-System-Used\n  312 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  313 |      move     zero to Log-file-rec-written.        *> for logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:312: error: 'FA-File-Duplicates-In-Use' is not defined\n  310 |                       File-Duplicates-In-Use\n  311 |                       FA-File-System-Used\n  312 >                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  313 |      move     zero to Log-file-rec-written.        *> for logging.\n  314 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:313: error: 'Log-file-rec-written' is not defined\n  311 |                       FA-File-System-Used\n  312 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  313 >      move     zero to Log-file-rec-written.        *> for logging.\n  314 | *>\n  315 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:315: error: 'File-Key-No' is not defined\n  313 |      move     zero to Log-file-rec-written.        *> for logging.\n  314 | *>\n  315 >      move     1 to File-Key-No.\n  316 |      move     1 to File-System-Used\n  317 |                    FA-File-System-Used.            *> RDB in use\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl: in paragraph 'acas000':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:333: error: 'File-Access' is not defined\n  331 | *>                              File-Defs\n  332 |      call     \"sys4MT\" using\n  333 >                                 File-Access\n  334 |                                 ACAS-DAL-Common-data\n  335 |                                 System-Record-4.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:334: error: 'ACAS-DAL-Common-data' is not defined\n  332 |      call     \"sys4MT\" using\n  333 |                                 File-Access\n  334 >                                 ACAS-DAL-Common-data\n  335 |                                 System-Record-4.\n  336 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl: in paragraph 'acas000-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:338: error: 'fn-open' is not defined\n  336 | *>\n  337 |  acas000-Open.\n  338 >      set      fn-open to true.\n  339 |      set      fn-i-o  to true.\n  340 |      perform  acas000.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:339: error: 'fn-i-o' is not defined\n  337 |  acas000-Open.\n  338 |      set      fn-open to true.\n  339 >      set      fn-i-o  to true.\n  340 |      perform  acas000.\n  341 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl: in paragraph 'acas000-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:344: error: 'fn-Close' is not defined\n  342 | *>\n  343 |  acas000-Close.\n  344 >      set      fn-Close to true.\n  345 |      perform  acas000.\n  346 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl: in paragraph 'acas000-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:348: error: 'fn-Write' is not defined\n  346 | *>\n  347 |  acas000-Write.\n  348 >      set      fn-Write to true.\n  349 |      perform  acas000.\n  350 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl: in paragraph 'acas000-ReWrite':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:352: error: 'fn-re-write' is not defined\n  350 | *>\n  351 |  acas000-ReWrite.\n  352 >      set      fn-re-write to true.\n  353 |      perform  acas000.\n  354 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl: in paragraph 'aa010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:370: error: 'sl-os-bal-last-month' is not defined\n  368 | *> See if we have an empty record, lets make sure it is initialised\n  369 | *>\n  370 >      if       zero = sl-os-bal-last-month\n  371 |           and        sl-os-bal-this-month\n  372 |           and        sl-invoices-this-month\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:371: error: 'sl-os-bal-this-month' is not defined\n  369 | *>\n  370 |      if       zero = sl-os-bal-last-month\n  371 >           and        sl-os-bal-this-month\n  372 |           and        sl-invoices-this-month\n  373 |           and        sl-credit-notes-this-month\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:372: error: 'sl-invoices-this-month' is not defined\n  370 |      if       zero = sl-os-bal-last-month\n  371 |           and        sl-os-bal-this-month\n  372 >           and        sl-invoices-this-month\n  373 |           and        sl-credit-notes-this-month\n  374 |           and        sl-variance\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:373: error: 'sl-credit-notes-this-month' is not defined\n  371 |           and        sl-os-bal-this-month\n  372 |           and        sl-invoices-this-month\n  373 >           and        sl-credit-notes-this-month\n  374 |           and        sl-variance\n  375 |           and        sl-credit-deductions\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:374: error: 'sl-variance' is not defined\n  372 |           and        sl-invoices-this-month\n  373 |           and        sl-credit-notes-this-month\n  374 >           and        sl-variance\n  375 |           and        sl-credit-deductions\n  376 |           and        sl-cn-unappl-this-month\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:375: error: 'sl-credit-deductions' is not defined\n  373 |           and        sl-credit-notes-this-month\n  374 |           and        sl-variance\n  375 >           and        sl-credit-deductions\n  376 |           and        sl-cn-unappl-this-month\n  377 |           and        sl-payments\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:376: error: 'sl-cn-unappl-this-month' is not defined\n  374 |           and        sl-variance\n  375 |           and        sl-credit-deductions\n  376 >           and        sl-cn-unappl-this-month\n  377 |           and        sl-payments\n  378 |           and        pl-os-bal-last-month\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:377: error: 'sl-payments' is not defined\n  375 |           and        sl-credit-deductions\n  376 |           and        sl-cn-unappl-this-month\n  377 >           and        sl-payments\n  378 |           and        pl-os-bal-last-month\n  379 |           and        pl-os-bal-this-month\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:378: error: 'pl-os-bal-last-month' is not defined\n  376 |           and        sl-cn-unappl-this-month\n  377 |           and        sl-payments\n  378 >           and        pl-os-bal-last-month\n  379 |           and        pl-os-bal-this-month\n  380 |           and        pl-invoices-this-month\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:379: error: 'pl-os-bal-this-month' is not defined\n  377 |           and        sl-payments\n  378 |           and        pl-os-bal-last-month\n  379 >           and        pl-os-bal-this-month\n  380 |           and        pl-invoices-this-month\n  381 |           and        pl-credit-notes-this-month\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:380: error: 'pl-invoices-this-month' is not defined\n  378 |           and        pl-os-bal-last-month\n  379 |           and        pl-os-bal-this-month\n  380 >           and        pl-invoices-this-month\n  381 |           and        pl-credit-notes-this-month\n  382 |           and        pl-variance\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:381: error: 'pl-credit-notes-this-month' is not defined\n  379 |           and        pl-os-bal-this-month\n  380 |           and        pl-invoices-this-month\n  381 >           and        pl-credit-notes-this-month\n  382 |           and        pl-variance\n  383 |           and        pl-credit-deductions\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:382: error: 'pl-variance' is not defined\n  380 |           and        pl-invoices-this-month\n  381 |           and        pl-credit-notes-this-month\n  382 >           and        pl-variance\n  383 |           and        pl-credit-deductions\n  384 |           and        pl-cn-unappl-this-month\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:383: error: 'pl-credit-deductions' is not defined\n  381 |           and        pl-credit-notes-this-month\n  382 |           and        pl-variance\n  383 >           and        pl-credit-deductions\n  384 |           and        pl-cn-unappl-this-month\n  385 |           and        pl-payments\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:384: error: 'pl-cn-unappl-this-month' is not defined\n  382 |           and        pl-variance\n  383 |           and        pl-credit-deductions\n  384 >           and        pl-cn-unappl-this-month\n  385 |           and        pl-payments\n  386 |               initialise System-Record-4 with filler\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:385: error: 'pl-payments' is not defined\n  383 |           and        pl-credit-deductions\n  384 |           and        pl-cn-unappl-this-month\n  385 >           and        pl-payments\n  386 |               initialise System-Record-4 with filler\n  387 |               move   1 to sl4-spare1\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:387: error: 'sl4-spare1' is not defined\n  385 |           and        pl-payments\n  386 |               initialise System-Record-4 with filler\n  387 >               move   1 to sl4-spare1\n  388 |                           sl4-spare2\n  389 |                           sl4-spare3\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:388: error: 'sl4-spare2' is not defined\n  386 |               initialise System-Record-4 with filler\n  387 |               move   1 to sl4-spare1\n  388 >                           sl4-spare2\n  389 |                           sl4-spare3\n  390 |                           sl4-spare4\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:389: error: 'sl4-spare3' is not defined\n  387 |               move   1 to sl4-spare1\n  388 |                           sl4-spare2\n  389 >                           sl4-spare3\n  390 |                           sl4-spare4\n  391 |      end-if                                    *> Should not be needed bu..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:390: error: 'sl4-spare4' is not defined\n  388 |                           sl4-spare2\n  389 |                           sl4-spare3\n  390 >                           sl4-spare4\n  391 |      end-if                                    *> Should not be needed bu..\n  392 |      perform  acas000-Write.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:393: error: 'Sql-State' is not defined\n  391 |      end-if                                    *> Should not be needed bu..\n  392 |      perform  acas000-Write.\n  393 >      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  394 |          or   fs-reply = 22  or = 99                    *> Check for dup..\n  395 |          or   SQL-Err (1:4) = \"1062\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:395: error: 'SQL-Err' is not defined\n  393 |      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  394 |          or   fs-reply = 22  or = 99                    *> Check for dup..\n  395 >          or   SQL-Err (1:4) = \"1062\"\n  396 |                          or = \"1022\"\n  397 |               move    zeros to FS-Reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:398: error: 'WE-Error' is not defined\n  396 |                          or = \"1022\"\n  397 |               move    zeros to FS-Reply\n  398 >                                WE-Error\n  399 |               perform acas000-ReWrite\n  400 |               if    FS-Reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:403: error: 'WS-File-Key' is not defined\n  401 |                     move spaces to SO-Print\n  402 |                     string SL014\n  403 >                            WS-File-Key into SO-Print\n  404 |                     perform call-Sysout\n  405 |               else\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:422: error: 'SQL-Msg' is not defined\n  420 |               string SL018 SQL-Err into SO-Print\n  421 |               perform Call-Sysout\n  422 >               move SQL-Msg to SO-Print\n  423 |               perform Call-Sysout\n  424 |               move SQL-State to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl: in paragraph 'aa999-Finish':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:484: error: 'Access-Type' is not defined\n  482 |      move     1 to File-System-Used\n  483 |                    FA-File-System-Used.\n  484 >      move     zero to Access-Type.\n  485 |      move     2 to File-Function.\n  486 |      if WE-Error not = 911\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:485: error: 'File-Function' is not defined\n  483 |                    FA-File-System-Used.\n  484 |      move     zero to Access-Type.\n  485 >      move     2 to File-Function.\n  486 |      if WE-Error not = 911\n  487 |         perform  acas000-Close.                     *> Close RDB\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:489: error: 'System-File' is not a file name\n  487 |         perform  acas000-Close.                     *> Close RDB\n  488 | *>\n  489 >      close    System-File.\n  490 |      move     zero to  File-Function\n  491 |                        Access-Type.              *> close log file\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:210: error: 'zz020-Get-Program-Args' is not defined\n  208 | *>\n  209 |  aa000-main-start.\n  210 >      perform  zz020-Get-Program-Args.\n  211 |      move     Prog-Name to So-Print.\n  212 |      perform  Call-Sysout.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:119: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:126: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:133: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:168: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:180: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:181: error: wssys4.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:182: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:183: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:184: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:500: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:213: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:214: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:218: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:218: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:219: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:224: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:227: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:228: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:234: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:237: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:237: error: 'System-Record-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:239: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:240: error: 'WS-System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:245: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:251: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:252: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:260: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:265: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:270: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:275: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:276: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:277: error: 'RDBMS-Passwd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:279: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:280: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:301: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:309: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:310: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:311: error: 'FA-File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:312: error: 'FA-File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:313: error: 'Log-file-rec-written' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:315: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:333: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:334: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:338: error: 'fn-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:339: error: 'fn-i-o' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:344: error: 'fn-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:348: error: 'fn-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:352: error: 'fn-re-write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:370: error: 'sl-os-bal-last-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:371: error: 'sl-os-bal-this-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:372: error: 'sl-invoices-this-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:373: error: 'sl-credit-notes-this-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:374: error: 'sl-variance' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:375: error: 'sl-credit-deductions' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:376: error: 'sl-cn-unappl-this-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:377: error: 'sl-payments' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:378: error: 'pl-os-bal-last-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:379: error: 'pl-os-bal-this-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:380: error: 'pl-invoices-this-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:381: error: 'pl-credit-notes-this-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:382: error: 'pl-variance' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:383: error: 'pl-credit-deductions' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:384: error: 'pl-cn-unappl-this-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:385: error: 'pl-payments' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:387: error: 'sl4-spare1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:388: error: 'sl4-spare2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:389: error: 'sl4-spare3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:390: error: 'sl4-spare4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:393: error: 'Sql-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:395: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:398: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:403: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:422: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:484: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:485: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:489: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:210: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:119: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:126: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:133: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:168: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:180: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:181: error: wssys4.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:182: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:183: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:184: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:500: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:213: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:214: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:218: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:218: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:219: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:224: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:227: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:228: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:234: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:237: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:237: error: 'System-Record-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:239: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:240: error: 'WS-System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:245: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:251: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:252: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:260: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:265: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:270: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:275: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:276: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:277: error: 'RDBMS-Passwd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:279: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:280: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:301: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:309: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:310: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:311: error: 'FA-File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:312: error: 'FA-File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:313: error: 'Log-file-rec-written' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:315: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:333: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:334: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:338: error: 'fn-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:339: error: 'fn-i-o' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:344: error: 'fn-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:348: error: 'fn-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:352: error: 'fn-re-write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:370: error: 'sl-os-bal-last-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:371: error: 'sl-os-bal-this-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:372: error: 'sl-invoices-this-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:373: error: 'sl-credit-notes-this-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:374: error: 'sl-variance' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:375: error: 'sl-credit-deductions' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:376: error: 'sl-cn-unappl-this-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:377: error: 'sl-payments' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:378: error: 'pl-os-bal-last-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:379: error: 'pl-os-bal-this-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:380: error: 'pl-invoices-this-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:381: error: 'pl-credit-notes-this-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:382: error: 'pl-variance' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:383: error: 'pl-credit-deductions' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:384: error: 'pl-cn-unappl-this-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:385: error: 'pl-payments' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:387: error: 'sl4-spare1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:388: error: 'sl4-spare2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:389: error: 'sl4-spare3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:390: error: 'sl4-spare4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:393: error: 'Sql-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:395: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:398: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:403: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:422: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:484: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:485: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:489: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4LD.cbl:210: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 29,
+    "cognitive": 47,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 82,
+      "totalOperators": 171,
+      "totalOperands": 264,
+      "vocabulary": 91,
+      "length": 435,
+      "volume": 2831,
+      "difficulty": 14.49,
+      "effort": 41013,
+      "timeToProgram": 2279,
+      "deliveredBugs": 0.944
+    },
+    "maintainability": 72
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas-get-params",
+        "line": 256
+      },
+      {
+        "target": "acas000",
+        "line": 330
+      },
+      {
+        "target": "sys4MT",
+        "line": 332
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 440
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 450
+      },
+      {
+        "target": "fhlogger",
+        "line": 492
+      },
+      {
+        "target": "ACAS-Sysout",
+        "line": 503
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 109
+      },
+      {
+        "name": "envdiv",
+        "line": 119
+      },
+      {
+        "name": "selsys",
+        "line": 126
+      },
+      {
+        "name": "fdsys",
+        "line": 133
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 168
+      },
+      {
+        "name": "wssystem",
+        "line": 170
+      },
+      {
+        "name": "wssys4",
+        "line": 181
+      },
+      {
+        "name": "wsfnctn",
+        "line": 182
+      },
+      {
+        "name": "wsnames",
+        "line": 183
+      },
+      {
+        "name": "wscall",
+        "line": 184
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 500
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 210
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 212
+      },
+      {
+        "target": "acas000-Open",
+        "line": 318
+      },
+      {
+        "target": "call-Sysout",
+        "line": 323
+      },
+      {
+        "target": "call-Sysout",
+        "line": 325
+      },
+      {
+        "target": "acas000",
+        "line": 340
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 341
+      },
+      {
+        "target": "acas000",
+        "line": 345
+      },
+      {
+        "target": "acas000",
+        "line": 349
+      },
+      {
+        "target": "acas000",
+        "line": 353
+      },
+      {
+        "target": "acas000-Write",
+        "line": 392
+      },
+      {
+        "target": "acas000-ReWrite",
+        "line": 399
+      },
+      {
+        "target": "call-Sysout",
+        "line": 404
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 415
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 418
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 421
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 423
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 425
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 426
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 459
+      },
+      {
+        "target": "call-Sysout",
+        "line": 462
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 464
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 466
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 468
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 469
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 477
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 480
+      },
+      {
+        "target": "acas000-Close",
+        "line": 487
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 495
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 497
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 134
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>                rollback\n*>...",
+        "line": 437
+      },
+      {
+        "content": "*>                commit\n*>...",
+        "line": 447
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

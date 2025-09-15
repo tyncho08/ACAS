@@ -1,0 +1,211 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl",
+  "fileName": "valueUNL.cbl",
+  "fileHash": "60a2e24443c2f09207beb518b83c577e9ea7142319039cadf10f3fd8fe8fd929",
+  "timestamp": "2025-09-15T19:46:10.078Z",
+  "parseTime": 32,
+  "lines": {
+    "total": 219,
+    "code": 101,
+    "comment": 117,
+    "blank": 1
+  },
+  "programId": "valueUNL",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:92: error: envdiv.cob: No such file or directory\n   90 | *>-------------------\n   91 | *>\n   92 >  copy \"envdiv.cob\".\n   93 |  input-output            section.\n   94 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:99: error: selval.cob: No such file or directory\n   97 | *>-----------\n   98 | *>\n   99 >  copy \"selval.cob\".\n  100 |      select  Value-File-Seq  assign          \"value.seq\"\n  101 |                                 organization  sequential\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:110: error: fdval.cob: No such file or directory\n  108 | *>-----------\n  109 | *>\n  110 >  copy \"fdval.cob\".\n  111 |  fd  Value-File-Seq.\n  112 |  copy \"wsval.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:112: error: wsval.cob: No such file or directory\n  110 |  copy \"fdval.cob\".\n  111 |  fd  Value-File-Seq.\n  112 >  copy \"wsval.cob\".\n  113 | *>\n  114 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:135: error: Test-Data-Flags.cob: No such file or directory\n  133 |  01  SO-Print            pic x(160)    value spaces.\n  134 | *>\n  135 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  136 | *>\n  137 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:137: error: wsfnctn.cob: No such file or directory\n  135 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  136 | *>\n  137 >  copy \"wsfnctn.cob\".\n  138 |  copy \"wsnames.cob\".\n  139 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:138: error: wsnames.cob: No such file or directory\n  136 | *>\n  137 |  copy \"wsfnctn.cob\".\n  138 >  copy \"wsnames.cob\".\n  139 |  copy \"wscall.cob\".\n  140 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:139: error: wscall.cob: No such file or directory\n  137 |  copy \"wsfnctn.cob\".\n  138 |  copy \"wsnames.cob\".\n  139 >  copy \"wscall.cob\".\n  140 | *>\n  141 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:214: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  212 |      goback.\n  213 | *>\n  214 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_valueS now\n  215 | *>\n  216 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:114: error: RECORD description missing or invalid\n  112 |  copy \"wsval.cob\".\n  113 | *>\n  114 >  working-storage section.\n  115 | *>----------------------\n  116 |  77  prog-name           pic x(24)    value \"valueUNL (3.02.00)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:100: error: missing file description for FILE Value-File-Seq\n   98 | *>\n   99 |  copy \"selval.cob\".\n  100 >      select  Value-File-Seq  assign          \"value.seq\"\n  101 |                                 organization  sequential\n  102 |                                 status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:102: error: 'FS-Reply' is not defined\n  100 |      select  Value-File-Seq  assign          \"value.seq\"\n  101 |                                 organization  sequential\n  102 >                                 status        FS-Reply.\n  103 | *>\n  104 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:153: error: 'WS-Log-System' is not defined\n  151 |  aa000-Main-Start.\n  152 |      perform  zz020-Get-Program-Args.\n  153 >      move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  154 |      move     13     to WS-Log-File-no.  *> for FHlogger\n  155 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:154: error: 'WS-Log-File-no' is not defined\n  152 |      perform  zz020-Get-Program-Args.\n  153 |      move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  154 >      move     13     to WS-Log-File-no.  *> for FHlogger\n  155 | *>\n  156 |      move     spaces to SO-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:163: error: 'Value-File' is not defined\n  161 | *> BYPASS ALL THE STANDARD CODING AS JUST WRITE THE REC OUT\n  162 | *>\n  163 >      open     input    Value-File.\n  164 |      if       FS-Reply not = zeros\n  165 |               move     \"No value file to process\" to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:163: error: 'Value-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:167: error: 'Value-File' is not a file name\n  165 |               move     \"No value file to process\" to SO-Print\n  166 |               perform  Call-Sysout\n  167 >               close    Value-File\n  168 |               move     \"CLOSE \" to SO-Print\n  169 |               perform  Call-Sysout\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl: in paragraph 'aa010-Read-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:177: error: 'Value-File' is not a file name\n  175 |  aa010-Read-Recs.\n  176 |      perform  forever\n  177 >               read     Value-File next record at end\n  178 |                        go to aa020-Finish-Off\n  179 |               end-read\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:189: error: 'WS-Value-Record' is not defined\n  187 |               end-if\n  188 |               add      1 to WS-Rec-Cnt-In\n  189 >               write    WS-Value-Record from Value-Record\n  190 |               if       FS-Reply not = zero\n  191 |                        move     SY006 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:189: error: 'Value-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl: in paragraph 'aa020-Finish-Off':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:200: error: 'Value-File' is not a file name\n  198 | aa020-Finish-Off.\n  199 |      close    Value-File-Seq\n  200 >               Value-File.\n  201 |      move     spaces to SO-Print.\n  202 |      string\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:152: error: 'zz020-Get-Program-Args' is not defined\n  150 | *>\n  151 |  aa000-Main-Start.\n  152 >      perform  zz020-Get-Program-Args.\n  153 |      move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  154 |      move     13     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:92: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:99: error: selval.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:110: error: fdval.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:112: error: wsval.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:135: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:137: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:138: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:139: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:214: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:114: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:100: error: missing file description for FILE Value-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:102: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:153: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:154: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:163: error: 'Value-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:163: error: 'Value-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:167: error: 'Value-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:177: error: 'Value-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:189: error: 'WS-Value-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:189: error: 'Value-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:200: error: 'Value-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:152: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:92: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:99: error: selval.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:110: error: fdval.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:112: error: wsval.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:135: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:137: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:138: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:139: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:214: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:114: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:100: error: missing file description for FILE Value-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:102: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:153: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:154: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:163: error: 'Value-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:163: error: 'Value-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:167: error: 'Value-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:177: error: 'Value-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:189: error: 'WS-Value-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:189: error: 'Value-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:200: error: 'Value-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/valueUNL.cbl:152: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 8,
+    "cognitive": 18,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 56,
+      "totalOperators": 47,
+      "totalOperands": 100,
+      "vocabulary": 64,
+      "length": 147,
+      "volume": 882,
+      "difficulty": 7.14,
+      "effort": 6300,
+      "timeToProgram": 350,
+      "deliveredBugs": 0.294
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 217
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23
+      },
+      {
+        "name": "of",
+        "line": 82
+      },
+      {
+        "name": "envdiv",
+        "line": 92
+      },
+      {
+        "name": "selval",
+        "line": 99
+      },
+      {
+        "name": "fdval",
+        "line": 110
+      },
+      {
+        "name": "wsval",
+        "line": 112
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 135
+      },
+      {
+        "name": "wsfnctn",
+        "line": 137
+      },
+      {
+        "name": "wsnames",
+        "line": 138
+      },
+      {
+        "name": "wscall",
+        "line": 139
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 214
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 152
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 159
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 166
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 169
+      },
+      {
+        "target": "forever",
+        "line": 176
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 185
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 192
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 208
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 210
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Value-File-Seq",
+        "line": 111
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 114
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

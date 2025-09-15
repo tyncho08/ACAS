@@ -1,0 +1,191 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl",
+  "fileName": "irspostingUNL.cbl",
+  "fileHash": "dc279b6bd24ff7e184fdbd7491c821851f4536f1ae0ae4f9e2818918312c763f",
+  "timestamp": "2025-09-15T19:46:04.391Z",
+  "parseTime": 31,
+  "lines": {
+    "total": 239,
+    "code": 117,
+    "comment": 121,
+    "blank": 1
+  },
+  "programId": "irspostingUNL",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:93: error: envdiv.cob: No such file or directory\n   91 | *>-------------------\n   92 | *>\n   93 >  copy \"envdiv.cob\".\n   94 |  input-output            section.\n   95 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:132: error: irswspost.cob: No such file or directory\n  130 | *>\n  131 |  fd  irsposting-File-Seq.\n  132 >  copy \"irswspost.cob\" replacing Posting-Record by WS-Posting-Record.\n  133 | *>\n  134 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:155: error: Test-Data-Flags.cob: No such file or directory\n  153 |  01  SO-Print            pic x(160)    value spaces.\n  154 | *>\n  155 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  156 | *>\n  157 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:157: error: wsfnctn.cob: No such file or directory\n  155 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  156 | *>\n  157 >  copy \"wsfnctn.cob\".\n  158 |  copy \"wsnames.cob\".\n  159 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:158: error: wsnames.cob: No such file or directory\n  156 | *>\n  157 |  copy \"wsfnctn.cob\".\n  158 >  copy \"wsnames.cob\".\n  159 |  copy \"wscall.cob\".\n  160 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:159: error: wscall.cob: No such file or directory\n  157 |  copy \"wsfnctn.cob\".\n  158 |  copy \"wsnames.cob\".\n  159 >  copy \"wscall.cob\".\n  160 | *>\n  161 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:234: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  232 |      goback.\n  233 | *>\n  234 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_irspostingS now\n  235 | *>\n  236 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:134: error: RECORD description missing or invalid\n  132 |  copy \"irswspost.cob\" replacing Posting-Record by WS-Posting-Record.\n  133 | *>\n  134 >  working-storage section.\n  135 | *>----------------------\n  136 |  77  prog-name           pic x(23)    value \"irspostingUNL (3.02.00)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:106: error: missing file description for FILE irsposting-File-Seq\n  104 |                              status   fs-reply.\n  105 | *>\n  106 >      select  irsposting-File-Seq  assign      \"irspost.seq\"\n  107 |                                 organization  sequential\n  108 |                                 status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:104: error: 'fs-reply' is not defined\n  102 |                              access   dynamic\n  103 |                              record   key-4\n  104 >                              status   fs-reply.\n  105 | *>\n  106 |      select  irsposting-File-Seq  assign      \"irspost.seq\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:173: error: 'WS-Log-System' is not defined\n  171 |  aa000-Main-Start.\n  172 |      perform  zz020-Get-Program-Args.\n  173 >      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  174 |      move     13     to WS-Log-File-no.  *> for FHlogger\n  175 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:174: error: 'WS-Log-File-no' is not defined\n  172 |      perform  zz020-Get-Program-Args.\n  173 |      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  174 >      move     13     to WS-Log-File-no.  *> for FHlogger\n  175 | *>\n  176 |      move     spaces to SO-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl: in paragraph 'aa010-Read-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:209: error: 'WS-Posting-Record' is not defined\n  207 |               end-if\n  208 |               add      1 to WS-Rec-Cnt-In\n  209 >               write    WS-Posting-Record from Posting-Record\n  210 |               if       FS-Reply not = zero\n  211 |                        move     SY006 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:172: error: 'zz020-Get-Program-Args' is not defined\n  170 | *>\n  171 |  aa000-Main-Start.\n  172 >      perform  zz020-Get-Program-Args.\n  173 |      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  174 |      move     13     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:93: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:132: error: irswspost.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:155: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:157: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:158: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:159: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:234: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:134: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:106: error: missing file description for FILE irsposting-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:104: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:173: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:174: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:209: error: 'WS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:172: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:93: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:132: error: irswspost.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:155: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:157: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:158: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:159: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:234: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:134: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:106: error: missing file description for FILE irsposting-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:104: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:173: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:174: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:209: error: 'WS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irspostingUNL.cbl:172: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 8,
+    "cognitive": 18,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 59,
+      "totalOperators": 47,
+      "totalOperands": 104,
+      "vocabulary": 67,
+      "length": 151,
+      "volume": 916,
+      "difficulty": 7.05,
+      "effort": 6458,
+      "timeToProgram": 359,
+      "deliveredBugs": 0.305
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 237
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23
+      },
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 93
+      },
+      {
+        "name": "irswspost",
+        "line": 132
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 155
+      },
+      {
+        "name": "wsfnctn",
+        "line": 157
+      },
+      {
+        "name": "wsnames",
+        "line": 158
+      },
+      {
+        "name": "wscall",
+        "line": 159
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 234
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 172
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 179
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 186
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 189
+      },
+      {
+        "target": "forever",
+        "line": 196
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 205
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 212
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 228
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 230
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Posting-File",
+        "line": 116
+      },
+      {
+        "name": "irsposting-File-Seq",
+        "line": 131
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 134
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

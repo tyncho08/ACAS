@@ -1,0 +1,419 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl",
+  "fileName": "irs050.cbl",
+  "fileHash": "c87f6f08a9360447be0e81059f44443ceb53dd35539bfd07b0176726f7b51e59",
+  "timestamp": "2025-09-15T19:46:19.995Z",
+  "parseTime": 85,
+  "lines": {
+    "total": 1410,
+    "code": 1010,
+    "comment": 399,
+    "blank": 1
+  },
+  "programId": "irs050",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:125: error: envdiv.cob: No such file or directory\n  123 | *>\n  124 |  environment division.\n  125 >  copy  \"envdiv.cob\".\n  126 |  input-output section.\n  127 |  file-control.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:149: error: irsprint-spool-command-p.cob: No such file or directory\n  147 |  77  line-cnt            pic 99  comp value 99.\n  148 |  77  ws-account-used     pic 9        value zero.\n  149 >  copy \"irsprint-spool-command-p.cob\".\n  150 |  01  filler.\n  151 |      03  ws-env-lines    pic 999       value zero.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:243: error: Test-Data-Flags.cob: No such file or directory\n  241 |      03  Final-Record          pic x.\n  242 | *>\n  243 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  244 | *>\n  245 |  copy \"irswspost.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:245: error: irswspost.cob: No such file or directory\n  243 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  244 | *>\n  245 >  copy \"irswspost.cob\".\n  246 |  copy \"wsfnctn.cob\".\n  247 |  copy \"irswsnl.cob\"   replacing NL-Record      by WS-IRSNL-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:246: error: wsfnctn.cob: No such file or directory\n  244 | *>\n  245 |  copy \"irswspost.cob\".\n  246 >  copy \"wsfnctn.cob\".\n  247 |  copy \"irswsnl.cob\"   replacing NL-Record      by WS-IRSNL-Record.\n  248 |  copy \"irswsdflt.cob\" replacing Default-Record by WS-IRS-Default-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:247: error: irswsnl.cob: No such file or directory\n  245 |  copy \"irswspost.cob\".\n  246 |  copy \"wsfnctn.cob\".\n  247 >  copy \"irswsnl.cob\"   replacing NL-Record      by WS-IRSNL-Record.\n  248 |  copy \"irswsdflt.cob\" replacing Default-Record by WS-IRS-Default-Record.\n  249 |  01  filler  redefines WS-IRS-Default-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:248: error: irswsdflt.cob: No such file or directory\n  246 |  copy \"wsfnctn.cob\".\n  247 |  copy \"irswsnl.cob\"   replacing NL-Record      by WS-IRSNL-Record.\n  248 >  copy \"irswsdflt.cob\" replacing Default-Record by WS-IRS-Default-Record.\n  249 |  01  filler  redefines WS-IRS-Default-Record.\n  250 |      03  filler          pic 9(5)  occurs 30.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:401: error: irswssystem.cob: No such file or directory\n  399 | *>\n  400 |  copy \"irswssystem.cob\"   *> IRS param record\n  401 >               replacing system-record  by IRS-System-Params. *> (01 level..\n  402 | *>\n  403 |  copy \"wssystem.cob\"    *> NEW for v3.02\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:431: error: wssystem.cob: No such file or directory\n  429 |                         PL-App-Created by IRS-PL-App-Created\n  430 |                         PL-Approp-AC   by IRS-PL-Approp-AC\n  431 >                         1st-Time-Flag  by IRS-First-Time-Flag.\n  432 | *>\n  433 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:433: error: wsnames.cob: No such file or directory\n  431 |                         1st-Time-Flag  by IRS-First-Time-Flag.\n  432 | *>\n  433 >  copy \"wsnames.cob\".\n  434 | *>\n  435 |  procedure division using IRS-System-Params\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1408: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory\n 1406 |  main-exit.   exit.\n 1407 | *>\n 1408 >  copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n 1409 | *>\n 1410 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:249: error: 'WS-IRS-Default-Record' is not defined\n  247 |  copy \"irswsnl.cob\"   replacing NL-Record      by WS-IRSNL-Record.\n  248 |  copy \"irswsdflt.cob\" replacing Default-Record by WS-IRS-Default-Record.\n  249 >  01  filler  redefines WS-IRS-Default-Record.\n  250 |      03  filler          pic 9(5)  occurs 30.\n  251 |      03  def-acs-31      pic 9(5).\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:435: error: 'IRS-System-Params' is not defined\n  433 |  copy \"wsnames.cob\".\n  434 | *>\n  435 >  procedure division using IRS-System-Params\n  436 |                           WS-System-Record\n  437 |                           File-Defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:436: error: 'WS-System-Record' is not defined\n  434 | *>\n  435 |  procedure division using IRS-System-Params\n  436 >                           WS-System-Record\n  437 |                           File-Defs.\n  438 | *>=========================================\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:437: error: 'File-Defs' is not defined\n  435 |  procedure division using IRS-System-Params\n  436 |                           WS-System-Record\n  437 >                           File-Defs.\n  438 | *>=========================================\n  439 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in section 'main-flow':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:458: error: 'Print-Spool-Name' is not defined\n  456 |      set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n  457 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  458 >      move     Print-Spool-Name to PSN.\n  459 | *>\n  460 |      accept   hdtime from time.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:458: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:466: error: 'file-function' is not defined\n  464 |               move HD2-Time  to P-Time.\n  465 | *>\n  466 >      move     3 to file-function.          *> open and read next dflt rec..\n  467 |      perform  acasirsub3.\n  468 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in paragraph 'run-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:478: error: 'run-date' is not defined\n  476 |      display  prog-name                               at 0101 with erase..\n  477 |      display  \"Posting  Reports\"   at 0128 with foreground-color 1 backgr..\n  478 >      display  run-date                                at 0173 with foregr..\n  479 | *>\n  480 |      display  \"Input Report required by letter...[ ]\" at 0501 with foregr..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in paragraph 'date-select':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:511: error: 'Start-Date' is not defined\n  509 |      display  \"Period Start Date  .......[dd/mm/yy]\" at 0741 with foregro..\n  510 |      display  \"Period End Date  .........[dd/mm/yy]\" at 0941 with foregro..\n  511 >      move     Start-Date to Period-Start.\n  512 |      move     End-Date   to Period-End.\n  513 |      accept   period-start at 0768 with foreground-color 3 update.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:512: error: 'End-Date' is not defined\n  510 |      display  \"Period End Date  .........[dd/mm/yy]\" at 0941 with foregro..\n  511 |      move     Start-Date to Period-Start.\n  512 >      move     End-Date   to Period-End.\n  513 |      accept   period-start at 0768 with foreground-color 3 update.\n  514 |      accept   period-end   at 0968 with foreground-color 3 update.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in paragraph 'sort-select':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:551: error: 'save-sequ' is not defined\n  549 | *> save period date info and sort sequence (if re-sort in same run)\n  550 | *>\n  551 >      move     sort-sequ to save-sequ.\n  552 |      move     ws-system-work-group to system-work-group.\n  553 |      call     \"irs055\" using IRS-System-Params\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:552: error: 'system-work-group' is not defined\n  550 | *>\n  551 |      move     sort-sequ to save-sequ.\n  552 >      move     ws-system-work-group to system-work-group.\n  553 |      call     \"irs055\" using IRS-System-Params\n  554 |                           WS-System-Record\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in paragraph 'proceed-run':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:562: error: 'suser' is not defined\n  560 |  proceed-run.\n  561 | *>\n  562 >      move     suser    to p-user.\n  563 |      move     client   to p-client.\n  564 |      move     end-date to p-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:563: error: 'client' is not defined\n  561 | *>\n  562 |      move     suser    to p-user.\n  563 >      move     client   to p-client.\n  564 |      move     end-date to p-end.\n  565 |      move     run-date to p-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:571: error: 'access-type' is not defined\n  569 |               go to run-loop.\n  570 | *>\n  571 >      move     1 to file-function  access-type.\n  572 |      perform  call-irsubp.                   *> open input\n  573 |      if       we-error = 99\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:573: error: 'we-error' is not defined\n  571 |      move     1 to file-function  access-type.\n  572 |      perform  call-irsubp.                   *> open input\n  573 >      if       we-error = 99\n  574 |               display \"No Posting data present\" at line ws-accept-lines c..\n  575 |                                                         with foreground-c..\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in paragraph 'call-irsubp':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:588: error: 'Posting-Record' is not defined\n  586 | *>\n  587 |  call-irsubp.\n  588 >      call     \"irsubp\" using Posting-Record\n  589 |                              File-Access\n  590 |                              File-Defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:589: error: 'File-Access' is not defined\n  587 |  call-irsubp.\n  588 |      call     \"irsubp\" using Posting-Record\n  589 >                              File-Access\n  590 |                              File-Defs.\n  591 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in section 'sub-nominal-search':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:604: error: 'nl-owning' is not defined\n  602 | *>\n  603 |      move     space to p-spacer-l.\n  604 >      move     nl-owning to hold-owning.\n  605 | *>\n  606 |  detail-loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in paragraph 'detail-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:616: error: 'nl-dr' is not defined\n  614 |               go to main-end.\n  615 | *>\n  616 >      if       nl-dr = nl-cr\n  617 |               go to detail-loop.\n  618 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:616: error: 'nl-cr' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:626: error: 'nl-sub-nominal' is not defined\n  624 |      move     zero to p-tran-l  p-contra-l.\n  625 | *>\n  626 >      move     nl-sub-nominal to p-sub-account.\n  627 |      move     p-sub-legend  to p-legend-l.\n  628 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:646: error: 'cole' is not defined\n  644 |               go to output-print.\n  645 | *>\n  646 >      move     1 to cole.\n  647 |      display  line-6-l at curs   with foreground-color 3.\n  648 |      add      1 to lin.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:647: error: 'curs' is not defined\n  645 | *>\n  646 |      move     1 to cole.\n  647 >      display  line-6-l at curs   with foreground-color 3.\n  648 |      add      1 to lin.\n  649 |      if       lin < ws-22-lines\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:648: error: 'lin' is not defined\n  646 |      move     1 to cole.\n  647 |      display  line-6-l at curs   with foreground-color 3.\n  648 >      add      1 to lin.\n  649 |      if       lin < ws-22-lines\n  650 |               go to detail-loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in section 'get-input-vat':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:696: error: 'vat-ac-def' is not defined\n  694 | *>--------------------\n  695 | *>\n  696 >      if       vat-ac-def not = 31\n  697 |               move 9 to vat-check\n  698 |               go to main-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:700: error: 'post-vat-side' is not defined\n  698 |               go to main-exit.\n  699 | *>\n  700 >      if       post-vat-side = \"CR\"\n  701 |               move post-dr   to p-contra-l\n  702 |               move vat-amount to p-credit-l\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:701: error: 'post-dr' is not defined\n  699 | *>\n  700 |      if       post-vat-side = \"CR\"\n  701 >               move post-dr   to p-contra-l\n  702 |               move vat-amount to p-credit-l\n  703 |               move zero      to p-debit-l\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:702: error: 'vat-amount' is not defined\n  700 |      if       post-vat-side = \"CR\"\n  701 |               move post-dr   to p-contra-l\n  702 >               move vat-amount to p-credit-l\n  703 |               move zero      to p-debit-l\n  704 |               add  vat-amount to total-cr.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:707: error: 'post-cr' is not defined\n  705 | *>\n  706 |      if       post-vat-side = \"DR\"\n  707 >               move post-cr   to p-contra-l\n  708 |               move vat-amount to p-debit-l\n  709 |               move zero      to p-credit-l\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in section 'display-report':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in paragraph 'main-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:789: error: 'post-code' is not defined\n  787 | *>\n  788 |      if       use-code not = spaces\n  789 >          and  use-code not = post-code\n  790 |               go to main-loop.\n  791 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:792: error: 'post-key' is not defined\n  790 |               go to main-loop.\n  791 | *>\n  792 >      move     post-key to p-tran-a.\n  793 |      move     post-code to p-code-a.\n  794 |      move     post-date to p-date-a.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:794: error: 'post-date' is not defined\n  792 |      move     post-key to p-tran-a.\n  793 |      move     post-code to p-code-a.\n  794 >      move     post-date to p-date-a.\n  795 |      move     post-dr to p-debit.\n  796 |      move     post-cr to p-credit.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:797: error: 'post-amount' is not defined\n  795 |      move     post-dr to p-debit.\n  796 |      move     post-cr to p-credit.\n  797 >      move     post-amount to p-net.\n  798 |      move     vat-amount to p-vat-amount.\n  799 |      move     spaces     to p-vat-type\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in section 'report-print':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in paragraph 'end-returne':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1087: error: 'Print-Report' is not defined\n 1085 | *>----------\n 1086 |      close    print-file.\n 1087 >      call     \"SYSTEM\" using Print-Report.\n 1088 |      move     2 to file-function.\n 1089 |      perform  call-irsubp.                     *> close\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in section 'get-postings':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1187: error: 'nl-name' is not defined\n 1185 |               move nl-sub-nominal to ledg-account check-account.\n 1186 | *>\n 1187 >      move     nl-name to ledg-name.\n 1188 | *>\n 1189 |      if       output-reply equal \"P\"\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in paragraph 'detail-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1225: error: invalid expression: boolean expected with logical operator\n 1223 | *>\n 1224 |      if       check-account not = post-dr and not = post-cr\n 1225 >                         and not = def-acs-31 and not = def-acs-32\n 1226 |               go to detail-loop.\n 1227 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1224: error: invalid expression: unfinished expression\n 1222 |               go to total-jump.\n 1223 | *>\n 1224 >      if       check-account not = post-dr and not = post-cr\n 1225 |                         and not = def-acs-31 and not = def-acs-32\n 1226 |               go to detail-loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1236: error: 'post-legend' is not defined\n 1234 |      move     post-date to p-date-l.\n 1235 |      move     spaces    to p-legend-l.\n 1236 >      string   post-legend delimited by low-value into p-legend-l.\n 1237 | *>\n 1238 |      if       check-account = post-dr\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in section 'main-flow':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:467: error: 'acasirsub3' is not defined\n  465 | *>\n  466 |      move     3 to file-function.          *> open and read next dflt rec..\n  467 >      perform  acasirsub3.\n  468 | *>\n  469 |  run-loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in section 'sub-nominal-search':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl: in paragraph 'detail-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:609: error: 'acasirsub1' is not defined\n  607 | *>\n  608 |      move     3 to file-function.\n  609 >      perform  acasirsub1.               *> Read next NL\n  610 | *>\n  611 |      if       we-error = 3 or = 10\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:125: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:149: error: irsprint-spool-command-p.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:243: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:245: error: irswspost.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:246: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:247: error: irswsnl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:248: error: irswsdflt.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:401: error: irswssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:431: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:433: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1408: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:249: error: 'WS-IRS-Default-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:435: error: 'IRS-System-Params' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:436: error: 'WS-System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:437: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:458: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:458: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:466: error: 'file-function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:478: error: 'run-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:511: error: 'Start-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:512: error: 'End-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:551: error: 'save-sequ' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:552: error: 'system-work-group' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:562: error: 'suser' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:563: error: 'client' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:571: error: 'access-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:573: error: 'we-error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:588: error: 'Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:589: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:604: error: 'nl-owning' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:616: error: 'nl-dr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:616: error: 'nl-cr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:626: error: 'nl-sub-nominal' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:646: error: 'cole' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:647: error: 'curs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:648: error: 'lin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:696: error: 'vat-ac-def' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:700: error: 'post-vat-side' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:701: error: 'post-dr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:702: error: 'vat-amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:707: error: 'post-cr' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:789: error: 'post-code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:792: error: 'post-key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:794: error: 'post-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:797: error: 'post-amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1087: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1187: error: 'nl-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1225: error: invalid expression: boolean expected with logical operator",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1224: error: invalid expression: unfinished expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1236: error: 'post-legend' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:467: error: 'acasirsub3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:609: error: 'acasirsub1' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:125: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:149: error: irsprint-spool-command-p.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:243: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:245: error: irswspost.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:246: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:247: error: irswsnl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:248: error: irswsdflt.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:401: error: irswssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:431: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:433: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1408: error: Proc-ZZ100-ACAS-IRS-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:249: error: 'WS-IRS-Default-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:435: error: 'IRS-System-Params' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:436: error: 'WS-System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:437: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:458: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:458: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:466: error: 'file-function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:478: error: 'run-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:511: error: 'Start-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:512: error: 'End-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:551: error: 'save-sequ' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:552: error: 'system-work-group' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:562: error: 'suser' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:563: error: 'client' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:571: error: 'access-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:573: error: 'we-error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:588: error: 'Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:589: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:604: error: 'nl-owning' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:616: error: 'nl-dr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:616: error: 'nl-cr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:626: error: 'nl-sub-nominal' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:646: error: 'cole' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:647: error: 'curs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:648: error: 'lin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:696: error: 'vat-ac-def' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:700: error: 'post-vat-side' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:701: error: 'post-dr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:702: error: 'vat-amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:707: error: 'post-cr' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:789: error: 'post-code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:792: error: 'post-key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:794: error: 'post-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:797: error: 'post-amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1087: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1187: error: 'nl-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1225: error: invalid expression: boolean expected with logical operator",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1224: error: invalid expression: unfinished expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:1236: error: 'post-legend' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:467: error: 'acasirsub3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs050.cbl:609: error: 'acasirsub1' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 187,
+    "cognitive": 450,
+    "halstead": {
+      "uniqueOperators": 13,
+      "uniqueOperands": 87,
+      "totalOperators": 586,
+      "totalOperands": 208,
+      "vocabulary": 100,
+      "length": 794,
+      "volume": 5275,
+      "difficulty": 15.54,
+      "effort": 81978,
+      "timeToProgram": 4554,
+      "deliveredBugs": 1.758
+    },
+    "maintainability": 49
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "irsubn",
+        "line": 69
+      },
+      {
+        "target": "irs055",
+        "line": 553
+      },
+      {
+        "target": "irsubp",
+        "line": 588
+      },
+      {
+        "target": "SYSTEM",
+        "line": 1087
+      },
+      {
+        "target": "SYSTEM",
+        "line": 1175
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 118
+      },
+      {
+        "name": "envdiv",
+        "line": 125
+      },
+      {
+        "name": "irsprint-spool-command-p",
+        "line": 149
+      },
+      {
+        "name": "screenio",
+        "line": 207
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 243
+      },
+      {
+        "name": "irswspost",
+        "line": 245
+      },
+      {
+        "name": "wsfnctn",
+        "line": 246
+      },
+      {
+        "name": "irswsnl",
+        "line": 247
+      },
+      {
+        "name": "irswsdflt",
+        "line": 248
+      },
+      {
+        "name": "irswssystem",
+        "line": 400
+      },
+      {
+        "name": "wssystem",
+        "line": 403
+      },
+      {
+        "name": "wsnames",
+        "line": 433
+      },
+      {
+        "name": "Proc-ZZ100-ACAS-IRS-Calls",
+        "line": 1408
+      }
+    ],
+    "performs": [
+      {
+        "target": "acasirsubn",
+        "line": 70
+      },
+      {
+        "target": "acasirsub3",
+        "line": 467
+      },
+      {
+        "target": "ledger-report",
+        "line": 568
+      },
+      {
+        "target": "call-irsubp",
+        "line": 572
+      },
+      {
+        "target": "display-report",
+        "line": 581
+      },
+      {
+        "target": "report-print",
+        "line": 584
+      },
+      {
+        "target": "acasirsub1",
+        "line": 609
+      },
+      {
+        "target": "account-headings",
+        "line": 620
+      },
+      {
+        "target": "print-headings",
+        "line": 675
+      },
+      {
+        "target": "account-headings",
+        "line": 676
+      },
+      {
+        "target": "acasirsub1",
+        "line": 688
+      },
+      {
+        "target": "call-irsubp",
+        "line": 781
+      },
+      {
+        "target": "call-irsubp",
+        "line": 923
+      },
+      {
+        "target": "headings",
+        "line": 949
+      },
+      {
+        "target": "call-irsubp",
+        "line": 954
+      },
+      {
+        "target": "tran-total",
+        "line": 968
+      },
+      {
+        "target": "headings",
+        "line": 969
+      },
+      {
+        "target": "headings",
+        "line": 1051
+      },
+      {
+        "target": "headings",
+        "line": 1058
+      },
+      {
+        "target": "call-irsubp",
+        "line": 1089
+      },
+      {
+        "target": "acasirsub1",
+        "line": 1122
+      },
+      {
+        "target": "acasirsub1",
+        "line": 1148
+      },
+      {
+        "target": "get-postings",
+        "line": 1152
+      },
+      {
+        "target": "acasirsub1",
+        "line": 1158
+      },
+      {
+        "target": "get-postings",
+        "line": 1162
+      },
+      {
+        "target": "acasirsub1",
+        "line": 1171
+      },
+      {
+        "target": "call-irsubp",
+        "line": 1209
+      },
+      {
+        "target": "call-irsubp",
+        "line": 1217
+      },
+      {
+        "target": "account-headings",
+        "line": 1229
+      },
+      {
+        "target": "get-input-vat",
+        "line": 1263
+      },
+      {
+        "target": "get-output-vat",
+        "line": 1269
+      },
+      {
+        "target": "main-display",
+        "line": 1294
+      },
+      {
+        "target": "print-headings",
+        "line": 1302
+      },
+      {
+        "target": "account-headings",
+        "line": 1303
+      },
+      {
+        "target": "sub-nominal-search",
+        "line": 1309
+      },
+      {
+        "target": "print-headings",
+        "line": 1335
+      },
+      {
+        "target": "total-cont",
+        "line": 1347
+      },
+      {
+        "target": "main-display",
+        "line": 1352
+      },
+      {
+        "target": "call-irsubp",
+        "line": 1376
+      },
+      {
+        "target": "print-headings",
+        "line": 1384
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "print-file",
+        "line": 135
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 139
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

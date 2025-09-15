@@ -1,0 +1,179 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl",
+  "fileName": "pl960.cbl",
+  "fileHash": "0045b9e5df91d796aa13038bfa3222de71819828efdad787a12fd1887cad70ba",
+  "timestamp": "2025-09-15T19:46:23.908Z",
+  "parseTime": 38,
+  "lines": {
+    "total": 303,
+    "code": 170,
+    "comment": 132,
+    "blank": 1
+  },
+  "programId": "pl960",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:83: error: envdiv.cob: No such file or directory\n   81 | *>===============================\n   82 | *>\n   83 >  copy \"envdiv.cob\".\n   84 |  input-output            section.\n   85 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:94: error: selprint.cob: No such file or directory\n   92 |                            status fs-reply.\n   93 | *>\n   94 >  copy \"selprint.cob\".\n   95 |  data                    division.\n   96 | *>===============================\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:109: error: fdprint.cob: No such file or directory\n  107 |      03  filler              pic x(128).\n  108 |      03  filler              pic x(5).\n  109 >  copy \"fdprint.cob\".\n  110 |  working-storage section.\n  111 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:113: error: print-spool-command.cob: No such file or directory\n  111 | *>----------------------\n  112 |  77  prog-name           pic x(15) value \"PL960 (3.02.06)\".\n  113 >  copy \"print-spool-command.cob\".\n  114 | *>\n  115 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:115: error: wsfnctn.cob: No such file or directory\n  113 |  copy \"print-spool-command.cob\".\n  114 | *>\n  115 >  copy \"wsfnctn.cob\".\n  116 | *>\n  117 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:117: error: Test-Data-Flags.cob: No such file or directory\n  115 |  copy \"wsfnctn.cob\".\n  116 | *>\n  117 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  118 | *>\n  119 |  01  ws-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:199: error: wscall.cob: No such file or directory\n  197 | *>==============\n  198 | *>\n  199 >  copy \"wscall.cob\".\n  200 |  copy \"wssystem.cob\".\n  201 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:200: error: wssystem.cob: No such file or directory\n  198 | *>\n  199 |  copy \"wscall.cob\".\n  200 >  copy \"wssystem.cob\".\n  201 |  copy \"wsnames.cob\".\n  202 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:201: error: wsnames.cob: No such file or directory\n  199 |  copy \"wscall.cob\".\n  200 |  copy \"wssystem.cob\".\n  201 >  copy \"wsnames.cob\".\n  202 | *>\n  203 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:92: error: 'fs-reply' is not defined\n   90 |      select  cheque-file   assign file-33\n   91 |                            organization line sequential\n   92 >                            status fs-reply.\n   93 | *>\n   94 |  copy \"selprint.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:205: error: 'ws-calling-data' is not defined\n  203 |  01  to-day              pic x(10).\n  204 | *>\n  205 >  procedure division using ws-calling-data\n  206 |                           system-record\n  207 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:206: error: 'system-record' is not defined\n  204 | *>\n  205 |  procedure division using ws-calling-data\n  206 >                           system-record\n  207 |                           to-day\n  208 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:208: error: 'file-defs' is not defined\n  206 |                           system-record\n  207 |                           to-day\n  208 >                           file-defs.\n  209 | *>=======================================\n  210 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl: in section 'init':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:216: error: 'Print-Spool-Name' is not defined\n  214 | *>\n  215 |      string   \"lpr -P \"        delimited by size\n  216 >               Print-Spool-Name delimited by space\n  217 |               \" -r prt-1\"      delimited by size into Print-Report.\n  218 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:217: error: 'Print-Report' is not defined\n  215 |      string   \"lpr -P \"        delimited by size\n  216 |               Print-Spool-Name delimited by space\n  217 >               \" -r prt-1\"      delimited by size into Print-Report.\n  218 | *>\n  219 |      open     input cheque-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:222: error: 'print-file' is not defined\n  220 |      if       fs-reply not = zero\n  221 |               goback.\n  222 >      open     output print-file.\n  223 | *>\n  224 |  loop.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:222: error: 'print-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl: in paragraph 'loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:228: error: 'print-record' is not defined\n  226 |               go to  main-end.\n  227 | *>\n  228 >      move     spaces  to  print-record.\n  229 |      if       a = 1\n  230 |               write print-record after page\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:242: error: 'usera' is not defined\n  240 |      move     cheque-record  to  cheque.\n  241 |      move     c-name  to  l1-addr1.\n  242 >      move     usera   to  l1-addr2.\n  243 |      write    print-record  from  line-1 after 3.\n  244 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:249: error: 'address-1' is not defined\n  247 | *>\n  248 |      move     c-address (1)  to  l1-addr1.\n  249 >      move     address-1      to  l1-addr2.\n  250 |      write    print-record  from  line-1 after 1.\n  251 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:253: error: 'address-2' is not defined\n  251 | *>\n  252 |      move     c-address (2)  to  l1-addr1.\n  253 >      move     address-2      to  l1-addr2.\n  254 |      write    print-record  from  line-1 after 1.\n  255 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:257: error: 'address-3' is not defined\n  255 | *>\n  256 |      move     c-address (3)  to  l1-addr1.\n  257 >      move     address-3      to  l1-addr2.\n  258 |      write    print-record  from  line-1 after 1.\n  259 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:261: error: 'address-4' is not defined\n  259 | *>\n  260 |      move     c-address (4)  to  l1-addr1.\n  261 >      move     address-4      to  l1-addr2.\n  262 |      write    print-record  from  line-1 after 1.\n  263 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:299: error: 'print-file' is not a file name\n  297 | *>\n  298 |  main-end.\n  299 >      close    print-file cheque-file.\n  300 |      call     \"SYSTEM\" using Print-Report.\n  301 |      exit     program.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:83: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:94: error: selprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:109: error: fdprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:113: error: print-spool-command.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:115: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:117: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:199: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:200: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:201: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:92: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:205: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:206: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:208: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:216: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:217: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:222: error: 'print-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:222: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:228: error: 'print-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:242: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:249: error: 'address-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:253: error: 'address-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:257: error: 'address-3' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:261: error: 'address-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:299: error: 'print-file' is not a file name"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:83: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:94: error: selprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:109: error: fdprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:113: error: print-spool-command.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:115: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:117: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:199: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:200: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:201: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:92: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:205: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:206: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:208: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:216: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:217: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:222: error: 'print-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:222: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:228: error: 'print-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:242: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:249: error: 'address-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:253: error: 'address-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:257: error: 'address-3' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:261: error: 'address-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl:299: error: 'print-file' is not a file name"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 9,
+    "cognitive": 16,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 35,
+      "totalOperators": 43,
+      "totalOperands": 51,
+      "vocabulary": 43,
+      "length": 94,
+      "volume": 510,
+      "difficulty": 5.83,
+      "effort": 2973,
+      "timeToProgram": 165,
+      "deliveredBugs": 0.17
+    },
+    "maintainability": 80
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 300
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 74
+      },
+      {
+        "name": "envdiv",
+        "line": 83
+      },
+      {
+        "name": "selprint",
+        "line": 94
+      },
+      {
+        "name": "fdprint",
+        "line": 109
+      },
+      {
+        "name": "print-spool-command",
+        "line": 113
+      },
+      {
+        "name": "wsfnctn",
+        "line": 115
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 117
+      },
+      {
+        "name": "wscall",
+        "line": 199
+      },
+      {
+        "name": "wssystem",
+        "line": 200
+      },
+      {
+        "name": "wsnames",
+        "line": 201
+      }
+    ],
+    "performs": [
+      {
+        "target": "varying",
+        "line": 276
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "cheque-file",
+        "line": 101
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 110
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

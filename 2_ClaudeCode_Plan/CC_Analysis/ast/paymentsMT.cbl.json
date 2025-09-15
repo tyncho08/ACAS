@@ -1,0 +1,651 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl",
+  "fileName": "paymentsMT.cbl",
+  "fileHash": "d78f99b5fab25ad8a36a904a8d68c394309bc42fe285472f8b8272c323255c73",
+  "timestamp": "2025-09-15T19:46:05.610Z",
+  "parseTime": 110,
+  "lines": {
+    "total": 2022,
+    "code": 1324,
+    "comment": 693,
+    "blank": 5
+  },
+  "programId": "paymentsMT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:170: error: ACAS-SQLstate-error-list.cob: No such file or directory\n  168 | *>                          SQL-State = In support of SQL-Err for dup key..\n  169 | *>\n  170 >  copy \"ACAS-SQLstate-error-list.cob\".\n  171 | *>\n  172 | *>       During testing a log file will be created containing datetime st..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:299: error: mysql-variables.cpy: No such file or directory\n  297 | *>       TABLE=PLPAY-REC,HV\n  298 | *>       TABLE=PLPAY-RECrg01,HV1\n  299 >  COPY \"mysql-variables.cpy\".\n  300 | *>\n  301 | *>    Definitions for the PLPAY-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:330: error: wsfnctn.cob: No such file or directory\n  328 | *>\n  329 | *>**********************************************************************\n  330 >  copy \"wsfnctn.cob\".                         *> File-Access\n  331 | *>\n  332 | *>**********************************************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:334: error: Test-Data-Flags.cob: No such file or directory\n  332 | *>**********************************************************************\n  333 | *>\n  334 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  335 | *>\n  336 |  copy \"wspay.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:336: error: wspay.cob: No such file or directory\n  334 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  335 | *>\n  336 >  copy \"wspay.cob\".\n  337 | *>\n  338 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1062: error: mysql-procedures.cpy: No such file or directory\n 1060 | *>\n 1061 | *> /MYSQL PRO\\\n 1062 >  COPY \"mysql-procedures.cpy\".\n 1063 | *> /MYSQL-END\\\n 1064 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:347: error: 'Ws-Mysql-Error-Number' is not defined\n  345 |  01  Display-Message-2       foreground-color 2.\n  346 |      03      value \"SM004 SQL Err No.=\"           line 4 col  1.\n  347 >      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.\n  348 |      03      value \" Para=\"                              col 23.\n  349 |      03  using WS-No-Paragraph         pic 9(3)          col 29.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:349: error: 'WS-No-Paragraph' is not defined\n  347 |      03  using Ws-Mysql-Error-Number   pic x(4)          col 19.\n  348 |      03      value \" Para=\"                              col 23.\n  349 >      03  using WS-No-Paragraph         pic 9(3)          col 29.\n  350 |      03      value \" SQL Cmd=\"                           col 32.\n  351 |      03  using Ws-Mysql-Command        pic x(199)        col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:351: error: 'Ws-Mysql-Command' is not defined\n  349 |      03  using WS-No-Paragraph         pic 9(3)          col 29.\n  350 |      03      value \" SQL Cmd=\"                           col 32.\n  351 >      03  using Ws-Mysql-Command        pic x(199)        col 41.\n  352 |      03      value \"SQL Err Msg=\"                 line 7 col  1.\n  353 |      03  using Ws-Mysql-Error-Message  pic x(67)         col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:353: error: 'Ws-Mysql-Error-Message' is not defined\n  351 |      03  using Ws-Mysql-Command        pic x(199)        col 41.\n  352 |      03      value \"SQL Err Msg=\"                 line 7 col  1.\n  353 >      03  using Ws-Mysql-Error-Message  pic x(67)         col 13.\n  354 | *>\n  355 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:356: error: 'File-Access' is not defined\n  354 | *>\n  355 | *>\n  356 >  PROCEDURE DIVISION   using File-Access\n  357 |                             ACAS-DAL-Common-data\n  358 |                             WS-Pay-Record.        *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:357: error: 'ACAS-DAL-Common-data' is not defined\n  355 | *>\n  356 |  PROCEDURE DIVISION   using File-Access\n  357 >                             ACAS-DAL-Common-data\n  358 |                             WS-Pay-Record.        *>  Ws record\n  359 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:358: error: 'WS-Pay-Record' is not defined\n  356 |  PROCEDURE DIVISION   using File-Access\n  357 |                             ACAS-DAL-Common-data\n  358 >                             WS-Pay-Record.        *>  Ws record\n  359 | *>**********************************************\n  360 |  ba-ACAS-DAL-Process  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:376: error: 'SQL-State' is not defined\n  374 |  ba010-Initialise.\n  375 | *>\n  376 >      move     zero   to SQL-State.\n  377 | \n  378 | *>                        We-Error\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:383: error: 'WS-Log-Where' is not defined\n  381 |      move     spaces to WS-MYSQL-Error-Message\n  382 |                         WS-MYSQL-Error-Number\n  383 >                         WS-Log-Where\n  384 |                         WS-File-Key\n  385 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:384: error: 'WS-File-Key' is not defined\n  382 |                         WS-MYSQL-Error-Number\n  383 |                         WS-Log-Where\n  384 >                         WS-File-Key\n  385 |                         SQL-Msg\n  386 |                         SQL-Err.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:385: error: 'SQL-Msg' is not defined\n  383 |                         WS-Log-Where\n  384 |                         WS-File-Key\n  385 >                         SQL-Msg\n  386 |                         SQL-Err.\n  387 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:386: error: 'SQL-Err' is not defined\n  384 |                         WS-File-Key\n  385 |                         SQL-Msg\n  386 >                         SQL-Err.\n  387 | *>\n  388 | *>   Now Test for valid key for start, read-indexed and delete\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:396: error: 'File-Function' is not defined\n  394 | *>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  395 | *>\n  396 >      evaluate File-Function\n  397 |         when  1\n  398 |               go to ba020-Process-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:427: error: 'DB-Schema' is not defined\n  425 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  426 |  *>\n  427 >      string   DB-Schema      delimited by space\n  428 |               X\"00\"          delimited by size\n  429 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:429: error: 'WS-MYSQL-BASE-NAME' is not defined\n  427 |      string   DB-Schema      delimited by space\n  428 |               X\"00\"          delimited by size\n  429 >                                into WS-MYSQL-BASE-NAME\n  430 |      end-string.\n  431 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:431: error: 'DB-Host' is not defined\n  429 |                                into WS-MYSQL-BASE-NAME\n  430 |      end-string.\n  431 >      string   DB-Host        delimited by space\n  432 |               X\"00\"          delimited by size\n  433 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:433: error: 'WS-MYSQL-HOST-NAME' is not defined\n  431 |      string   DB-Host        delimited by space\n  432 |               X\"00\"          delimited by size\n  433 >                                into WS-MYSQL-HOST-NAME\n  434 |      end-string.\n  435 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:435: error: 'DB-UName' is not defined\n  433 |                                into WS-MYSQL-HOST-NAME\n  434 |      end-string.\n  435 >      string   DB-UName       delimited by space\n  436 |               X\"00\"          delimited by size\n  437 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:437: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  435 |      string   DB-UName       delimited by space\n  436 |               X\"00\"          delimited by size\n  437 >                                into WS-MYSQL-IMPLEMENTATION\n  438 |      end-string.\n  439 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:439: error: 'DB-UPass' is not defined\n  437 |                                into WS-MYSQL-IMPLEMENTATION\n  438 |      end-string.\n  439 >      string   DB-UPass       delimited by space\n  440 |               X\"00\"          delimited by size\n  441 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:441: error: 'WS-MYSQL-PASSWORD' is not defined\n  439 |      string   DB-UPass       delimited by space\n  440 |               X\"00\"          delimited by size\n  441 >                                into WS-MYSQL-PASSWORD\n  442 |      end-string.\n  443 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:443: error: 'DB-Port' is not defined\n  441 |                                into WS-MYSQL-PASSWORD\n  442 |      end-string.\n  443 >      string   DB-Port        delimited by space\n  444 |               X\"00\"          delimited by size\n  445 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:445: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  443 |      string   DB-Port        delimited by space\n  444 |               X\"00\"          delimited by size\n  445 >                                into WS-MYSQL-PORT-NUMBER\n  446 |      end-string.\n  447 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:447: error: 'DB-Socket' is not defined\n  445 |                                into WS-MYSQL-PORT-NUMBER\n  446 |      end-string.\n  447 >      string   DB-Socket      delimited by space\n  448 |               X\"00\"          delimited by size\n  449 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:449: error: 'WS-MYSQL-SOCKET' is not defined\n  447 |      string   DB-Socket      delimited by space\n  448 |               X\"00\"          delimited by size\n  449 >                                into WS-MYSQL-SOCKET\n  450 |      end-string.\n  451 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:453: error: 'fs-reply' is not defined\n  451 |      move     1 to ws-No-Paragraph.\n  452 |      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  453 >      if       fs-reply not = zero\n  454 |               go   to ba999-end.\n  455 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:522: error: 'WS-MYSQL-RESULT' is not defined\n  520 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  521 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  522 >            MOVE WS-MYSQL-RESULT TO TP-PLPAY-REC\n  523 | *>               /MYSQL-END\\\n  524 |            move    \"000000000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:525: error: 'Testing-2' is not defined\n  523 | *>               /MYSQL-END\\\n  524 |            move    \"000000000\" to WS-File-Key\n  525 >               if    Testing-2\n  526 |                     display Display-Message-1 with erase eos\n  527 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:531: error: 'WS-MYSQL-Count-Rows' is not defined\n  529 | *>  It could be an empty table so test for it\n  530 | *>\n  531 >               if       WS-MYSQL-Count-Rows = zero\n  532 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  533 |                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:533: error: 'WS-MYSQL-SQLstate' is not defined\n  531 |               if       WS-MYSQL-Count-Rows = zero\n  532 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  533 >                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n  534 |                        move  WS-MYSQL-SqlState   to SQL-State\n  535 |                        if    WS-MYSQL-Error-Number  not = \"0  \"    *> set..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:541: error: 'WE-Error' is not defined\n  539 |                        end-if       *> do not really need to do this mean..\n  540 |                        move 10 to fs-reply\n  541 >                        move 10 to WE-Error        *> should be 0 'JIC' li..\n  542 |                        move    \"No Data\" to WS-File-Key\n  543 |                        go to ba999-End       *> can clear the dup code af..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'ba060-Process-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:722: error: 'access-type' is not defined\n  720 | *>  Check for Param error 1st on start\n  721 | *>\n  722 >      if       access-type < 5 or > 8                   *> not using not <..\n  723 |               move 99 to FS-Reply\n  724 |               move 997 to WE-Error                     *> Invalid calling..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'ba070-Process-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:826: error: 'WS-PAY-KEY' is not defined\n  824 |  ba070-Process-Write.             *> dry tested - Has rg01 requirements.\n  825 |      perform  bb000-HV-Load.                       *>  move WS-Pay-Record..\n  826 >      move     WS-PAY-KEY to WS-File-Key.\n  827 |      move     zero to FS-Reply WE-Error SQL-State\n  828 |      move     spaces to SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'ba085-Process-Delete-All':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:938: error: 'WS-Pay-Supl-Key' is not defined\n  936 | *> So if this does not work it will be changed.\n  937 | *>\n  938 >      move     high-values  to WS-Pay-Supl-Key.\n  939 |      move     99           to WS-Pay-Nos.\n  940 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:939: error: 'WS-Pay-Nos' is not defined\n  937 | *>\n  938 |      move     high-values  to WS-Pay-Supl-Key.\n  939 >      move     99           to WS-Pay-Nos.\n  940 | *>\n  941 |      set      KOR-x1 to 1\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'ba999-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1080: error: 'Testing-1' is not defined\n 1078 | *>  Any Clean ups before quiting    move data record ?????  do so at the..\n 1079 | *>\n 1080 >      if       Testing-1\n 1081 |               perform Ca-Process-Logs\n 1082 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in section 'bb000-HV-Load':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1097: error: 'WS-Pay-Cont' is not defined\n 1095 |      initialize TD-PLPAY-REC.\n 1096 |      move     WS-Pay-Key          to HV-PAY-KEY.\n 1097 >      move     WS-Pay-Cont         to HV-PAY-CONT.\n 1098 |      move     WS-Pay-Date         to HV-PAY-DAT.\n 1099 |      move     WS-Pay-Cheque       to HV-PAY-CHEQUE.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1098: error: 'WS-Pay-Date' is not defined\n 1096 |      move     WS-Pay-Key          to HV-PAY-KEY.\n 1097 |      move     WS-Pay-Cont         to HV-PAY-CONT.\n 1098 >      move     WS-Pay-Date         to HV-PAY-DAT.\n 1099 |      move     WS-Pay-Cheque       to HV-PAY-CHEQUE.\n 1100 |      move     WS-Pay-SortCode     to HV-PAY-SORTCODE.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1099: error: 'WS-Pay-Cheque' is not defined\n 1097 |      move     WS-Pay-Cont         to HV-PAY-CONT.\n 1098 |      move     WS-Pay-Date         to HV-PAY-DAT.\n 1099 >      move     WS-Pay-Cheque       to HV-PAY-CHEQUE.\n 1100 |      move     WS-Pay-SortCode     to HV-PAY-SORTCODE.\n 1101 |      move     WS-Pay-Account      to HV-PAY-ACCOUNT.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1100: error: 'WS-Pay-SortCode' is not defined\n 1098 |      move     WS-Pay-Date         to HV-PAY-DAT.\n 1099 |      move     WS-Pay-Cheque       to HV-PAY-CHEQUE.\n 1100 >      move     WS-Pay-SortCode     to HV-PAY-SORTCODE.\n 1101 |      move     WS-Pay-Account      to HV-PAY-ACCOUNT.\n 1102 |      move     WS-Pay-Gross        to HV-PAY-GROSS.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1101: error: 'WS-Pay-Account' is not defined\n 1099 |      move     WS-Pay-Cheque       to HV-PAY-CHEQUE.\n 1100 |      move     WS-Pay-SortCode     to HV-PAY-SORTCODE.\n 1101 >      move     WS-Pay-Account      to HV-PAY-ACCOUNT.\n 1102 |      move     WS-Pay-Gross        to HV-PAY-GROSS.\n 1103 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1102: error: 'WS-Pay-Gross' is not defined\n 1100 |      move     WS-Pay-SortCode     to HV-PAY-SORTCODE.\n 1101 |      move     WS-Pay-Account      to HV-PAY-ACCOUNT.\n 1102 >      move     WS-Pay-Gross        to HV-PAY-GROSS.\n 1103 | *>\n 1104 |  bb000-Exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in section 'bc000-RG-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'bc050-Process-Read-Indexed':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1366: error: 'WS-Mysql-Save-Result' is not defined\n 1364 | *>    But first save the pointers [and we will restore at end].\n 1365 | *>\n 1366 >      move     WS-Mysql-Result     to WS-Mysql-Save-Result.     *> primary..\n 1367 |      move     WS-Mysql-Count-Rows to WS-Mysql-Save-Count-Rows.\n 1368 |      move     zero to WS-Mysql-Count-Rows.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1367: error: 'WS-Mysql-Save-Count-Rows' is not defined\n 1365 | *>\n 1366 |      move     WS-Mysql-Result     to WS-Mysql-Save-Result.     *> primary..\n 1367 >      move     WS-Mysql-Count-Rows to WS-Mysql-Save-Count-Rows.\n 1368 |      move     zero to WS-Mysql-Count-Rows.\n 1369 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'bc070-Process-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1487: error: 'WS-Pay-Folio' is not defined\n 1485 | *>\n 1486 |      perform  varying  M from 1 by 1 until M > 9\n 1487 >               if       WS-Pay-Folio (M) = zeros\n 1488 |                   and  WS-Pay-Value (M) = zeros\n 1489 |                        exit perform cycle\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1488: error: 'WS-Pay-Value' is not defined\n 1486 |      perform  varying  M from 1 by 1 until M > 9\n 1487 |               if       WS-Pay-Folio (M) = zeros\n 1488 >                   and  WS-Pay-Value (M) = zeros\n 1489 |                        exit perform cycle\n 1490 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1503: error: 'fn-Write' is not defined\n 1501 |               move     zero to SQL-Err\n 1502 |               move     53  to ws-No-Paragraph\n 1503 >               if       fn-Write\n 1504 |                        perform  bc200-Insert-rg1\n 1505 |               else                                      *> fn-Re-write\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in section 'bc000-HV-Load-rg1':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1717: error: 'WS-Pay-Period' is not defined\n 1715 |      move     M                  to HV1-LEVEL-J.\n 1716 |      move     WS-Pay-Folio   (M) to HV1-PAY-FOLIO.\n 1717 >      move     WS-Pay-Period  (M) to HV1-PAY-PERIOD.\n 1718 |      move     WS-Pay-Value   (M) to HV1-PAY-VALUE.\n 1719 |      move     WS-Pay-Deduct  (M) to HV1-PAY-DEDUCT.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1719: error: 'WS-Pay-Deduct' is not defined\n 1717 |      move     WS-Pay-Period  (M) to HV1-PAY-PERIOD.\n 1718 |      move     WS-Pay-Value   (M) to HV1-PAY-VALUE.\n 1719 >      move     WS-Pay-Deduct  (M) to HV1-PAY-DEDUCT.\n 1720 |      move     WS-Pay-Invoice (M) to HV1-PAY-INVOICE.\n 1721 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1720: error: 'WS-Pay-Invoice' is not defined\n 1718 |      move     WS-Pay-Value   (M) to HV1-PAY-VALUE.\n 1719 |      move     WS-Pay-Deduct  (M) to HV1-PAY-DEDUCT.\n 1720 >      move     WS-Pay-Invoice (M) to HV1-PAY-INVOICE.\n 1721 | *>\n 1722 | *> End of PLPAY-RECrg01 unload...\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:452: error: 'MYSQL-1000-OPEN' is not defined\n  450 |      end-string.\n  451 |      move     1 to ws-No-Paragraph.\n  452 >      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  453 |      if       fs-reply not = zero\n  454 |               go   to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:452: error: 'MYSQL-1090-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'ba030-Process-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:476: error: 'MYSQL-1980-CLOSE' is not defined\n  474 | *>    Close the Database\n  475 | *>\n  476 >            PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n  477 | *>  /MYSQL-END\\\n  478 |      go      to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:476: error: 'MYSQL-1999-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:520: error: 'MYSQL-1210-COMMAND' is not defined\n  518 |              ws-Where (1:J)\n  519 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  520 >            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  521 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  522 |            MOVE WS-MYSQL-RESULT TO TP-PLPAY-REC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:520: error: 'MYSQL-1219-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:521: error: 'MYSQL-1220-STORE-RESULT' is not defined\n  519 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  520 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  521 >            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  522 |            MOVE WS-MYSQL-RESULT TO TP-PLPAY-REC\n  523 | *>               /MYSQL-END\\\n/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:521: error: 'MYSQL-1239-EXIT' is not defined\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:170: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:299: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:330: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:334: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:336: error: wspay.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1062: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:347: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:349: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:351: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:353: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:356: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:357: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:358: error: 'WS-Pay-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:376: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:383: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:384: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:385: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:386: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:396: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:427: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:429: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:431: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:433: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:435: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:437: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:439: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:441: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:443: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:445: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:447: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:449: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:453: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:522: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:525: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:531: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:533: error: 'WS-MYSQL-SQLstate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:541: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:722: error: 'access-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:826: error: 'WS-PAY-KEY' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:938: error: 'WS-Pay-Supl-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:939: error: 'WS-Pay-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1080: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1097: error: 'WS-Pay-Cont' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1098: error: 'WS-Pay-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1099: error: 'WS-Pay-Cheque' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1100: error: 'WS-Pay-SortCode' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1101: error: 'WS-Pay-Account' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1102: error: 'WS-Pay-Gross' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1366: error: 'WS-Mysql-Save-Result' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1367: error: 'WS-Mysql-Save-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1487: error: 'WS-Pay-Folio' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1488: error: 'WS-Pay-Value' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1503: error: 'fn-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1717: error: 'WS-Pay-Period' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1719: error: 'WS-Pay-Deduct' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1720: error: 'WS-Pay-Invoice' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:452: error: 'MYSQL-1000-OPEN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:452: error: 'MYSQL-1090-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:476: error: 'MYSQL-1980-CLOSE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:476: error: 'MYSQL-1999-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:520: error: 'MYSQL-1210-COMMAND' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:520: error: 'MYSQL-1219-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:521: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:521: error: 'MYSQL-1239-EXIT' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:170: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:299: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:330: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:334: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:336: error: wspay.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1062: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:347: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:349: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:351: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:353: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:356: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:357: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:358: error: 'WS-Pay-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:376: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:383: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:384: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:385: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:386: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:396: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:427: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:429: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:431: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:433: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:435: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:437: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:439: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:441: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:443: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:445: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:447: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:449: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:453: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:522: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:525: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:531: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:533: error: 'WS-MYSQL-SQLstate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:541: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:722: error: 'access-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:826: error: 'WS-PAY-KEY' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:938: error: 'WS-Pay-Supl-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:939: error: 'WS-Pay-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1080: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1097: error: 'WS-Pay-Cont' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1098: error: 'WS-Pay-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1099: error: 'WS-Pay-Cheque' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1100: error: 'WS-Pay-SortCode' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1101: error: 'WS-Pay-Account' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1102: error: 'WS-Pay-Gross' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1366: error: 'WS-Mysql-Save-Result' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1367: error: 'WS-Mysql-Save-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1487: error: 'WS-Pay-Folio' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1488: error: 'WS-Pay-Value' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1503: error: 'fn-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1717: error: 'WS-Pay-Period' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1719: error: 'WS-Pay-Deduct' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:1720: error: 'WS-Pay-Invoice' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:452: error: 'MYSQL-1000-OPEN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:452: error: 'MYSQL-1090-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:476: error: 'MYSQL-1980-CLOSE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:476: error: 'MYSQL-1999-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:520: error: 'MYSQL-1210-COMMAND' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:520: error: 'MYSQL-1219-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:521: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/paymentsMT.cbl:521: error: 'MYSQL-1239-EXIT' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 150,
+    "cognitive": 258,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 212,
+      "totalOperators": 644,
+      "totalOperands": 2278,
+      "vocabulary": 224,
+      "length": 2922,
+      "volume": 22813,
+      "difficulty": 64.47,
+      "effort": 1470799,
+      "timeToProgram": 81711,
+      "deliveredBugs": 7.604
+    },
+    "maintainability": 49
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 532
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 533
+      },
+      {
+        "target": "MySQL_error",
+        "line": 537
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 569
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 590
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 591
+      },
+      {
+        "target": "MySQL_error",
+        "line": 594
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 676
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 689
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 690
+      },
+      {
+        "target": "MySQL_error",
+        "line": 694
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 799
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 800
+      },
+      {
+        "target": "MySQL_error",
+        "line": 803
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 833
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 834
+      },
+      {
+        "target": "MySQL_error",
+        "line": 838
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 892
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 893
+      },
+      {
+        "target": "MySQL_error",
+        "line": 896
+      },
+      {
+        "target": "MySQL_query",
+        "line": 933
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 980
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 981
+      },
+      {
+        "target": "MySQL_error",
+        "line": 984
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1031
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1032
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1035
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1073
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1411
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1412
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1416
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 1449
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1509
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1515
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1516
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1521
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1589
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1590
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1593
+      },
+      {
+        "target": "MySQL_query",
+        "line": 1635
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1682
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 1683
+      },
+      {
+        "target": "MySQL_error",
+        "line": 1686
+      },
+      {
+        "target": "fhlogger",
+        "line": 2016
+      }
+    ],
+    "copies": [
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 170
+      },
+      {
+        "name": "of",
+        "line": 207
+      },
+      {
+        "name": "envdiv",
+        "line": 214
+      },
+      {
+        "name": "mysql-variables",
+        "line": 299
+      },
+      {
+        "name": "wsfnctn",
+        "line": 330
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 334
+      },
+      {
+        "name": "wspay",
+        "line": 336
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1062
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 425
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 452
+      },
+      {
+        "target": "ba998-Free",
+        "line": 468
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 476
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 520
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 521
+      },
+      {
+        "target": "ba999-End",
+        "line": 552
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 612
+      },
+      {
+        "target": "ba999-End",
+        "line": 613
+      },
+      {
+        "target": "bc050-Process-Read-Indexed",
+        "line": 617
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 659
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 660
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 706
+      },
+      {
+        "target": "ba999-End",
+        "line": 707
+      },
+      {
+        "target": "bc050-Process-Read-Indexed",
+        "line": 711
+      },
+      {
+        "target": "ba998-Free",
+        "line": 715
+      },
+      {
+        "target": "ba998-Free",
+        "line": 731
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 789
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 790
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 825
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 831
+      },
+      {
+        "target": "ba999-End",
+        "line": 848
+      },
+      {
+        "target": "bc070-Process-Write",
+        "line": 852
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 889
+      },
+      {
+        "target": "ba999-End",
+        "line": 907
+      },
+      {
+        "target": "bc080-Process-Delete",
+        "line": 911
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 977
+      },
+      {
+        "target": "ba999-End",
+        "line": 996
+      },
+      {
+        "target": "bc085-Process-Delete-ALL",
+        "line": 1000
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 1005
+      },
+      {
+        "target": "bb300-Update",
+        "line": 1024
+      },
+      {
+        "target": "ba999-End",
+        "line": 1046
+      },
+      {
+        "target": "bc070-Process-Write",
+        "line": 1050
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 1081
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1223
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1333
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1402
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 1403
+      },
+      {
+        "target": "ba999-End",
+        "line": 1436
+      },
+      {
+        "target": "bc100-UnloadHVs-rg1",
+        "line": 1462
+      },
+      {
+        "target": "ba999-End",
+        "line": 1478
+      },
+      {
+        "target": "varying",
+        "line": 1486
+      },
+      {
+        "target": "cycle",
+        "line": 1489
+      },
+      {
+        "target": "bc000-HV-Load-rg1",
+        "line": 1491
+      },
+      {
+        "target": "bc200-Insert-rg1",
+        "line": 1504
+      },
+      {
+        "target": "bc300-Update-rg1",
+        "line": 1506
+      },
+      {
+        "target": "bc300-Update-rg1",
+        "line": 1512
+      },
+      {
+        "target": "ba999-End",
+        "line": 1540
+      },
+      {
+        "target": "cycle",
+        "line": 1541
+      },
+      {
+        "target": "ba999-End",
+        "line": 1544
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1583
+      },
+      {
+        "target": "ba999-End",
+        "line": 1612
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1679
+      },
+      {
+        "target": "ba999-End",
+        "line": 1698
+      },
+      {
+        "target": "ba999-End",
+        "line": 1748
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1868
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 2006
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 218
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>              DELETE\n*>              FROM PLPAY-REC\n*>...",
+        "line": 919
+      },
+      {
+        "content": "*>              DELETE\n*>              FROM PLPAY-RECrg01\n*>...",
+        "line": 1621
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

@@ -1,0 +1,143 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl",
+  "fileName": "pl180.cbl",
+  "fileHash": "eb67a201129fc1914ee3ca7264afc819278f414c1fbb96a8aaa59e6ee4e691bc",
+  "timestamp": "2025-09-15T19:46:23.224Z",
+  "parseTime": 35,
+  "lines": {
+    "total": 232,
+    "code": 98,
+    "comment": 133,
+    "blank": 1
+  },
+  "programId": "pl180",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:80: error: envdiv.cob: No such file or directory\n   78 | *>================================\n   79 | *>\n   80 >  copy \"envdiv.cob\".\n   81 |  input-output            section.\n   82 | *>-------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:99: error: wsfnctn.cob: No such file or directory\n   97 |  77  prog-name          pic x(15) value \"PL180 (3.02.05)\".\n   98 | *>\n   99 >  copy \"wsfnctn.cob\".\n  100 | *>\n  101 |  01  WS-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:107: error: Test-Data-Flags.cob: No such file or directory\n  105 |      03  WS-vat-ac       pic 9(6).\n  106 | *>\n  107 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  108 | *>\n  109 |  linkage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:112: error: wscall.cob: No such file or directory\n  110 | *>***************\n  111 | *>\n  112 >  copy \"wscall.cob\".\n  113 |  copy \"wssystem.cob\". *> File-Defs\n  114 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:113: error: wssystem.cob: No such file or directory\n  111 | *>\n  112 |  copy \"wscall.cob\".\n  113 >  copy \"wssystem.cob\". *> File-Defs\n  114 |  copy \"wsnames.cob\".\n  115 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:114: error: wsnames.cob: No such file or directory\n  112 |  copy \"wscall.cob\".\n  113 |  copy \"wssystem.cob\". *> File-Defs\n  114 >  copy \"wsnames.cob\".\n  115 | *>\n  116 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:118: error: 'WS-calling-data' is not defined\n  116 |  01  to-day              pic x(10).\n  117 | *>\n  118 >  procedure division using WS-calling-data\n  119 |                           system-record\n  120 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:119: error: 'system-record' is not defined\n  117 | *>\n  118 |  procedure division using WS-calling-data\n  119 >                           system-record\n  120 |                           to-day\n  121 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:121: error: 'file-defs' is not defined\n  119 |                           system-record\n  120 |                           to-day\n  121 >                           file-defs.\n  122 | *>=======================================\n  123 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:125: error: 'WS-caller' is not defined\n  123 | *>\n  124 |  init01 section.\n  125 >      move     WS-caller to WS-del-link.\n  126 |      move     WS-called to WS-caller.\n  127 |      if       Next-Folio = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:125: error: 'WS-del-link' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:126: error: 'WS-called' is not defined\n  124 |  init01 section.\n  125 |      move     WS-caller to WS-del-link.\n  126 >      move     WS-called to WS-caller.\n  127 |      if       Next-Folio = zero\n  128 |               perform  Fixed-Data.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:127: error: 'Next-Folio' is not defined\n  125 |      move     WS-caller to WS-del-link.\n  126 |      move     WS-called to WS-caller.\n  127 >      if       Next-Folio = zero\n  128 |               perform  Fixed-Data.\n  129 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl: in section 'Fixed-Data':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:197: error: 'G-L' is not defined\n  195 |      display  \"- [        ]\" at 0545 with foreground-color 2.\n  196 | *>\n  197 >      if       G-L\n  198 |               display \"Vat Account\" at 0711 with foreground-color 2\n  199 |               display \"- [      ]\"  at 0745 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl: in paragraph 'Data-Entry':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:216: error: 'vat-ac' is not defined\n  214 |               go to  Confirmation.\n  215 | *>\n  216 >      move     vat-ac to WS-vat-ac.\n  217 |      display  WS-vat-ac at 0748 with foreground-color 3.\n  218 |      accept   WS-vat-ac at 0748 with foreground-color 3 update.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:80: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:99: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:107: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:112: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:113: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:114: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:118: error: 'WS-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:119: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:121: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:125: error: 'WS-caller' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:125: error: 'WS-del-link' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:126: error: 'WS-called' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:127: error: 'Next-Folio' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:197: error: 'G-L' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:216: error: 'vat-ac' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:80: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:99: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:107: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:112: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:113: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:114: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:118: error: 'WS-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:119: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:121: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:125: error: 'WS-caller' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:125: error: 'WS-del-link' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:126: error: 'WS-called' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:127: error: 'Next-Folio' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:197: error: 'G-L' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl180.cbl:216: error: 'vat-ac' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 19,
+    "cognitive": 49,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 38,
+      "totalOperators": 57,
+      "totalOperands": 84,
+      "vocabulary": 47,
+      "length": 141,
+      "volume": 783,
+      "difficulty": 9.95,
+      "effort": 7791,
+      "timeToProgram": 433,
+      "deliveredBugs": 0.261
+    },
+    "maintainability": 77
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 71
+      },
+      {
+        "name": "envdiv",
+        "line": 80
+      },
+      {
+        "name": "wsfnctn",
+        "line": 99
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 107
+      },
+      {
+        "name": "wscall",
+        "line": 112
+      },
+      {
+        "name": "wssystem",
+        "line": 113
+      },
+      {
+        "name": "wsnames",
+        "line": 114
+      }
+    ],
+    "performs": [
+      {
+        "target": "Fixed-Data",
+        "line": 128
+      },
+      {
+        "target": "Fixed-Data",
+        "line": 152
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 95
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

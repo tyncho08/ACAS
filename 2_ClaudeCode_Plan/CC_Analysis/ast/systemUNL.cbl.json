@@ -1,0 +1,245 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl",
+  "fileName": "systemUNL.cbl",
+  "fileHash": "f063836474ff11ad6d62d897d5d9f0cdca527ab6e6edd8f424a2d5bd67043340",
+  "timestamp": "2025-09-15T19:46:09.811Z",
+  "parseTime": 43,
+  "lines": {
+    "total": 337,
+    "code": 180,
+    "comment": 156,
+    "blank": 1
+  },
+  "programId": "SystemUNL",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:110: error: envdiv.cob: No such file or directory\n  108 | *>-------------------\n  109 | *>\n  110 >  copy \"envdiv.cob\".\n  111 |  input-output            section.\n  112 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:117: error: selsys.cob: No such file or directory\n  115 | *>-----------\n  116 | *>\n  117 >  copy \"selsys.cob\".\n  118 |      select  System-File-Seq assign        \"system.seq\"\n  119 |                              organization  sequential\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:128: error: fdsys.cob: No such file or directory\n  126 | *>-----------\n  127 | *>\n  128 >  copy \"fdsys.cob\".\n  129 |  fd   system-file-seq.\n  130 |  copy \"wssystem.cob\"  replacing System-Record by System-Record-Seq\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:140: error: wssystem.cob: No such file or directory\n  138 |                                RDBMS-Port    by WS-RDBMS-Port\n  139 |                                RDBMS-Host    by WS-RDBMS-Host\n  140 >                                RDBMS-Socket  by WS-RDBMS-Socket.\n  141 | *>\n  142 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:169: error: Test-Data-Flags.cob: No such file or directory\n  167 |  01  SO-Print            pic x(160)    value spaces.\n  168 | *>\n  169 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  170 | *>\n  171 |  copy \"wsdflt.cob\".   *> rec 2 - defaults\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:171: error: wsdflt.cob: No such file or directory\n  169 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  170 | *>\n  171 >  copy \"wsdflt.cob\".   *> rec 2 - defaults\n  172 |  copy \"wsfinal.cob\".  *> rec 3 - Final accounts\n  173 |  copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:172: error: wsfinal.cob: No such file or directory\n  170 | *>\n  171 |  copy \"wsdflt.cob\".   *> rec 2 - defaults\n  172 >  copy \"wsfinal.cob\".  *> rec 3 - Final accounts\n  173 |  copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n  174 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:173: error: wssys4.cob: No such file or directory\n  171 |  copy \"wsdflt.cob\".   *> rec 2 - defaults\n  172 |  copy \"wsfinal.cob\".  *> rec 3 - Final accounts\n  173 >  copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n  174 |  copy \"wsfnctn.cob\".\n  175 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:174: error: wsfnctn.cob: No such file or directory\n  172 |  copy \"wsfinal.cob\".  *> rec 3 - Final accounts\n  173 |  copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n  174 >  copy \"wsfnctn.cob\".\n  175 |  copy \"wsnames.cob\".\n  176 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:175: error: wsnames.cob: No such file or directory\n  173 |  copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n  174 |  copy \"wsfnctn.cob\".\n  175 >  copy \"wsnames.cob\".\n  176 |  copy \"wscall.cob\".\n  177 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:176: error: wscall.cob: No such file or directory\n  174 |  copy \"wsfnctn.cob\".\n  175 |  copy \"wsnames.cob\".\n  176 >  copy \"wscall.cob\".\n  177 | *>\n  178 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:332: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  330 |      goback.\n  331 | *>\n  332 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  333 | *>\n  334 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:142: error: RECORD description missing or invalid\n  140 |                                RDBMS-Socket  by WS-RDBMS-Socket.\n  141 | *>\n  142 >  working-storage section.\n  143 | *>----------------------\n  144 |  77  prog-name           pic x(20)    value \"SystemUNL (3.02.04)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:118: error: missing file description for FILE System-File-Seq\n  116 | *>\n  117 |  copy \"selsys.cob\".\n  118 >      select  System-File-Seq assign        \"system.seq\"\n  119 |                              organization  sequential\n  120 |                              status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:120: error: 'FS-Reply' is not defined\n  118 |      select  System-File-Seq assign        \"system.seq\"\n  119 |                              organization  sequential\n  120 >                              status        FS-Reply.\n  121 | *>\n  122 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:195: error: 'WS-Log-System' is not defined\n  193 |  aa000-Main-Start.\n  194 |      perform  zz020-Get-Program-Args.\n  195 >      move     0      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  196 |      move     10     to WS-Log-File-no.  *> for FHlogger\n  197 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:196: error: 'WS-Log-File-no' is not defined\n  194 |      perform  zz020-Get-Program-Args.\n  195 |      move     0      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  196 >      move     10     to WS-Log-File-no.  *> for FHlogger\n  197 | *>\n  198 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:202: error: 'System-File' is not defined\n  200 |      move     zeros to ws-Rec-Cnt-Out ws-Rec-Cnt-In.\n  201 |  *>    display  Prog-Name at 0101 with erase eos.\n  202 >      open     input System-File.\n  203 |      if       fs-reply not = zero\n  204 |               display SY001A    at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:202: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:207: error: 'System-File' is not a file name\n  205 |               display fs-reply  at 0428\n  206 |               display SY004     at 0501\n  207 >               close System-File\n  208 |               move 128 to return-code\n  209 |               goback\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:212: error: 'Default-Record' is not defined\n  210 |      end-if\n  211 |      initialise                    *> initialise all secondary records\n  212 >               Default-Record\n  213 |               Final-Record\n  214 |               System-Record-4 with filler.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:213: error: 'Final-Record' is not defined\n  211 |      initialise                    *> initialise all secondary records\n  212 |               Default-Record\n  213 >               Final-Record\n  214 |               System-Record-4 with filler.\n  215 |      move     2 to rrn.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:214: error: 'System-Record-4' is not defined\n  212 |               Default-Record\n  213 |               Final-Record\n  214 >               System-Record-4 with filler.\n  215 |      move     2 to rrn.\n  216 |      read     System-File record into Default-Record.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:215: error: 'rrn' is not defined\n  213 |               Final-Record\n  214 |               System-Record-4 with filler.\n  215 >      move     2 to rrn.\n  216 |      read     System-File record into Default-Record.\n  217 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:216: error: 'System-File' is not a file name\n  214 |               System-Record-4 with filler.\n  215 |      move     2 to rrn.\n  216 >      read     System-File record into Default-Record.\n  217 |      if       fs-reply not = zero\n  218 |               display SY001B          at 0501\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:226: error: 'System-File' is not a file name\n  224 |      end-if\n  225 |      move     3 to rrn.\n  226 >      read     System-File record into Final-Record.\n  227 |      if       fs-reply not = zero\n  228 |               display SY001C          at 0601\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:236: error: 'System-File' is not a file name\n  234 |      end-if\n  235 |      move     4 to rrn.\n  236 >      read     System-File record into System-Record-4.\n  237 |      if       fs-reply not = zero\n  238 |               display SY001D         at 0701\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:246: error: 'System-File' is not a file name\n  244 |      end-if\n  245 |      move     1 to rrn.\n  246 >      read     system-file record.\n  247 |      if       fs-reply not = zero\n  248 |               display SY001A          at 0801\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:251: error: 'System-File' is not a file name\n  249 |               display fs-reply        at 0828\n  250 |               display \"Not set up ?\"  at 0831\n  251 >               close System-File\n  252 |               move 128 to return-code\n  253 |               goback\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:275: error: 'FS-Cobol-Files-Used' is not defined\n  273 | *>\n  274 |      move     spaces to SO-Print.\n  275 >      if       FS-Cobol-Files-Used\n  276 |               string   Prog-Name \" \"\n  277 |                        \"Cobol files in use \" into SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:282: error: 'RDBMS-DB-Name' is not defined\n  280 | *>\n  281 |      move     spaces to SO-Print.\n  282 >      if       RDBMS-DB-Name = spaces\n  283 |               string   Prog-Name\n  284 |                        \" \"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:295: error: 'RDBMS-User' is not defined\n  293 |                       \"DBName = \" FUNCTION TRIM (RDBMS-DB-Name, TRAILING)\n  294 |                       \",\"\n  295 >                       \"User = \"   FUNCTION TRIM (RDBMS-User, TRAILING)\n  296 |                       \",\"\n  297 |                       \"Port = \"   FUNCTION TRIM (RDBMS-Port, TRAILING)\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:297: error: 'RDBMS-Port' is not defined\n  295 |                       \"User = \"   FUNCTION TRIM (RDBMS-User, TRAILING)\n  296 |                       \",\"\n  297 >                       \"Port = \"   FUNCTION TRIM (RDBMS-Port, TRAILING)\n  298 |                       \",\"\n  299 |                       \"Host = \"   FUNCTION TRIM (RDBMS-Host, TRAILING)\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:299: error: 'RDBMS-Host' is not defined\n  297 |                       \"Port = \"   FUNCTION TRIM (RDBMS-Port, TRAILING)\n  298 |                       \",\"\n  299 >                       \"Host = \"   FUNCTION TRIM (RDBMS-Host, TRAILING)\n  300 |                       \",\"\n  301 |                       \"Socket = \" FUNCTION TRIM (RDBMS-Socket, TRAILING)\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:301: error: 'RDBMS-Socket' is not defined\n  299 |                       \"Host = \"   FUNCTION TRIM (RDBMS-Host, TRAILING)\n  300 |                       \",\"\n  301 >                       \"Socket = \" FUNCTION TRIM (RDBMS-Socket, TRAILING)\n  302 |                          into So-Print\n  303 |               end-string.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:309: error: 'System-Record-Seq' is not defined\n  307 | *>\n  308 |      open     output system-file-seq.\n  309 >      write    System-Record-Seq from System-Record.   *> rec 1\n  310 |      write    System-Record-Seq from Default-Record.  *> rec 2\n  311 |      write    System-Record-Seq from Final-Record.    *> rec 3\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:309: error: 'System-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:316: error: 'System-File' is not a file name\n  314 | *>     add      1 to ws-Rec-Cnt-R-Out.\n  315 |      close    System-File-Seq\n  316 >               System-File.\n  317 |      move     spaces to SO-Print.\n  318 |      string\n/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:194: error: 'zz020-Get-Program-Args' is not defined\n  192 | *>\n  193 |  aa000-Main-Start.\n  194 >      perform  zz020-Get-Program-Args.\n  195 |      move     0      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  196 |      move     10     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:110: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:117: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:128: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:140: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:169: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:171: error: wsdflt.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:172: error: wsfinal.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:173: error: wssys4.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:174: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:175: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:176: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:332: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:142: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:118: error: missing file description for FILE System-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:120: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:195: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:196: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:202: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:202: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:207: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:212: error: 'Default-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:213: error: 'Final-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:214: error: 'System-Record-4' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:215: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:216: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:226: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:236: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:246: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:251: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:275: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:282: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:295: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:297: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:299: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:301: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:309: error: 'System-Record-Seq' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:309: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:316: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:194: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:110: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:117: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:128: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:140: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:169: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:171: error: wsdflt.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:172: error: wsfinal.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:173: error: wssys4.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:174: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:175: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:176: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:332: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:142: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:118: error: missing file description for FILE System-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:120: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:195: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:196: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:202: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:202: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:207: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:212: error: 'Default-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:213: error: 'Final-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:214: error: 'System-Record-4' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:215: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:216: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:226: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:236: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:246: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:251: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:275: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:282: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:295: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:297: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:299: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:301: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:309: error: 'System-Record-Seq' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:309: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:316: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemUNL.cbl:194: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 9,
+    "cognitive": 7,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 86,
+      "totalOperators": 68,
+      "totalOperands": 197,
+      "vocabulary": 94,
+      "length": 265,
+      "volume": 1737,
+      "difficulty": 9.16,
+      "effort": 15915,
+      "timeToProgram": 884,
+      "deliveredBugs": 0.579
+    },
+    "maintainability": 76
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 335
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 24
+      },
+      {
+        "name": "of",
+        "line": 100
+      },
+      {
+        "name": "envdiv",
+        "line": 110
+      },
+      {
+        "name": "selsys",
+        "line": 117
+      },
+      {
+        "name": "fdsys",
+        "line": 128
+      },
+      {
+        "name": "wssystem",
+        "line": 130
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 169
+      },
+      {
+        "name": "wsdflt",
+        "line": 171
+      },
+      {
+        "name": "wsfinal",
+        "line": 172
+      },
+      {
+        "name": "wssys4",
+        "line": 173
+      },
+      {
+        "name": "wsfnctn",
+        "line": 174
+      },
+      {
+        "name": "wsnames",
+        "line": 175
+      },
+      {
+        "name": "wscall",
+        "line": 176
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 332
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 194
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 272
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 278
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 304
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 326
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 328
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "system-file-seq",
+        "line": 129
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 142
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

@@ -1,0 +1,246 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl",
+  "fileName": "gl090b.cbl",
+  "fileHash": "c2b3a209e10df9d7003cef92e1c1c66bbfa1542c1f5455cdbdf42d6780ee6c8f",
+  "timestamp": "2025-09-15T19:46:18.901Z",
+  "parseTime": 57,
+  "lines": {
+    "total": 436,
+    "code": 258,
+    "comment": 177,
+    "blank": 1
+  },
+  "programId": "gl090b",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:92: error: envdiv.cob: No such file or directory\n   90 | *>===============================\n   91 | *>\n   92 >  copy \"envdiv.cob\".\n   93 |  input-output            section.\n   94 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:100: error: selprint.cob: No such file or directory\n   98 | *>\n   99 | *> copy \"seledger.cob\".\n  100 >  copy \"selprint.cob\".\n  101 |  data                    division.\n  102 | *>===============================\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:108: error: fdprint.cob: No such file or directory\n  106 | *>\n  107 | *> copy \"fdledger.cob\".\n  108 >  copy \"fdprint.cob\".\n  109 |  working-storage section.\n  110 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:113: error: print-spool-command.cob: No such file or directory\n  111 | *>\n  112 |  77  prog-name           pic x(16) value \"gl090b (3.02.06)\".\n  113 >  copy \"print-spool-command.cob\".\n  114 | *>\n  115 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:115: error: wsfnctn.cob: No such file or directory\n  113 |  copy \"print-spool-command.cob\".\n  114 | *>\n  115 >  copy \"wsfnctn.cob\".\n  116 |  copy \"wsledger.cob\".\n  117 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:116: error: wsledger.cob: No such file or directory\n  114 | *>\n  115 |  copy \"wsfnctn.cob\".\n  116 >  copy \"wsledger.cob\".\n  117 | *>\n  118 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:142: error: Test-Data-Flags.cob: No such file or directory\n  140 |      03  WS-OTM5-Record         pic x.\n  141 | *>\n  142 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  143 | *>\n  144 |  01  filler.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:236: error: wscall.cob: No such file or directory\n  234 | *>--------------\n  235 | *>\n  236 >  copy \"wscall.cob\".\n  237 |  copy \"wssystem.cob\".\n  238 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:237: error: wssystem.cob: No such file or directory\n  235 | *>\n  236 |  copy \"wscall.cob\".\n  237 >  copy \"wssystem.cob\".\n  238 |  copy \"wsnames.cob\".\n  239 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:238: error: wsnames.cob: No such file or directory\n  236 |  copy \"wscall.cob\".\n  237 |  copy \"wssystem.cob\".\n  238 >  copy \"wsnames.cob\".\n  239 | *>\n  240 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:434: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  432 |      exit     section.\n  433 | *>\n  434 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  435 | *>\n  436 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:242: error: 'ws-calling-data' is not defined\n  240 |  01  to-day              pic x(10).\n  241 | *>\n  242 >  procedure division using ws-calling-data\n  243 |                           system-record\n  244 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:243: error: 'system-record' is not defined\n  241 | *>\n  242 |  procedure division using ws-calling-data\n  243 >                           system-record\n  244 |                           to-day\n  245 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:245: error: 'file-defs' is not defined\n  243 |                           system-record\n  244 |                           to-day\n  245 >                           file-defs.\n  246 | *>***************************************\n  247 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl: in section 'gl090b-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:252: error: 'fs-reply' is not defined\n  250 | *>\n  251 |      perform  GL-Nominal-Open-Input.               *> open     input  led..\n  252 >      if       fs-reply not = zero\n  253 |               display space at 0101 with erase eos\n  254 |               display GL091 at 0901 with foreground-color 4\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:259: error: 'Print-Spool-Name' is not defined\n  257 |               go to main-exit.\n  258 | *>\n  259 >      move     Print-Spool-Name to PSN.\n  260 |      display  prog-name at 0101 with foreground-color 2 erase eos.\n  261 |      perform  zz070-convert-date.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:259: error: 'PSN' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:263: error: 'File-Key-No' is not defined\n  261 |      perform  zz070-convert-date.\n  262 |      display  ws-date at 0171 with foreground-color 2.\n  263 >      move     1  to File-Key-No.\n  264 | *>\n  265 |      display  \"Detailed Trial Balance\" at 0129 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:267: error: 'print-file' is not defined\n  265 |      display  \"Detailed Trial Balance\" at 0129 with foreground-color 2.\n  266 | *>\n  267 >      open     output  print-file.\n  268 | *>\n  269 |      if       profit-centres\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:267: error: 'print-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:269: error: 'profit-centres' is not defined\n  267 |      open     output  print-file.\n  268 | *>\n  269 >      if       profit-centres\n  270 |               move  \"  P/C \"  to  l4-filler-1\n  271 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:272: error: 'branches' is not defined\n  270 |               move  \"  P/C \"  to  l4-filler-1\n  271 |      else\n  272 >         if    branches\n  273 |               move  \"Branch\"  to  l4-filler-1\n  274 |         else\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:280: error: 'usera' is not defined\n  278 |      move     ws-date   to l3-date.\n  279 |      move     zero      to page-nos.\n  280 >      move     usera     to l3-user.\n  281 |      perform  page-heading.\n  282 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl: in paragraph 'p-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:288: error: 'we-error' is not defined\n  286 |      perform  GL-Nominal-Read-Next.            *> read     ledger-file  n..\n  287 |      if       fs-reply = 10\n  288 >               move  255 to we-error.\n  289 | *>\n  290 |      if       we-error = 255\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:291: error: 'ledger-n' is not defined\n  289 | *>\n  290 |      if       we-error = 255\n  291 >        or     ledger-n = 9999\n  292 |               go to  end-report.\n  293 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:302: error: 'print-record' is not defined\n  300 |      if       ledger-n not = save-n\n  301 |               move  ledger-n  to  save-n\n  302 >               move  spaces  to  print-record\n  303 |               write print-record after 1\n  304 |               add 1 to line-cnt.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:306: error: 'WS-Ledger-Nos' is not defined\n  304 |               add 1 to line-cnt.\n  305 | *>\n  306 >      divide   WS-Ledger-Nos   by  100  giving  l6-account.\n  307 |      move     ledger-pc    to  l6-pc.\n  308 |      move     ledger-name  to  l6-name.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:307: error: 'ledger-pc' is not defined\n  305 | *>\n  306 |      divide   WS-Ledger-Nos   by  100  giving  l6-account.\n  307 >      move     ledger-pc    to  l6-pc.\n  308 |      move     ledger-name  to  l6-name.\n  309 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:308: error: 'ledger-name' is not defined\n  306 |      divide   WS-Ledger-Nos   by  100  giving  l6-account.\n  307 |      move     ledger-pc    to  l6-pc.\n  308 >      move     ledger-name  to  l6-name.\n  309 | *>\n  310 |      if       ledger-balance  <  0\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:310: error: 'ledger-balance' is not defined\n  308 |      move     ledger-name  to  l6-name.\n  309 | *>\n  310 >      if       ledger-balance  <  0\n  311 |               move      ledger-balance  to    l6-c-cr\n  312 |               subtract  ledger-balance  from  totl-cr\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:319: error: 'ledger-last' is not defined\n  317 |               move  zero            to  l6-c-cr.\n  318 | *>\n  319 >      if       ledger-last  <  0\n  320 |               move       ledger-last  to    l6-p-cr\n  321 |               subtract   ledger-last  from  prev-cr\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:328: error: 'ledger-q' is not defined\n  326 |               move  zero         to  l6-p-cr.\n  327 | *>\n  328 >      move     ledger-q (j)       to  l6-q1.\n  329 |      move     ledger-q (k)       to  l6-q2.\n  330 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:333: error: 'Page-Lines' is not defined\n  331 |      write    print-record  from  line-6 after 1.\n  332 |      add      1 to line-cnt.\n  333 >      if       line-cnt > Page-Lines\n  334 |               perform  page-heading.\n  335 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl: in paragraph 'page-heading':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:344: error: 'current-quarter' is not defined\n  342 |      move     page-nos  to  l1-page.\n  343 | *>\n  344 >      if       current-quarter = 1\n  345 |               move  4  to  j\n  346 |               move  3  to  k\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl: in paragraph 'end-report':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:393: error: 'print-file' is not a file name\n  391 |      write    print-record  from  line-7 after 1.\n  392 | *>\n  393 >      close    print-file.\n  394 |      call     \"SYSTEM\" using Print-Report.\n  395 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:394: error: 'Print-Report' is not defined\n  392 | *>\n  393 |      close    print-file.\n  394 >      call     \"SYSTEM\" using Print-Report.\n  395 | *>\n  396 |  main-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl: in section 'zz070-convert-date':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:414: error: 'Date-Form' is not defined\n  412 |      move     to-day to ws-date.\n  413 | *>\n  414 >      if       Date-Form = zero\n  415 |               move 1 to Date-Form.\n  416 |      if       Date-UK\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:416: error: 'Date-UK' is not defined\n  414 |      if       Date-Form = zero\n  415 |               move 1 to Date-Form.\n  416 >      if       Date-UK\n  417 |               go to zz070-Exit.\n  418 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:418: error: 'Date-USA' is not defined\n  416 |      if       Date-UK\n  417 |               go to zz070-Exit.\n  418 >      if       Date-USA                *> swap month and days\n  419 |               move ws-days to ws-swap\n  420 |               move ws-month to ws-days\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl: in section 'gl090b-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:251: error: 'GL-Nominal-Open-Input' is not defined\n  249 | *>******************\n  250 | *>\n  251 >      perform  GL-Nominal-Open-Input.               *> open     input  led..\n  252 |      if       fs-reply not = zero\n  253 |               display space at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl: in paragraph 'p-loop':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:286: error: 'GL-Nominal-Read-Next' is not defined\n  284 | *>*****\n  285 | *>\n  286 >      perform  GL-Nominal-Read-Next.            *> read     ledger-file  n..\n  287 |      if       fs-reply = 10\n  288 |               move  255 to we-error.\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl: in paragraph 'main-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:399: error: 'GL-Nominal-Close' is not defined\n  397 | *>*******\n  398 | *>\n  399 >      perform  GL-Nominal-Close.               *>  close    ledger-file.\n  400 | *>\n  401 |  main-exit.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:92: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:100: error: selprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:108: error: fdprint.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:113: error: print-spool-command.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:115: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:116: error: wsledger.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:142: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:236: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:237: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:238: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:434: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:242: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:243: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:245: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:252: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:259: error: 'Print-Spool-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:259: error: 'PSN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:263: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:267: error: 'print-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:267: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:269: error: 'profit-centres' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:272: error: 'branches' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:280: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:288: error: 'we-error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:291: error: 'ledger-n' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:302: error: 'print-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:306: error: 'WS-Ledger-Nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:307: error: 'ledger-pc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:308: error: 'ledger-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:310: error: 'ledger-balance' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:319: error: 'ledger-last' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:328: error: 'ledger-q' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:333: error: 'Page-Lines' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:344: error: 'current-quarter' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:393: error: 'print-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:394: error: 'Print-Report' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:414: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:416: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:418: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:251: error: 'GL-Nominal-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:286: error: 'GL-Nominal-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:399: error: 'GL-Nominal-Close' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:92: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:100: error: selprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:108: error: fdprint.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:113: error: print-spool-command.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:115: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:116: error: wsledger.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:142: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:236: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:237: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:238: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:434: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:242: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:243: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:245: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:252: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:259: error: 'Print-Spool-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:259: error: 'PSN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:263: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:267: error: 'print-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:267: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:269: error: 'profit-centres' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:272: error: 'branches' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:280: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:288: error: 'we-error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:291: error: 'ledger-n' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:302: error: 'print-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:306: error: 'WS-Ledger-Nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:307: error: 'ledger-pc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:308: error: 'ledger-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:310: error: 'ledger-balance' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:319: error: 'ledger-last' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:328: error: 'ledger-q' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:333: error: 'Page-Lines' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:344: error: 'current-quarter' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:393: error: 'print-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:394: error: 'Print-Report' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:414: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:416: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:418: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:251: error: 'GL-Nominal-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:286: error: 'GL-Nominal-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl090b.cbl:399: error: 'GL-Nominal-Close' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 24,
+    "cognitive": 42,
+    "halstead": {
+      "uniqueOperators": 13,
+      "uniqueOperands": 49,
+      "totalOperators": 123,
+      "totalOperands": 88,
+      "vocabulary": 62,
+      "length": 211,
+      "volume": 1256,
+      "difficulty": 11.67,
+      "effort": 14666,
+      "timeToProgram": 815,
+      "deliveredBugs": 0.419
+    },
+    "maintainability": 75
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 394
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 92
+      },
+      {
+        "name": "seledger",
+        "line": 99
+      },
+      {
+        "name": "selprint",
+        "line": 100
+      },
+      {
+        "name": "fdledger",
+        "line": 107
+      },
+      {
+        "name": "fdprint",
+        "line": 108
+      },
+      {
+        "name": "print-spool-command",
+        "line": 113
+      },
+      {
+        "name": "wsfnctn",
+        "line": 115
+      },
+      {
+        "name": "wsledger",
+        "line": 116
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 142
+      },
+      {
+        "name": "wscall",
+        "line": 236
+      },
+      {
+        "name": "wssystem",
+        "line": 237
+      },
+      {
+        "name": "wsnames",
+        "line": 238
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 434
+      }
+    ],
+    "performs": [
+      {
+        "target": "GL-Nominal-Open-Input",
+        "line": 251
+      },
+      {
+        "target": "zz070-convert-date",
+        "line": 261
+      },
+      {
+        "target": "page-heading",
+        "line": 281
+      },
+      {
+        "target": "GL-Nominal-Read-Next",
+        "line": 286
+      },
+      {
+        "target": "page-heading",
+        "line": 334
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "line": 399
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 109
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

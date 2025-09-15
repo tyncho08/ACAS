@@ -1,0 +1,171 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl",
+  "fileName": "pl000.cbl",
+  "fileHash": "feca97f9eeddb0939c1288a92babfdcae7e3dad6662cd46607b87c5e1acd33d0",
+  "timestamp": "2025-09-15T19:46:20.801Z",
+  "parseTime": 49,
+  "lines": {
+    "total": 303,
+    "code": 151,
+    "comment": 150,
+    "blank": 2
+  },
+  "programId": "pl000",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:87: error: envdiv.cob: No such file or directory\n   85 | *>===============================\n   86 | *>\n   87 >  copy  \"envdiv.cob\".\n   88 |  input-output            section.\n   89 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:104: error: wsmaps03.cob: No such file or directory\n  102 |  77  prog-name           pic x(15) value \"PL000 (3.02.05)\".\n  103 | *> copy \"wsmaps01.cob\".   NOT USED IN O/S Version\n  104 >  copy \"wsmaps03.cob\".\n  105 |  copy \"wsfnctn.cob\".\n  106 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:105: error: wsfnctn.cob: No such file or directory\n  103 | *> copy \"wsmaps01.cob\".   NOT USED IN O/S Version\n  104 |  copy \"wsmaps03.cob\".\n  105 >  copy \"wsfnctn.cob\".\n  106 | *>\n  107 |  01  ws-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:161: error: wscall.cob: No such file or directory\n  159 | *>==============\n  160 | *>\n  161 >  copy \"wscall.cob\".\n  162 |  copy \"wssystem.cob\".\n  163 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:162: error: wssystem.cob: No such file or directory\n  160 | *>\n  161 |  copy \"wscall.cob\".\n  162 >  copy \"wssystem.cob\".\n  163 |  copy \"wsnames.cob\".\n  164 | \n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:163: error: wsnames.cob: No such file or directory\n  161 |  copy \"wscall.cob\".\n  162 |  copy \"wssystem.cob\".\n  163 >  copy \"wsnames.cob\".\n  164 | \n  165 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:167: error: 'ws-calling-data' is not defined\n  165 |  01  to-day              pic x(10).\n  166 | *>\n  167 >  procedure  division using ws-calling-data\n  168 |                            system-record\n  169 |                            to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:168: error: 'system-record' is not defined\n  166 | *>\n  167 |  procedure  division using ws-calling-data\n  168 >                            system-record\n  169 |                            to-day\n  170 |                            file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:170: error: 'file-defs' is not defined\n  168 |                            system-record\n  169 |                            to-day\n  170 >                            file-defs.\n  171 | *>========================================\n  172 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl: in paragraph 'main':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:180: error: 'u-date' is not defined\n  178 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  179 | *>\n  180 >      move     to-day to u-date.\n  181 | *>\n  182 |      accept   wsa-date from date YYYYMMDD.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:184: error: 'u-cc' is not defined\n  182 |      accept   wsa-date from date YYYYMMDD.\n  183 |      if       wsa-date not = \"000000\"\n  184 >               move wsa-cc to u-cc\n  185 |               move wsa-yy to u-yy\n  186 |               move wsa-mm to u-month\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:185: error: 'u-yy' is not defined\n  183 |      if       wsa-date not = \"000000\"\n  184 |               move wsa-cc to u-cc\n  185 >               move wsa-yy to u-yy\n  186 |               move wsa-mm to u-month\n  187 |               move wsa-dd to u-days.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:186: error: 'u-month' is not defined\n  184 |               move wsa-cc to u-cc\n  185 |               move wsa-yy to u-yy\n  186 >               move wsa-mm to u-month\n  187 |               move wsa-dd to u-days.\n  188 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:187: error: 'u-days' is not defined\n  185 |               move wsa-yy to u-yy\n  186 |               move wsa-mm to u-month\n  187 >               move wsa-dd to u-days.\n  188 | *>\n  189 |      move     u-date  to  to-day.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:193: error: 'usera' is not defined\n  191 |      display  \" \" at 0101 with erase eos.\n  192 |      display  \"Client -\" at 0101 with foreground-color 2.\n  193 >      display  usera at 0110 with foreground-color 3.\n  194 |      display  prog-name at 0301 with foreground-color 2.\n  195 |      display  \"Purchase Ledger  Start Of Day\" at 0328  with foreground-co..\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:196: error: 'maps-ser-xx' is not defined\n  194 |      display  prog-name at 0301 with foreground-color 2.\n  195 |      display  \"Purchase Ledger  Start Of Day\" at 0328  with foreground-co..\n  196 >      display  maps-ser-xx at 2474 with foreground-color 2.\n  197 |      move     maps-ser-nn to curs2.\n  198 |      display  curs2 at 2476 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:197: error: 'maps-ser-nn' is not defined\n  195 |      display  \"Purchase Ledger  Start Of Day\" at 0328  with foreground-co..\n  196 |      display  maps-ser-xx at 2474 with foreground-color 2.\n  197 >      move     maps-ser-nn to curs2.\n  198 |      display  curs2 at 2476 with foreground-color 2.\n  199 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:197: error: 'curs2' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl: in paragraph 'date-entry':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:211: error: 'Date-Form' is not defined\n  209 | *>**********\n  210 | *>\n  211 >      if       Date-Form not > zero and < 4\n  212 |               move 1 to Date-Form.\n  213 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:216: error: 'Date-UK' is not defined\n  214 | *> Convert from UK to selected form\n  215 | *>\n  216 >      if       Date-UK or Date-USA\n  217 |               move \"/\" to WS-Date (3:1)\n  218 |                           WS-Date (6:1)\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:216: error: 'Date-USA' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:211: error: invalid conditional expression\n  209 | *>**********\n  210 | *>\n  211 >      if       Date-Form not > zero and < 4\n  212 |               move 1 to Date-Form.\n  213 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:227: error: 'Date-Intl' is not defined\n  225 |               move ws-date to u-date\n  226 |      end-if\n  227 >      if       Date-Intl\n  228 |               move \"ccyy/mm/dd\" to ws-date  *> swap Intl to UK form\n  229 |               move u-date (7:4) to ws-Intl-Year\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:264: error: 'u-bin' is not defined\n  262 |      end-if\n  263 | *>\n  264 >      move     zero  to  u-bin.\n  265 |      call     \"maps04\"  using  maps03-ws.\n  266 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:265: error: 'maps03-ws' is not defined\n  263 | *>\n  264 |      move     zero  to  u-bin.\n  265 >      call     \"maps04\"  using  maps03-ws.\n  266 | *>\n  267 |      if       u-bin = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl: in paragraph 'chain-menu':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:297: error: 'run-date' is not defined\n  295 | *>*********\n  296 | *>\n  297 >      move     u-bin  to  run-date.\n  298 |      move     u-date to  to-day.\n  299 |      move     zero to ws-term-code.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:299: error: 'ws-term-code' is not defined\n  297 |      move     u-bin  to  run-date.\n  298 |      move     u-date to  to-day.\n  299 >      move     zero to ws-term-code.\n  300 | *>\n  301 |  main-exit.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:87: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:104: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:105: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:161: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:162: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:163: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:167: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:168: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:170: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:180: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:184: error: 'u-cc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:185: error: 'u-yy' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:186: error: 'u-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:187: error: 'u-days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:193: error: 'usera' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:196: error: 'maps-ser-xx' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:197: error: 'maps-ser-nn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:197: error: 'curs2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:211: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:216: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:216: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:211: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:227: error: 'Date-Intl' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:264: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:265: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:297: error: 'run-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:299: error: 'ws-term-code' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:87: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:104: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:105: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:161: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:162: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:163: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:167: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:168: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:170: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:180: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:184: error: 'u-cc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:185: error: 'u-yy' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:186: error: 'u-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:187: error: 'u-days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:193: error: 'usera' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:196: error: 'maps-ser-xx' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:197: error: 'maps-ser-nn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:197: error: 'curs2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:211: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:216: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:216: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:211: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:227: error: 'Date-Intl' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:264: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:265: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:297: error: 'run-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl000.cbl:299: error: 'ws-term-code' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 16,
+    "cognitive": 22,
+    "halstead": {
+      "uniqueOperators": 6,
+      "uniqueOperands": 45,
+      "totalOperators": 67,
+      "totalOperands": 91,
+      "vocabulary": 51,
+      "length": 158,
+      "volume": 896,
+      "difficulty": 6.07,
+      "effort": 5437,
+      "timeToProgram": 302,
+      "deliveredBugs": 0.299
+    },
+    "maintainability": 77
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 265
+      },
+      {
+        "target": "maps01",
+        "line": 281
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 78
+      },
+      {
+        "name": "envdiv",
+        "line": 87
+      },
+      {
+        "name": "wsmaps01",
+        "line": 103
+      },
+      {
+        "name": "wsmaps03",
+        "line": 104
+      },
+      {
+        "name": "wsfnctn",
+        "line": 105
+      },
+      {
+        "name": "wscall",
+        "line": 161
+      },
+      {
+        "name": "wssystem",
+        "line": 162
+      },
+      {
+        "name": "wsnames",
+        "line": 163
+      }
+    ],
+    "performs": []
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 100
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

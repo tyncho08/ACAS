@@ -1,0 +1,217 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl",
+  "fileName": "deliveryRES.cbl",
+  "fileHash": "509a3a276ffb9e6b4a3b9c9f8752ecfe4b9c443c925c860b9a8d5a83a6607bb6",
+  "timestamp": "2025-09-15T19:46:02.342Z",
+  "parseTime": 33,
+  "lines": {
+    "total": 229,
+    "code": 109,
+    "comment": 119,
+    "blank": 1
+  },
+  "programId": "deliveryRES",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:93: error: envdiv.cob: No such file or directory\n   91 | *>-------------------\n   92 | *>\n   93 >  copy \"envdiv.cob\".\n   94 |  input-output            section.\n   95 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:100: error: seldel.cob: No such file or directory\n   98 | *>-----------\n   99 | *>\n  100 >  copy \"seldel.cob\".\n  101 |      select  delivery-File-Seq  assign        \"delivery.seq\"\n  102 |                                 organization  sequential\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:111: error: fddel.cob: No such file or directory\n  109 | *>-----------\n  110 | *>\n  111 >  copy \"fddel.cob\".\n  112 |  fd  delivery-File-Seq.\n  113 |  copy \"wsdel.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:113: error: wsdel.cob: No such file or directory\n  111 |  copy \"fddel.cob\".\n  112 |  fd  delivery-File-Seq.\n  113 >  copy \"wsdel.cob\".\n  114 | *>\n  115 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory\n  134 |  01  SO-Print            pic x(160)    value spaces.\n  135 | *>\n  136 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  137 | *>\n  138 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:138: error: wsfnctn.cob: No such file or directory\n  136 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  137 | *>\n  138 >  copy \"wsfnctn.cob\".\n  139 |  copy \"wsnames.cob\".\n  140 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:139: error: wsnames.cob: No such file or directory\n  137 | *>\n  138 |  copy \"wsfnctn.cob\".\n  139 >  copy \"wsnames.cob\".\n  140 |  copy \"wscall.cob\".\n  141 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:140: error: wscall.cob: No such file or directory\n  138 |  copy \"wsfnctn.cob\".\n  139 |  copy \"wsnames.cob\".\n  140 >  copy \"wscall.cob\".\n  141 | *>\n  142 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:224: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  222 |      goback.\n  223 | *>\n  224 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  225 | *>\n  226 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:115: error: RECORD description missing or invalid\n  113 |  copy \"wsdel.cob\".\n  114 | *>\n  115 >  working-storage section.\n  116 | *>----------------------\n  117 |  77  prog-name           pic x(22)    value \"deliveryRES (3.02.00)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:101: error: missing file description for FILE delivery-File-Seq\n   99 | *>\n  100 |  copy \"seldel.cob\".\n  101 >      select  delivery-File-Seq  assign        \"delivery.seq\"\n  102 |                                 organization  sequential\n  103 |                                 status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:103: error: 'FS-Reply' is not defined\n  101 |      select  delivery-File-Seq  assign        \"delivery.seq\"\n  102 |                                 organization  sequential\n  103 >                                 status        FS-Reply.\n  104 | *>\n  105 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:154: error: 'WS-Log-System' is not defined\n  152 |  aa000-Main-Start.\n  153 |      perform  zz020-Get-Program-Args.\n  154 >      move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 |      move     14     to WS-Log-File-no.  *> for FHlogger\n  156 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:155: error: 'WS-Log-File-no' is not defined\n  153 |      perform  zz020-Get-Program-Args.\n  154 |      move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 >      move     14     to WS-Log-File-no.  *> for FHlogger\n  156 | *>\n  157 |      move     spaces to SO-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:168: error: 'Delivery-File' is not defined\n  166 |               move     \"No delivery file to process\" to SO-Print\n  167 |               perform  Call-Sysout\n  168 >               close    Delivery-File\n  169 |               move     \"CLOSE \" to SO-Print\n  170 |               perform  Call-Sysout\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:168: error: 'Delivery-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:172: error: 'Delivery-File' is not a file name\n  170 |               perform  Call-Sysout\n  171 |               goback.\n  172 >      open     output   delivery-File.\n  173 |      if       FS-Reply not = zeros\n  174 |               move     spaces to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl: in paragraph 'aa010-Read-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:199: error: 'Delivery-Record' is not defined\n  197 |               end-if\n  198 |               add      1 to WS-Rec-Cnt-In\n  199 >               write    Delivery-Record from WS-Delivery-Record\n  200 |               if       FS-Reply not = zero\n  201 |                        move     SY006 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:199: error: 'WS-Delivery-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl: in paragraph 'aa020-Finish-Off':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:210: error: 'Delivery-File' is not a file name\n  208 | aa020-Finish-Off.\n  209 |      close    delivery-File-Seq\n  210 >               Delivery-File.\n  211 |      move     spaces to SO-Print.\n  212 |      string\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined\n  151 | *>\n  152 |  aa000-Main-Start.\n  153 >      perform  zz020-Get-Program-Args.\n  154 |      move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 |      move     14     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:93: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:100: error: seldel.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:111: error: fddel.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:113: error: wsdel.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:138: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:139: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:140: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:224: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:115: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:101: error: missing file description for FILE delivery-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:103: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:154: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:155: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:168: error: 'Delivery-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:168: error: 'Delivery-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:172: error: 'Delivery-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:199: error: 'Delivery-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:199: error: 'WS-Delivery-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:210: error: 'Delivery-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:93: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:100: error: seldel.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:111: error: fddel.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:113: error: wsdel.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:138: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:139: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:140: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:224: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:115: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:101: error: missing file description for FILE delivery-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:103: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:154: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:155: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:168: error: 'Delivery-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:168: error: 'Delivery-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:172: error: 'Delivery-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:199: error: 'Delivery-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:199: error: 'WS-Delivery-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:210: error: 'Delivery-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 9,
+    "cognitive": 19,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 56,
+      "totalOperators": 53,
+      "totalOperands": 106,
+      "vocabulary": 64,
+      "length": 159,
+      "volume": 954,
+      "difficulty": 7.57,
+      "effort": 7223,
+      "timeToProgram": 401,
+      "deliveredBugs": 0.318
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 227
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23
+      },
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 93
+      },
+      {
+        "name": "seldel",
+        "line": 100
+      },
+      {
+        "name": "fddel",
+        "line": 111
+      },
+      {
+        "name": "wsdel",
+        "line": 113
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 136
+      },
+      {
+        "name": "wsfnctn",
+        "line": 138
+      },
+      {
+        "name": "wsnames",
+        "line": 139
+      },
+      {
+        "name": "wscall",
+        "line": 140
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 224
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 153
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 160
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 167
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 170
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 178
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 180
+      },
+      {
+        "target": "forever",
+        "line": 186
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 195
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 202
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 218
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 220
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "delivery-File-Seq",
+        "line": 112
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 115
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

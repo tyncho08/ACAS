@@ -1,0 +1,131 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl",
+  "fileName": "acasconvert2.cbl",
+  "fileHash": "3267fe6f8e1cd17060b5ee541b7b1893501e83d3a71cf6e3f11574ef64c7322f",
+  "timestamp": "2025-09-15T19:46:00.938Z",
+  "parseTime": 38,
+  "lines": {
+    "total": 462,
+    "code": 330,
+    "comment": 130,
+    "blank": 2
+  },
+  "programId": "acasconvert2",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:71: error: selsys.cob: No such file or directory\n   69 |  input-output section.\n   70 |  file-control.\n   71 >  copy \"selsys.cob\".\n   72 | \n   73 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:75: error: fdsys.cob: No such file or directory\n   73 |  data division.\n   74 |  file section.\n   75 >  copy \"fdsys.cob\".\n   76 | *>\n   77 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:91: error: wsnames.cob: No such file or directory\n   89 |      03  SY104    pic x(26) value \"SY104 Fix and Press Enter\".\n   90 | *>\n   91 >  copy \"wsnames.cob\".\n   92 | *>\n   93 | *> 25/06/16 vbc - Added RDBMS-Port & needs RDBMS-Host, RDBMS-Socket.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl: in paragraph 'AA000-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:383: error: 'Old-System-Record' is not defined\n  381 |      display  \" \" at 0101 with erase eos.\n  382 |      move     function Length (\n  383 >                                Old-System-Record\n  384 |                                                 ) to A.\n  385 |      move     function length (\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:392: error: STRING item 'A' must be USAGE DISPLAY or NATIONAL\n  390 |               string \"Old and new system record size not equal, Old = \"\n  391 |                                     delimited by size\n  392 >                      A              delimited by size\n  393 |                      \" \"            delimited by size\n  394 |                      \"New Rec = \"   delimited by size\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:395: error: STRING item 'B' must be USAGE DISPLAY or NATIONAL\n  393 |                      \" \"            delimited by size\n  394 |                      \"New Rec = \"   delimited by size\n  395 >                      B              delimited by size    into Display-Blk\n  396 |               end-string\n  397 |               display Display-Blk at 2301 with erase eol\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:403: error: 'system-file' is not defined\n  401 |      end-if\n  402 | *>\n  403 >      open     i-o system-file.\n  404 |      if       fs-reply not = zero\n  405 |               display \"Error on opening i-o System File \" fs-reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:403: error: 'system-file' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl: in paragraph 'AA010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:416: error: 'system-file' is not a file name\n  414 |  AA010-Read.\n  415 |      move     1  to  rrn.\n  416 >      read     system-file into Old-System-Record.\n  417 |      if       fs-reply not = zero\n  418 |               display \"Record 1 NOT found - Aborting err code = \", fs-rep..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:420: error: 'system-file' is not a file name\n  418 |               display \"Record 1 NOT found - Aborting err code = \", fs-rep..\n  419 |               stop \" Read above msg and hit return to continue !\"\n  420 >               close system-file\n  421 |               stop run.\n  422 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:430: error: 'System-Record-Ver-Prime IN System-Record' is not defined\n  428 | *>     Now V1.3\n  429 | *>\n  430 >      move     1   to System-Record-Ver-Prime in System-Record.\n  431 |      move     3   to System-Record-Version-Secondary in System-Record.\n  432 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:439: error: REWRITE subject does not refer to a record name\n  437 | *>\n  438 |      move     1 to rrn.\n  439 >      rewrite  System-Record.\n  440 | *>\n  441 |      perform  Disk-Error-Display.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:443: error: 'system-file' is not a file name\n  441 |      perform  Disk-Error-Display.\n  442 | *>\n  443 >      close    system-file.\n  444 |      if       fs-reply = zero\n  445 |               display \"System (Cobol flat) File Conversion completed \"\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:71: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:75: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:91: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:383: error: 'Old-System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:392: error: STRING item 'A' must be USAGE DISPLAY or NATIONAL",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:395: error: STRING item 'B' must be USAGE DISPLAY or NATIONAL",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:403: error: 'system-file' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:403: error: 'system-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:416: error: 'system-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:420: error: 'system-file' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:430: error: 'System-Record-Ver-Prime IN System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:439: error: REWRITE subject does not refer to a record name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:443: error: 'system-file' is not a file name"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:71: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:75: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:91: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:383: error: 'Old-System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:392: error: STRING item 'A' must be USAGE DISPLAY or NATIONAL",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:395: error: STRING item 'B' must be USAGE DISPLAY or NATIONAL",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:403: error: 'system-file' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:403: error: 'system-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:416: error: 'system-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:420: error: 'system-file' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:430: error: 'System-Record-Ver-Prime IN System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:439: error: REWRITE subject does not refer to a record name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert2.cbl:443: error: 'system-file' is not a file name"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 6,
+    "cognitive": 5,
+    "halstead": {
+      "uniqueOperators": 7,
+      "uniqueOperands": 130,
+      "totalOperators": 36,
+      "totalOperands": 317,
+      "vocabulary": 137,
+      "length": 353,
+      "volume": 2506,
+      "difficulty": 8.53,
+      "effort": 21384,
+      "timeToProgram": 1188,
+      "deliveredBugs": 0.835
+    },
+    "maintainability": 75
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "&",
+        "line": 30
+      },
+      {
+        "name": "of",
+        "line": 60
+      },
+      {
+        "name": "selsys",
+        "line": 71
+      },
+      {
+        "name": "fdsys",
+        "line": 75
+      },
+      {
+        "name": "wsnames",
+        "line": 91
+      }
+    ],
+    "performs": [
+      {
+        "target": "Disk-Error-Display",
+        "line": 441
+      },
+      {
+        "target": "Disk-error",
+        "line": 456
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 78
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

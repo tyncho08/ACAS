@@ -1,0 +1,216 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl",
+  "fileName": "st040.cbl",
+  "fileHash": "850aed6f4f403e72b5448d1086aaab01f2bda9a448552be43241088325a595c1",
+  "timestamp": "2025-09-15T19:46:30.241Z",
+  "parseTime": 49,
+  "lines": {
+    "total": 484,
+    "code": 263,
+    "comment": 219,
+    "blank": 2
+  },
+  "programId": "st040",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:131: error: envdiv.cob: No such file or directory\n  129 | *>================================\n  130 | *>\n  131 >  copy \"envdiv.cob\".\n  132 |  input-output            section.\n  133 | *>-------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:202: error: wsstock.cob: No such file or directory\n  200 |      05 filler           pic 9(2)  comp. *> Always 00\n  201 | *>\n  202 >  copy \"wsstock.cob\".     *> 3.02\n  203 |  copy \"wsfnctn.cob\".\n  204 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:203: error: wsfnctn.cob: No such file or directory\n  201 | *>\n  202 |  copy \"wsstock.cob\".     *> 3.02\n  203 >  copy \"wsfnctn.cob\".\n  204 | *>\n  205 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:230: error: Test-Data-Flags.cob: No such file or directory\n  228 |      03  WS-OTM5-Record         pic x.\n  229 | *>\n  230 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  231 | *>\n  232 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:243: error: wscall.cob: No such file or directory\n  241 | *>***************\n  242 | *>\n  243 >  copy \"wscall.cob\".\n  244 |  copy \"wssystem.cob\".\n  245 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:244: error: wssystem.cob: No such file or directory\n  242 | *>\n  243 |  copy \"wscall.cob\".\n  244 >  copy \"wssystem.cob\".\n  245 |  copy \"wsnames.cob\".\n  246 |  01  To-Day             pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:245: error: wsnames.cob: No such file or directory\n  243 |  copy \"wscall.cob\".\n  244 |  copy \"wssystem.cob\".\n  245 >  copy \"wsnames.cob\".\n  246 |  01  To-Day             pic x(10).\n  247 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:482: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  480 |      exit     section.\n  481 | *>\n  482 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  483 | *>\n  484 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:248: error: 'ws-calling-data' is not defined\n  246 |  01  To-Day             pic x(10).\n  247 | *>\n  248 >  procedure division using ws-calling-data\n  249 |                           system-record\n  250 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:249: error: 'system-record' is not defined\n  247 | *>\n  248 |  procedure division using ws-calling-data\n  249 >                           system-record\n  250 |                           to-day\n  251 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:251: error: 'file-defs' is not defined\n  249 |                           system-record\n  250 |                           to-day\n  251 >                           file-defs.\n  252 | *>***************************************\n  253 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in section 'aa000-Core':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:274: error: 'WS-CD-Args' is not defined\n  272 |      move     ws-Date to ws-Conv-Date.\n  273 | *>\n  274 >      if       FUNCTION LOWER-CASE (WS-CD-Args (1:5)) not = \"st040\"\n  275 |               go to aa010-Questions.\n  276 | *> Next may need to be in quotes\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:279: error: 'WS-Term-Code' is not defined\n  277 |      if       WS-CD-Args (7:1) < 1 or > 3    *> Bad option set should app..\n  278 |               display ST403 at 0101 with erase eos\n  279 >               move 8 to WS-Term-Code\n  280 |               goback.\n  281 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in paragraph 'aa015-Questions-2':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:320: error: 'Stk-Period-Cur' is not defined\n  318 |  aa015-Questions-2.\n  319 |      display  \"Can I clear this \" at 0410 with foreground-color 2.\n  320 >      if       Stk-Period-Cur = \"Q\"\n  321 |               display \"Quarter\" at 0427 with foreground-color 2\n  322 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in paragraph 'aa030-U-Sure':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:353: error: 'STK-Activity-Rep-Run' is not defined\n  351 | *>\n  352 |  aa030-U-Sure.\n  353 >      if       STK-Activity-Rep-Run = zero\n  354 |               display \"You have NOT run audit reports\" at line ws-23-line..\n  355 |               display ST003  at line ws-lines col 01\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in paragraph 'aa040-Process-All':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:374: error: 'FS-Cobol-Files-Used' is not defined\n  372 | *> New for RDB\n  373 | *>\n  374 >      if       FS-Cobol-Files-Used\n  375 |               call  \"CBL_CHECK_FILE_EXIST\" using File-11\n  376 |                                                  File-Info\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:375: error: 'File-11' is not defined\n  373 | *>\n  374 |      if       FS-Cobol-Files-Used\n  375 >               call  \"CBL_CHECK_FILE_EXIST\" using File-11\n  376 |                                                  File-Info\n  377 |               end-call\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:380: error: 'fs-reply' is not defined\n  378 |               if    return-code not = zero          *> not = zero - No fi..\n  379 |                     display ST401 at line ws-23-lines col 1 with foregrou..\n  380 >                     display fs-reply at line ws-23-lines col 28 with fore..\n  381 |                     display ST003  at line ws-lines col 01\n  382 |                     accept ws-reply at line ws-lines col 30\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:398: error: 'File-System-Used' is not defined\n  396 |               display  \"Updating Stock file as requested\"\n  397 |                                              at 1210 with foreground-colo..\n  398 >      if       File-System-Used > zero\n  399 |               display  \"Updating Stock table as requested\"\n  400 |                                              at 1310 with foreground-colo..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in section 'ba000-Clear-Totals':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in paragraph 'ba000-Clear-Totals-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:423: error: 'Stock-TD-Adds' is not defined\n  421 |      if       Clear-Year              *> clears specific month depending..\n  422 |         and   WS-Period-Update = \"Y\"                   *> test for good d..\n  423 >               move zeros to Stock-TD-Adds     (WS-Cur-Mth)\n  424 |               move zeros to Stock-TD-Deds     (WS-Cur-Mth)\n  425 |               move zeros to Stock-TD-Wip-Adds (WS-Cur-Mth)\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:424: error: 'Stock-TD-Deds' is not defined\n  422 |         and   WS-Period-Update = \"Y\"                   *> test for good d..\n  423 |               move zeros to Stock-TD-Adds     (WS-Cur-Mth)\n  424 >               move zeros to Stock-TD-Deds     (WS-Cur-Mth)\n  425 |               move zeros to Stock-TD-Wip-Adds (WS-Cur-Mth)\n  426 |               move zeros to Stock-TD-Wip-Deds (WS-Cur-Mth).\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:425: error: 'Stock-TD-Wip-Adds' is not defined\n  423 |               move zeros to Stock-TD-Adds     (WS-Cur-Mth)\n  424 |               move zeros to Stock-TD-Deds     (WS-Cur-Mth)\n  425 >               move zeros to Stock-TD-Wip-Adds (WS-Cur-Mth)\n  426 |               move zeros to Stock-TD-Wip-Deds (WS-Cur-Mth).\n  427 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:426: error: 'Stock-TD-Wip-Deds' is not defined\n  424 |               move zeros to Stock-TD-Deds     (WS-Cur-Mth)\n  425 |               move zeros to Stock-TD-Wip-Adds (WS-Cur-Mth)\n  426 >               move zeros to Stock-TD-Wip-Deds (WS-Cur-Mth).\n  427 | *>\n  428 |      if       Clear-Period                             *> be it week, mon..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:429: error: 'Stock-Mthly-Running-Totals' is not defined\n  427 | *>\n  428 |      if       Clear-Period                             *> be it week, mon..\n  429 >               initialize Stock-Mthly-Running-Totals.   *> yep, name is wr..\n  430 | *>\n  431 |      perform  Stock-Rewrite.\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in section 'zz070-Convert-Date':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:456: error: 'Date-Form' is not defined\n  454 |      move     to-day to ws-date.\n  455 | *>\n  456 >      if       Date-Form = zero\n  457 |               move WS-Month to WS-Current-Month\n  458 |               move WS-Days  to WS-Current-Day\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:460: error: 'Date-UK' is not defined\n  458 |               move WS-Days  to WS-Current-Day\n  459 |               move 1 to Date-Form.\n  460 >      if       Date-UK\n  461 |               go to zz070-Exit.\n  462 |      if       Date-USA                *> swap month and days\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:462: error: 'Date-USA' is not defined\n  460 |      if       Date-UK\n  461 |               go to zz070-Exit.\n  462 >      if       Date-USA                *> swap month and days\n  463 |               move WS-days  to WS-Swap\n  464 |               move WS-month to WS-Days\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in section 'aa000-Core':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in paragraph 'aa040-Process-All':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:386: error: 'Stock-Open' is not defined\n  384 |               end-if\n  385 |      end-if.\n  386 >      perform  Stock-Open.\n  387 |      if       fs-reply not = zero\n  388 |                     display ST401 at line ws-23-lines col 1 with foregrou..\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in section 'ba000-Clear-Totals':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl: in paragraph 'ba000-Clear-Totals-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:416: error: 'Stock-Read-Next' is not defined\n  414 | *>\n  415 |  ba000-Clear-Totals-Main.\n  416 >      perform  Stock-Read-Next.\n  417 |      if       fs-reply = 10\n  418 |               perform Stock-Close\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:418: error: 'Stock-Close' is not defined\n  416 |      perform  Stock-Read-Next.\n  417 |      if       fs-reply = 10\n  418 >               perform Stock-Close\n  419 |               go to ba999-Exit.\n  420 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:431: error: 'Stock-Rewrite' is not defined\n  429 |               initialize Stock-Mthly-Running-Totals.   *> yep, name is wr..\n  430 | *>\n  431 >      perform  Stock-Rewrite.\n  432 |      if       fs-Reply not = zero\n  433 |               display ST000 at line ws-23-lines col 1 with foreground-col..\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:131: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:202: error: wsstock.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:203: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:230: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:243: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:244: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:245: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:482: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:248: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:249: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:251: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:274: error: 'WS-CD-Args' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:279: error: 'WS-Term-Code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:320: error: 'Stk-Period-Cur' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:353: error: 'STK-Activity-Rep-Run' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:374: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:375: error: 'File-11' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:380: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:398: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:423: error: 'Stock-TD-Adds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:424: error: 'Stock-TD-Deds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:425: error: 'Stock-TD-Wip-Adds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:426: error: 'Stock-TD-Wip-Deds' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:429: error: 'Stock-Mthly-Running-Totals' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:456: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:460: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:462: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:386: error: 'Stock-Open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:416: error: 'Stock-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:418: error: 'Stock-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:431: error: 'Stock-Rewrite' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:131: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:202: error: wsstock.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:203: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:230: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:243: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:244: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:245: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:482: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:248: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:249: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:251: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:274: error: 'WS-CD-Args' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:279: error: 'WS-Term-Code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:320: error: 'Stk-Period-Cur' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:353: error: 'STK-Activity-Rep-Run' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:374: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:375: error: 'File-11' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:380: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:398: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:423: error: 'Stock-TD-Adds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:424: error: 'Stock-TD-Deds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:425: error: 'Stock-TD-Wip-Adds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:426: error: 'Stock-TD-Wip-Deds' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:429: error: 'Stock-Mthly-Running-Totals' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:456: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:460: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:462: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:386: error: 'Stock-Open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:416: error: 'Stock-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:418: error: 'Stock-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl:431: error: 'Stock-Rewrite' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 52,
+    "cognitive": 122,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 81,
+      "totalOperators": 132,
+      "totalOperands": 226,
+      "vocabulary": 93,
+      "length": 358,
+      "volume": 2341,
+      "difficulty": 16.74,
+      "effort": 39190,
+      "timeToProgram": 2177,
+      "deliveredBugs": 0.78
+    },
+    "maintainability": 69
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 375
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 122
+      },
+      {
+        "name": "envdiv",
+        "line": 131
+      },
+      {
+        "name": "selstock",
+        "line": 138
+      },
+      {
+        "name": "fdstock",
+        "line": 145
+      },
+      {
+        "name": "wsstock",
+        "line": 202
+      },
+      {
+        "name": "wsfnctn",
+        "line": 203
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 230
+      },
+      {
+        "name": "wscall",
+        "line": 243
+      },
+      {
+        "name": "wssystem",
+        "line": 244
+      },
+      {
+        "name": "wsnames",
+        "line": 245
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 482
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "line": 271
+      },
+      {
+        "target": "Stock-Open",
+        "line": 386
+      },
+      {
+        "target": "ba000-Clear-Totals",
+        "line": 402
+      },
+      {
+        "target": "Stock-Read-Next",
+        "line": 416
+      },
+      {
+        "target": "Stock-Close",
+        "line": 418
+      },
+      {
+        "target": "Stock-Rewrite",
+        "line": 431
+      },
+      {
+        "target": "Stock-Close",
+        "line": 437
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 147
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

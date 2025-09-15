@@ -1,0 +1,217 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl",
+  "fileName": "analRES.cbl",
+  "fileHash": "7943b6624f0125cd1b48e3f9c348db12814f4adad4331fe0e1cbc1818e8a6567",
+  "timestamp": "2025-09-15T19:46:01.437Z",
+  "parseTime": 30,
+  "lines": {
+    "total": 228,
+    "code": 109,
+    "comment": 118,
+    "blank": 1
+  },
+  "programId": "analRES",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:93: error: envdiv.cob: No such file or directory\n   91 | *>-------------------\n   92 | *>\n   93 >  copy \"envdiv.cob\".\n   94 |  input-output            section.\n   95 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:100: error: selanal.cob: No such file or directory\n   98 | *>-----------\n   99 | *>\n  100 >  copy \"selanal.cob\".\n  101 |      select  Analysis-File-Seq  assign        \"analysis.seq\"\n  102 |                                 organization  sequential\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:111: error: fdanal.cob: No such file or directory\n  109 | *>-----------\n  110 | *>\n  111 >  copy \"fdanal.cob\".\n  112 |  fd  Analysis-File-Seq.\n  113 |  copy \"wsanal.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:113: error: wsanal.cob: No such file or directory\n  111 |  copy \"fdanal.cob\".\n  112 |  fd  Analysis-File-Seq.\n  113 >  copy \"wsanal.cob\".\n  114 | *>\n  115 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory\n  134 |  01  SO-Print            pic x(160)    value spaces.\n  135 | *>\n  136 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  137 | *>\n  138 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:138: error: wsfnctn.cob: No such file or directory\n  136 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  137 | *>\n  138 >  copy \"wsfnctn.cob\".\n  139 |  copy \"wsnames.cob\".\n  140 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:139: error: wsnames.cob: No such file or directory\n  137 | *>\n  138 |  copy \"wsfnctn.cob\".\n  139 >  copy \"wsnames.cob\".\n  140 |  copy \"wscall.cob\".\n  141 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:140: error: wscall.cob: No such file or directory\n  138 |  copy \"wsfnctn.cob\".\n  139 |  copy \"wsnames.cob\".\n  140 >  copy \"wscall.cob\".\n  141 | *>\n  142 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:223: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  221 |      goback.\n  222 | *>\n  223 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  224 | *>\n  225 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:115: error: RECORD description missing or invalid\n  113 |  copy \"wsanal.cob\".\n  114 | *>\n  115 >  working-storage section.\n  116 | *>----------------------\n  117 |  77  prog-name           pic x(20)    value \"analRES (3.02.00)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:101: error: missing file description for FILE Analysis-File-Seq\n   99 | *>\n  100 |  copy \"selanal.cob\".\n  101 >      select  Analysis-File-Seq  assign        \"analysis.seq\"\n  102 |                                 organization  sequential\n  103 |                                 status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:103: error: 'FS-Reply' is not defined\n  101 |      select  Analysis-File-Seq  assign        \"analysis.seq\"\n  102 |                                 organization  sequential\n  103 >                                 status        FS-Reply.\n  104 | *>\n  105 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:154: error: 'WS-Log-System' is not defined\n  152 |  aa000-Main-Start.\n  153 |      perform  zz020-Get-Program-Args.\n  154 >      move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 |      move     12     to WS-Log-File-no.  *> for FHlogger\n  156 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:155: error: 'WS-Log-File-no' is not defined\n  153 |      perform  zz020-Get-Program-Args.\n  154 |      move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 >      move     12     to WS-Log-File-no.  *> for FHlogger\n  156 | *>\n  157 |      move     spaces to SO-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:168: error: 'Analysis-File' is not defined\n  166 |               move     \"No Analysis file to process\" to SO-Print\n  167 |               perform  Call-Sysout\n  168 >               close    Analysis-File\n  169 |               move     \"CLOSE \" to SO-Print\n  170 |               perform  Call-Sysout\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:168: error: 'Analysis-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:172: error: 'Analysis-File' is not a file name\n  170 |               perform  Call-Sysout\n  171 |               goback.\n  172 >      open     output   Analysis-File.\n  173 |      if       FS-Reply not = zeros\n  174 |               move     spaces to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl: in paragraph 'aa010-Read-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:198: error: 'Analysis-Record' is not defined\n  196 |               end-if\n  197 |               add      1 to WS-Rec-Cnt-In\n  198 >               write    Analysis-Record from WS-Analysis-Record\n  199 |               if       FS-Reply not = zero\n  200 |                        move     SY006 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:198: error: 'WS-Analysis-Record' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl: in paragraph 'aa020-Finish-Off':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:209: error: 'Analysis-File' is not a file name\n  207 | aa020-Finish-Off.\n  208 |      close    Analysis-File-Seq\n  209 >               Analysis-File.\n  210 |      move     spaces to SO-Print.\n  211 |      string\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined\n  151 | *>\n  152 |  aa000-Main-Start.\n  153 >      perform  zz020-Get-Program-Args.\n  154 |      move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  155 |      move     12     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:93: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:100: error: selanal.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:111: error: fdanal.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:113: error: wsanal.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:138: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:139: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:140: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:223: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:115: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:101: error: missing file description for FILE Analysis-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:103: error: 'FS-Reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:154: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:155: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:168: error: 'Analysis-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:168: error: 'Analysis-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:172: error: 'Analysis-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:198: error: 'Analysis-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:198: error: 'WS-Analysis-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:209: error: 'Analysis-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:93: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:100: error: selanal.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:111: error: fdanal.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:113: error: wsanal.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:136: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:138: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:139: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:140: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:223: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:115: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:101: error: missing file description for FILE Analysis-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:103: error: 'FS-Reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:154: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:155: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:168: error: 'Analysis-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:168: error: 'Analysis-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:172: error: 'Analysis-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:198: error: 'Analysis-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:198: error: 'WS-Analysis-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:209: error: 'Analysis-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/analRES.cbl:153: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 9,
+    "cognitive": 19,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 56,
+      "totalOperators": 53,
+      "totalOperands": 106,
+      "vocabulary": 64,
+      "length": 159,
+      "volume": 954,
+      "difficulty": 7.57,
+      "effort": 7223,
+      "timeToProgram": 401,
+      "deliveredBugs": 0.318
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 226
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23
+      },
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 93
+      },
+      {
+        "name": "selanal",
+        "line": 100
+      },
+      {
+        "name": "fdanal",
+        "line": 111
+      },
+      {
+        "name": "wsanal",
+        "line": 113
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 136
+      },
+      {
+        "name": "wsfnctn",
+        "line": 138
+      },
+      {
+        "name": "wsnames",
+        "line": 139
+      },
+      {
+        "name": "wscall",
+        "line": 140
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 223
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 153
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 160
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 167
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 170
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 178
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 180
+      },
+      {
+        "target": "forever",
+        "line": 185
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 194
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 201
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 217
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 219
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Analysis-File-Seq",
+        "line": 112
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 115
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

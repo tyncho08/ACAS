@@ -1,0 +1,191 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl",
+  "fileName": "irsdfltUNL.cbl",
+  "fileHash": "32bab5d13a8d6dfc1030262def7a54fc49c183f77db1fa5fc270c51dc10ebd03",
+  "timestamp": "2025-09-15T19:46:03.620Z",
+  "parseTime": 30,
+  "lines": {
+    "total": 226,
+    "code": 105,
+    "comment": 120,
+    "blank": 1
+  },
+  "programId": "irsdfltUNL",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:93: error: envdiv.cob: No such file or directory\n   91 | *>-------------------\n   92 | *>\n   93 >  copy \"envdiv.cob\".\n   94 |  input-output            section.\n   95 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:119: error: irswsdflt.cob: No such file or directory\n  117 |  01  Default-Record            pic x(264).\n  118 |  fd  irsdflt-File-Seq.\n  119 >  copy \"irswsdflt.cob\" replacing Default-Record by WS-Default-Record.\n  120 | *>\n  121 |  working-storage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:142: error: Test-Data-Flags.cob: No such file or directory\n  140 |  01  SO-Print            pic x(160)    value spaces.\n  141 | *>\n  142 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  143 | *>\n  144 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:144: error: wsfnctn.cob: No such file or directory\n  142 |  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  143 | *>\n  144 >  copy \"wsfnctn.cob\".\n  145 |  copy \"wsnames.cob\".\n  146 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:145: error: wsnames.cob: No such file or directory\n  143 | *>\n  144 |  copy \"wsfnctn.cob\".\n  145 >  copy \"wsnames.cob\".\n  146 |  copy \"wscall.cob\".\n  147 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:146: error: wscall.cob: No such file or directory\n  144 |  copy \"wsfnctn.cob\".\n  145 |  copy \"wsnames.cob\".\n  146 >  copy \"wscall.cob\".\n  147 | *>\n  148 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:221: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  219 |      goback.\n  220 | *>\n  221 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_irsdfltS now\n  222 | *>\n  223 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:121: error: RECORD description missing or invalid\n  119 |  copy \"irswsdflt.cob\" replacing Default-Record by WS-Default-Record.\n  120 | *>\n  121 >  working-storage section.\n  122 | *>----------------------\n  123 |  77  prog-name           pic x(22)    value \"irsdfltUNL (3.02.00)\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:105: error: missing file description for FILE irsdflt-File-Seq\n  103 |                              status fs-reply.\n  104 | *>\n  105 >      select  irsdflt-File-Seq  assign          \"irsdflt.seq\"\n  106 |                                 organization  sequential\n  107 |                                 status        FS-Reply.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:103: error: 'fs-reply' is not defined\n  101 |                              organization line sequential,\n  102 |                              access sequential,\n  103 >                              status fs-reply.\n  104 | *>\n  105 |      select  irsdflt-File-Seq  assign          \"irsdflt.seq\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:160: error: 'WS-Log-System' is not defined\n  158 |  aa000-Main-Start.\n  159 |      perform  zz020-Get-Program-Args.\n  160 >      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  161 |      move     12     to WS-Log-File-no.  *> for FHlogger\n  162 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:161: error: 'WS-Log-File-no' is not defined\n  159 |      perform  zz020-Get-Program-Args.\n  160 |      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  161 >      move     12     to WS-Log-File-no.  *> for FHlogger\n  162 | *>\n  163 |      move     spaces to SO-Print.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl: in paragraph 'aa010-Read-Recs':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:196: error: 'WS-Default-Record' is not defined\n  194 |               end-if\n  195 |               add      1 to WS-Rec-Cnt-In\n  196 >               write    WS-Default-Record from Default-Record\n  197 |               if       FS-Reply not = zero\n  198 |                        move     SY006 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl: in paragraph 'aa000-Main-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:159: error: 'zz020-Get-Program-Args' is not defined\n  157 | *>\n  158 |  aa000-Main-Start.\n  159 >      perform  zz020-Get-Program-Args.\n  160 |      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=..\n  161 |      move     12     to WS-Log-File-no.  *> for FHlogger\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:93: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:119: error: irswsdflt.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:142: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:144: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:145: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:146: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:221: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:121: error: RECORD description missing or invalid",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:105: error: missing file description for FILE irsdflt-File-Seq",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:103: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:160: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:161: error: 'WS-Log-File-no' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:196: error: 'WS-Default-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:159: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:93: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:119: error: irswsdflt.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:142: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:144: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:145: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:146: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:221: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:121: error: RECORD description missing or invalid",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:105: error: missing file description for FILE irsdflt-File-Seq",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:103: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:160: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:161: error: 'WS-Log-File-no' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:196: error: 'WS-Default-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltUNL.cbl:159: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 8,
+    "cognitive": 18,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 56,
+      "totalOperators": 47,
+      "totalOperands": 101,
+      "vocabulary": 64,
+      "length": 148,
+      "volume": 888,
+      "difficulty": 7.21,
+      "effort": 6406,
+      "timeToProgram": 356,
+      "deliveredBugs": 0.296
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 224
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23
+      },
+      {
+        "name": "of",
+        "line": 83
+      },
+      {
+        "name": "envdiv",
+        "line": 93
+      },
+      {
+        "name": "irswsdflt",
+        "line": 119
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 142
+      },
+      {
+        "name": "wsfnctn",
+        "line": 144
+      },
+      {
+        "name": "wsnames",
+        "line": 145
+      },
+      {
+        "name": "wscall",
+        "line": 146
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 221
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 159
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 166
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 173
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 176
+      },
+      {
+        "target": "forever",
+        "line": 183
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 192
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 199
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 215
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 217
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Default-File",
+        "line": 115
+      },
+      {
+        "name": "irsdflt-File-Seq",
+        "line": 118
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 121
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

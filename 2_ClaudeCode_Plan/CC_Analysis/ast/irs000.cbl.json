@@ -1,0 +1,145 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl",
+  "fileName": "irs000.cbl",
+  "fileHash": "75738c8faeef9b585518011f517dea2af3094f3b8b89af22017ab13ca43b2b02",
+  "timestamp": "2025-09-15T19:46:19.368Z",
+  "parseTime": 46,
+  "lines": {
+    "total": 273,
+    "code": 146,
+    "comment": 126,
+    "blank": 1
+  },
+  "programId": "irs000",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:84: error: envdiv.cob: No such file or directory\n   82 | *>===============================\n   83 | *>\n   84 >  copy  \"envdiv.cob\".\n   85 |  input-output            section.\n   86 |  file-control.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:92: error: wsmaps03.cob: No such file or directory\n   90 | *>----------------------\n   91 |  77  prog-name           pic x(16) value \"IRS000 (3.02.07)\".\n   92 >  copy \"wsmaps03.cob\".\n   93 |  copy \"wsfnctn.cob\".\n   94 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:93: error: wsfnctn.cob: No such file or directory\n   91 |  77  prog-name           pic x(16) value \"IRS000 (3.02.07)\".\n   92 |  copy \"wsmaps03.cob\".\n   93 >  copy \"wsfnctn.cob\".\n   94 | *>\n   95 |  01  ws-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:147: error: wssystem.cob: No such file or directory\n  145 | *>\n  146 |  01  to-day              pic x(10).\n  147 >  copy \"wssystem.cob\".  *> Use ACAS param record.\n  148 | *>\n  149 |  procedure  division using system-record\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:149: error: 'system-record' is not defined\n  147 |  copy \"wssystem.cob\".  *> Use ACAS param record.\n  148 | *>\n  149 >  procedure  division using system-record\n  150 |                            to-day.\n  151 | *>======================================\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl: in paragraph 'main':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:160: error: 'u-date' is not defined\n  158 |      set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n  159 | *>\n  160 >      move     to-day to u-date.\n  161 | *>\n  162 |      accept   wsa-date from date YYYYMMDD.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:164: error: 'u-cc' is not defined\n  162 |      accept   wsa-date from date YYYYMMDD.\n  163 |      if       wsa-date not = \"000000\"\n  164 >               move wsa-cc to u-cc\n  165 |               move wsa-yy to u-yy\n  166 |               move wsa-mm to u-month\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:165: error: 'u-yy' is not defined\n  163 |      if       wsa-date not = \"000000\"\n  164 |               move wsa-cc to u-cc\n  165 >               move wsa-yy to u-yy\n  166 |               move wsa-mm to u-month\n  167 |               move wsa-dd to u-days.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:166: error: 'u-month' is not defined\n  164 |               move wsa-cc to u-cc\n  165 |               move wsa-yy to u-yy\n  166 >               move wsa-mm to u-month\n  167 |               move wsa-dd to u-days.\n  168 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:167: error: 'u-days' is not defined\n  165 |               move wsa-yy to u-yy\n  166 |               move wsa-mm to u-month\n  167 >               move wsa-dd to u-days.\n  168 | *>\n  169 |      move     u-date  to  to-day.    *> as dd/mm/ccyy - converted later.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:176: error: 'Client' is not defined\n  174 | *>\n  175 |      display  \"Client -\"    at 0101 with foreground-color 2 erase eos.\n  176 >      display  Client        at 0110 with foreground-color 3.\n  177 |  *>    display  \"User   -\"  at 0301 with foreground-color 2.\n  178 |  *>    display  usera       at 0310 with foreground-color 3.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:182: error: 'maps-ser-xx' is not defined\n  180 |      display  \"IRS - Start Of Day\"\n  181 |                             at 0332 with foreground-color 2\n  182 >      display  maps-ser-xx   at 2474 with foreground-color 2.\n  183 |      move     maps-ser-nn to curs2.\n  184 |      display  curs2         at 2476 with foreground-color 2.\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:183: error: 'maps-ser-nn' is not defined\n  181 |                             at 0332 with foreground-color 2\n  182 |      display  maps-ser-xx   at 2474 with foreground-color 2.\n  183 >      move     maps-ser-nn to curs2.\n  184 |      display  curs2         at 2476 with foreground-color 2.\n  185 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:183: error: 'curs2' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl: in paragraph 'date-entry':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:197: error: 'Date-Form' is not defined\n  195 | *>*********\n  196 | *>\n  197 >      if       Date-Form not > zero and < 4      *> If not yet set up.\n  198 |               move 1 to Date-Form.\n  199 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:202: error: 'Date-UK' is not defined\n  200 | *> Convert from UK to selected form\n  201 | *>\n  202 >      if       Date-UK or Date-USA\n  203 |               move \"/\" to WS-Date (3:1)\n  204 |                           WS-Date (6:1)\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:202: error: 'Date-USA' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:197: error: invalid conditional expression\n  195 | *>*********\n  196 | *>\n  197 >      if       Date-Form not > zero and < 4      *> If not yet set up.\n  198 |               move 1 to Date-Form.\n  199 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:213: error: 'Date-Intl' is not defined\n  211 |               move ws-date to u-date\n  212 |      end-if\n  213 >      if       Date-Intl\n  214 |               move \"ccyy/mm/dd\" to ws-date  *> swap Intl to UK form\n  215 |               move u-date (7:4) to ws-Intl-Year\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:252: error: 'u-bin' is not defined\n  250 |      end-if\n  251 | *>\n  252 >      move     zero  to  u-bin.\n  253 |      call     \"maps04\"  using  maps03-ws.\n  254 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:253: error: 'maps03-ws' is not defined\n  251 | *>\n  252 |      move     zero  to  u-bin.\n  253 >      call     \"maps04\"  using  maps03-ws.\n  254 | *>\n  255 |      if       u-bin = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl: in paragraph 'chain-menu':\n/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:267: error: 'Run-Date' is not defined\n  265 | *>*********\n  266 | *>\n  267 >      move     u-bin  to  Run-Date.\n  268 |      move     u-date to  to-day.\n  269 |  *>    move     zero   to  ws-term-code.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:84: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:92: error: wsmaps03.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:93: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:147: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:149: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:160: error: 'u-date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:164: error: 'u-cc' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:165: error: 'u-yy' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:166: error: 'u-month' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:167: error: 'u-days' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:176: error: 'Client' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:182: error: 'maps-ser-xx' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:183: error: 'maps-ser-nn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:183: error: 'curs2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:197: error: 'Date-Form' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:202: error: 'Date-UK' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:202: error: 'Date-USA' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:197: error: invalid conditional expression",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:213: error: 'Date-Intl' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:252: error: 'u-bin' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:253: error: 'maps03-ws' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:267: error: 'Run-Date' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:84: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:92: error: wsmaps03.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:93: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:147: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:149: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:160: error: 'u-date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:164: error: 'u-cc' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:165: error: 'u-yy' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:166: error: 'u-month' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:167: error: 'u-days' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:176: error: 'Client' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:182: error: 'maps-ser-xx' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:183: error: 'maps-ser-nn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:183: error: 'curs2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:197: error: 'Date-Form' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:202: error: 'Date-UK' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:202: error: 'Date-USA' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:197: error: invalid conditional expression",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:213: error: 'Date-Intl' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:252: error: 'u-bin' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:253: error: 'maps03-ws' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs000.cbl:267: error: 'Run-Date' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 15,
+    "cognitive": 17,
+    "halstead": {
+      "uniqueOperators": 6,
+      "uniqueOperands": 35,
+      "totalOperators": 62,
+      "totalOperands": 70,
+      "vocabulary": 41,
+      "length": 132,
+      "volume": 707,
+      "difficulty": 6,
+      "effort": 4243,
+      "timeToProgram": 236,
+      "deliveredBugs": 0.236
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 253
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 75
+      },
+      {
+        "name": "envdiv",
+        "line": 84
+      },
+      {
+        "name": "wsmaps03",
+        "line": 92
+      },
+      {
+        "name": "wsfnctn",
+        "line": 93
+      },
+      {
+        "name": "wssystem",
+        "line": 147
+      }
+    ],
+    "performs": []
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 89
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

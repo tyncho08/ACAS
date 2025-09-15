@@ -1,0 +1,447 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl",
+  "fileName": "glpostingMT.cbl",
+  "fileHash": "63a111c138c59e9f79ca1f34d4b52377526b416ddfa0160979c844da841c0c02",
+  "timestamp": "2025-09-15T19:46:03.216Z",
+  "parseTime": 89,
+  "lines": {
+    "total": 1495,
+    "code": 979,
+    "comment": 513,
+    "blank": 3
+  },
+  "programId": "glpostingMT",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:159: error: ACAS-SQLstate-error-list.cob: No such file or directory\n  157 | *>                                     * = FS-Reply = 99.\n  158 | *>\n  159 >  copy \"ACAS-SQLstate-error-list.cob\".\n  160 | *>\n  161 | *>       During testing a log file will be created containing datetime st..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:275: error: mysql-variables.cpy: No such file or directory\n  273 | *>       ACASDB\n  274 | *>       TABLE=GLPOSTING-REC,HV\n  275 >  COPY \"mysql-variables.cpy\".\n  276 | *>\n  277 | *>    Definitions for the GLPOSTING-REC Table\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:301: error: wsfnctn.cob: No such file or directory\n  299 | *>\n  300 | *>**********************************************************************\n  301 >  copy \"wsfnctn.cob\".                         *> File-Access\n  302 | *>\n  303 | *>**********************************************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:305: error: Test-Data-Flags.cob: No such file or directory\n  303 | *>**********************************************************************\n  304 | *>\n  305 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  306 | *>\n  307 | *>  Record definition for Cobol file here:\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:309: error: wspost.cob: No such file or directory\n  307 | *>  Record definition for Cobol file here:\n  308 | *>\n  309 >  copy \"wspost.cob\".\n  310 | *>\n  311 |  screen section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1019: error: mysql-procedures.cpy: No such file or directory\n 1017 | *>\n 1018 | *> /MYSQL PRO\\\n 1019 >  COPY \"mysql-procedures.cpy\".\n 1020 | *> /MYSQL-END\\\n 1021 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:320: error: 'Ws-Mysql-Error-Number' is not defined\n  318 |  01  Display-Message-2       foreground-color 2.\n  319 |      03      value \"SM004 SQL Err No.=\"            line 4 col  1.    *> s..\n  320 >      03  using Ws-Mysql-Error-Number   pic x(4)           col 19.    *>..\n  321 |      03      value \" Para=\"                               col 23.    *> s..\n  322 |      03  using WS-No-Paragraph         pic 9(3)           col 29.    *>..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:322: error: 'WS-No-Paragraph' is not defined\n  320 |      03  using Ws-Mysql-Error-Number   pic x(4)           col 19.    *>..\n  321 |      03      value \" Para=\"                               col 23.    *> s..\n  322 >      03  using WS-No-Paragraph         pic 9(3)           col 29.    *>..\n  323 |      03      value \" SQL Cmd=\"                            col 32.    *>..\n  324 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:324: error: 'Ws-Mysql-Command' is not defined\n  322 |      03  using WS-No-Paragraph         pic 9(3)           col 29.    *>..\n  323 |      03      value \" SQL Cmd=\"                            col 32.    *>..\n  324 >      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  325 |      03      value \"SQL Err Msg=\"                  line 7 col  1.    *>..\n  326 |      03  using Ws-Mysql-Error-Message  pic x(67)          col 13.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:326: error: 'Ws-Mysql-Error-Message' is not defined\n  324 |      03  using Ws-Mysql-Command        pic x(199)         col 41.\n  325 |      03      value \"SQL Err Msg=\"                  line 7 col  1.    *>..\n  326 >      03  using Ws-Mysql-Error-Message  pic x(67)          col 13.\n  327 | *>\n  328 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:329: error: 'File-Access' is not defined\n  327 | *>\n  328 | *>\n  329 >  PROCEDURE DIVISION   using File-Access\n  330 |                             ACAS-DAL-Common-data\n  331 |                             WS-Posting-Record.   *>  Ws record\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:330: error: 'ACAS-DAL-Common-data' is not defined\n  328 | *>\n  329 |  PROCEDURE DIVISION   using File-Access\n  330 >                             ACAS-DAL-Common-data\n  331 |                             WS-Posting-Record.   *>  Ws record\n  332 | *>**********************************************\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:331: error: 'WS-Posting-Record' is not defined\n  329 |  PROCEDURE DIVISION   using File-Access\n  330 |                             ACAS-DAL-Common-data\n  331 >                             WS-Posting-Record.   *>  Ws record\n  332 | *>**********************************************\n  333 |  ba-ACAS-DAL-Process  section.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in paragraph 'ba010-Initialise':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:351: error: 'WS-Log-Where' is not defined\n  349 |      move     spaces to WS-MYSQL-Error-Message\n  350 |                         WS-MYSQL-Error-Number\n  351 >                         WS-Log-Where\n  352 |                         WS-File-Key\n  353 |                         SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:352: error: 'WS-File-Key' is not defined\n  350 |                         WS-MYSQL-Error-Number\n  351 |                         WS-Log-Where\n  352 >                         WS-File-Key\n  353 |                         SQL-Msg\n  354 |                         SQL-Err\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:353: error: 'SQL-Msg' is not defined\n  351 |                         WS-Log-Where\n  352 |                         WS-File-Key\n  353 >                         SQL-Msg\n  354 |                         SQL-Err\n  355 |                         SQL-State.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:354: error: 'SQL-Err' is not defined\n  352 |                         WS-File-Key\n  353 |                         SQL-Msg\n  354 >                         SQL-Err\n  355 |                         SQL-State.\n  356 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:355: error: 'SQL-State' is not defined\n  353 |                         SQL-Msg\n  354 |                         SQL-Err\n  355 >                         SQL-State.\n  356 | *>\n  357 | *>  Work out what is being requested and convert to action!!\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:362: error: 'File-Function' is not defined\n  360 | *>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  361 | *>\n  362 >      evaluate File-Function\n  363 |         when  1\n  364 |               go to ba020-Process-Open\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:393: error: 'DB-Schema' is not defined\n  391 |  *>    then perform MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT\n  392 |  *>\n  393 >      string   DB-Schema      delimited by space\n  394 |               X\"00\"          delimited by size\n  395 |                                into WS-MYSQL-BASE-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:395: error: 'WS-MYSQL-BASE-NAME' is not defined\n  393 |      string   DB-Schema      delimited by space\n  394 |               X\"00\"          delimited by size\n  395 >                                into WS-MYSQL-BASE-NAME\n  396 |      end-string.\n  397 |      string   DB-Host        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:397: error: 'DB-Host' is not defined\n  395 |                                into WS-MYSQL-BASE-NAME\n  396 |      end-string.\n  397 >      string   DB-Host        delimited by space\n  398 |               X\"00\"          delimited by size\n  399 |                                into WS-MYSQL-HOST-NAME\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:399: error: 'WS-MYSQL-HOST-NAME' is not defined\n  397 |      string   DB-Host        delimited by space\n  398 |               X\"00\"          delimited by size\n  399 >                                into WS-MYSQL-HOST-NAME\n  400 |      end-string.\n  401 |      string   DB-UName       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:401: error: 'DB-UName' is not defined\n  399 |                                into WS-MYSQL-HOST-NAME\n  400 |      end-string.\n  401 >      string   DB-UName       delimited by space\n  402 |               X\"00\"          delimited by size\n  403 |                                into WS-MYSQL-IMPLEMENTATION\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:403: error: 'WS-MYSQL-IMPLEMENTATION' is not defined\n  401 |      string   DB-UName       delimited by space\n  402 |               X\"00\"          delimited by size\n  403 >                                into WS-MYSQL-IMPLEMENTATION\n  404 |      end-string.\n  405 |      string   DB-UPass       delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:405: error: 'DB-UPass' is not defined\n  403 |                                into WS-MYSQL-IMPLEMENTATION\n  404 |      end-string.\n  405 >      string   DB-UPass       delimited by space\n  406 |               X\"00\"          delimited by size\n  407 |                                into WS-MYSQL-PASSWORD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:407: error: 'WS-MYSQL-PASSWORD' is not defined\n  405 |      string   DB-UPass       delimited by space\n  406 |               X\"00\"          delimited by size\n  407 >                                into WS-MYSQL-PASSWORD\n  408 |      end-string.\n  409 |      string   DB-Port        delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:409: error: 'DB-Port' is not defined\n  407 |                                into WS-MYSQL-PASSWORD\n  408 |      end-string.\n  409 >      string   DB-Port        delimited by space\n  410 |               X\"00\"          delimited by size\n  411 |                                into WS-MYSQL-PORT-NUMBER\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:411: error: 'WS-MYSQL-PORT-NUMBER' is not defined\n  409 |      string   DB-Port        delimited by space\n  410 |               X\"00\"          delimited by size\n  411 >                                into WS-MYSQL-PORT-NUMBER\n  412 |      end-string.\n  413 |      string   DB-Socket      delimited by space\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:413: error: 'DB-Socket' is not defined\n  411 |                                into WS-MYSQL-PORT-NUMBER\n  412 |      end-string.\n  413 >      string   DB-Socket      delimited by space\n  414 |               X\"00\"          delimited by size\n  415 |                                into WS-MYSQL-SOCKET\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:415: error: 'WS-MYSQL-SOCKET' is not defined\n  413 |      string   DB-Socket      delimited by space\n  414 |               X\"00\"          delimited by size\n  415 >                                into WS-MYSQL-SOCKET\n  416 |      end-string.\n  417 |      move     1 to ws-No-Paragraph.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:419: error: 'fs-reply' is not defined\n  417 |      move     1 to ws-No-Paragraph.\n  418 |      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  419 >      if       fs-reply not = zero\n  420 |               go   to ba999-end.\n  421 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:489: error: 'WS-MYSQL-RESULT' is not defined\n  487 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  488 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  489 >            MOVE WS-MYSQL-RESULT TO TP-GLPOSTING-REC\n  490 | *>               /MYSQL-END\\\n  491 |            move    \"00000\" to WS-File-Key\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:492: error: 'Testing-2' is not defined\n  490 | *>               /MYSQL-END\\\n  491 |            move    \"00000\" to WS-File-Key\n  492 >               if    Testing-2\n  493 |                     display Display-Message-1 with erase eos\n  494 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:498: error: 'WS-MYSQL-Count-Rows' is not defined\n  496 | *>  It could be an empty table so test for it\n  497 | *>\n  498 >               if       WS-MYSQL-Count-Rows = zero\n  499 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  500 |                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:500: error: 'WS-MYSQL-SQLstate' is not defined\n  498 |               if       WS-MYSQL-Count-Rows = zero\n  499 |                        call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n  500 >                        call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n  501 |                        move  WS-MYSQL-SqlState   to SQL-State\n  502 |                        if    WS-MYSQL-Error-Number (1:1) not = \"0\"    *>..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:508: error: 'WE-Error' is not defined\n  506 |                        end-if       *> do not really need to do this mean..\n  507 |                        move 10 to fs-reply\n  508 >                        move 10 to WE-Error\n  509 |                        move    \"No Data\" to WS-File-Key\n  510 |                        go to ba999-End       *> can clear the dup code af..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in paragraph 'ba060-Process-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:694: error: 'access-type' is not defined\n  692 | *>  Check for Param error 1st on start\n  693 | *>\n  694 >      if       access-type < 5 or > 8                   *> not using not <..\n  695 |               move 99 to FS-Reply\n  696 |               move 997 to WE-Error                     *> Invalid calling..\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in paragraph 'ba070-Process-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:803: error: 'ws-Post-Key' is not defined\n  801 |  ba070-Process-Write.\n  802 |      perform  bb000-HV-Load.                       *>  move WS-Posting-Re..\n  803 >      move     ws-Post-Key to WS-File-Key.\n  804 |      move     zero to FS-Reply WE-Error SQL-State.\n  805 |      move     spaces to SQL-Msg\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in paragraph 'ba999-end':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1037: error: 'Testing-1' is not defined\n 1035 | *>  Any Clean ups before quiting    move data record ?????  do so at the..\n 1036 | *>\n 1037 >      if       Testing-1\n 1038 |               perform Ca-Process-Logs\n 1039 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in section 'bb000-HV-Load':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1054: error: 'Post-Code' is not defined\n 1052 |      initialize TD-GLPOSTING-REC.\n 1053 |      move     WS-Post-Key      to HV-POST-KEY.\n 1054 >      move     Post-Code     to HV-POST-CODE.\n 1055 |      move     Post-Date     to HV-POST-DAT.\n 1056 |      move     Post-DR       to HV-POST-DR.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1055: error: 'Post-Date' is not defined\n 1053 |      move     WS-Post-Key      to HV-POST-KEY.\n 1054 |      move     Post-Code     to HV-POST-CODE.\n 1055 >      move     Post-Date     to HV-POST-DAT.\n 1056 |      move     Post-DR       to HV-POST-DR.\n 1057 |      move     Post-CR       to HV-POST-CR.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1056: error: 'Post-DR' is not defined\n 1054 |      move     Post-Code     to HV-POST-CODE.\n 1055 |      move     Post-Date     to HV-POST-DAT.\n 1056 >      move     Post-DR       to HV-POST-DR.\n 1057 |      move     Post-CR       to HV-POST-CR.\n 1058 |      move     DR-PC         to HV-DR-PC.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1057: error: 'Post-CR' is not defined\n 1055 |      move     Post-Date     to HV-POST-DAT.\n 1056 |      move     Post-DR       to HV-POST-DR.\n 1057 >      move     Post-CR       to HV-POST-CR.\n 1058 |      move     DR-PC         to HV-DR-PC.\n 1059 |      move     CR-PC         to HV-CR-PC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1058: error: 'DR-PC' is not defined\n 1056 |      move     Post-DR       to HV-POST-DR.\n 1057 |      move     Post-CR       to HV-POST-CR.\n 1058 >      move     DR-PC         to HV-DR-PC.\n 1059 |      move     CR-PC         to HV-CR-PC\n 1060 |      move     Post-Amount   to HV-POST-AMOUNT.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1059: error: 'CR-PC' is not defined\n 1057 |      move     Post-CR       to HV-POST-CR.\n 1058 |      move     DR-PC         to HV-DR-PC.\n 1059 >      move     CR-PC         to HV-CR-PC\n 1060 |      move     Post-Amount   to HV-POST-AMOUNT.\n 1061 |      move     Post-Legend   to HV-POST-LEGEND.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1060: error: 'Post-Amount' is not defined\n 1058 |      move     DR-PC         to HV-DR-PC.\n 1059 |      move     CR-PC         to HV-CR-PC\n 1060 >      move     Post-Amount   to HV-POST-AMOUNT.\n 1061 |      move     Post-Legend   to HV-POST-LEGEND.\n 1062 |      move     Vat-AC        to HV-VAT-AC.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1061: error: 'Post-Legend' is not defined\n 1059 |      move     CR-PC         to HV-CR-PC\n 1060 |      move     Post-Amount   to HV-POST-AMOUNT.\n 1061 >      move     Post-Legend   to HV-POST-LEGEND.\n 1062 |      move     Vat-AC        to HV-VAT-AC.\n 1063 |      move     Vat-PC        to HV-VAT-PC.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1062: error: 'Vat-AC' is not defined\n 1060 |      move     Post-Amount   to HV-POST-AMOUNT.\n 1061 |      move     Post-Legend   to HV-POST-LEGEND.\n 1062 >      move     Vat-AC        to HV-VAT-AC.\n 1063 |      move     Vat-PC        to HV-VAT-PC.\n 1064 |      move     Post-Vat-Side to HV-POST-VAT-SIDE.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1063: error: 'Vat-PC' is not defined\n 1061 |      move     Post-Legend   to HV-POST-LEGEND.\n 1062 |      move     Vat-AC        to HV-VAT-AC.\n 1063 >      move     Vat-PC        to HV-VAT-PC.\n 1064 |      move     Post-Vat-Side to HV-POST-VAT-SIDE.\n 1065 |      move     Vat-Amount    to HV-VAT-AMOUNT.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1064: error: 'Post-Vat-Side' is not defined\n 1062 |      move     Vat-AC        to HV-VAT-AC.\n 1063 |      move     Vat-PC        to HV-VAT-PC.\n 1064 >      move     Post-Vat-Side to HV-POST-VAT-SIDE.\n 1065 |      move     Vat-Amount    to HV-VAT-AMOUNT.\n 1066 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1065: error: 'Vat-Amount' is not defined\n 1063 |      move     Vat-PC        to HV-VAT-PC.\n 1064 |      move     Post-Vat-Side to HV-POST-VAT-SIDE.\n 1065 >      move     Vat-Amount    to HV-VAT-AMOUNT.\n 1066 | *>\n 1067 | *> Loading HVs implies a non-Fetch action. RGs are handled separately for\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in section 'ba-ACAS-DAL-Process':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in paragraph 'ba020-Process-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:418: error: 'MYSQL-1000-OPEN' is not defined\n  416 |      end-string.\n  417 |      move     1 to ws-No-Paragraph.\n  418 >      PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT.\n  419 |      if       fs-reply not = zero\n  420 |               go   to ba999-end.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:418: error: 'MYSQL-1090-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in paragraph 'ba030-Process-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:442: error: 'MYSQL-1980-CLOSE' is not defined\n  440 | *>    Close the Database\n  441 | *>\n  442 >            PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n  443 | *>  /MYSQL-END\\\n  444 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:442: error: 'MYSQL-1999-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl: in paragraph 'ba040-Process-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:487: error: 'MYSQL-1210-COMMAND' is not defined\n  485 |              ws-Where (1:J)      *> POST-KEY > \"0000000000\" ORDER BY GLPO..\n  486 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  487 >            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  488 |            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  489 |            MOVE WS-MYSQL-RESULT TO TP-GLPOSTING-REC\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:487: error: 'MYSQL-1219-EXIT' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:488: error: 'MYSQL-1220-STORE-RESULT' is not defined\n  486 |             \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n  487 |            PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n  488 >            PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n  489 |            MOVE WS-MYSQL-RESULT TO TP-GLPOSTING-REC\n  490 | *>               /MYSQL-END\\\n/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:488: error: 'MYSQL-1239-EXIT' is not defined\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:159: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:275: error: mysql-variables.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:301: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:305: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:309: error: wspost.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1019: error: mysql-procedures.cpy: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:320: error: 'Ws-Mysql-Error-Number' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:322: error: 'WS-No-Paragraph' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:324: error: 'Ws-Mysql-Command' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:326: error: 'Ws-Mysql-Error-Message' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:329: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:330: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:331: error: 'WS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:351: error: 'WS-Log-Where' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:352: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:353: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:354: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:355: error: 'SQL-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:362: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:393: error: 'DB-Schema' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:395: error: 'WS-MYSQL-BASE-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:397: error: 'DB-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:399: error: 'WS-MYSQL-HOST-NAME' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:401: error: 'DB-UName' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:403: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:405: error: 'DB-UPass' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:407: error: 'WS-MYSQL-PASSWORD' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:409: error: 'DB-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:411: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:413: error: 'DB-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:415: error: 'WS-MYSQL-SOCKET' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:419: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:489: error: 'WS-MYSQL-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:492: error: 'Testing-2' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:498: error: 'WS-MYSQL-Count-Rows' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:500: error: 'WS-MYSQL-SQLstate' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:508: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:694: error: 'access-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:803: error: 'ws-Post-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1037: error: 'Testing-1' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1054: error: 'Post-Code' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1055: error: 'Post-Date' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1056: error: 'Post-DR' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1057: error: 'Post-CR' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1058: error: 'DR-PC' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1059: error: 'CR-PC' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1060: error: 'Post-Amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1061: error: 'Post-Legend' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1062: error: 'Vat-AC' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1063: error: 'Vat-PC' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1064: error: 'Post-Vat-Side' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1065: error: 'Vat-Amount' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:418: error: 'MYSQL-1000-OPEN' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:418: error: 'MYSQL-1090-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:442: error: 'MYSQL-1980-CLOSE' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:442: error: 'MYSQL-1999-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:487: error: 'MYSQL-1210-COMMAND' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:487: error: 'MYSQL-1219-EXIT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:488: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:488: error: 'MYSQL-1239-EXIT' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:159: error: ACAS-SQLstate-error-list.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:275: error: mysql-variables.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:301: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:305: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:309: error: wspost.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1019: error: mysql-procedures.cpy: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:320: error: 'Ws-Mysql-Error-Number' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:322: error: 'WS-No-Paragraph' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:324: error: 'Ws-Mysql-Command' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:326: error: 'Ws-Mysql-Error-Message' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:329: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:330: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:331: error: 'WS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:351: error: 'WS-Log-Where' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:352: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:353: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:354: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:355: error: 'SQL-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:362: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:393: error: 'DB-Schema' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:395: error: 'WS-MYSQL-BASE-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:397: error: 'DB-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:399: error: 'WS-MYSQL-HOST-NAME' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:401: error: 'DB-UName' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:403: error: 'WS-MYSQL-IMPLEMENTATION' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:405: error: 'DB-UPass' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:407: error: 'WS-MYSQL-PASSWORD' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:409: error: 'DB-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:411: error: 'WS-MYSQL-PORT-NUMBER' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:413: error: 'DB-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:415: error: 'WS-MYSQL-SOCKET' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:419: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:489: error: 'WS-MYSQL-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:492: error: 'Testing-2' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:498: error: 'WS-MYSQL-Count-Rows' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:500: error: 'WS-MYSQL-SQLstate' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:508: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:694: error: 'access-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:803: error: 'ws-Post-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1037: error: 'Testing-1' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1054: error: 'Post-Code' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1055: error: 'Post-Date' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1056: error: 'Post-DR' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1057: error: 'Post-CR' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1058: error: 'DR-PC' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1059: error: 'CR-PC' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1060: error: 'Post-Amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1061: error: 'Post-Legend' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1062: error: 'Vat-AC' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1063: error: 'Vat-PC' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1064: error: 'Post-Vat-Side' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:1065: error: 'Vat-Amount' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:418: error: 'MYSQL-1000-OPEN' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:418: error: 'MYSQL-1090-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:442: error: 'MYSQL-1980-CLOSE' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:442: error: 'MYSQL-1999-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:487: error: 'MYSQL-1210-COMMAND' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:487: error: 'MYSQL-1219-EXIT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:488: error: 'MYSQL-1220-STORE-RESULT' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/glpostingMT.cbl:488: error: 'MYSQL-1239-EXIT' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 112,
+    "cognitive": 213,
+    "halstead": {
+      "uniqueOperators": 12,
+      "uniqueOperands": 201,
+      "totalOperators": 418,
+      "totalOperands": 1772,
+      "vocabulary": 213,
+      "length": 2190,
+      "volume": 16939,
+      "difficulty": 52.9,
+      "effort": 895998,
+      "timeToProgram": 49778,
+      "deliveredBugs": 5.646
+    },
+    "maintainability": 55
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 499
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 500
+      },
+      {
+        "target": "MySQL_error",
+        "line": 504
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 536
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 563
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 564
+      },
+      {
+        "target": "MySQL_error",
+        "line": 567
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 643
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 663
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 664
+      },
+      {
+        "target": "MySQL_error",
+        "line": 669
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 771
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 772
+      },
+      {
+        "target": "MySQL_error",
+        "line": 775
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 810
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 811
+      },
+      {
+        "target": "MySQL_error",
+        "line": 814
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 866
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 867
+      },
+      {
+        "target": "MySQL_error",
+        "line": 870
+      },
+      {
+        "target": "MySQL_query",
+        "line": 901
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 947
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 948
+      },
+      {
+        "target": "MySQL_error",
+        "line": 951
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 993
+      },
+      {
+        "target": "MySQL_sqlstate",
+        "line": 994
+      },
+      {
+        "target": "MySQL_error",
+        "line": 997
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1030
+      },
+      {
+        "target": "fhlogger",
+        "line": 1489
+      }
+    ],
+    "copies": [
+      {
+        "name": "*>",
+        "line": 146
+      },
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 159
+      },
+      {
+        "name": "of",
+        "line": 194
+      },
+      {
+        "name": "envdiv",
+        "line": 201
+      },
+      {
+        "name": "mysql-variables",
+        "line": 275
+      },
+      {
+        "name": "wsfnctn",
+        "line": 301
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 305
+      },
+      {
+        "name": "wspost",
+        "line": 309
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1019
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 391
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "line": 418
+      },
+      {
+        "target": "ba998-Free",
+        "line": 434
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "line": 442
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 487
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 488
+      },
+      {
+        "target": "ba999-End",
+        "line": 519
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 584
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 627
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 628
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "line": 683
+      },
+      {
+        "target": "ba998-Free",
+        "line": 703
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 761
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "line": 762
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 802
+      },
+      {
+        "target": "bb200-Insert",
+        "line": 808
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 863
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 944
+      },
+      {
+        "target": "bb000-HV-Load",
+        "line": 967
+      },
+      {
+        "target": "bb300-Update",
+        "line": 986
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "line": 1038
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1286
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "line": 1479
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 205
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>              DELETE\n*>              FROM GLPOSTING-REC\n*>...",
+        "line": 887
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

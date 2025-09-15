@@ -1,0 +1,205 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl",
+  "fileName": "pl090.cbl",
+  "fileHash": "174d61d77362a4b8fdb1f9957a06bee80b8f1c779b7c38b79c836b5bb763349a",
+  "timestamp": "2025-09-15T19:46:22.420Z",
+  "parseTime": 43,
+  "lines": {
+    "total": 282,
+    "code": 130,
+    "comment": 151,
+    "blank": 1
+  },
+  "programId": "pl090",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:91: error: envdiv.cob: No such file or directory\n   89 | *>===============================\n   90 | *>\n   91 >  copy \"envdiv.cob\".\n   92 |  input-output            section.\n   93 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:99: error: plselois.cob: No such file or directory\n   97 | *>\n   98 | *> copy \"seloi5.cob\".\n   99 >  copy \"plselois.cob\".\n  100 |      select       sort-file   assign  file-21.\n  101 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:110: error: plfdois.cob: No such file or directory\n  108 | *> copy \"fdoi5.cob\".\n  109 | *>\n  110 >  copy \"plfdois.cob\".\n  111 | *>\n  112 |  sd  sort-file.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:131: error: wsfnctn.cob: No such file or directory\n  129 |  77  ws-reply             pic x.\n  130 | *>\n  131 >  copy \"wsfnctn.cob\".\n  132 |  copy \"plwsoi5C.cob\".\n  133 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:132: error: plwsoi5C.cob: No such file or directory\n  130 | *>\n  131 |  copy \"wsfnctn.cob\".\n  132 >  copy \"plwsoi5C.cob\".\n  133 | *>\n  134 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:177: error: Test-Data-Flags.cob: No such file or directory\n  175 |      03  PL143B          pic x(11) value \"& Sorted - \".\n  176 | *>\n  177 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  178 | *>\n  179 | *> 01  error-code          pic 999.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:184: error: wscall.cob: No such file or directory\n  182 | *>**************\n  183 | *>\n  184 >  copy \"wscall.cob\".\n  185 |  copy \"wssystem.cob\".\n  186 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:185: error: wssystem.cob: No such file or directory\n  183 | *>\n  184 |  copy \"wscall.cob\".\n  185 >  copy \"wssystem.cob\".\n  186 |  copy \"wsnames.cob\".\n  187 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:186: error: wsnames.cob: No such file or directory\n  184 |  copy \"wscall.cob\".\n  185 |  copy \"wssystem.cob\".\n  186 >  copy \"wsnames.cob\".\n  187 | *>\n  188 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:280: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  278 |  main-exit.   exit section.\n  279 | *>\n  280 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  281 | *>\n  282 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:190: error: 'ws-calling-data' is not defined\n  188 |  01  to-day              pic x(10).\n  189 | *>\n  190 >  procedure division using ws-calling-data\n  191 |                           system-record\n  192 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:191: error: 'system-record' is not defined\n  189 | *>\n  190 |  procedure division using ws-calling-data\n  191 >                           system-record\n  192 |                           to-day\n  193 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:193: error: 'file-defs' is not defined\n  191 |                           system-record\n  192 |                           to-day\n  193 >                           file-defs.\n  194 | *>=======================================\n  195 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:200: error: 'FS-Cobol-Files-Used' is not defined\n  198 | *>  First check if not using Cobol files - then sort not needed.\n  199 | *>\n  200 >      if       not FS-Cobol-Files-Used    *> Will use fn-Read-Next-Sorted-..\n  201 |               goback returning 4\n  202 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:207: error: 'Open-Item-Record-5' is not defined\n  205 | *>\n  206 |      display  prog-name at 0101 with erase eos.\n  207 >      move     function length (Open-Item-Record-5) to ws-ITM5-Length.\n  208 |      move     function length (Sort-Record)        to ws-ITMS-Length.\n  209 |      if       ws-ITM5-Length NOT = ws-ITMS-Length\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:221: error: 'P-Flag-P' is not defined\n  219 | *> Good, we can continue\n  220 | *>\n  221 >      if       P-Flag-P = 0    *> do we have data ?\n  222 |               display PL142  at 0501\n  223 |               display PL003  at 2401\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:227: error: 'OI-5-Flag' is not defined\n  225 |               go to menu-exit.\n  226 | *>\n  227 >      move     \"Y\" to OI-5-Flag.\n  228 |      perform  sorting-1.\n  229 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl: in section 'sorting-1':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:243: error: 'open-item-file-s' is not defined\n  241 |                                 s-invoice\n  242 |               input procedure input-to-sort\n  243 >               giving open-item-file-s.\n  244 | *>\n  245 |  main-exit.   exit section.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:243: error: 'open-item-file-s' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl: in section 'input-to-sort':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:252: error: 'fs-reply' is not defined\n  250 | *>\n  251 |      perform  OTM5-Open-Input. *> open input  open-item-file-5.\n  252 >      if       fs-reply not = zero\n  253 |               perform  OTM5-Close  *>  close open-item-file-5\n  254 |               open output open-item-file-s  *> create empty file\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:254: error: 'open-item-file-s' is not a file name\n  252 |      if       fs-reply not = zero\n  253 |               perform  OTM5-Close  *>  close open-item-file-5\n  254 >               open output open-item-file-s  *> create empty file\n  255 |               close open-item-file-s\n  256 |               go to main-exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:255: error: 'open-item-file-s' is not a file name\n  253 |               perform  OTM5-Close  *>  close open-item-file-5\n  254 |               open output open-item-file-s  *> create empty file\n  255 >               close open-item-file-s\n  256 |               go to main-exit.\n  257 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl: in paragraph 'process-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:265: error: 'oi-type' is not defined\n  263 |               go to  end-of-input.\n  264 | *>\n  265 >      if       oi-type = 1 or 3\n  266 |               go to process-input.\n  267 |      if       zero = oi-b-nos and oi-b-item\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:267: error: 'oi-b-nos' is not defined\n  265 |      if       oi-type = 1 or 3\n  266 |               go to process-input.\n  267 >      if       zero = oi-b-nos and oi-b-item\n  268 |               go to process-input.\n  269 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:267: error: 'oi-b-item' is not defined\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:251: error: 'OTM5-Open-Input' is not defined\n  249 | *>=====================\n  250 | *>\n  251 >      perform  OTM5-Open-Input. *> open input  open-item-file-5.\n  252 |      if       fs-reply not = zero\n  253 |               perform  OTM5-Close  *>  close open-item-file-5\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:253: error: 'OTM5-Close' is not defined\n  251 |      perform  OTM5-Open-Input. *> open input  open-item-file-5.\n  252 |      if       fs-reply not = zero\n  253 >               perform  OTM5-Close  *>  close open-item-file-5\n  254 |               open output open-item-file-s  *> create empty file\n  255 |               close open-item-file-s\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl: in paragraph 'process-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:261: error: 'OTM5-Read-Next' is not defined\n  259 | *>************\n  260 | *>\n  261 >      perform  OTM5-Read-Next.  *> read open-item-file-5 next record at en..\n  262 |      if       fs-reply = 10\n  263 |               go to  end-of-input.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:91: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:99: error: plselois.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:110: error: plfdois.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:131: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:132: error: plwsoi5C.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:177: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:184: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:185: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:186: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:280: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:190: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:191: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:193: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:200: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:207: error: 'Open-Item-Record-5' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:221: error: 'P-Flag-P' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:227: error: 'OI-5-Flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:243: error: 'open-item-file-s' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:243: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:252: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:254: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:255: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:265: error: 'oi-type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:267: error: 'oi-b-nos' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:267: error: 'oi-b-item' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:251: error: 'OTM5-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:253: error: 'OTM5-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:261: error: 'OTM5-Read-Next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:91: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:99: error: plselois.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:110: error: plfdois.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:131: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:132: error: plwsoi5C.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:177: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:184: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:185: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:186: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:280: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:190: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:191: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:193: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:200: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:207: error: 'Open-Item-Record-5' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:221: error: 'P-Flag-P' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:227: error: 'OI-5-Flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:243: error: 'open-item-file-s' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:243: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:252: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:254: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:255: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:265: error: 'oi-type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:267: error: 'oi-b-nos' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:267: error: 'oi-b-item' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:251: error: 'OTM5-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:253: error: 'OTM5-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl:261: error: 'OTM5-Read-Next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 14,
+    "cognitive": 37,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 65,
+      "totalOperators": 39,
+      "totalOperands": 110,
+      "vocabulary": 73,
+      "length": 149,
+      "volume": 922,
+      "difficulty": 6.77,
+      "effort": 6243,
+      "timeToProgram": 347,
+      "deliveredBugs": 0.307
+    },
+    "maintainability": 77
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 82
+      },
+      {
+        "name": "envdiv",
+        "line": 91
+      },
+      {
+        "name": "seloi5",
+        "line": 98
+      },
+      {
+        "name": "plselois",
+        "line": 99
+      },
+      {
+        "name": "fdoi5",
+        "line": 108
+      },
+      {
+        "name": "plfdois",
+        "line": 110
+      },
+      {
+        "name": "wsfnctn",
+        "line": 131
+      },
+      {
+        "name": "plwsoi5C",
+        "line": 132
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 177
+      },
+      {
+        "name": "wscall",
+        "line": 184
+      },
+      {
+        "name": "wssystem",
+        "line": 185
+      },
+      {
+        "name": "wsnames",
+        "line": 186
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 280
+      }
+    ],
+    "performs": [
+      {
+        "target": "sorting-1",
+        "line": 228
+      },
+      {
+        "target": "OTM5-Open-Input",
+        "line": 251
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 253
+      },
+      {
+        "target": "OTM5-Read-Next",
+        "line": 261
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 276
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 124
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

@@ -1,0 +1,158 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl",
+  "fileName": "acasconvert3.cbl",
+  "fileHash": "eae61c07cbd77d68e5853dc483129dc838c6e0d9454e2085217bf0c890175e6c",
+  "timestamp": "2025-09-15T19:46:00.982Z",
+  "parseTime": 34,
+  "lines": {
+    "total": 275,
+    "code": 155,
+    "comment": 117,
+    "blank": 3
+  },
+  "programId": "acasconvert3",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:76: error: slselinv.cob: No such file or directory\n   74 |  input-output section.\n   75 |  file-control.\n   76 >  copy \"slselinv.cob\".    *> New\n   77 |  copy \"slselinv.cob\"  replacing Invoice-File by Old-Invoice-File\n   78 |                                 File-16      by Old-File-16\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:79: error: slselinv.cob: No such file or directory\n   77 |  copy \"slselinv.cob\"  replacing Invoice-File by Old-Invoice-File\n   78 |                                 File-16      by Old-File-16\n   79 >                                 Invoice-Key  by Old-Invoice-Key.\n   80 | *>\n   81 |  data division.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:83: error: slfdinv2.cob: No such file or directory\n   81 |  data division.\n   82 |  file section.\n   83 >  copy \"slfdinv2.cob\".          *> Updated - New O/P- MMORE\n   84 | *>\n   85 | *>  Now for the OLD\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:117: error: wsnames.cob: No such file or directory\n  115 |      03  SY104    pic x(26) value \"SY104 Fix and Press Enter\".\n  116 | *>\n  117 >  copy \"wsnames.cob\".\n  118 | *>\n  119 | *>    THIS IS THE OLD RECORD LAYOUT in Working Storage.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:87: error: 'Old-Invoice-File' is not defined\n   85 | *>  Now for the OLD\n   86 | *>\n   87 >  fd  Old-Invoice-File.\n   88 | *>\n   89 |  01  Old-Invoice-Record.                  *> 137\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:87: error: 'Old-Invoice-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl: in paragraph 'AA000-Start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:217: error: 'File-16' is not defined\n  215 | *>\n  216 |      call \"CBL_DELETE_FILE\" using Old-File-16.  *> invoice.dat.OLD\n  217 >      call \"CBL_RENAME_FILE\" using File-16  Old-File-16.\n  218 |      if       return-code not = zero\n  219 |               display \"Error on Renaming Invoice File \"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:223: error: 'Old-Invoice-File' is not a file name\n  221 |               stop run.\n  222 | *>\n  223 >      open     input Old-Invoice-file.\n  224 |      if       fs-reply not = zero      *> JIC but should not happen as pr..\n  225 |               display \"Error on opening Old Invoice File \" fs-reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:227: error: 'Old-Invoice-File' is not a file name\n  225 |               display \"Error on opening Old Invoice File \" fs-reply\n  226 |               stop \"ST901 Note error and hit return\"\n  227 >               close Old-Invoice-File\n  228 |               stop run.\n  229 |      open     output Invoice-File.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:229: error: 'Invoice-File' is not defined\n  227 |               close Old-Invoice-File\n  228 |               stop run.\n  229 >      open     output Invoice-File.\n  230 | *>\n  231 | *> now clear of any possible problems with the file - hopefully!\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:229: error: 'Invoice-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl: in paragraph 'AA010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:236: error: 'Old-Invoice-File' is not a file name\n  234 | *>\n  235 |  AA010-Read.\n  236 >      read     Old-Invoice-file next record.\n  237 |      if       fs-reply = 10\n  238 |               go to AA020-End.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:243: error: 'Invoice-File' is not a file name\n  241 |               display \"Error on Reading (Old) Invoice File \" fs-reply\n  242 |               stop \"ST901 Note error and hit return for abort run\"\n  243 >               close Invoice-File\n  244 |                     Old-Invoice-File\n  245 |               stop run.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:244: error: 'Old-Invoice-File' is not a file name\n  242 |               stop \"ST901 Note error and hit return for abort run\"\n  243 |               close Invoice-File\n  244 >                     Old-Invoice-File\n  245 |               stop run.\n  246 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:249: error: 'Invoice-Line' is not defined\n  247 |      if       Old-Item-Nos not = zero                *> Inv lines read\n  248 |               move Old-Invoice-Record to SInvoice-Bodies\n  249 >               initialise Invoice-Line with filler\n  250 |               move corresponding SInvoice-Bodies to Invoice-Line\n  251 |               move sil-line to il-Line\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:251: error: 'il-Line' is not defined\n  249 |               initialise Invoice-Line with filler\n  250 |               move corresponding SInvoice-Bodies to Invoice-Line\n  251 >               move sil-line to il-Line\n  252 |               write  Invoice-Line\n  253 |      else\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:255: error: 'Invoice-Header' is not defined\n  253 |      else\n  254 |               move Old-Invoice-Record to SInvoice-Header\n  255 >               initialize Invoice-Header\n  256 |               move corresponding SInvoice-Header to Invoice-Header\n  257 |               move sih-Test  to ih-Test\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:257: error: 'ih-Test' is not defined\n  255 |               initialize Invoice-Header\n  256 |               move corresponding SInvoice-Header to Invoice-Header\n  257 >               move sih-Test  to ih-Test\n  258 |               write  Invoice-Header\n  259 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:263: error: 'Invoice-File' is not a file name\n  261 |               display \"Error on writing to (New) Invoice File \" fs-reply\n  262 |               stop \"ST901 Note error and hit return for abort run\"\n  263 >               close Invoice-File\n  264 |                     Old-Invoice-File\n  265 |               stop run\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:264: error: 'Old-Invoice-File' is not a file name\n  262 |               stop \"ST901 Note error and hit return for abort run\"\n  263 |               close Invoice-File\n  264 >                     Old-Invoice-File\n  265 |               stop run\n  266 |      end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl: in paragraph 'AA020-End':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:270: error: 'Old-Invoice-File' is not a file name\n  268 | *>\n  269 |  AA020-End.\n  270 >      close    Old-Invoice-File\n  271 |               Invoice-file.\n  272 |      display \"Invoice (Cobol flat) File Conversion to v3.02 completed \"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:271: error: 'Invoice-File' is not a file name\n  269 |  AA020-End.\n  270 |      close    Old-Invoice-File\n  271 >               Invoice-file.\n  272 |      display \"Invoice (Cobol flat) File Conversion to v3.02 completed \"\n  273 |      stop     run.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:76: error: slselinv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:79: error: slselinv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:83: error: slfdinv2.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:117: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:87: error: 'Old-Invoice-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:87: error: 'Old-Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:217: error: 'File-16' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:223: error: 'Old-Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:227: error: 'Old-Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:229: error: 'Invoice-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:229: error: 'Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:236: error: 'Old-Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:243: error: 'Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:244: error: 'Old-Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:249: error: 'Invoice-Line' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:251: error: 'il-Line' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:255: error: 'Invoice-Header' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:257: error: 'ih-Test' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:263: error: 'Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:264: error: 'Old-Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:270: error: 'Old-Invoice-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:271: error: 'Invoice-File' is not a file name"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:76: error: slselinv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:79: error: slselinv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:83: error: slfdinv2.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:117: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:87: error: 'Old-Invoice-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:87: error: 'Old-Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:217: error: 'File-16' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:223: error: 'Old-Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:227: error: 'Old-Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:229: error: 'Invoice-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:229: error: 'Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:236: error: 'Old-Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:243: error: 'Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:244: error: 'Old-Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:249: error: 'Invoice-Line' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:251: error: 'il-Line' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:255: error: 'Invoice-Header' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:257: error: 'ih-Test' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:263: error: 'Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:264: error: 'Old-Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:270: error: 'Old-Invoice-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert3.cbl:271: error: 'Invoice-File' is not a file name"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 11,
+    "cognitive": 16,
+    "halstead": {
+      "uniqueOperators": 8,
+      "uniqueOperands": 83,
+      "totalOperators": 40,
+      "totalOperands": 140,
+      "vocabulary": 91,
+      "length": 180,
+      "volume": 1171,
+      "difficulty": 6.75,
+      "effort": 7903,
+      "timeToProgram": 439,
+      "deliveredBugs": 0.39
+    },
+    "maintainability": 77
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_DELETE_FILE",
+        "line": 216
+      },
+      {
+        "target": "CBL_RENAME_FILE",
+        "line": 217
+      }
+    ],
+    "copies": [
+      {
+        "name": "&",
+        "line": 32
+      },
+      {
+        "name": "of",
+        "line": 65
+      },
+      {
+        "name": "slselinv",
+        "line": 76
+      },
+      {
+        "name": "slselinv",
+        "line": 77
+      },
+      {
+        "name": "slfdinv2",
+        "line": 83
+      },
+      {
+        "name": "wsnames",
+        "line": 117
+      }
+    ],
+    "performs": []
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "Old-Invoice-File",
+        "line": 87
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 102
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

@@ -1,0 +1,439 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl",
+  "fileName": "slpostingLD.cbl",
+  "fileHash": "246d321c39e1f1e259e51a6b485644a5a3fd9d608df4bd5c038b44e0e8b695a8",
+  "timestamp": "2025-09-15T19:46:08.322Z",
+  "parseTime": 61,
+  "lines": {
+    "total": 485,
+    "code": 301,
+    "comment": 183,
+    "blank": 1
+  },
+  "programId": "slpostingLD",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:107: error: envdiv.cob: No such file or directory\n  105 | *>-------------------\n  106 | *>\n  107 >  copy \"envdiv.cob\".\n  108 |  input-output            section.\n  109 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:114: error: selsys.cob: No such file or directory\n  112 | *>-----------\n  113 | *>\n  114 >  copy \"selsys.cob\".\n  115 |  data division.\n  116 | *>------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:121: error: fdsys.cob: No such file or directory\n  119 | *>-----------\n  120 | *>\n  121 >  copy \"fdsys.cob\".\n  122 |  working-storage section.\n  123 | *>----------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:156: error: Test-Data-Flags.cob: No such file or directory\n  154 |      03  WS-Socket       pic x(64).\n  155 | *>\n  156 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  157 | *>\n  158 | *>  Record definition for Cobol file here:\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:160: error: wspost-irs.cob: No such file or directory\n  158 | *>  Record definition for Cobol file here:\n  159 | *>\n  160 >  copy \"wspost-irs.cob\".\n  161 | *>\n  162 |  copy \"wsfnctn.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:162: error: wsfnctn.cob: No such file or directory\n  160 |  copy \"wspost-irs.cob\".\n  161 | *>\n  162 >  copy \"wsfnctn.cob\".\n  163 |  copy \"wsnames.cob\".\n  164 |  copy \"wscall.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:163: error: wsnames.cob: No such file or directory\n  161 | *>\n  162 |  copy \"wsfnctn.cob\".\n  163 >  copy \"wsnames.cob\".\n  164 |  copy \"wscall.cob\".\n  165 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:164: error: wscall.cob: No such file or directory\n  162 |  copy \"wsfnctn.cob\".\n  163 |  copy \"wsnames.cob\".\n  164 >  copy \"wscall.cob\".\n  165 | *>\n  166 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:480: error: Proc-Get-Env-Set-Files.cob: No such file or directory\n  478 |      goback.\n  479 | *>\n  480 >  copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n  481 | *>\n  482 |  Call-Sysout.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:193: error: 'WS-Log-System' is not defined\n  191 |      move     Prog-Name to So-Print.\n  192 |      perform  Call-Sysout.\n  193 >      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  194 |      move     15     to WS-Log-File-No.  *> Cobol/RDB, File/Table within..\n  195 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:194: error: 'WS-Log-File-No' is not defined\n  192 |      perform  Call-Sysout.\n  193 |      move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=..\n  194 >      move     15     to WS-Log-File-No.  *> Cobol/RDB, File/Table within..\n  195 | *>\n  196 | *>  Get the system param for the various RDB fields\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:198: error: 'System-File' is not defined\n  196 | *>  Get the system param for the various RDB fields\n  197 | *>\n  198 >      open     input System-File.\n  199 |      if       fs-reply not = zero\n  200 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:198: error: 'System-File' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:199: error: 'fs-reply' is not defined\n  197 | *>\n  198 |      open     input System-File.\n  199 >      if       fs-reply not = zero\n  200 |               display Prog-Name at 0101 with erase eos\n  201 |               display SY001    at 0401\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:204: error: 'System-File' is not a file name\n  202 |               display fs-reply at 0428\n  203 |               display SY004    at 0501\n  204 >               close System-File\n  205 |               move 128 to return-code\n  206 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:207: error: 'rrn' is not defined\n  205 |               move 128 to return-code\n  206 |               goback.\n  207 >      move     1 to rrn.     *> Read the system parameter record (1)\n  208 |      read     system-file record.\n  209 |      if       fs-reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:208: error: 'System-File' is not a file name\n  206 |               goback.\n  207 |      move     1 to rrn.     *> Read the system parameter record (1)\n  208 >      read     system-file record.\n  209 |      if       fs-reply not = zero\n  210 |               display Prog-Name at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:214: error: 'System-File' is not a file name\n  212 |               display fs-reply at 0428\n  213 |               display \"Not set up ?\" at 0431\n  214 >               close System-File\n  215 |               move 128 to return-code\n  216 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:220: error: 'RDBMS-DB-Name' is not defined\n  218 | *>  Load up the DB settings from the system record as its not passed on.\n  219 | *>\n  220 >      if       RDBMS-DB-Name = spaces\n  221 |          or   FS-Cobol-Files-Used\n  222 |               display Prog-Name    *>  at 0101 with erase eos\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:221: error: 'FS-Cobol-Files-Used' is not defined\n  219 | *>\n  220 |      if       RDBMS-DB-Name = spaces\n  221 >          or   FS-Cobol-Files-Used\n  222 |               display Prog-Name    *>  at 0101 with erase eos\n  223 |               display SY019\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:229: error: 'System-File' is not a file name\n  227 |               if       WS-RDB-Return = 8\n  228 |                        display \"acas.param file NOT found - Aborted\"\n  229 >                        close  System-File\n  230 |                        goback\n  231 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:234: error: 'System-File' is not a file name\n  232 |               if       WS-RDB-Return = 1\n  233 |                        display \"Invalid keyword terminator found - Aborte..\n  234 >                        close  System-File\n  235 |                        goback\n  236 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:239: error: 'System-File' is not a file name\n  237 |               if       WS-RDB-Return = 2\n  238 |                        display \"Invalid keyword found - Aborted\"\n  239 >                        close  System-File\n  240 |                        goback\n  241 |               end-if\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:244: error: 'RDBMS-Host' is not defined\n  242 |               if       WS-RDB-Return = zeros\n  243 |                        display \"acas-param file found and being used \"\n  244 >                        move     WS-Host-Name      to RDBMS-Host\n  245 |                        move     WS-Implementation to RDBMS-User\n  246 |                        move     WS-Password       to RDBMS-Passwd\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:245: error: 'RDBMS-User' is not defined\n  243 |                        display \"acas-param file found and being used \"\n  244 |                        move     WS-Host-Name      to RDBMS-Host\n  245 >                        move     WS-Implementation to RDBMS-User\n  246 |                        move     WS-Password       to RDBMS-Passwd\n  247 |                        move     WS-Base-Name      to RDBMS-DB-Name\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:246: error: 'RDBMS-Passwd' is not defined\n  244 |                        move     WS-Host-Name      to RDBMS-Host\n  245 |                        move     WS-Implementation to RDBMS-User\n  246 >                        move     WS-Password       to RDBMS-Passwd\n  247 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  248 |                        move     WS-Port-Number    to RDBMS-Port\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:248: error: 'RDBMS-Port' is not defined\n  246 |                        move     WS-Password       to RDBMS-Passwd\n  247 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  248 >                        move     WS-Port-Number    to RDBMS-Port\n  249 |                        move     WS-Socket         to RDBMS-Socket\n  250 |                       display \"User = \"   RDBMS-User\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:249: error: 'RDBMS-Socket' is not defined\n  247 |                        move     WS-Base-Name      to RDBMS-DB-Name\n  248 |                        move     WS-Port-Number    to RDBMS-Port\n  249 >                        move     WS-Socket         to RDBMS-Socket\n  250 |                       display \"User = \"   RDBMS-User\n  251 |                       display \"Host = \"   RDBMS-Host\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:270: error: 'System-File' is not a file name\n  268 |               display \"Socket = \" RDBMS-Socket\n  269 |               stop \"SY008 Note message & Hit return\"\n  270 >               close System-File\n  271 |               move 64 to Return-Code\n  272 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'aa010-Proc-Override':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:278: error: 'File-System-Used' is not defined\n  276 | *>  Over-ride processes for acas008/slpostingMT for Dup modes\n  277 | *>\n  278 >      move     zero to File-System-Used\n  279 |                       File-Duplicates-In-Use\n  280 |                       FA-File-System-Used\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:279: error: 'File-Duplicates-In-Use' is not defined\n  277 | *>\n  278 |      move     zero to File-System-Used\n  279 >                       File-Duplicates-In-Use\n  280 |                       FA-File-System-Used\n  281 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:280: error: 'FA-File-System-Used' is not defined\n  278 |      move     zero to File-System-Used\n  279 |                       File-Duplicates-In-Use\n  280 >                       FA-File-System-Used\n  281 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  282 |      move     zero to Log-file-rec-written.        *> for logging.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:281: error: 'FA-File-Duplicates-In-Use' is not defined\n  279 |                       File-Duplicates-In-Use\n  280 |                       FA-File-System-Used\n  281 >                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  282 |      move     zero to Log-file-rec-written.        *> for logging.\n  283 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:282: error: 'Log-file-rec-written' is not defined\n  280 |                       FA-File-System-Used\n  281 |                       FA-File-Duplicates-In-Use.   *>  Cobol file in use\n  282 >      move     zero to Log-file-rec-written.        *> for logging.\n  283 | *>\n  284 |      move     1 to File-Key-No.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:284: error: 'File-Key-No' is not defined\n  282 |      move     zero to Log-file-rec-written.        *> for logging.\n  283 | *>\n  284 >      move     1 to File-Key-No.\n  285 |      perform  acas008-Open-Input.      *> open input Cobol Posting FILE\n  286 |      if       FS-Reply = 35\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:294: error: 'System-File' is not a file name\n  292 |               move    \"CLOSE   \" to SO-Print\n  293 |               perform call-Sysout\n  294 >               close System-File\n  295 |               perform acas008-Close\n  296 |               goback.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:304: error: 'System-File' is not a file name\n  302 |               move  \"CLOSE   \" to SO-Print\n  303 |               perform call-Sysout\n  304 >               close System-File\n  305 |               perform acas008-Close\n  306 |               move 16 to return-code    *> data file problem\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'acas008':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:315: error: 'System-Record' is not defined\n  313 | *>\n  314 |  acas008.\n  315 >      call     \"acas008\" using System-Record\n  316 |                               WS-IRS-Posting-Record\n  317 |                               File-Access\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:316: error: 'WS-IRS-Posting-Record' is not defined\n  314 |  acas008.\n  315 |      call     \"acas008\" using System-Record\n  316 >                               WS-IRS-Posting-Record\n  317 |                               File-Access\n  318 |                               File-Defs\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:317: error: 'File-Access' is not defined\n  315 |      call     \"acas008\" using System-Record\n  316 |                               WS-IRS-Posting-Record\n  317 >                               File-Access\n  318 |                               File-Defs\n  319 |                               ACAS-DAL-Common-data.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:318: error: 'File-Defs' is not defined\n  316 |                               WS-IRS-Posting-Record\n  317 |                               File-Access\n  318 >                               File-Defs\n  319 |                               ACAS-DAL-Common-data.\n  320 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:319: error: 'ACAS-DAL-Common-data' is not defined\n  317 |                               File-Access\n  318 |                               File-Defs\n  319 >                               ACAS-DAL-Common-data.\n  320 | *>\n  321 |  acas008-Open.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'acas008-Open':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:322: error: 'fn-open' is not defined\n  320 | *>\n  321 |  acas008-Open.\n  322 >      set      fn-open to true.\n  323 |      set      fn-i-o  to true.\n  324 |      perform  acas008.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:323: error: 'fn-i-o' is not defined\n  321 |  acas008-Open.\n  322 |      set      fn-open to true.\n  323 >      set      fn-i-o  to true.\n  324 |      perform  acas008.\n  325 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'acas008-Open-Input':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:329: error: 'fn-input' is not defined\n  327 |  acas008-Open-Input.\n  328 |      set      fn-open  to true.\n  329 >      set      fn-input to true.\n  330 |      perform  acas008.\n  331 |      perform  aa100-Check-4-Errors.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'acas008-Close':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:334: error: 'fn-Close' is not defined\n  332 | *>\n  333 |  acas008-Close.\n  334 >      set      fn-Close to true.\n  335 |      perform  acas008.\n  336 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'acas008-Read-Next':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:338: error: 'fn-Read-Next' is not defined\n  336 | *>\n  337 |  acas008-Read-Next.\n  338 >      set      fn-Read-Next to true.\n  339 |      perform  acas008.\n  340 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'acas008-Write':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:342: error: 'fn-Write' is not defined\n  340 | *>\n  341 |  acas008-Write.\n  342 >      set      fn-Write to true.\n  343 |      perform  acas008.\n  344 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'acas008-Rewrite':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:346: error: 'fn-re-write' is not defined\n  344 | *>\n  345 |  acas008-Rewrite.\n  346 >      set      fn-re-write to true.\n  347 |      perform  acas008.\n  348 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'aa010-Read':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:372: error: 'Sql-State' is not defined\n  370 |                    FA-File-System-Used.\n  371 |      perform  acas008-Write.\n  372 >      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  373 |          or   fs-reply = 22  or = 99                    *> Check for dup..\n  374 |          or   SQL-Err (1:4) = \"1062\"\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:374: error: 'SQL-Err' is not defined\n  372 |      if       Sql-State = \"23000\"  *> Dup key (rec already present)\n  373 |          or   fs-reply = 22  or = 99                    *> Check for dup..\n  374 >          or   SQL-Err (1:4) = \"1062\"\n  375 |                          or = \"1022\"\n  376 |               move    zeros to FS-Reply\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:377: error: 'WE-Error' is not defined\n  375 |                          or = \"1022\"\n  376 |               move    zeros to FS-Reply\n  377 >                                WE-Error\n  378 |               perform acas008-Rewrite\n  379 |               if      FS-Reply not = zero\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:382: error: 'WS-File-Key' is not defined\n  380 |                       move spaces to SO-Print\n  381 |                       string  SL010\n  382 >                                WS-File-Key into SO-Print\n  383 |                       perform call-Sysout\n  384 |                       move    SL099 to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:402: error: 'SQL-Msg' is not defined\n  400 |               string SL018 SQL-Err into SO-Print\n  401 |               perform Call-Sysout\n  402 >               move SQL-Msg to SO-Print\n  403 |               perform Call-Sysout\n  404 |               move SQL-State to SO-Print\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'aa999-Finish':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:467: error: 'Access-Type' is not defined\n  465 |      move     1 to File-System-Used\n  466 |                    FA-File-System-Used.\n  467 >      move     zero to Access-Type.\n  468 |      move     2 to File-Function.\n  469 |      perform  acas008-Close.                     *> Close RDB\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:468: error: 'File-Function' is not defined\n  466 |                    FA-File-System-Used.\n  467 |      move     zero to Access-Type.\n  468 >      move     2 to File-Function.\n  469 |      perform  acas008-Close.                     *> Close RDB\n  470 |      close    System-File.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:470: error: 'System-File' is not a file name\n  468 |      move     2 to File-Function.\n  469 |      perform  acas008-Close.                     *> Close RDB\n  470 >      close    System-File.\n  471 |      move     zero to File-System-Used\n  472 |                    FA-File-System-Used.\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl: in paragraph 'aa000-main-start':\n/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:190: error: 'zz020-Get-Program-Args' is not defined\n  188 | *>\n  189 |  aa000-main-start.\n  190 >      perform  zz020-Get-Program-Args.\n  191 |      move     Prog-Name to So-Print.\n  192 |      perform  Call-Sysout.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:107: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:114: error: selsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:121: error: fdsys.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:156: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:160: error: wspost-irs.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:162: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:163: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:164: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:480: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:193: error: 'WS-Log-System' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:194: error: 'WS-Log-File-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:198: error: 'System-File' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:198: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:199: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:204: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:207: error: 'rrn' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:208: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:214: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:220: error: 'RDBMS-DB-Name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:221: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:229: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:234: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:239: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:244: error: 'RDBMS-Host' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:245: error: 'RDBMS-User' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:246: error: 'RDBMS-Passwd' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:248: error: 'RDBMS-Port' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:249: error: 'RDBMS-Socket' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:270: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:278: error: 'File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:279: error: 'File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:280: error: 'FA-File-System-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:281: error: 'FA-File-Duplicates-In-Use' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:282: error: 'Log-file-rec-written' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:284: error: 'File-Key-No' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:294: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:304: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:315: error: 'System-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:316: error: 'WS-IRS-Posting-Record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:317: error: 'File-Access' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:318: error: 'File-Defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:319: error: 'ACAS-DAL-Common-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:322: error: 'fn-open' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:323: error: 'fn-i-o' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:329: error: 'fn-input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:334: error: 'fn-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:338: error: 'fn-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:342: error: 'fn-Write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:346: error: 'fn-re-write' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:372: error: 'Sql-State' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:374: error: 'SQL-Err' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:377: error: 'WE-Error' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:382: error: 'WS-File-Key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:402: error: 'SQL-Msg' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:467: error: 'Access-Type' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:468: error: 'File-Function' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:470: error: 'System-File' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:190: error: 'zz020-Get-Program-Args' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:107: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:114: error: selsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:121: error: fdsys.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:156: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:160: error: wspost-irs.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:162: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:163: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:164: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:480: error: Proc-Get-Env-Set-Files.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:193: error: 'WS-Log-System' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:194: error: 'WS-Log-File-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:198: error: 'System-File' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:198: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:199: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:204: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:207: error: 'rrn' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:208: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:214: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:220: error: 'RDBMS-DB-Name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:221: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:229: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:234: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:239: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:244: error: 'RDBMS-Host' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:245: error: 'RDBMS-User' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:246: error: 'RDBMS-Passwd' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:248: error: 'RDBMS-Port' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:249: error: 'RDBMS-Socket' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:270: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:278: error: 'File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:279: error: 'File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:280: error: 'FA-File-System-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:281: error: 'FA-File-Duplicates-In-Use' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:282: error: 'Log-file-rec-written' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:284: error: 'File-Key-No' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:294: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:304: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:315: error: 'System-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:316: error: 'WS-IRS-Posting-Record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:317: error: 'File-Access' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:318: error: 'File-Defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:319: error: 'ACAS-DAL-Common-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:322: error: 'fn-open' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:323: error: 'fn-i-o' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:329: error: 'fn-input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:334: error: 'fn-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:338: error: 'fn-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:342: error: 'fn-Write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:346: error: 'fn-re-write' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:372: error: 'Sql-State' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:374: error: 'SQL-Err' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:377: error: 'WE-Error' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:382: error: 'WS-File-Key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:402: error: 'SQL-Msg' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:467: error: 'Access-Type' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:468: error: 'File-Function' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:470: error: 'System-File' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/common/slpostingLD.cbl:190: error: 'zz020-Get-Program-Args' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 31,
+    "cognitive": 57,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 83,
+      "totalOperators": 188,
+      "totalOperands": 257,
+      "vocabulary": 92,
+      "length": 445,
+      "volume": 2903,
+      "difficulty": 13.93,
+      "effort": 40449,
+      "timeToProgram": 2247,
+      "deliveredBugs": 0.968
+    },
+    "maintainability": 72
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas-get-params",
+        "line": 225
+      },
+      {
+        "target": "acas008",
+        "line": 315
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 419
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 429
+      },
+      {
+        "target": "ACAS-Sysout",
+        "line": 483
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 97
+      },
+      {
+        "name": "envdiv",
+        "line": 107
+      },
+      {
+        "name": "selsys",
+        "line": 114
+      },
+      {
+        "name": "fdsys",
+        "line": 121
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 156
+      },
+      {
+        "name": "wspost-irs",
+        "line": 160
+      },
+      {
+        "name": "wsfnctn",
+        "line": 162
+      },
+      {
+        "name": "wsnames",
+        "line": 163
+      },
+      {
+        "name": "wscall",
+        "line": 164
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 480
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "line": 190
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 192
+      },
+      {
+        "target": "acas008-Open-Input",
+        "line": 285
+      },
+      {
+        "target": "call-Sysout",
+        "line": 291
+      },
+      {
+        "target": "call-Sysout",
+        "line": 293
+      },
+      {
+        "target": "acas008-Close",
+        "line": 295
+      },
+      {
+        "target": "call-Sysout",
+        "line": 301
+      },
+      {
+        "target": "call-Sysout",
+        "line": 303
+      },
+      {
+        "target": "acas008-Close",
+        "line": 305
+      },
+      {
+        "target": "acas008-Open",
+        "line": 311
+      },
+      {
+        "target": "acas008",
+        "line": 324
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 325
+      },
+      {
+        "target": "acas008",
+        "line": 330
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "line": 331
+      },
+      {
+        "target": "acas008",
+        "line": 335
+      },
+      {
+        "target": "acas008",
+        "line": 339
+      },
+      {
+        "target": "acas008",
+        "line": 343
+      },
+      {
+        "target": "acas008",
+        "line": 347
+      },
+      {
+        "target": "acas008-Read-Next",
+        "line": 355
+      },
+      {
+        "target": "call-Sysout",
+        "line": 363
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 364
+      },
+      {
+        "target": "acas008-Write",
+        "line": 371
+      },
+      {
+        "target": "acas008-Rewrite",
+        "line": 378
+      },
+      {
+        "target": "call-Sysout",
+        "line": 383
+      },
+      {
+        "target": "call-Sysout",
+        "line": 385
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 395
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 398
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 401
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 403
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 405
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 406
+      },
+      {
+        "target": "call-Sysout",
+        "line": 438
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 441
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 444
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 446
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 448
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 450
+      },
+      {
+        "target": "aa020-Rollback",
+        "line": 451
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 460
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 463
+      },
+      {
+        "target": "acas008-Close",
+        "line": 469
+      },
+      {
+        "target": "acas008-close",
+        "line": 473
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 475
+      },
+      {
+        "target": "Call-Sysout",
+        "line": 477
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 122
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": true,
+    "statements": [
+      {
+        "content": "*>                rollback\n*>...",
+        "line": 416
+      },
+      {
+        "content": "*>                commit\n*>...",
+        "line": 426
+      }
+    ]
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

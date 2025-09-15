@@ -1,0 +1,174 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl",
+  "fileName": "sl165.cbl",
+  "fileHash": "0fd910cd5ade10f8849eb21e348c73a4c74ebbf669e3c9d96360e16391a7860c",
+  "timestamp": "2025-09-15T19:46:26.941Z",
+  "parseTime": 40,
+  "lines": {
+    "total": 219,
+    "code": 94,
+    "comment": 123,
+    "blank": 2
+  },
+  "programId": "sl165",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:83: error: envdiv.cob: No such file or directory\n   81 | *>===============================\n   82 | *>\n   83 >  copy \"envdiv.cob\".\n   84 |  input-output            section.\n   85 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:121: error: wsfnctn.cob: No such file or directory\n  119 |  77  prog-name           pic x(15) value \"SL165 (3.02.03)\".\n  120 | *>\n  121 >  copy \"wsfnctn.cob\".\n  122 |  copy \"wssl.cob\".\n  123 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:122: error: wssl.cob: No such file or directory\n  120 | *>\n  121 |  copy \"wsfnctn.cob\".\n  122 >  copy \"wssl.cob\".\n  123 | *>\n  124 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:154: error: Test-Data-Flags.cob: No such file or directory\n  152 |      03  ws-reply        pic x.\n  153 | *>\n  154 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  155 | *>\n  156 |  linkage section.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:159: error: wscall.cob: No such file or directory\n  157 | *>**************\n  158 | *>\n  159 >  copy \"wscall.cob\".\n  160 |  copy \"wssystem.cob\".\n  161 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:160: error: wssystem.cob: No such file or directory\n  158 | *>\n  159 |  copy \"wscall.cob\".\n  160 >  copy \"wssystem.cob\".\n  161 |  copy \"wsnames.cob\".\n  162 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:161: error: wsnames.cob: No such file or directory\n  159 |  copy \"wscall.cob\".\n  160 |  copy \"wssystem.cob\".\n  161 >  copy \"wsnames.cob\".\n  162 | *>\n  163 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:217: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  215 |      exit     section.\n  216 | *>\n  217 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  218 | *>\n  219 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:95: error: 'fs-reply' is not defined\n   93 |      select  sales-sort      assign        fn-sales,\n   94 |                              access        sequential,\n   95 >                              status        fs-reply.\n   96 | *>\n   97 | *> copy \"selsl.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:165: error: 'ws-calling-data' is not defined\n  163 |  01  to-day              pic x(10).\n  164 | *>\n  165 >  procedure division using ws-calling-data\n  166 |                           system-record\n  167 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:166: error: 'system-record' is not defined\n  164 | *>\n  165 |  procedure division using ws-calling-data\n  166 >                           system-record\n  167 |                           to-day\n  168 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:168: error: 'file-defs' is not defined\n  166 |                           system-record\n  167 |                           to-day\n  168 >                           file-defs.\n  169 | *>=======================================\n  170 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:173: error: 'FS-Cobol-Files-Used' is not defined\n  171 |  init01 section.\n  172 | *>\n  173 >      if       not FS-Cobol-Files-Used    *> Will use fn-Read-By-Name (31)\n  174 |               goback returning 4\n  175 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl: in section 'input-to-sort':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl: in paragraph 'Input-To-Sort-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:198: error: 'WS-sales-key' is not defined\n  196 |               go to  its-exit.\n  197 | *>\n  198 >      move     WS-sales-key   to  sort-key.\n  199 |      move     sales-name  to  sort-name.\n  200 |      release  sort-record.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:199: error: 'sales-name' is not defined\n  197 | *>\n  198 |      move     WS-sales-key   to  sort-key.\n  199 >      move     sales-name  to  sort-name.\n  200 |      release  sort-record.\n  201 |      go       to input-to-sort-Main.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:177: error: 'Sales-Open-Input' is not defined\n  175 |      end-if.\n  176 | *>\n  177 >      perform  Sales-Open-Input.             *> open     input  sales-file..\n  178 |      open     output sales-sort.\n  179 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:187: error: 'Sales-Close' is not defined\n  185 | *>\n  186 |      close    sales-sort.\n  187 >      perform  Sales-Close.                  *> sales-file\n  188 | *>\n  189 |  end-program.\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl: in section 'input-to-sort':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl: in paragraph 'Input-To-Sort-Main':\n/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:194: error: 'Sales-Read-Next' is not defined\n  192 |  input-to-sort section.\n  193 |  Input-To-Sort-Main.\n  194 >      perform  Sales-Read-Next.        *> read sales-file  next record at..\n  195 |      if       fs-reply = 10\n  196 |               go to  its-exit.\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:83: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:121: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:122: error: wssl.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:154: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:159: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:160: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:161: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:217: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:95: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:165: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:166: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:168: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:173: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:198: error: 'WS-sales-key' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:199: error: 'sales-name' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:177: error: 'Sales-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:187: error: 'Sales-Close' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:194: error: 'Sales-Read-Next' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:83: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:121: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:122: error: wssl.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:154: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:159: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:160: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:161: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:217: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:95: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:165: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:166: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:168: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:173: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:198: error: 'WS-sales-key' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:199: error: 'sales-name' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:177: error: 'Sales-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:187: error: 'Sales-Close' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl:194: error: 'Sales-Read-Next' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 7,
+    "cognitive": 22,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 48,
+      "totalOperators": 25,
+      "totalOperands": 73,
+      "vocabulary": 57,
+      "length": 98,
+      "volume": 572,
+      "difficulty": 6.84,
+      "effort": 3912,
+      "timeToProgram": 217,
+      "deliveredBugs": 0.191
+    },
+    "maintainability": 80
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 74
+      },
+      {
+        "name": "envdiv",
+        "line": 83
+      },
+      {
+        "name": "selsl",
+        "line": 97
+      },
+      {
+        "name": "fdsl",
+        "line": 115
+      },
+      {
+        "name": "wsfnctn",
+        "line": 121
+      },
+      {
+        "name": "wssl",
+        "line": 122
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 154
+      },
+      {
+        "name": "wscall",
+        "line": 159
+      },
+      {
+        "name": "wssystem",
+        "line": 160
+      },
+      {
+        "name": "wsnames",
+        "line": 161
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 217
+      }
+    ],
+    "performs": [
+      {
+        "target": "Sales-Open-Input",
+        "line": 177
+      },
+      {
+        "target": "Sales-Close",
+        "line": 187
+      },
+      {
+        "target": "Sales-Read-Next",
+        "line": 194
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [
+      {
+        "name": "sales-sort",
+        "line": 109
+      }
+    ],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 117
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}

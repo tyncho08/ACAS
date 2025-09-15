@@ -1,0 +1,196 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl",
+  "fileName": "pl115.cbl",
+  "fileHash": "370089a3c46049ed412b164eca35548bc637b4de70eb17fff760ca2ab4ee99fd",
+  "timestamp": "2025-09-15T19:46:22.681Z",
+  "parseTime": 33,
+  "lines": {
+    "total": 239,
+    "code": 108,
+    "comment": 130,
+    "blank": 1
+  },
+  "programId": "pl115",
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "validation": {
+    "gnucobol": {
+      "success": false,
+      "output": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:89: error: envdiv.cob: No such file or directory\n   87 | *>===============================\n   88 | *>\n   89 >  copy \"envdiv.cob\".\n   90 |  input-output            section.\n   91 | *>------------------------------\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:96: error: plselois.cob: No such file or directory\n   94 | *>-----------\n   95 | *> copy \"seloi5.cob\".\n   96 >  copy \"plselois.cob\".\n   97 |      select       sort-file   assign  file-21.\n   98 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:106: error: plfdois.cob: No such file or directory\n  104 | *>\n  105 | *> copy \"fdoi5.cob\".\n  106 >  copy \"plfdois.cob\".\n  107 |  sd  sort-file.\n  108 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:124: error: wsfnctn.cob: No such file or directory\n  122 |  01  ws-reply             pic x.\n  123 | *>\n  124 >  copy \"wsfnctn.cob\".\n  125 |  copy \"plwsoi5C.cob\".\n  126 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:125: error: plwsoi5C.cob: No such file or directory\n  123 | *>\n  124 |  copy \"wsfnctn.cob\".\n  125 >  copy \"plwsoi5C.cob\".\n  126 | *>\n  127 | *> REMARK OUT ANY IN USE\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:161: error: Test-Data-Flags.cob: No such file or directory\n  159 |      05 filler           pic 9(2)  comp. *> Always 00\n  160 | *>\n  161 >  copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n  162 | *>\n  163 |  01  Error-Messages.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:172: error: wscall.cob: No such file or directory\n  170 | *>**************\n  171 | *>\n  172 >  copy \"wscall.cob\".\n  173 |  copy \"wssystem.cob\".\n  174 |  copy \"wsnames.cob\".\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:173: error: wssystem.cob: No such file or directory\n  171 | *>\n  172 |  copy \"wscall.cob\".\n  173 >  copy \"wssystem.cob\".\n  174 |  copy \"wsnames.cob\".\n  175 |  01  to-day              pic x(10).\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:174: error: wsnames.cob: No such file or directory\n  172 |  copy \"wscall.cob\".\n  173 |  copy \"wssystem.cob\".\n  174 >  copy \"wsnames.cob\".\n  175 |  01  to-day              pic x(10).\n  176 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:237: error: Proc-ACAS-FH-Calls.cob: No such file or directory\n  235 |      perform  OTM5-Close.          *> close open-item-file-5.\n  236 | *>\n  237 >  copy \"Proc-ACAS-FH-Calls.cob\".\n  238 | *>\n  239 | <EOF>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:177: error: 'ws-calling-data' is not defined\n  175 |  01  to-day              pic x(10).\n  176 | *>\n  177 >  procedure division using ws-calling-data\n  178 |                           system-record\n  179 |                           to-day\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:178: error: 'system-record' is not defined\n  176 | *>\n  177 |  procedure division using ws-calling-data\n  178 >                           system-record\n  179 |                           to-day\n  180 |                           file-defs.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:180: error: 'file-defs' is not defined\n  178 |                           system-record\n  179 |                           to-day\n  180 >                           file-defs.\n  181 | *>=======================================\n  182 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl: in section 'init01':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:187: error: 'FS-Cobol-Files-Used' is not defined\n  185 | *>  First check if not using Cobol files - then sort not needed.\n  186 | *>\n  187 >      if       not FS-Cobol-Files-Used    *> Will use fn-Read-By-Name (33)\n  188 |               goback returning 4\n  189 |      end-if.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:191: error: 'oi-5-flag' is not defined\n  189 |      end-if.\n  190 | *>\n  191 >      if       oi-5-flag = \"N\"\n  192 |               go to  menu-exit. *> using previous sort file\n  193 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:195: error: 'File-29' is not defined\n  193 | *>\n  194 |      if       FS-Cobol-Files-Used\n  195 >               call  \"CBL_CHECK_FILE_EXIST\" using File-29    *> Open ITM5..\n  196 |                                                  File-Info\n  197 |               if    return-code not = zero          *> not = zero - No fi..\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl: in section 'sorting-1':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:219: error: 'open-item-file-s' is not defined\n  217 |                                 s-type\n  218 |               input procedure input-to-sort\n  219 >               giving  open-item-file-s.\n  220 | *>\n  221 |  main-exit.   exit.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:219: error: 'open-item-file-s' is not a file name\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl: in section 'input-to-sort':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl: in paragraph 'process-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:228: error: 'fs-reply' is not defined\n  226 |  process-input.\n  227 |      perform  OTM5-Read-Next.      *> read open-item-file-5 next record a..\n  228 >      if       fs-reply = 10\n  229 |               go to end-of-input.\n  230 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:231: error: 'open-item-record-5' is not defined\n  229 |               go to end-of-input.\n  230 | *>\n  231 >      release  sort-record from open-item-record-5.\n  232 |      go       to process-input.\n  233 | *>\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:224: error: 'OTM5-Open-Input' is not defined\n  222 | *>\n  223 |  input-to-sort  section.\n  224 >      perform  OTM5-Open-Input.     *> open  input open-item-file-5.\n  225 | *>\n  226 |  process-input.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl: in paragraph 'process-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:227: error: 'OTM5-Read-Next' is not defined\n  225 | *>\n  226 |  process-input.\n  227 >      perform  OTM5-Read-Next.      *> read open-item-file-5 next record a..\n  228 |      if       fs-reply = 10\n  229 |               go to end-of-input.\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl: in paragraph 'end-of-input':\n/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:235: error: 'OTM5-Close' is not defined\n  233 | *>\n  234 |  end-of-input.\n  235 >      perform  OTM5-Close.          *> close open-item-file-5.\n  236 | *>\n  237 |  copy \"Proc-ACAS-FH-Calls.cob\".\n",
+      "errors": [
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:89: error: envdiv.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:96: error: plselois.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:106: error: plfdois.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:124: error: wsfnctn.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:125: error: plwsoi5C.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:161: error: Test-Data-Flags.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:172: error: wscall.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:173: error: wssystem.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:174: error: wsnames.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:237: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:177: error: 'ws-calling-data' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:178: error: 'system-record' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:180: error: 'file-defs' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:187: error: 'FS-Cobol-Files-Used' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:191: error: 'oi-5-flag' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:195: error: 'File-29' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:219: error: 'open-item-file-s' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:219: error: 'open-item-file-s' is not a file name",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:228: error: 'fs-reply' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:231: error: 'open-item-record-5' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:224: error: 'OTM5-Open-Input' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:227: error: 'OTM5-Read-Next' is not defined",
+        "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:235: error: 'OTM5-Close' is not defined"
+      ],
+      "warnings": []
+    },
+    "syntax": false,
+    "errors": [
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:89: error: envdiv.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:96: error: plselois.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:106: error: plfdois.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:124: error: wsfnctn.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:125: error: plwsoi5C.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:161: error: Test-Data-Flags.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:172: error: wscall.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:173: error: wssystem.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:174: error: wsnames.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:237: error: Proc-ACAS-FH-Calls.cob: No such file or directory",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:177: error: 'ws-calling-data' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:178: error: 'system-record' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:180: error: 'file-defs' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:187: error: 'FS-Cobol-Files-Used' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:191: error: 'oi-5-flag' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:195: error: 'File-29' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:219: error: 'open-item-file-s' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:219: error: 'open-item-file-s' is not a file name",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:228: error: 'fs-reply' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:231: error: 'open-item-record-5' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:224: error: 'OTM5-Open-Input' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:227: error: 'OTM5-Read-Next' is not defined",
+      "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl115.cbl:235: error: 'OTM5-Close' is not defined"
+    ],
+    "warnings": []
+  },
+  "metrics": {
+    "mccabe": 11,
+    "cognitive": 25,
+    "halstead": {
+      "uniqueOperators": 9,
+      "uniqueOperands": 55,
+      "totalOperators": 31,
+      "totalOperands": 90,
+      "vocabulary": 64,
+      "length": 121,
+      "volume": 726,
+      "difficulty": 7.36,
+      "effort": 5346,
+      "timeToProgram": 297,
+      "deliveredBugs": 0.242
+    },
+    "maintainability": 78
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 195
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 80
+      },
+      {
+        "name": "envdiv",
+        "line": 89
+      },
+      {
+        "name": "seloi5",
+        "line": 95
+      },
+      {
+        "name": "plselois",
+        "line": 96
+      },
+      {
+        "name": "fdoi5",
+        "line": 105
+      },
+      {
+        "name": "plfdois",
+        "line": 106
+      },
+      {
+        "name": "wsfnctn",
+        "line": 124
+      },
+      {
+        "name": "plwsoi5C",
+        "line": 125
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 161
+      },
+      {
+        "name": "wscall",
+        "line": 172
+      },
+      {
+        "name": "wssystem",
+        "line": 173
+      },
+      {
+        "name": "wsnames",
+        "line": 174
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 237
+      }
+    ],
+    "performs": [
+      {
+        "target": "sorting-1",
+        "line": 204
+      },
+      {
+        "target": "OTM5-Open-Input",
+        "line": 224
+      },
+      {
+        "target": "OTM5-Read-Next",
+        "line": 227
+      },
+      {
+        "target": "OTM5-Close",
+        "line": 235
+      }
+    ]
+  },
+  "dataElements": {
+    "files": [],
+    "workingStorage": [
+      {
+        "found": true,
+        "line": 119
+      }
+    ],
+    "dataItems": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "commands": []
+  },
+  "parseConfidence": 0.8
+}
