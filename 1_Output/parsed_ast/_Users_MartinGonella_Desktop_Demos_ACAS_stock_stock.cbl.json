@@ -1,0 +1,830 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/stock.cbl",
+  "fileName": "stock.cbl",
+  "timestamp": "2025-09-15T16:25:50.099Z",
+  "programId": "stock",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 147
+      },
+      {
+        "name": "file",
+        "line": 157
+      },
+      {
+        "name": "working-storage",
+        "line": 161
+      },
+      {
+        "name": "aa000-General-Control",
+        "line": 296
+      },
+      {
+        "name": "zz060-Convert-Date",
+        "line": 686
+      },
+      {
+        "name": "exit",
+        "line": 719
+      },
+      {
+        "name": "maps04",
+        "line": 721
+      },
+      {
+        "name": "exit",
+        "line": 727
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 150
+      },
+      {
+        "name": "goback",
+        "line": 309
+      },
+      {
+        "name": "goback",
+        "line": 314
+      },
+      {
+        "name": "File-Duplicates-In-Use",
+        "line": 320
+      },
+      {
+        "name": "end-if",
+        "line": 329
+      },
+      {
+        "name": "aa010-Get-System-Recs",
+        "line": 331
+      },
+      {
+        "name": "end-if",
+        "line": 343
+      },
+      {
+        "name": "File-Info",
+        "line": 384
+      },
+      {
+        "name": "aa030-display-menu",
+        "line": 479
+      },
+      {
+        "name": "aa035-Conv-Date",
+        "line": 492
+      },
+      {
+        "name": "end-if",
+        "line": 511
+      },
+      {
+        "name": "aa035-Conv-Date-End",
+        "line": 513
+      },
+      {
+        "name": "aa040-Display-Go",
+        "line": 516
+      },
+      {
+        "name": "aa050-Accept-Loop",
+        "line": 554
+      },
+      {
+        "name": "goback",
+        "line": 609
+      },
+      {
+        "name": "goback",
+        "line": 623
+      },
+      {
+        "name": "aa090-Load-It",
+        "line": 625
+      },
+      {
+        "name": "loader",
+        "line": 633
+      },
+      {
+        "name": "load00",
+        "line": 636
+      },
+      {
+        "name": "file-defs",
+        "line": 641
+      },
+      {
+        "name": "Load00-No-Jump",
+        "line": 642
+      },
+      {
+        "name": "load00-exit",
+        "line": 646
+      },
+      {
+        "name": "load01",
+        "line": 649
+      },
+      {
+        "name": "load02",
+        "line": 653
+      },
+      {
+        "name": "load03",
+        "line": 657
+      },
+      {
+        "name": "load04",
+        "line": 661
+      },
+      {
+        "name": "load05",
+        "line": 665
+      },
+      {
+        "name": "load06",
+        "line": 669
+      },
+      {
+        "name": "load25",
+        "line": 673
+      },
+      {
+        "name": "loadsr",
+        "line": 677
+      },
+      {
+        "name": "aa999-exit",
+        "line": 681
+      },
+      {
+        "name": "goback",
+        "line": 682
+      },
+      {
+        "name": "zz060-Exit",
+        "line": 718
+      },
+      {
+        "name": "maps04-exit",
+        "line": 726
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 383,
+        "type": "DYNAMIC",
+        "using": [
+          "File-15",
+          "*>",
+          "Analysis",
+          "File-Info"
+        ]
+      },
+      {
+        "target": "sl070",
+        "line": 387,
+        "type": "DYNAMIC",
+        "using": [
+          "ws-calling-data",
+          "system-record",
+          "to-day",
+          "file-defs",
+          "end-if",
+          "*>",
+          "move",
+          "run-date",
+          "to",
+          "u-bin"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 391,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      },
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 418,
+        "type": "DYNAMIC",
+        "using": [
+          "Run-Backup",
+          "File-Info",
+          "end-call",
+          "if",
+          "Return-Code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "and",
+          "Batch-Text",
+          "(1:1)",
+          "not",
+          "=",
+          "space",
+          "move",
+          "\"No",
+          "BackUp",
+          "Script",
+          "in",
+          "Bin\"",
+          "to",
+          "Batch-Text",
+          "else",
+          "move",
+          "1",
+          "to",
+          "Backup-Sw",
+          "string",
+          "\"Using",
+          "\"",
+          "delimited",
+          "by",
+          "size",
+          "Script-Name",
+          "delimited",
+          "by",
+          "space",
+          "into",
+          "Batch-Text",
+          "end-if",
+          "*>",
+          "*>",
+          "14/03/18",
+          "New",
+          "code"
+        ]
+      },
+      {
+        "target": "SYSTEM",
+        "line": 622,
+        "type": "DYNAMIC",
+        "using": [
+          "Full-Backup-Script"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 724,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "proc",
+        "line": 74,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 137,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 146,
+        "replacing": null
+      },
+      {
+        "name": "selsys",
+        "line": 153,
+        "replacing": null
+      },
+      {
+        "name": "fdsys",
+        "line": 160,
+        "replacing": null
+      },
+      {
+        "name": "sys-params-versioning",
+        "line": 177,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps01",
+        "line": 241,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 242,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 243,
+        "replacing": null
+      },
+      {
+        "name": "wstime",
+        "line": 244,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 245,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 246,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 247,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 274,
+        "replacing": null
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 684,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 729,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "thru": null,
+        "line": 316
+      },
+      {
+        "target": "System-Open-Input",
+        "thru": null,
+        "line": 323
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 325
+      },
+      {
+        "target": "System-Open",
+        "thru": null,
+        "line": 328
+      },
+      {
+        "target": "System-Read-Indexed",
+        "thru": null,
+        "line": 336
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 338
+      },
+      {
+        "target": "System-Open",
+        "thru": null,
+        "line": 341
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 356
+      },
+      {
+        "target": "System-Open",
+        "thru": null,
+        "line": 360
+      },
+      {
+        "target": "System-Read-Indexed",
+        "thru": null,
+        "line": 361
+      },
+      {
+        "target": "System-Write",
+        "thru": null,
+        "line": 364
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 370
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 375
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "thru": null,
+        "line": 393
+      },
+      {
+        "target": "Load00",
+        "thru": null,
+        "line": 457
+      },
+      {
+        "target": "Load00",
+        "thru": null,
+        "line": 471
+      },
+      {
+        "target": "aa035-Conv-Date",
+        "thru": null,
+        "line": 535
+      },
+      {
+        "target": "System-Open",
+        "thru": null,
+        "line": 579
+      },
+      {
+        "target": "System-Rewrite",
+        "thru": null,
+        "line": 580
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 581
+      },
+      {
+        "target": "System-Open",
+        "thru": null,
+        "line": 596
+      },
+      {
+        "target": "System-Rewrite",
+        "thru": null,
+        "line": 597
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 598
+      },
+      {
+        "target": "System-Open",
+        "thru": null,
+        "line": 604
+      },
+      {
+        "target": "System-Rewrite",
+        "thru": null,
+        "line": 605
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 606
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 695
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "zeros",
+        "to": "File-System-Used\n                       File-Duplicates-In-Use",
+        "line": 319
+      },
+      {
+        "from": "\"00\"",
+        "to": "FA-RDBMS-Flat-Statuses",
+        "line": 321
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 322
+      },
+      {
+        "from": "\"sys002\"",
+        "to": "ws-called      *> create param file by requested info from user\n              call    ws-called using ws-calling-data file-defs\n              perform System-Open\n     end-if",
+        "line": 326
+      },
+      {
+        "from": "zeros",
+        "to": "File-System-Used          *> again in case RDB setup\n                       File-Duplicates-In-Use",
+        "line": 332
+      },
+      {
+        "from": "\"00\"",
+        "to": "FA-RDBMS-Flat-Statuses",
+        "line": 334
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 335
+      },
+      {
+        "from": "\"sys002\"",
+        "to": "ws-called    *> create param file by requested info from user\n              call    ws-called using ws-calling-data file-defs\n              perform System-Open\n              go to aa010-Get-System-Recs\n     end-if",
+        "line": 339
+      },
+      {
+        "from": "System-Record",
+        "to": "WS-Temp-System-Rec",
+        "line": 344
+      },
+      {
+        "from": "File-System-Used",
+        "to": "Arg-Number       *> save value from param in Cobol file\n*>              move     zero to File-System-Used             *> so we can close the cobol file\n*>              perform  System-Close                         *>  close cobol file\n*>              move     Arg-Number to File-System-Used       *> restore value from param in cobol file\n*>              move     \"66\" to FA-RDBMS-Flat-Statuses       *> Force RDB processing\n*>              move     1 to File-Key-No\n*>              perform  System-Open                          *> It could be values 1 thru 5 when the other RDBs are programmed for\n*>              perform  System-Read-Indexed                  *> get the record from the RDB table\n*>              if       fs-reply not = zero                  *> but if error we have a problem such as someone forgot to run system load modules",
+        "line": 354
+      },
+      {
+        "from": "WS-Temp-System-Rec",
+        "to": "System-Record   *> restore saved cobol file rec\n*>                       perform System-Write                 *> So create RDB row in SYSTEM-REC from the Cobol file data\n*>                       if      fs-reply not = zero\n*>                               display SY011 at 2301 with erase eos\n*>                               display fs-reply at 2348\n*>                               display SY008    at 2401\n*>                               accept  ws-Reply at 2432\n*>                               perform System-Close\n*>                               goback\n*>                       end-if\n*>              end-if\n*>     end-if",
+        "line": 363
+      },
+      {
+        "from": "1",
+        "to": "ws-Process-Func\n              call \"sl070\" using ws-calling-data system-record to-day file-defs\n     end-if\n*>\n     move     run-date to u-bin",
+        "line": 386
+      },
+      {
+        "from": "u-date",
+        "to": "to-day",
+        "line": 392
+      },
+      {
+        "from": "\"O/S\"",
+        "to": "op-display",
+        "line": 399
+      },
+      {
+        "from": "\"Linux\"",
+        "to": "op-display\n     else if  Windows  move \"Windows\" to op-display\n     else if  Mac      move \"Mac\"     to op-display\n     else if  OS2      move \"OS/2\"    to op-display\n     else if  Unix     move \"Unix\"    to op-display\n     else if  Dos      move \"Dos\"     to op-display",
+        "line": 400
+      },
+      {
+        "from": "Windows-Backup-Script-Name",
+        "to": "Script-Name\n     else if  OS2\n              move OS2-Backup-Script-Name     to Script-Name\n     else if  Linux or Unix or Mac\n              move Linux-Backup-Script-Name   to Script-Name",
+        "line": 408
+      },
+      {
+        "from": "1",
+        "to": "Backup-Sw\n              string \"Using \"    delimited by size\n                     Script-Name delimited by space into Batch-Text\n     end-if\n*>\n*> 14/03/18 New code",
+        "line": 425
+      },
+      {
+        "from": "WS-CD-Args",
+        "to": "Saved-CD-Args             *> save them for 040\n              move     spaces  to WS-CD-Args\n              move     \"st020\" to WS-CD-Args (1:5)\n              move     \"stock\" to WS-Caller\n              move     zeros   to WS-Term-Code\n              move     spaces  to WS-Del-Link\n              move     5       to WS-Process-Func   *> Audit report only\n              move     zero    to WS-Sub-Function   *> doesnt matter as char 6,7 in CD-ARGS has it\n              perform  Load00\n              if       ws-term-code > 7\n                       go to aa070-Pre-OverRewrite  *> save current param record & abort\n              end-if\n              move     Saved-CD-Args to WS-CD-Args  *> restore originals\n      end-if\n     end-if\n     if       WS-CD-Args (1:5) = \"st040\"\n              move     \"st040\" to WS-Called\n              move     \"stock\" to WS-Caller\n              move     zeros   to WS-Term-Code\n              move     spaces  to WS-Del-Link\n              move     zero    to WS-Process-Func\n              move     zero    to WS-Sub-Function   *> doesnt matter as char 6,7 in CD-ARGS has it\n              perform  Load00\n              go to    aa070-Pre-OverRewrite\n     end-if\n*>\n     move     zeros to ws-Process-Func ws-Sub-Function",
+        "line": 449
+      },
+      {
+        "from": "to-day",
+        "to": "u-date",
+        "line": 481
+      },
+      {
+        "from": "\"stock\"",
+        "to": "ws-caller",
+        "line": 482
+      },
+      {
+        "from": "spaces",
+        "to": "ws-called ws-del-link menu-reply",
+        "line": 483
+      },
+      {
+        "from": "zeros",
+        "to": "ws-term-code",
+        "line": 484
+      },
+      {
+        "from": "maps-ser-nn",
+        "to": "curs2",
+        "line": 485
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 497
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              move ws-date to u-date\n     end-if\n     if       Date-Intl\n              move \"ccyy/mm/dd\" to ws-date   *> swap Intl to UK form\n              move u-date (7:4) to ws-Intl-Year\n              move u-date (4:2) to ws-Intl-Month\n              move u-date (1:2) to ws-Intl-Days\n              move ws-date to u-date\n     end-if",
+        "line": 499
+      },
+      {
+        "from": "wsb-hh",
+        "to": "wsd-hh\n              move wsb-mm to wsd-mm\n              move wsb-ss to wsd-ss\n              display \"at \"    at 0355 with foreground-color 2\n              display wsd-time at 0358 with foreground-color 2",
+        "line": 523
+      },
+      {
+        "from": "wsa-yy",
+        "to": "u-year\n              move wsa-mm to u-month\n              move wsa-dd to u-days\n              display \"on \" at 0367 with foreground-color 2\n              perform aa035-Conv-Date\n              display u-date at 0370 with foreground-color 2",
+        "line": 531
+      },
+      {
+        "from": "zero",
+        "to": "z",
+        "line": 565
+      },
+      {
+        "from": "letters-upper",
+        "to": "letters",
+        "line": 566
+      },
+      {
+        "from": "\"00\"",
+        "to": "FA-RDBMS-Flat-Statuses",
+        "line": 576
+      },
+      {
+        "from": "zero",
+        "to": "ws-term-code",
+        "line": 577
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 578
+      },
+      {
+        "from": "\"sys002\"",
+        "to": "ws-called",
+        "line": 583
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 593
+      },
+      {
+        "from": "\"66\"",
+        "to": "FA-RDBMS-Flat-Statuses\n              perform  System-Open\n              perform  System-Rewrite\n              perform  System-Close\n     end-if\n*>\n*> Now Force File processing to keep both same",
+        "line": 595
+      },
+      {
+        "from": "\"00\"",
+        "to": "FA-RDBMS-Flat-Statuses\n     perform  System-Open\n     perform  System-Rewrite\n     perform  System-Close\n*>\n     if       not Backup-Script-Found\n              goback",
+        "line": 603
+      },
+      {
+        "from": "Script-Name",
+        "to": "Full-Backup-Script\n      else\n       if     OS2                                        *> whats the correct string to add\n              move Script-Name to Full-Backup-Script",
+        "line": 618
+      },
+      {
+        "from": "space",
+        "to": "menu-reply",
+        "line": 626
+      },
+      {
+        "from": "zero",
+        "to": "ws-term-code",
+        "line": 637
+      },
+      {
+        "from": "\"st000\"",
+        "to": "ws-called",
+        "line": 650
+      },
+      {
+        "from": "\"st010\"",
+        "to": "ws-called",
+        "line": 654
+      },
+      {
+        "from": "\"st020\"",
+        "to": "ws-called",
+        "line": 658
+      },
+      {
+        "from": "\"st030\"",
+        "to": "ws-called",
+        "line": 662
+      },
+      {
+        "from": "\"st040\"",
+        "to": "ws-called",
+        "line": 666
+      },
+      {
+        "from": "\"st060\"",
+        "to": "ws-called",
+        "line": 670
+      },
+      {
+        "from": "\"st050\"",
+        "to": "ws-called",
+        "line": 674
+      },
+      {
+        "from": "spaces",
+        "to": "ws-Date\n              go to zz060-Exit",
+        "line": 697
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date",
+        "line": 699
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 702
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit",
+        "line": 706
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 713
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it is to be used must be unremarked out and compiled etc\n*>                    and MODIFIED to match imported file specifications.\n*> 22/09/15 vbc - .20 Added support for Param-Restrict & option Z.\n*> 02/07/16 vbc - .21 Missed ST009 msg in 'Error messages used'.\n*> 26/07/16 vbc -     Version Updated for RDB processing to match rest of stock system\n*> 23/10/16 vbc - .22 Added system file/table access as now written.\n*> 24/10/16 vbc - .23 ALL programs now using wsnames.cob in copybooks\n*>                    When using RDB will also update the Cobol system file record\n*>                    as that file and record will ALWAYS be present.\n*>                    Changed get-Env stuff to a copybook using common msgs.\n*> 29/10/16 vbc - .24 Clean up mapser proc as its a copy proc.Added more msgs.\n*>                    Changed usage of Cbl-File-Details to File-Info (see .10)\n*>                    Remove file-status checks for file exists code.\n*>                    All updates made to active file system RDB or Cobol file not both\n*>                    as when RDB in use the Cobol record only needed for basic RDB data.\n*>                    Usage of maps99 redacted.\n*> 24/10/16 vbc -     ALL programs now using wsnames.cob in copybooks.\n*> 13/01/18 vbc - .25 Version now 3.02.\n*> 05/02/18 vbc - .26 Dont close file pre calling sys002 as not open!!!\n*> 12/03/18 vbc - .27 Removed msg SY010 not used, removed unused sys4, dflt and final\n*>                    defs, added std ACAS Dummies-4 and acasnnn copylib renaming\n*>                    acas000-open etc to comply with rest of ACAS (System-Open etc).\n*> 13/03/18 vbc -     Adjusted code base to bring it inline with all other menu programs.\n*> 14/03/18 vbc - .28 Added process to allow internal params via WS-Calling-Data\n*>                    WS-Args (13) to start and pass extra info to a called program\n*>                    In this case running st020 or st040 with answers to the start up\n*>                    questions.\n*>                    This way program can be started via crontab or better still via\n*>                    Sales Ledger if end of month/beginning of new month.\n*>                    Now need to make sure that the totals are being updated in SL\n*>                    including invoice create, amend, delete.\n*>                    Before running st040 must run st020 if audit report not done\n*>                    {Stk-Activity-Rep-Run = zero}.\n*>                    Added error msg SY012.\n*> 19/03/18 vbc - .29 Added msg st403 when running in autorun mode for st040.\n*> 14/04/18 vbc - .30 Remark out code for reading in rdb system data as file will\n*>                    ALWAYS be up2date.\n*>                    On request for system setup write out sys rec 1 to file\n*>                    first & clean up overwrite. Doing this system wide.\n*> 21/05/18 vbc - .31 Small change to the backup process at prerewrite\n*>                    On menu exit do NOT display space as it forces a wait stop.\n*> 28/05/18 vbc - .32 Added ws fields for env. columns and lines to verify minimums.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*> 26/12/24 vbc       Change menu ACCEPT to use UPPER and remove the function.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n *> copy \"selsys.cob\".\n data  division.\n*>=============\n*>\n file section.\n*>-----------\n*>\n *> copy \"fdsys.cob\".\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(17)    value \"Stock (3.02.32)\".\n 77  z                   binary-char  value zero.\n 77  Batch-Text          pic x(28)    value spaces.\n 77  Script-Name         pic x(20)    value spaces.\n 77  Run-Backup          pic x(512)   value spaces.  *> size changed\n 77  Full-Backup-Script  pic x(512)   value spaces.\n 77  OS-Delimiter        pic x        value \"/\".\n 77  ACAS_BIN            pic x(512)   value spaces.  *> added\n 77  ACAS_LEDGERS        pic x(500)   value spaces.\n 77  Arg-Number          pic 9        value zero.\n*>========================================================\n*>  in case file layout upgrade is needed.\n*>   Using a file update program.\n*>\n copy \"sys-params-versioning.cob\".\n*>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n*> holds program parameter values from command line\n 01  Arg-Vals                         value spaces.\n     03  Arg-Value       pic x(525)  occurs 6.\n 01  Arg-Test            pic x(525)   value spaces.\n 01  Saved-CD-Args       pic x(13).\n*>\n 01  Backup-Sw           pic 9               value zero.\n     88  Backup-Script-Found                 value 1.\n 01  Linux-Backup-Script-Name   pic x(20)    value \"acasbkup.sh         \".\n 01  Windows-Backup-Script-Name pic x(20)    value \"acasbkup.bat        \".\n 01  OS2-Backup-Script-Name     pic x(20)    value \"acasbkup.cmd        \".\n*>\n 01  File-Info                          value zero.       *> Layout as per GNU v2 manual\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n 01  ws-data.\n     03  menu-reply      pic x          value \"A\".\n     03  op-display      pic x(7).\n*>\n     03  letters-upper   pic x(26)      value \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\".\n     03  letters.\n         05  a-entry     pic x        occurs 26 indexed by q.\n*>\n     03  ws-reply        pic x.\n     03  a               pic 99        comp.\n     03  wsmaps-ser.\n         05  wsmaps-ser-xx pic xx.\n         05  wsmaps-ser-nn pic 9(4).\n*>\n     03  ws-env-columns  pic 999       value zero.\n     03  ws-env-lines    pic 999       value zero.\n*>\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n copy \"wsmaps01.cob\".\n copy \"wsmaps03.cob\".\n copy \"wscall.cob\".\n copy \"wstime.cob\".\n copy \"wsfnctn.cob\".\n copy \"wsnames.cob\".\n copy \"wssystem.cob\".\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n*>     03  System-Record          pic x.\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  Error-Messages.\n*> System Wide\n     03  SY006          pic x(62) value \"SY006 Program Arguments limited to two and you have specified \".\n     03  SY007          pic x(35) value \"SY007 Program arguments incorrect: \".\n     03  SY008          pic x(31) value \"SY008 Note message & Hit return\".\n     03  SY009          pic x(53) value \"SY009 Environment variables not yet set up : ABORTING\".\n     03  SY010          pic x(46) value \"SY010 Terminal program not set to length => 24\".\n     03  SY011          pic x(47) value \"SY011 Error on systemMT processing, Fs-reply = \".\n     03  SY012          pic x(34) value \"SY012 Do not know that extra param\".\n     03  SY013          pic x(47) value \"SY013 Terminal program not set to Columns => 80\".\n*> Module specific (from st040)\n     03  ST403          pic x(27) value \"ST403 Sub arg not 1, 2 or 3\".\n*>\n 01  to-day             pic x(10).\n*>\n 01  WS-Temp-System-Rec  pic x(2048).   *> Size overkill\n*>\n procedure division.\n*>=================\n*>\n aa000-General-Control  Section.\n*>*****************************\n*>\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n*>\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n     move     function current-date to wse-date-block.\n*>\n     accept   ws-env-lines   from lines.\n     if       ws-env-lines < 24\n              display SY010    at 0101 with erase eos\n              accept  ws-reply at 0133\n              goback.\n     accept   ws-env-Columns from Columns.\n     if       ws-Env-Columns < 80\n              display SY013    at 0101 with erase eos\n              accept  ws-reply at 0133\n              goback.\n*>\n     perform  zz020-Get-Program-Args.     *>  all in copybook Proc-ACAS-FH-Calls.cob\n*>\n aa005-Open-System.                              *> First get system param cobol file\n     move     zeros to File-System-Used\n                       File-Duplicates-In-Use.\n     move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n     move     1 to File-Key-No.\n     perform  System-Open-Input.\n     if       fs-reply not = zero\n *>             perform System-Close\n              move    \"sys002\" to ws-called      *> create param file by requested info from user\n              call    ws-called using ws-calling-data file-defs\n              perform System-Open\n     end-if.\n*>\n aa010-Get-System-Recs.\n     move     zeros to File-System-Used          *> again in case RDB setup\n                       File-Duplicates-In-Use.   *> if sys002 just been run.\n     move     \"00\" to  FA-RDBMS-Flat-Statuses.   *> Force Cobol proc.\n     move     1 to File-Key-No.\n     perform  System-Read-Indexed.               *> Read Cobol file\n     if       fs-reply not = zero                *> should NOT happen\n              perform System-Close\n              move    \"sys002\" to ws-called    *> create param file by requested info from user\n              call    ws-called using ws-calling-data file-defs\n              perform System-Open\n              go to aa010-Get-System-Recs\n     end-if.\n     move     System-Record to WS-Temp-System-Rec.   *> save in case of sys-rec-4 overwrite\n*>\n*> BY PASS THIS CODE AS THE FILE WILL ALWAYS BE CURRENT.\n*>\n*>  We now have the param file along with RDB information so -\n*>  Check if RDB in use & if so, close Cobol file and open\n*>   and read the RDB system-rec but if recs do not exist\n*>    write using the Cobol file versions.\n*>\n*>     if       File-System-Used NOT = zero      *> RDB in use ( could be values 1 thru 5 but currently only 1)\n*>              move     File-System-Used to Arg-Number       *> save value from param in Cobol file\n*>              move     zero to File-System-Used             *> so we can close the cobol file\n*>              perform  System-Close                         *>  close cobol file\n*>              move     Arg-Number to File-System-Used       *> restore value from param in cobol file\n*>              move     \"66\" to FA-RDBMS-Flat-Statuses       *> Force RDB processing\n*>              move     1 to File-Key-No\n*>              perform  System-Open                          *> It could be values 1 thru 5 when the other RDBs are programmed for\n*>              perform  System-Read-Indexed                  *> get the record from the RDB table\n*>              if       fs-reply not = zero                  *> but if error we have a problem such as someone forgot to run system load modules.\n*>                       move WS-Temp-System-Rec to System-Record   *> restore saved cobol file rec\n*>                       perform System-Write                 *> So create RDB row in SYSTEM-REC from the Cobol file data\n*>                       if      fs-reply not = zero\n*>                               display SY011 at 2301 with erase eos\n*>                               display fs-reply at 2348\n*>                               display SY008    at 2401\n*>                               accept  ws-Reply at 2432\n*>                               perform System-Close\n*>                               goback\n*>                       end-if\n*>              end-if\n*>     end-if.\n     perform  System-Close.\n*>\n*>   Back to work as we have the RDB rec if in use otherwise the Cobol one\n*>    regardless the system file/table is now closed with recs saved in WS.\n*>\n*> Check if Analysis file exists and heopfully some anal codes within.\n*>  If not, run program to create the defaults one's.\n*>\n     call     \"CBL_CHECK_FILE_EXIST\" using File-15      *> Analysis\n                                           File-Info.\n     if       return-code not = zero                        *> not = zero - No file found\n              move 1 to ws-Process-Func\n              call \"sl070\" using ws-calling-data system-record to-day file-defs\n     end-if\n*>\n     move     run-date to u-bin.\n     call     \"maps04\" using maps03-ws.\n     move     u-date to to-day.\n     perform  zz060-Convert-Date.\n*>\n     if       not Stock\n              set Stock to true.\n*>\n     if       op-system = zero\n              move \"O/S\" to op-display.\n     if       Linux    move \"Linux\"   to op-display\n     else if  Windows  move \"Windows\" to op-display\n     else if  Mac      move \"Mac\"     to op-display\n     else if  OS2      move \"OS/2\"    to op-display\n     else if  Unix     move \"Unix\"    to op-display\n     else if  Dos      move \"Dos\"     to op-display.\n*>\n     if       Dos or Windows\n              move Windows-Backup-Script-Name to Script-Name\n     else if  OS2\n              move OS2-Backup-Script-Name     to Script-Name\n     else if  Linux or Unix or Mac\n              move Linux-Backup-Script-Name   to Script-Name.\n*>\n     string   ACAS_BIN     delimited by space\n              OS-Delimiter delimited by size\n              Script-Name  delimited by space  into Run-Backup\n     end-string\n     call     \"CBL_CHECK_FILE_EXIST\" using Run-Backup\n                                           File-Info\n     end-call\n     if       Return-Code not = zero\n*>          and Batch-Text (1:1) not = space\n              move \"No BackUp Script in Bin\" to Batch-Text\n     else\n              move 1 to Backup-Sw\n              string \"Using \"    delimited by size\n                     Script-Name delimited by space into Batch-Text\n     end-if\n*>\n*> 14/03/18 New code.\n*>\n*> Check to see if WS-Calling-Data set to auto to run a program (st0020 or st040).\n*>  A field within takes on the value of param 2 that is supplied when calling\n*>   stock where param 1 must be one of the following :\n*>     ACAS_LEDGERS=path   OR 'NONE' OR 'NO' OR 'NULL' (Case dont care),\n*>         where param 2 must be st020 or st040 (case dont care).\n*>",
+        "line": 64
+      },
+      {
+        "type": "IF",
+        "condition": "audit reports has been run if not, do so.\n*>\n     if       WS-CD-Args (1:5) = \"st040\"\n       if     WS-CD-Args (7:1) < 1 or > 3           *> (6:1) dont care but should be 1.\n              display st403  at 0101 with erase eos\n              go to  aa070-Pre-OverRewrite.\n*>\n     if       WS-CD-Args (1:5) = \"st020\" or \"st040\"\n      if      Stk-Activity-Rep-Run = zero           *> Process audit reports 1st\n        and   Stk-Audit-Used = 1                    *> if not run and Audit is used\n              move     WS-CD-Args  to Saved-CD-Args             *> save them for 040\n              move     spaces  to WS-CD-Args\n              move     \"st020\" to WS-CD-Args (1:5)\n              move     \"stock\" to WS-Caller\n              move     zeros   to WS-Term-Code\n              move     spaces  to WS-Del-Link\n              move     5       to WS-Process-Func   *> Audit report only\n              move     zero    to WS-Sub-Function   *> doesnt matter as char 6,7 in CD-ARGS has it\n              perform  Load00\n              if       ws-term-code > 7\n                       go to aa070-Pre-OverRewrite  *> save current param record & abort\n              end-if\n              move     Saved-CD-Args to WS-CD-Args  *> restore originals\n      end-if\n     end-if\n     if       WS-CD-Args (1:5) = \"st040\"\n              move     \"st040\" to WS-Called\n              move     \"stock\" to WS-Caller\n              move     zeros   to WS-Term-Code\n              move     spaces  to WS-Del-Link\n              move     zero    to WS-Process-Func\n              move     zero    to WS-Sub-Function   *> doesnt matter as char 6,7 in CD-ARGS has it\n              perform  Load00\n              go to    aa070-Pre-OverRewrite\n     end-if\n*>\n     move     zeros to ws-Process-Func ws-Sub-Function.\n     if       menu-reply = \"A\"\n              go to load01.\n*>\n aa030-display-menu.\n     display  usera at 0101 with erase eos foreground-color 3.\n     move     to-day to u-date.\n     move     \"stock\" to ws-caller.\n     move     spaces to ws-called ws-del-link menu-reply.\n     move     zeros to ws-term-code.\n     move     maps-ser-nn to curs2.\n     display  maps-ser-xx at 2474 with foreground-color 3.\n     display  curs2 at 2476 with foreground-color 3.\n     display  \"Copyright (c) 1976-\" at 2401 with foreground-color 3.\n     display  wse-year at 2420 with foreground-color 3.\n     display  \" Applewood Computers\" at 2424 with foreground-color 3.\n*>\n aa035-Conv-Date.\n*>\n*> Convert from UK to selected form\n*>\n     if       Date-Form not > zero and < 4\n              move 1 to Date-Form.\n     if       Date-USA\n              move u-date to ws-date\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              move ws-date to u-date\n     end-if\n     if       Date-Intl\n              move \"ccyy/mm/dd\" to ws-date   *> swap Intl to UK form\n              move u-date (7:4) to ws-Intl-Year\n              move u-date (4:2) to ws-Intl-Month\n              move u-date (1:2) to ws-Intl-Days\n              move ws-date to u-date\n     end-if.\n*>\n aa035-Conv-Date-End.\n     display  u-date at 0171 with foreground-color 3.\n*>\n aa040-Display-Go.\n*>\n     display  prog-name at 0301 with foreground-color 2.\n     display  \"Stock Control System Menu\"    at 0328 with foreground-color 2.\n*>\n     accept   wsb-time from time.\n     if       wsb-time not = \"00000000\"\n              move wsb-hh to wsd-hh\n              move wsb-mm to wsd-mm\n              move wsb-ss to wsd-ss\n              display \"at \"    at 0355 with foreground-color 2\n              display wsd-time at 0358 with foreground-color 2.\n*>\n     accept   wsa-date from date.\n     if       wsa-date not = \"000000\"\n              move wsa-yy to u-year\n              move wsa-mm to u-month\n              move wsa-dd to u-days\n              display \"on \" at 0367 with foreground-color 2\n              perform aa035-Conv-Date\n              display u-date at 0370 with foreground-color 2.\n*>\n     display  \"Select one of the following by letter  :- [ ]\" at 0601 with foreground-color 2.\n*>\n     display  \"(A)  Date Entry\"                  at 1004 with foreground-color 2.\n     display  \"(B)  Stock Item Maintenance\"      at 1104 with foreground-color 2.\n     display  \"(C)  Stock Movements\"             at 1204 with foreground-color 2.\n     display  \"(D)  Reports\"                     at 1044 with foreground-color 2.\n     display  \"(E)  End of Cycle Processing\"     at 1144 with foreground-color 2.\n     display  \"(F)  *Stock File Import\"          at 1244 with foreground-color 2.\n     display  \"(X)  Exit to \"                    at 1304 with foreground-color 2.\n     display  op-display                         at 1317 with foreground-color 2.\n     display  Batch-Text                         at 1345 with foreground-color 2.\n     display  \"(Y)  Stock File Compression\"      at 1404 with foreground-color 2.\n     if       Param-Restrict not = \"Y\"\n              display  \"(Z)  System Set Up\"      at 1444 with foreground-color 2.\n\n*>\n aa050-Accept-Loop.\n     accept   menu-reply at 0644  with foreground-color 6 auto UPPER.\n*>\n     if       menu-reply = \"X\"\n              go to aa070-Pre-OverRewrite.\n*>\n     if       menu-reply = \"Z\" and\n              Param-Restrict = \"Y\"\n              display  \"Not permitted\" at 2331 with foreground-color 2\n              go to aa030-display-menu.\n*>\n     move     zero to z.\n     move     letters-upper to letters.\n     set      q  to  1.\n     search   a-entry\n              when a-entry (q) = menu-reply\n              set z to q.\n     if       z = zero\n              go to aa050-Accept-Loop.\n     go       to aa090-Load-It.\n*>\n aa060-Call-System-Setup.                                *>  Cobol or RDB closed\n     move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n     move     zero to ws-term-code.\n     move     1 to File-Key-No.\n     perform  System-Open.\n     perform  System-Rewrite.                           *> in case of any changes\n     perform  System-Close.\n*>\n     move     \"sys002\" to ws-called.\n     call     ws-called using ws-calling-data file-defs.\n     if       ws-term-code > 7                           *> sys002 only terminates with 0\n              stop run.\n     go       to aa005-Open-System.\n*>\n aa070-Pre-OverRewrite.                                  *> Exit requested\n *>\n *> ST020 can update Stk-Audit-No.\n *>\n     move     1 to File-Key-No.\n     if       File-System-Used NOT = zero   *> Force RDB processing\n              move     \"66\" to FA-RDBMS-Flat-Statuses\n              perform  System-Open\n              perform  System-Rewrite\n              perform  System-Close\n     end-if\n*>\n*> Now Force File processing to keep both same.\n*>\n     move     \"00\" to FA-RDBMS-Flat-Statuses\n     perform  System-Open\n     perform  System-Rewrite\n     perform  System-Close\n*>\n     if       not Backup-Script-Found\n              goback.\n*>\n     if       Linux or Unix or Mac\n              string \"nohup \" delimited by size\n                      Run-Backup delimited by space\n                    \" 0</dev/null &>/dev/null &\" delimited by size     into Full-Backup-Script\n              end-string\n     else\n      if      Dos or Windows                             *> whats the correct string to add\n              move Script-Name to Full-Backup-Script\n      else\n       if     OS2                                        *> whats the correct string to add\n              move Script-Name to Full-Backup-Script.\n     call     \"SYSTEM\" using Full-Backup-Script.\n     goback.\n*>\n aa090-Load-It.\n     move     space to menu-reply.\n     go       to load01 load02 load03 load04 load05 load06 loader\n                 loader loader loader loader loader loader loader\n                 loader loader loader loader loader loader loader\n                 loader loader aa070-Pre-OverRewrite load25 aa060-Call-System-Setup\n              depending on z.\n*>\n loader.\n     go       to aa030-display-menu.\n*>\n load00.\n     move     zero to ws-term-code.\n     call     ws-called using ws-calling-data\n                              system-record\n                              to-day\n                              file-defs.\n Load00-No-Jump.\n     if       ws-term-code > 7\n              go to aa070-Pre-OverRewrite.\n*>\n load00-exit.\n     go       to aa030-display-menu.\n*>\n load01.\n     move     \"st000\" to ws-called.\n     go       to load00.\n*>\n load02.\n     move     \"st010\" to ws-called.\n     go       to load00.\n*>\n load03.\n     move     \"st020\" to ws-called.\n     go       to load00.\n*>\n load04.\n     move     \"st030\" to ws-called.\n     go       to load00.\n*>\n load05.\n     move     \"st040\" to ws-called.\n     go       to load00.\n*>\n load06.\n     move     \"st060\" to ws-called.\n     go       to load00.\n*>\n load25.\n     move     \"st050\" to ws-called.\n     go       to load00.\n*>\n loadsr.\n     display  \"Sorry not available - Requests to ACAS support\" at 2327 with foreground-color 2.\n     go       to aa050-Accept-Loop.\n*>\n aa999-exit.\n     goback.\n*>\n copy \"Proc-Get-Env-Set-Files.cob\".\n*>\n zz060-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in binary to UK/USA/Intl date format\n*>****************************************************\n*> Input:   u-bin\n*> output:  ws-date as uk/US/Inlt date format\n*>          u-date & ws-Date = spaces if invalid date\n*>\n     perform  maps04.\n     if       u-date = spaces\n              move spaces to ws-Date\n              go to zz060-Exit.\n     move     u-date to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz060-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     u-date (7:4) to ws-Intl-Year.\n     move     u-date (4:2) to ws-Intl-Month.\n     move     u-date (1:2) to ws-Intl-Days.\n*>\n zz060-Exit.\n     exit     section.\n*>\n maps04       section.\n*>*******************\n*>\n     call     \"maps04\"  using  maps03-ws.\n*>\n maps04-exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 439
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 9,
+    "cognitive": 2,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 64,
+      "totalOperators": 51,
+      "totalOperands": 102,
+      "vocabulary": 65,
+      "length": 153,
+      "volume": 921.4222753933535
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

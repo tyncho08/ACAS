@@ -1,0 +1,974 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl110.cbl",
+  "fileName": "sl110.cbl",
+  "timestamp": "2025-09-15T16:25:31.109Z",
+  "programId": "sl110",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 141
+      },
+      {
+        "name": "file",
+        "line": 149
+      },
+      {
+        "name": "working-storage",
+        "line": 156
+      },
+      {
+        "name": "linkage",
+        "line": 430
+      },
+      {
+        "name": "init01",
+        "line": 445
+      },
+      {
+        "name": "statements",
+        "line": 502
+      },
+      {
+        "name": "headings-1",
+        "line": 894
+      },
+      {
+        "name": "zz050-Validate-Date",
+        "line": 959
+      },
+      {
+        "name": "exit",
+        "line": 992
+      },
+      {
+        "name": "zz060-Convert-Date",
+        "line": 994
+      },
+      {
+        "name": "exit",
+        "line": 1027
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 1029
+      },
+      {
+        "name": "exit",
+        "line": 1057
+      },
+      {
+        "name": "zz080-Issue-Email",
+        "line": 1059
+      },
+      {
+        "name": "maps04",
+        "line": 1079
+      },
+      {
+        "name": "exit",
+        "line": 1085
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 142
+      },
+      {
+        "name": "file-defs",
+        "line": 442
+      },
+      {
+        "name": "L14-Cust-HD",
+        "line": 478
+      },
+      {
+        "name": "menu-exit",
+        "line": 484
+      },
+      {
+        "name": "accept-money",
+        "line": 489
+      },
+      {
+        "name": "date-input",
+        "line": 517
+      },
+      {
+        "name": "customer-input",
+        "line": 533
+      },
+      {
+        "name": "value-input",
+        "line": 539
+      },
+      {
+        "name": "flavour-in",
+        "line": 546
+      },
+      {
+        "name": "read-sales",
+        "line": 586
+      },
+      {
+        "name": "Read-Open-Item",
+        "line": 665
+      },
+      {
+        "name": "end-if",
+        "line": 692
+      },
+      {
+        "name": "Read-Loop-Tests",
+        "line": 696
+      },
+      {
+        "name": "l12-r-invoice",
+        "line": 718
+      },
+      {
+        "name": "bypass-ageing",
+        "line": 803
+      },
+      {
+        "name": "end-statement",
+        "line": 826
+      },
+      {
+        "name": "end-stat-do",
+        "line": 840
+      },
+      {
+        "name": "l13-amount6",
+        "line": 853
+      },
+      {
+        "name": "end-statement-end",
+        "line": 870
+      },
+      {
+        "name": "Main-End",
+        "line": 874
+      },
+      {
+        "name": "end-if",
+        "line": 883
+      },
+      {
+        "name": "Headings-1-Main",
+        "line": 897
+      },
+      {
+        "name": "main-end",
+        "line": 942
+      },
+      {
+        "name": "zz050-test-date",
+        "line": 986
+      },
+      {
+        "name": "zz050-exit",
+        "line": 991
+      },
+      {
+        "name": "zz060-Exit",
+        "line": 1026
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 1056
+      },
+      {
+        "name": "maps04-exit",
+        "line": 1084
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 448,
+        "type": "DYNAMIC",
+        "using": [
+          "File-19",
+          "*>",
+          "Open",
+          "ITM3",
+          "file",
+          "File-Info",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "display",
+          "SL151",
+          "at",
+          "2301",
+          "display",
+          "SL003",
+          "at",
+          "2401",
+          "accept",
+          "ws-reply",
+          "at",
+          "2430",
+          "go",
+          "to",
+          "menu-exit",
+          "end-if",
+          "end-if",
+          "*>",
+          "*>",
+          "Force",
+          "Esc,",
+          "PgUp,",
+          "PgDown,",
+          "PrtSC",
+          "to",
+          "be",
+          "detected",
+          "*>",
+          "set",
+          "ENVIRONMENT",
+          "\"COB_SCREEN_EXCEPTIONS\"",
+          "to",
+          "\"Y\""
+        ]
+      },
+      {
+        "target": "SYSTEM",
+        "line": 482,
+        "type": "DYNAMIC",
+        "using": [
+          "Print-Report"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 1082,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 133,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 140,
+        "replacing": null
+      },
+      {
+        "name": "selsl",
+        "line": 145,
+        "replacing": null
+      },
+      {
+        "name": "slselois",
+        "line": 146,
+        "replacing": null
+      },
+      {
+        "name": "selprint",
+        "line": 147,
+        "replacing": null
+      },
+      {
+        "name": "fdsl",
+        "line": 152,
+        "replacing": null
+      },
+      {
+        "name": "slfdois",
+        "line": 153,
+        "replacing": null
+      },
+      {
+        "name": "fdprint",
+        "line": 154,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command-p-dispatch",
+        "line": 160,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 161,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 162,
+        "replacing": null
+      },
+      {
+        "name": "wsoi",
+        "line": 163,
+        "replacing": null
+      },
+      {
+        "name": "slwsoi3",
+        "line": 164,
+        "replacing": null
+      },
+      {
+        "name": "wssl",
+        "line": 165,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 201,
+        "replacing": null
+      },
+      {
+        "name": "OF",
+        "line": 402,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 433,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 434,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 435,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 1087,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 468
+      },
+      {
+        "target": "Statements",
+        "thru": null,
+        "line": 480
+      },
+      {
+        "target": "zz050-Validate-Date",
+        "thru": null,
+        "line": 526
+      },
+      {
+        "target": "accept-money",
+        "thru": null,
+        "line": 543
+      },
+      {
+        "target": "OTM3-Open-Input",
+        "thru": null,
+        "line": 566
+      },
+      {
+        "target": "OTM3-Close",
+        "thru": null,
+        "line": 568
+      },
+      {
+        "target": "Sales-Open-Input",
+        "thru": null,
+        "line": 572
+      },
+      {
+        "target": "Sales-Start",
+        "thru": null,
+        "line": 581
+      },
+      {
+        "target": "Sales-Read-Next",
+        "thru": null,
+        "line": 589
+      },
+      {
+        "target": "headings-1",
+        "thru": null,
+        "line": 648
+      },
+      {
+        "target": "OTM3-Read-Next-Sorted-By-Cust",
+        "thru": null,
+        "line": 679
+      },
+      {
+        "target": "End-Statement",
+        "thru": "End-Stat-Do",
+        "line": 681
+      },
+      {
+        "target": "OTM3-Close",
+        "thru": null,
+        "line": 682
+      },
+      {
+        "target": "End-Statement",
+        "thru": "End-Stat-Do",
+        "line": 689
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "thru": null,
+        "line": 721
+      },
+      {
+        "target": "headings-1",
+        "thru": null,
+        "line": 814
+      },
+      {
+        "target": "Sales-Close",
+        "thru": null,
+        "line": 878
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 989
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 1003
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "Print-Spool-Name2",
+        "to": "PSN2",
+        "line": 462
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 463
+      },
+      {
+        "from": "to-day",
+        "to": "u-date",
+        "line": 465
+      },
+      {
+        "from": "spaces",
+        "to": "Line-7\n              move     \"DATE\"     to L7-Date-Hd1\n                                     L7-Date-Hd2\n              move     \"CUST",
+        "line": 474
+      },
+      {
+        "from": "zero",
+        "to": "ws-poundsd amt-ok ws-penced",
+        "line": 492
+      },
+      {
+        "from": "ws-pound",
+        "to": "amt-wk-pds",
+        "line": 495
+      },
+      {
+        "from": "ws-pence",
+        "to": "amt-wk-pence",
+        "line": 496
+      },
+      {
+        "from": "ws-date",
+        "to": "ws-test-date",
+        "line": 525
+      },
+      {
+        "from": "u-date",
+        "to": "st-date",
+        "line": 530
+      },
+      {
+        "from": "u-bin",
+        "to": "pay-date",
+        "line": 531
+      },
+      {
+        "from": "0752",
+        "to": "curs",
+        "line": 542
+      },
+      {
+        "from": "amt-ok",
+        "to": "pay-value",
+        "line": 544
+      },
+      {
+        "from": "customer-in",
+        "to": "WS-Sales-Key",
+        "line": 578
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 580
+      },
+      {
+        "from": "1",
+        "to": "y",
+        "line": 583
+      },
+      {
+        "from": "sales-address",
+        "to": "address-A",
+        "line": 607
+      },
+      {
+        "from": "sales-name",
+        "to": "l7-c-name",
+        "line": 609
+      },
+      {
+        "from": "1",
+        "to": "a",
+        "line": 611
+      },
+      {
+        "from": "address-line",
+        "to": "l8-c-address",
+        "line": 614
+      },
+      {
+        "from": "spaces",
+        "to": "address-line",
+        "line": 616
+      },
+      {
+        "from": "address-line",
+        "to": "l9-c-address",
+        "line": 619
+      },
+      {
+        "from": "spaces",
+        "to": "address-line",
+        "line": 621
+      },
+      {
+        "from": "address-line",
+        "to": "l10-c-address",
+        "line": 624
+      },
+      {
+        "from": "spaces",
+        "to": "address-line",
+        "line": 626
+      },
+      {
+        "from": "address-line",
+        "to": "l14-c-address",
+        "line": 629
+      },
+      {
+        "from": "spaces",
+        "to": "address-line",
+        "line": 631
+      },
+      {
+        "from": "address-line",
+        "to": "l11-c-address",
+        "line": 634
+      },
+      {
+        "from": "usera",
+        "to": "l1-s-name         l2-r-name",
+        "line": 636
+      },
+      {
+        "from": "address-1",
+        "to": "l2-s-address l3-r-address",
+        "line": 637
+      },
+      {
+        "from": "address-2",
+        "to": "l3-s-address l4-r-address",
+        "line": 638
+      },
+      {
+        "from": "address-3",
+        "to": "l4-s-address l5-r-address",
+        "line": 639
+      },
+      {
+        "from": "address-4",
+        "to": "l5-s-address",
+        "line": 640
+      },
+      {
+        "from": "ws-test-date",
+        "to": "l8-s-date l8-r-date",
+        "line": 644
+      },
+      {
+        "from": "WS-Sales-Key",
+        "to": "l8-r-cust l11-s-cust",
+        "line": 646
+      },
+      {
+        "from": "zero",
+        "to": "l12-s-invoice l12-r-invoice",
+        "line": 655
+      },
+      {
+        "from": "ws-test-date",
+        "to": "l12-date",
+        "line": 656
+      },
+      {
+        "from": "sales-unapplied",
+        "to": "l12-s-amount l12-r-amount",
+        "line": 659
+      },
+      {
+        "from": "open-item-record-s",
+        "to": "oi-header",
+        "line": 694
+      },
+      {
+        "from": "oi-customer",
+        "to": "last-read",
+        "line": 697
+      },
+      {
+        "from": "spaces",
+        "to": "last-read\n              go to  read-open-item",
+        "line": 703
+      },
+      {
+        "from": "spaces",
+        "to": "last-read\n              go to  read-open-item",
+        "line": 709
+      },
+      {
+        "from": "zero",
+        "to": "oi-invoice",
+        "line": 715
+      },
+      {
+        "from": "oi-invoice",
+        "to": "l12-s-invoice\n                              l12-r-invoice",
+        "line": 717
+      },
+      {
+        "from": "oi-date",
+        "to": "u-bin",
+        "line": 720
+      },
+      {
+        "from": "ws-date",
+        "to": "l12-date",
+        "line": 722
+      },
+      {
+        "from": "spaces",
+        "to": "l12-desc",
+        "line": 724
+      },
+      {
+        "from": "1",
+        "to": "z",
+        "line": 725
+      },
+      {
+        "from": "1",
+        "to": "y\n              string  \"Credit Note Re",
+        "line": 734
+      },
+      {
+        "from": "oi-cr",
+        "to": "ws-inv8\n              string  ws-inv delimited  by  size\n                         into l12-desc  pointer  y\n      else\n       if     oi-type = 6\n              move \"Unapplied Credit Allocated\" to l12-desc\n       else\n              move  \"Payment",
+        "line": 737
+      },
+      {
+        "from": "\"Goods\"",
+        "to": "l12-desc",
+        "line": 748
+      },
+      {
+        "from": "amount-out",
+        "to": "l12-r-amount",
+        "line": 759
+      },
+      {
+        "from": "inv-amount",
+        "to": "l12-s-amount",
+        "line": 763
+      },
+      {
+        "from": "inv-amount",
+        "to": "l12-s-amount\n              add   oi-paid    to inv-amount\n              move inv-amount  to l12-r-amount",
+        "line": 768
+      },
+      {
+        "from": "amount-out",
+        "to": "l12-r-amount\n              move  oi-paid  to  l12-s-amount",
+        "line": 782
+      },
+      {
+        "from": "zero",
+        "to": "amount-out",
+        "line": 805
+      },
+      {
+        "from": "spaces",
+        "to": "print-record\n              write  print-record after 8 lines\n              perform  headings-1\n              move  1  to  l-p",
+        "line": 812
+      },
+      {
+        "from": "spaces",
+        "to": "last-read",
+        "line": 821
+      },
+      {
+        "from": "3",
+        "to": "l-p",
+        "line": 838
+      },
+      {
+        "from": "1",
+        "to": "l-p",
+        "line": 846
+      },
+      {
+        "from": "bal-0",
+        "to": "l13-amount1",
+        "line": 848
+      },
+      {
+        "from": "bal-30",
+        "to": "l13-amount2",
+        "line": 849
+      },
+      {
+        "from": "bal-60",
+        "to": "l13-amount3",
+        "line": 850
+      },
+      {
+        "from": "bal-90",
+        "to": "l13-amount4",
+        "line": 851
+      },
+      {
+        "from": "bal-t",
+        "to": "l13-amount5\n                          l13-amount6",
+        "line": 852
+      },
+      {
+        "from": "spaces",
+        "to": "print-record",
+        "line": 859
+      },
+      {
+        "from": "zero",
+        "to": "bal-0   bal-30\n                        bal-60  bal-90\n                        bal-t   l-p",
+        "line": 864
+      },
+      {
+        "from": "\"Y\"",
+        "to": "ws-reply",
+        "line": 927
+      },
+      {
+        "from": "1",
+        "to": "first-time",
+        "line": 947
+      },
+      {
+        "from": "spaces",
+        "to": "print-record",
+        "line": 948
+      },
+      {
+        "from": "spaces",
+        "to": "Print-Record\n              write print-record after 1\n              write print-record from Line-16 after 1\n     else\n              write    print-record after 3 lines",
+        "line": 951
+      },
+      {
+        "from": "ws-test-date",
+        "to": "ws-date",
+        "line": 968
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 970
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz050-test-date",
+        "line": 974
+      },
+      {
+        "from": "\"dd/mm/ccyy\"",
+        "to": "ws-date",
+        "line": 981
+      },
+      {
+        "from": "ws-date",
+        "to": "u-date",
+        "line": 987
+      },
+      {
+        "from": "zero",
+        "to": "u-bin",
+        "line": 988
+      },
+      {
+        "from": "spaces",
+        "to": "ws-Date\n              go to zz060-Exit",
+        "line": 1005
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date",
+        "line": 1007
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 1010
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit",
+        "line": 1014
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 1021
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 1037
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 1040
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit",
+        "line": 1044
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 1051
+      }
+    ],
+    "computes": [
+      {
+        "target": "l-p",
+        "expression": "32  -  l-p",
+        "line": 831
+      }
+    ]
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "SL-Comp-Stat true\n*> 10/12/22 vbc   .13 Added para after some sections 4 GC 3.2 warning msgs.\n*> 07/04/23 vbc - .14 Change FDprint from 132 to 92 for max print line size\n*>                    stops blank line printing on HP 7305 Inktank printers.\n*>                    Will need to check that there are no other progs printing\n*>                    Portrait format. Yes, work fine for HP8600 !.\n*>                .15 Amend the lpr spool command copybook to\n*>                    print-command-p-dispatch for singled-sided printing.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n copy \"envdiv.cob\".\n input-output            section.\n file-control.\n*>-----------\n*>\n*> copy \"selsl.cob\".\n copy \"slselois.cob\".\n copy \"selprint.cob\" replacing \"prt-1\" by \"prt-2\".\n data                    division.\n file section.\n*>-----------\n*>\n*> copy \"fdsl.cob\".\n copy \"slfdois.cob\".\n copy \"fdprint.cob\" replacing ==x(132)== by ==x(92)==.\n*>\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(15) value \"SL110 (3.02.15)\".\n*>\n copy \"print-spool-command-p-dispatch.cob\" replacing \"prt-1\" by \"prt-2\".\n copy \"wsmaps03.cob\".\n copy \"wsfnctn.cob\".\n*> copy \"wsoi.cob\".\n copy \"slwsoi3.cob\".\n copy \"wssl.cob\".\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n*>     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n*>     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n 01  File-Info                          value zero.\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  flavour-line1                            value spaces.\n     03  filler          pic x.\n     03  flavour1        pic x(64).\n 01  flavour-line2                            value spaces.\n     03  filler          pic x.\n     03  flavour2.\n         05 fl2-back-tag pic x.\n         05 fl2-rest     pic x(63).\n*>\n 01  ws-data.\n     03  menu-reply      pic 9.\n     03  ws-reply        pic x.\n     03  a               pic 99.\n     03  y               pic 99.\n     03  z               pic 99.\n     03  ws-inv8         pic z(7)9.\n     03  ws-inv redefines ws-inv8 pic x(8).\n     03  truth           pic 9.\n         88  a-true                        value  1.\n         88  a-false                       value  0.\n     03  address-A       pic x(96).\n     03  address-line    pic x(36).\n     03  first-time      pic 9           value zero.\n     03  ws-spaces       pic x(80)       value spaces.\n     03  st-date         pic x(10)       value spaces.\n     03  work-1          pic s9(6)v99.\n     03  work-2          pic s9(6)v99.\n     03  i               pic 99.\n     03  j               pic 99.\n     03  k               pic 99.\n     03  l-p             pic 99 value zero.\n     03  customer-in     pic x(7) value space.\n     03  filler  redefines  customer-in.\n         05  array-l     pic x  occurs  7.\n     03  pay-date        binary-long        value zero.\n     03  pay-value       pic s9(6)v99       value zero.\n     03  pay-paid        pic s9(6)v99.\n     03  escape-code     pic x.\n     03  last-read       pic x(7)           value spaces.\n     03  inv-amount      pic s9(7)v99.\n     03  amount-out      pic s9(7)v99.\n     03  pay-amount      pic s9(7)v99.\n*>\n 01  ws-amount-screen-display.\n     03  ws-poundsd      pic 9(6).\n     03  ws-period       pic x              value \".\".\n     03  ws-penced       pic v99.\n 01  ws-amount-screen-accept redefines ws-amount-screen-display.\n     03  ws-pound        pic 9(6).\n     03  filler          pic x.\n     03  ws-pence        pic v99.\n*>\n 01  ws-amount-work.\n     03  amt-wk-pds      pic 9(6).\n     03  amt-wk-pence    pic v99.\n 01  ws-amount-ok redefines ws-amount-work.\n     03  amt-ok          pic 9(6)v99.\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n 01  Error-Messages.\n*> System Wide\n     03  SL003          pic x(28) value \"SL003 Hit Return To Continue\".\n*> Module specific\n     03  SL150          pic x(39) value \"SL150 Re-align statement to top of form\".\n     03  SL151          pic x(35) value \"SL151 Sales Transactions Not Posted\".\n*>\n 01  balances        comp-3.\n     03  bal-0           pic s9(7)v99 value zero.\n     03  bal-30          pic s9(7)v99 value zero.\n     03  bal-60          pic s9(7)v99 value zero.\n     03  bal-90          pic s9(7)v99 value zero.\n     03  bal-t           pic s9(7)v99 value zero.\n*>\n 01  line-1.  *> 56\n     03  filler          pic x(24)       value spaces.\n     03  l1-s-name       pic x(32).\n*>\n 01  line-2. *> 92\n     03  filler          pic x(24)       value spaces.\n     03  l2-s-address    pic x(24).\n     03  filler          pic x(21)       value spaces.\n     03  l2-r-name       pic x(23).\n*>\n 01  line-3.\n     03  filler          pic x(24)       value spaces.\n     03  l3-s-address    pic x(24).\n     03  filler          pic x(21)       value spaces.\n     03  l3-r-address    pic x(23).\n*>\n 01  line-4.\n     03  filler          pic x(24)       value spaces.\n     03  l4-s-address    pic x(24).\n     03  filler          pic x(21)       value spaces.\n     03  l4-r-address    pic x(23).\n*>\n 01  line-5.\n     03  filler          pic x(24)       value spaces.\n     03  l5-s-address    pic x(24).\n     03  filler          pic x(21)       value spaces.\n     03  l5-r-address    pic x(23).\n*>\n 01  line-7.\n     03  filler          pic x(9)        value spaces.\n     03  l7-c-name       pic x(32).\n*>\n     03  L7-Heads                        value spaces.\n         05  filler      pic x(17).\n         05  L7-Date-Hd1 pic x(4).        *> 'DATE'\n         05  filler      pic x(7).\n         05  L7-Date-Hd2 pic x(4).        *> 'DATE'\n         05  filler      pic x(7).\n         05  L7-Cust-Hd1 pic X(8).        *> 'CUST.No.'\n*>\n 01  line-8.                       *> 1st line addr  91\n     03  filler          pic x(9)        value spaces.\n     03  l8-c-address    pic x(32).\n     03  filler          pic x(15)       value spaces.\n     03  l8-s-date       pic x(10).\n     03  filler          pic x(3)        value spaces.\n     03  l8-r-date       pic x(10).\n     03  filler          pic x(5)        value spaces.\n     03  l8-r-cust       pic x(7).\n*>\n 01  line-9.                       *> 2nd line addr\n     03  filler          pic x(9)        value spaces.\n     03  l9-c-address    pic x(32).\n*>\n 01  line-10.                       *> 3rd line addr\n     03  filler          pic x(9)        value spaces.\n     03  l10-c-address   pic x(32).\n*>\n 01  line-11.                       *> 4th line addr\n     03  filler          pic x(9)        value spaces.\n     03  l11-c-address   pic x(32).\n     03  filler          pic x(18)       value spaces.\n     03  l11-s-cust      pic x(7).\n*>\n 01  line-12.\n     03  filler          pic xx          value spaces.\n     03  l12-s-invoice   pic z(7)9       blank when zero.\n     03  filler          pic xxx         value spaces.\n     03  l12-date        pic x(11).       *> 24\n     03  l12-desc        pic x(31).       *> 55\n     03  l12-s-amount    pic z(6)9.99cr.  *> 67\n     03  filler          pic xxx         value spaces.   *> 70\n     03  l12-r-invoice   pic z(7)9       blank when zero.  *> 78\n     03  l12-r-amount    pic z(7)9.99cr.                   *> 91\n*>\n 01  line-13.\n     03  l13-amount1     pic z(6)9.99cr.\n*>    blank when zero.\n     03  filler          pic x(2)        value spaces.    *> 14\n     03  l13-amount2     pic z(6)9.99cr.                 *> 26\n*>    blank when zero.\n     03  filler          pic x           value spaces.\n     03  l13-amount3     pic z(6)9.99cr.                 *> 13 = 39\n*>    blank when zero.\n     03  filler          pic x           value spaces.\n     03  l13-amount4     pic z(6)9.99cr.                 *> 52\n*>    blank when zero.\n     03  filler          pic x           value spaces.\n     03  l13-amount5     pic z(6)9.99cr.                 *> 65\n*>    blank when zero.\n     03  filler          pic x(12)       value spaces.\n     03  l13-amount6     pic z(6)9.99cr.                 *> 24 - 89\n*>    blank when zero.\n*>\n 01  line-14.\n     03  filler          pic x(9)        value spaces.\n     03  l14-c-address   pic x(32).\n     03  L14-Heads                       value spaces.\n         05  filler      pic x(15).\n         05  L14-Cust-HD pic x(8).    *> 'CUST.No.'\n*>\n 01  Line-15.\n     03  filler          pic x(9)        value spaces.\n     03  L15-Ret-Head    pic x(51)       value \"PLEASE RETURN A COPY OF STATEMENT WITH YOUR PAYMENT\".\n*>\n 01  Line-16.                 *> Print before L12\n     03  L16-Inv-HD1     pic x(9)          value \"INVOICE #\".\n     03  filler          pic x(6)          value spaces.\n     03  L16-Date-HD     pic x(4)          value \"DATE\".\n     03  filler          pic x(5)          value spaces.    *> 24\n     03  L16-Exp-HD      pic x(11)         value \"EXPLANATION\". *> 35\n     03  filler          pic x(23)         value spaces.          *> 58\n     03  L16-Amd-HD1     pic x(6)          value \"AMOUNT\".       *> 64\n     03  filler          pic x(5)          value spaces.         *> 69\n     03  L16-Inv-HD2     pic x(9)          value \"INVOICE #\".     *> 78\n     03  L16-Amd-HD2     pic x(10)         value \"    AMOUNT\".    *> 88\n*>\n 01  Line-Total-Heads.\n     03  filler          pic x(5)         value spaces.\n     03  filler          pic x(7)         value \"CURRENT\".    *> 12\n     03  filler          pic x(7)         value spaces.\n     03  filler          pic x(7)         value \"30 DAYS\".    *> 26\n     03  filler          pic x(6)         value spaces.\n     03  filler          pic x(7)         value \"60 DAYS\".    *> 39\n     03  filler          pic x(5)         value spaces.\n     03  filler          pic x(8)         value \"90+ DAYS\".   *> 52\n     03  filler          pic x(4)         value spaces.\n     03  filler          pic x(9)         value \"TOTAL DUE\".   *> 65\n     03  filler          pic x(13)         value spaces.\n     03  filler          pic x(9)         value \"TOTAL DUE\".   *> 88\n*>\n linkage section.\n*>**************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n init01 section.\n*>\n     if       FS-Cobol-Files-Used\n              call  \"CBL_CHECK_FILE_EXIST\" using File-19    *> Open ITM3 file\n                                                 File-Info\n              if    return-code not = zero          *> not = zero - No file found\n                    display SL151   at 2301\n                    display SL003   at 2401\n                    accept ws-reply at 2430\n                    go to menu-exit\n              end-if\n     end-if\n*>\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n*>\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n     move     Print-Spool-Name2 to PSN2.\t\t\t*> Spool 2\n     move     1  to File-Key-No.\n*>\n     move     to-day to u-date.\n     display  prog-name at 0202 with foreground-color 2 erase eos.\n     display  \"Statement Production\" at 0232 with foreground-color 2.\n     perform  zz070-Convert-Date.\n     display  ws-date at 0271 with foreground-color 2.\n*>\n*> Check if heads needed if so set up lits\n*>\n     if       SL-Comp-Stat\n              move     spaces     to Line-7\n              move     \"DATE\"     to L7-Date-Hd1\n                                     L7-Date-Hd2\n              move     \"CUST.No.\" to L7-Cust-Hd1\n                                     L14-Cust-HD.\n\n     perform  Statements.\n*>\n     call     \"SYSTEM\" using Print-Report.\n*>\n menu-exit.\n*>********\n*>\n     exit     program.\n*>\n accept-money.\n*>-----------\n*>\n     move     zero to ws-poundsd amt-ok ws-penced.\n     display  ws-amount-screen-display at curs  with foreground-color 3.\n     accept   ws-amount-screen-accept at curs   with foreground-color 3 update.\n     move     ws-pound to amt-wk-pds.\n     move     ws-pence to amt-wk-pence.\n*>\n*>****************************************************************\n*>                  P r o c e d u r e s                          *\n*>****************************************************************\n*>\n statements              section.\n*>==============================\n*>\n     display  \"****************************************\" at 0441 with foreground-color 2.\n     display  \"*Date    [  /  /    ]*                 *\" at 0541 with foreground-color 2.\n     display  \"*A/C Nos    [       ]*               ***\" at 0641 with foreground-color 2.\n     display  \"*Value    [         ]*                 *\" at 0741 with foreground-color 2.\n     display  \"****************************************\" at 0841 with foreground-color 2.\n*>\n     display  \"Notes\" at 1101 with foreground-color 2.\n     display  \"*****\" at 1201 with foreground-color 2.\n     display  \" (1)  -   <Date>  :  Appears on statement\" AT 1401 with foreground-color 2.\n     display  \" (2)  -   <A/C>   :  A/C's to match for printing\" at 1501 with foreground-color 2.\n     display  \" (3)  -   <Value> :  Minimum O/S to print\" AT 1601 with foreground-color 2.\n*>\n date-input.\n*>*********\n*>\n     display  ws-date at 0551 with foreground-color 3.\n     accept   ws-date at 0551 with foreground-color 3 update.\n     if       ws-date = spaces\n              go to main-exit.\n*>\n     move     ws-date to ws-test-date.\n     perform  zz050-Validate-Date.\n     if       u-bin = zero\n              go to  date-input.\n*>\n*>     move     u-date  to  st-date.  *> UK default date, ws-test-date is in display/accept format\n     move     u-bin to pay-date.      *> this one is in binary days from 01/01/1600\n*>\n customer-input.\n*>*************\n*>\n     accept   customer-in at 0654 with foreground-color 2 update.\n     move     function upper-case (customer-in) to customer-in.\n*>\n value-input.\n*>**********\n*>\n     move     0752 to curs.\n     perform  accept-money.\n     move     amt-ok to pay-value.\n*>\n flavour-in.\n*>*********\n*>\n     display  \"Msg Line 1 - [\" at 1801 with foreground-color 2.\n     display  \"]\" at 1879 with foreground-color 2.\n     display  \"Msg Line 2 - [\" at 1901 with foreground-color 2.\n     display  \"]\" at 1979 with foreground-color 2.\n*>\n     accept   flavour1 at 1815 with foreground-color 3 update.\n     accept   flavour2 at 1915 with foreground-color 3 update.\n     if       fl2-back-tag = \"<\"\n              go to flavour-in.\n*>\n     if       FS-Cobol-Files-Used\n              open     input  open-item-file-s\n              if       fs-reply not = zero\n                       close open-item-file-s\n                       go to Main-End\n              end-if\n     else\n              perform  OTM3-Open-Input\n              if       fs-reply not = zero\n                       perform OTM3-Close\n                       go to Main-End\n              end-if\n     end-if\n     perform  Sales-Open-Input.\n     open     output print-file.\n*>\n     if       customer-in = spaces\n              go to read-sales.\n*>\n     move     customer-in to WS-Sales-Key.\n     set      fn-not-less-than to true.\n     move     1  to File-Key-No.\n     perform  Sales-Start.                   *> start sales-file key not < WS-Sales-Key invalid key\n     if       fs-reply = 21\n              move 1 to y.\n     inspect  customer-in replacing all spaces by \"Z\".\n*>\n read-sales.\n*>*********\n*>\n     perform  Sales-Read-Next.        *> read sales-file next record at end\n     if       fs-reply = 10\n              go to  main-end.\n*>\n     if       sales-unapplied not = zero\n              subtract sales-unapplied from sales-current.\n*>\n     if       sales-current  = zero\n              go to read-sales.\n*>\n     if       pay-value not = zero\n       and    sales-current  <  pay-value\n              go to  read-sales.\n*>\n     if       customer-in not =   spaces\n        and   WS-Sales-Key > customer-in\n              go to main-end.\n*>\n     move     sales-address  to  address-A.\n*>\n     move     sales-name  to  l7-c-name.\n*>\n     move     1  to  a.\n     unstring address-A  delimited  by  sl-delim\n              into  address-line count a pointer  a.\n     move     address-line  to  l8-c-address.\n*>\n     move     spaces  to  address-line.\n     unstring address-A  delimited  by  sl-delim\n              into  address-line count a pointer  a.\n     move     address-line  to  l9-c-address.\n*>\n     move     spaces  to  address-line.\n     unstring address-A delimited  by  sl-delim\n              into  address-line count a pointer  a.\n     move     address-line  to  l10-c-address.\n*>\n     move     spaces to address-line.\n     unstring address-A delimited  by  sl-delim\n              into  address-line  count a pointer  a.\n     move     address-line  to  l14-c-address.\n*>\n     move     spaces to address-line.\n     unstring address-A delimited  by  sl-delim\n              into  address-line  count a pointer  a.\n     move     address-line  to  l11-c-address.\n*>\n     move     usera  to l1-s-name         l2-r-name.\n     move     address-1  to  l2-s-address l3-r-address.\n     move     address-2  to  l3-s-address l4-r-address.\n     move     address-3  to  l4-s-address l5-r-address.\n     move     address-4  to  l5-s-address.\n*>\n*> Note that ws-test-date still has the pre-converted date from the accept\n*>\n     move     ws-test-date  to  l8-s-date l8-r-date.\n*>\n     move     WS-Sales-Key  to  l8-r-cust l11-s-cust.\n*>\n     perform  headings-1.\n*>\n     if       sales-unapplied = zero\n              go to read-open-item.\n*>\n*> Note that ws-test-date still has the pre-converted date from the accept\n*>\n     move     zero to l12-s-invoice l12-r-invoice.\n     move     ws-test-date to l12-date.\n     move     \"Unapplied Credit Balance\" to l12-desc.\n     multiply -1 by sales-unapplied.\n     move     sales-unapplied to l12-s-amount l12-r-amount.\n     add      sales-unapplied to bal-0.\n     add      sales-unapplied to bal-t.\n     add      1 to l-p.\n     write    print-record from line-12 after 1.\n*>\n Read-Open-Item.\n*>*************\n*>\n*> Here we have two choices\n*> 1: If using files (Cobol), work via the sort file\n*>    to help select records",
+        "line": 95
+      },
+      {
+        "type": "IF",
+        "condition": "using RDB tables",
+        "line": 671
+      },
+      {
+        "type": "IF",
+        "condition": "last-read = spaces\n              if       NOT FS-Cobol-Files-Used\n                       perform OTM3-Read-Next-Sorted-By-Cust\n                       if      fs-reply not = zero     *> = 10\n                               perform  End-Statement thru End-Stat-Do\n                               perform OTM3-Close\n                               go to Main-End\n                       end-if\n                       go to Read-Loop-Tests\n              end-if\n*>\n              read  open-item-file-s  record at end\n                    perform  End-Statement thru End-Stat-Do\n                    close    open-item-file-s\n                    go to    Main-End\n     end-if.\n*>\n     move     open-item-record-s  to  oi-header.\n*>\n Read-Loop-Tests.\n     move     oi-customer  to  last-read.\n*>\n     if       last-read  >  WS-Sales-Key\n              go to  end-statement.\n*>\n     if       last-read  not = WS-Sales-Key\n              move  spaces  to  last-read\n              go to  read-open-item.\n*>\n*> O-I transaction is for this customer.\n*>\n     if       oi-type = 1  or  4\n              move  spaces  to  last-read\n              go to  read-open-item.\n*>\n*> Can safely ignore receipts & pro-formas.\n*>\n     if       oi-type = 5 or 6\n              move  zero  to  oi-invoice.\n*>\n     move     oi-invoice  to  l12-s-invoice\n                              l12-r-invoice.\n*>\n     move     oi-date  to  u-bin.\n     perform  zz060-Convert-Date.\n     move     ws-date   to  l12-date.\n*>\n     move     spaces  to  l12-desc.\n     move     1  to  z.\n*>\n     if       oi-type = 2\n              string  \"Goods As Per - \"  delimited  by size\n                         into l12-desc  pointer  z\n              string  oi-description  delimited  by  \"  \"\n                         into l12-desc  pointer  z\n     else\n      if      oi-type = 3\n              move  1  to  y\n              string  \"Credit Note Re. Inv - \" delimited by size\n                         into l12-desc  pointer  y\n              move oi-cr to ws-inv8\n              string  ws-inv delimited  by  size\n                         into l12-desc  pointer  y\n      else\n       if     oi-type = 6\n              move \"Unapplied Credit Allocated\" to l12-desc\n       else\n              move  \"Payment. Received With Thanks\" to  l12-desc.\n*>\n     if       oi-type = 2 and\n              oi-description = spaces\n              move \"Goods\" to l12-desc.\n*>\n     add      oi-net        oi-extra      oi-carriage\n              oi-vat        oi-discount   oi-e-vat\n              oi-deduct-amt oi-deduct-vat oi-c-vat     giving  inv-amount.\n*>\n*> Invoices Only Here\n*>\n     if       oi-type = 2\n              subtract   oi-paid  from  inv-amount  giving  amount-out\n              add   amount-out oi-p-c  giving l12-s-amount\n              move  amount-out  to  l12-r-amount.\n     if       oi-type = 2\n       and    amount-out = zero\n       and    oi-p-c = zero\n              move  inv-amount  to  l12-s-amount.\n*>\n*> Cr. Notes Only Here.\n*>\n     if       oi-type = 3\n              move  inv-amount to  l12-s-amount\n              add   oi-paid    to inv-amount\n              move inv-amount  to l12-r-amount.\n*>\n*> Payments  Only Here.\n*>\n     if       oi-type = 5  or  6\n              if  oi-paid  not negative\n                  multiply  -1  by  oi-paid.\n     if       oi-type = 5  or  6\n              if  oi-approp  not negative\n                  multiply  -1  by  oi-approp.\n     if       oi-type = 5  or  6\n              subtract oi-approp from oi-paid giving amount-out\n              move  amount-out  to  l12-r-amount\n              move  oi-paid  to  l12-s-amount.\n*>\n     subtract oi-date  from  pay-date  giving  work-1.\n*>\n*> Now work out ageing\n*> (dont worry if paid in full - routine still works ok)\n*>\n     if       work-1  <  30\n              add  amount-out  to  bal-0\n     else\n      if      work-1  <  60\n              add  amount-out  to  bal-30\n      else\n       if     work-1  <  90\n              add  amount-out  to  bal-60\n       else\n              add  amount-out  to  bal-90.\n*>\n     add      amount-out  to  bal-t.\n*>\n bypass-ageing.\n*>\n     move     zero  to  amount-out.\n*>\n*> Now to print. What joy !!!!!!.\n*>\n     add      1  to  l-p.\n*>\n     if       l-p  >  28\n              move  spaces  to  print-record\n              write  print-record after 8 lines\n              perform  headings-1\n              move  1  to  l-p.\n*>\n     write    print-record  from  line-12 after 1.\n*>\n*> Loop back for next item....\n*>\n     move     spaces  to  last-read.\n     go       to read-open-item.\n*>\n*> Can only get here at the end of a statement.\n*>\n end-statement.\n*>************\n*>\n*> Now let us (or cabbage) compute the skip......wow !!!!!!\n*>\n     compute  l-p  =  32  -  l-p.\n*>\n     if       l-p  <  6\n              go to  end-stat-do.\n     subtract 4  from  l-p.\n     write    print-record  from  flavour-line1 after l-p.\n     write    print-record  from  flavour-line2 after 1.\n     move     3  to  l-p.\n*>\n end-stat-do.\n*>**********\n*>\n     if       SL-Comp-Stat\n              subtract 1 from l-p\n              write  print-record from Line-Total-Heads after l-p lines\n              move   1 to l-p.\n\n     move     bal-0   to  l13-amount1.\n     move     bal-30  to  l13-amount2.\n     move     bal-60  to  l13-amount3.\n     move     bal-90  to  l13-amount4.\n     move     bal-t   to  l13-amount5\n                          l13-amount6.\n*>\n     write    print-record from line-13 after l-p lines.\n*>\n*> Set-up the form for the next one",
+        "line": 677
+      },
+      {
+        "type": "IF",
+        "condition": "FS-Cobol-Files-Used             *> Make it a null file\n              close open-item-file-s\n              open  output open-item-file-s   *> clear it.\n              close open-item-file-s\n     end-if.\n*>\n*>================================================================================================*\n*>  Here you might want to change the spool name to reflect the printer containing any preprinted *\n*>   special paper, eg continuous forms or a laser that has the statement Template pre-loaded.    *\n*>    If preprinted paper has company details on unset the SL-Comp-Stat field in system setup.    *\n*>================================================================================================*\n*>\n main-exit.   exit section.\n*>********    ****\n*>\n headings-1          section.\n*>==========================\n*>\n Headings-1-Main.\n     write    print-record  from  line-1 after 1.\n     write    print-record  from  line-2 after 1.\n     write    print-record  from  line-3 after 1.\n     write    print-record  from  line-4 after 1.\n     write    print-record  from  line-5 after 1.\n     write    print-record  from  line-7 after 2.\n     write    print-record  from  line-8 after 1.\n     write    print-record  from  line-9 after 1.\n     write    print-record  from  line-10 after 1.\n     write    print-record  from  line-14 after 1.\n     write    print-record  from  line-11 after 1.\n*>\n     if       first-time  not = zero\n              go to  main-end.\n*>\n*>####################################################################################################\n*>  These lines are for directly used printers, spooled systems do not need this unless the spooler\n*>       can not handle alignment tests etc so adjust to suit your needs. For those spoolers that\n*>       do, just hit return on first question  if code left in but a bypass has been added so that\n*>      this block of code is NOT run - REMOVE or remark it, the Go TO MAIN-END\n*>####################################################################################################\n*>\n*> Paper alignment is bypassed for paper in inkjet, laser type printers\n*>    if needed just add *> at the start of next line (GO TO MAIN-END.\n*>\n     Go TO MAIN-END.\n*>\n     display  \"Statement correctly aligned.... (Y/N) ? - [ ]\" at 2001 with foreground-color 2.\n*>\n     move     \"Y\"  to  ws-reply.\n     accept   ws-reply at 2044 with foreground-color 6 update.\n     move     function upper-case (ws-reply) to ws-reply.\n*>\n     if       ws-reply = \"Y\"\n              go to  main-end.\n*>\n     display  SL150    at 2101 with foreground-color 2. *> realign paper msg\n     display  SL003    at 2201 with foreground-color 2. *> hit ret\n     accept   ws-reply at 2044 with foreground-color 2.\n*>\n     display  \" \" at 2101 with erase eol.\n     display  \" \" at 2201 with erase eol.\n     go       to headings-1-Main.\n*>\n main-end.\n*>*******\n*>\n     if       first-time = zero\n              display ws-spaces at 2001.\n     move     1 to first-time.\n     move     spaces  to  print-record.\n     if       SL-Comp-Stat\n              write print-record from Line-15 after 1\n              move   spaces to Print-Record\n              write print-record after 1\n              write print-record from Line-16 after 1\n     else\n              write    print-record after 3 lines.\n*>\n main-exit.   exit section.\n*>\n zz050-Validate-Date        section.\n*>*********************************\n*>\n*>  Converts USA/Intl to UK date format for processing.\n*>****************************************************\n*> Input:   ws-test-date\n*> output:  u-date/ws-date as uk date format\n*>          u-bin not zero if valid date\n*>\n     move     ws-test-date to ws-date.\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz050-test-date.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz050-test-date.\n*>\n*> So its International date format\n*>\n     move     \"dd/mm/ccyy\" to ws-date.  *> swap Intl to UK form\n     move     ws-test-date (1:4) to ws-Year.\n     move     ws-test-date (6:2) to ws-Month.\n     move     ws-test-date (9:2) to ws-Days.\n*>\n zz050-test-date.\n     move     ws-date to u-date.\n     move     zero to u-bin.\n     perform  maps04.\n*>\n zz050-exit.\n     exit     section.\n*>\n zz060-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in binary to UK/USA/Intl date format\n*>****************************************************\n*> Input:   u-bin\n*> output:  ws-date as uk/US/Inlt date format\n*>          u-date & ws-Date = spaces if invalid date\n*>\n     perform  maps04.\n     if       u-date = spaces\n              move spaces to ws-Date\n              go to zz060-Exit.\n     move     u-date to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz060-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     u-date (7:4) to ws-Intl-Year.\n     move     u-date (4:2) to ws-Intl-Month.\n     move     u-date (1:2) to ws-Intl-Days.\n*>\n zz060-Exit.\n     exit     section.\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     to-day (7:4) to ws-Intl-Year.\n     move     to-day (4:2) to ws-Intl-Month.\n     move     to-day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>\n zz080-Issue-Email  section.\n*>*************************\n*>\n*> This one for mailx - the variables not created !\n*>\n  *>   STRING   \"echo \"\n  *>            FUNCTION TRIM (mail-body TRAILING)\n  *>            \" | mailx -r \"\n  *>            FUNCTION TRIM (mail-from-address TRAILING)\n  *>            \" -s \"\n  *>            FUNCTION TRIM (mail-subject TRAILING)\n  *>            \" -a \"\n  *>            FUNCTION TRIM (mail-attachment-filename TRAILING)\n  *>            \" \"\n  *>            FUNCTION TRIM (mail-to-address TRAILING)\n  *>            x\"00\" DELIMITED BY SIZE\n  *>                   INTO mail-command.\n*>\n zz080-Exit.  exit section.\n*>\n maps04       section.\n*>*******************\n*>\n     call     \"maps04\"  using  maps03-ws.\n*>\n maps04-exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 879
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 9,
+    "cognitive": 4,
+    "halstead": {
+      "uniqueOperators": 2,
+      "uniqueOperands": 100,
+      "totalOperators": 86,
+      "totalOperands": 170,
+      "vocabulary": 102,
+      "length": 256,
+      "volume": 1708.1408875447028
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

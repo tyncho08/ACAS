@@ -1,0 +1,233 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs085.cbl",
+  "fileName": "irs085.cbl",
+  "timestamp": "2025-09-15T16:25:49.192Z",
+  "programId": "irs085",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 101
+      },
+      {
+        "name": "file",
+        "line": 114
+      },
+      {
+        "name": "working-storage",
+        "line": 132
+      },
+      {
+        "name": "linkage",
+        "line": 171
+      },
+      {
+        "name": "init01",
+        "line": 212
+      },
+      {
+        "name": "input-to-sort",
+        "line": 223
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 102
+      },
+      {
+        "name": "File-Defs",
+        "line": 209
+      },
+      {
+        "name": "process-input-record",
+        "line": 233
+      },
+      {
+        "name": "end-of-input",
+        "line": 257
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "irsubn",
+        "line": 49,
+        "type": "DYNAMIC",
+        "using": []
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 92,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 99,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 138,
+        "replacing": null
+      },
+      {
+        "name": "irswsdflt",
+        "line": 139,
+        "replacing": null
+      },
+      {
+        "name": "irswspost",
+        "line": 141,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 158,
+        "replacing": null
+      },
+      {
+        "name": "irswssystem",
+        "line": 172,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 175,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 205,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ZZ100-ACAS-IRS-Calls",
+        "line": 261,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "acasirsubn",
+        "thru": null,
+        "line": 50
+      },
+      {
+        "target": "acasirsub3",
+        "thru": null,
+        "line": 215
+      },
+      {
+        "target": "acasirsub4-Open-Input",
+        "thru": null,
+        "line": 225
+      },
+      {
+        "target": "acasirsub4-Read-Next",
+        "thru": null,
+        "line": 235
+      },
+      {
+        "target": "acasirsub4-Close",
+        "thru": null,
+        "line": 259
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "3",
+        "to": "file-function",
+        "line": 214
+      },
+      {
+        "from": "post-mm",
+        "to": "sort-month",
+        "line": 239
+      },
+      {
+        "from": "post-amount",
+        "to": "sort-amount",
+        "line": 240
+      },
+      {
+        "from": "post-cr",
+        "to": "sort-account",
+        "line": 242
+      },
+      {
+        "from": "post-dr",
+        "to": "sort-account",
+        "line": 246
+      },
+      {
+        "from": "vat-amount",
+        "to": "sort-amount",
+        "line": 251
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment division.\n copy  \"envdiv.cob\".\n*>\n input-output section.\n file-control.\n*>\n *>    select  posting-file    assign  post-file\n *>                            organization  indexed\n *>                            access  dynamic\n *>                            record  post-key\n *>                            status  fs-reply.\n     select  output-file     assign  \"workpost.tmp\"\n                             organization  sequential.\n     select  sort-file       assign  \"work.tmp\".\n*>\n data division.\n file section.\n *>\n *> fd  posting-file.\n*>\n fd  output-file.\n*>\n 01  output-record.\n     03  output-date     pic 99.\n     03  output-account  pic 9(5)      comp.\n     03  output-amount   pic s9(7)v99  comp.\n*>\n sd  sort-file.\n*>\n 01  sort-record.\n     03  sort-month      pic 99.\n     03  sort-account    pic 9(5)        comp.\n     03  sort-amount     pic s9(7)v99    comp.\n*>\n working-storage section.\n*>-----------------------\n 77  prog-name           pic x(16) value \"irs085 (3.02.06)\".\n 77  post-file           pic x(11).\n 77  ws-reply            pic x     value space.\n*>\n copy \"wsfnctn.cob\".\n copy \"irswsdflt.cob\"     replacing Default-Record by WS-IRS-Default-Record.\n*>\n copy \"irswspost.cob\".\n*>\n 01  filler redefines Posting-Record.\n     03  filler          pic 9(5).\n     03  filler          pic xx.\n     03  filler.\n         05  filler      pic xxx.\n         05  post-mm     pic 99.\n         05  filler      pic xxx.\n*>\n 01  Dummies-For-Unused-FH-Calls.      *> IRS call blk at zz100-ACAS-IRS-Calls\n     03  WS-IRSNL-Record       pic x.\n *>    03  WS-IRS-Default-Record pic x.\n *>    03  Posting-Record        pic x.\n     03  Final-Record          pic x.\n     03  WS-IRS-Posting-Record pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  Error-Messages.\n*> System Wide\n     03  SY008          pic x(32) value \"SY008 Note message & Hit return \".\n     03  IR911          pic x(47) value \"IR911 Error on systemMT processing, Fs-reply = \".\n     03  IR912          pic x(51) value \"IR912 Error on irsnominalMT processing, Fs-reply = \".\n     03  IR913          pic x(48) value \"IR913 Error on irsdfltMT processing, Fs-reply = \".\n     03  IR914          pic x(51) value \"IR914 Error on irspostingMT processing, Fs-reply = \".\n     03  IR915          pic x(49) value \"IR915 Error on irsfinalMT processing, Fs-reply = \".\n     03  IR916          pic x(50) value \"IR916 Error on slpostingMT processing, Fs-reply = \".\n*> Module specific.   None.\n*>\n linkage section.\n copy \"irswssystem.cob\"   *> IRS param record\n              replacing system-record  by IRS-System-Params. *> (01 level)\n*>\n copy \"wssystem.cob\"    *> NEW for v3.02\n             replacing  System-Record by WS-System-Record\n                        Run-Date   by ACAS-Run-Date     *> these 3 are in binary\n                        Start-Date by ACAS-Start-Date   *> IRS expects as x(8)\n                        End-Date   by ACAS-End-Date     *>  dd/mm/yy\n                        suser      by ACAS-suser\n                        Address-1  by ACAS-Address-1\n                        Address-2  by ACAS-Address-2\n                        Address-3  by ACAS-Address-3\n                        Address-4  by ACAS-Address-4\n                        Post-Code  by ACAS-Post-Code\n                        Print-Spool-Name by ACAS-Print-Spool-Name\n                        Pass-Value by ACAS-Pass-Value\n                        Pass-Word  by ACAS-Pass-Word\n                        OP-System  By ACAS-Op-System\n                        Client     by IRS-Client\n                        System-Ops by IRS-System-Ops\n                        Next-Post  by IRS-Next-Post\n                        Vat-Rates2 by IRS-Vat-Rates2\n                        Vat1       by IRS-Vat1\n                        Vat2       by IRS-Vat2\n                        Vat3       by IRS-Vat3\n                        Vat-Group  by IRS-Vat-Group\n                        Vat-Psent  by IRS-Vat-Psent\n                        Save-Sequ  by IRS-Save-Sequ\n                        System-Work-Group by IRS-System-Work-Group\n                        PL-App-Created by IRS-PL-App-Created\n                        PL-Approp-AC   by IRS-PL-Approp-AC\n                        1st-Time-Flag  by IRS-First-Time-Flag.\n*>\n copy \"wsnames.cob\".\n*>\n procedure division using IRS-System-Params\n                          WS-System-Record\n                          File-Defs.\n*>=========================================\n*>\n init01 section.\n*>**************\n     move     3 to file-function.\n     perform  acasirsub3.\n     sort     sort-file on ascending key sort-account sort-month\n                  input procedure is input-to-sort\n                              giving output-file.\n*>\n main-exit.   exit program.\n*>********    ************\n*>\n input-to-sort section.\n*>---------------------\n     perform  acasirsub4-Open-Input.\n     if       fs-reply not zero\n              display IR914    at 2301 with foreground-color 4 erase eol\n              display fs-reply at 2352 with foreground-color 4\n              display SY008    at 2401 with foreground-color 4 erase eol\n              accept ws-reply  at 2434\n              go to end-of-input.\n*>\n process-input-record.\n*>\n     perform  acasirsub4-Read-Next.\n     if       fs-reply = 10\n              go to end-of-input.\n*>\n     move     post-mm to sort-month.\n     move     post-amount to sort-amount.\n*>\n     move     post-cr to sort-account.\n     release  sort-record.\n*>\n     multiply -1 by sort-amount.\n     move     post-dr to sort-account.\n     release  sort-record.\n*>\n     if       vat-ac-def = zero\n              go to process-input-record.\n     move     vat-amount to sort-amount.\n     move     def-acs (vat-ac-def) to sort-account.\n     release  sort-record.\n*>\n     go to    process-input-record.\n*>\n end-of-input.\n*>\n     perform  acasirsub4-Close.\n*>\n copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n*>",
+        "line": 89
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 10,
+      "totalOperators": 6,
+      "totalOperands": 12,
+      "vocabulary": 11,
+      "length": 18,
+      "volume": 62.26976913547135
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

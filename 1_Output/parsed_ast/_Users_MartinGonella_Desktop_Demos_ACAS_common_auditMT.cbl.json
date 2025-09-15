@@ -1,0 +1,1452 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditMT.cbl",
+  "fileName": "auditMT.cbl",
+  "timestamp": "2025-09-15T16:25:37.070Z",
+  "programId": "auditMT",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 205
+      },
+      {
+        "name": "Working-Storage",
+        "line": 207
+      },
+      {
+        "name": "Linkage",
+        "line": 294
+      },
+      {
+        "name": "screen",
+        "line": 326
+      },
+      {
+        "name": "ba-ACAS-DAL-Process",
+        "line": 348
+      },
+      {
+        "name": "bb000-HV-Load",
+        "line": 1036
+      },
+      {
+        "name": "exit",
+        "line": 1057
+      },
+      {
+        "name": "bb100-UnloadHVs",
+        "line": 1059
+      },
+      {
+        "name": "exit",
+        "line": 1082
+      },
+      {
+        "name": "bb200-Insert",
+        "line": 1084
+      },
+      {
+        "name": "exit",
+        "line": 1238
+      },
+      {
+        "name": "bb300-Update",
+        "line": 1240
+      },
+      {
+        "name": "exit",
+        "line": 1398
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "ba010-Initialise",
+        "line": 359
+      },
+      {
+        "name": "SQL-State",
+        "line": 370
+      },
+      {
+        "name": "end-evaluate",
+        "line": 401
+      },
+      {
+        "name": "ba020-Process-Open",
+        "line": 403
+      },
+      {
+        "name": "end-string",
+        "line": 411
+      },
+      {
+        "name": "end-string",
+        "line": 415
+      },
+      {
+        "name": "end-string",
+        "line": 419
+      },
+      {
+        "name": "end-string",
+        "line": 423
+      },
+      {
+        "name": "end-string",
+        "line": 427
+      },
+      {
+        "name": "end-string",
+        "line": 431
+      },
+      {
+        "name": "ba030-Process-Close",
+        "line": 447
+      },
+      {
+        "name": "ba040-Process-Read-Next",
+        "line": 462
+      },
+      {
+        "name": "end-if",
+        "line": 528
+      },
+      {
+        "name": "end-if",
+        "line": 580
+      },
+      {
+        "name": "end-if",
+        "line": 586
+      },
+      {
+        "name": "ba050-Process-Read-Indexed",
+        "line": 593
+      },
+      {
+        "name": "ba060-Process-Start",
+        "line": 688
+      },
+      {
+        "name": "ba070-Process-Write",
+        "line": 794
+      },
+      {
+        "name": "ba080-Process-Delete",
+        "line": 821
+      },
+      {
+        "name": "end-if",
+        "line": 872
+      },
+      {
+        "name": "end-if",
+        "line": 953
+      },
+      {
+        "name": "ba090-Process-Rewrite",
+        "line": 957
+      },
+      {
+        "name": "ba100-Bad-Function",
+        "line": 1002
+      },
+      {
+        "name": "ba998-Free",
+        "line": 1014
+      },
+      {
+        "name": "ba999-end",
+        "line": 1026
+      },
+      {
+        "name": "end-if",
+        "line": 1031
+      },
+      {
+        "name": "ba999-exit",
+        "line": 1033
+      },
+      {
+        "name": "bb000-Exit",
+        "line": 1056
+      },
+      {
+        "name": "bb100-Exit",
+        "line": 1081
+      },
+      {
+        "name": "bb200-Exit",
+        "line": 1237
+      },
+      {
+        "name": "bb300-Exit",
+        "line": 1397
+      },
+      {
+        "name": "Ca-Process-Logs",
+        "line": 1400
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 1404
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 514,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "*>",
+          "set",
+          "non",
+          "'0'",
+          "if",
+          "no",
+          "rows",
+          "?",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "*>",
+          "do",
+          "not",
+          "really",
+          "need",
+          "to",
+          "do",
+          "this",
+          "meaning",
+          "the",
+          "above",
+          "CALL",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "\"No",
+          "Data\"",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba998-Free",
+          "*>",
+          "can",
+          "clear",
+          "the",
+          "dup",
+          "code",
+          "after",
+          "testing",
+          "end-if",
+          "move",
+          "1",
+          "to",
+          "Most-Cursor-Set",
+          "*>",
+          "should",
+          "test",
+          "if",
+          "select",
+          "worked",
+          "first??????",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 542,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-AUDIT-ID",
+          "HV-AUDIT-KEY",
+          "HV-AUDIT-INVOICE-PO",
+          "HV-AUDIT-CR-FOR-INVOICE",
+          "HV-AUDIT-DESC",
+          "HV-AUDIT-PROCESS-DAT",
+          "HV-AUDIT-REVERSE-TRANSACTION",
+          "HV-AUDIT-TRANSACTION-QTY",
+          "HV-AUDIT-UNIT-COST",
+          "HV-AUDIT-STOCK-VALUE-CHANGE",
+          "HV-AUDIT-NO",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "return-code",
+          "=",
+          "-1",
+          "*>",
+          "no",
+          "more",
+          "data",
+          "so",
+          "free",
+          "cursor",
+          "&",
+          "return",
+          "move",
+          "10",
+          "to",
+          "fs-Reply",
+          "WE-Error",
+          "move",
+          "\"EOF\"",
+          "to",
+          "WS-File-Key",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "=",
+          "zero",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "*>",
+          "EOF",
+          "equivilent",
+          "!!",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "*>",
+          "Not",
+          "really",
+          "needed",
+          "but",
+          "help",
+          "for",
+          "testing",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "*>",
+          "ditto",
+          "initialize",
+          "STOCKAUDIT-REC",
+          "with",
+          "filler",
+          "move",
+          "\"EOF2\"",
+          "to",
+          "WS-File-Key",
+          "end-if",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 646,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-AUDIT-ID",
+          "HV-AUDIT-KEY",
+          "HV-AUDIT-INVOICE-PO",
+          "HV-AUDIT-CR-FOR-INVOICE",
+          "HV-AUDIT-DESC",
+          "HV-AUDIT-PROCESS-DAT",
+          "HV-AUDIT-REVERSE-TRANSACTION",
+          "HV-AUDIT-TRANSACTION-QTY",
+          "HV-AUDIT-UNIT-COST",
+          "HV-AUDIT-STOCK-VALUE-CHANGE",
+          "HV-AUDIT-NO",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "not",
+          ">",
+          "zero",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "move",
+          "21",
+          "to",
+          "fs-reply",
+          "*>",
+          "from",
+          "23",
+          "move",
+          "990",
+          "to",
+          "WE-Error",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "spaces",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba998-Free",
+          "else",
+          "move",
+          "21",
+          "to",
+          "fs-reply",
+          "*>",
+          "from",
+          "23",
+          "move",
+          "989",
+          "to",
+          "WE-Error",
+          "move",
+          "zero",
+          "to",
+          "SQL-Err",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "move",
+          "spaces",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba998-Free",
+          "end-if",
+          "end-if",
+          "*>",
+          "row",
+          "count",
+          "zero",
+          "should",
+          "show",
+          "up",
+          "as",
+          "a",
+          "MYSQL",
+          "error",
+          "?",
+          "perform",
+          "bb100-UnloadHVs",
+          "*>",
+          "transfer/move",
+          "HV",
+          "vars",
+          "to",
+          "ws-Record",
+          "layout",
+          "move",
+          "WS-Audit-ID",
+          "to",
+          "WS-File-Key",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 769,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "21",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "move",
+          "zero",
+          "to",
+          "WE-Error",
+          "end-if",
+          "else",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error",
+          "move",
+          "WS-MYSQL-Count-Rows",
+          "to",
+          "WS-Temp-Ed",
+          "string",
+          "MOST-relation",
+          "STOCKAUDIT-REC",
+          "(K:L)",
+          "\"",
+          "got",
+          "=\"",
+          "delimited",
+          "by",
+          "size",
+          "WS-Temp-ED",
+          "delimited",
+          "by",
+          "size",
+          "\"",
+          "recs\"",
+          "into",
+          "WS-File-Key",
+          "end-string",
+          "end-if",
+          "go",
+          "to",
+          "ba999-end"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 803,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "if",
+          "SQL-Err",
+          "(1:4)",
+          "=",
+          "\"1062\"",
+          "or",
+          "=",
+          "\"1022\"",
+          "*>",
+          "Dup",
+          "key",
+          "(rec",
+          "already",
+          "present)",
+          "or",
+          "Sql-State",
+          "=",
+          "\"23000\"",
+          "*>",
+          "Dup",
+          "key",
+          "(rec",
+          "already",
+          "present)",
+          "move",
+          "22",
+          "to",
+          "fs-reply",
+          "else",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "end-if",
+          "end-if",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 858,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "move",
+          "995",
+          "to",
+          "WE-Error",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End",
+          "else",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "move",
+          "zero",
+          "to",
+          "SQL-Err",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_query",
+        "line": 893,
+        "type": "DYNAMIC",
+        "using": [
+          "SQLCA-STATEMENT",
+          "*>",
+          "END-CALL",
+          "*>",
+          "*>",
+          "So",
+          "if",
+          "this",
+          "does",
+          "not",
+          "work",
+          "it",
+          "will",
+          "be",
+          "changed"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 939,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "move",
+          "995",
+          "to",
+          "WE-Error",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End",
+          "else",
+          "*>",
+          "of",
+          "course",
+          "there",
+          "could",
+          "be",
+          "no",
+          "data",
+          "in",
+          "table",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "move",
+          "zero",
+          "to",
+          "SQL-Err",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 985,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "move",
+          "994",
+          "to",
+          "WE-Error",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error"
+        ]
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1022,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "end-call",
+          "*>",
+          "/MYSQL-END\\",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true"
+        ]
+      },
+      {
+        "target": "fhlogger",
+        "line": 1403,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 159,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 196,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 203,
+        "replacing": null
+      },
+      {
+        "name": "mysql-variables",
+        "line": 276,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 299,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 303,
+        "replacing": null
+      },
+      {
+        "name": "Book",
+        "line": 305,
+        "replacing": null
+      },
+      {
+        "name": "book",
+        "line": 307,
+        "replacing": null
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1011,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 406
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 433
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 449
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "thru": "MYSQL-1999-EXIT",
+        "line": 457
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 502
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 503
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 587
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 629
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 630
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 683
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 701
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 759
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 760
+      },
+      {
+        "target": "bb000-HV-Load",
+        "thru": null,
+        "line": 795
+      },
+      {
+        "target": "bb200-Insert",
+        "thru": null,
+        "line": 801
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 855
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 936
+      },
+      {
+        "target": "bb000-HV-Load",
+        "thru": null,
+        "line": 959
+      },
+      {
+        "target": "bb300-Update",
+        "thru": null,
+        "line": 978
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 1030
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1233
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1393
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "24",
+        "to": "ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\"",
+        "line": 351
+      },
+      {
+        "from": "zero",
+        "to": "We-Error\n*>                        Fs-Reply",
+        "line": 361
+      },
+      {
+        "from": "spaces",
+        "to": "WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err\n                        SQL-State",
+        "line": 364
+      },
+      {
+        "from": "1",
+        "to": "ws-No-Paragraph",
+        "line": 432
+      },
+      {
+        "from": "zero",
+        "to": "Most-Cursor-Set\n     go      to ba999-end",
+        "line": 444
+      },
+      {
+        "from": "2",
+        "to": "ws-No-Paragraph",
+        "line": 451
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" => \"                 delimited by size     *> ????\n                       '\"00000000\"'            delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       keyname (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC'              delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=STOCKAUDIT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`STOCKAUDIT-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)      *> WS-Audit-ID > \"000\" ORDER BY STOCKAUDIT-REC ASC\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-STOCKAUDIT-REC\n*>               /MYSQL-END\\\n           move    \"00000000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number (1:1) not = \"0\"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba998-Free       *> can clear the dup code after testing\n              end-if\n              move     1 to Most-Cursor-Set    *> should test if select worked first??????\n     end-if",
+        "line": 473
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Log-Where",
+        "line": 532
+      },
+      {
+        "from": "4",
+        "to": "ws-No-Paragraph",
+        "line": 533
+      },
+      {
+        "from": "zero",
+        "to": "return-code",
+        "line": 534
+      },
+      {
+        "from": "TP-STOCKAUDIT-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-AUDIT-ID\n                    HV-AUDIT-KEY\n                    HV-AUDIT-INVOICE-PO\n                    HV-AUDIT-CR-FOR-INVOICE\n                    HV-AUDIT-DESC\n                    HV-AUDIT-PROCESS-DAT\n                    HV-AUDIT-REVERSE-TRANSACTION\n                    HV-AUDIT-TRANSACTION-QTY\n                    HV-AUDIT-UNIT-COST\n                    HV-AUDIT-STOCK-VALUE-CHANGE\n                    HV-AUDIT-NO\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1     *> no more data so free cursor & return\n              move 10 to fs-Reply WE-Error\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move 10 to fs-reply                  *> EOF equivilent !!\n                    move 10 to WE-Error\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize STOCKAUDIT-REC with filler\n              move    \"EOF2\" to WS-File-Key\n              end-if\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if",
+        "line": 541
+      },
+      {
+        "from": "\"EOF3\"",
+        "to": "WS-File-Key\n              go to ba999-End\n     end-if",
+        "line": 584
+      },
+      {
+        "from": "WS-Audit-ID",
+        "to": "WS-File-Key",
+        "line": 589
+      },
+      {
+        "from": "zero",
+        "to": "fs-reply WE-Error",
+        "line": 590
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              STOCKAUDIT-REC (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where",
+        "line": 602
+      },
+      {
+        "from": "5",
+        "to": "ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=STOCKAUDIT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`STOCKAUDIT-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-STOCKAUDIT-REC\n*>      /MYSQL-END\\\n*>\n     if     WS-MYSQL-Count-Rows = zero\n            move 21  to fs-Reply             *> could also be 23 or 14\n            move zero to WE-Error\n            go to ba998-Free\n     end-if\n     move     6 to ws-No-Paragraph\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=STOCKAUDIT-REC\n           MOVE TP-STOCKAUDIT-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-AUDIT-ID\n                    HV-AUDIT-KEY\n                    HV-AUDIT-INVOICE-PO\n                    HV-AUDIT-CR-FOR-INVOICE\n                    HV-AUDIT-DESC\n                    HV-AUDIT-PROCESS-DAT\n                    HV-AUDIT-REVERSE-TRANSACTION\n                    HV-AUDIT-TRANSACTION-QTY\n                    HV-AUDIT-UNIT-COST\n                    HV-AUDIT-STOCK-VALUE-CHANGE\n                    HV-AUDIT-NO\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       WS-MYSQL-Count-Rows not > zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    move 21 to fs-reply    *> from 23\n                    move 990 to WE-Error\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move spaces to WS-File-Key\n                    go to ba998-Free\n              else\n                    move 21   to fs-reply    *> from 23\n                    move 989  to WE-Error\n                    move zero to SQL-Err\n                    move spaces to SQL-Msg\n                    move spaces to WS-File-Key\n                    go to ba998-Free\n              end-if\n     end-if                        *> row count zero should show up as a MYSQL error ?\n     perform  bb100-UnloadHVs      *> transfer/move HV vars to ws-Record layout\n     move     WS-Audit-ID to WS-File-Key\n     move     zero to FS-Reply WE-Error",
+        "line": 617
+      },
+      {
+        "from": "99",
+        "to": "FS-Reply\n              move 997 to WE-Error                     *> Invalid calling parameter settings     997\n              go to ba999-end\n     end-if\n*>\n*>  First clear any active cursors\n*>\n     if       Cursor-Active\n              perform ba998-Free",
+        "line": 693
+      },
+      {
+        "from": "spaces",
+        "to": "MOST-Relation",
+        "line": 710
+      },
+      {
+        "from": "1",
+        "to": "J",
+        "line": 711
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              MOST-relation         delimited by space\n              '\"'                   delimited by size\n              STOCKAUDIT-REC (K:L)       delimited by size\n              '\"'                   delimited by size\n              ' ORDER BY '          delimited by size\n              \"`\"                   delimited by size\n              keyname (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n                ' ASC  '            delimited by size\n                             into WS-Where\n                             with pointer J\n     end-string\n     move     WS-Where (1:J)  to WS-Log-Where",
+        "line": 725
+      },
+      {
+        "from": "8",
+        "to": "ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=STOCKAUDIT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`STOCKAUDIT-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-STOCKAUDIT-REC\n*>      /MYSQL-END\\\n*>\n     if       WS-MYSQL-Count-Rows not zero\n              set Cursor-Active to true\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 21 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move zero to WE-Error\n              end-if\n     else\n              move  zero to FS-Reply WE-Error\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed\n              string   MOST-relation\n                       STOCKAUDIT-REC (K:L)\n                       \" got =\" delimited by size\n                       WS-Temp-ED delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n     end-if\n     go       to ba999-end",
+        "line": 747
+      },
+      {
+        "from": "WS-Audit-ID",
+        "to": "WS-File-Key",
+        "line": 796
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error SQL-State",
+        "line": 797
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph",
+        "line": 798
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    if    SQL-Err (1:4) = \"1062\"\n                                     or = \"1022\"   *> Dup key (rec already present)\n                        or Sql-State = \"23000\"  *> Dup key (rec already present)\n                          move 22 to fs-reply\n                    else\n                          move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    end-if\n              end-if\n     end-if\n     go       to ba999-End",
+        "line": 805
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              STOCKAUDIT-REC (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     STOCKAUDIT-REC (K:L)  to WS-File-Key",
+        "line": 827
+      },
+      {
+        "from": "13",
+        "to": "ws-No-Paragraph",
+        "line": 843
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply\n                    move 995 to WE-Error\n              end-if\n              go to ba999-End\n     else\n              move spaces to SQL-Msg\n              move zero   to SQL-Err\n     end-if",
+        "line": 860
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error",
+        "line": 873
+      },
+      {
+        "from": "LOW-VALUES",
+        "to": "SQLCA-STATEMENT\n*>   STRING\n*>     \"DELETE \" DELIMITED SIZE\n*>     \"FROM \" DELIMITED SIZE\n*>     \"STOCKAUDIT-REC \" DELIMITED SIZE\n*>   INTO SQLCA-STATEMENT\n*>   END-STRING\n*>   CALL \"MySQL_query\" USING SQLCA-STATEMENT\n*>   END-CALL\n*>\n*> So if this does not work it will be changed",
+        "line": 886
+      },
+      {
+        "from": "99999999",
+        "to": "WS-Audit-ID",
+        "line": 898
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '<\"'                  delimited by size\n              STOCKAUDIT-REC (K:L)    delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     spaces to WS-File-Key\n     string   \"Deleting back from \" delimited by size\n               WS-Audit-ID             delimited by size\n                      into WS-File-Key\n     end-string                                   *> for logging\n     move     WS-Where (1:J)   to WS-Log-Where",
+        "line": 904
+      },
+      {
+        "from": "15",
+        "to": "ws-No-Paragraph",
+        "line": 924
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply\n                    move 995 to WE-Error\n              end-if\n              go to ba999-End\n     else      *> of course there could be no data in table\n              move spaces to SQL-Msg\n              move zero   to SQL-Err\n     end-if",
+        "line": 941
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error",
+        "line": 954
+      },
+      {
+        "from": "17",
+        "to": "ws-No-Paragraph",
+        "line": 960
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              STOCKAUDIT-REC (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where",
+        "line": 966
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move 994 to WE-Error\n              end-if\n              go to ba999-End\n     end-if\n     move     zero   to FS-Reply WE-Error",
+        "line": 987
+      },
+      {
+        "from": "zero",
+        "to": "SQL-Err",
+        "line": 998
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Msg",
+        "line": 999
+      },
+      {
+        "from": "990",
+        "to": "WE-Error",
+        "line": 1006
+      },
+      {
+        "from": "99",
+        "to": "Fs-Reply",
+        "line": 1007
+      },
+      {
+        "from": "20",
+        "to": "ws-No-Paragraph",
+        "line": 1015
+      },
+      {
+        "from": "TP-STOCKAUDIT-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     set      Cursor-Not-Active to true",
+        "line": 1021
+      },
+      {
+        "from": "Audit-Key",
+        "to": "HV-Audit-Key\n     move     Audit-Invoice-PO          to HV-Audit-Invoice-PO\n     move     Audit-Cr-for-Invoice      to HV-Audit-Cr-for-Invoice\n     move     Audit-Desc                to HV-Audit-Desc\n     move     Audit-Process-Date        to HV-Audit-Process-Dat\n     move     Audit-Reverse-Transaction to HV-Audit-Reverse-Transaction\n     move     Audit-Transaction-Qty     to HV-Audit-Transaction-Qty\n     move     Audit-Unit-Cost           to HV-Audit-Unit-Cost\n     move     Audit-Stock-Value-Change  to HV-Audit-Stock-Value-Change\n     move     Audit-No                  to HV-Audit-No",
+        "line": 1045
+      },
+      {
+        "from": "HV-Audit-Key",
+        "to": "Audit-Key\n     move     HV-Audit-Invoice-PO          to Audit-Invoice-PO\n     move     HV-Audit-Cr-for-Invoice      to Audit-Cr-for-Invoice\n     move     HV-Audit-Desc                to Audit-Desc\n     move     HV-Audit-Process-Dat         to Audit-Process-Date\n     move     HV-Audit-Reverse-Transaction to Audit-Reverse-Transaction\n     move     HV-Audit-Transaction-Qty     to Audit-Transaction-Qty\n     move     HV-Audit-Unit-Cost           to Audit-Unit-Cost\n     move     HV-Audit-Stock-Value-Change  to Audit-Stock-Value-Change\n     move     HV-Audit-No                  to Audit-No",
+        "line": 1069
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`STOCKAUDIT-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-ID`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-ID\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-KEY,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-INVOICE-PO`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-INVOICE-PO\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-CR-FOR-INVOICE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-CR-FOR-INVOICE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-DESC`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-DESC,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-PROCESS-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-PROCESS-DAT,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-REVERSE-TRANSACTION`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-REVERSE-TRANSACTION\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-TRANSACTION-QTY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-TRANSACTION-QTY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-UNIT-COST`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-UNIT-COST\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(15:06))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1093
+      },
+      {
+        "from": "HV-AUDIT-STOCK-VALUE-CHANGE",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1205
+      },
+      {
+        "from": "HV-AUDIT-NO",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n       PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       ",
+        "line": 1222
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`STOCKAUDIT-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-ID`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-ID\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-KEY,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-INVOICE-PO`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-INVOICE-PO\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-CR-FOR-INVOICE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-CR-FOR-INVOICE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-DESC`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-DESC,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-PROCESS-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-PROCESS-DAT,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-REVERSE-TRANSACTION`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-REVERSE-TRANSACTION\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-TRANSACTION-QTY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-TRANSACTION-QTY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-UNIT-COST`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-UNIT-COST\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(15:06))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1249
+      },
+      {
+        "from": "HV-AUDIT-STOCK-VALUE-CHANGE",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1361
+      },
+      {
+        "from": "HV-AUDIT-NO",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \" WHERE \"\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (WS-Where (1:J))\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       ",
+        "line": 1378
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "RDBMS (Relational DataBase Management Systems) is in use it will be\n*>                      called by the specific module to handle similar processing as a Cobol\n*>                      flat file and will pass the equivelent\n*>                      RDB (Relational DataBase) row as a Cobol file record (01 level) moving\n*>                      row by row to the correct Cobol flat file fields as required.\n*>\n*>                      RDB DAL (Data Access Layer) modules are individually modified to handle:\n*>                      MS SQL server, Mysql, DB2, Postgres and Oracle as available and tested.\n*>                      These are contained in seperate directories for each RDB, eg\n*>                       'MSSQL' (MS SQL Server), 'Mysql', 'DB2', 'Postgres'. 'Oracle'.\n*>                       You need to compile from the correct directory for the specific\n*>                       RDB you will use and have installed along with all of the development\n*>                       libraries and include files etc using the correct pre-compiler tool\n*>                       to process the 'EXEC SQL' code converting to Cobol calls etc.\n*>                       see the RDB specific ACAS notes.\n*>\n*>                      For specific SQL servers supported, the pre-compiler system is included\n*>                       where ever possible but for some, copyright reasons may prevent\n*>                       inclusion. In some cases for one specific RDB more than one precompiler\n*>                       is used as an experiment to help find the ideal one to use.\n*>\n*>                      In addition:\n*>                        If the system has been set up to (see the System File set up via the\n*>                        main menu module for each sub system), it will also process BOTH flat\n*>                        file  AND the correct rdb tables,\n*>\n*>                        it will write/delete/update etc to both but read from 1=Flat and be\n*>                        overwritten by the rdb access if data is present.\n*>                       This will help in transferring the Cobol flat files to rdb tables.\n*>\n*>                      If you wish to convert a running ACAS system over from Flat files\n*>                      to RDBMS see below. However it is recommended to use the Duplicate\n*>                      processing of files/table as outlined above where no or very low\n*>                      data records exist:\n*>\n*>                      Depending on the RDB you wish to use there is\n*>                      also, included LMs (Load Modules) to convert each ISAM\n*>                      (Indexed Sequential) file to the rdb database tables if you wish to\n*>                      convert the system in one hit, without using the Duplicate file/RDB\n*>                      processing procedures. These will also need to be compiled from the\n*>                      specific LM directory that contains the rdb DAL modules.\n*>                      These will be very RDB specific.\n*>\n*>                      For a existing running ACAS system using the Load modules AND\n*>                      not using the dup processing process as indicated above is the\n*>                      recommended way to go.\n*>**\n*>  File Handling:\n*>     Uses the Global Error / Access logging file within the acas0nn module.\n*>**\n*> Called by Modules:\n*>                      acas015 - Analysis  Cobol Handler.\n*>\n*>**\n*> Error Messages Used.\n*>                      SM004 SQL Err no in 'mysql-procedures'\n*>                      SM901 Note error and hit return.\n*>**\n*> Version.             1.00 17/06/2016.\n*>\n*>**\n*> Changes.\n*> 04/08/16 vbc - .01 Removed file action logging to sep. module ditto acas010.\n*> 18/07/16 vbc - .02 Insert call for SQL error msg where missing and move\n*>                    spaces / zero to SQL-Msg| Err and other little fixes/cleanups.\n*>                    Remap all changes to the .scb source file.\n*> 20/07/16 vbc - .03 Close logger if testing-1 set on table close.\n*>                    branch to 999-end instead of 998-free when EOF on read next.\n*>                    Seems to auto release if end of cursor data reached\n*>                    and causes an abort ??\n*> 24/07/16 vbc -     Taken from the analMT sources with same versioning.\n*> 30/07/16 vbc - .04 Change Open and Close to also show table name in operation.\n*> 31/07/16 vbc - .05 Moved mv spaces/zero in Write to before insert.\n*>                    Remove fhlogger file close in Process-Close.\n*>                    Forgot error 989 so commented.\n*> 18/02/17 vbc - .06 Removed lock / unlock coding.\n*> 01/03/18 vbc - .11 Renamed error messages to SM901, SM004 as needed.\n*> 20/03/18 vbc - .12 Changed to match glpostingMT for processing eqiv. of open output.\n*> 21/03/18 vbc - .13 Added ba085-Delete-All changed from delfolioMT & update to be\n*>                    similar codebase to other MTs. Other MTs also need going.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>**\n*>  Module USAGE\n*>**************\n*>\n*>    On Entry:         Set up Linkage areas -\n*>    ********              Stock-Audit-Record = Contents of data record to be written/read\n*>                          File-Access = File-Function as needed.\n*>                                        Access-Type   as needed.\n*>                          File-Defs (File-Definitions) = Paths set up.\n*>\n*>    On Exit:          Linkage contains:\n*>    *******               Record = containing a read data record or table row\n*>                          Fs-Reply = 0, 99 or other value where\n*>                                     0  = Operation completed successfully\n*>                                     10 = End of (Cobol) File returned to calling module only.\n*>                                     21 = Invalid key on START OR key not found\n*>                                     22 - Attempt to duplicate a key value.\n*>                                     23 = Key not found.     from read indexed\n*>                                     99 = Indicates an error see WE-Error, SQL-ERR/MSG for more info\n*>                          WE-Error   0    = Operation completed successfully\n*>\n*>                                     999  = Not used here - Yet.\n*>                                     998* = File-Key-No Out Of Range not 1, 2 or 3.\n*>                                     997* = Access-Type wrong (< 5 or > 8)\n*>                                     996* = File Delete key out of range (not = 1 or 2)\n*>                                     995* = During Delete SQLSTATE not '00000' investigate using MSG-Err/Msg\n*>                                     994* = During Rewrite,                     ^^ see above ^^\n*>                                     992* = Invalid Function requested in File-Function\n*>                                     990* = Unknown and unexpected error, again ^^ see above ^^\n*>                                     989* = Unexpected error on Read-Indexed, investigate as above.\n*>                                     911* = Rdb Error during initializing,\n*>                                            possibly can not connect to database\n*>                                             Check connect data and\n*>                                             see SQL-Err & SQL-MSG\n*>                                     910* = Table locked > 5 seconds\n*>                                     901  = File Def Record size not =< than ws record size\n*>                                            Module needs ws definition changing to correct size\n*>                                            FATAL, Stop using system, fix source code\n*>                                            and recompile before using system again.\n*>                                     Other = any other rdbms errors see specific\n*>                                             (Rdbms) manual\n*>                          SQL-Err  = Error code from RDBMS is set if above 2 are non zero\n*>                          SQL-Msg  = Non space providing more info if SQL-Err non '00000'\n*>                                     * = FS-Reply = 99.\n*>\n copy \"ACAS-SQLstate-error-list.cob\".\n*>\n*>       During testing a log file will be created containing datetime stamp, task and return codes\n*>       for both FS-Reply and WE-Error and table used - in this case the Stock File.\n*>       WARNING - This file could get large so needs manually deleting after examination.\n*>\n*>       NOTE that the value in SQL-Err is the standard ANSI RDBMS error code to help keep\n*>         DAL handler changes to a minimum when reusing code for other RDBs - hopefully\n*>\n*>        SHOULD THIS BE IN THE DAL ONLY ?  Only for RDB accessing.\n*>\n*>********************************************************************************************\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>**********************************************************************************\n*>\n environment division.\n*> copy \"envdiv.cob\".\n*>\n input-output section.\n Data Division.\n Working-Storage Section.\n 77  prog-name           pic x(17)    value \"auditMT (3.02.13)\".\n*>\n*> JC WS requirements here\n*>\n 77  ws-Where           pic x(512).\n*>\n*>  Used within presql generated code\n*>\n 01  WS-Reply           pic x           value space.\n 01  WS-MYSQL-I         PIC S9(4) COMP.\n 01  WS-MYSQL-EDIT      PIC -Z(18)9.9(9).\n *>\n *> TESING data\n *>\n 01  ws-temp-ed          pic 9(10).\n*>\n*> The communication area for the MySQL database changed for free/mysql\n*>\n*>  jc preSQL MySQL stuff ends\n*>\n*> Metadata on primary and alternate keys...  from Prima DAL for STOCKAUDIT-REC\n*>\n 01  Table-Of-Keynames.            *> This is not used as table is really accessed as Seq\n     03  filler         pic x(30) value 'AUDIT-ID                      '.\n     03  filler         pic x(8)  value '00010008'. *> offset/length\n     03  filler         pic x(3) value 'STR'. *> data type\n 01  filler redefines table-of-keynames.\n     03  keyOfReference occurs 1\n                             indexed by KOR-x1.\n         05  keyname    pic x(30).\n         05  KOR-offset pic 9(4).\n         05  KOR-length pic 9(4).\n         05  KOR-Type   pic XXX.                    *> Not used currently\n*>\n*> The START condition cannot be compounded, and it must use a\n*> Key of Reference within the record. (These are COBOL rules...)\n*> The interface defines which key and the relation condition.\n*>\n*>\n 01  DAL-Data.\n         05  MOST-Relation   pic xxx.                  *> valid are >=, <=, <, >, =\n         05  Most-Cursor-Set pic 9    value zero.\n             88  Cursor-Not-Active    value zero.\n             88  Cursor-Active        value 1.\n*>\n*>  Variables common to all DALs\n*>  ****************************\n*>\n 01  subscripts usage comp-5.\n     12 J                    pic s9(4).\n     12 K                    pic s9(4).\n     12 L                    pic s9(4).\n*>\n 01  work-fields.\n     03  ws-env-lines    pic 999              value zero.\n     03  ws-lines        binary-char unsigned value zero.\n     03  ws-22-lines     binary-char unsigned value zero.\n     03  ws-23-lines     binary-char unsigned value zero.\n     03  ws-98-lines     binary-char unsigned value zero.\n     03  ws-99-lines     binary-char unsigned value zero.\n     03  ws-Rec-Cnt      binary-long unsigned value zero.\n*>\n 01  Error-Messages.\n     03  SM901          pic x(31) value \"SM901 Note error and hit return\".\n*>\n*> /MYSQL VAR\\\n*>       ACASDB\n*>       TABLE=STOCKAUDIT-REC,HV\n COPY \"mysql-variables.cpy\".\n*>\n*>    Definitions for the STOCKAUDIT-REC Table\n*>\n       01  TP-STOCKAUDIT-REC                     USAGE POINTER.\n       01  TD-STOCKAUDIT-REC.\n           05  HV-AUDIT-ID                       PIC  9(10) COMP.\n           05  HV-AUDIT-KEY                      PIC X(14).\n           05  HV-AUDIT-INVOICE-PO               PIC  9(10) COMP.\n           05  HV-AUDIT-CR-FOR-INVOICE           PIC  9(10) COMP.\n           05  HV-AUDIT-DESC                     PIC X(32).\n           05  HV-AUDIT-PROCESS-DAT              PIC X(10).\n           05  HV-AUDIT-REVERSE-TRANSACTION      PIC  9(03) COMP.\n           05  HV-AUDIT-TRANSACTION-QTY          PIC S9(07) COMP.\n           05  HV-AUDIT-UNIT-COST                PIC S9(06)V9(04) COMP.\n           05  HV-AUDIT-STOCK-VALUE-CHANGE       PIC S9(08)V9(02) COMP.\n           05  HV-AUDIT-NO                       PIC  9(08) COMP.\n*> /MYSQL-END\\\n\n Linkage Section.\n*>**************\n*>\n*>**********************************************************************\n copy \"wsfnctn.cob\".                         *> File-Access\n*>\n*>**********************************************************************\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n*> Generated by MOSTGEN from the COPY Book... The record buffer\n*> This data buffer was derived from the C:\\prim-acas1\\SourceSets\\PULEDGER.CBF\n*> COPY book by MOSTGEN. It is hard coded here so you\n*> can see which version of the Source Set was used.\n*>\n 01  STOCKAUDIT-REC.\n     03  WS-Audit-ID               pic 9(8).      *> For RDBMS\n     03  Audit-Key.\n         05  Audit-Type            pic 9.\n         05  Audit-Stock-Key       pic x(13).\n     03  Audit-Invoice-PO          pic 9(8).\n     03  Audit-Cr-for-Invoice      pic 9(8).\n     03  Audit-Desc                pic x(32).\n     03  Audit-Process-Date        pic x(10).\n     03  Audit-Reverse-Transaction pic 9.          *> T/F (1/0)\n     03  Audit-Transaction-Qty     pic s9(6).      *>         comp.\n     03  Audit-Unit-Cost           pic s9(6)v9999. *>         comp-3.\n     03  Audit-Stock-Value-Change  pic s9(8)v99.   *>         comp-3.  *> can be Negative\n     03  Audit-No                  pic 9(5).       *>binary-char unsigned.\n*>\n*>\n screen section.\n*>=============\n*>\n 01  Display-Message-1       foreground-color 2.\n     03          value \"WS-Where=\"      line 23 col  1.\n     03  from WS-Where (1:J)           pic x(69)         col 10.\n*>\n 01  Display-Message-2       foreground-color 2.\n     03      value \"SM004 SQL Err No.=\" line 4 col  1.    *> size 18 char\n     03  using Ws-Mysql-Error-Number   pic x(4)          col 19.    *>      4       == 22\n     03      value \" Para=\"                              col 23.    *> size 6 char  == 28\n     03  using WS-No-Paragraph         pic 9(3)          col 29.    *>      4       == 32\n     03      value \" SQL Cmd=\"                           col 32.    *>      9       == 41\n     03  using Ws-Mysql-Command        pic x(199)         col 41.\n     03      value \"SQL Err Msg=\"       line 7 col  1.    *>      12\n     03  using Ws-Mysql-Error-Message  pic x(67)        col 13.\n*>\n*>\n PROCEDURE DIVISION   using File-Access\n                            ACAS-DAL-Common-data\n                            STOCKAUDIT-REC.   *>  Ws record\n*>**********************************************\n ba-ACAS-DAL-Process  section.\n     accept   ws-env-lines from lines.\n     if       ws-env-lines < 24\n              move  24 to ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n ba010-Initialise.\n*>\n*>     move     zero   to We-Error\n*>                        Fs-Reply.\n*>\n     move     spaces to WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err\n                        SQL-State.\n*>\n*>  Work out what is being requested and convert to action!!\n*>\n*>    This version uses the JC pre-Sql processor.\n*>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n     evaluate File-Function\n        when  1\n              go to ba020-Process-Open\n        when  2\n              go to ba030-Process-Close\n        when  3\n              go to ba040-Process-Read-Next\n        when  4\n              go to ba050-Process-Read-Indexed\n        when  5\n              go to ba070-Process-Write\n*>\n*> option 6 is a special to cleardown all data\n*>\n        when  6                              *> DELETE-ALL  Special\n              go to ba085-Process-DELETE-ALL\n        when  7\n              go to ba090-Process-Rewrite\n        when  8\n              go to ba080-Process-Delete\n        when  9\n              go to ba060-Process-Start\n        when  other\n              go to ba100-Bad-Function\n     end-evaluate.\n*>\n ba020-Process-Open.\n *>\n *>  Manual process MYSQL INIT\n *>",
+        "line": 33
+      },
+      {
+        "type": "IF",
+        "condition": "fs-reply not = zero\n              go   to ba999-end.\n*>\n*> *> /MYSQL INIT\\\n*>       BASE=ACASDB\n*>       IMPLEMENTATION=dev-prog-001\n*>       PASSWORD=mysqlpass\n*> *> /MYSQL-END\\\n*>\n     move    \"OPEN AUDIT\" to WS-File-Key\n     move    zero   to Most-Cursor-Set\n     go      to ba999-end.\n*>\n ba030-Process-Close.\n     if      Cursor-Active\n             perform ba998-Free.\n*>\n     move     2 to ws-No-Paragraph.\n     move    \"CLOSE AUDIT\" to WS-File-Key.\n*>  /MYSQL CLOSE\\\n*>\n*>    Close the Database\n*>\n           PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n*>  /MYSQL-END\\\n*>\n     go      to ba999-end.\n*>\n ba040-Process-Read-Next.\n*>\n*>   Here a SELECT first",
+        "line": 434
+      },
+      {
+        "type": "IF",
+        "condition": "no cursor active using lowest\n*>    possible key of zero  (numeric field)\n*>           [ Audit-ID ]\n*>\n     if       Cursor-Not-Active\n              set      KOR-x1 to 1\n              move     KOR-offset (KOR-x1) to K\n              move     KOR-length (KOR-x1) to L\n*>\n              move     spaces to WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" => \"                 delimited by size     *> ????\n                       '\"00000000\"'            delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       keyname (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC'              delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=STOCKAUDIT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`STOCKAUDIT-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)      *> WS-Audit-ID > \"000\" ORDER BY STOCKAUDIT-REC ASC\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-STOCKAUDIT-REC\n*>               /MYSQL-END\\\n           move    \"00000000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number (1:1) not = \"0\"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba998-Free       *> can clear the dup code after testing\n              end-if\n              move     1 to Most-Cursor-Set    *> should test if select worked first??????\n     end-if.\n*>\n*>  If here cursor is set, so get the next row\n*>\n     move     spaces to WS-Log-Where.\n     move     4 to ws-No-Paragraph.\n     move zero to return-code.\n*>\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=STOCKAUDIT-REC\n           MOVE TP-STOCKAUDIT-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-AUDIT-ID\n                    HV-AUDIT-KEY\n                    HV-AUDIT-INVOICE-PO\n                    HV-AUDIT-CR-FOR-INVOICE\n                    HV-AUDIT-DESC\n                    HV-AUDIT-PROCESS-DAT\n                    HV-AUDIT-REVERSE-TRANSACTION\n                    HV-AUDIT-TRANSACTION-QTY\n                    HV-AUDIT-UNIT-COST\n                    HV-AUDIT-STOCK-VALUE-CHANGE\n                    HV-AUDIT-NO\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1     *> no more data so free cursor & return\n              move 10 to fs-Reply WE-Error\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move 10 to fs-reply                  *> EOF equivilent !!\n                    move 10 to WE-Error\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize STOCKAUDIT-REC with filler\n              move    \"EOF2\" to WS-File-Key\n              end-if\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if.\n*>\n     if       fs-reply = 10\n              set Cursor-Not-Active to true\n              move    \"EOF3\" to WS-File-Key\n              go to ba999-End\n     end-if.\n     perform  bb100-UnloadHVs.       *> transfer/move HV vars to Record layout\n*>\n     move     WS-Audit-ID to WS-File-Key.\n     move     zero to fs-reply WE-Error.\n     go       to ba999-end.\n*>\n ba050-Process-Read-Indexed.\n*>\n*>  Now do on correct key within WHERE\n*>  Sets up key and compare data\n*>\n     set      KOR-x1 to 1.              *> 1 = only key\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              STOCKAUDIT-REC (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where.    *>  For test logging\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n     move     5 to ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=STOCKAUDIT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`STOCKAUDIT-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-STOCKAUDIT-REC\n*>      /MYSQL-END\\\n*>\n     if     WS-MYSQL-Count-Rows = zero\n            move 21  to fs-Reply             *> could also be 23 or 14\n            move zero to WE-Error\n            go to ba998-Free\n     end-if\n     move     6 to ws-No-Paragraph\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=STOCKAUDIT-REC\n           MOVE TP-STOCKAUDIT-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-AUDIT-ID\n                    HV-AUDIT-KEY\n                    HV-AUDIT-INVOICE-PO\n                    HV-AUDIT-CR-FOR-INVOICE\n                    HV-AUDIT-DESC\n                    HV-AUDIT-PROCESS-DAT\n                    HV-AUDIT-REVERSE-TRANSACTION\n                    HV-AUDIT-TRANSACTION-QTY\n                    HV-AUDIT-UNIT-COST\n                    HV-AUDIT-STOCK-VALUE-CHANGE\n                    HV-AUDIT-NO\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       WS-MYSQL-Count-Rows not > zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    move 21 to fs-reply    *> from 23\n                    move 990 to WE-Error\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move spaces to WS-File-Key\n                    go to ba998-Free\n              else\n                    move 21   to fs-reply    *> from 23\n                    move 989  to WE-Error\n                    move zero to SQL-Err\n                    move spaces to SQL-Msg\n                    move spaces to WS-File-Key\n                    go to ba998-Free\n              end-if\n     end-if                        *> row count zero should show up as a MYSQL error ?\n     perform  bb100-UnloadHVs      *> transfer/move HV vars to ws-Record layout\n     move     WS-Audit-ID to WS-File-Key\n     move     zero to FS-Reply WE-Error.\n     go       to ba998-Free.\n*>\n ba060-Process-Start.\n*>\n*>  Check for Param error 1st on start\n*>\n     if       access-type < 5 or > 8                   *> not using not < or not >\n              move 99 to FS-Reply\n              move 997 to WE-Error                     *> Invalid calling parameter settings     997\n              go to ba999-end\n     end-if\n*>\n*>  First clear any active cursors\n*>\n     if       Cursor-Active\n              perform ba998-Free.\n*>\n*>  Now do Start on correct key before read-next  within WHERE\n*>  Set up MOST-relation for condition test and key\n*>\n     set      KOR-x1 to 1.\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to MOST-Relation.\n     move     1   to J.\n     evaluate Access-Type\n              when  5                           *> fn-equal-to\n                    move \"=  \" to MOST-Relation\n              when  6                           *> fn-less-than\n                    move \"<  \" to MOST-Relation\n              when  7                           *> fn-greater-than\n                    move \">  \" to MOST-Relation\n              when  8                           *> fn-not-less-than\n                    move \">= \" to MOST-Relation\n              when  9                           *> fn-not-greater-than [ not currently used in ACAS ]\n                    move \"<= \" to MOST-Relation\n     end-evaluate\n*>\n     move     spaces to WS-Where\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              MOST-relation         delimited by space\n              '\"'                   delimited by size\n              STOCKAUDIT-REC (K:L)       delimited by size\n              '\"'                   delimited by size\n              ' ORDER BY '          delimited by size\n              \"`\"                   delimited by size\n              keyname (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n                ' ASC  '            delimited by size\n                             into WS-Where\n                             with pointer J\n     end-string\n     move     WS-Where (1:J)  to WS-Log-Where.    *>  For test logging\n     move     STOCKAUDIT-REC (K:L) to WS-File-Key\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n*>\n     move     8 to ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=STOCKAUDIT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`STOCKAUDIT-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-STOCKAUDIT-REC\n*>      /MYSQL-END\\\n*>\n     if       WS-MYSQL-Count-Rows not zero\n              set Cursor-Active to true\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 21 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move zero to WE-Error\n              end-if\n     else\n              move  zero to FS-Reply WE-Error\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed\n              string   MOST-relation\n                       STOCKAUDIT-REC (K:L)\n                       \" got =\" delimited by size\n                       WS-Temp-ED delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n     end-if\n     go       to ba999-end.\n*>\n*>  Now a read next will process a Fetch from cursor\n*>\n ba070-Process-Write.\n     perform  bb000-HV-Load.                       *>  move STOCKAUDIT-REC fields to HV fields\n     move     WS-Audit-ID to WS-File-Key.\n     move     zero to FS-Reply WE-Error SQL-State.\n     move     spaces to SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph.\n     perform  bb200-Insert.\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    if    SQL-Err (1:4) = \"1062\"\n                                     or = \"1022\"   *> Dup key (rec already present)\n                        or Sql-State = \"23000\"  *> Dup key (rec already present)\n                          move 22 to fs-reply\n                    else\n                          move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    end-if\n              end-if\n     end-if\n     go       to ba999-End.       *> and log it\n*>\n ba080-Process-Delete.\n*>\n     set      KOR-x1 to 1.\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              STOCKAUDIT-REC (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     STOCKAUDIT-REC (K:L)  to WS-File-Key.\n     move     WS-Where (1:J)   to WS-Log-Where.    *>  For test logging\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n     move     13 to ws-No-Paragraph.\n*>      /MYSQL DELETE\\\n*>\n*>    Delete a row\n*>\n*>             TABLE=STOCKAUDIT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"DELETE FROM \"\n             \"`STOCKAUDIT-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n             X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>      /MYSQL-END\\\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply\n                    move 995 to WE-Error\n              end-if\n              go to ba999-End\n     else\n              move spaces to SQL-Msg\n              move zero   to SQL-Err\n     end-if.\n     move     zero to FS-Reply WE-Error.\n     go       to ba999-End.\n*>\n ba085-Process-Delete-ALL.    *> THIS IS NON STANDARD\n*>\n*> This is the equivalent of :\n*>           EXEC SQL\n*>              DELETE\n*>              FROM STOCKAUDIT-REC\n*>           END-EXEC.\n*>\n*>  That creates the follwoing code from dbpre\n*>\n*>   MOVE LOW-VALUES TO SQLCA-STATEMENT\n*>   STRING\n*>     \"DELETE \" DELIMITED SIZE\n*>     \"FROM \" DELIMITED SIZE\n*>     \"STOCKAUDIT-REC \" DELIMITED SIZE\n*>   INTO SQLCA-STATEMENT\n*>   END-STRING\n*>   CALL \"MySQL_query\" USING SQLCA-STATEMENT\n*>   END-CALL\n*>\n*> So if this does not work it will be changed.\n*>\n     move     99999999  to WS-Audit-ID.         *> as its the last posting\n*>\n     set      KOR-x1 to 1\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '<\"'                  delimited by size\n              STOCKAUDIT-REC (K:L)    delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     spaces to WS-File-Key\n     string   \"Deleting back from \" delimited by size\n               WS-Audit-ID             delimited by size\n                      into WS-File-Key\n     end-string                                   *> for logging\n     move     WS-Where (1:J)   to WS-Log-Where.   *>  For test logging\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n     move     15 to ws-No-Paragraph.\n*>      /MYSQL DELETE\\\n*>\n*>    Delete a row\n*>\n*>             TABLE=STOCKAUDIT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"DELETE FROM \"\n             \"`STOCKAUDIT-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n             X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>      /MYSQL-END\\\n     if       WS-MYSQL-COUNT-ROWS not > zero    *> Changed for delete-ALL\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply\n                    move 995 to WE-Error\n              end-if\n              go to ba999-End\n     else      *> of course there could be no data in table\n              move spaces to SQL-Msg\n              move zero   to SQL-Err\n     end-if.\n     move     zero to FS-Reply WE-Error.\n     go       to ba999-End.\n*>\n ba090-Process-Rewrite.\n*>\n     perform  bb000-HV-Load.       *> Load up the HV fields from table record in WS\n     move     17 to ws-No-Paragraph.\n     set      KOR-x1 to 1            *> 1 = Primary, 2 = Abrev, 3 = Desc (NOT Delete function as can be dups)\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     STOCKAUDIT-REC (K:L)  to WS-File-Key.\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              STOCKAUDIT-REC (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where.    *>  For test logging\n     perform  bb300-Update.\n*>\n     if       Testing-2\n              display Display-Message-1 with erase eos\n     end-if\n*>\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move 994 to WE-Error\n              end-if\n              go to ba999-End\n     end-if\n     move     zero   to FS-Reply WE-Error.\n     move     zero   to SQL-Err.\n     move     spaces to SQL-Msg.\n     go       to ba999-exit.\n*>\n ba100-Bad-Function.\n*>\n*> Houston; We have a problem\n*>\n     move     990 to WE-Error.\n     move     99 to Fs-Reply.\n     go       to ba999-end.\n*>\n*> /MYSQL PRO\\\n COPY \"mysql-procedures.cpy\".\n*> /MYSQL-END\\\n*>\n ba998-Free.\n     move     20 to ws-No-Paragraph.\n*>      /MYSQL FREE\\\n*>\n*>    Free result array\n*>\n*>             TABLE=STOCKAUDIT-REC\n           MOVE TP-STOCKAUDIT-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     set      Cursor-Not-Active to true.\n*>\n ba999-end.\n*>  Any Clean ups before quiting    move data record ?????  do so at the start as well ??????\n*>\n     if       Testing-1\n              perform Ca-Process-Logs\n     end-if.\n*>\n ba999-exit.\n     exit program.\n*>\n bb000-HV-Load      Section.\n*>*************************\n*>\n*>  Load the Host variables with data from the passed record\n*>\n*> This Method loads the Host Variables for the Base table with\n*> the data passed in the data-buffer.\n*>\n     initialize TD-STOCKAUDIT-REC.\n*>     move     Audit-Key                 to HV-Audit-Key\n     move     Audit-Invoice-PO          to HV-Audit-Invoice-PO\n     move     Audit-Cr-for-Invoice      to HV-Audit-Cr-for-Invoice\n     move     Audit-Desc                to HV-Audit-Desc\n     move     Audit-Process-Date        to HV-Audit-Process-Dat\n     move     Audit-Reverse-Transaction to HV-Audit-Reverse-Transaction\n     move     Audit-Transaction-Qty     to HV-Audit-Transaction-Qty\n     move     Audit-Unit-Cost           to HV-Audit-Unit-Cost\n     move     Audit-Stock-Value-Change  to HV-Audit-Stock-Value-Change\n     move     Audit-No                  to HV-Audit-No.\n*>\n bb000-Exit.\n     exit section.\n*>\n bb100-UnloadHVs    Section.\n*>*************************\n*>\n*>  Load the data buffer in the interface with data from the host variables.\n*> (init moved lower)\n*>\n*> NULL fields must not be returned in the buffer. SQL filters each column to\n*>  ensure it has a proper value.  This saves using indicator variables.\n*>\n     initialize STOCKAUDIT-REC.\n*>     move     HV-Audit-Key                 to Audit-Key\n     move     HV-Audit-Invoice-PO          to Audit-Invoice-PO\n     move     HV-Audit-Cr-for-Invoice      to Audit-Cr-for-Invoice\n     move     HV-Audit-Desc                to Audit-Desc\n     move     HV-Audit-Process-Dat         to Audit-Process-Date\n     move     HV-Audit-Reverse-Transaction to Audit-Reverse-Transaction\n     move     HV-Audit-Transaction-Qty     to Audit-Transaction-Qty\n     move     HV-Audit-Unit-Cost           to Audit-Unit-Cost\n     move     HV-Audit-Stock-Value-Change  to Audit-Stock-Value-Change\n     move     HV-Audit-No                  to Audit-No.\n\n*>\n bb100-Exit.\n     exit section.\n*>\n bb200-Insert Section.\n*>*******************\n*>\n*>  /MYSQL INSERT\\\n*>\n*>    Insert a row\n*>\n*>         TABLE=STOCKAUDIT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`STOCKAUDIT-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-ID`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-ID\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-KEY,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-INVOICE-PO`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-INVOICE-PO\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-CR-FOR-INVOICE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-CR-FOR-INVOICE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-DESC`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-DESC,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-PROCESS-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-PROCESS-DAT,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-REVERSE-TRANSACTION`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-REVERSE-TRANSACTION\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-TRANSACTION-QTY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-TRANSACTION-QTY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-UNIT-COST`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-UNIT-COST\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(15:06))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:04)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-STOCK-VALUE-CHANGE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-STOCK-VALUE-CHANGE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-NO`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-NO\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n       PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb200-Exit.\n     exit section.\n*>\n bb300-Update Section.\n*>*******************\n*>\n*>  /MYSQL UPDATE\\\n*>\n*>    Update a row\n*>\n*>      TABLE=STOCKAUDIT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`STOCKAUDIT-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-ID`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-ID\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-KEY,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-INVOICE-PO`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-INVOICE-PO\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-CR-FOR-INVOICE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-CR-FOR-INVOICE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-DESC`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-DESC,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-PROCESS-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-AUDIT-PROCESS-DAT,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-REVERSE-TRANSACTION`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-REVERSE-TRANSACTION\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-TRANSACTION-QTY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-TRANSACTION-QTY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-UNIT-COST`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-UNIT-COST\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(15:06))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:04)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-STOCK-VALUE-CHANGE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-STOCK-VALUE-CHANGE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`AUDIT-NO`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-AUDIT-NO\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \" WHERE \"\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (WS-Where (1:J))\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb300-Exit.\n     exit section.\n*>\n Ca-Process-Logs.\n*>**************\n*>\n     call     \"fhlogger\" using File-Access\n                               ACAS-DAL-Common-data.\n*>\n ca-Exit.     exit.\n*>\nend program auditMT.",
+        "line": 464
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "File-Function\n        when  1\n              go to ba020-Process-Open\n        when  2\n              g...",
+        "line": 377,
+        "whenCount": 10
+      },
+      {
+        "content": "Access-Type\n              when  5                           *> fn-equal-to\n                    move ...",
+        "line": 712,
+        "whenCount": 5
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 30,
+    "cognitive": 33,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 65,
+      "totalOperators": 52,
+      "totalOperands": 104,
+      "vocabulary": 66,
+      "length": 156,
+      "volume": 942.9254826199187
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasconvert1.cbl",
+  "fileName": "acasconvert1.cbl",
+  "timestamp": "2025-09-15T16:25:33.508Z",
+  "programId": "acasconvert1",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "configuration",
+        "line": 56
+      },
+      {
+        "name": "input-output",
+        "line": 59
+      },
+      {
+        "name": "file",
+        "line": 72
+      },
+      {
+        "name": "working-storage",
+        "line": 86
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 60
+      },
+      {
+        "name": "AA000-Start",
+        "line": 112
+      },
+      {
+        "name": "AA010-Read",
+        "line": 143
+      },
+      {
+        "name": "end-perform",
+        "line": 160
+      },
+      {
+        "name": "goback",
+        "line": 171
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 116,
+        "type": "DYNAMIC",
+        "using": [
+          "\"irsdflt"
+        ]
+      },
+      {
+        "target": "CBL_RENAME_FILE",
+        "line": 122,
+        "type": "DYNAMIC",
+        "using": [
+          "\"irsdflt"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 50,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 109,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "32",
+        "thru": null,
+        "line": 155
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "zero",
+        "to": "A",
+        "line": 154
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endevor\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>*************************************************************************\n*>\n environment division.\n configuration section.\n source-computer.        Linux.\n object-computer.        Linux.\n input-output section.\n file-control.\n     select Old-Default-File assign \"irsdflt.saved\"      *> file-35\n                             organization line sequential,\n                             access sequential,\n                             status fs-reply.\n*>\n     select New-Default-File assign \"irsdflt.dat\"\n                             organization line sequential,\n                             access sequential,\n                             status fs-reply.\n*>\n data division.\n file section.\n*>\n fd  Old-Default-File.\n 01  Old-Default-Record.\n     03  Def-Acs         pic 9(5)   occurs  32.\n     03  Def-Codes       pic xx     occurs  32.\n     03  Def-Vat         pic x      occurs  32.\n*>\n fd  New-Default-File.\n 01  New-Default-Record.\n     03  New-Def-Group              occurs 33.\n         05  New-Def-Acs   pic 9(5).\n         05  New-Def-Codes pic xx.\n         05  New-Def-Vat   pic x.\n\n working-storage section.\n 77  prog-name          pic x(18)  value \"IRSconv1 (1.01.03)\".\n 01  fs-reply           pic 99.\n 01  rec-count          pic 9(4)   value zero.\n 01  A                  pic s9(4)     comp    value zero.\n 01  B                  pic s9(4)     comp    value zero.\n 01  Display-Blk        pic x(78)             value spaces.\n 01  WS-Reply           pic x                 value space.\n*>\n 01 file-info.\n     05 File-Size-In-Bytes PIC 9(18) COMP.\n     05 Mod-DD   PIC 9(2) COMP.       *> Modification Date\n     05 Mod-MO   PIC 9(2) COMP.\n     05 Mod-YYYY PIC 9(4) COMP.\n     05 Mod-HH   PIC 9(2) COMP.       *> Modification Time\n     05 Mod-MM   PIC 9(2) COMP.\n     05 Mod-SS   PIC 9(2) COMP.\n     05 FILLER   PIC 9(2) COMP.       *> Always 00\n*>\n 01  Error-Messages.\n     03  SY991    pic x(26) value \"SY991 Fix and Press Enter\".\n*>\n copy \"wsnames.cob\".\n*>\n procedure division.\n AA000-Start.\n*>\n*>   First check that irsdflt.saved does not exist",
+        "line": 47
+      },
+      {
+        "type": "IF",
+        "condition": "Return-Code = zero\n              display \"Found 'Saved' IRS Default File - irsdflt.saved\"  return-code\n              display SY991\n              accept WS-Reply\n              stop run.\n     call     \"CBL_RENAME_FILE\" USING \"irsdflt.dat\" \"irsdflt.saved\".\n     if       return-code not = zero\n              display \"Cannot rename 'IRS Default File from irsdflt.dat to irsdflt.saved\"  return-code\n              display SY991\n              accept WS-Reply\n              stop run.\n*>\n     open     input Old-Default-File.\n     if       fs-reply not = \"00\"\n              display \"Error on opening input 'irsdflt.saved \" fs-reply\n              stop run.\n*>\n*> now clear of any possible problems with the file - hopefully!\n*>\n     Display  prog-name \" Starts\" at 0101 with erase eos.\n*>\n     open     output New-Default-File.\n     if       fs-reply not = zero\n              display \"Error on opening ouput 'irsdflt.dat\" fs-reply\n              close Old-Default-File\n              stop run.\n\n AA010-Read.\n     read     Old-Default-File.\n     if       fs-reply not = zero\n              display \"Record NOT found - Aborting err code = \" fs-reply\n              close Old-Default-File\n              display SY991\n              accept WS-Reply\n              stop run.\n*>\n     initialize New-Default-Record.                  *> in case of new fields\n     move     zero to A.\n     perform  32 times\n              add 1 to a\n              move   Def-Acs   (a)  to  New-Def-Acs   (a)\n              move   Def-Codes (a)  to  New-Def-Codes (a)\n              move   Def-Vat   (a)  to  New-Def-Vat   (a)\n     end-perform.\n     write    New-Default-Record.\n     if       fs-reply not = zero\n              display \"Error on writing new default record = \" fs-reply\n              close Old-Default-File New-Default-File\n              display SY991\n              accept WS-Reply\n              stop run.\n*>\n     close    Old-Default-File New-Default-File.\n     Display  prog-name \" Ends Successfully\" at 0101.\n     goback.\n*>",
+        "line": 117
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 5,
+    "cognitive": 2,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 2,
+      "totalOperators": 1,
+      "totalOperands": 2,
+      "vocabulary": 3,
+      "length": 3,
+      "volume": 4.754887502163468
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

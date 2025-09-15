@@ -1,0 +1,121 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/send-some-mail.cbl",
+  "fileName": "send-some-mail.cbl",
+  "timestamp": "2025-09-15T16:25:39.437Z",
+  "programId": "sendsomemail",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 12
+      },
+      {
+        "name": "working-storage",
+        "line": 14
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "beginning",
+        "line": 25
+      },
+      {
+        "name": "goback",
+        "line": 58
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "system",
+        "line": 52,
+        "type": "DYNAMIC",
+        "using": [
+          "mail-command",
+          "returning",
+          "mail-return"
+        ]
+      }
+    ],
+    "copies": [],
+    "performs": []
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "\"vbcoen@gmail.com\"",
+        "to": "mail-to-address",
+        "line": 28
+      },
+      {
+        "from": "\"vbcoen@gmail.com\"",
+        "to": "mail-from-address",
+        "line": 30
+      },
+      {
+        "from": "\"/home/vince/tmp/test.pdf\"",
+        "to": "mail-attachment-filename",
+        "line": 37
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "mail-return not = zeros\n          display mail-return\n          stop \"Read and hit return\".\n*>\n     goback.",
+        "line": 54
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 5,
+      "totalOperators": 3,
+      "totalOperands": 6,
+      "vocabulary": 6,
+      "length": 9,
+      "volume": 23.264662506490403
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

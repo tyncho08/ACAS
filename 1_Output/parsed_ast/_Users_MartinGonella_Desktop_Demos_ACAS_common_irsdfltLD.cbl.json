@@ -1,0 +1,585 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsdfltLD.cbl",
+  "fileName": "irsdfltLD.cbl",
+  "timestamp": "2025-09-15T16:25:40.568Z",
+  "programId": "irsdfltLD",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 115
+      },
+      {
+        "name": "file",
+        "line": 125
+      },
+      {
+        "name": "working-storage",
+        "line": 129
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 118
+      },
+      {
+        "name": "aa000-main-start",
+        "line": 194
+      },
+      {
+        "name": "goback",
+        "line": 211
+      },
+      {
+        "name": "goback",
+        "line": 221
+      },
+      {
+        "name": "goback",
+        "line": 276
+      },
+      {
+        "name": "aa010-Proc-Override",
+        "line": 278
+      },
+      {
+        "name": "acasirsub3",
+        "line": 289
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 294
+      },
+      {
+        "name": "acasirsub3-Open",
+        "line": 296
+      },
+      {
+        "name": "acasirsub3-Open-Input",
+        "line": 302
+      },
+      {
+        "name": "acasirsub3-Close",
+        "line": 308
+      },
+      {
+        "name": "acasirsub3-Read-Next",
+        "line": 312
+      },
+      {
+        "name": "acasirsub3-Write",
+        "line": 316
+      },
+      {
+        "name": "acasirsub3-ReWrite",
+        "line": 320
+      },
+      {
+        "name": "aa010-Read",
+        "line": 327
+      },
+      {
+        "name": "FA-File-System-Used",
+        "line": 341
+      },
+      {
+        "name": "aa020-Rollback",
+        "line": 382
+      },
+      {
+        "name": "aa030-Commit",
+        "line": 396
+      },
+      {
+        "name": "aa100-Check-4-Errors",
+        "line": 406
+      },
+      {
+        "name": "end-if",
+        "line": 424
+      },
+      {
+        "name": "aa999-Finish",
+        "line": 426
+      },
+      {
+        "name": "aa999-Finish-2",
+        "line": 436
+      },
+      {
+        "name": "FA-File-System-Used",
+        "line": 441
+      },
+      {
+        "name": "File-Duplicates-In-Use",
+        "line": 447
+      },
+      {
+        "name": "goback",
+        "line": 453
+      },
+      {
+        "name": "Call-Sysout",
+        "line": 457
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas-get-params",
+        "line": 230,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-RDB-Return",
+          "WS-RDB-Vars",
+          "if",
+          "WS-RDB-Return",
+          "=",
+          "8",
+          "display",
+          "\"acas"
+        ]
+      },
+      {
+        "target": "acasirsub3",
+        "line": 290,
+        "type": "DYNAMIC",
+        "using": [
+          "System-Record",
+          "WS-IRS-Default-Record",
+          "File-Access",
+          "File-Defs",
+          "ACAS-DAL-Common-data"
+        ]
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 390,
+        "type": "DYNAMIC",
+        "using": []
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 400,
+        "type": "DYNAMIC",
+        "using": []
+      },
+      {
+        "target": "ACAS-Sysout",
+        "line": 458,
+        "type": "DYNAMIC",
+        "using": [
+          "SO-Print"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 104,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 114,
+        "replacing": null
+      },
+      {
+        "name": "selsys",
+        "line": 121,
+        "replacing": null
+      },
+      {
+        "name": "fdsys",
+        "line": 128,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 163,
+        "replacing": null
+      },
+      {
+        "name": "irswsdflt",
+        "line": 165,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 167,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 168,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 169,
+        "replacing": null
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 455,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "thru": null,
+        "line": 195
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 197
+      },
+      {
+        "target": "acasirsub3-Open",
+        "thru": null,
+        "line": 286
+      },
+      {
+        "target": "acasirsub3",
+        "thru": null,
+        "line": 299
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "thru": null,
+        "line": 300
+      },
+      {
+        "target": "acasirsub3",
+        "thru": null,
+        "line": 305
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "thru": null,
+        "line": 306
+      },
+      {
+        "target": "acasirsub3",
+        "thru": null,
+        "line": 310
+      },
+      {
+        "target": "acasirsub3",
+        "thru": null,
+        "line": 314
+      },
+      {
+        "target": "acasirsub3",
+        "thru": null,
+        "line": 318
+      },
+      {
+        "target": "acasirsub3",
+        "thru": null,
+        "line": 322
+      },
+      {
+        "target": "acasirsub3-Read-Next",
+        "thru": null,
+        "line": 330
+      },
+      {
+        "target": "acasirsub3-Write",
+        "thru": null,
+        "line": 345
+      },
+      {
+        "target": "acasirsub3-Rewrite",
+        "thru": null,
+        "line": 352
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 356
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 364
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 367
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 370
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 372
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 374
+      },
+      {
+        "target": "aa020-Rollback",
+        "thru": null,
+        "line": 375
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 409
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 412
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 415
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 417
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 419
+      },
+      {
+        "target": "call-Sysout",
+        "thru": null,
+        "line": 421
+      },
+      {
+        "target": "aa020-Rollback",
+        "thru": null,
+        "line": 422
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 431
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 434
+      },
+      {
+        "target": "aa030-Commit",
+        "thru": null,
+        "line": 438
+      },
+      {
+        "target": "acasirsub3-Close",
+        "thru": null,
+        "line": 444
+      },
+      {
+        "target": "acasirsub3-Close",
+        "thru": null,
+        "line": 448
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 450
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 452
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "zeros",
+        "to": "FS-Reply WE-Error\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices",
+        "line": 72
+      },
+      {
+        "from": "Prog-Name",
+        "to": "So-Print",
+        "line": 196
+      },
+      {
+        "from": "1",
+        "to": "WS-Log-System",
+        "line": 198
+      },
+      {
+        "from": "12",
+        "to": "WS-Log-File-no",
+        "line": 199
+      },
+      {
+        "from": "128",
+        "to": "return-code\n              goback",
+        "line": 210
+      },
+      {
+        "from": "1",
+        "to": "rrn",
+        "line": 212
+      },
+      {
+        "from": "128",
+        "to": "return-code\n              goback",
+        "line": 220
+      },
+      {
+        "from": "WS-Host-Name",
+        "to": "RDBMS-Host\n                       move     WS-Implementation to RDBMS-User\n                       move     WS-Password       to RDBMS-Passwd\n                       move     WS-Base-Name      to RDBMS-DB-Name\n                       move     WS-Port-Number    to RDBMS-Port\n                       move     WS-Socket         to RDBMS-Socket\n                      display \"User = \"   RDBMS-User\n                      display \"Host = \"   RDBMS-Host\n                      display \"DBName = \" RDBMS-DB-Name\n                      display \"Port = \"   RDBMS-Port\n                      display \"Socket = \" RDBMS-Socket\n                       go to aa010-Proc-Override",
+        "line": 249
+      },
+      {
+        "from": "64",
+        "to": "Return-Code\n              goback",
+        "line": 275
+      },
+      {
+        "from": "zero",
+        "to": "Log-file-rec-written",
+        "line": 282
+      },
+      {
+        "from": "1",
+        "to": "File-System-Used\n                   FA-File-System-Used",
+        "line": 283
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 285
+      },
+      {
+        "from": "zero",
+        "to": "File-System-Used\n                      FA-File-System-Used",
+        "line": 328
+      },
+      {
+        "from": "1",
+        "to": "File-System-Used      *> acasirsub3 set to process RDB\n                   FA-File-System-Used",
+        "line": 340
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply\n                               WE-Error\n              perform acasirsub3-Rewrite\n              if      fs-reply not = zero\n                      move spaces to SO-Print\n                      string  SL014 WS-File-Key into SO-Print\n                      perform call-Sysout\n              end-if\n              go to aa999-Finish\n     end-if\n*>\n     if       fs-reply not = zero              *> Anything else\n              move spaces to SO-Print\n              string SL014 fs-reply  into SO-Print\n              perform call-Sysout\n              move spaces to SO-Print\n              string \"WE-Error = \" WE-Error into SO-Print\n              perform call-Sysout\n              move spaces to SO-Print\n              string SL018 SQL-Err into SO-Print\n              perform call-Sysout\n              move SQL-Msg to SO-Print\n              perform call-Sysout\n              move SQL-State to SO-Print\n              perform call-Sysout\n *>             perform aa020-Rollback\n              move 16 to return-code                        *> rdb problem?\n              go to aa999-Finish\n     end-if\n     add      1 to ws-Rec-Cnt-Out",
+        "line": 350
+      },
+      {
+        "from": "SL011",
+        "to": "SO-Print\n              perform call-Sysout\n              move spaces to SO-Print\n              string \"FS-Reply = \" fs-reply  into SO-Print\n              perform call-Sysout\n              move spaces to SO-Print\n              string \"WE-Error = \" WE-Error into SO-Print\n              perform call-Sysout\n              move SQL-Err to SO-Print\n              perform call-Sysout\n              move SQL-Msg to SO-Print\n              perform call-Sysout\n              move SQL-State to SO-Print\n              perform call-Sysout\n *>             perform aa020-Rollback\n              go to aa999-Finish\n     end-if",
+        "line": 408
+      },
+      {
+        "from": "spaces",
+        "to": "SO-Print",
+        "line": 427
+      },
+      {
+        "from": "spaces",
+        "to": "SO-Print",
+        "line": 432
+      },
+      {
+        "from": "spaces",
+        "to": "SO-Print",
+        "line": 435
+      },
+      {
+        "from": "1",
+        "to": "File-System-Used\n                   FA-File-System-Used",
+        "line": 440
+      },
+      {
+        "from": "zero",
+        "to": "Access-Type",
+        "line": 442
+      },
+      {
+        "from": "2",
+        "to": "File-Function",
+        "line": 443
+      },
+      {
+        "from": "zero",
+        "to": "File-System-Used\n                      File-Duplicates-In-Use",
+        "line": 446
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n*>\n environment division.\n*>-------------------\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n copy \"selsys.cob\".\n data division.\n*>------------\n*>\n file section.\n*>-----------\n*>\n copy \"fdsys.cob\".\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(19)    value \"irsdfltLD (3.02.17)\".\n 77  z                   binary-char  value zero.\n 77  OS-Delimiter        pic x        value \"/\".\n 77  ACAS_BIN            pic x(512)   value spaces.\n 77  ACAS_LEDGERS        pic x(500)   value spaces.\n 77  Arg-Number          pic 9        value zero.\n*>\n*> holds program parameter values from command line\n 01  Arg-Vals                         value spaces.\n     03  Arg-Value       pic x(525)  occurs 2.\n 01  Arg-Test            pic x(525)   value spaces.\n*>\n 01  work-fields.\n     03  ws-Rec-Cnt-In   pic 9(4)     value zero.\n     03  ws-Rec-Cnt-Out  pic 9(4)     value zero.\n     03  ws-Rec-Cnt-R-Out pic 9(6)    value zero.\n     03  ws-reply        pic x.\n*>\n 01  SO-Print            pic x(160)    value spaces.\n*>\n*> For getting acas.param file data\n*>\n 01  WS-RDB-Return       pic 99       value zeros.\n 01  WS-RDB-Vars                      value spaces.\n     03  WS-Host-Name    pic x(64).\n     03  WS-Implementation\n                         pic x(64).\n     03  WS-Password     pic x(64).\n     03  WS-Base-Name    pic x(64).\n     03  WS-Port-Number  pic x(4).\n     03  WS-Socket       pic x(64).\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n copy \"irswsdflt.cob\"\n           replacing Default-Record by WS-IRS-Default-Record.\n copy \"wsfnctn.cob\".\n copy \"wsnames.cob\".\n copy \"wscall.cob\".\n*>\n 01  Error-Messages.\n*> System Wide\n     03  ST001          pic x(26) value \"IR001 System 1 read err = \".\n     03  ST001B         pic x(27) value \"IR001B System 2 read err = \".\n     03  ST004          pic x(59) value \"IR004 Problem with opening system file. Hit return to clear\".\n     03  SY006          pic x(62) value \"SY006 Program Arguments limited to two and you have specified \".\n     03  SY007          pic x(35) value \"SY007 Program arguments incorrect: \".\n     03  SY008          pic x(31) value \"SY008 Note message & Hit return\".\n     03  SY009          pic x(53) value \"SY009 Environment variables not yet set up : ABORTING\".\n     03  SY019          pic x(38) value \"SY019 DB is not set up in Param file :\".\n*> Program specific\n     03  SL010          pic x(30) value \"IR010 Duplicate key/s found = \".\n     03  SL011          pic x(48) value \"IR011 Error on irsdfltMT processing, Fs-reply = \".\n     03  SL012          pic x(36) value \"IR012 Error opening default  File = \".\n     03  SL013          pic x(30) value \"IR013 Error on reading file = \".\n     03  SL014          pic x(31) value \"IR014 Error on writing table = \".\n     03  SL015          pic x(36) value \"IR015 Error opening Default Table = \".\n     03  SL018          pic x(22) value \"IR018 RDBMS details : \".\n     03  SL099          pic x(15) value \"IR099 Ignoring.\".\n*>\n procedure division.\n*>=================\n*>\n aa000-main-start.\n     perform  zz020-Get-Program-Args.\n     move     Prog-Name to So-Print.\n     perform  Call-Sysout.\n     move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=Stock used in FH logging\n     move     12     to WS-Log-File-no.  *> for FHlogger\n*>\n*>  Get the system param for the various RDB fields\n*>\n     open     input System-File.\n     if       fs-reply not = zero\n              display Prog-Name at 0101 with erase eos\n              display ST001     at 0401\n              display fs-reply  at 0428\n              display ST004     at 0501\n              close System-File\n              move 128 to return-code\n              goback.\n     move     1 to rrn.\n     read     System-File record.\n     if       fs-reply not = zero\n              display Prog-Name at 0101 with erase eos\n              display ST001           at 0401\n              display fs-reply        at 0428\n              display \"Not set up ?\"  at 0431\n              close System-File\n              move 128 to return-code\n              goback.\n*>\n*>  Load up the DB settings from the system record as its not passed on.\n*>\n     if       RDBMS-DB-Name = spaces\n         or   FS-Cobol-Files-Used\n              display Prog-Name    *>  at 0101 with erase eos\n              display SY019\n              display \"Cobol files in use ONLY\"\n              call     \"acas-get-params\" using WS-RDB-Return\n                                               WS-RDB-Vars\n              if       WS-RDB-Return = 8\n                       display \"acas.param file NOT found - Aborted\"\n                       close  System-File\n                       goback\n              end-if\n              if       WS-RDB-Return = 1\n                       display \"Invalid keyword terminator found - Aborted\"\n                       close  System-File\n                       goback\n              end-if\n              if       WS-RDB-Return = 2\n                       display \"Invalid keyword found - Aborted\"\n                       close  System-File\n                       goback\n              end-if\n              if       WS-RDB-Return = zeros\n                       display \"acas-param file found and being used \"\n                       move     WS-Host-Name      to RDBMS-Host\n                       move     WS-Implementation to RDBMS-User\n                       move     WS-Password       to RDBMS-Passwd\n                       move     WS-Base-Name      to RDBMS-DB-Name\n                       move     WS-Port-Number    to RDBMS-Port\n                       move     WS-Socket         to RDBMS-Socket\n                      display \"User = \"   RDBMS-User\n                      display \"Host = \"   RDBMS-Host\n                      display \"DBName = \" RDBMS-DB-Name\n                      display \"Port = \"   RDBMS-Port\n                      display \"Socket = \" RDBMS-Socket\n                       go to aa010-Proc-Override.\n*>\n     if       RDBMS-DB-Name = spaces\n         or   FS-Cobol-Files-Used\n              display Prog-Name at 0101 with erase eos\n              display SY019\n              if  FS-Cobol-Files-Used\n                  display \"Cobol files in use ONLY\"\n              end-if\n              display \"DBName = \" RDBMS-DB-Name\n              display \"User = \"   RDBMS-User\n              display \"Port = \"   RDBMS-Port\n              display \"Host = \"   RDBMS-Host\n              display \"Socket = \" RDBMS-Socket\n              close System-File\n              move 64 to Return-Code\n              goback.\n*>\n aa010-Proc-Override.\n*>\n*>  Over-ride processes for acasirsub3/irsdfltMT for Dup modes\n*>\n     move     zero to Log-file-rec-written.        *> for logging.\n     move     1 to File-System-Used\n                   FA-File-System-Used.            *> RDB in use\n     move     1 to File-Key-No.\n     perform  acasirsub3-Open.                     *> Open/Init RDB via FH - acasirsub3\n     go       to aa010-Read.\n*>\n acasirsub3.\n     call     \"acasirsub3\" using System-Record\n                                WS-IRS-Default-Record\n                                File-Access\n                                File-Defs\n                                ACAS-DAL-Common-data.\n*>\n acasirsub3-Open.\n     set      fn-open to true.\n     set      fn-i-o  to true.\n     perform  acasirsub3.\n     perform  aa100-Check-4-Errors.\n*>\n acasirsub3-Open-Input.\n     set      fn-open  to true.\n     set      fn-input to true.\n     perform  acasirsub3.\n     perform  aa100-Check-4-Errors.\n*>\n acasirsub3-Close.\n     set      fn-Close to true.\n     perform  acasirsub3.\n*>\n acasirsub3-Read-Next.\n     set      fn-Read-Next to true.\n     perform  acasirsub3.\n*>\n acasirsub3-Write.\n     set      fn-Write to true.\n     perform  acasirsub3.\n*>\n acasirsub3-ReWrite.\n     set      fn-re-write to true.\n     perform  acasirsub3.\n*>\n*>  We will Rollback on any errors but Mysql has to be set up to do it\n*>      otherwise as normally it is set to autocommit !!!!!\n*>\n aa010-Read.\n     move     zero to File-System-Used\n                      FA-File-System-Used.            *> Cobol file in use\n     perform  acasirsub3-Read-Next.                *> opens & reads\n     if       fs-Reply = 10                        *> EOF\n              go to aa999-Finish-2.       *> bypass counts display\n*>\n     if       FS-Reply not = zero        *> Problem already reported\n              go to aa999-Finish-2.       *> in acasirsub3\n*>\n*>  We have the Default record\n*>\n     add      1 to ws-Rec-Cnt-In.\n     move     1 to File-System-Used      *> acasirsub3 set to process RDB\n                   FA-File-System-Used.\n*>\n*> multi row write likewise for RDB reads.\n*>\n     perform acasirsub3-Write.           *> if error will do a rewrite.\n     if       Sql-State = \"23000\"  *> Dup key (rec already present)\n         or   fs-reply = 22 or 99        *> Check for dup key/record\n         or   SQL-Err (1:4) = \"1062\"\n                         or = \"1022\"\n              move    zeros to FS-Reply\n                               WE-Error\n              perform acasirsub3-Rewrite\n              if      fs-reply not = zero\n                      move spaces to SO-Print\n                      string  SL014 WS-File-Key into SO-Print\n                      perform call-Sysout\n              end-if\n              go to aa999-Finish\n     end-if\n*>\n     if       fs-reply not = zero              *> Anything else\n              move spaces to SO-Print\n              string SL014 fs-reply  into SO-Print\n              perform call-Sysout\n              move spaces to SO-Print\n              string \"WE-Error = \" WE-Error into SO-Print\n              perform call-Sysout\n              move spaces to SO-Print\n              string SL018 SQL-Err into SO-Print\n              perform call-Sysout\n              move SQL-Msg to SO-Print\n              perform call-Sysout\n              move SQL-State to SO-Print\n              perform call-Sysout\n *>             perform aa020-Rollback\n              move 16 to return-code                        *> rdb problem?\n              go to aa999-Finish\n     end-if\n     add      1 to ws-Rec-Cnt-Out.\n     go       to aa999-Finish.    *> only have one record.\n*>\n aa020-Rollback.\n*>\n*> These do not work during testing with mariadb - Non transactional model\n*>    or autocommit set ON\n*>\n*>           exec sql\n*>                rollback\n*>           end-exec.\n     call     \"MySQL_rollback\".\n*>     if       return-code not = zero\n*>              display \"Rollback failed \" at 0501\n*>              display return-code        at 0517\n*>     end-if.\n*>\n aa030-Commit.\n*>           exec sql\n*>                commit\n*>           end-exec.\n     call     \"MySQL_commit\".\n*>     if       return-code not = zero\n*>              display \"Commit failed \" at 0501\n*>              display return-code      at 0515\n*>     end-if.\n*>\n aa100-Check-4-Errors.\n     if       fs-reply not = zero\n              move SL011 to SO-Print\n              perform call-Sysout\n              move spaces to SO-Print\n              string \"FS-Reply = \" fs-reply  into SO-Print\n              perform call-Sysout\n              move spaces to SO-Print\n              string \"WE-Error = \" WE-Error into SO-Print\n              perform call-Sysout\n              move SQL-Err to SO-Print\n              perform call-Sysout\n              move SQL-Msg to SO-Print\n              perform call-Sysout\n              move SQL-State to SO-Print\n              perform call-Sysout\n *>             perform aa020-Rollback\n              go to aa999-Finish\n     end-if.\n*>\n aa999-Finish.\n     move     spaces to SO-Print.\n     string   \"Rec cnt  in = \" ws-Rec-Cnt-In\n              \" Rec cnt out = \" ws-Rec-Cnt-Out\n              \" Rec Cnt rewrite = \" ws-Rec-Cnt-R-Out into SO-Print.\n     perform  Call-Sysout.\n     move     spaces to SO-Print.\n     string   \"Log Recs out   = \" Log-File-Rec-Written into SO-Print.\n     perform  Call-Sysout.\n     move     spaces to SO-Print.\n aa999-Finish-2.\n *>    if       ws-Rec-Cnt-Out = 32                 *> its really 32\n *>             perform aa030-Commit\n *>    end-if\n     move     1 to File-System-Used\n                   FA-File-System-Used.\n     move     zero to Access-Type.\n     move     2 to File-Function.\n     perform  acasirsub3-Close.                     *> Close RDB\n     close    System-File.\n     move     zero to File-System-Used\n                      File-Duplicates-In-Use.\n     perform  acasirsub3-Close.                     *> Close File\n     move     \"EOJ - Load Default Table\" to So-Print.\n     perform  Call-Sysout.\n     move     \"CLOSE   \" to SO-Print.\n     perform  Call-Sysout.\n     goback.\n*>\n copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n*>\n Call-Sysout.\n     call     \"ACAS-Sysout\" using SO-Print.\n*>",
+        "line": 101
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 7,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 30,
+      "totalOperators": 23,
+      "totalOperands": 46,
+      "vocabulary": 31,
+      "length": 69,
+      "volume": 341.83954541669436
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

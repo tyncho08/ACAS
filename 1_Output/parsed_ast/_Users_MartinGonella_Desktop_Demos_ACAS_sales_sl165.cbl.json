@@ -1,0 +1,234 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl165.cbl",
+  "fileName": "sl165.cbl",
+  "timestamp": "2025-09-15T16:25:32.021Z",
+  "programId": "sl165",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 84
+      },
+      {
+        "name": "file",
+        "line": 101
+      },
+      {
+        "name": "working-storage",
+        "line": 117
+      },
+      {
+        "name": "linkage",
+        "line": 156
+      },
+      {
+        "name": "init01",
+        "line": 171
+      },
+      {
+        "name": "input-to-sort",
+        "line": 192
+      },
+      {
+        "name": "exit",
+        "line": 204
+      },
+      {
+        "name": "output-from-sort",
+        "line": 206
+      },
+      {
+        "name": "exit",
+        "line": 215
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 87
+      },
+      {
+        "name": "file-defs",
+        "line": 168
+      },
+      {
+        "name": "end-if",
+        "line": 175
+      },
+      {
+        "name": "end-program",
+        "line": 189
+      },
+      {
+        "name": "Input-To-Sort-Main",
+        "line": 193
+      },
+      {
+        "name": "its-exit",
+        "line": 203
+      },
+      {
+        "name": "Output-From-Sort-Main",
+        "line": 207
+      },
+      {
+        "name": "ofs-exit",
+        "line": 214
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 74,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 83,
+        "replacing": null
+      },
+      {
+        "name": "selsl",
+        "line": 97,
+        "replacing": null
+      },
+      {
+        "name": "fdsl",
+        "line": 115,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 121,
+        "replacing": null
+      },
+      {
+        "name": "wssl",
+        "line": 122,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 154,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 159,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 160,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 161,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 217,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "Sales-Open-Input",
+        "thru": null,
+        "line": 177
+      },
+      {
+        "target": "Sales-Close",
+        "thru": null,
+        "line": 187
+      },
+      {
+        "target": "Sales-Read-Next",
+        "thru": null,
+        "line": 194
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "WS-sales-key",
+        "to": "sort-key",
+        "line": 198
+      },
+      {
+        "from": "sales-name",
+        "to": "sort-name",
+        "line": 199
+      },
+      {
+        "from": "sort-key",
+        "to": "sales-sort-key",
+        "line": 210
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n     select  sort-file       assign        file-21,\n                             status        ss-reply.\n*>\n     select  sales-sort      assign        fn-sales,\n                             access        sequential,\n                             status        fs-reply.\n*>\n*> copy \"selsl.cob\".\n data                    division.\n*>===============================\n*>\n file section.\n*>-----------\n*>\n sd  sort-file.\n*>\n 01  sort-record.\n     03  sort-key        pic x(7).\n     03  sort-name       pic x(30).\n\n fd  sales-sort.\n*>\n 01  sales-sort-record.\n     03  sales-sort-key       pic x(7).\n*>\n*> copy \"fdsl.cob\".\n*>\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(15) value \"SL165 (3.02.03)\".\n*>\n copy \"wsfnctn.cob\".\n copy \"wssl.cob\".\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n*>     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n 01  fn-sales        pic x(12)       value \"custsort.tmp\".\n*>\n 01  ws-data.\n     03  ss-reply        pic xx.\n     03  ws-reply        pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n linkage section.\n*>**************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n init01 section.\n*>\n     if       not FS-Cobol-Files-Used    *> Will use fn-Read-By-Name (31)\n              goback returning 4\n     end-if.\n*>\n     perform  Sales-Open-Input.             *> open     input  sales-file.\n     open     output sales-sort.\n*>\n     sort     sort-file\n               on  ascending key  sort-name\n*> sort-key     *> DONT THINK THIS IS NEEDED\n               input procedure input-to-sort\n               output procedure output-from-sort.\n*>\n     close    sales-sort.\n     perform  Sales-Close.                  *> sales-file\n*>\n end-program.\n     exit     program.\n*>\n input-to-sort section.\n Input-To-Sort-Main.\n     perform  Sales-Read-Next.        *> read sales-file  next record at end\n     if       fs-reply = 10\n              go to  its-exit.\n*>\n     move     WS-sales-key   to  sort-key.\n     move     sales-name  to  sort-name.\n     release  sort-record.\n     go       to input-to-sort-Main.\n*>\n its-exit.\n     exit     section.\n*>\n output-from-sort section.\n Output-From-Sort-Main.\n     return   sort-file at end\n              go to ofs-exit.\n     move     sort-key to sales-sort-key.\n     write    sales-sort-record.\n     go       to output-from-sort-Main.\n*>\n ofs-exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 71
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 2,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 5,
+      "totalOperators": 3,
+      "totalOperands": 6,
+      "vocabulary": 6,
+      "length": 9,
+      "volume": 23.264662506490403
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

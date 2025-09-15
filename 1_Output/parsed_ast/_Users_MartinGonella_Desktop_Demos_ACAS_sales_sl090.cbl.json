@@ -1,0 +1,233 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl090.cbl",
+  "fileName": "sl090.cbl",
+  "timestamp": "2025-09-15T16:25:30.452Z",
+  "programId": "sl090",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 91
+      },
+      {
+        "name": "file",
+        "line": 104
+      },
+      {
+        "name": "working-storage",
+        "line": 123
+      },
+      {
+        "name": "linkage",
+        "line": 178
+      },
+      {
+        "name": "init01",
+        "line": 193
+      },
+      {
+        "name": "sorting-1",
+        "line": 230
+      },
+      {
+        "name": "input-to-sort",
+        "line": 245
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 94
+      },
+      {
+        "name": "file-defs",
+        "line": 190
+      },
+      {
+        "name": "end-if",
+        "line": 199
+      },
+      {
+        "name": "menu-exit",
+        "line": 227
+      },
+      {
+        "name": "process-input",
+        "line": 255
+      },
+      {
+        "name": "end-of-input",
+        "line": 270
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 81,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 90,
+        "replacing": null
+      },
+      {
+        "name": "seloi3",
+        "line": 97,
+        "replacing": null
+      },
+      {
+        "name": "slselois",
+        "line": 98,
+        "replacing": null
+      },
+      {
+        "name": "fdoi3",
+        "line": 107,
+        "replacing": null
+      },
+      {
+        "name": "slfdois",
+        "line": 109,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 130,
+        "replacing": null
+      },
+      {
+        "name": "slwsoi3",
+        "line": 131,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 176,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 181,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 182,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 183,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 277,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "sorting-1",
+        "thru": null,
+        "line": 225
+      },
+      {
+        "target": "OTM3-Open-Input",
+        "thru": null,
+        "line": 248
+      },
+      {
+        "target": "OTM3-Close",
+        "thru": null,
+        "line": 250
+      },
+      {
+        "target": "OTM3-Read-Next",
+        "thru": null,
+        "line": 258
+      },
+      {
+        "target": "OTM3-Close",
+        "thru": null,
+        "line": 273
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "\"Y\"",
+        "to": "oi-3-flag",
+        "line": 224
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "not using Cobol files as sort\n*>                    not needed for tables as we do selective read.\n*>                    Changed sort rec size to 118 after OI3 change.\n*> 22/08/17 vbc -     Added some comments in remarks and removed unneeded\n*>                    test condition that is tested (with exit) for previously.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> These files and programs is part of the Applewood Computers Accounting\n*> System and is copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms of the GNU General Public License as published by the\n*> Free Software Foundation; version 3 and later as revised for personal\n*> usage only and that includes for use within a business but without\n*> repackaging or for Resale in any way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental mode must get in touch with the copyright holder\n*> with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n*> copy \"seloi3.cob\".\n copy \"slselois.cob\".\n*>\n     select       sort-file   assign  file-21.\n data                    division.\n*>===============================\n*>\n file section.\n*>------------\n*>\n*> copy \"fdoi3.cob\".\n*>\n copy \"slfdois.cob\".\n*>\n sd  sort-file.\n*>\n 01  Sort-Record.                         *> 118.\n     03  s-customer       pic x(7).\n     03  s-invoice        pic 9(8).           *> was binary-long.\n     03  s-date           binary-long.\n     03  s-batch                         comp.\n       05  s-b-nos        pic 9(5).\n       05  s-b-item       pic 999.\n     03  s-type           pic 9.\n     03  filler           pic x(92).\n*>\n working-storage section.\n*>----------------------\n 77  prog-name            pic x(15) value \"SL090 (3.02.05)\".\n 77  ws-ITM3-Length       pic 999   value zero.\n 77  ws-ITMS-Length       pic 999   value zero.\n 77  ws-reply             pic x.\n *>\n copy \"wsfnctn.cob\".\n copy \"slwsoi3.cob\".\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n*>     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n 01  File-Info                          value zero.\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n 01  Error-Messages.\n*> System Wide\n     03  SL003           pic x(28) value \"SL003 Hit Return To Continue\".\n*> Module specific\n     03  SL116           pic x(38) value \"SL116 Note: and hit return to continue\".\n     03  SL142           pic x(39) value \"SL142 No Payments To Correct/Proof/Post\".\n     03  SL143           pic x(50) value \"SL143 System Error - OTM3 and OTMS not the same - \".\n     03  SL143B          pic x(11) value \"& Sorted - \".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n linkage section.\n*>**************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n init01 section.\n*>\n*>  First check if not using Cobol files -",
+        "line": 48
+      },
+      {
+        "type": "IF",
+        "condition": "not FS-Cobol-Files-Used  *> Will use fn-Read-Next-Sorted-By-Batch (32)\n              goback returning 4\n     end-if.\n*>\n*> Let make sure oi3 and ois are are same lengths.\n*>\n     display  prog-name at 0101 with erase eos.\n     move     function length (Open-Item-Record-3) to ws-ITM3-Length.\n     move     function length (Sort-Record)        to ws-ITMS-Length.\n     if       ws-ITM3-Length NOT = ws-ITMS-Length\n              display SL143    at 1201 with foreground-color 3 highlight *> 50\n              display ws-ITM3-Length at 1252 with foreground-color 3\n              display SL143B   at 1257 with foreground-color 3\n              display ws-ITMS-Length at 1268 with foreground-color 3\n              display SL116    at 1401 with foreground-color 3\n              accept  ws-reply at 1440\n              exit program\n     end-if\n*>\n*> Good, we can continue\n*>\n     if       S-Flag-P = 0    *> do we have data ?\n              display SL142  at 0501\n              display SL003  at 2401\n              accept ws-reply at 2430\n              go to menu-exit.\n*>\n     move     \"Y\" to oi-3-flag.\n     perform  sorting-1.\n*>\n menu-exit.\n     exit     program.\n*>\n sorting-1    section.\n*>===================\n*>\n     sort     sort-file\n              on  ascending key   s-b-nos\n                                  s-b-item\n              on  descending key  s-type\n              on  ascending key   s-date\n                                  s-invoice\n              input procedure is input-to-sort\n              giving  open-item-file-s.\n*>\n main-exit.   exit section.\n*>********    ****\n*>\n input-to-sort           section.\n*>==============================\n*>\n     perform  OTM3-Open-Input.        *> open input  open-item-file-3.\n     if       fs-reply not = zero\n              perform  OTM3-Close     *> close open-item-file-3\n              open output open-item-file-s  *> create empty file\n              close open-item-file-s\n              go to main-exit.\n*>\n process-input.\n*>************\n*>\n     perform  OTM3-Read-Next.     *>  read open-item-file-3 next record at end\n     if       fs-reply = 10\n              go to  end-of-input.\n*>\n     if       oi-type = 1 or 3                    *> Ignore Receipts & Cr. Notes\n              go to process-input.\n     if       zero = oi-b-nos and oi-b-item       *> batch data zero so no payments\n              go to process-input.\n*>\n     release  sort-record from  open-item-record-3.\n     go       to  process-input.\n*>\n end-of-input.\n*>***********\n*>\n     perform  OTM3-Close.    *> close  open-item-file-3.\n*>\n main-exit.   exit section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 197
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 2,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 2,
+      "totalOperators": 1,
+      "totalOperands": 2,
+      "vocabulary": 3,
+      "length": 3,
+      "volume": 4.754887502163468
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

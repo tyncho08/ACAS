@@ -1,0 +1,248 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl800.cbl",
+  "fileName": "pl800.cbl",
+  "timestamp": "2025-09-15T16:25:47.271Z",
+  "programId": "pl800",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "working-storage",
+        "line": 89
+      },
+      {
+        "name": "linkage",
+        "line": 126
+      },
+      {
+        "name": "Init01",
+        "line": 145
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 221
+      },
+      {
+        "name": "exit",
+        "line": 249
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-defs",
+        "line": 138
+      },
+      {
+        "name": "Menu-Return",
+        "line": 154
+      },
+      {
+        "name": "Menu-Input",
+        "line": 176
+      },
+      {
+        "name": "Loadit",
+        "line": 200
+      },
+      {
+        "name": "file-defs",
+        "line": 204
+      },
+      {
+        "name": "Menu-Exit",
+        "line": 209
+      },
+      {
+        "name": "Menu-Ex",
+        "line": 214
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 248
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 75,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 84,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 93,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 94,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 96,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 129,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 130,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 131,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 150
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "ws-caller",
+        "to": "ws-del-link",
+        "line": 151
+      },
+      {
+        "from": "ws-called",
+        "to": "ws-caller",
+        "line": 152
+      },
+      {
+        "from": "zero",
+        "to": "Menu-Reply",
+        "line": 155
+      },
+      {
+        "from": "\"X\"",
+        "to": "Menu-Reply",
+        "line": 174
+      },
+      {
+        "from": "Menu-Reply",
+        "to": "pass-value\n *>             move \"pl810\" to ws-called\n *>             go to Loadit",
+        "line": 184
+      },
+      {
+        "from": "Menu-Reply",
+        "to": "pass-value\n *>             move \"pl820\" to ws-called\n *>             go to Loadit",
+        "line": 189
+      },
+      {
+        "from": "Menu-Reply",
+        "to": "pass-value\n *>             move \"pl830\" to ws-called\n *>             go to Loadit",
+        "line": 194
+      },
+      {
+        "from": "zero",
+        "to": "pass-value",
+        "line": 210
+      },
+      {
+        "from": "ws-caller",
+        "to": "ws-called",
+        "line": 211
+      },
+      {
+        "from": "ws-del-link",
+        "to": "ws-caller",
+        "line": 212
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 229
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 232
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit",
+        "line": 236
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 243
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "option 1 selected\n*>                    so that system record is updated for SL-Next-Inv.\n*> 27/07/23 vbc - .00 Created from sl800.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>================================\n*>\n copy \"envdiv.cob\".\n*>\n data                    division.\n*>================================\n*>\n working-storage section.\n*>-----------------------\n 77  prog-name               pic x(15) value \"PL800 (3.02.00)\".\n*>\n copy \"wsmaps03.cob\".\n copy \"wsfnctn.cob\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  ws-data.\n     03  Menu-Reply          pic x.\n     03  ws-reply            pic x.\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n linkage section.\n*>***************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n*>  Will need to support auto program load via sales to run sl830\n*>   as SL Generate   ????\n*>\n*>\n Init01 section.\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n     perform  zz070-Convert-Date.\n     move     ws-caller to ws-del-link.\n     move     ws-called to ws-caller.\n*>\n Menu-Return.\n     move     zero  to  Menu-Reply.\n     display  prog-name at 0101 with erase eos foreground-color 2.\n     display  \"Recurring (Autogen) Purchase Invoicing Menu\"  at 0126 with foreground-color 2.\n *>    Auto Generate Invoicing Menu\" at 0127 with foreground-color 2.\n     display  ws-date at 0171 with foreground-color 2.\n*>\n     display  \"Select one of the following by number :- [ ]\" at 0501 with foreground-color 2.\n     display  \"(1)  Enter / Amend Recurring Invoice\"         at 0811 with foreground-color 2.\n     display  \"(2)  Proof Recurring Invoicing\"               at 0911 with foreground-color 2.\n     display  \"(3)  Post Recurring Invoices\"                 at 1011 with foreground-color 2.\n*>\n     display  \"(X)  Return To System menu\"                   at 1211 with foreground-color 2.\n*>\n     display  \"Recurring Transactions/Invoices/Purchase Orders has NOT been written yet\"\n                                                             at 1501 WITH FOREGROUND-COLOR 2 HIGHLIGHT.\n     display  \"It is awaiting for sales testing of same AND\"\n                                                             at 1701 WITH FOREGROUND-COLOR 2 HIGHLIGHT.\n     display  \"requests for it to be created\"                at 1901 WITH FOREGROUND-COLOR 2 HIGHLIGHT.\n     display  \"NOW PRESS RETURN FOR SYSTEM MENU\"             at 2101 WITH FOREGROUND-COLOR 2 HIGHLIGHT.\n     move     \"X\" to Menu-Reply.\n*>\n Menu-Input.\n     accept   Menu-Reply at 0543 with foreground-color 6 auto UPPER.\n*>     move     function upper-case (Menu-Reply) to Menu-Reply.\n*>\n     if       Menu-Reply  = \"X\"\n              go to  Menu-Exit.\n*>\n *>    if       Menu-Reply  = 1\n *>             move  Menu-Reply  to  pass-value\n *>             move \"pl810\" to ws-called\n *>             go to Loadit.\n*>\n *>    if       Menu-Reply  = 2\n *>             move  Menu-Reply  to  pass-value\n *>             move \"pl820\" to ws-called\n *>             go to Loadit.\n*>\n *>    if       Menu-Reply  = 3\n *>             move   Menu-Reply  to  pass-value\n *>             move \"pl830\" to ws-called\n *>             go to Loadit.\n*>\n     go       to Menu-Return.\n*>\n Loadit.\n     call     ws-called using ws-calling-data\n                              system-record\n                              to-day\n                              file-defs.\n     if       Menu-Reply = 1\n              go       to Menu-Exit.    *> Will force system file update in sales menu\n     go       to menu-return.\n*>\n Menu-Exit.\n     move     zero        to  pass-value.\n     move     ws-caller   to ws-called.\n     move     ws-del-link to ws-caller.\n*>\n Menu-Ex.\n     exit     program.\n*>\n*>********************************************************\n*>      P R O C E D U R E S                              *\n*>********************************************************\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     to-day (7:4) to ws-Intl-Year.\n     move     to-day (4:2) to ws-Intl-Month.\n     move     to-day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>",
+        "line": 42
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 2,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 17,
+      "totalOperators": 14,
+      "totalOperands": 28,
+      "vocabulary": 18,
+      "length": 42,
+      "volume": 175.1368500605771
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

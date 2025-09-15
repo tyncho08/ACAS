@@ -1,0 +1,416 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st040.cbl",
+  "fileName": "st040.cbl",
+  "timestamp": "2025-09-15T16:25:49.807Z",
+  "programId": "st040",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 132
+      },
+      {
+        "name": "file",
+        "line": 142
+      },
+      {
+        "name": "working-storage",
+        "line": 147
+      },
+      {
+        "name": "linkage",
+        "line": 240
+      },
+      {
+        "name": "aa000-Core",
+        "line": 254
+      },
+      {
+        "name": "ba000-Clear-Totals",
+        "line": 412
+      },
+      {
+        "name": "exit",
+        "line": 442
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 444
+      },
+      {
+        "name": "exit",
+        "line": 480
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 135
+      },
+      {
+        "name": "file-defs",
+        "line": 251
+      },
+      {
+        "name": "goback",
+        "line": 280
+      },
+      {
+        "name": "aa010-Questions",
+        "line": 298
+      },
+      {
+        "name": "aa015-Questions-2",
+        "line": 318
+      },
+      {
+        "name": "aa020-Accept-Loop",
+        "line": 333
+      },
+      {
+        "name": "aa030-U-Sure",
+        "line": 352
+      },
+      {
+        "name": "aa040-Process-All",
+        "line": 370
+      },
+      {
+        "name": "end-if",
+        "line": 385
+      },
+      {
+        "name": "aa999-Exit",
+        "line": 405
+      },
+      {
+        "name": "goback",
+        "line": 406
+      },
+      {
+        "name": "ba000-Clear-Totals-Main",
+        "line": 415
+      },
+      {
+        "name": "ba999-Exit",
+        "line": 441
+      },
+      {
+        "name": "WS-Current-Month",
+        "line": 475
+      },
+      {
+        "name": "WS-Current-Day",
+        "line": 477
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 479
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 375,
+        "type": "DYNAMIC",
+        "using": [
+          "File-11",
+          "File-Info",
+          "end-call",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "display",
+          "ST401",
+          "at",
+          "line",
+          "ws-23-lines",
+          "col",
+          "1",
+          "with",
+          "foreground-color",
+          "4",
+          "highlight",
+          "display",
+          "fs-reply",
+          "at",
+          "line",
+          "ws-23-lines",
+          "col",
+          "28",
+          "with",
+          "foreground-color",
+          "2",
+          "highlight",
+          "display",
+          "ST003",
+          "at",
+          "line",
+          "ws-lines",
+          "col",
+          "01",
+          "accept",
+          "ws-reply",
+          "at",
+          "line",
+          "ws-lines",
+          "col",
+          "30",
+          "go",
+          "to",
+          "aa999-Exit",
+          "end-if",
+          "end-if"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 122,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 131,
+        "replacing": null
+      },
+      {
+        "name": "selstock",
+        "line": 138,
+        "replacing": null
+      },
+      {
+        "name": "fdstock",
+        "line": 145,
+        "replacing": null
+      },
+      {
+        "name": "wsstock",
+        "line": 202,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 203,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 230,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 243,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 244,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 245,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 482,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 271
+      },
+      {
+        "target": "Stock-Open",
+        "thru": null,
+        "line": 386
+      },
+      {
+        "target": "ba000-Clear-Totals",
+        "thru": null,
+        "line": 402
+      },
+      {
+        "target": "Stock-Read-Next",
+        "thru": null,
+        "line": 416
+      },
+      {
+        "target": "Stock-Close",
+        "thru": null,
+        "line": 418
+      },
+      {
+        "target": "Stock-Rewrite",
+        "thru": null,
+        "line": 431
+      },
+      {
+        "target": "Stock-Close",
+        "thru": null,
+        "line": 437
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "24",
+        "to": "ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n     subtract 1 from ws-lines giving ws-23-lines",
+        "line": 259
+      },
+      {
+        "from": "ws-Date",
+        "to": "ws-Conv-Date",
+        "line": 272
+      },
+      {
+        "from": "8",
+        "to": "WS-Term-Code\n              goback",
+        "line": 279
+      },
+      {
+        "from": "\"N\"",
+        "to": "WS-Period-Update\n     else\n              move \"Y\" to WS-Period-Update\n     end-if\n     if       WS-Period-Update = \"Y\"\n        and   WS-Cur-Day > 27                    *> should be run on 1st of new month but ",
+        "line": 288
+      },
+      {
+        "from": "01",
+        "to": "WS-Cur-Mth",
+        "line": 296
+      },
+      {
+        "from": "\"N\"",
+        "to": "ws-Reply-Year ws-Reply-Period",
+        "line": 334
+      },
+      {
+        "from": "\"N\"",
+        "to": "ws-Reply",
+        "line": 361
+      },
+      {
+        "from": "zeros",
+        "to": "Stock-TD-Adds     (WS-Cur-Mth)\n              move zeros to Stock-TD-Deds     (WS-Cur-Mth)\n              move zeros to Stock-TD-Wip-Adds (WS-Cur-Mth)\n              move zeros to Stock-TD-Wip-Deds (WS-Cur-Mth)",
+        "line": 423
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 454
+      },
+      {
+        "from": "WS-Month",
+        "to": "WS-Current-Month\n              move WS-Days  to WS-Current-Day\n              move 1 to Date-Form",
+        "line": 457
+      },
+      {
+        "from": "WS-days",
+        "to": "WS-Swap\n              move WS-month to WS-Days\n              move WS-Days  to WS-Current-Day\n              move WS-swap  to WS-Month\n              move WS-Month to WS-Current-Month\n              go to zz070-Exit",
+        "line": 463
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "WS-Date",
+        "line": 472
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "day < 05 (last month) or this month if day > 04,     *\n*>      i.e., 27+ And/Or current period.                      *\n*>                                                            *\n*>   Normally when doing Month within yearly totals period    *\n*>   would also be done if period = Weekly or Monthly as set  *\n*>   in system params under Stock control entries.            *\n*>                                                            *\n*>  This program can be directly called (via stock) using a   *\n*>   Autorun process by giving two params to stock as in :    *\n*>    stock NULL st0405n  (5=clear down total values          *\n*>   2nd digit n is what to clear 1 = period,                 *\n*>                                2 = month within year,      *\n*>                                3 = both.                   *\n*>                                                            *\n*>    All recs are done including whose with                  *\n*>     Stock-Services-Flag set to \"Y\"                         *\n*>                                                            *\n*>*************************************************************\n*>\n identification          division.\n*>================================\n*>\n*>**\n      program-id.         st040.\n*>**\n*>    Author.             V.B.Coen, FBCS\n*>                        For Applewood Computers.\n*>**\n*>    Security.           Copyright (C) 1976-2025 & later, Vincent Bryan Coen.\n*>                        Distributed under the GNU General Public License.\n*>                        See the file COPYING for details.\n*>**\n*>    Called modules.\n*>                        acas011 -> Stock file FH\n*>                         stockMT - STOCK-REC RDB table.\n*>**\n*>    Error messages used.\n*>\n*>                        ST000.\n*>                        ST003.\n*>\n*>                        ST401.\n*>                        ST402.\n*>                        ST403.\n*>**\n*> Changes:\n*> 28/06/09 vbc - .00 Written in Cobol from scratch against v2 specs.\n*> 21/07/09 vbc - .02 Program title change.\n*> 11/12/11 vbc -     Changed version from 1.00.xx to 3.01.xx, in keeping\n*>                     with the rest of ACAS\n*>                .03 Changed usage of Stk-Date-Form to the global field\n*>                     Date-Form making former redundent.\n*> 12/05/13 vbc - .04 Changed wsnames to in common as pl010 called in st010.\n*> 16/05/13 vbc - .05 Changed wsnames to in copybook see above.\n*> 25/05/13 vbc - .06 Test for Activity-Rep-Run wrong shoud be for zero.\n*> 21/07/16 vbc - .07 Replace Cobol file acces verbs with calls to FH and RDB\n*>                    DAL. Precede references to Stock-Record, Stock-Key,\n*>                    Stock-Abrev-Key, Stock-Desc by WS- to reflect that we\n*>                    are only dealing with a WS record and the FD is now gone.\n*>                    Stop using File-Status and replace with call to\n*>                    \"CBL_CHECK_FILE_EXIST\" instead. Do same for all such\n*>                    checks, sets etc to kill of usage dates back to floppies.\n*>                    ST011 added. Update version to 3.02.\n*> 10/10/16 vbc - .08 Clean up update msgs for file & table.\n*> 24/10/16 vbc - .09 ALL programs now using wsnames.cob in copybooks\n*>                    Use of maps99 is depleted.\n*> 12/03/18 vbc - .10 acasnnn copylib renaming acas000-open etc to comply with\n*>                    rest of ACAS to (System-Open etc) removed unused field\n*>                    WS var. error-code.\n*>                    Chg ST000 to stock rec.\n*> 16/03/18 vbc - .11 Added code for AUTORUN via stock menu which will print reports\n*>                    for both Additions and Deletions and",
+        "line": 8
+      },
+      {
+        "type": "IF",
+        "condition": "day < 5 month is last month\n*>                    else this month (day > 27).\n*>                    Normal usage would run on 1st on month via cron etc.\n*> 19/03/18 vbc - .12 Added msg ST403 if CD-Args (7:1) when in autorun not in range 1-3.\n*>                    displayed and",
+        "line": 84
+      },
+      {
+        "type": "IF",
+        "condition": "autorun via cron with mail set\n*>",
+        "line": 88
+      },
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>================================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>-------------------------------\n*>\n file-control.\n*>------------\n*>\n*> copy \"selstock.cob\".\n data                    division.\n*>================================\n*>\n file section.\n*>------------\n*>\n*> copy \"fdstock.cob\".\n*>\n working-storage section.\n*>-----------------------\n*>\n 77  Prog-Name           pic x(15)       value \"ST040 (3.02.14)\".\n*>\n 01  work-fields.\n     03  ws-Reply-Year    pic x                   value space.\n         88 Clear-Year                            value \"Y\".\n     03  ws-Reply-Period  pic x                   value space.\n         88 Clear-Period                          value \"Y\".\n     03  WS-Period-Update pic x                   value \"Y\".    *> Y = good month\n     03  WS-Current-Month.\n         05  WS-Cur-Mth   pic 99                  value 01.\n     03  WS-Current-Day.\n         05  WS-Cur-Day   pic 99                  value 01.\n     03  ws-Reply         pic x                   value space.\n\n     03  ws-lines        binary-char  unsigned   value zero.\n     03  ws-22-lines     binary-char  unsigned   value zero.\n     03  ws-23-lines     binary-char  unsigned   value zero.\n     03  ws-env-lines    pic 999                 value zero.\n*>\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n 01  File-Info                          value zero.\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n copy \"wsstock.cob\".     *> 3.02\n copy \"wsfnctn.cob\".\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n*>     03  System-Record          pic x.\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n*>     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  Error-Messages.\n     03  ST000          pic x(36) value \"ST000 Error on Writing to Stock Rec.\".\n     03  ST003          pic x(27) value \"ST003 Press return for Menu\".\n*> Module specific\n     03  ST401          pic x(26) value \"ST401 Stock File not found\".\n     03  ST402          pic x(17) value \"ST402 Y or N only\".\n     03  ST403          pic x(27) value \"ST403 Sub arg not 1, 2 or 3\".\n*>\n linkage section.\n*>***************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n 01  To-Day             pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>***************************************\n*>\n aa000-Core                 section.\n*>*********************************\n*>\n     accept   ws-env-lines from lines.\n     if       ws-env-lines < 24\n              move  24 to ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n     subtract 1 from ws-lines giving ws-23-lines.\n     subtract 2 from ws-lines giving ws-22-lines.\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n*> Get current date into locale format for display\n*>\n     perform  zz070-Convert-Date.\n     move     ws-Date to ws-Conv-Date.\n*>\n     if       FUNCTION LOWER-CASE (WS-CD-Args (1:5)) not = \"st040\"\n              go to aa010-Questions.\n*> Next may need to be in quotes\n     if       WS-CD-Args (7:1) < 1 or > 3    *> Bad option set should appear in msg to user.\n              display ST403 at 0101 with erase eos\n              move 8 to WS-Term-Code\n              goback.\n*>\n*>  Needed for period updates, 1st check for valid mth and day - JIC.\n*>  Day and month taken from todays date, so if day > 27 its for next month\n*>   and if < 05",
+        "line": 119
+      },
+      {
+        "type": "IF",
+        "condition": "WS-Cur-Mth < 01 or > 12\n         or   WS-Cur-Day < 01 or > 31\n              move \"N\" to WS-Period-Update\n     else\n              move \"Y\" to WS-Period-Update\n     end-if\n     if       WS-Period-Update = \"Y\"\n        and   WS-Cur-Day > 27                    *> should be run on 1st of new month but . .\n              add 1 to WS-Cur-Mth                *>  could be last working day of mth\n              if   WS-Cur-Mth > 12               *> Adjust for mth 01 so Dec last year\n                   move 01 to WS-Cur-Mth.          *> otherwise its current month\n*>\n aa010-Questions.\n     display  prog-name at 0101 with foreground-color 2 erase eos.\n     display  \"Stock Activity Reset\" at 0131 with foreground-color 2.\n     display  ws-Conv-Date at 0171 with foreground-color 2.\n*>\n*> First block is for AUTO run via stock menu program when given 2 params\n*>   stock NULL st0401n (n=1, 2, 3)\n*>\n     if       FUNCTION LOWER-CASE (WS-CD-Args (1:5)) not = \"st040\"\n              go to aa015-Questions-2.\n*>\n*>  So it is AUTO RUN, check processes to run and ignoring char (6:1).\n*>\n     if       WS-CD-Args (7:1) = \"1\" or \"3\"\n              set Clear-Period to true\n              go to  aa040-Process-All.\n     if       WS-CD-Args (7:1) = \"2\"\n              set Clear-Year to true    *> Clears month in year totals\n              go to  aa040-Process-All.\n*>\n aa015-Questions-2.\n     display  \"Can I clear this \" at 0410 with foreground-color 2.\n     if       Stk-Period-Cur = \"Q\"\n              display \"Quarter\" at 0427 with foreground-color 2\n     else\n      if      Stk-Period-Cur = \"W\"\n              display \"   Week\" at 0427 with foreground-color 2\n      else\n       if     Stk-Period-Cur = \"M\"\n              display \"  Month\" at 0427 with foreground-color 2\n       else   display \"Not Set\" at 0427 with foreground-color 2. *> Appears its a BUG in sys002\n*>\n     display  \" Period Totals? [ ] (N/Y)\" at 0434 with foreground-color 2.\n     display  \"Can I clear End of Month Totals on Stock records [ ] (N/Y)\" at 0610 with foreground-color 2.\n*>\n aa020-Accept-Loop.\n     move     \"N\" to ws-Reply-Year ws-Reply-Period.\n     accept   ws-Reply-Period at 0451  with foreground-color 6 update UPPER.\n     if       ws-Reply-Period not = \"Y\" and not = \"N\"\n              display ST402 at line ws-23-lines col 1 with foreground-color 4 highlight\n              go to aa020-Accept-Loop.\n     accept   ws-Reply-Year at 0660  with foreground-color 6 update UPPER.\n     if       ws-Reply-Year not = \"Y\" and not = \"N\"\n              display ST402 at line ws-23-lines col 1 with foreground-color 4 highlight\n              go to aa020-Accept-Loop.\n     display  \" \" at line ws-23-lines col 1 with erase eol.\n     if       not Clear-Year and not Clear-Period\n              go to aa999-Exit.\n*>\n     if       Clear-Period\n              display \"Will Clear Period totals\" at 0801 with foreground-color 3 highlight.\n     if       Clear-Year\n              display \"Will Clear Month totals\"  at 1001 with foreground-color 3 highlight.\n*>\n aa030-U-Sure.\n     if       STK-Activity-Rep-Run = zero\n              display \"You have NOT run audit reports\" at line ws-23-lines col 1 with foreground-color 6 highlight\n              display ST003  at line ws-lines col 01\n              accept ws-reply at line ws-lines col 30\n              go to aa999-Exit.\n*>\n     display  \"Have you made backups of your data and are you sure?  [ ] (N/Y)\"\n                                       at 1210 with foreground-color 2 highlight.\n     move     \"N\" to ws-Reply.\n     accept   ws-Reply at 1265 with foreground-color 6 update UPPER.\n     if       ws-Reply not = \"N\" and not = \"Y\"\n              display ST402 at line ws-23-lines col 1 with foreground-color 4 highlight\n              go to aa030-U-Sure.\n     if       ws-Reply = \"N\"\n              go to aa999-Exit.\n     display  \" \" at line ws-23-lines col 1 with erase eol.\n*>\n aa040-Process-All.\n*>\n*> New for RDB\n*>\n     if       FS-Cobol-Files-Used\n              call  \"CBL_CHECK_FILE_EXIST\" using File-11\n                                                 File-Info\n              end-call\n              if    return-code not = zero          *> not = zero - No file found\n                    display ST401 at line ws-23-lines col 1 with foreground-color 4 highlight\n                    display fs-reply at line ws-23-lines col 28 with foreground-color 2 highlight\n                    display ST003  at line ws-lines col 01\n                    accept ws-reply at line ws-lines col 30\n                    go to aa999-Exit\n              end-if\n     end-if.\n     perform  Stock-Open.\n     if       fs-reply not = zero\n                    display ST401 at line ws-23-lines col 1 with foreground-color 4 highlight\n                    display fs-reply at line ws-23-lines col 28 with foreground-color 2 highlight\n                    display ST003  at line ws-lines col 01\n                    accept ws-reply at line ws-lines col 30\n                    go to aa999-Exit\n     end-if\n*>\n     if       FS-Cobol-Files-Used\n              display  \"Updating Stock file as requested\"\n                                             at 1210 with foreground-color 2 highlight erase eol.\n     if       File-System-Used > zero\n              display  \"Updating Stock table as requested\"\n                                             at 1310 with foreground-color 2 highlight erase eol.\n*>\n     perform  ba000-Clear-Totals.\n     go       to aa999-Exit.\n*>\n aa999-Exit.\n     goback.\n*>\n*>***********************************************\n*>                  Routines                    *\n*>***********************************************\n*>\n ba000-Clear-Totals    section.\n*>****************************\n*>\n ba000-Clear-Totals-Main.\n     perform  Stock-Read-Next.\n     if       fs-reply = 10\n              perform Stock-Close\n              go to ba999-Exit.\n*>\n     if       Clear-Year              *> clears specific month depending on day no.\n        and   WS-Period-Update = \"Y\"                   *> test for good date\n              move zeros to Stock-TD-Adds     (WS-Cur-Mth)\n              move zeros to Stock-TD-Deds     (WS-Cur-Mth)\n              move zeros to Stock-TD-Wip-Adds (WS-Cur-Mth)\n              move zeros to Stock-TD-Wip-Deds (WS-Cur-Mth).\n*>\n     if       Clear-Period                             *> be it week, month, quarter etc.\n              initialize Stock-Mthly-Running-Totals.   *> yep, name is wrong should be period!\n*>\n     perform  Stock-Rewrite.\n     if       fs-Reply not = zero\n              display ST000 at line ws-23-lines col 1 with foreground-color 4 highlight\n              display fs-reply at line ws-23-lines col 38 with foreground-color 2 highlight\n              display ST003  at line ws-lines col 01\n              accept ws-reply at line ws-lines col 30\n              perform Stock-Close\n              go to ba999-Exit.\n     go       to ba000-Clear-Totals-Main.\n*>\n ba999-Exit.\n     exit     section.\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format  AND\n*>  WS-Current-Day and -Month as xx as ws-cur-Day & -Mth as 99.\n*>    Special for this program.\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move WS-Month to WS-Current-Month\n              move WS-Days  to WS-Current-Day\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move WS-days  to WS-Swap\n              move WS-month to WS-Days\n              move WS-Days  to WS-Current-Day\n              move WS-swap  to WS-Month\n              move WS-Month to WS-Current-Month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to WS-Date.  *> swap Intl to UK form\n     move     to-day (7:4) to WS-Intl-Year.\n     move     to-day (4:2) to WS-Intl-Month\n                              WS-Current-Month.\n     move     to-day (1:2) to WS-Intl-Days\n                              WS-Current-Day.\n*>\n zz070-Exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 286
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 7,
+    "cognitive": 5,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 22,
+      "totalOperators": 12,
+      "totalOperands": 24,
+      "vocabulary": 23,
+      "length": 36,
+      "volume": 162.84823041805248
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

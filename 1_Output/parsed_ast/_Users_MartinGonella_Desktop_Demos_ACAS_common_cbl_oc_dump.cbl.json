@@ -1,0 +1,418 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/cbl_oc_dump.cbl",
+  "fileName": "cbl_oc_dump.cbl",
+  "timestamp": "2025-09-15T16:25:40.114Z",
+  "programId": "CBL_OC_DUMP",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "CONFIGURATION",
+        "line": 16
+      },
+      {
+        "name": "WORKING-STORAGE",
+        "line": 19
+      },
+      {
+        "name": "LINKAGE",
+        "line": 63
+      },
+      {
+        "name": "CALC-HEX-VALUE",
+        "line": 105
+      },
+      {
+        "name": "exit",
+        "line": 119
+      },
+      {
+        "name": "STARTING-ADDRESS",
+        "line": 121
+      },
+      {
+        "name": "exit",
+        "line": 208
+      },
+      {
+        "name": "TEST-ASCII",
+        "line": 210
+      },
+      {
+        "name": "exit",
+        "line": 222
+      },
+      {
+        "name": "TEST-64BIT",
+        "line": 224
+      },
+      {
+        "name": "exit",
+        "line": 234
+      },
+      {
+        "name": "TEST-ENDIAN",
+        "line": 236
+      },
+      {
+        "name": "exit",
+        "line": 247
+      }
+    ],
+    "paragraphs": [],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "C$PARAMSIZE",
+        "line": 125,
+        "type": "DYNAMIC",
+        "using": [
+          "1",
+          "GIVING",
+          "len",
+          "END-CALL",
+          "*>",
+          "If",
+          "wanted,",
+          "change",
+          "the",
+          "dots",
+          "to",
+          "something",
+          "different",
+          "than",
+          "points",
+          "accept",
+          "dump-dots",
+          "from",
+          "environment",
+          "'OC_DUMP_DOTS'",
+          "not",
+          "on",
+          "exception",
+          "move",
+          "dump-dots",
+          "to",
+          "dots",
+          "end-accept",
+          "*>",
+          "perform",
+          "TEST-ASCII",
+          "perform",
+          "TEST-ENDIAN",
+          "set",
+          "addr",
+          "to",
+          "address",
+          "of",
+          "buffer",
+          "set",
+          "addr2addr",
+          "to",
+          "address",
+          "of",
+          "addr",
+          "*>",
+          "if",
+          "len",
+          ">",
+          "0",
+          "*>",
+          "To",
+          "show",
+          "hex-address,",
+          "reverse",
+          "if",
+          "Big-Little",
+          "Endian",
+          "if",
+          "is-big-endian-yes",
+          "set",
+          "addr2addr",
+          "up",
+          "by",
+          "LENGTH",
+          "OF",
+          "addr",
+          "set",
+          "addr2addr",
+          "down",
+          "by",
+          "1",
+          "end-if",
+          "move",
+          "1",
+          "to",
+          "hex-line-pointer",
+          "perform",
+          "varying",
+          "byline",
+          "from",
+          "1",
+          "by",
+          "1",
+          "until",
+          "byline",
+          ">",
+          "LENGTH",
+          "OF",
+          "addr",
+          "set",
+          "address",
+          "of",
+          "byte",
+          "to",
+          "addr2addr",
+          "perform",
+          "calc-hex-value",
+          "if",
+          "is-big-endian-yes",
+          "set",
+          "addr2addr",
+          "down",
+          "by",
+          "1",
+          "else",
+          "set",
+          "addr2addr",
+          "up",
+          "by",
+          "1",
+          "end-if",
+          "end-perform",
+          "end-if",
+          "*>",
+          "*>",
+          "Get",
+          "and",
+          "display",
+          "characteristics",
+          "and",
+          "headline",
+          "accept",
+          "extended-infos",
+          "from",
+          "environment",
+          "'OC_DUMP_EXT'",
+          "end-accept",
+          "if",
+          "show-extended-infos",
+          "display",
+          "'",
+          "'",
+          "upon",
+          "SYSERR",
+          "end-display",
+          "if",
+          "len",
+          ">",
+          "0",
+          "display",
+          "'Dump",
+          "of",
+          "memory",
+          "beginning",
+          "at",
+          "Hex-address:",
+          "'",
+          "hex-line",
+          "(1",
+          ":",
+          "3",
+          "*",
+          "(byline",
+          "-",
+          "1)",
+          ")",
+          "upon",
+          "SYSERR",
+          "end-display",
+          "end-if",
+          "move",
+          "len",
+          "to",
+          "len-display",
+          "display",
+          "'Length",
+          "of",
+          "memory",
+          "dump",
+          "is:",
+          "'",
+          "len-display",
+          "upon",
+          "SYSERR",
+          "end-display",
+          "if",
+          "show-very-extended-infos",
+          "perform",
+          "TEST-64bit",
+          "display",
+          "'Program",
+          "runs",
+          "in",
+          "'",
+          "architecture",
+          "'",
+          "architecture"
+        ]
+      }
+    ],
+    "copies": [],
+    "performs": [
+      {
+        "target": "starting-address",
+        "thru": null,
+        "line": 71
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 73
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 79
+      },
+      {
+        "target": "else",
+        "thru": null,
+        "line": 85
+      },
+      {
+        "target": "calc-hex-value",
+        "thru": null,
+        "line": 88
+      },
+      {
+        "target": "display",
+        "thru": null,
+        "line": 96
+      },
+      {
+        "target": "display",
+        "thru": null,
+        "line": 99
+      },
+      {
+        "target": "TEST-ASCII",
+        "thru": null,
+        "line": 133
+      },
+      {
+        "target": "TEST-ENDIAN",
+        "thru": null,
+        "line": 134
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 145
+      },
+      {
+        "target": "calc-hex-value",
+        "thru": null,
+        "line": 148
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 154
+      },
+      {
+        "target": "TEST-64bit",
+        "thru": null,
+        "line": 173
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "counter",
+        "to": "offset\n        move spaces  to hex-line, show\n        move '-'     to hex-line (24:01)\n        move 1       to hex-line-pointer\n        perform varying byline from 1 by 1  until   byline  >  16\n           if (counter + byline) > len\n              if byline < 9\n                 move space to hex-line (24:01)\n              end-if\n              inspect show (byline:) replacing all spaces by dots\n              exit perform\n           else\n              move buffer (counter + byline : 1) to byte\n              perform calc-hex-value\n              if ((some-is-printable-iso88591 and is-ascii) or\n                  (some-is-printable-ebcdic   and is-ebdic)   )\n                 move byte to show (byline:1)\n              else\n                 move dots to show (byline:1)\n              end-if\n           end-if\n        end-perform\n        display offset '  ' hex-line '  ' show  upon SYSERR\n        end-display\n     end-perform\n     display ' '                    upon SYSERR\n     end-display\n*>\n     exit program",
+        "line": 75
+      },
+      {
+        "from": "dump-dots",
+        "to": "dots\n     end-accept\n*>\n     perform TEST-ASCII\n     perform TEST-ENDIAN\n     set addr      to address of buffer\n     set addr2addr to address of addr\n*>\n     if len > 0\n*> To show hex-address, reverse if Big-Little Endian\n        if is-big-endian-yes\n           set addr2addr up   by LENGTH OF addr\n           set addr2addr down by 1\n        end-if\n        move 1 to hex-line-pointer\n        perform varying byline from 1 by 1\n                until byline > LENGTH OF addr\n           set address of byte to addr2addr\n           perform calc-hex-value\n           if is-big-endian-yes\n              set addr2addr down by 1\n           else\n              set addr2addr up   by 1\n           end-if\n        end-perform\n     end-if\n*>\n*> Get and display characteristics and headline\n     accept extended-infos from environment 'OC_DUMP_EXT'\n     end-accept\n     if show-extended-infos\n        display ' '               upon SYSERR\n        end-display\n        if len > 0\n           display 'Dump of memory beginning at Hex-address: '\n                    hex-line (1 : 3 * (byline - 1) )\n                                   upon SYSERR\n           end-display\n        end-if\n        move len to len-display\n        display 'Length of memory dump is: ' len-display upon SYSERR\n        end-display\n        if show-very-extended-infos\n           perform TEST-64bit\n           display 'Program runs in '\n                   architecture ' architecture",
+        "line": 130
+      },
+      {
+        "from": "999998",
+        "to": "len, len-display\n           display 'Warning, only the first '\n                   len-display  ' Bytes are shown!'  upon SYSERR\n           end-display\n        end-if\n        display ' '                upon SYSERR\n        end-display\n        display 'Offset  '\n                'HEX-- -- -- -5 -- -- -- -- 10 '\n                '-- -- -- -- 15 -- '\n                '  '\n                'CHARS----1----5-' upon SYSERR\n        end-display\n     else\n        display ' '                upon SYSERR\n        end-display\n        display 'Nothing to dump",
+        "line": 188
+      },
+      {
+        "from": "128",
+        "to": "byline\n     set  address of byte to address of byline\n     if function ord(byte) > 0\n        set  is-big-endian-yes to true\n     else\n        set  is-big-endian-no  to true\n     end-if\n*>\n     exit section",
+        "line": 239
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "(counter + byline) > len\n              if byline < 9\n                 move space to hex-line (24:01)\n              end-if\n              inspect show (byline:) replacing all spaces by dots\n              exit perform\n           else\n              move buffer (counter + byline : 1) to byte\n              perform calc-hex-value\n              if ((some-is-printable-iso88591 and is-ascii) or\n                  (some-is-printable-ebcdic   and is-ebdic)   )\n                 move byte to show (byline:1)\n              else\n                 move dots to show (byline:1)\n              end-if\n           end-if\n        end-perform\n        display offset '  ' hex-line '  ' show  upon SYSERR\n        end-display\n     end-perform\n     display ' '                    upon SYSERR\n     end-display\n*>\n     exit program.\n*>-----------------------------------------------------------------\n CALC-HEX-VALUE SECTION.\n*>\n     subtract 1 from function ord(byte) giving some\n     end-subtract\n     divide   some by 16 giving high-var remainder low-var\n     end-divide\n     string hex-digit (high-var + 1:1)\n            hex-digit (low-var  + 1:1)\n            space\n                                      delimited by size\n              into hex-line\n                    with pointer hex-line-pointer\n     end-string\n*>\n     exit section.\n*>-----------------------------------------------------------------\n STARTING-ADDRESS SECTION.\n*>\n*> Get the length of the transmitted buffer\n*>\n     CALL 'C$PARAMSIZE' USING 1  GIVING len\n     END-CALL\n*> If wanted, change the dots to something different than points\n     accept dump-dots from environment 'OC_DUMP_DOTS'\n       not on exception\n           move dump-dots to dots\n     end-accept\n*>\n     perform TEST-ASCII\n     perform TEST-ENDIAN\n     set addr      to address of buffer\n     set addr2addr to address of addr\n*>\n     if len > 0\n*> To show hex-address, reverse if Big-Little Endian\n        if is-big-endian-yes\n           set addr2addr up   by LENGTH OF addr\n           set addr2addr down by 1\n        end-if\n        move 1 to hex-line-pointer\n        perform varying byline from 1 by 1\n                until byline > LENGTH OF addr\n           set address of byte to addr2addr\n           perform calc-hex-value\n           if is-big-endian-yes\n              set addr2addr down by 1\n           else\n              set addr2addr up   by 1\n           end-if\n        end-perform\n     end-if\n*>\n*> Get and display characteristics and headline\n     accept extended-infos from environment 'OC_DUMP_EXT'\n     end-accept\n     if show-extended-infos\n        display ' '               upon SYSERR\n        end-display\n        if len > 0\n           display 'Dump of memory beginning at Hex-address: '\n                    hex-line (1 : 3 * (byline - 1) )\n                                   upon SYSERR\n           end-display\n        end-if\n        move len to len-display\n        display 'Length of memory dump is: ' len-display upon SYSERR\n        end-display\n        if show-very-extended-infos\n           perform TEST-64bit\n           display 'Program runs in '\n                   architecture ' architecture. '\n                   'Char-set is '\n                   function trim (char-set) '.'         upon SYSERR\n           end-display\n           display 'Byte order is ' endian-order\n                   ' endian.'                           upon SYSERR\n           end-display\n        end-if\n     end-if\n*>\n*> Do we have anything to dump?\n     if len > 0                    *> Ensure that the passed size is not too big\n        if len > 999998\n           move 999998 to len, len-display\n           display 'Warning, only the first '\n                   len-display  ' Bytes are shown!'  upon SYSERR\n           end-display\n        end-if\n        display ' '                upon SYSERR\n        end-display\n        display 'Offset  '\n                'HEX-- -- -- -5 -- -- -- -- 10 '\n                '-- -- -- -- 15 -- '\n                '  '\n                'CHARS----1----5-' upon SYSERR\n        end-display\n     else\n        display ' '                upon SYSERR\n        end-display\n        display 'Nothing to dump.' upon SYSERR\n        end-display\n     end-if\n*>\n     exit section.\n*>-----------------------------------------------------------------\n TEST-ASCII SECTION.\n*>  Function: Discover if running Ascii or Ebcdic\n*>\n     evaluate space\n        when x'20'\n           set  is-ascii   to true\n        when x'40'\n           set  is-ebdic   to true\n        when other\n           set  is-unknown to true\n     end-evaluate\n*>\n     exit section.\n*>-----------------------------------------------------------------\n TEST-64BIT SECTION.\n*>  Function: Discover if running 32/64 bit\n*>    Longer pointers in 64-bit architecture\n*>\n     if function length (addr) <= 4\n        set  is-32-bit to true\n     else\n        set  is-64-bit to true\n     end-if\n*>\n     exit section.\n*>-----------------------------------------------------------------\n TEST-ENDIAN SECTION.\n*>    Number-bytes are shuffled in Big-Little endian\n*>\n     move 128 to byline\n     set  address of byte to address of byline\n     if function ord(byte) > 0\n        set  is-big-endian-yes to true\n     else\n        set  is-big-endian-no  to true\n     end-if\n*>\n     exit section.\n*>-----------------------------------------------------------------\n end program CBL_OC_DUMP.",
+        "line": 80
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "space\n        when x'20'\n           set  is-ascii   to true\n        when x'40'\n           set  is-eb...",
+        "line": 213,
+        "whenCount": 3
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 6,
+    "cognitive": 7,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 8,
+      "totalOperators": 4,
+      "totalOperands": 8,
+      "vocabulary": 9,
+      "length": 12,
+      "volume": 38.039100017307746
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

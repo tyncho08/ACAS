@@ -1,0 +1,707 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/ACAS.cbl",
+  "fileName": "ACAS.cbl",
+  "timestamp": "2025-09-15T16:25:38.151Z",
+  "programId": "ACAS",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 221
+      },
+      {
+        "name": "working-storage",
+        "line": 227
+      },
+      {
+        "name": "zz060-Convert-Date",
+        "line": 658
+      },
+      {
+        "name": "exit",
+        "line": 691
+      },
+      {
+        "name": "maps04",
+        "line": 693
+      },
+      {
+        "name": "exit",
+        "line": 699
+      },
+      {
+        "name": "zz100-ACAS-IRS-Calls",
+        "line": 701
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "ACAS-Main",
+        "line": 347
+      },
+      {
+        "name": "Get-Term-Settings",
+        "line": 356
+      },
+      {
+        "name": "Open-System",
+        "line": 372
+      },
+      {
+        "name": "end-if",
+        "line": 416
+      },
+      {
+        "name": "Display-Menu",
+        "line": 428
+      },
+      {
+        "name": "Conv-date",
+        "line": 442
+      },
+      {
+        "name": "end-if",
+        "line": 461
+      },
+      {
+        "name": "conv-date-end",
+        "line": 463
+      },
+      {
+        "name": "Display-Go",
+        "line": 466
+      },
+      {
+        "name": "accept-loop",
+        "line": 509
+      },
+      {
+        "name": "call-system-setup",
+        "line": 528
+      },
+      {
+        "name": "file-defs",
+        "line": 537
+      },
+      {
+        "name": "overrewrite",
+        "line": 543
+      },
+      {
+        "name": "overclose",
+        "line": 545
+      },
+      {
+        "name": "goback",
+        "line": 546
+      },
+      {
+        "name": "load-it",
+        "line": 548
+      },
+      {
+        "name": "loaderror",
+        "line": 569
+      },
+      {
+        "name": "load00",
+        "line": 574
+      },
+      {
+        "name": "load00-exit",
+        "line": 582
+      },
+      {
+        "name": "load01",
+        "line": 586
+      },
+      {
+        "name": "load02",
+        "line": 592
+      },
+      {
+        "name": "load03",
+        "line": 598
+      },
+      {
+        "name": "load04",
+        "line": 604
+      },
+      {
+        "name": "load05",
+        "line": 610
+      },
+      {
+        "name": "load06",
+        "line": 616
+      },
+      {
+        "name": "load07",
+        "line": 622
+      },
+      {
+        "name": "load08",
+        "line": 628
+      },
+      {
+        "name": "load09",
+        "line": 634
+      },
+      {
+        "name": "load23",
+        "line": 638
+      },
+      {
+        "name": "loadsr",
+        "line": 643
+      },
+      {
+        "name": "loadsr2",
+        "line": 649
+      },
+      {
+        "name": "main-exit",
+        "line": 655
+      },
+      {
+        "name": "zz060-Exit",
+        "line": 690
+      },
+      {
+        "name": "maps04-exit",
+        "line": 698
+      },
+      {
+        "name": "acas000",
+        "line": 709
+      },
+      {
+        "name": "end-call",
+        "line": 716
+      },
+      {
+        "name": "System-Open",
+        "line": 722
+      },
+      {
+        "name": "System-Open-Input",
+        "line": 728
+      },
+      {
+        "name": "System-Close",
+        "line": 734
+      },
+      {
+        "name": "System-Read-Next",
+        "line": 738
+      },
+      {
+        "name": "System-Read-Indexed",
+        "line": 742
+      },
+      {
+        "name": "System-Write",
+        "line": 746
+      },
+      {
+        "name": "System-Rewrite",
+        "line": 750
+      },
+      {
+        "name": "System-Check-4-Errors",
+        "line": 754
+      },
+      {
+        "name": "end-if",
+        "line": 759
+      },
+      {
+        "name": "goback",
+        "line": 770
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 424,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 696,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      },
+      {
+        "target": "acas000",
+        "line": 711,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-System-Record",
+          "File-Access",
+          "File-Defs",
+          "ACAS-DAL-Common-data",
+          "end-call"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "must",
+        "line": 48,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 186,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 220,
+        "replacing": null
+      },
+      {
+        "name": "sys-params-versioning",
+        "line": 239,
+        "replacing": null
+      },
+      {
+        "name": "wstime",
+        "line": 265,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 266,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps01",
+        "line": 267,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 268,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 269,
+        "replacing": null
+      },
+      {
+        "name": "wssys4",
+        "line": 270,
+        "replacing": null
+      },
+      {
+        "name": "wsdflt",
+        "line": 271,
+        "replacing": null
+      },
+      {
+        "name": "wsfinal",
+        "line": 272,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 273,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 275,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 329,
+        "replacing": null
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 772,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "thru": null,
+        "line": 370
+      },
+      {
+        "target": "System-Open-Input",
+        "thru": null,
+        "line": 385
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 387
+      },
+      {
+        "target": "System-Open-Input",
+        "thru": null,
+        "line": 398
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 405
+      },
+      {
+        "target": "System-Read-Indexed",
+        "thru": null,
+        "line": 417
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 418
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "thru": null,
+        "line": 426
+      },
+      {
+        "target": "conv-date",
+        "thru": null,
+        "line": 485
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 667
+      },
+      {
+        "target": "acas000",
+        "thru": null,
+        "line": 725
+      },
+      {
+        "target": "System-Check-4-Errors",
+        "thru": null,
+        "line": 726
+      },
+      {
+        "target": "System-Check-4-Errors",
+        "thru": null,
+        "line": 731
+      },
+      {
+        "target": "acas000",
+        "thru": null,
+        "line": 732
+      },
+      {
+        "target": "acas000",
+        "thru": null,
+        "line": 736
+      },
+      {
+        "target": "acas000",
+        "thru": null,
+        "line": 740
+      },
+      {
+        "target": "acas000",
+        "thru": null,
+        "line": 744
+      },
+      {
+        "target": "acas000",
+        "thru": null,
+        "line": 748
+      },
+      {
+        "target": "acas000",
+        "thru": null,
+        "line": 752
+      },
+      {
+        "target": "System-Close",
+        "thru": null,
+        "line": 757
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "*>",
+        "to": "separate program",
+        "line": 141
+      },
+      {
+        "from": "zeros",
+        "to": "File-System-Used\n                       File-Duplicates-In-Use",
+        "line": 382
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 384
+      },
+      {
+        "from": "zero",
+        "to": "ws-term-code\n              move     \"sys002\" to ws-called\n              call     ws-called using ws-calling-data file-defs   *> and we use file00",
+        "line": 388
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No\n              perform  System-Open-Input      *> as I/O\n              if       fs-reply not = zero\n                       display \" \" at 0101 with erase eos\n                       display SY011     at 1201\n                       accept Menu-Reply at 1260\n                       stop run\n              end-if\n              perform  System-Close\n*>\n*>  Set up Value and Anal file / tables",
+        "line": 397
+      },
+      {
+        "from": "zero",
+        "to": "ws-term-code\n              move     1    to ws-Process-Func    *> Force finish after creating recs for SL and PL",
+        "line": 409
+      },
+      {
+        "from": "\"sl070\"",
+        "to": "ws-called\n              call     ws-called using ws-calling-data file-defs\n*>\n*>  Any more pre-setups? if so, put here",
+        "line": 411
+      },
+      {
+        "from": "ACAS-Run-Date",
+        "to": "u-bin",
+        "line": 423
+      },
+      {
+        "from": "u-date",
+        "to": "to-day",
+        "line": 425
+      },
+      {
+        "from": "to-day",
+        "to": "u-date",
+        "line": 431
+      },
+      {
+        "from": "\"ACAS\"",
+        "to": "ws-caller",
+        "line": 432
+      },
+      {
+        "from": "spaces",
+        "to": "ws-called ws-del-link menu-reply",
+        "line": 433
+      },
+      {
+        "from": "zeros",
+        "to": "ws-term-code",
+        "line": 434
+      },
+      {
+        "from": "maps-ser-nn",
+        "to": "curs2",
+        "line": 436
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 447
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              move ws-date to u-date\n     end-if\n     if       Date-Intl\n              move \"ccyy/mm/dd\" to ws-date   *> swap Intl to UK form\n              move u-date (7:4) to ws-Intl-Year\n              move u-date (4:2) to ws-Intl-Month\n              move u-date (1:2) to ws-Intl-Days\n              move ws-date to u-date\n     end-if",
+        "line": 449
+      },
+      {
+        "from": "wsb-hh",
+        "to": "wsd-hh\n              move wsb-mm to wsd-mm\n              move wsb-ss to wsd-ss\n              display \"at \" at 0355 with foreground-color 2\n              display wsd-time at 0358 with foreground-color 2",
+        "line": 473
+      },
+      {
+        "from": "wsa-yy",
+        "to": "u-year\n              move wsa-mm to u-month\n              move wsa-dd to u-days\n              display \"on \" at 0367 with foreground-color 2\n              perform conv-date\n              display u-date at 0370 with foreground-color 2",
+        "line": 481
+      },
+      {
+        "from": "zero",
+        "to": "z",
+        "line": 517
+      },
+      {
+        "from": "letters-upper",
+        "to": "letters",
+        "line": 518
+      },
+      {
+        "from": "zero",
+        "to": "ws-term-code",
+        "line": 534
+      },
+      {
+        "from": "\"sys002\"",
+        "to": "ws-called",
+        "line": 535
+      },
+      {
+        "from": "space",
+        "to": "menu-reply",
+        "line": 551
+      },
+      {
+        "from": "zero",
+        "to": "ws-term-code",
+        "line": 577
+      },
+      {
+        "from": "\"general\"",
+        "to": "ws-called",
+        "line": 589
+      },
+      {
+        "from": "\"sales\"",
+        "to": "ws-called",
+        "line": 595
+      },
+      {
+        "from": "\"purchase\"",
+        "to": "ws-called",
+        "line": 601
+      },
+      {
+        "from": "\"stock\"",
+        "to": "ws-called",
+        "line": 607
+      },
+      {
+        "from": "\"OE\"",
+        "to": "ws-called",
+        "line": 613
+      },
+      {
+        "from": "\"payroll\"",
+        "to": "ws-called",
+        "line": 619
+      },
+      {
+        "from": "\"epos\"",
+        "to": "ws-called",
+        "line": 625
+      },
+      {
+        "from": "\"irs\"",
+        "to": "ws-called",
+        "line": 631
+      },
+      {
+        "from": "\"project-z\"",
+        "to": "ws-called",
+        "line": 636
+      },
+      {
+        "from": "spaces",
+        "to": "ws-Date\n              go to zz060-Exit",
+        "line": 669
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date",
+        "line": 671
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 674
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit",
+        "line": 678
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 685
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 710
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "used having made sure that they exist.         *\n*>                                                                *\n*> For rdb processing the rdb must have been:                     *\n*>   Installed and set up with root and acas users set.           *\n*>   The ACAS DB set up snd populated if needed.                  *\n*>   Access to the ACAS DB tested for connection by the ACAS user *\n*>    account.                                                    *\n*>                                                                *\n*>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>                                            *\n*>  This program will call each of the main   *\n*>   elements in ACAS via a menu              *\n*>    such as irs, General, Stock,            *\n*>         Sales, Purchase,                   *\n*>     and for non O/S versions :             *\n*>         Payroll, Epos, Order Entry.        *\n*>    For on-line order entry systems, it is  *\n*>    expected that the data export to ACAS   *\n*>    been run using means outside the ACAS   *\n*>    system.                                 *\n*>*********************************************\n*> It is not expected to use this module to   *\n*>  run ACAS as most users will just load the *\n*>  needed sub-system as they tend to be used *\n*>  by differing departments however it does  *\n*>  include access to the parameter set up    *\n*>  processes where the sub systems have it   *\n*>  made non available as set up in the       *\n*>  parameter file.                           *\n*>                                            *\n*>  These extra file set ups for the moment   <\n*>   must be run manually as there is no      *\n*>   procedure to do it in auto mode:         *\n*>  Also this program will set up the system  *\n*>  parameter file & also the other required  *\n*>   data files needed such as :              *\n*>   IRS Ledgers                              *\n*>    Using default COA file :                *\n*>      coa-achived.txt                       *\n*>     So a copy must be made as back up",
+        "line": 9
+      },
+      {
+        "type": "IF",
+        "condition": "there is no postings *\n*> Next :                                     *\n*>   IRS Defaults (may be) at least the       *\n*>    VAT in and out presets.                 *\n*>   again these can be altered at any time.  *\n*>   Analysis for sales, purchase and stock.  *\n*>    These are the standard defaults only &  *\n*>     can be added to at any time.           *\n*>   programs sl070 or pl070 can be run.      *\n*> Where the system param file does not yet   *\n*>   exist.                                   *\n*>                                            *\n*>******************************************************************\n*> RDBMS support included for v3.02 and later                      *\n*>                                                                 *\n*>******************************************************************\n*>\n identification          division.\n*>===============================\n*>\n*>**\n      program-id.         ACAS.\n*>**\n*>    Author.             V.B.Coen FBCS, FIDM, FIDPM.\n*>**\n*>    Security.           Copyright (C) 1976-2025 Vincent Bryan Coen.\n*>                        Distributed under the GNU General Public License.\n*>                        See the file COPYING for details.\n*>**\n*>    Remarks.            ACAS System Menu.\n*>**\n*>    Version.            See Prog-Name In Ws.\n*>**\n*>    Calls:              Maps01\n*>                        Maps04\n*>                        Sys002\n*>                        acas000   ->\n*>                         systemMT\n*>                        IRS\n*>                        Purchase\n*>                        Sales\n*>                        General\n*>                        Stock\n*>\n*> NOT on opensource:     OE\n*> NOT on opensource:     Payroll\n*> NOT on opensource:     EPOS\n*> NOT on opensource      Project-Z\n*>**\n*>   Error messages.\n*> System Wide    Used are\n*>                        SY006.\n*>                        SY007.\n*>                        SY008.\n*>                        SY009.\n*>                        SY010.\n*>                        SY013.\n*> Module Specific.\n*>                        SY011.\n*>**\n*>    Changes.\n*> 04/10/11 vbc - .00 ACAS control program/module for OC v1.1 & v2.\n*>                    This element MUST be compiled with -x and all the\n*>                    main system programs compiled with -m.\n*> 18/11/11 vbc - .03 Added IRS to menu but marked out until sorting out\n*>                    env variables eg, ACAS_IRS and ACAS_LEDGERS\n*>                    by adding the path to ALL file names\n*>                    [ Done for v3.02. ]\n*> 28/04/13 vbc - .04 Changed call to sub-systems without 'using'.\n*> 09/08/13 vbc - .05 wsnames using copybook version that support entire\n*>                    ACAS system but currently excluding IRS.\n*>                    [ Done for v3.02 ]\n*> 21/09/15 vbc - .06 Suport for setting up the parameter file within\n*>                    and optionally removing the same for all sub systems.\n*> 27/10/16 vbc - .07 Support for calling IRS as of v3.02.\n*>                    Some coding in set paths so only done once &\n*>                    and not in sales, purchase, stock, general & irs\n*>                    when called by this program unit.\n*>                    Full RDB support but this uses the cobol system file.\n*> 09/11/16 vbc - .08 Updated coding to support call to sys002 in set up.\n*>                    without mapser as now in sys002.\n*> 08/12/16 vbc - .09 Merged RDB & IRS support. Mysql for v3.02.\n*> 28/08/17 vbc - .10 Init. work for ACAS-Setup here but may move\n*>                        to separate program.\n*> 04/11/17 vbc - .11 Removed references to 'in copybook' for includes.\n*>                    additional comments in regard to program purpose\n*>                     and functions.\n*> 08/03/18 vbc - .12 Removed Cancel after call to modules - not needed for\n*>                    GC, Msg IR011 renamed SY011, added footnote to menu\n*>                    selections.\n*> 08/04/18 vbc - .13 Add in call to sl070 if running for 1st time to create Vale / Anal recs.\n*> 28/05/18 vbc - .14 Added tests for terminal column and lines minima for => 80 / 24.\n*> 24/09/18 vbc - .15 Set the wait msg at EOP to OFF.\n*> 18/06/20 vbc - .16 On checking for term width,length & values wrong display\n*>                    and redo test. Just aborted before if not => 80 x 24 !\n*> 16/04/24 vbc       Copyright notice update superceding all previous notices.\n*> 26/12/24 vbc       Change menu ACCEPT to use UPPER and remove the function.\n*> 31/08/25 vbc   .17 Removed from menu options of systems not available.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supercedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>******************************************************************************\n*> SUPPORT / Maintainance Service:\n*>===============================\n*> Support for the ACAS system is available:\n*>     Free via email on an as time is available basis ONLY.\n*>\n*>     Paid for [Normal] subscription, via email/phone as required\n*>      by customer within normal office hours Monday through Friday\n*>       10:00 - 17:00 UTC. Response times within 4* hours E&OE.\n*>       This is currently  £250.00 per year.\n*>\n*>     Paid for [W/E] subscription, via email/phone as required by customer\n*>       outside normal office hours and the weekend. Response within 2* hour\n*>       E&OE.\n*>       This is currently  £400.00 per year and includes Normal service.\n*>       One weekend only fee is £225.00. By arrangement, <= 1 hour.\n*>\n*>  Email to vbcoen@gmail.com for details of subscriptions or for support\n*>  with subject 'ACAS Bug' for support or 'ACAS subscription' for paid\n*>   service.\n*>\n*>  * Response times are usually within one hour but can be longer subject to\n*>  other outstanding issues. All issues marked as 'critical' are one hour.\n*>  The above response times are for paid subscription service only.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy  \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n data  division.\n*>=============\n*>\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(15)    value \"ACAS (3.02.17)\".\n 77  z                   binary-char.\n 77  OS-Delimiter        pic x        value \"/\".     *> Preset for Linux/unix etc\n 77  ACAS_BIN            pic x(512)   value spaces.  *> added\n 77  ACAS_LEDGERS        pic x(500)   value spaces.\n 77  Arg-Number          pic 9        value zero.\n*>========================================================\n*>  in case file layout upgrade is needed.\n*>   Using a file update program.\n*>\n copy \"sys-params-versioning.cob\".\n*>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n*> Holds program parameter values from command line\n 01  Arg-Vals                         value spaces.\n     03  Arg-Value       pic x(525)  occurs 2.\n 01  Arg-Test            pic x(525)   value spaces.\n*>\n 01  ws-data.\n     03  menu-reply      pic x          value \"A\".\n     03  op-display      pic x(6).\n*>\n     03  ws-env-columns  pic 999       value zero.\n     03  ws-env-lines    pic 999       value zero.\n*>\n     03  letters-upper   pic x(26)      value \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\".\n     03  letters.\n         05  a-entry     pic x          occurs 26 indexed by q.\n*>\n     03  ws-reply        pic x.\n     03  a               pic 99         comp.\n     03  option-list     pic x(60).\n     03  wsmaps-ser.\n         05  wsmaps-ser-xx pic xx.\n         05  wsmaps-ser-nn pic 9(4).\n*>\n copy \"wstime.cob\".\n copy \"wsfnctn.cob\".\n copy \"wsmaps01.cob\".\n copy \"wsmaps03.cob\".\n copy \"wscall.cob\".\n copy \"wssys4.cob\".\n copy \"wsdflt.cob\".\n copy \"wsfinal.cob\".\n copy \"wsnames.cob\".\n*>\n copy \"wssystem.cob\"        *> NEW for v3.02\n             replacing  System-Record by WS-System-Record\n                        Run-Date   by ACAS-Run-Date     *> these 3 are in binary\n                        Start-Date by ACAS-Start-Date   *> IRS expects as x(8)\n                        End-Date   by ACAS-End-Date     *>  dd/mm/yy\n                        suser      by ACAS-suser\n                        Address-1  by ACAS-Address-1\n                        Address-2  by ACAS-Address-2\n                        Address-3  by ACAS-Address-3\n                        Address-4  by ACAS-Address-4\n                        Post-Code  by ACAS-Post-Code\n                        Print-Spool-Name by ACAS-Print-Spool-Name\n                        Pass-Value by ACAS-Pass-Value\n                        Pass-Word  by ACAS-Pass-Word\n                        OP-System  By ACAS-Op-System\n                        Client     by IRS-Client\n                        System-Ops by IRS-System-Ops\n                        Next-Post  by IRS-Next-Post\n                        Vat-Rates2 by IRS-Vat-Rates2\n                        Vat1       by IRS-Vat1\n                        Vat2       by IRS-Vat2\n                        Vat3       by IRS-Vat3\n                        Vat-Group  by IRS-Vat-Group\n                        Vat-Psent  by IRS-Vat-Psent\n                        Save-Sequ  by IRS-Save-Sequ\n                        System-Work-Group by IRS-System-Work-Group\n                        PL-App-Created by IRS-PL-App-Created\n                        PL-Approp-AC   by IRS-PL-Approp-AC\n                        1st-Time-Flag  by IRS-First-Time-Flag.\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  Error-Messages.\n*> System Wide\n     03  SY006           pic x(62) value \"SY006 Program Arguments limited to two and you have specified \".\n     03  SY007           pic x(35) value \"SY007 Program arguments incorrect: \".\n     03  SY008           pic x(31) value \"SY008 Note message & Hit return\".\n     03  SY009           pic x(53) value \"SY009 Environment variables not yet set up : ABORTING\".\n     03  SY010           pic x(46) value \"SY010 Terminal program not set to length => 24\".\n     03  SY011           pic x(47) value \"SY011 Error on systemMT processing, Fs-reply = \".\n     03  SY013           pic x(47) value \"SY013 Terminal program not set to Columns => 80\".\n*> Module specific\n*>\n 01  to-day              pic x(10).\n*>\n procedure division.\n*>=================\n*>\n ACAS-Main.\n*>\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n*>\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n     set      ENVIRONMENT \"COB_EXIT_WAIT\"  to \"N\".\n     move     function current-date to wse-date-block.\n*>\n Get-Term-Settings.\n     accept   ws-env-lines   from lines.\n     if       ws-env-lines < 24\n              display SY010    at 0101 with erase eos\n              accept  ws-reply at 0133\n              go to Get-Term-Settings.\n     accept   ws-env-Columns from Columns.\n     if       ws-Env-Columns < 80\n              display SY013    at 0101 with erase eos\n              accept  ws-reply at 0133\n              go to Get-Term-Settings.\n*>\n*> Only needed for this program as all called subsystem does it.\n*>\n     perform  zz020-Get-Program-Args.\n*>\n Open-System.\n*>\n*> First check if this is the first time system has been used & if so\n*>  set up the ACAS system parameter file & table\n*>",
+        "line": 59
+      },
+      {
+        "type": "IF",
+        "condition": "fs-reply not = zero\n              perform  System-Close\n              move     zero to ws-term-code\n              move     \"sys002\" to ws-called\n              call     ws-called using ws-calling-data file-defs   *> and we use file00.\n              if       ws-term-code > 7\n                       stop run\n              end-if\n*>\n*>  HERE to add the extra set up program calls.\n*>\n              move     1 to File-Key-No\n              perform  System-Open-Input      *> as I/O\n              if       fs-reply not = zero\n                       display \" \" at 0101 with erase eos\n                       display SY011     at 1201\n                       accept Menu-Reply at 1260\n                       stop run\n              end-if\n              perform  System-Close\n*>\n*>  Set up Value and Anal file / tables.\n*>\n              move     zero to ws-term-code\n              move     1    to ws-Process-Func    *> Force finish after creating recs for SL and PL.\n              move     \"sl070\" to ws-called\n              call     ws-called using ws-calling-data file-defs\n*>\n*>  Any more pre-setups? if so, put here.\n*>\n     end-if.\n     perform  System-Read-Indexed.\n     perform  System-Close.\n*>\n     if       scycle = zero\n              go to call-system-setup.\n*>\n     move     ACAS-Run-Date to u-bin.\n     call     \"maps04\" using maps03-ws.\n     move     u-date to to-day.\n     perform  zz060-Convert-Date.\n*>\n Display-Menu.\n*>\n     display  usera at 0101  with erase eos foreground-color 3.\n     move     to-day to u-date.\n     move     \"ACAS\" to ws-caller.\n     move     spaces to ws-called ws-del-link menu-reply.\n     move     zeros to ws-term-code.\n     display  maps-ser-xx at 2474 with foreground-color 3.\n     move     maps-ser-nn to curs2.\n     display  curs2 at 2476  with foreground-color 3.\n     display  \"Copyright (c) 1976-\" at 2401 with foreground-color 3.\n     display  wse-year at 2420 with foreground-color 3.\n     display  \" Applewood Computers\" at 2424 with foreground-color 3.\n*>\n Conv-date.\n*>\n*> Convert from UK to selected form\n*>\n     if       Date-Form not > zero and < 4\n              move 1 to Date-Form.\n     if       Date-USA\n              move u-date to ws-date\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              move ws-date to u-date\n     end-if\n     if       Date-Intl\n              move \"ccyy/mm/dd\" to ws-date   *> swap Intl to UK form\n              move u-date (7:4) to ws-Intl-Year\n              move u-date (4:2) to ws-Intl-Month\n              move u-date (1:2) to ws-Intl-Days\n              move ws-date to u-date\n     end-if.\n*>\n conv-date-end.\n     display  u-date at 0171 with foreground-color 3.\n*>\n Display-Go.\n*>\n     display  prog-name at 0301 with foreground-color 2.\n     display  \"ACAS System Menu\" at 0333 with foreground-color 2.\n*>\n     accept   wsb-time from time.\n     if       wsb-time not = \"00000000\"\n              move wsb-hh to wsd-hh\n              move wsb-mm to wsd-mm\n              move wsb-ss to wsd-ss\n              display \"at \" at 0355 with foreground-color 2\n              display wsd-time at 0358 with foreground-color 2.\n*>\n     accept   wsa-date from date.\n     if       wsa-date not = \"000000\"\n              move wsa-yy to u-year\n              move wsa-mm to u-month\n              move wsa-dd to u-days\n              display \"on \" at 0367 with foreground-color 2\n              perform conv-date\n              display u-date at 0370 with foreground-color 2.\n*>\n     display  \"Select one of the following by letter  :- [ ]\" at 0601 with foreground-color 2.\n*>\n     display  \"(A)  Nominal Ledger (IRS)\" at 1004 with foreground-color 2.\n     display  \"(D)  General Ledger\"  at 1044 with foreground-color 2.\n*>\n     display  \"(B)  Sales Ledger\"    at 1104 with foreground-color 2.\n     display  \"(C)  Purchase Ledger\" at 1144 with foreground-color 2.\n*>\n     display  \"(E)  Stock Control\"   at 1204 with foreground-color 2.\n*>     display  \"(J)* Project-Z        at  1244 with foreground-color 2.\n*>\n *>    display  \"(F)* Order Entry\"     at 1304 with foreground-color 2.\n *>    display  \"(G)* Payroll\"         at 1344 with foreground-color 2.\n*>\n *>    display  \"(H)* Epos\"            at 1404 with foreground-color 2.\n     display  \"(X)  Exit To system\"  at 1444 with foreground-color 2.\n*>\n     display  \"(Z)  System Setup\"    at 1644 with foreground-color 2.\n*>\n *>    display  \"* = Not available for O/S versions\" at 1844 with foreground-color 2.\n*>\n accept-loop.\n*>\n     accept   menu-reply at 0644 with foreground-color 6 auto UPPER.\n*>\n     if       menu-reply = \"X\"\n *>              display \" \" at 0101 with erase eos\n              go to pre-overrewrite.\n*>\n     move     zero to z.\n     move     letters-upper to letters.\n     set      q to 1\n     search   a-entry\n              when a-entry (q) = menu-reply\n              set z to q.\n     if       z = zero\n              go to accept-loop.\n*>\n     go       to load-it.\n*>\n call-system-setup.\n*>****************\n*>\n*> MAYBE NEED TO ADD EXTRA TO SET UP OTHER DATA FILES inc. anal, stock\n*>         IRS / GL, sales, purchase etc\n*>\n     move     zero to ws-term-code.\n     move     \"sys002\" to ws-called.\n     call     ws-called using ws-calling-data\n                              file-defs.\n     if       ws-term-code > 7\n              stop run.\n     go       to Open-System.\n*>\n pre-overrewrite.     *> Don't need to save system data as done by called menu program.\n overrewrite.\n*>\n overclose.\n     goback.\n*>\n load-it.\n*>******\n*>\n     move     space to menu-reply.\n*>\n*>   Order is :\n*>    A=irs=08 , B=sales=02 , C=purchase=03 , D=General=01 ,\n*>    E=stock=04 ,\n*>    F=none, G=none, H=none= 5,6,7 Not avail for O/S versions.\n*>    X= , Z=setup=\n*>\n     go       to load08 load02 load03 load01\n                 load04\n                 loadsr2 loadsr2 loadsr2\n                 loaderror loaderror loaderror loaderror\n                 loaderror loaderror loaderror loaderror\n                 loaderror loaderror loaderror loaderror\n                 loaderror loaderror loaderror loaderror\n                 loaderror call-system-setup\n              depending on z.\n*>\n loaderror.\n*>--------\n*>\n     go       to display-menu.\n*>\n load00.\n*>-----\n*>\n     move     zero to ws-term-code.\n     call     ws-called        *> using ws-calling-data system-record to-day.\n     if       ws-term-code > 7\n              go to overrewrite.\n*>\n load00-exit.\n*>\n     go       to display-menu.\n*>\n load01.\n*>-----\n*>\n     move     \"general\" to ws-called.\n     go       to load00.\n*>\n load02.\n*>-----\n*>\n     move     \"sales\" to ws-called.\n     go       to load00.\n*>\n load03.\n*>-----\n*>\n     move     \"purchase\" to ws-called.\n     go       to load00.\n*>\n load04.\n*>-----\n*>\n     move     \"stock\" to ws-called.\n     go       to load00.\n*>\n load05.\n*>-----\n*>\n     move     \"OE\" to ws-called.\n     go       to load00.\n*>\n load06.\n*>-----\n*>\n     move     \"payroll\" to ws-called.\n     go       to load00.\n*>\n load07.\n*>-----\n*>\n     move     \"epos\" to ws-called.\n     go       to load00.\n*>\n load08.\n*>-----\n*>\n     move     \"irs\" to ws-called.\n     go       to load00.\n*>\n load09.\n *>----\n     move     \"project-z\" to ws-called.\n     go       to load00.\n load23.\n*>-----\n*>\n     go       to accept-loop.\n*>\n loadsr.\n*>-----\n*>\n     display  \"Sorry, not available\" at 2331 with foreground-color 2.\n     go       to accept-loop.\n*>\n loadsr2.\n*>------\n*>\n     display  \"* Sorry, available on O/S versions\" at 2331 with foreground-color 2.\n     go       to accept-loop.\n*>\n main-exit.\n     stop     run.\n*>\n zz060-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in binary to UK/USA/Intl date format\n*>****************************************************\n*> Input:   u-bin\n*> output:  ws-date as uk/US/Inlt date format\n*>          u-date & ws-Date = spaces if invalid date\n*>\n     perform  maps04.\n     if       u-date = spaces\n              move spaces to ws-Date\n              go to zz060-Exit.\n     move     u-date to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz060-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     u-date (7:4) to ws-Intl-Year.\n     move     u-date (4:2) to ws-Intl-Month.\n     move     u-date (1:2) to ws-Intl-Days.\n*>\n zz060-Exit.\n     exit     section.\n*>\n maps04       section.\n*>*******************\n*>\n     call     \"maps04\"  using  maps03-ws.\n*>\n maps04-exit.\n     exit     section.\n*>\n zz100-ACAS-IRS-Calls  section.\n*>============================\n*>\n*>  Note irsub2 is replaced by acas000 with File-Key-No=1\n*> ******************************************************\n*>\n*> acas000     =  System parameter file processing with File-Key-No=1\n*>\n acas000.\n     move     1 to File-Key-No.         *> Only using system record (rrn = 1)\n     call     \"acas000\" using\n                                WS-System-Record\n                                File-Access\n                                File-Defs\n                                ACAS-DAL-Common-data\n     end-call.\n*>\n*> acas000     =  System parameter file processing with File-Key-No=1\n*>\n*>   Needs File-Key-No set to 1 (for system param record)\n*>\n System-Open.\n     set      fn-open to true.\n     set      fn-i-o  to true.\n     perform  acas000.\n     perform  System-Check-4-Errors.\n*>\n System-Open-Input.\n     set      fn-open  to true.\n     set      fn-input to true.\n     perform  System-Check-4-Errors.\n     perform  acas000.\n*>\n System-Close.\n     set      fn-Close to true.\n     perform  acas000.\n*>\n System-Read-Next.\n     set      fn-Read-Next to true.\n     perform  acas000.\n*>\n System-Read-Indexed.\n     set      fn-Read-Indexed to true.\n     perform  acas000.\n*>\n System-Write.\n     set      fn-Write to true.\n     perform  acas000.\n*>\n System-Rewrite.\n     set      fn-re-write to true.\n     perform  acas000.\n*>\n System-Check-4-Errors.\n     if       fs-reply not = zero\n              display SY011            at 0801   *> acas000/systemMT processing\n              perform System-Close\n              go to Open-Error-Continued\n     end-if.\n*>\n Open-Error-Continued.   *> If here we cannot continue as its a major failure\n     display  \"Fs-reply = \"    at 0901\n     display  fs-reply         at 0912\n     display  \"WE-Error = \"    at 1001\n     display   WE-Error        at 1012\n     display  SQL-Err          at 1101\n     display  SQL-Msg          at 1201\n     display  SY008            at 1301 with erase eol\n     accept   Accept-Reply     at 1335.\n     goback.\n*>\n copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n*>",
+        "line": 386
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 7,
+    "cognitive": 3,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 50,
+      "totalOperators": 39,
+      "totalOperands": 78,
+      "vocabulary": 51,
+      "length": 117,
+      "volume": 663.673765010665
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

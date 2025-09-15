@@ -1,0 +1,409 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/makesqltable-original.cbl",
+  "fileName": "makesqltable-original.cbl",
+  "timestamp": "2025-09-15T16:25:38.822Z",
+  "programId": "MAKESQLTABLE",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "INPUT-OUTPUT",
+        "line": 15
+      },
+      {
+        "name": "FILE",
+        "line": 27
+      },
+      {
+        "name": "WORKING-STORAGE",
+        "line": 35
+      },
+      {
+        "name": "0000-MAIN",
+        "line": 67
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "FILE-CONTROL",
+        "line": 16
+      },
+      {
+        "name": "1000-INITIALIZATION",
+        "line": 75
+      },
+      {
+        "name": "1990-EXIT",
+        "line": 101
+      },
+      {
+        "name": "EXIT",
+        "line": 102
+      },
+      {
+        "name": "2000-PROCESS",
+        "line": 106
+      },
+      {
+        "name": "2010-READ",
+        "line": 111
+      },
+      {
+        "name": "2100-READ-COLUMNS",
+        "line": 161
+      },
+      {
+        "name": "2110-PREFIX-LOOP",
+        "line": 180
+      },
+      {
+        "name": "END-IF",
+        "line": 190
+      },
+      {
+        "name": "2200-CHARACTERS",
+        "line": 221
+      },
+      {
+        "name": "2210-CHARACTER-LOOP",
+        "line": 225
+      },
+      {
+        "name": "END-IF",
+        "line": 235
+      },
+      {
+        "name": "2215-BAD-PIC",
+        "line": 236
+      },
+      {
+        "name": "2220-GET-REPITITIONS",
+        "line": 240
+      },
+      {
+        "name": "2240-GOT-COUNT",
+        "line": 250
+      },
+      {
+        "name": "2250-VARCHAR",
+        "line": 264
+      },
+      {
+        "name": "2900-EOF",
+        "line": 275
+      },
+      {
+        "name": "7980-CLOSE",
+        "line": 292
+      },
+      {
+        "name": "7990-EXIT",
+        "line": 295
+      },
+      {
+        "name": "EXIT",
+        "line": 296
+      },
+      {
+        "name": "9000-END-OF-PROGRAM",
+        "line": 300
+      },
+      {
+        "name": "9990-EXIT",
+        "line": 305
+      },
+      {
+        "name": "EXIT",
+        "line": 306
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [],
+    "performs": [
+      {
+        "target": "1000-INITIALIZATION",
+        "thru": "1990-EXIT",
+        "line": 68
+      },
+      {
+        "target": "2000-PROCESS",
+        "thru": "7990-EXIT",
+        "line": 69
+      },
+      {
+        "target": "9000-END-OF-PROGRAM",
+        "thru": "9990-EXIT",
+        "line": 70
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [
+      {
+        "logicalName": "INPUT-FILE",
+        "physicalName": "WS-NAME-INPUT-FILE",
+        "line": 18
+      },
+      {
+        "logicalName": "OUTPUT-FILE",
+        "physicalName": "WS-NAME-OUTPUT-FILE",
+        "line": 22
+      }
+    ],
+    "moves": [
+      {
+        "from": "1000",
+        "to": "WS-NO-PARAGRAPH",
+        "line": 76
+      },
+      {
+        "from": "2000",
+        "to": "WS-NO-PARAGRAPH",
+        "line": 107
+      },
+      {
+        "from": "2010",
+        "to": "WS-NO-PARAGRAPH",
+        "line": 112
+      },
+      {
+        "from": "SPACES",
+        "to": "WS-TRIMMED-INPUT-RECORD (1:2)",
+        "line": 122
+      },
+      {
+        "from": "SPACES",
+        "to": "WS-TABLE-NAME",
+        "line": 125
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 130
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 137
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 145
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 152
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 157
+      },
+      {
+        "from": "SPACES",
+        "to": "WS-TRIMMED-INPUT-RECORD (1:2)",
+        "line": 175
+      },
+      {
+        "from": "ZERO",
+        "to": "WS-I",
+        "line": 176
+      },
+      {
+        "from": "1",
+        "to": "WS-J",
+        "line": 179
+      },
+      {
+        "from": "SPACES",
+        "to": "WS-TRIMMED-INPUT-RECORD (WS-J:WS-I)\n                    NEXT SENTENCE\n               ELSE ADD 1 TO WS-J\n                    IF WS-J IS LESS THAN 80\n                      THEN GO TO 2110-PREFIX-LOOP\n                    END-IF\n           END-IF",
+        "line": 183
+      },
+      {
+        "from": "SPACES",
+        "to": "WS-COLUMN-NAME",
+        "line": 193
+      },
+      {
+        "from": "ZERO",
+        "to": "WS-I",
+        "line": 194
+      },
+      {
+        "from": "1",
+        "to": "WS-POSITION-IN-OUTPUT",
+        "line": 199
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 200
+      },
+      {
+        "from": "ZERO",
+        "to": "WS-I",
+        "line": 208
+      },
+      {
+        "from": "SPACES",
+        "to": "WS-THIRD-TRIM",
+        "line": 211
+      },
+      {
+        "from": "2200",
+        "to": "WS-NO-PARAGRAPH",
+        "line": 222
+      },
+      {
+        "from": "1",
+        "to": "WS-CHARACTERS-WANTED",
+        "line": 223
+      },
+      {
+        "from": "2",
+        "to": "WS-I",
+        "line": 224
+      },
+      {
+        "from": "ZERO",
+        "to": "WS-J",
+        "line": 241
+      },
+      {
+        "from": "WS-CHARACTERS-WANTED",
+        "to": "WS-ED5",
+        "line": 253
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 261
+      },
+      {
+        "from": "WS-CHARACTERS-WANTED",
+        "to": "WS-ED5",
+        "line": 265
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 273
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 281
+      },
+      {
+        "from": "\")\"",
+        "to": "OUTPUT-RECORD\n           WRITE OUTPUT-RECORD",
+        "line": 282
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 284
+      },
+      {
+        "from": "SPACES",
+        "to": "OUTPUT-RECORD",
+        "line": 287
+      },
+      {
+        "from": "9000",
+        "to": "WS-NO-PARAGRAPH",
+        "line": 301
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "WS-INPUT-FILE-STATUS IS NOT EQUAL TO \"00\"\n             DISPLAY \"T) CANNOT OPEN INPUT FILE \"\n               \"STATUS=\" WS-INPUT-FILE-STATUS\n             STOP RUN.\n           DISPLAY \"A) ENTER THE FIELD NAME PREFIX TO REMOVE \"\n             WITH NO ADVANCING.\n           ACCEPT WS-REMOVE-PREFIX.\n           DISPLAY \"A) ENTER OUTPUT FILE NAME \" WITH NO ADVANCING.\n           ACCEPT WS-NAME-OUTPUT-FILE.\n           OPEN OUTPUT OUTPUT-FILE.\n           IF WS-OUTPUT-FILE-STATUS IS NOT EQUAL TO \"00\"\n             DISPLAY \"T) CANNOT OPEN OUTPUT FILE \"\n               \"STATUS=\" WS-OUTPUT-FILE-STATUS\n             STOP RUN.\n           DISPLAY \"A) ENTER DATABASE NAME \" WITH NO ADVANCING.\n           ACCEPT WS-READ-AREA.\n           INSPECT WS-READ-AREA REPLACING ALL \"-\" BY \"_\".\n           MOVE FUNCTION LOWER-CASE (WS-READ-AREA)\n             TO WS-NAME-DATA-BASE.\n       1990-EXIT.\n           EXIT.\n      *\n      *    PROCESSING\n      *\n       2000-PROCESS.\n           MOVE 2000 TO WS-NO-PARAGRAPH.\n      *\n      *    LOOK FOR 01 ENTRY (THERE MUST BE ONE AND ONLY ONE)\n      *\n       2010-READ.\n           MOVE 2010 TO WS-NO-PARAGRAPH.\n           READ INPUT-FILE NEXT RECORD\n             AT END DISPLAY \"T) NO 01 ENTRY FOUND\"\n                    GO TO 7990-EXIT.\n           MOVE FUNCTION TRIM (INPUT-RECORD)\n             TO WS-TRIMMED-INPUT-RECORD.\n           IF WS-TRIMMED-INPUT-RECORD (1:2) IS EQUAL TO \"01\"",
+        "line": 82
+      },
+      {
+        "type": "IF",
+        "condition": "EXISTS \"\n             FUNCTION LOWER-CASE (FUNCTION TRIM (WS-TABLE-NAME))\n             \";\"\n               INTO OUTPUT-RECORD.\n           WRITE OUTPUT-RECORD.\n           MOVE SPACES TO OUTPUT-RECORD.\n           STRING\n             \"CREATE TABLE `\"\n             FUNCTION LOWER-CASE (FUNCTION TRIM (WS-TABLE-NAME))\n             \"` (\"\n               INTO OUTPUT-RECORD.\n           WRITE OUTPUT-RECORD.\n           MOVE SPACES TO OUTPUT-RECORD.\n           STRING\n             \"  `key` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,\"\n               INTO OUTPUT-RECORD.\n           WRITE OUTPUT-RECORD.\n           MOVE SPACES TO OUTPUT-RECORD.\n      *\n      *    NOW LOOK FOR COLUMN DEFINITIONS\n      *\n       2100-READ-COLUMNS.\n           READ INPUT-FILE NEXT RECORD\n             AT END GO TO 2900-EOF.\n           MOVE FUNCTION TRIM (INPUT-RECORD)\n             TO WS-TRIMMED-INPUT-RECORD.\n           IF WS-TRIMMED-INPUT-RECORD (1:1) EQUALS \"*\"\n             GO TO 2100-READ-COLUMNS.\n           IF WS-TRIMMED-INPUT-RECORD (1:2) EQUALS \"01\"",
+        "line": 140
+      },
+      {
+        "type": "IF",
+        "condition": "WS-TRIMMED-INPUT-RECORD (1:2) IS NOT NUMERIC",
+        "line": 171
+      },
+      {
+        "type": "IF",
+        "condition": "WS-REMOVE-PREFIX (1:WS-I) EQUALS\n             WS-TRIMMED-INPUT-RECORD (WS-J:WS-I)",
+        "line": 181
+      },
+      {
+        "type": "IF",
+        "condition": "WS-J IS LESS THAN 80",
+        "line": 187
+      },
+      {
+        "type": "IF",
+        "condition": "END-IF.\n           MOVE FUNCTION TRIM (WS-TRIMMED-INPUT-RECORD)\n             TO WS-SECOND-TRIM.\n           MOVE SPACES TO WS-COLUMN-NAME.\n           MOVE ZERO TO WS-I.\n           INSPECT WS-SECOND-TRIM\n             TALLYING WS-I FOR ALL CHARACTERS BEFORE \" \".\n           MOVE WS-SECOND-TRIM (1:WS-I) TO WS-COLUMN-NAME.\n           INSPECT WS-COLUMN-NAME REPLACING ALL \"-\" BY \"_\".\n           MOVE 1 TO WS-POSITION-IN-OUTPUT.\n           MOVE SPACES TO OUTPUT-RECORD.\n           STRING\n             \"  `\"\n             FUNCTION LOWER-CASE (FUNCTION TRIM (WS-COLUMN-NAME))\n             \"` \"\n               INTO OUTPUT-RECORD\n               WITH POINTER WS-POSITION-IN-OUTPUT.\n      *NOW HANDLE THE PIC\n           MOVE ZERO TO WS-I.\n           INSPECT WS-SECOND-TRIM\n             TALLYING WS-I FOR ALL CHARACTERS BEFORE \"PIC\".\n           MOVE SPACES TO WS-THIRD-TRIM.\n      *\n      *    NOW GET THE REQUIRED DEFINITION\n      *\n           MOVE WS-SECOND-TRIM (WS-I + 5:) TO WS-THIRD-TRIM.\n           IF \"X\" EQUALS WS-THIRD-TRIM (1:1) GO TO 2200-CHARACTERS.\n           GO TO 2215-BAD-PIC.\n      *\n      *    CHARACTER (STRING) BASED DEFINITION\n      *\n       2200-CHARACTERS.\n           MOVE 2200 TO WS-NO-PARAGRAPH.\n           MOVE 1 TO WS-CHARACTERS-WANTED.\n           MOVE 2 TO WS-I.\n       2210-CHARACTER-LOOP.\n           IF WS-THIRD-TRIM (WS-I:1) EQUALS \".\" GO TO 2240-GOT-COUNT.\n           IF WS-THIRD-TRIM (WS-I:1) EQUALS \"(\"\n             GO TO 2220-GET-REPITITIONS.\n           IF WS-THIRD-TRIM (WS-I:1) EQUALS \"X\"\n             ADD 1 TO WS-CHARACTERS-WANTED\n             ADD 1 TO WS-I\n             IF WS-I IS LESS THAN 74",
+        "line": 189
+      },
+      {
+        "type": "IF",
+        "condition": "END-IF.\n       2215-BAD-PIC.\n           DISPLAY \"T) INVALID PIC CLAUSE BELOW \".\n           DISPLAY INPUT-RECORD.\n           GO TO 2900-EOF.\n       2220-GET-REPITITIONS.\n           MOVE ZERO TO WS-J.\n           INSPECT WS-THIRD-TRIM TALLYING WS-J\n             FOR ALL CHARACTERS BEFORE INITIAL \")\".\n           IF WS-J IS GREATER THAN 74 GO TO 2215-BAD-PIC.\n           MOVE WS-THIRD-TRIM (WS-I + 1 : WS-J - WS-I)\n             TO WS-CHARACTERS-WANTED.\n      *\n      *    NOW DETERMINE STRING TYPE\n      *\n       2240-GOT-COUNT.\n           IF WS-CHARACTERS-WANTED IS GREATER THAN 255\n             GO TO 2250-VARCHAR.\n           MOVE WS-CHARACTERS-WANTED TO WS-ED5.\n           STRING\n             \"CHAR(\"\n             FUNCTION TRIM (WS-ED5)\n             \") NOT NULL DEFAULT ' ',\"\n               INTO OUTPUT-RECORD\n               WITH POINTER WS-POSITION-IN-OUTPUT.\n           WRITE OUTPUT-RECORD.\n           MOVE SPACES TO OUTPUT-RECORD.\n           GO TO 2100-READ-COLUMNS.\n      *\n       2250-VARCHAR.\n           MOVE WS-CHARACTERS-WANTED TO WS-ED5.\n           STRING\n             \"VARCHAR(\"\n             FUNCTION TRIM (WS-ED5)\n             \") NOT NULL DEFAULT ' ',\"\n               INTO OUTPUT-RECORD\n               WITH POINTER WS-POSITION-IN-OUTPUT.\n           WRITE OUTPUT-RECORD.\n           MOVE SPACES TO OUTPUT-RECORD.\n           GO TO 2100-READ-COLUMNS.\n\n       2900-EOF.\n           STRING\n             \"  PRIMARY KEY(`key`)\"\n               INTO OUTPUT-RECORD.\n           WRITE OUTPUT-RECORD.\n           MOVE SPACES TO OUTPUT-RECORD.\n           MOVE \")\" TO OUTPUT-RECORD\n           WRITE OUTPUT-RECORD.\n           MOVE SPACES TO OUTPUT-RECORD.\n           MOVE \"ENGINE = MYISAM;\" TO OUTPUT-RECORD.\n           WRITE OUTPUT-RECORD.\n           MOVE SPACES TO OUTPUT-RECORD.\n\n      *\n      *    END OF JOB\n      *\n       7980-CLOSE.\n           CLOSE INPUT-FILE.\n           CLOSE OUTPUT-FILE.\n       7990-EXIT.\n           EXIT.\n      ****************************************************************\n      *             TERMINATION                                      *\n      ****************************************************************\n       9000-END-OF-PROGRAM.\n           MOVE 9000 TO WS-NO-PARAGRAPH.\n           DISPLAY \"I) \" WS-NAME-PROGRAM \" COMPLETED NORMALLY AT--\"\n               FUNCTION CURRENT-DATE.\n           STOP RUN.\n       9990-EXIT.\n           EXIT.",
+        "line": 234
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 8,
+    "cognitive": 7,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 23,
+      "totalOperators": 33,
+      "totalOperands": 66,
+      "vocabulary": 24,
+      "length": 99,
+      "volume": 453.91128757139444
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

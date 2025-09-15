@@ -1,0 +1,242 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st000.cbl",
+  "fileName": "st000.cbl",
+  "timestamp": "2025-09-15T16:25:50.160Z",
+  "programId": "st000",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 84
+      },
+      {
+        "name": "file",
+        "line": 87
+      },
+      {
+        "name": "working-storage",
+        "line": 88
+      },
+      {
+        "name": "linkage",
+        "line": 146
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 85
+      },
+      {
+        "name": "file-defs",
+        "line": 157
+      },
+      {
+        "name": "aa010-main",
+        "line": 160
+      },
+      {
+        "name": "aa020-Date-Entry",
+        "line": 193
+      },
+      {
+        "name": "aa030-Chain-Menu",
+        "line": 277
+      },
+      {
+        "name": "aa999-Exit",
+        "line": 282
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 248,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      },
+      {
+        "target": "maps01",
+        "line": 264,
+        "type": "DYNAMIC",
+        "using": [
+          "maps01-ws"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 74,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 83,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps01",
+        "line": 91,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 92,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 93,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 149,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 150,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 151,
+        "replacing": null
+      }
+    ],
+    "performs": []
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "to-day",
+        "to": "u-date",
+        "line": 165
+      },
+      {
+        "from": "wsa-cc",
+        "to": "u-cc          *> good for 2000 thru 2099\n              move wsa-yy to u-yy\n              move wsa-mm to u-month\n              move wsa-dd to u-days",
+        "line": 169
+      },
+      {
+        "from": "u-date",
+        "to": "to-day",
+        "line": 174
+      },
+      {
+        "from": "maps-ser-nn",
+        "to": "curs2",
+        "line": 182
+      },
+      {
+        "from": "wsb-hh",
+        "to": "wsd-hh\n              move wsb-mm to wsd-mm\n              move wsb-ss to wsd-ss\n              display \"at \" at 0360 with foreground-color 2\n              display wsd-time at 0363 with foreground-color 2",
+        "line": 187
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 195
+      },
+      {
+        "from": "\"/\"",
+        "to": "WS-Date (3:1)\n                          WS-Date (6:1)\n     end-if\n     if       Date-USA\n              move u-date to ws-date\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              move ws-date to u-date\n     end-if\n     if       Date-Intl\n              move \"ccyy/mm/dd\" to ws-date  *> swap Intl to UK form\n              move u-date (7:4) to ws-Intl-Year\n              move u-date (4:2) to ws-Intl-Month\n              move u-date (1:2) to ws-Intl-Days\n              move ws-date to u-date\n     end-if\n*>\n     if       Date-UK\n              display \"Enter todays date as dd/mm/yyyy - [          ]\" at 0812 with\n                                                                foreground-color 2",
+        "line": 200
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              move ws-date to u-date\n     end-if\n     if       Date-Intl\n              move \"dd/mm/ccyy\" to ws-date   *> swap Intl to UK form\n              move u-date (1:4) to ws-Year\n              move u-date (6:2) to ws-Month\n              move u-date (9:2) to ws-Days\n              move ws-date to u-date\n     end-if\n*>\n     move     zero  to  u-bin",
+        "line": 233
+      },
+      {
+        "from": "usera",
+        "to": "pass-name",
+        "line": 262
+      },
+      {
+        "from": "\"N\"",
+        "to": "encode",
+        "line": 263
+      },
+      {
+        "from": "u-bin",
+        "to": "run-date",
+        "line": 278
+      },
+      {
+        "from": "u-date",
+        "to": "to-day",
+        "line": 279
+      },
+      {
+        "from": "zero",
+        "to": "ws-term-code",
+        "line": 280
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>================================\n*>\n copy  \"envdiv.cob\".\n input-output            section.\n file-control.\n data                    division.\n file section.\n working-storage section.\n*>-----------------------\n 77  prog-name           pic x(15) value \"ST000 (3.02.04)\".\n copy \"wsmaps01.cob\".\n copy \"wsmaps03.cob\".\n copy \"wsfnctn.cob\".\n*>\n 01  ws-data.\n     03  menu-reply      pic 9.\n     03  ws-reply        pic x.\n     03  wsa-date.\n       05  wsa-cc        pic 99.\n       05  wsa-yy        pic 99.\n       05  wsa-mm        pic 99.\n       05  wsa-dd        pic 99.\n     03  wsb-time.\n       05  wsb-hh        pic 99.\n       05  wsb-mm        pic 99.\n       05  wsb-ss        pic 99.\n       05  filler        pic xx.\n     03  wsd-time.\n       05  wsd-hh        pic 99.\n       05  wsd-c1        pic x  value \":\".\n       05  wsd-mm        pic 99.\n       05  wsd-c2        pic x  value \":\".\n       05  wsd-ss        pic 99.\n*>\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n 01  Error-Messages.\n*> System Wide\n     03  ST005           pic x(18) value \"ST005 Invalid Date\".\n*> Module Specific\n *>    03  ST044           pic x(67) value \"ST044 The system has detected an un-authorised change of user name.\".\n *>    03  ST045           pic X(40) value \"ST045 Contact your Supplier or Sys Admin\".\n*>\n 01  error-code          pic 999.\n*>\n linkage section.\n*>==============\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n 01  to-day              pic x(10).\n*>\n procedure  division using ws-calling-data\n                           system-record\n                           to-day\n                           file-defs.\n*>========================================\n*>\n aa010-main.\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n     move     to-day to u-date.\n*>\n     accept   wsa-date from date YYYYMMDD.\n     if       wsa-date not = \"000000\"\n              move wsa-cc to u-cc          *> good for 2000 thru 2099\n              move wsa-yy to u-yy\n              move wsa-mm to u-month\n              move wsa-dd to u-days.\n*>\n     move     u-date to to-day.\n*>\n     display  \"Client -\"   at 0101 with erase eos foreground-color 2.\n     display  usera        at 0110 with foreground-color 3.\n     display  prog-name    at 0301 with foreground-color 2.\n     display  \"Stock Control - Start Of Day\"\n                           at 0327 with foreground-color 2\n     display  maps-ser-xx  at 2474 with foreground-color 2.\n     move     maps-ser-nn to curs2.\n     display  curs2        at 2476 with foreground-color 2.\n*>\n     accept   wsb-time from time.\n     if       wsb-time not = \"00000000\"\n              move wsb-hh to wsd-hh\n              move wsb-mm to wsd-mm\n              move wsb-ss to wsd-ss\n              display \"at \" at 0360 with foreground-color 2\n              display wsd-time at 0363 with foreground-color 2.\n*>\n aa020-Date-Entry.\n     if       Date-Form not > zero and < 4\n              move 1 to Date-Form.\n*>\n*> Convert from UK to selected form\n*>\n     if       Date-UK or Date-USA\n              move \"/\" to WS-Date (3:1)\n                          WS-Date (6:1)\n     end-if\n     if       Date-USA\n              move u-date to ws-date\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              move ws-date to u-date\n     end-if\n     if       Date-Intl\n              move \"ccyy/mm/dd\" to ws-date  *> swap Intl to UK form\n              move u-date (7:4) to ws-Intl-Year\n              move u-date (4:2) to ws-Intl-Month\n              move u-date (1:2) to ws-Intl-Days\n              move ws-date to u-date\n     end-if\n*>\n     if       Date-UK\n              display \"Enter todays date as dd/mm/yyyy - [          ]\" at 0812 with\n                                                                foreground-color 2.\n     if       Date-USA\n              display \"Enter todays date as mm/dd/yyyy - [          ]\" at 0812 with\n                                                                foreground-color 2.\n     if       Date-Intl\n              display \"Enter todays date as yyyy/mm/dd - [          ]\" at 0812 with\n                                                                foreground-color 2.\n*>\n     accept   u-date at 0847 with foreground-color 3 update.\n*>\n*> convert to the Standard - UK form\n*>\n     if       Date-USA\n              move u-date to ws-date\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              move ws-date to u-date\n     end-if\n     if       Date-Intl\n              move \"dd/mm/ccyy\" to ws-date   *> swap Intl to UK form\n              move u-date (1:4) to ws-Year\n              move u-date (6:2) to ws-Month\n              move u-date (9:2) to ws-Days\n              move ws-date to u-date\n     end-if\n*>\n     move     zero  to  u-bin.\n     call     \"maps04\"  using  maps03-ws.\n*>\n     if       u-bin = zero\n              display ST005 at 0860 with foreground-color 4\n              go to aa020-Date-Entry\n     else\n              display \" \" at 0860 with erase eol.\n*>\n*> Bypass security 1 for OS version\n*>\n     go       to aa030-Chain-Menu.\n*>\n*> verify user name.\n*>\n *>    move     usera  to  pass-name.\n *>    move     \"N\"   to  encode.\n *>    call     \"maps01\"  using  maps01-ws.\n *>    if       pass-name = user-code\n *>             go to  aa030-Chain-Menu.\n*>\n*> if here suspect un-authorised usage.\n*>\n *>    display  \" \" at 0101 with erase eos.\n *>    display  ST044 at 0501.\n *>    display  ST045 at 0701.\n*>\n *>    display  \"Unauthorised Usage Aborting\"  2401 with foreground-color 5 blinking.\n *>    go       to aa999-Exit.\n*>\n aa030-Chain-Menu.\n     move     u-bin  to  run-date.\n     move     u-date to  to-day.\n     move     zero to ws-term-code.\n*>\n aa999-Exit.\n     exit     program.\n*>",
+        "line": 71
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 4,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 21,
+      "totalOperators": 13,
+      "totalOperands": 26,
+      "vocabulary": 22,
+      "length": 39,
+      "volume": 173.9178331268546
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/dummy-rdbmsMT.cbl",
+  "fileName": "dummy-rdbmsMT.cbl",
+  "timestamp": "2025-09-15T16:25:37.126Z",
+  "programId": "dummmy",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 110
+      },
+      {
+        "name": "working-storage",
+        "line": 116
+      },
+      {
+        "name": "Linkage",
+        "line": 120
+      },
+      {
+        "name": "ACAS-Dummy-call-Group",
+        "line": 136
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "DUMMY-REC",
+        "line": 133
+      },
+      {
+        "name": "goback",
+        "line": 172
+      }
+    ],
+    "entryPoints": [
+      {
+        "name": "analMT",
+        "line": 138
+      },
+      {
+        "name": "auditMT",
+        "line": 139
+      },
+      {
+        "name": "delfolioMT",
+        "line": 140
+      },
+      {
+        "name": "deliveryMT",
+        "line": 141
+      },
+      {
+        "name": "dfltMT",
+        "line": 142
+      },
+      {
+        "name": "finalMT",
+        "line": 143
+      },
+      {
+        "name": "glbatchMT",
+        "line": 144
+      },
+      {
+        "name": "glpostingMT",
+        "line": 145
+      },
+      {
+        "name": "irsdfltMT",
+        "line": 146
+      },
+      {
+        "name": "irsfinalMT",
+        "line": 147
+      },
+      {
+        "name": "irsnominalMT",
+        "line": 148
+      },
+      {
+        "name": "irspostingMT",
+        "line": 149
+      },
+      {
+        "name": "nominalMT",
+        "line": 150
+      },
+      {
+        "name": "otm3MT",
+        "line": 151
+      },
+      {
+        "name": "otm5MT",
+        "line": 152
+      },
+      {
+        "name": "paymentsMT",
+        "line": 153
+      },
+      {
+        "name": "plautogenMT",
+        "line": 154
+      },
+      {
+        "name": "plinvoiceMT",
+        "line": 155
+      },
+      {
+        "name": "purchMT",
+        "line": 156
+      },
+      {
+        "name": "salesMT",
+        "line": 157
+      },
+      {
+        "name": "slautogenMT",
+        "line": 158
+      },
+      {
+        "name": "sldelinvnoMT",
+        "line": 159
+      },
+      {
+        "name": "slinvoiceMT",
+        "line": 160
+      },
+      {
+        "name": "slpostingMT",
+        "line": 161
+      },
+      {
+        "name": "stockMT",
+        "line": 162
+      },
+      {
+        "name": "sys4MT",
+        "line": 163
+      },
+      {
+        "name": "systemMT",
+        "line": 164
+      },
+      {
+        "name": "valueMT",
+        "line": 165
+      }
+    ]
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 76,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 109,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 123,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 125,
+        "replacing": null
+      }
+    ],
+    "performs": []
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "99",
+        "to": "FS-Reply",
+        "line": 169
+      },
+      {
+        "from": "999",
+        "to": "WE-Error",
+        "line": 170
+      },
+      {
+        "from": "64",
+        "to": "RETURN-CODE",
+        "line": 171
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "you wish to use rdbms later you will\n*>                        need to recompile the ACAS system without this\n*>                        module but with all modules names ending in MT.\n*>**\n*>    Version.            See Prog-Name In Ws.\n*>**\n*>    Calls:              All entry points are dummies.\n*>**\n*>    Error messages.     NONE, but all calls return 64.\n*>**\n*>    Changes.\n*> 31/01/18 vbc - .00 ACAS dummy rdbms entry points to remove the need for\n*>                    installation of the rdbms client package contains\n*>                    the C packages all accesses Mysql or any other.\n*> 25/06/23 vbc - .01 Added Autogen modules from Sales and Purchase.\n*>                    Use ln to link folder common to each sub-system.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>******************************************************************************\n*>\n*> SUPPORT Service:\n*>=================\n*> Support for this system is available:\n*>     Free via email on an as time is available basis ONLY.\n*>     Paid for [Normal] subscription, via email/phone as required\n*>      by customer within normal office hours Monday through Friday\n*>       10:00 - 17:00. Response times within 4* hours E&OE.\n*>       This is currently  £250.00 per year.\n*>     Paid for [W/E] subscription, via email/phone as required by customer\n*>       outside normal office hours and the weekend. Response within 1* hour\n*>       E&OE.\n*>       This is currently  £400.00 per year and includes Normal service.\n*>       One weekend only fee is £225.00. By arrangement, <= 1 hour.\n*>\n*>  Email to vbcoen@gmail.com for details of subscriptions or for support\n*>  with subject 'ACAS Bug' for support or 'ACAS subscription' for paid\n*>   service.\n*>\n*>  Response times are usually within one hour but can be longer subject to\n*>  other outstanding issues. All issues marked as 'critical' are one hour.\n*>  The above response times are for paid subscription service only.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy  \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n data  division.\n*>=============\n*>\n working-storage section.\n*>----------------------\n 77  filler           pic x(15)    value \"dummy (3.02.01)\".\n*>\n Linkage Section.\n*>**************\n*>\n copy \"wsfnctn.cob\".\n*> Turn diags off regardless for this module.\n copy \"Test-Data-Flags.cob\"\n             replacing ==03  SW-Testing               pic 9   value 1. ==\n                 by    ==03  SW-Testing               pic 9   value zero. ==.\n*>\n 01  DUMMY-REC   pic x.\n*>\n procedure division using File-Access\n                          ACAS-DAL-Common-data\n                          DUMMY-REC.\n*>============================================\n*>\n ACAS-Dummy-call-Group  Section.\n*>\n     entry    \"analMT\"       using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"auditMT\"      using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"delfolioMT\"   using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"deliveryMT\"   using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"dfltMT\"       using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"finalMT\"      using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"glbatchMT\"    using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"glpostingMT\"  using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"irsdfltMT\"    using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"irsfinalMT\"   using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"irsnominalMT\" using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"irspostingMT\" using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"nominalMT\"    using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"otm3MT\"       using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"otm5MT\"       using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"paymentsMT\"   using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"plautogenMT\"  using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"plinvoiceMT\"  using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"purchMT\"      using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"salesMT\"      using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"slautogenMT\"  using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"sldelinvnoMT\" using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"slinvoiceMT\"  using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"slpostingMT\"  using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"stockMT\"      using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"sys4MT\"       using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"systemMT\"     using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n     entry    \"valueMT\"      using  File-Access ACAS-DAL-Common-data DUMMY-REC.\n*>\n*> Error code = 64, in case caller expects a result.\n*>\n     move     99  to FS-Reply.\n     move     999 to WE-Error.\n     move     64 to RETURN-CODE.\n     goback.\n*>",
+        "line": 30
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 2,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 6,
+      "totalOperators": 3,
+      "totalOperands": 6,
+      "vocabulary": 7,
+      "length": 9,
+      "volume": 25.26619429851844
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

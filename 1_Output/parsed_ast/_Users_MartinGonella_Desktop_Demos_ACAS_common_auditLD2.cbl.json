@@ -1,0 +1,527 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/auditLD2.cbl",
+  "fileName": "auditLD2.cbl",
+  "timestamp": "2025-09-15T16:25:35.800Z",
+  "programId": "auditLD",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 108
+      },
+      {
+        "name": "file",
+        "line": 119
+      },
+      {
+        "name": "working-storage",
+        "line": 124
+      },
+      {
+        "name": "zz010-Get-Env-Set-Files",
+        "line": 408
+      },
+      {
+        "name": "exit",
+        "line": 431
+      },
+      {
+        "name": "zz020-Get-Program-Args",
+        "line": 433
+      },
+      {
+        "name": "exit",
+        "line": 453
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 111
+      },
+      {
+        "name": "aa000-main-start",
+        "line": 191
+      },
+      {
+        "name": "goback",
+        "line": 239
+      },
+      {
+        "name": "end-if",
+        "line": 248
+      },
+      {
+        "name": "acas010",
+        "line": 252
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 257
+      },
+      {
+        "name": "acas010-Open",
+        "line": 259
+      },
+      {
+        "name": "acas010-Open-Input",
+        "line": 265
+      },
+      {
+        "name": "acas010-Close",
+        "line": 271
+      },
+      {
+        "name": "acas010-Read-Next",
+        "line": 275
+      },
+      {
+        "name": "acas010-Write",
+        "line": 279
+      },
+      {
+        "name": "aa010-Read",
+        "line": 286
+      },
+      {
+        "name": "FA-File-System-Used",
+        "line": 311
+      },
+      {
+        "name": "aa020-Rollback",
+        "line": 334
+      },
+      {
+        "name": "aa030-Commit",
+        "line": 346
+      },
+      {
+        "name": "aa100-Check-4-Errors",
+        "line": 356
+      },
+      {
+        "name": "end-if",
+        "line": 367
+      },
+      {
+        "name": "aa999-Finish",
+        "line": 369
+      },
+      {
+        "name": "FA-File-System-Used",
+        "line": 377
+      },
+      {
+        "name": "FA-File-System-Used",
+        "line": 383
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 389
+      },
+      {
+        "name": "goback",
+        "line": 406
+      },
+      {
+        "name": "end-if",
+        "line": 428
+      },
+      {
+        "name": "zz010-GESF-Exit",
+        "line": 430
+      },
+      {
+        "name": "zz020-Set-the-Paths",
+        "line": 438
+      },
+      {
+        "name": "zz020-Exit",
+        "line": 452
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas010",
+        "line": 253,
+        "type": "DYNAMIC",
+        "using": [
+          "System-Record",
+          "WS-Stock-Audit-Record",
+          "File-Access",
+          "File-Defs",
+          "ACAS-DAL-Common-data"
+        ]
+      },
+      {
+        "target": "MySQL_rollback",
+        "line": 340,
+        "type": "DYNAMIC",
+        "using": []
+      },
+      {
+        "target": "MySQL_commit",
+        "line": 350,
+        "type": "DYNAMIC",
+        "using": []
+      },
+      {
+        "target": "fhlogger",
+        "line": 388,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 97,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 107,
+        "replacing": null
+      },
+      {
+        "name": "selsys",
+        "line": 114,
+        "replacing": null
+      },
+      {
+        "name": "selaud",
+        "line": 115,
+        "replacing": null
+      },
+      {
+        "name": "fdsys",
+        "line": 122,
+        "replacing": null
+      },
+      {
+        "name": "fdaudit",
+        "line": 123,
+        "replacing": null
+      },
+      {
+        "name": "wsaudit",
+        "line": 168,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 169,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 170,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "thru": null,
+        "line": 192
+      },
+      {
+        "target": "acas010-Open-Input",
+        "thru": null,
+        "line": 233
+      },
+      {
+        "target": "acas010-Open",
+        "thru": null,
+        "line": 243
+      },
+      {
+        "target": "acas010",
+        "thru": null,
+        "line": 262
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "thru": null,
+        "line": 263
+      },
+      {
+        "target": "acas010",
+        "thru": null,
+        "line": 268
+      },
+      {
+        "target": "aa100-Check-4-Errors",
+        "thru": null,
+        "line": 269
+      },
+      {
+        "target": "acas010",
+        "thru": null,
+        "line": 273
+      },
+      {
+        "target": "acas010",
+        "thru": null,
+        "line": 277
+      },
+      {
+        "target": "acas010",
+        "thru": null,
+        "line": 281
+      },
+      {
+        "target": "acas010-Read-Next",
+        "thru": null,
+        "line": 289
+      },
+      {
+        "target": "aa020-Rollback",
+        "thru": null,
+        "line": 299
+      },
+      {
+        "target": "acas010-Write",
+        "thru": null,
+        "line": 312
+      },
+      {
+        "target": "aa020-Rollback",
+        "thru": null,
+        "line": 326
+      },
+      {
+        "target": "aa020-Rollback",
+        "thru": null,
+        "line": 363
+      },
+      {
+        "target": "acas010-Close",
+        "thru": null,
+        "line": 380
+      },
+      {
+        "target": "acas010-close",
+        "thru": null,
+        "line": 384
+      },
+      {
+        "target": "aa030-Commit",
+        "thru": null,
+        "line": 402
+      },
+      {
+        "target": "zz010-Get-Env-Set-Files",
+        "thru": null,
+        "line": 436
+      },
+      {
+        "target": "File-Defs-Count",
+        "thru": null,
+        "line": 440
+      },
+      {
+        "target": "move",
+        "thru": null,
+        "line": 449
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "zero",
+        "to": "File-Function & Access-Type to close\n*>                    log file via fh-logger before last call to auditMT\n*>                     at RDB close",
+        "line": 55
+      },
+      {
+        "from": "5",
+        "to": "WS-Log-System",
+        "line": 195
+      },
+      {
+        "from": "23",
+        "to": "WS-Log-File-No",
+        "line": 196
+      },
+      {
+        "from": "1",
+        "to": "rrn",
+        "line": 207
+      },
+      {
+        "from": "RDBMS-DB-Name",
+        "to": "DB-Schema",
+        "line": 218
+      },
+      {
+        "from": "RDBMS-User",
+        "to": "DB-UName",
+        "line": 219
+      },
+      {
+        "from": "RDBMS-Passwd",
+        "to": "DB-UPass",
+        "line": 220
+      },
+      {
+        "from": "RDBMS-Port",
+        "to": "DB-Port",
+        "line": 221
+      },
+      {
+        "from": "RDBMS-Host",
+        "to": "DB-Host",
+        "line": 222
+      },
+      {
+        "from": "RDBMS-Socket",
+        "to": "DB-Socket",
+        "line": 223
+      },
+      {
+        "from": "zero",
+        "to": "File-System-Used\n                      File-Duplicates-In-Use\n                      FA-File-System-Used\n                      FA-File-Duplicates-In-Use",
+        "line": 228
+      },
+      {
+        "from": "1",
+        "to": "File-System-Used\n                   FA-File-System-Used",
+        "line": 241
+      },
+      {
+        "from": "zero",
+        "to": "Access-Type",
+        "line": 249
+      },
+      {
+        "from": "0",
+        "to": "File-System-Used\n                   FA-File-System-Used",
+        "line": 287
+      },
+      {
+        "from": "10",
+        "to": "fs-reply\n              go to aa999-Finish ",
+        "line": 292
+      },
+      {
+        "from": "zero",
+        "to": "Ten-Cnt\n              display \"",
+        "line": 306
+      },
+      {
+        "from": "1",
+        "to": "File-System-Used     *> acas0nn set to process RDB\n                   FA-File-System-Used",
+        "line": 310
+      },
+      {
+        "from": "1",
+        "to": "File-System-Used\n                   FA-File-System-Used",
+        "line": 376
+      },
+      {
+        "from": "zero",
+        "to": "Access-Type",
+        "line": 378
+      },
+      {
+        "from": "2",
+        "to": "File-Function",
+        "line": 379
+      },
+      {
+        "from": "zero",
+        "to": "File-System-Used\n                   FA-File-System-Used",
+        "line": 382
+      },
+      {
+        "from": "zero",
+        "to": "File-Function\n                       Access-Type",
+        "line": 386
+      },
+      {
+        "from": "\"/\"",
+        "to": "OS-Delimiter\n     end-if\n     if       ACAS_LEDGERS (1:1) = \"\\\"   *> Its Windoz/Dos-Box\n              move \"\\\" to OS-Delimiter\n     end-if",
+        "line": 424
+      },
+      {
+        "from": "zero",
+        "to": "z",
+        "line": 439
+      },
+      {
+        "from": "space",
+        "to": "Arg-Test\n              string ACAS_LEDGERS          delimited by space\n                     OS-Delimiter          delimited by size\n                     System-File-Names (z) delimited by space\n                                             into Arg-Test\n              end-string\n              move     Arg-Test to System-File-Names (z)\n     end-perform\n     move     zero to z",
+        "line": 442
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n*>\n environment division.\n*>-------------------\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n copy \"selsys.cob\".\n copy \"selaud.cob\".\n data division.\n*>------------\n*>\n file section.\n*>-----------\n*>\n copy \"fdsys.cob\".\n copy \"fdaudit.cob\".\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(17)    value \"auditLD (3.02.04)\".\n 77  z                   binary-char  value zero.\n 77  OS-Delimiter        pic x        value \"/\".\n 77  ACAS_BIN            pic x(512)   value spaces.\n 77  ACAS_IRS            pic x(500)   value spaces.\n 77  ACAS_LEDGERS        pic x(500)   value spaces.\n*>\n 01  Arg-Test            pic x(525)   value spaces.\n*>\n 01  work-fields.\n     03  ws-Rec-Cnt-In   pic 9(4)     value zero.\n     03  ws-Rec-Cnt-Out  pic 9(4)     value zero.\n     03  Ten-Cnt         pic 99  comp value zero.\n     03  ws-Start-date.\n         05  filler      pic x(8).\n         05  Start-Time  pic 9(8).\n         05  filler      pic X(5).\n     03  ws-End-Date.\n         05  filler      pic x(8).\n         05  End-Time    pic 9(8).\n         05  Lap-Time redefines End-Time.\n             07  TT-HH   pic 99.\n             07  TT-MM   pic 99.\n             07  TT-SS   pic 99.\n             07  TT-MS   pic 99.\n         05  filler      pic x(5).\n     03  ws-reply        pic x.\n*>\n 01  ACAS-DAL-Common-data.\n*>\n*>  log file reporting for testing\n*>\n     03  SW-Testing         pic 9      value 1.\n         88  Testing-1                 value 1.\n*>\n*>  Testing only for displays ws-where etc in RDB DAL\n*>\n     03  SW-Testing-2       pic 9      value zero.\n         88  Testing-2                 value 1.\n*>\n     03  Log-file-rec-written pic 9(6) value zero.    *> in both acas0nn and a DAL.\n*>\n copy \"wsaudit.cob\".\n copy \"wsfnctn.cob\".\n copy \"wsnames.cob\" in \"../copybooks\".   *> uses the full version.\n\n*>\n 01  Error-Messages.\n*> System Wide\n     03  ST001          pic x(26) value \"SL001 System 1 read err = \".\n     03  ST004          pic x(59) value \"SL004 Problem with opening system file. Hit return to clear\".\n     03  ST008          pic x(31) value \"SL008 Note message & Hit return\".\n     03  ST009          pic x(53) value \"SL009 Environment variables not yet set up : ABORTING\".\n*> Program specific\n     03  SL010          pic x(30) value \"SL010 Duplicate key/s found = \".\n     03  SL011          pic x(33) value \"SL011 Error on auditMT processing\".\n     03  SL012          pic x(33) value \"SL012 Error opening Audit File = \".\n     03  SL013          pic x(30) value \"SL013 Error on reading file = \".\n     03  SL014          pic x(31) value \"SL014 Error on writing table = \".\n     03  SL015          pic x(34) value \"SL015 Error opening Audit Table = \".\n     03  SL099          pic x(15) value \"SL099 Ignoring.\".\n*>\n procedure division.\n*>=================\n*>\n aa000-main-start.\n     perform  zz020-Get-Program-Args.\n     move     function current-date to ws-Start-date.\n     display  prog-name at 0101 with foreground-color 2 erase eos.\n     move     5      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=Stock used in FH logging\n     move     23     to WS-Log-File-No.  *> RDB, File/Table\n*>\n*>  Get the system param for the various RDB fields\n*>\n     open     input System-File.\n     if       fs-reply not = zero\n              display ST001 fs-reply\n              display ST004\n              close System-File\n              goback\n     end-if\n     move     1 to rrn.\n     read     system-file record.\n     if       fs-reply not = zero\n              display ST001 fs-reply\n              close System-File\n              goback\n     end-if\n*>\n*> >>>>>>>>>>>>>>>>>>>>>>>>>   Done in acas010    <<<<<<<<<<<<<<<<<<<<<<\n*>  Load up the DB settings from the system record as its not passed on.\n*>\n*>     move     RDBMS-DB-Name to DB-Schema.\n*>     move     RDBMS-User    to DB-UName.\n*>     move     RDBMS-Passwd  to DB-UPass.\n*>     move     RDBMS-Port    to DB-Port.\n*>     move     RDBMS-Host    to DB-Host.\n*>     move     RDBMS-Socket  to DB-Socket.\n*>\n*>\n*>  Over-ride processes for acas010/auditMT for Dup modes\n*>\n     move     zero to File-System-Used\n                      File-Duplicates-In-Use\n                      FA-File-System-Used\n                      FA-File-Duplicates-In-Use.   *>  Cobol file in use\n*>\n *>    perform  acas010-Open-Input.      *> open input Cobol stock FILE\n     open  input Stock-Audit.\n     if    fs-reply not = zero\n           display SL012\n           stop \"SL008 Note message & Hit return\"\n           close system-file\n           goback.\n*>\n     move     1 to File-System-Used\n                   FA-File-System-Used.            *> RDB in use\n     perform  acas010-Open.                        *> Open/Init RDB via FH - acas010\n     if       FS-Reply not = zero\n              display SL015\n              close System-File\n              goback\n     end-if.\n     move     zero to Access-Type.\n     go       to aa010-Read.\n*>\n acas010.\n     call     \"acas010\" using System-Record\n                              WS-Stock-Audit-Record\n                              File-Access\n                              File-Defs\n                              ACAS-DAL-Common-data.\n*>\n acas010-Open.\n     set      fn-open to true.\n     set      fn-i-o  to true.\n     perform  acas010.\n     perform  aa100-Check-4-Errors.\n*>\n acas010-Open-Input.\n     set      fn-open  to true.\n     set      fn-input to true.\n     perform  acas010.\n     perform  aa100-Check-4-Errors.\n*>\n acas010-Close.\n     set      fn-Close to true.\n     perform  acas010.\n*>\n acas010-Read-Next.\n     set      fn-Read-Next to true.\n     perform  acas010.\n*>\n acas010-Write.\n     set      fn-Write to true.\n     perform  acas010.\n*>\n*>  We will Rollback on any errors but Mysql has to be set up to do it\n*>      otherwise as normally it is set to autocommit !!!!!\n*>\n aa010-Read.\n     move     0 to File-System-Used\n                   FA-File-System-Used.            *> Cobol file in use\n *>    perform  acas010-Read-Next.\n *>    if       fs-Reply = 10                        *> EOF\n     read    Stock-Audit at end\n            move 10 to fs-reply\n              go to aa999-Finish .\n *>    end-if\n*>\n     if       FS-Reply not = zero\n              display SL013 at 2301 with highlight erase eol\n              display fs-reply at 2325  with highlight\n              perform aa020-Rollback\n              go to aa999-Finish\n     end-if\n*>\n     add      1 to ws-Rec-Cnt-In.\n     add      1 to Ten-Cnt.\n     if       Ten-Cnt = 10          *> each period is a count for 10 input records.\n              move zero to Ten-Cnt\n              display \".\" no advancing\n     end-if\n*>\n     move     1 to File-System-Used     *> acas0nn set to process RDB\n                   FA-File-System-Used.\n     perform  acas010-Write.\n     if       fs-reply = 22                    *> Check for dup key/record and continue at least while testing\n         or   SQL-Err (1:4) = \"1062\"\n              display SL010        at 2001 with foreground-color 2 highlight erase eol\n              display WS-File-Key  at 2031 with foreground-color 2 highlight\n              display SL099        at 2101\n              go to aa010-Read\n     end-if\n*>\n     if       fs-reply not = zero              *> Anything else\n              display SL014         at 2001 with foreground-color 2 highlight erase eol\n              display fs-reply      at 2032 with foreground-color 2 highlight\n              display \"WE-Error = \" at 2101 with foreground-color 2 highlight\n              display WE-Error      at 2111 with foreground-color 2 highlight\n              perform aa020-Rollback\n              display ST008 at 2201 with erase eol\n              accept  Accept-Reply at 2235\n              go to aa999-Finish\n     end-if\n     add      1 to ws-Rec-Cnt-Out.\n     go       to aa010-Read.\n*>\n aa020-Rollback.\n*>\n*> These do not work during testing with mariadb - Non transactional model or autocommit set ON\n*>           exec sql\n*>                rollback\n*>           end-exec.\n     call     \"MySQL_rollback\".\n*>     if       return-code not = zero\n*>              display \"Rollback failed \" at 2301\n*>              display return-code      at 2317\n*>     end-if.\n*>\n aa030-Commit.\n*>           exec sql\n*>                commit\n*>           end-exec.\n     call     \"MySQL_commit\".\n*>     if       return-code not = zero\n*>              display \"Commit failed \" at 2301\n*>              display return-code      at 2315\n*>     end-if.\n*>\n aa100-Check-4-Errors.\n     if       fs-reply not = zero\n              display SL011            at 1401   *> acas010/auditMT processing\"\n              display \"Fs-reply = \"    at 1501\n              display fs-reply         at 1512\n              display \"WE-Error = \"    at 1601\n              display  WE-Error        at 1612\n              perform aa020-Rollback\n              display ST008 at 1701 with erase eol\n              accept  Accept-Reply at 1735\n              go to aa999-Finish\n     end-if.\n*>\n aa999-Finish.\n     display  \"Record count  in = \" at 0601 with erase eol.\n     display  ws-Rec-Cnt-In         at 0620.\n     display  \"Record count out = \" at 0641.\n     display  ws-Rec-Cnt-Out        at 0660.\n     display  \"Log Records out  = \" at 0701 with erase eol.\n     display  Log-File-Rec-Written  at 0720.\n     move     1 to File-System-Used\n                   FA-File-System-Used.\n     move     zero to Access-Type.\n     move     2 to File-Function.\n     perform  acas010-Close.                     *> Close RDB\n     close    System-File.\n     move     zero to File-System-Used\n                   FA-File-System-Used.\n *>    perform  acas010-close.    *> Close cobol stock file\n     close stock-audit.\n     move     zero to  File-Function\n                       Access-Type.              *> close log file\n     call     \"fhlogger\" using File-Access\n                               ACAS-DAL-Common-data.\n     move     function current-date to ws-End-date.\n     subtract Start-Time from End-Time.\n     display  \"Elapsed time was \" at 0801 with erase eol.\n     display  TT-HH              at 0818.\n     display  \":\"                at 0820.\n     display  TT-MM              at 0821\n     display  \":\"                at 0823\n     display  TT-SS              at 0824\n     display  \":\"                at 0826\n     display  TT-MS              at 0827.\n     Display  \"EOJ - Load Stock Audit Table\" at 1001 with erase eol.\n *>    if       FS-Reply = zero or = 10\n *>             perform aa030-Commit\n *>    end-if\n     display \" \".\n     stop     \"Check totals",
+        "line": 94
+      },
+      {
+        "type": "IF",
+        "condition": "ACAS_IRS (1:1) = space\n           or ACAS_LEDGERS (1:1) = spaces\n           or ACAS_BIN (1:1) = spaces\n              display ST009   at 0505 with erase eos highlight\n              display ST008   at 1210 with  foreground-color 3 highlight\n              accept ws-reply at 1243\n              stop run\n     end-if\n     if       ACAS_LEDGERS (1:1) = \"/\"   *> Its Linux/Unix/OSX\n              move \"/\" to OS-Delimiter\n     end-if\n     if       ACAS_LEDGERS (1:1) = \"\\\"   *> Its Windoz/Dos-Box\n              move \"\\\" to OS-Delimiter\n     end-if.\n*>\n zz010-GESF-Exit.\n     exit     section.\n*>\n zz020-Get-Program-Args      section.\n*>**********************************\n*>\n     perform  zz010-Get-Env-Set-Files.          *> This must be set so get it 1st + need os-delimiter\n*>\n zz020-Set-the-Paths.\n     move     zero to z.\n     perform  File-Defs-Count times\n              add 1 to z\n              move space to Arg-Test\n              string ACAS_LEDGERS          delimited by space\n                     OS-Delimiter          delimited by size\n                     System-File-Names (z) delimited by space\n                                             into Arg-Test\n              end-string\n              move     Arg-Test to System-File-Names (z)\n     end-perform\n     move     zero to z.\n*>\n zz020-Exit.\n     exit   section.\n*>",
+        "line": 415
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 7,
+    "cognitive": 2,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 36,
+      "totalOperators": 25,
+      "totalOperands": 50,
+      "vocabulary": 37,
+      "length": 75,
+      "volume": 390.70900242217124
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

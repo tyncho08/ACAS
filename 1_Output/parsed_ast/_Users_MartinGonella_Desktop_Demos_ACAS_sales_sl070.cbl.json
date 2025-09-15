@@ -1,0 +1,1290 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl070.cbl",
+  "fileName": "sl070.cbl",
+  "timestamp": "2025-09-15T16:25:31.176Z",
+  "programId": "sl070",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 111
+      },
+      {
+        "name": "file",
+        "line": 124
+      },
+      {
+        "name": "working-storage",
+        "line": 134
+      },
+      {
+        "name": "linkage",
+        "line": 266
+      },
+      {
+        "name": "init01",
+        "line": 281
+      },
+      {
+        "name": "Create",
+        "line": 395
+      },
+      {
+        "name": "Amend",
+        "line": 474
+      },
+      {
+        "name": "Report1",
+        "line": 542
+      },
+      {
+        "name": "Show",
+        "line": 625
+      },
+      {
+        "name": "display-heading",
+        "line": 697
+      },
+      {
+        "name": "display-outline",
+        "line": 725
+      },
+      {
+        "name": "analysis-data",
+        "line": 764
+      },
+      {
+        "name": "P-A-Setup",
+        "line": 782
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 895
+      },
+      {
+        "name": "exit",
+        "line": 923
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 114
+      },
+      {
+        "name": "file-defs",
+        "line": 278
+      },
+      {
+        "name": "menu-return",
+        "line": 315
+      },
+      {
+        "name": "menu-input",
+        "line": 319
+      },
+      {
+        "name": "end-if",
+        "line": 367
+      },
+      {
+        "name": "end-if",
+        "line": 386
+      },
+      {
+        "name": "Menu-Exit",
+        "line": 388
+      },
+      {
+        "name": "goback",
+        "line": 389
+      },
+      {
+        "name": "product-input",
+        "line": 402
+      },
+      {
+        "name": "product-loop",
+        "line": 406
+      },
+      {
+        "name": "get-details",
+        "line": 441
+      },
+      {
+        "name": "main-output",
+        "line": 452
+      },
+      {
+        "name": "main-end",
+        "line": 469
+      },
+      {
+        "name": "product-input",
+        "line": 481
+      },
+      {
+        "name": "product-loop",
+        "line": 485
+      },
+      {
+        "name": "get-details",
+        "line": 504
+      },
+      {
+        "name": "main-output",
+        "line": 511
+      },
+      {
+        "name": "main-end",
+        "line": 537
+      },
+      {
+        "name": "read-loop",
+        "line": 550
+      },
+      {
+        "name": "headings",
+        "line": 595
+      },
+      {
+        "name": "end-report",
+        "line": 612
+      },
+      {
+        "name": "main-end",
+        "line": 618
+      },
+      {
+        "name": "Show-read",
+        "line": 636
+      },
+      {
+        "name": "sread",
+        "line": 640
+      },
+      {
+        "name": "product-display",
+        "line": 656
+      },
+      {
+        "name": "accept-of-show",
+        "line": 674
+      },
+      {
+        "name": "main-end",
+        "line": 688
+      },
+      {
+        "name": "main-loop",
+        "line": 734
+      },
+      {
+        "name": "get-pa-desc",
+        "line": 770
+      },
+      {
+        "name": "get-pa-print",
+        "line": 774
+      },
+      {
+        "name": "Create-Value",
+        "line": 873
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 922
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 306,
+        "type": "DYNAMIC",
+        "using": [
+          "File-15",
+          "*>",
+          "anal",
+          "File-Info",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "perform",
+          "P-A-Setup",
+          "*>",
+          "Create",
+          "default",
+          "entries",
+          "in",
+          "Analysis",
+          "and",
+          "Value",
+          "files",
+          "end-if",
+          "*>",
+          "for",
+          "Sales",
+          "and",
+          "Purchases",
+          "end-if",
+          "if",
+          "ws-Process-Func",
+          "=",
+          "1",
+          "*>",
+          "Called",
+          "by",
+          "Stock",
+          "or",
+          "ACAS",
+          "to",
+          "Create",
+          "go",
+          "to",
+          "Menu-Exit"
+        ]
+      },
+      {
+        "target": "SYSTEM",
+        "line": 621,
+        "type": "DYNAMIC",
+        "using": [
+          "Print-Report"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 101,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 110,
+        "replacing": null
+      },
+      {
+        "name": "selanal",
+        "line": 117,
+        "replacing": null
+      },
+      {
+        "name": "selval",
+        "line": 118,
+        "replacing": null
+      },
+      {
+        "name": "selprint",
+        "line": 119,
+        "replacing": null
+      },
+      {
+        "name": "fdanal",
+        "line": 127,
+        "replacing": null
+      },
+      {
+        "name": "fdval",
+        "line": 128,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command-p",
+        "line": 137,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 138,
+        "replacing": null
+      },
+      {
+        "name": "wsanal",
+        "line": 139,
+        "replacing": null
+      },
+      {
+        "name": "wsval",
+        "line": 140,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 235,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 269,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 270,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 271,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 925,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "P-A-Setup",
+        "thru": null,
+        "line": 309
+      },
+      {
+        "target": "display-heading",
+        "thru": null,
+        "line": 317
+      },
+      {
+        "target": "display-heading",
+        "thru": null,
+        "line": 334
+      },
+      {
+        "target": "Create",
+        "thru": null,
+        "line": 336
+      },
+      {
+        "target": "Amend",
+        "thru": null,
+        "line": 338
+      },
+      {
+        "target": "Report1",
+        "thru": null,
+        "line": 341
+      },
+      {
+        "target": "Report1",
+        "thru": null,
+        "line": 345
+      },
+      {
+        "target": "Show",
+        "thru": null,
+        "line": 347
+      },
+      {
+        "target": "aa020-Rollback",
+        "thru": null,
+        "line": 362
+      },
+      {
+        "target": "aa020-Rollback",
+        "thru": null,
+        "line": 381
+      },
+      {
+        "target": "Analysis-Open",
+        "thru": null,
+        "line": 398
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 400
+      },
+      {
+        "target": "display-outline",
+        "thru": null,
+        "line": 403
+      },
+      {
+        "target": "Analysis-Read-Indexed",
+        "thru": null,
+        "line": 415
+      },
+      {
+        "target": "product-display",
+        "thru": null,
+        "line": 417
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 421
+      },
+      {
+        "target": "Analysis-Read-Indexed",
+        "thru": null,
+        "line": 429
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 434
+      },
+      {
+        "target": "analysis-data",
+        "thru": null,
+        "line": 446
+      },
+      {
+        "target": "get-pa-desc",
+        "thru": null,
+        "line": 454
+      },
+      {
+        "target": "Analysis-Write",
+        "thru": null,
+        "line": 459
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 461
+      },
+      {
+        "target": "display-outline",
+        "thru": null,
+        "line": 465
+      },
+      {
+        "target": "Analysis-Close",
+        "thru": null,
+        "line": 470
+      },
+      {
+        "target": "Analysis-Open",
+        "thru": null,
+        "line": 477
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 479
+      },
+      {
+        "target": "display-outline",
+        "thru": null,
+        "line": 482
+      },
+      {
+        "target": "Analysis-Read-Indexed",
+        "thru": null,
+        "line": 494
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 499
+      },
+      {
+        "target": "product-display",
+        "thru": null,
+        "line": 502
+      },
+      {
+        "target": "analysis-data",
+        "thru": null,
+        "line": 505
+      },
+      {
+        "target": "get-pa-desc",
+        "thru": null,
+        "line": 513
+      },
+      {
+        "target": "Analysis-Delete",
+        "thru": null,
+        "line": 520
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 522
+      },
+      {
+        "target": "Analysis-Rewrite",
+        "thru": null,
+        "line": 525
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 527
+      },
+      {
+        "target": "display-outline",
+        "thru": null,
+        "line": 533
+      },
+      {
+        "target": "Analysis-Close",
+        "thru": null,
+        "line": 538
+      },
+      {
+        "target": "Analysis-Open-Input",
+        "thru": null,
+        "line": 545
+      },
+      {
+        "target": "headings",
+        "thru": null,
+        "line": 548
+      },
+      {
+        "target": "Analysis-Read-Next",
+        "thru": null,
+        "line": 551
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 555
+      },
+      {
+        "target": "headings",
+        "thru": null,
+        "line": 578
+      },
+      {
+        "target": "headings",
+        "thru": null,
+        "line": 591
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 598
+      },
+      {
+        "target": "Analysis-Close",
+        "thru": null,
+        "line": 620
+      },
+      {
+        "target": "Analysis-Open-Input",
+        "thru": null,
+        "line": 628
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 630
+      },
+      {
+        "target": "display-outline",
+        "thru": null,
+        "line": 632
+      },
+      {
+        "target": "Analysis-Read-Next",
+        "thru": null,
+        "line": 641
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 646
+      },
+      {
+        "target": "display-outline",
+        "thru": null,
+        "line": 684
+      },
+      {
+        "target": "Analysis-Close",
+        "thru": null,
+        "line": 689
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 701
+      },
+      {
+        "target": "Value-Open",
+        "thru": null,
+        "line": 787
+      },
+      {
+        "target": "Analysis-Open-Output",
+        "thru": null,
+        "line": 788
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 790
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 797
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 800
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 803
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 806
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 810
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 814
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 818
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 821
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 824
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 827
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 835
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 839
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 843
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 846
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 849
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 852
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 855
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 858
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 861
+      },
+      {
+        "target": "create-value",
+        "thru": null,
+        "line": 864
+      },
+      {
+        "target": "Value-Close",
+        "thru": null,
+        "line": 866
+      },
+      {
+        "target": "Analysis-Close",
+        "thru": null,
+        "line": 867
+      },
+      {
+        "target": "Value-Read-Indexed",
+        "thru": null,
+        "line": 878
+      },
+      {
+        "target": "Value-Write",
+        "thru": null,
+        "line": 883
+      },
+      {
+        "target": "aa102-Check-4-Errors",
+        "thru": null,
+        "line": 885
+      },
+      {
+        "target": "Analysis-Write",
+        "thru": null,
+        "line": 889
+      },
+      {
+        "target": "aa101-Check-4-Errors",
+        "thru": null,
+        "line": 891
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "references",
+        "to": "File-Status - discontinued",
+        "line": 56
+      },
+      {
+        "from": "24",
+        "to": "ws-env-lines ws-lines\n     else\n              move  ws-env-lines   to ws-lines\n     end-if\n     subtract 1 from ws-lines giving ws-23-lines",
+        "line": 284
+      },
+      {
+        "from": "prog-name",
+        "to": "l1-version",
+        "line": 295
+      },
+      {
+        "from": "Print-Spool-Name",
+        "to": "PSN",
+        "line": 299
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 300
+      },
+      {
+        "from": "zero",
+        "to": "menu-reply",
+        "line": 316
+      },
+      {
+        "from": "spaces",
+        "to": "l5-led-lit\n              perform  Report1",
+        "line": 340
+      },
+      {
+        "from": "\"Lgr\"",
+        "to": "l5-led-lit\n              move \"A\" to Print-Mode\n              perform  Report1",
+        "line": 343
+      },
+      {
+        "from": "6",
+        "to": "lin",
+        "line": 404
+      },
+      {
+        "from": "spaces",
+        "to": "pa-group",
+        "line": 407
+      },
+      {
+        "from": "2",
+        "to": "cole",
+        "line": 408
+      },
+      {
+        "from": "\"S\"",
+        "to": "pa-system",
+        "line": 413
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 414
+      },
+      {
+        "from": "WS-PA-Code",
+        "to": "save-code",
+        "line": 423
+      },
+      {
+        "from": "space",
+        "to": "pa-second",
+        "line": 427
+      },
+      {
+        "from": "save-code",
+        "to": "WS-PA-Code",
+        "line": 442
+      },
+      {
+        "from": "zero",
+        "to": "pa-gl",
+        "line": 443
+      },
+      {
+        "from": "spaces",
+        "to": "pa-desc",
+        "line": 444
+      },
+      {
+        "from": "\"S\"",
+        "to": "Escape-Code",
+        "line": 448
+      },
+      {
+        "from": "6",
+        "to": "lin",
+        "line": 466
+      },
+      {
+        "from": "6",
+        "to": "lin",
+        "line": 483
+      },
+      {
+        "from": "2",
+        "to": "cole",
+        "line": 486
+      },
+      {
+        "from": "spaces",
+        "to": "pa-group",
+        "line": 487
+      },
+      {
+        "from": "\"S\"",
+        "to": "pa-system",
+        "line": 492
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 493
+      },
+      {
+        "from": "\"S\"",
+        "to": "Escape-Code",
+        "line": 507
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No\n              perform  Analysis-Delete\n              if       FS-Reply not = zero\n                       perform  aa101-Check-4-Errors\n              end-if\n     else\n              perform  Analysis-Rewrite\n              if       FS-Reply not = zero\n                       perform  aa101-Check-4-Errors\n              end-if\n     end-if\n*>\n     add      1  to  lin",
+        "line": 519
+      },
+      {
+        "from": "6",
+        "to": "lin",
+        "line": 534
+      },
+      {
+        "from": "zero",
+        "to": "a",
+        "line": 547
+      },
+      {
+        "from": "spaces",
+        "to": "print-record\n              write print-record after 1\n              add 1 to line-cnt\n              move  \"Group\"  to  l6-type\n              if  Print-All\n                  move pa-system to l6-ledger\n              end-if\n     else\n              move  \"Detail\" to  l6-type\n              move space to l6-ledger\n     end-if\n     if       line-cnt > 70\n              perform headings",
+        "line": 566
+      },
+      {
+        "from": "1",
+        "to": "ws-err-flag",
+        "line": 582
+      },
+      {
+        "from": "pa-group",
+        "to": "l6-code",
+        "line": 583
+      },
+      {
+        "from": "pa-gl",
+        "to": "l6-gl",
+        "line": 584
+      },
+      {
+        "from": "pa-desc",
+        "to": "l6-desc",
+        "line": 585
+      },
+      {
+        "from": "pa-print",
+        "to": "l6-print",
+        "line": 586
+      },
+      {
+        "from": "a",
+        "to": "l1-page",
+        "line": 597
+      },
+      {
+        "from": "ws-date",
+        "to": "l2-date",
+        "line": 599
+      },
+      {
+        "from": "usera",
+        "to": "l2-user",
+        "line": 600
+      },
+      {
+        "from": "spaces",
+        "to": "print-record\n              write print-record after 1\n     else\n              write print-record from line-1 before 1",
+        "line": 604
+      },
+      {
+        "from": "5",
+        "to": "line-cnt",
+        "line": 610
+      },
+      {
+        "from": "6",
+        "to": "lin",
+        "line": 631
+      },
+      {
+        "from": "6",
+        "to": "lin",
+        "line": 633
+      },
+      {
+        "from": "ws-lines",
+        "to": "lin\n              go to  accept-of-show",
+        "line": 643
+      },
+      {
+        "from": "2",
+        "to": "cole",
+        "line": 657
+      },
+      {
+        "from": "8",
+        "to": "cole",
+        "line": 659
+      },
+      {
+        "from": "20",
+        "to": "cole",
+        "line": 661
+      },
+      {
+        "from": "\"Group\"",
+        "to": "l6-type\n     else\n              move \"Detail\" to l6-type",
+        "line": 666
+      },
+      {
+        "from": "48",
+        "to": "cole",
+        "line": 669
+      },
+      {
+        "from": "55",
+        "to": "cole",
+        "line": 671
+      },
+      {
+        "from": "6",
+        "to": "lin\n              go to Show-read",
+        "line": 685
+      },
+      {
+        "from": "6",
+        "to": "lin",
+        "line": 731
+      },
+      {
+        "from": "1",
+        "to": "cole",
+        "line": 732
+      },
+      {
+        "from": "8",
+        "to": "cole",
+        "line": 767
+      },
+      {
+        "from": "20",
+        "to": "cole",
+        "line": 771
+      },
+      {
+        "from": "pa-group",
+        "to": "pa-print",
+        "line": 776
+      },
+      {
+        "from": "48",
+        "to": "cole",
+        "line": 777
+      },
+      {
+        "from": "zeros",
+        "to": "pa-gl",
+        "line": 792
+      },
+      {
+        "from": "spaces",
+        "to": "pa-print",
+        "line": 793
+      },
+      {
+        "from": "\"S\"",
+        "to": "pa-system",
+        "line": 794
+      },
+      {
+        "from": "\"vi\"",
+        "to": "pa-group",
+        "line": 798
+      },
+      {
+        "from": "\"vj\"",
+        "to": "pa-group",
+        "line": 801
+      },
+      {
+        "from": "\"zc\"",
+        "to": "pa-group",
+        "line": 807
+      },
+      {
+        "from": "\"P&P\"",
+        "to": "pa-print",
+        "line": 809
+      },
+      {
+        "from": "\"zd\"",
+        "to": "pa-group",
+        "line": 811
+      },
+      {
+        "from": "\"LCG\"",
+        "to": "pa-print",
+        "line": 813
+      },
+      {
+        "from": "\"vo\"",
+        "to": "pa-group",
+        "line": 815
+      },
+      {
+        "from": "spaces",
+        "to": "pa-print",
+        "line": 816
+      },
+      {
+        "from": "\"vp\"",
+        "to": "pa-group",
+        "line": 819
+      },
+      {
+        "from": "\"a1\"",
+        "to": "pa-group",
+        "line": 825
+      },
+      {
+        "from": "\"P\"",
+        "to": "pa-system",
+        "line": 831
+      },
+      {
+        "from": "\"za\"",
+        "to": "pa-group",
+        "line": 832
+      },
+      {
+        "from": "\"P&P\"",
+        "to": "pa-print",
+        "line": 834
+      },
+      {
+        "from": "\"zb\"",
+        "to": "pa-group",
+        "line": 836
+      },
+      {
+        "from": "\"LCG\"",
+        "to": "pa-print",
+        "line": 838
+      },
+      {
+        "from": "spaces",
+        "to": "pa-print",
+        "line": 840
+      },
+      {
+        "from": "\"a1\"",
+        "to": "pa-group",
+        "line": 844
+      },
+      {
+        "from": "\"a2\"",
+        "to": "PA-Group",
+        "line": 847
+      },
+      {
+        "from": "\"a3\"",
+        "to": "PA-Group",
+        "line": 850
+      },
+      {
+        "from": "\"a4\"",
+        "to": "PA-Group",
+        "line": 853
+      },
+      {
+        "from": "\"a5\"",
+        "to": "PA-Group",
+        "line": 856
+      },
+      {
+        "from": "\"a6\"",
+        "to": "PA-Group",
+        "line": 859
+      },
+      {
+        "from": "\"a7\"",
+        "to": "PA-Group",
+        "line": 862
+      },
+      {
+        "from": "WS-PA-Code",
+        "to": "VA-Code",
+        "line": 875
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 877
+      },
+      {
+        "from": "WS-Analysis-Record",
+        "to": "WS-Value-Record\n              move zero to VA-V-This va-v-last VA-V-Year\n                           VA-T-This VA-T-Last VA-T-Year\n              perform  Value-Write\n              if       FS-Reply not = zero\n                       perform  aa102-Check-4-Errors\n              end-if\n     end-if\n*>\n     perform  Analysis-Write",
+        "line": 880
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 903
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 906
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit",
+        "line": 910
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 917
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "any PA codes contain zero as a GL number.\n*> 25/11/11 vbc - .07 Error msgs to SLnnn.Support for dates other than UK\n*> 08/12/11 vbc - .08 Support for path+filenames.\n*> 09/12/11 vbc -     Updated version to 3.01.nn\n*> 11/12/11 vbc - .09 Changed usage of Stk-Date-Form to the global field Date-Form making former redundent.\n*> 12/05/13 vbc - .10 Force setup of Default group a, a1 for sales and purchases\n*>                    as std codes.\n*> 18/05/13 vbc - .11 Support for direct call from Stock to create default PA codes.\n*> 24/07/16 vbc - .12 Support for RDB processing. at least for the analysis file/table...\n*> 24/10/16 vbc - .13 ALL programs now using wsnames.cob in copybooks\n*> 30/10/16 vbc - .14 Remove references to File-Status - discontinued.\n*>                    Support for RDB value & Analysis records with file proc dropped.\n*> 15/01/17 vbc - .15 All programs upgraded to v3.02 for RDB processing.\n*>                    Removed refs to maps99.\n*> 23/01/17 vbc       Dry testing completed.\n*> 05/03/18 vbc - .16 Clean up error msgs removing the !! from ends and remove 'MT'\n*>                    as usage of file may be in use.\n*> 08/04/18 vbc - .17 Support for call by ACAS on init. system use where ws-Process-Func = 1.\n*> 29/04/18 vbc - .18 Make zeroed GL values zero and not blank when\n*>                    printing GL fields  giving all 6 GL A/C digits.\n*> 03/04/23 vbc - .19 Change printer FD from 132 to 80 - same as pl070.\n*> 04/05/23 vbc       Added some comment entries.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*> 18/01/25 vbc - .20 On tests for Value FS-Reply = 21 also test for 23 - JIC\n*>                    Analysis will create for both Sales and Purchases.\n*>                    Do same for pl070.\n*> 24/08/25 vbc   .21 Minor adjusts for heads. Ditto pl070.\n*>                    Make warnngs of zero a/c entries the same - PL & SL.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> These files and programs is part of the Applewood Computers Accounting\n*> System and is copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms of the GNU General Public License as published by the\n*> Free Software Foundation; version 3 and later as revised for personal\n*> usage only and that includes for use within a business but without\n*> repackaging or for Resale in any way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental mode must get in touch with the copyright holder\n*> with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n*> copy \"selanal.cob\".\n*> copy \"selval.cob\".\n copy \"selprint.cob\".\n*>\n data                    division.\n*>===============================\n*>\n file section.\n*>-----------\n*>\n*> copy \"fdanal.cob\".\n*> copy \"fdval.cob\".\n*>\n fd  print-file.\n*>\n 01  print-record            pic x(80).\n*>\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(15) value \"SL070 (3.02.21)\".\n copy \"print-spool-command-p.cob\".\n copy \"wsfnctn.cob\".\n copy \"wsanal.cob\".\n copy \"wsval.cob\".\n*>\n 01  ws-data.\n     03  menu-reply      pic 9.\n     03  ws-reply        pic x.\n     03  a               pic 99.\n     03  ws-err-flag     pic 9           value zero.\n     03  Escape-Code     pic x.\n     03  Print-Mode      pic x           value space.\n         88  Print-All                   value \"A\".\n     03  save-code       pic xxx.\n     03  line-cnt        pic 99   comp  value zero.\n*>\n     03  ws-env-lines    pic 999       value zero.\n     03  ws-lines        binary-char unsigned value zero.\n     03  ws-23-lines     binary-char unsigned value zero.\n     03  ws-22-lines     binary-char unsigned value zero.\n     03  ws-21-lines     binary-char unsigned value zero.\n     03  ws-20-lines     binary-char unsigned value zero.\n     03  ws-19-lines     binary-char unsigned value zero.\n     03  ws-18-lines     binary-char unsigned value zero.\n     03  ws-17-lines     binary-char unsigned value zero.\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n*>     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n*>     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n 01  File-Info                          value zero.\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n 01  Error-Messages.\n*> System Wide\n     03  SL008          pic x(30) value \"SL008 P.A. Code Already Exists\".\n     03  SL009          pic x(36) value \"SL009 P.A. Group Code Does Not Exist\".\n     03  SL010          pic x(43) value \"SL010 P.A. Group Code Used As Analysis Code\".\n     03  SL011          pic x(30) value \"SL011 P.A. Code Does Not Exist\".\n     03  SLA12          pic x(31) value \"SLA12 Error on Anal processing\".\n     03  SLA13          pic x(25) value \"SLA13 Hit return for Menu\".\n     03  SLA14          pic x(32) value \"SLA14 Error on Value processing\".\n*> Module specific\n*>       NONE\n*>\n 01  Error-Code          pic 999.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  line-1.   *> 78\n     03  l1-version      pic x(31)       value spaces.\n     03  filler          pic x(39)       value \"Product Analysis Codes\".\n     03  filler          pic x(5)        value \"Page \".\n     03  l1-page         pic zz9.\n*>\n 01  line-2.   *> 78\n     03  l2-user         pic x(30)       value spaces.\n     03  filler          pic x(38)       value spaces.\n     03  l2-date         pic x(10).\n*>\n 01  line-4.\n     03  l5-led-lit      pic x(4)        value \"Lgr\".\n     03  filler          pic x(59)       value \"Code    GL.No.       <-----Description------>  Print\".\n     03  filler          pic x(6)        value  \"-Type-\".\n*>\n 01  line-6.\n     03  filler          pic x           value space.\n     03  l6-ledger       pic x           value spaces.\n     03  filler          pic xxx         value space.\n     03  l6-code         pic x(7).\n     03  l6-gl           pic 9(6).\n     03  filler          pic x(7)        value spaces.\n     03  l6-desc         pic x(24)       value spaces.\n     03  filler          pic x(4)        value spaces.\n     03  l6-print        pic xxx.\n     03  filler          pic x(7)        value spaces.\n     03  l6-type         pic x(6).\n*>\n linkage section.\n*>**************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n init01 section.\n     accept   ws-env-lines   from lines.\n     if       ws-env-lines < 24\n              move  24 to ws-env-lines ws-lines\n     else\n              move  ws-env-lines   to ws-lines\n     end-if\n     subtract 1 from ws-lines giving ws-23-lines.\n     subtract 2 from ws-lines giving ws-22-lines.\n     subtract 3 from ws-lines giving ws-21-lines.\n     subtract 4 from ws-lines giving ws-20-lines.\n     subtract 5 from ws-lines giving ws-19-lines.\n     subtract 6 from ws-lines giving ws-18-lines.\n     subtract 7 from ws-lines giving ws-17-lines.\n     move     prog-name to l1-version.\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n     move     Print-Spool-Name to PSN.\n     move     1 to File-Key-No.\n*>\n *>    if       ws-Process-Func not = 1   *> Not Called by Stock or ACAS\n *>             display  \" \" at 0101 with erase eos.\n*>\n     if       FS-Cobol-Files-Used\n              call  \"CBL_CHECK_FILE_EXIST\" using File-15     *> anal\n                                                 File-Info\n              if    return-code not = zero          *> not = zero - No file found\n                    perform  P-A-Setup  *> Create default entries in Analysis and Value files\n              end-if                    *> for Sales and Purchases\n     end-if\n     if       ws-Process-Func = 1       *> Called by Stock or ACAS to Create\n              go to Menu-Exit.          *> default entries  so we are done\n*>\n menu-return.\n     move     zero  to  menu-reply.\n     perform  display-heading.\n*>\n menu-input.\n     display  \"Select one of the following by number :- [ ]\" at 0701 with foreground-color 2.\n     display  \"(1)  Set-up P/A records\" at 1004       with foreground-color 2.\n     display  \"(2)  Amend/Delete P/A records\" at 1204 with foreground-color 2.\n     display  \"(3)  Print P/A records\" at 1404        with foreground-color 2.\n     display  \"(4)  Print All P/A records\" at 1604    with foreground-color 2.\n     display  \"(5)  Display P/A records\" at 1804      with foreground-color 2.\n     display  \"(9)  Return to system menu\" at 2004    with foreground-color 2.\n*>\n     accept   menu-reply at 0743 with foreground-color 6 update auto.\n*>\n     if       menu-reply = 9\n              go to  Menu-Exit.\n     if       menu-reply  <  1  or  >  5\n              go to  menu-input.\n     perform  display-heading.\n     if       menu-reply = 1\n              perform  Create.\n     if       menu-reply = 2\n              perform  Amend.\n     if       menu-reply = 3\n              move spaces to l5-led-lit\n              perform  Report1.\n     if       menu-reply = 4\n              move \"Lgr\" to l5-led-lit\n              move \"A\" to Print-Mode\n              perform  Report1.\n     if       menu-reply = 5\n              perform  Show.\n     go       to menu-return.\n*>\n aa101-Check-4-Errors.                       *> Analysis-Record - if any errors",
+        "line": 46
+      },
+      {
+        "type": "IF",
+        "condition": "FS-Reply not = zero\n              display SLA12            at 0601 with erase eos  *> acas015/analMT processing\n              display \"FS-Reply = \"    at 0701\n              display FS-Reply         at 0712\n*>\n              display \"Keys = \"        at 0720\n              display va-code          at 0727\n*>\n              display \"WE-Error = \"    at 0801\n              display WE-Error         at 0812\n *>             if      FS-RDBMS-Used\n *>                     perform aa020-Rollback\n *>             end-if\n              display SLA13 at 1101 with erase eol\n              accept  Accept-Reply at 1135\n              go to  Menu-Exit\n     end-if.\n*>\n aa102-Check-4-Errors.                       *> Value-Record - if any errors",
+        "line": 351
+      },
+      {
+        "type": "IF",
+        "condition": "FS-Reply not = zero\n              display SLA14            at 0601 with erase eos  *> acas013/valueMT processing\n              display \"FS-Reply = \"    at 0701\n              display FS-Reply         at 0712\n*>\n              display \"Keys = \"        at 0720\n              display WS-Pa-Code       at 0727\n*>\n              display \"WE-Error = \"    at 0801\n              display WE-Error         at 0812\n *>             if      FS-RDBMS-Used\n *>                     perform aa020-Rollback\n *>             end-if\n              display SLA13 at 1101 with erase eol\n              accept  Accept-Reply at 1135\n              go to  Menu-Exit\n     end-if.\n*>\n Menu-Exit.\n     goback.\n*>\n*>****************************************************************\n*>      P R O C E D U R E S                                      *\n*>****************************************************************\n*>\n Create       section.\n*>===================\n*>\n     perform  Analysis-Open.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n*>\n product-input.\n     perform  display-outline.\n     move     6  to  lin.\n*>\n product-loop.\n     move     spaces  to  pa-group.\n     move     2 to cole.\n     accept   pa-group at curs with foreground-color 3 update.\n     if       pa-group = spaces\n              go to  main-end.\n*>\n     move     \"S\" to pa-system.\n     move     1 to File-Key-No.\n     perform  Analysis-Read-Indexed.    *> read analysis-file not invalid key\n     if       FS-Reply not = 21 and not = 23\n              perform  product-display  of  Show\n              display  SL008 at line ws-23-lines col 01 with foreground-color 3\n              go       to product-loop.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n*>\n     move     WS-PA-Code  to  save-code.\n     if       pa-second = space\n              go to  get-details.\n*>\n     move     space    to  pa-second.\n*>\n     perform  Analysis-Read-Indexed. *> read analysis-file invalid key\n     if       FS-Reply = 21 or = 23\n              display  SL009 at line ws-23-lines col 01 with foreground-color 3\n              go to  product-loop.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n*>\n     if       pa-gl not = zero\n              display  SL010 at line ws-23-lines col 01 with foreground-color 3\n              go to  product-loop.\n     display  \" \" at line ws-23-lines col 01 with erase eol.\n*>\n get-details.\n     move     save-code  to  WS-PA-Code.\n     move     zero       to  pa-gl.\n     move     spaces     to  pa-desc.\n*>\n     perform  analysis-data.\n*>\n     move     \"S\"  to   Escape-Code.\n     display  Escape-Code at line ws-18-lines col 77  with foreground-color 6.\n     accept   Escape-Code at line ws-18-lines col 77  with foreground-color 6 update UPPER.\n*>\n main-output.\n     if       Escape-Code = \"B\"\n              perform  get-pa-desc of analysis-data through  main-exit of analysis-data.\n*>\n     if       Escape-Code = \"Q\" or \"K\"\n              go to  main-end.\n*>\n     perform  Analysis-Write.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n     add      1  to  lin.\n*>\n     if       lin  >  ws-22-lines\n              perform  display-outline\n              move  6  to  lin.\n     go       to product-loop.\n*>\n main-end.\n     perform  Analysis-Close.\n*>\n main-exit.   exit section.\n*>\n Amend        section.\n*>===================\n*>\n     perform  Analysis-Open.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n*>\n product-input.\n     perform  display-outline.\n     move     6  to  lin.\n*>\n product-loop.\n     move     2 to cole.\n     move     spaces to pa-group.\n     accept   pa-group at curs with foreground-color 3 update.\n     if       pa-group = spaces\n              go to  main-end.\n*>\n     move     \"S\" to pa-system.\n     move     1 to File-Key-No.\n     perform  Analysis-Read-Indexed. *> read analysis-file  invalid key\n     if       FS-Reply = 21 or = 23\n              display  SL009 at line ws-23-lines col 01 with foreground-color 3\n              go to  product-loop.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n*>\n     display  \" \" at line ws-23-lines col 1 with erase eol.\n     perform  product-display  of  Show.\n*>\n get-details.\n     perform  analysis-data.\n*>\n     move     \"S\"  to   Escape-Code.\n     display  Escape-Code at line ws-18-lines col 77  with foreground-color 6.\n     accept   Escape-Code at line ws-18-lines col 77  with foreground-color 6 update UPPER.\n*>\n main-output.\n     if       Escape-Code = \"B\"\n              perform  get-pa-desc of analysis-data  through  main-exit of analysis-data.\n*>\n     if       Escape-Code = \"Q\"\n              go to    main-end.\n*>\n     if       Escape-Code = \"K\"\n              move     1 to File-Key-No\n              perform  Analysis-Delete\n              if       FS-Reply not = zero\n                       perform  aa101-Check-4-Errors\n              end-if\n     else\n              perform  Analysis-Rewrite\n              if       FS-Reply not = zero\n                       perform  aa101-Check-4-Errors\n              end-if\n     end-if\n*>\n     add      1  to  lin.\n     if       lin  >  ws-21-lines\n              perform  display-outline\n              move  6  to  lin.\n     go to    product-loop.\n*>\n main-end.\n     perform  Analysis-Close.\n*>\n main-exit.   exit section.\n*>\n Report1      section.\n*>===================\n*>\n     perform  Analysis-Open-Input.\n     open     output  print-file.\n     move     zero  to  a.\n     perform  headings.\n*>\n read-loop.\n     perform  Analysis-Read-Next.\n     if       FS-Reply = 10\n              go to  end-report.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n*>\n*> AS PA-SYSTEM = P or S therefore 1st time read of S is eof for\n*>  logical end of purchase records.  Do ALL Ledgers\n*>\n     if       pa-system not = \"S\"\n        and   not Print-All\n              go to read-loop.\n*>\n     if       pa-second = space\n       and    pa-gl = zero\n              move  spaces  to  print-record\n              write print-record after 1\n              add 1 to line-cnt\n              move  \"Group\"  to  l6-type\n              if  Print-All\n                  move pa-system to l6-ledger\n              end-if\n     else\n              move  \"Detail\" to  l6-type\n              move space to l6-ledger\n     end-if\n     if       line-cnt > 70\n              perform headings.\n*>\n     if       pa-second not = spaces\n         and  pa-gl = zero\n              move 1 to ws-err-flag.\n     move     pa-group to  l6-code.\n     move     pa-gl to l6-gl.\n     move     pa-desc  to  l6-desc.\n     move     pa-print  to  l6-print.\n*>\n     write    print-record  from  line-6 after 1.\n     add      1 to line-cnt.\n     if       line-cnt > 70\n              perform  headings.\n*>\n     go       to read-loop.\n*>\n headings.\n     add      1  to  a.\n     move     a  to  l1-page.\n     perform  zz070-Convert-Date.\n     move     ws-date to l2-date.\n     move     usera to  l2-user.\n*>\n     if       a not = 1\n              write print-record from line-1 after page\n              move spaces to print-record\n              write print-record after 1\n     else\n              write print-record from line-1 before 1.\n     write    print-record  from  line-2 after 1.\n     write    print-record  from  line-4 after 2.\n     move     5 to line-cnt.\n*>\n end-report.\n     if       ws-err-flag not = zero\n              move \"Warning: One or more P.A. codes contain a zero value for IRS or GL numbers\"\n                              to print-record\n              write print-record after 2.\n*>\n main-end.\n     close    print-file.\n     perform  Analysis-Close.\n     call     \"SYSTEM\" using Print-Report.\n*>\n main-exit.   exit section.\n*>\n Show         section.\n*>===================\n*>\n     perform  Analysis-Open-Input.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n     move     6  to  lin.\n     perform  display-outline.\n     move     6  to  lin.\n     display  \"Enter <X> to exit or <Return> to continue...[ ]\"  at line ws-23-lines col 31 with foreground-color 2.\n*>\n Show-read.\n     if       lin > ws-21-lines\n              go to main-end.\n*>\n sread.\n     perform  Analysis-Read-Next.\n     if       FS-Reply = 10\n              move ws-lines  to  lin\n              go to  accept-of-show.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n*>\n*> AS PA-SYSTEM = P or S therefore 1st time read of S is eof for\n*>  logical end of purchase records.\n*>\n     if       pa-system not = \"S\"\n              go to sread.\n*>\n*>  Above is different in PL070 re: ws-lines to lin\n*>\n product-display.\n     move     2 to cole.\n     display  pa-group at curs with foreground-color 3.\n     move     8 to cole.\n     display  pa-gl at curs with foreground-color 3.\n     move     20 to cole.\n     display  pa-desc at curs with foreground-color 3.\n*>\n     if       pa-second = space\n       and    pa-gl = zero\n              move \"Group\"  to l6-type\n     else\n              move \"Detail\" to l6-type.\n     move     48 to cole.\n     display  pa-print at curs with foreground-color 3.\n     move     55 to cole.\n     display  l6-type at curs with foreground-color 3.\n*>\n accept-of-show.\n     add      1  to  lin.\n     if       lin  <  ws-22-lines\n              go to  Show-read.\n*>\n     accept   ws-reply at line ws-23-lines col 76  with foreground-color 6 update.\n     move     function upper-case (ws-reply) to ws-reply.\n     if       lin > ws-23-lines\n              go to main-end.\n     if       ws-reply not = \"X\"\n              perform display-outline\n              move 6 to lin\n              go to Show-read.\n*>\n main-end.\n     perform  Analysis-Close.\n*>\n main-exit.   exit section.\n*>\n*>****************************************************************\n*>       S E R V I C E    R O U T I N E S                        *\n*>****************************************************************\n*>\n display-heading         section.\n*>==============================\n*>\n     display  prog-name at 0101 with erase eos foreground-color 2.\n     perform  zz070-Convert-Date.\n     display  ws-date at 0171 with foreground-color 2.\n*>\n     if       menu-reply =  0\n              display \"Product Analysis File Set-Up & Maintenance\" at 0120 with foreground-color 2\n              display \"Function  Menu\" at 0434         with foreground-color 2.\n*>\n     if       menu-reply =  1\n              display \"Set-Up P/A Records\" at 0132     with foreground-color 2.\n*>\n     if       menu-reply =  2\n              display \"Amend/Delete P/A Records\" at 0129 with foreground-color 2.\n*>\n     if       menu-reply =  3\n              display \"Print P/A Records\" at 0132  with foreground-color 2.\n*>\n     if       menu-reply = 4\n              display \"Print All P/A Records\" at 0132 with foreground-color 2.\n*>\n     if       menu-reply =  5\n              display \"Display P/A Records\" at 0131 with foreground-color 2.\n*>\n main-exit.   exit section.\n*>\n display-outline         section.\n*>==============================\n*>\n     display  \"Code   G/L Nos          Description\" at 0401  with foreground-color 2.\n     display  \"Ref\" at 0448 with foreground-color 2.\n     display  \"Type\" at 0456 with foreground-color 2.\n     move     6 to lin.\n     move     1 to cole.\n*>\n main-loop.\n     display  \"[  ]  [      ]    [                        ]  [   ]          \" at curs with foreground-color 2.\n*>\n     add      1  to  lin.\n     if       lin < ws-23-lines\n              go to  main-loop.\n*>\n     if       menu-reply not = 5\n              display \"*******************\" at line ws-17-lines col 62 with foreground-color 2\n              display \"*\" at line ws-18-lines col 62  with foreground-color 2\n              display \"*\" at line ws-18-lines col 80  with foreground-color 2\n              display \"*\" at line ws-19-lines col 62  with foreground-color 2\n              display \"*\" at line ws-19-lines col 80  with foreground-color 2\n              display \"*\" at line ws-20-lines col 62  with foreground-color 2\n              display \"*\" at line ws-20-lines col 80  with foreground-color 2\n              display \"*\" at line ws-21-lines col 62  with foreground-color 2\n              display \"*\" at line ws-21-lines col 80  with foreground-color 2\n              display \"*\" at line ws-22-lines col 62  with foreground-color 2\n              display \"*\" at line ws-22-lines col 80  with foreground-color 2\n              display \"*******************\"  at line ws-23-lines col 62 with foreground-color 2.\n*>\n     if       menu-reply not = 5\n              display \"Escape Code [ ]\" at line ws-18-lines col 64 with foreground-color 2\n              display \"<B> = Back\" at line ws-19-lines col 64      with foreground-color 2\n              display \"<S> = Save\" at line ws-20-lines col 64      with foreground-color 2\n              display \"<Q> = Quit\" at line ws-21-lines col 64      with foreground-color 2\n              display \"<K> = Deleted\" at line ws-22-lines col 64   with foreground-color 2.\n*>\n main-exit.   exit section.\n*>\n analysis-data           section.\n*>==============================\n*>\n     move     8 to cole.\n     accept   pa-gl at curs with foreground-color 3 update.\n*>\n get-pa-desc.\n     move     20 to cole.\n     accept   pa-desc  at curs with foreground-color 3 update.\n*>\n get-pa-print.\n     if       menu-reply = 1\n              move  pa-group to  pa-print.\n     move     48 to cole.\n     accept   pa-print at curs with foreground-color 3 update.\n*>\n main-exit.   exit section.\n*>\n P-A-Setup               section.\n*>==============================\n*>\n*> Create default entries for Analysis and Value files on Sales and Purchases\n*>\n     perform  Value-Open.\n     perform  Analysis-Open-Output.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n*> SALES\n     move     zeros  to pa-gl.\n     move     spaces to pa-print.\n     move     \"S\" to pa-system.\n     move     \"v \" to pa-group.\n     move     \"VAT Control\" to pa-desc.\n     perform  create-value.\n     move     \"vi\" to pa-group.\n     move     \"VAT Input Invoices/CN's\" to pa-desc.\n     perform  create-value.\n     move     \"vj\" to pa-group.\n     move     \"VAT Input Receipts\" to pa-desc.\n     perform  create-value.\n     move     \"z \" to pa-group.\n     move     \"Computer Control\" to pa-desc.\n     perform  create-value.\n     move     \"zc\" to pa-group.\n     move     \"Sales Carriage Charges\" to pa-desc.\n     move     \"P&P\"   to pa-print.\n     perform  create-value.\n     move     \"zd\" to pa-group.\n     move     \"Sales Late Charges\" to pa-desc.\n     move     \"LCG\"   to pa-print.\n     perform  create-value.\n     move     \"vo\" to pa-group.\n     move     spaces   to pa-print.\n     move     \"VAT Output Invoices/CN's\" to pa-desc.\n     perform  create-value.\n     move     \"vp\" to pa-group.\n     move     \"VAT Output Receipts\" to pa-desc.\n     perform  create-value.\n     move     \"a \" to pa-group.\n     move     \"Default Group\" to pa-desc.\n     perform  create-value.\n     move     \"a1\" to pa-group.\n     move     \"Default Sales\" to pa-desc.\n     perform  create-value.\n*>\n*> PURCHASE\n*>\n     move     \"P\" to pa-system.\n     move     \"za\" to pa-group.\n     move     \"Purch Carriage Charges\" to pa-desc.\n     move     \"P&P\"   to pa-print.\n     perform  create-value.\n     move     \"zb\" to pa-group.\n     move     \"Purch Late Charges\" to pa-desc.\n     move     \"LCG\"   to pa-print.\n     perform  create-value.\n     move     spaces  to pa-print.\n     move     \"a \" to pa-group.\n     move     \"Default Group\" to pa-desc.\n     perform  create-value.\n     move     \"a1\" to pa-group.\n     move     \"Default Purchases\" to pa-desc.\n     perform  create-value.\n     move     \"a2\" to PA-Group.\n     move     \"Purch for Stock\" to pa-desc.\n     perform  create-value.\n     move     \"a3\" to PA-Group.\n     move     \"Purch for Office Furnit\"  to pa-desc.\n     perform  create-value.\n     move     \"a4\" to PA-Group.\n     move     \"Purch for Office Consum\"  to pa-desc.\n     perform  create-value.\n     move     \"a5\" to PA-Group.\n     move     \"Purch for Office Equipmt\" to pa-desc.\n     perform  create-value.\n     move     \"a6\" to PA-Group.\n     move     \"Purch for Office Autos\"   to pa-desc.\n     perform  create-value.\n     move     \"a7\" to PA-Group.\n     move     \"Purch for Travel\" to pa-desc.\n     perform  create-value.\n*>\n     perform  Value-Close.\n     perform  Analysis-Close.\n*>\n     if       ws-Process-Func not = 1\n              display  \" \" at line ws-23-lines col 01 with erase eol.\n     go       to main-exit.\n*>\n Create-Value.\n*>\n     move     WS-PA-Code to VA-Code.\n*>     read     value-file invalid key\n     move     1 to File-Key-No.\n     perform  Value-Read-Indexed.\n     if       FS-Reply = 21 or = 23\n              move WS-Analysis-Record to WS-Value-Record\n              move zero to VA-V-This va-v-last VA-V-Year\n                           VA-T-This VA-T-Last VA-T-Year\n              perform  Value-Write\n              if       FS-Reply not = zero\n                       perform  aa102-Check-4-Errors\n              end-if\n     end-if\n*>\n     perform  Analysis-Write.\n     if       FS-Reply not = zero\n              perform  aa101-Check-4-Errors.\n*>\n main-exit.   exit section.\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     to-day (7:4) to ws-Intl-Year.\n     move     to-day (4:2) to ws-Intl-Month.\n     move     to-day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 370
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 6,
+    "cognitive": 3,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 84,
+      "totalOperators": 89,
+      "totalOperands": 178,
+      "vocabulary": 85,
+      "length": 267,
+      "volume": 1711.3073799487663
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

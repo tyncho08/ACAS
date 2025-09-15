@@ -1,0 +1,1036 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl055.cbl",
+  "fileName": "sl055.cbl",
+  "timestamp": "2025-09-15T16:25:30.184Z",
+  "programId": "sl055",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 132
+      },
+      {
+        "name": "file",
+        "line": 143
+      },
+      {
+        "name": "working-storage",
+        "line": 151
+      },
+      {
+        "name": "linkage",
+        "line": 262
+      },
+      {
+        "name": "da000-mainline",
+        "line": 306
+      },
+      {
+        "name": "db000-Create",
+        "line": 528
+      },
+      {
+        "name": "exit",
+        "line": 589
+      },
+      {
+        "name": "dc000-Store-Specials",
+        "line": 591
+      },
+      {
+        "name": "exit",
+        "line": 625
+      },
+      {
+        "name": "dd000-Extract",
+        "line": 627
+      },
+      {
+        "name": "exit",
+        "line": 693
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 695
+      },
+      {
+        "name": "exit",
+        "line": 723
+      },
+      {
+        "name": "a01-Eval-Status",
+        "line": 725
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 133
+      },
+      {
+        "name": "file-defs",
+        "line": 276
+      },
+      {
+        "name": "da010-Read-Loop",
+        "line": 365
+      },
+      {
+        "name": "end-perform",
+        "line": 425
+      },
+      {
+        "name": "da030-Skip-Invoice",
+        "line": 473
+      },
+      {
+        "name": "da040-Close-Files",
+        "line": 482
+      },
+      {
+        "name": "da999-Menu-Exit",
+        "line": 521
+      },
+      {
+        "name": "goback",
+        "line": 522
+      },
+      {
+        "name": "DB000-Create-Main",
+        "line": 531
+      },
+      {
+        "name": "db010-Create-Anal",
+        "line": 575
+      },
+      {
+        "name": "db999-Main-Exit",
+        "line": 588
+      },
+      {
+        "name": "dc999-Main-Exit",
+        "line": 624
+      },
+      {
+        "name": "end-if",
+        "line": 690
+      },
+      {
+        "name": "dd999-Main-Ex",
+        "line": 692
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 722
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 328,
+        "type": "DYNAMIC",
+        "using": [
+          "File-15",
+          "*>",
+          "Analysis",
+          "File-Info",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "*>",
+          "This",
+          "should",
+          "have",
+          "happened",
+          "in",
+          "sl910",
+          "invoice",
+          "create",
+          "move",
+          "1",
+          "to",
+          "ws-Process-Func",
+          "ws-Sub-Function",
+          "*>",
+          "Create",
+          "default",
+          "entries",
+          "in",
+          "Analysis",
+          "call",
+          "\"sl070\"",
+          "using",
+          "ws-calling-data",
+          "*>",
+          "and",
+          "Value",
+          "files",
+          "system-record",
+          "to-day",
+          "file-defs",
+          "call",
+          "\"CBL_CHECK_FILE_EXIST\"",
+          "using",
+          "File-15",
+          "*>",
+          "only",
+          "if",
+          "user",
+          "aborts",
+          "File-Info",
+          "*>",
+          "creation",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "Only",
+          "if",
+          "the",
+          "call",
+          "failed",
+          "for",
+          "some",
+          "unknown",
+          "reason",
+          "display",
+          "SL125",
+          "at",
+          "2301",
+          "display",
+          "SL002",
+          "at",
+          "2401",
+          "if",
+          "WS-Caller",
+          "not",
+          "=",
+          "\"xl150\"",
+          "*>",
+          "unlikely",
+          "as",
+          "sl070",
+          "was",
+          "run"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "Into",
+        "line": 62,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 121,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 130,
+        "replacing": null
+      },
+      {
+        "name": "seloi2",
+        "line": 135,
+        "replacing": null
+      },
+      {
+        "name": "selinv",
+        "line": 136,
+        "replacing": null
+      },
+      {
+        "name": "selval",
+        "line": 137,
+        "replacing": null
+      },
+      {
+        "name": "selanal",
+        "line": 138,
+        "replacing": null
+      },
+      {
+        "name": "fdoi2",
+        "line": 145,
+        "replacing": null
+      },
+      {
+        "name": "slwsoi",
+        "line": 146,
+        "replacing": null
+      },
+      {
+        "name": "fdinv2",
+        "line": 147,
+        "replacing": null
+      },
+      {
+        "name": "fdval",
+        "line": 148,
+        "replacing": null
+      },
+      {
+        "name": "fdanal",
+        "line": 149,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 156,
+        "replacing": null
+      },
+      {
+        "name": "wsval",
+        "line": 157,
+        "replacing": null
+      },
+      {
+        "name": "wsanal",
+        "line": 158,
+        "replacing": null
+      },
+      {
+        "name": "slwsinv2",
+        "line": 159,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 260,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 266,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 268,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 269,
+        "replacing": null
+      },
+      {
+        "name": "wssys4",
+        "line": 270,
+        "replacing": null
+      },
+      {
+        "name": "FileStat-Msgs",
+        "line": 299,
+        "replacing": null
+      },
+      {
+        "name": "FileStat-Msgs",
+        "line": 727,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 732,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "a01-Eval-Status",
+        "thru": null,
+        "line": 286
+      },
+      {
+        "target": "Value-Open-Input",
+        "thru": null,
+        "line": 320
+      },
+      {
+        "target": "Value-Close",
+        "thru": null,
+        "line": 322
+      },
+      {
+        "target": "Value-Open-Output",
+        "thru": null,
+        "line": 323
+      },
+      {
+        "target": "Value-Close",
+        "thru": null,
+        "line": 325
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 354
+      },
+      {
+        "target": "Invoice-Open",
+        "thru": null,
+        "line": 357
+      },
+      {
+        "target": "Value-Open",
+        "thru": null,
+        "line": 358
+      },
+      {
+        "target": "Analysis-Open",
+        "thru": null,
+        "line": 359
+      },
+      {
+        "target": "until",
+        "thru": null,
+        "line": 366
+      },
+      {
+        "target": "perform",
+        "thru": null,
+        "line": 366
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 372
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 375
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 378
+      },
+      {
+        "target": "Value-Read-Indexed",
+        "thru": null,
+        "line": 384
+      },
+      {
+        "target": "db000-Create",
+        "thru": null,
+        "line": 386
+      },
+      {
+        "target": "Value-Write",
+        "thru": null,
+        "line": 399
+      },
+      {
+        "target": "Value-Rewrite",
+        "thru": null,
+        "line": 401
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 404
+      },
+      {
+        "target": "Value-Read-Indexed",
+        "thru": null,
+        "line": 408
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 410
+      },
+      {
+        "target": "Value-Rewrite",
+        "thru": null,
+        "line": 421
+      },
+      {
+        "target": "Invoice-Rewrite",
+        "thru": null,
+        "line": 423
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 424
+      },
+      {
+        "target": "dd000-Extract",
+        "thru": null,
+        "line": 439
+      },
+      {
+        "target": "Invoice-Rewrite",
+        "thru": null,
+        "line": 442
+      },
+      {
+        "target": "Invoice-Rewrite",
+        "thru": null,
+        "line": 470
+      },
+      {
+        "target": "Invoice-Start",
+        "thru": null,
+        "line": 477
+      },
+      {
+        "target": "dc000-Store-Specials",
+        "thru": null,
+        "line": 486
+      },
+      {
+        "target": "dc000-Store-Specials",
+        "thru": null,
+        "line": 490
+      },
+      {
+        "target": "dc000-Store-Specials",
+        "thru": null,
+        "line": 494
+      },
+      {
+        "target": "dc000-Store-Specials",
+        "thru": null,
+        "line": 498
+      },
+      {
+        "target": "Invoice-Close",
+        "thru": null,
+        "line": 499
+      },
+      {
+        "target": "Value-Close",
+        "thru": null,
+        "line": 500
+      },
+      {
+        "target": "Analysis-Close",
+        "thru": null,
+        "line": 501
+      },
+      {
+        "target": "Analysis-Read-Indexed",
+        "thru": null,
+        "line": 535
+      },
+      {
+        "target": "Analysis-Read-Indexed",
+        "thru": null,
+        "line": 552
+      },
+      {
+        "target": "Value-Write",
+        "thru": null,
+        "line": 561
+      },
+      {
+        "target": "Analysis-Read-Indexed",
+        "thru": null,
+        "line": 565
+      },
+      {
+        "target": "Analysis-Write",
+        "thru": null,
+        "line": 581
+      },
+      {
+        "target": "Analysis-Write",
+        "thru": null,
+        "line": 584
+      },
+      {
+        "target": "Value-Read-Indexed",
+        "thru": null,
+        "line": 597
+      },
+      {
+        "target": "db000-Create",
+        "thru": null,
+        "line": 599
+      },
+      {
+        "target": "Value-Write",
+        "thru": null,
+        "line": 608
+      },
+      {
+        "target": "Value-Rewrite",
+        "thru": null,
+        "line": 610
+      },
+      {
+        "target": "Value-Read-Indexed",
+        "thru": null,
+        "line": 614
+      },
+      {
+        "target": "Value-Rewrite",
+        "thru": null,
+        "line": 622
+      },
+      {
+        "target": "a01-Eval-Status",
+        "thru": null,
+        "line": 684
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "spaces",
+        "to": "exception-msg",
+        "line": 298
+      },
+      {
+        "from": "24",
+        "to": "ws-env-lines ws-lines\n     else\n              move  ws-env-lines   to ws-lines\n     end-if\n     subtract 1 from ws-lines giving ws-23-lines",
+        "line": 311
+      },
+      {
+        "from": "1",
+        "to": "ws-Process-Func ws-Sub-Function    *> Create default entries in Analysis\n                    call \"sl070\" using ws-calling-data           *> and Value files\n                                       system-record\n                                       to-day\n                                       file-defs\n                    call  \"CBL_CHECK_FILE_EXIST\" using File-15   *> only if user aborts\n                                                       File-Info *> creation\n                    if    return-code not = zero          *> not = zero - No file found Only if the call failed for some unknown reason\n                          display  SL125  at 2301\n                          display  SL002  at 2401\n                          if     WS-Caller not = \"xl150\"  *> unlikely as sl070 was run",
+        "line": 332
+      },
+      {
+        "from": "8",
+        "to": "WS-Term-Code\n                          goback\n                    end-if\n              end-if\n     end-if\n     move     1 to File-Key-No",
+        "line": 345
+      },
+      {
+        "from": "\"S\"",
+        "to": "va-system\n              move     il-pa to va-group\n              move     1     to v-exists\n              move     1 to File-Key-No\n              perform  Value-Read-Indexed\n              if       fs-reply = 21 or = 23\n                       perform  db000-Create\n                       move zero to v-exists\n              end-if\n              add      1  to  VA-T-This\n              add      1  to  VA-T-Year\n              if       il-type not = 3\t\t\t*> Cr",
+        "line": 380
+      },
+      {
+        "from": "space",
+        "to": "va-second\n              move     1 to File-Key-No\n              perform  Value-Read-Indexed\n              if       fs-reply = 21 or = 23\n                       exit perform cycle\n              end-if\n              add      1 to VA-T-This\n              add      1 to VA-T-Year\n              if       il-type not = 3\n                       add il-net to  VA-V-This\n                       add il-net to  VA-V-Year\n              else\n                       subtract il-net from VA-V-This\n                       subtract il-net from VA-V-Year\n              end-if\n              perform  Value-Rewrite\n              move     \"Z\"  to  il-update \t\t*> Analysied flag changed from z (1/6/13)\n              perform  Invoice-Rewrite\n              exit     perform cycle\n     end-perform",
+        "line": 406
+      },
+      {
+        "from": "1",
+        "to": "ws-p-flag\n              go to da030-Skip-Invoice",
+        "line": 436
+      },
+      {
+        "from": "ih-carriage",
+        "to": "work-2",
+        "line": 456
+      },
+      {
+        "from": "ih-deduct-amt",
+        "to": "work-2",
+        "line": 462
+      },
+      {
+        "from": "\"Z\"",
+        "to": "ih-update",
+        "line": 469
+      },
+      {
+        "from": "zeros",
+        "to": "item-nos",
+        "line": 475
+      },
+      {
+        "from": "\"Svo\"",
+        "to": "va-code",
+        "line": 483
+      },
+      {
+        "from": "ws-vat-totalt",
+        "to": "work-3",
+        "line": 484
+      },
+      {
+        "from": "ws-vat-totalv",
+        "to": "work-2",
+        "line": 485
+      },
+      {
+        "from": "\"vp\"",
+        "to": "va-group",
+        "line": 487
+      },
+      {
+        "from": "ws-vatr-totalt",
+        "to": "work-3",
+        "line": 488
+      },
+      {
+        "from": "ws-vatr-totalv",
+        "to": "work-2",
+        "line": 489
+      },
+      {
+        "from": "\"zc\"",
+        "to": "va-group",
+        "line": 491
+      },
+      {
+        "from": "ws-carr-totalt",
+        "to": "work-3",
+        "line": 492
+      },
+      {
+        "from": "ws-carr-totalv",
+        "to": "work-2",
+        "line": 493
+      },
+      {
+        "from": "\"zd\"",
+        "to": "va-group",
+        "line": 495
+      },
+      {
+        "from": "ws-disc-totalt",
+        "to": "work-3",
+        "line": 496
+      },
+      {
+        "from": "ws-disc-totalv",
+        "to": "work-2",
+        "line": 497
+      },
+      {
+        "from": "va-code",
+        "to": "WS-PA-Code",
+        "line": 532
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 534
+      },
+      {
+        "from": "WS-Analysis-Record",
+        "to": "WS-Value-Record\n     move     zero  to  VA-T-This  va-t-last VA-T-Year\n                        VA-V-This  va-v-last VA-V-Year",
+        "line": 539
+      },
+      {
+        "from": "va-code",
+        "to": "save-code",
+        "line": 546
+      },
+      {
+        "from": "space",
+        "to": "va-second",
+        "line": 548
+      },
+      {
+        "from": "va-code",
+        "to": "WS-PA-Code",
+        "line": 549
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 551
+      },
+      {
+        "from": "save-code",
+        "to": "WS-PA-Code\n              go to db999-Main-Exit",
+        "line": 554
+      },
+      {
+        "from": "WS-Analysis-Record",
+        "to": "WS-Value-Record\n     move     zero  to  VA-T-This  va-t-last  VA-T-Year\n                        VA-V-This  va-v-last  VA-V-Year",
+        "line": 557
+      },
+      {
+        "from": "save-code",
+        "to": "va-code  WS-PA-Code",
+        "line": 563
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 564
+      },
+      {
+        "from": "WS-Analysis-Record",
+        "to": "WS-Value-Record\n     move     zero  to  VA-T-This  va-t-last  VA-T-Year\n                        VA-V-This  va-v-last  VA-V-Year",
+        "line": 569
+      },
+      {
+        "from": "va-code",
+        "to": "WS-PA-Code",
+        "line": 576
+      },
+      {
+        "from": "zero",
+        "to": "pa-gl",
+        "line": 577
+      },
+      {
+        "from": "spaces",
+        "to": "pa-print",
+        "line": 578
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 580
+      },
+      {
+        "from": "space",
+        "to": "pa-second\n              perform  Analysis-Write",
+        "line": 583
+      },
+      {
+        "from": "1",
+        "to": "ws-Anal-Flag",
+        "line": 585
+      },
+      {
+        "from": "1",
+        "to": "v-exists",
+        "line": 594
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 596
+      },
+      {
+        "from": "zero",
+        "to": "v-exists",
+        "line": 600
+      },
+      {
+        "from": "space",
+        "to": "va-second",
+        "line": 612
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 613
+      },
+      {
+        "from": "ih-p-c",
+        "to": "oi-p-c",
+        "line": 637
+      },
+      {
+        "from": "ih-invoice",
+        "to": "oi-invoice",
+        "line": 638
+      },
+      {
+        "from": "ih-customer",
+        "to": "oi-customer",
+        "line": 639
+      },
+      {
+        "from": "ih-date",
+        "to": "oi-date",
+        "line": 640
+      },
+      {
+        "from": "zero",
+        "to": "oi-b-nos oi-b-item",
+        "line": 641
+      },
+      {
+        "from": "ih-order",
+        "to": "oi-description",
+        "line": 642
+      },
+      {
+        "from": "ih-net",
+        "to": "oi-net",
+        "line": 643
+      },
+      {
+        "from": "ih-extra",
+        "to": "oi-extra",
+        "line": 644
+      },
+      {
+        "from": "ih-carriage",
+        "to": "oi-carriage",
+        "line": 645
+      },
+      {
+        "from": "ih-vat",
+        "to": "oi-vat",
+        "line": 646
+      },
+      {
+        "from": "ih-c-vat",
+        "to": "oi-c-vat",
+        "line": 647
+      },
+      {
+        "from": "ih-e-vat",
+        "to": "oi-e-vat",
+        "line": 648
+      },
+      {
+        "from": "ih-discount",
+        "to": "oi-discount",
+        "line": 649
+      },
+      {
+        "from": "zero",
+        "to": "oi-paid",
+        "line": 650
+      },
+      {
+        "from": "ih-deduct-amt",
+        "to": "oi-deduct-amt",
+        "line": 651
+      },
+      {
+        "from": "ih-deduct-vat",
+        "to": "oi-deduct-vat",
+        "line": 652
+      },
+      {
+        "from": "ih-deduct-days",
+        "to": "oi-deduct-days",
+        "line": 653
+      },
+      {
+        "from": "zero",
+        "to": "oi-status oi-date-cleared oi-days",
+        "line": 654
+      },
+      {
+        "from": "ih-type",
+        "to": "oi-type",
+        "line": 655
+      },
+      {
+        "from": "space",
+        "to": "oi-applied oi-unapl oi-hold-flag",
+        "line": 656
+      },
+      {
+        "from": "ih-cr",
+        "to": "oi-cr",
+        "line": 669
+      },
+      {
+        "from": "\"Z\"",
+        "to": "ih-status",
+        "line": 680
+      },
+      {
+        "from": "\"A\"",
+        "to": "ih-status-A",
+        "line": 681
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 703
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 706
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit",
+        "line": 710
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 717
+      },
+      {
+        "from": "spaces",
+        "to": "exception-msg",
+        "line": 726
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "error when run by xl150.\n*> 10/12/22 vbc   .12 Added para after some sections 4 GC 3.2 warning msgs.\n*> 04/05/23 vbc - .13 Changed Eval-Status to a01-Eval-Status.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*> 18/01/25 vbc - .14 Replace SL123 with SL125 & 123 deleted.\n*>                    Make da010-Read-Loop an inline perform.\n*> 26/08/25 vbc   .15 Change description of Emergency anal. rec.\n*>                    Added new msgs 124, 126 for it.\n*>                    Added test for fs-reply on write itm2.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> These files and programs is part of the Applewood Computers Accounting\n*> System and is copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms of the GNU General Public License as published by the\n*> Free Software Foundation; version 3 and later as revised for personal\n*> usage only and that includes for use within a business but without\n*> repackaging or for Resale in any way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental mode must get in touch with the copyright holder\n*> with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n*>\n input-output            section.\n file-control.\n*>\n copy \"seloi2.cob\".\n*> copy \"selinv.cob\".\n*> copy \"selval.cob\".\n*> copy \"selanal.cob\".\n*>\n data                    division.\n*>===============================\n*>\n file section.\n*>\n copy \"fdoi2.cob\".\n copy \"slwsoi.cob\".\n*> copy \"fdinv2.cob\".\n*> copy \"fdval.cob\".\n*> copy \"fdanal.cob\".\n*>\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(15)    value \"SL055 (3.02.15)\".\n 77  Exception-Msg       pic x(25)    value spaces.\n*>\n copy \"wsfnctn.cob\".\n copy \"wsval.cob\".  *>      replacing VA-Code    by WS-VA-Code.\n copy \"wsanal.cob\".\n copy \"slwsinv2.cob\".\n 01  WS-Invoice-Record  redefines Invoice-Record\n                                pic x(137).\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n*>     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n*>     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n*>     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n*>     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n 01  File-Info                          value zero.\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n 01  error-code          pic 999.\n*>\n 01  ws-data.\n     03  ws-reply        pic x.\n     03  ws-p-flag       pic 9                value zero.\n     03  ws-Anal-Flag    pic 9                value zero. *> 1 = anal rec created\n     03  save-code       pic xxx.\n     03  v-exists        pic 9.\n     03  ws-inv-amt      pic s9(7)v99  comp-3 value zero.\n     03  work-2          pic s9(7)v99  comp-3 value zero.\n     03  ws-vat-totalv   pic s9(7)v99  comp-3 value zero.\n     03  ws-vatr-totalv  pic s9(7)v99  comp-3 value zero.\n     03  ws-carr-totalv  pic s9(7)v99  comp-3 value zero.\n     03  ws-disc-totalv  pic s9(7)v99  comp-3 value zero.\n     03  work-3          pic s9(5)     comp   value zero.\n     03  ws-vat-totalt   pic s9(5)     comp   value zero.\n     03  ws-vatr-totalt  pic s9(5)     comp   value zero.\n     03  ws-carr-totalt  pic s9(5)     comp   value zero.\n     03  ws-disc-totalt  pic s9(5)     comp   value zero.\n     03  b               pic 99        comp   value zero.\n     03  c               pic 99        comp   value zero.\n     03  ws-env-lines    pic 999       value zero.\n     03  ws-lines        binary-char unsigned value zero.\n     03  ws-23-lines     binary-char unsigned value zero.\n     03  ws-Todays-Year.\n         05  WS-Todays-Year9 pic 9(4)          value zero.\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n 01  Error-Messages.\n*> System Wide\n*>       NONE\n     03  SL002          pic x(31) value \"SL002 Note error and hit return\".\n*> Module specific\n     03  SL121          pic x(40) value \"SL121 Error writing to Open Item 2 File \".\n     03  SL122          pic x(51) value \"SL122 Unprinted Invoices Exist. Correct & Run Again\".\n     03  SL123          pic x(57) value \"SL123 Analyst records with desc, 'Emergency Name' created\".\n     03  SL124          pic x(29) value \"SL124 Analysis record created\".\n     03  SL125          pic x(34) value \"SL125 Analysis File Does Not Exist\".\n     03  SL126          pic x(35) value \"SL126 You will need to update this\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\nlinkage section.\n*>**************\n*>\n 01  to-day              pic x(10).\n copy \"wsnames.cob\".\n\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wssys4.cob\".\n*>\n procedure division using ws-calling-data\n                          system-record\n                          system-record-4\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n*> Declaratives.\n*>\n*> File-Error-On-OTM2 section.\n*>\n*>     use after error procedure on open-item-file-2.\n*> a00-OTM2-Error-1.\n*>     if       fs-reply not = zero\n*>              perform  a01-Eval-Status\n*>              display  SL121         at line ws-23-lines col 1\n*>              display  fs-reply      at line ws-23-lines col 41\n*>              display  Exception-Msg at line ws-23-lines col 44\n*>              display  SL002         at line ws-lines col 01\n*>              accept   ws-reply      at line ws-lines col 33\n*>     end-if\n*>     goback.\n*>\n*> a01-Eval-Status.\n*>==============\n*>\n*>     move     spaces to exception-msg.\n*> copy \"FileStat-Msgs.cpy\"  replacing STATUS by fs-reply\n*>                                     msg    by exception-msg.\n*>\n*> main-exit.   exit.\n*>\n*> end declaratives.\n*>\n da000-mainline section.\n*>=====================\n*>\n     accept   ws-env-lines   from lines.\n     if       ws-env-lines < 24\n              move  24 to ws-env-lines ws-lines\n     else\n              move  ws-env-lines   to ws-lines\n     end-if\n     subtract 1 from ws-lines giving ws-23-lines.\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n     perform  Value-Open-Input.\n     if       fs-reply not = zero\n              perform Value-Close\n              perform Value-Open-Output\n     end-if\n     perform Value-Close.\n*>\n     if       FS-Cobol-Files-Used\n              call  \"CBL_CHECK_FILE_EXIST\" using File-15   *> Analysis\n                                                 File-Info\n              if    return-code not = zero          *> not = zero - No file found\n                                                    *> This should have happened in sl910 invoice create\n                    move 1 to ws-Process-Func ws-Sub-Function    *> Create default entries in Analysis\n                    call \"sl070\" using ws-calling-data           *> and Value files\n                                       system-record\n                                       to-day\n                                       file-defs\n                    call  \"CBL_CHECK_FILE_EXIST\" using File-15   *> only if user aborts\n                                                       File-Info *> creation\n                    if    return-code not = zero          *> not = zero - No file found Only if the call failed for some unknown reason\n                          display  SL125  at 2301\n                          display  SL002  at 2401\n                          if     WS-Caller not = \"xl150\"  *> unlikely as sl070 was run.\n                                 accept WS-Reply at 2435\n                          end-if\n                          move 8 to WS-Term-Code\n                          goback\n                    end-if\n              end-if\n     end-if\n     move     1 to File-Key-No.\n*>\n     display  prog-name at 0101 with foreground-color 2 erase eos.\n     display  \"Invoice Post Extract\" at 1201  with foreground-color 2.\n     perform  zz070-Convert-Date.\n     display  ws-date at 0171 with foreground-color 2.\n*>\n     perform  Invoice-Open.\n     perform  Value-Open.\n     perform  Analysis-Open.\n     open     extend open-item-file-2.\n     if       fs-reply not = zero\n              close open-item-file-2\n              open output open-item-file-2.\n*>\n da010-Read-Loop.\n     perform  until FS-Reply = 10    *> changed 18/01/25 for clean up using inline perform\n              perform  Invoice-Read-Next\n              if       fs-reply = 10\n                       go to da040-Close-Files\n              end-if\n              if       ih-test = zero\n                       exit perform   *> Header-Analysis\n              end-if\n              if       il-analyised\n                       exit perform cycle\n              end-if\n              if       il-product (1:1) = \"/\"\t\t*> comment only\n                       exit perform cycle\n              end-if\n              move     \"S\"   to va-system\n              move     il-pa to va-group\n              move     1     to v-exists\n              move     1 to File-Key-No\n              perform  Value-Read-Indexed\n              if       fs-reply = 21 or = 23\n                       perform  db000-Create\n                       move zero to v-exists\n              end-if\n              add      1  to  VA-T-This\n              add      1  to  VA-T-Year\n              if       il-type not = 3\t\t\t*> Cr. notes\n                       add il-net to  VA-V-This\n                       add il-net to  VA-V-Year\n              else\n                       subtract il-net from VA-V-This\n                       subtract il-net from VA-V-Year\n              end-if\n              if       v-exists  = zero\n                       perform  Value-Write\n              else\n                       perform  Value-Rewrite\n              end-if\n              if       va-second  = space\n                       exit perform cycle\n              end-if\n              move     space  to  va-second\n              move     1 to File-Key-No\n              perform  Value-Read-Indexed\n              if       fs-reply = 21 or = 23\n                       exit perform cycle\n              end-if\n              add      1 to VA-T-This\n              add      1 to VA-T-Year\n              if       il-type not = 3\n                       add il-net to  VA-V-This\n                       add il-net to  VA-V-Year\n              else\n                       subtract il-net from VA-V-This\n                       subtract il-net from VA-V-Year\n              end-if\n              perform  Value-Rewrite\n              move     \"Z\"  to  il-update \t\t*> Analysied flag changed from z (1/6/13)\n              perform  Invoice-Rewrite\n              exit     perform cycle\n     end-perform.\n*>\n da020-Header-Analysis.\t\t\t\t*> Headers only\n     if       ih-analyised and applied\n              go to da010-Read-Loop.\n*>\n     if       ih-type = 4                \t*> Proforma's\n              go to da030-Skip-Invoice.\n*>\n     if       pending\n       or     ih-status-L not = \"L\"\n              move 1 to ws-p-flag\n              go to da030-Skip-Invoice.\n*>\n     perform  dd000-Extract.\n*>\n     if       ih-analyised\n              perform  Invoice-Rewrite\n              go to da010-Read-Loop.\n*>\n     add      ih-c-vat ih-vat ih-e-vat giving work-2.\n     if       ih-type = 3\n              multiply -1 by work-2.\n     if       work-2 not = zero and\n              ih-type not = 1\n              add 1 to ws-vat-totalt\n              add work-2 to ws-vat-totalv.\n     if       work-2 not = zero and\n              ih-type = 1\n              add 1 to ws-vatr-totalt\n              add work-2 to ws-vatr-totalv.\n     move     ih-carriage to work-2.\n     if       ih-type = 3\n              multiply -1 by work-2.\n     if       work-2 not = zero\n              add 1 to ws-carr-totalt\n              add work-2 to ws-carr-totalv.\n     move     ih-deduct-amt to work-2.\n     if       ih-type = 3\n              multiply -1 by work-2.\n     if       work-2 not = zero\n              add 1 to ws-disc-totalt\n              add work-2 to ws-disc-totalv.\n*>\n     move     \"Z\" to ih-update.\n     perform  Invoice-Rewrite.\n     go       to da010-Read-Loop.\n*>\n da030-Skip-Invoice.\n     add      1 to invoice-nos.\n     move     zeros to item-nos.\n     set      fn-not-less-than to true.\n     perform  Invoice-Start.        *>  start invoice-file key not < invoice-key invalid key\n     if       fs-reply = 21 or = 23\n              go to da040-Close-Files.\n     go       to da010-Read-Loop.\n*>\n da040-Close-Files.\n     move     \"Svo\" to va-code.\n     move     ws-vat-totalt to work-3.\n     move     ws-vat-totalv to work-2.\n     perform  dc000-Store-Specials\n     move     \"vp\" to va-group.\n     move     ws-vatr-totalt to work-3.\n     move     ws-vatr-totalv to work-2.\n     perform  dc000-Store-Specials\n     move     \"zc\" to va-group.\n     move     ws-carr-totalt to work-3.\n     move     ws-carr-totalv to work-2.\n     perform  dc000-Store-Specials\n     move     \"zd\" to va-group.\n     move     ws-disc-totalt to work-3.\n     move     ws-disc-totalv to work-2.\n     perform  dc000-Store-Specials\n     perform  Invoice-Close.\n     perform  Value-Close.\n     perform  Analysis-Close.\n     close    open-item-file-2.\n*>\n     if       ws-p-flag not = zero   *> Unprinted invoice are present\n              display SL122        at line ws-23-lines col 1\n              if     WS-Caller not = \"xl150\"\n                     display SL002        at line ws-lines    col 1\n                     accept  ws-reply     at line ws-lines    col 33\n              end-if\n              goback.               *> Yep, I know but just in case extra code goes here!\n*>\n     if       ws-Anal-Flag not = zero\n              display SL123 at 1201 with foreground-color 2\n              display SL126 at 1401 with foreground-color 2\n              if     WS-Caller not = \"xl150\"\n                     display SL002 at 1601 with foreground-color 2\n                     accept ws-reply at 1633\n              end-if\n              goback.                           *> Yep, I know but just in case extra code goes here!\n*>\n da999-Menu-Exit.\n     goback.\n*>\n*>****************************************************************\n*>      P R O C E D U R E S                                      *\n*>****************************************************************\n*>\n db000-Create section.\n*>===================\n*>\n DB000-Create-Main.\n     move     va-code  to  WS-PA-Code.\n*>\n     move     1 to File-Key-No.\n     perform  Analysis-Read-Indexed.\n     if       FS-Reply = 21 or = 23\n              go to db010-Create-Anal.\n*>\n     move     WS-Analysis-Record  to WS-Value-Record\n     move     zero  to  VA-T-This  va-t-last VA-T-Year\n                        VA-V-This  va-v-last VA-V-Year.\n*>\n     if       va-second  = space\n              go to db999-Main-Exit.\n*>\n     move     va-code  to  save-code.\n*>\n     move     space    to  va-second.\n     move     va-code  to  WS-PA-Code.\n*>\n     move     1 to File-Key-No.\n     perform  Analysis-Read-Indexed.\n     if       FS-Reply = 21\n              move  save-code  to  WS-PA-Code\n              go to db999-Main-Exit.\n*>\n     move     WS-Analysis-Record  to WS-Value-Record\n     move     zero  to  VA-T-This  va-t-last  VA-T-Year\n                        VA-V-This  va-v-last  VA-V-Year.\n*>\n     perform  Value-Write.\n*>\n     move     save-code  to  va-code  WS-PA-Code.\n     move     1 to File-Key-No.\n     perform  Analysis-Read-Indexed.\n     if       FS-Reply = 21\n              go to  db999-Main-Exit.\n*>\n     move     WS-Analysis-Record  to WS-Value-Record\n     move     zero  to  VA-T-This  va-t-last  VA-T-Year\n                        VA-V-This  va-v-last  VA-V-Year.\n*>\n     go       to db999-Main-Exit.\n*>\n db010-Create-Anal.\n     move     va-code to WS-PA-Code.\n     move     zero to pa-gl.\n     move     spaces to pa-print.\n     move     \"Emergency Name - Missing\" to pa-desc.\n     move     1 to File-Key-No.\n     perform  Analysis-Write.\n     if       pa-second not = space\n              move space to pa-second\n              perform  Analysis-Write.\n     move     1 to ws-Anal-Flag.\n     go       to db000-Create-Main.\n*>\n db999-Main-Exit.\n     exit     section.\n*>\n dc000-Store-Specials  section.\n*>============================\n*>\n     move     1  to  v-exists.\n*>\n     move     1 to File-Key-No.\n     perform  Value-Read-Indexed.\n     if       fs-Reply = 21\n              perform  db000-Create\n              move zero to v-exists.\n*>\n     add      work-3 to  VA-T-This.\n     add      work-3 to  VA-T-Year.\n     add      work-2 to  VA-V-This.\n     add      work-2 to  VA-V-Year.\n*>\n     if       v-exists  = zero\n              perform  Value-Write\n     else\n              perform  Value-Rewrite.\n*>\n     move     space  to  va-second.\n     move     1 to File-Key-No.\n     perform  Value-Read-Indexed.\n     if       FS-Reply = 21\n              go to dc999-Main-Exit.\n*>\n     add      work-3 to  VA-T-This.\n     add      work-3 to  VA-T-Year.\n     add      work-2 to  VA-V-This.\n     add      work-2 to  VA-V-Year.\n     perform  Value-Rewrite.\n*>\n dc999-Main-Exit.\n     exit     section.\n*>\n dd000-Extract section.\n*>====================\n*>\n*> Only process header records here, drop pro-formas.\n*>  ignore records which have already been copied.\n*>\n     if       applied\n              go to dd999-Main-Ex.\n*>\n     initialize oi-header with filler.\n     move     ih-p-c      to  oi-p-c.\n     move     ih-invoice  to  oi-invoice.\n     move     ih-customer to  oi-customer.\n     move     ih-date     to  oi-date.\n     move     zero        to  oi-b-nos oi-b-item.\n     move     ih-order    to  oi-description.\n     move     ih-net      to  oi-net.\n     move     ih-extra    to  oi-extra.\n     move     ih-carriage to  oi-carriage.\n     move     ih-vat      to  oi-vat.\n     move     ih-c-vat    to  oi-c-vat.\n     move     ih-e-vat    to  oi-e-vat.\n     move     ih-discount to  oi-discount.\n     move     zero        to  oi-paid.\n     move     ih-deduct-amt  to oi-deduct-amt.\n     move     ih-deduct-vat  to oi-deduct-vat.\n     move     ih-deduct-days to oi-deduct-days.\n     move     zero        to  oi-status oi-date-cleared oi-days.   *> hmm, initialised, not needed but acts as a note\n     move     ih-type     to  oi-type.\t\t\t\t   *> oi-days is credit terms, status = open\n     move     space to oi-applied oi-unapl oi-hold-flag.\n*>\n     if       ih-type  = 3                                       *>  Cr. Notes\n              multiply -1  by  oi-deduct-amt\n              multiply -1  by  oi-deduct-vat\n              multiply -1  by  oi-net\n              multiply -1  by  oi-extra\n              multiply -1  by  oi-carriage\n              multiply -1  by  oi-vat\n              multiply -1  by  oi-c-vat\n              multiply -1  by  oi-e-vat\n              multiply -1  by  oi-discount.\n*>\n     move     ih-cr to oi-cr.\n*>\n     if       ih-type not = 1                                    *> not Receipts\n              add ih-net ih-extra ih-carriage ih-discount ih-vat\n                  ih-c-vat ih-e-vat ih-deduct-amt ih-deduct-vat\n                     giving ws-inv-amt.\n     if       ih-type = 2                                        *> Invoice\n              add ws-inv-amt to sl-invoices-this-month.\n     if       ih-type = 3                                        *> Cr. Note\n              add ws-inv-amt to sl-credit-notes-this-month.\n*>\n     move     \"Z\"  to ih-status.\n     move     \"A\"  to ih-status-A.\n     write    oi-header.    *> OTM2\n     if       fs-reply not = zero\n              perform  a01-Eval-Status\n              display  SL121         at line ws-23-lines col 1\n              display  fs-reply      at line ws-23-lines col 41\n              display  Exception-Msg at line ws-23-lines col 44\n              display  SL002         at line ws-lines col 01\n              accept   ws-reply      at line ws-lines col 33\n     end-if.\n*>\n dd999-Main-Ex.\n     exit     section.\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     to-day (7:4) to ws-Intl-Year.\n     move     to-day (4:2) to ws-Intl-Month.\n     move     to-day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>\n a01-Eval-Status section.\n     move     spaces to exception-msg.\n copy \"FileStat-Msgs.cpy\"  replacing STATUS by fs-reply\n                                     msg    by exception-msg.\n*>\n a01-exit.    exit section.\n\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 85
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 95,
+      "totalOperators": 74,
+      "totalOperands": 148,
+      "vocabulary": 96,
+      "length": 222,
+      "volume": 1461.8616751600966
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

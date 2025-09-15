@@ -1,0 +1,570 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl930.cbl",
+  "fileName": "pl930.cbl",
+  "timestamp": "2025-09-15T16:25:48.634Z",
+  "programId": "pl930",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 88
+      },
+      {
+        "name": "file",
+        "line": 100
+      },
+      {
+        "name": "working-storage",
+        "line": 107
+      },
+      {
+        "name": "linkage",
+        "line": 247
+      },
+      {
+        "name": "init-process",
+        "line": 262
+      },
+      {
+        "name": "headings",
+        "line": 398
+      },
+      {
+        "name": "zz060-Convert-Date",
+        "line": 420
+      },
+      {
+        "name": "exit",
+        "line": 453
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 455
+      },
+      {
+        "name": "exit",
+        "line": 483
+      },
+      {
+        "name": "maps04",
+        "line": 485
+      },
+      {
+        "name": "exit",
+        "line": 491
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 91
+      },
+      {
+        "name": "file-defs",
+        "line": 259
+      },
+      {
+        "name": "read-purchase",
+        "line": 283
+      },
+      {
+        "name": "skip-pay-read",
+        "line": 288
+      },
+      {
+        "name": "print-loop",
+        "line": 309
+      },
+      {
+        "name": "loop-back",
+        "line": 361
+      },
+      {
+        "name": "process-cont",
+        "line": 372
+      },
+      {
+        "name": "main-end",
+        "line": 383
+      },
+      {
+        "name": "zz060-Exit",
+        "line": 452
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 482
+      },
+      {
+        "name": "maps04-exit",
+        "line": 490
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 395,
+        "type": "DYNAMIC",
+        "using": [
+          "Print-Report"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 488,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 77,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 87,
+        "replacing": null
+      },
+      {
+        "name": "selpl",
+        "line": 94,
+        "replacing": null
+      },
+      {
+        "name": "selpay",
+        "line": 95,
+        "replacing": null
+      },
+      {
+        "name": "selprint",
+        "line": 96,
+        "replacing": null
+      },
+      {
+        "name": "fdpl",
+        "line": 103,
+        "replacing": null
+      },
+      {
+        "name": "fdpay",
+        "line": 104,
+        "replacing": null
+      },
+      {
+        "name": "fdprint",
+        "line": 105,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command",
+        "line": 110,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 112,
+        "replacing": null
+      },
+      {
+        "name": "wsoi",
+        "line": 113,
+        "replacing": null
+      },
+      {
+        "name": "plwsoi",
+        "line": 114,
+        "replacing": null
+      },
+      {
+        "name": "wspl",
+        "line": 118,
+        "replacing": null
+      },
+      {
+        "name": "plwspay",
+        "line": 119,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 147,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 178,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 250,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 251,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 252,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 493,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 266
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 273
+      },
+      {
+        "target": "Purch-Open-Input",
+        "thru": null,
+        "line": 278
+      },
+      {
+        "target": "Payments-Open-Input",
+        "thru": null,
+        "line": 279
+      },
+      {
+        "target": "headings",
+        "thru": null,
+        "line": 281
+      },
+      {
+        "target": "Payments-Read-Next",
+        "thru": null,
+        "line": 284
+      },
+      {
+        "target": "Purch-Read-Indexed",
+        "thru": null,
+        "line": 295
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "thru": null,
+        "line": 321
+      },
+      {
+        "target": "headings",
+        "thru": null,
+        "line": 354
+      },
+      {
+        "target": "Payments-Read-Next",
+        "thru": null,
+        "line": 373
+      },
+      {
+        "target": "Purch-Close",
+        "thru": null,
+        "line": 393
+      },
+      {
+        "target": "Payments-Close",
+        "thru": null,
+        "line": 394
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 429
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 271
+      },
+      {
+        "from": "prog-name",
+        "to": "l1-prog",
+        "line": 272
+      },
+      {
+        "from": "ws-date",
+        "to": "l1-date",
+        "line": 274
+      },
+      {
+        "from": "usera",
+        "to": "l2-user",
+        "line": 275
+      },
+      {
+        "from": "Print-Spool-Name",
+        "to": "PSN",
+        "line": 277
+      },
+      {
+        "from": "spaces",
+        "to": "print-record\n              write print-record after 1",
+        "line": 291
+      },
+      {
+        "from": "pay-supl-key",
+        "to": "WS-Purch-Key",
+        "line": 294
+      },
+      {
+        "from": "WS-Purch-Key",
+        "to": "l5-key",
+        "line": 298
+      },
+      {
+        "from": "purch-name",
+        "to": "l5-supplier",
+        "line": 299
+      },
+      {
+        "from": "spaces",
+        "to": "l5-key",
+        "line": 301
+      },
+      {
+        "from": "1",
+        "to": "z",
+        "line": 302
+      },
+      {
+        "from": "pay-nos",
+        "to": "a",
+        "line": 303
+      },
+      {
+        "from": "1",
+        "to": "z",
+        "line": 307
+      },
+      {
+        "from": "\"B\"",
+        "to": "l5-method\n     else\n              move \"C\" to l5-method\n     end-if\n     move     pay-invoice (z) to l5-invoice",
+        "line": 314
+      },
+      {
+        "from": "pay-date",
+        "to": "u-bin",
+        "line": 320
+      },
+      {
+        "from": "ws-date",
+        "to": "l5-date",
+        "line": 322
+      },
+      {
+        "from": "bal-0",
+        "to": "l5-0",
+        "line": 340
+      },
+      {
+        "from": "bal-30",
+        "to": "l5-30",
+        "line": 341
+      },
+      {
+        "from": "bal-60",
+        "to": "l5-60",
+        "line": 342
+      },
+      {
+        "from": "bal-90",
+        "to": "l5-90",
+        "line": 343
+      },
+      {
+        "from": "bal-t",
+        "to": "l5-pay",
+        "line": 344
+      },
+      {
+        "from": "zero",
+        "to": "bal-0  bal-30  bal-60  bal-90",
+        "line": 356
+      },
+      {
+        "from": "space",
+        "to": "l5-key  l5-supplier",
+        "line": 357
+      },
+      {
+        "from": "zero",
+        "to": "bal-t",
+        "line": 369
+      },
+      {
+        "from": "1",
+        "to": "z",
+        "line": 380
+      },
+      {
+        "from": "tot-0",
+        "to": "l6-0",
+        "line": 384
+      },
+      {
+        "from": "tot-30",
+        "to": "l6-30",
+        "line": 385
+      },
+      {
+        "from": "tot-60",
+        "to": "l6-60",
+        "line": 386
+      },
+      {
+        "from": "tot-90",
+        "to": "l6-90",
+        "line": 387
+      },
+      {
+        "from": "tot-t",
+        "to": "l6-pay",
+        "line": 388
+      },
+      {
+        "from": "p",
+        "to": "l3-page",
+        "line": 402
+      },
+      {
+        "from": "spaces",
+        "to": "print-record\n              write print-record after 1\n     else\n              write print-record from line-1 before 1\n              write print-record from line-2 before 1\n     end-if\n     write    print-record  from  line-4 after 1",
+        "line": 407
+      },
+      {
+        "from": "spaces",
+        "to": "print-record",
+        "line": 414
+      },
+      {
+        "from": "5",
+        "to": "line-cnt",
+        "line": 416
+      },
+      {
+        "from": "spaces",
+        "to": "ws-Date\n              go to zz060-Exit",
+        "line": 431
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date",
+        "line": 433
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 436
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit",
+        "line": 440
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 447
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 463
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 466
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit",
+        "line": 470
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 477
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n*>**\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n*> copy \"selpl.cob\".\n*> copy \"selpay.cob\".\n copy \"selprint.cob\".\n data                    division.\n*>===============================\n*>\n file section.\n*>-----------\n*>\n*> copy \"fdpl.cob\".\n*> copy \"fdpay.cob\".\n copy \"fdprint.cob\".\n*>\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(15) value \"PL930 (3.02.09)\".\n copy \"print-spool-command.cob\".\n*>\n copy \"wsfnctn.cob\".\n*> copy \"wsoi.cob\".\n copy \"plwsoi.cob\".\n*>\n*> Ex FDs\n*>\n copy \"wspl.cob\".     *> WS-Purch-Record.\n copy \"plwspay.cob\".  *> Pay-Record.\n 01  WS-Pay-Record  redefines Pay-Record.\n     03  filler     pic x(238).\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n*>     03  WS-Purch-Record        pic x.\n*>     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  ws-data.\n     03  a               pic 99.\n     03  z               pic 99.\n     03  p               pic 99       value zero.\n     03  line-cnt        binary-char  value zero.\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n copy \"wsmaps03.cob\".\n*>\n*> 01  Error-Messages.\n*> System Wide\n*> Module specific\n*>     NONE\n*>\n 01  balances.\n     03  bal-0           pic 9(7)v99  value zero.\n     03  bal-30          pic 9(7)v99  value zero.\n     03  bal-60          pic 9(7)v99  value zero.\n     03  bal-90          pic 9(7)v99  value zero.\n     03  bal-t           pic 9(7)v99  value zero.\n     03  tot-0           pic 9(7)v99  value zero.\n     03  tot-30          pic 9(7)v99  value zero.\n     03  tot-60          pic 9(7)v99  value zero.\n     03  tot-90          pic 9(7)v99  value zero.\n     03  tot-t           pic 9(7)v99  value zero.\n\n 01  line-1.\n     03  l1-prog         pic x(53)       value spaces.\n     03  filler          pic x(71)       value \"Payments Due Proof Report\".\n     03  filler          pic x(5)        value \"Page \".\n     03  l3-page         pic zz9.\n*>\n 01  line-2.\n     03  l2-user         pic x(53)       value spaces.\n     03  filler          pic x(25)       value spaces.\n     03  filler          pic x(44)       value spaces.\n     03  l1-date         pic x(10).\n*>\n 01  line-4.\n     03  filler          pic x(38)       value spaces.\n     03  filler          pic x(94)       value\n         \"Folio M    Date     Invoice      Current       30 +\" &\n         \"        60 +        90 +       Total to Pay\".\n*>\n 01  line-5.\n     03  l5-key          pic x(12).\n     03  l5-supplier     pic x(23).\n     03  l5-folio        pic z(7)9b.\n     03  l5-method       pic xb          value space.\n     03  l5-date         pic x(12).\n     03  l5-invoice      pic x(11).\n     03  l5-0            pic z(6)9.99cr  blank when zero.\n     03  l5-30           pic z(6)9.99cr  blank when zero.\n     03  l5-60           pic z(6)9.99cr  blank when zero.\n     03  l5-90           pic z(6)9.99cr  blank when zero.\n     03  filler          pic xxxx        value spaces.\n     03  l5-pay          pic z(6)9.99    blank when zero.\n*>\n 01  line-6.\n     03  filler          pic x(69)       value \"    Total\".\n     03  l6-0            pic z(6)9.99cr  blank when zero.\n     03  l6-30           pic z(6)9.99cr  blank when zero.\n     03  l6-60           pic z(6)9.99cr  blank when zero.\n     03  l6-90           pic z(6)9.99cr  blank when zero.\n     03  filler          pic xxxx        value spaces.\n     03  l6-pay          pic z(6)9.99    blank when zero.\n*>\n 01  line-7.\n     03  filler          pic x(69)       value spaces.\n     03  filler          pic x(12)       value \"  --------  \".\n     03  filler          pic x(12)       value \"  --------  \".\n     03  filler          pic x(12)       value \"  --------  \".\n     03  filler          pic x(12)       value \"  --------  \".\n     03  filler          pic x(4)        value spaces.\n     03  filler          pic x(10)       value \"  ========\". *> was x(12) 28/01/24\n*>\n linkage section.\n*>==============\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n init-process section.\n*>===================\n     display  prog-name at 0101 with foreground-color 2 erase eos.\n     display  \"Payment Due Proof Report\" at 0130 with foreground-color 2.\n     perform  zz070-Convert-Date.\n     display  ws-date at 0171    with foreground-color 2.\n*>\n*> Put the above back it even if does not show up on screen.\n*>\n     move     1 to File-Key-No.  *> Good for all files/tables used here.\n     move     prog-name  to  l1-prog.\n     perform  zz070-Convert-Date.\n     move     ws-date     to  l1-date.\n     move     usera to  l2-user.\n*>\n     move     Print-Spool-Name to PSN.\n     perform  Purch-Open-Input.  *> open input purchase-file  pay-file.\n     perform  Payments-Open-Input.\n     open     output print-file.\n     perform  headings.\n*>\n read-purchase.\n    perform   Payments-Read-Next.  *> read pay-file  next  record at end\n    if        fs-reply = 10\n              go to  main-end.\n*>\n skip-pay-read.\n*>\n     if       line-cnt not = 5\n              move  spaces  to  print-record\n              write print-record after 1.\n     add      1 to line-cnt.\n     move     pay-supl-key  to  WS-Purch-Key.\n     perform  Purch-Read-Indexed.  *> read purchase-file invalid key\n     if       fs-reply = 21 or = 23\n              move all \"Z\" to WS-Purch-Key purch-name.\n     move     WS-Purch-Key  to  l5-key.\n     move     purch-name to  l5-supplier.\n*>\n     move     spaces  to  l5-key.\n     move     1  to  z.\n     move     pay-nos to a.\n     string   pay-supl-key delimited by size\n              \"/\"          delimited by size\n               a           delimited by size into l5-key with pointer z.\n     move     1  to  z.\n*>\n print-loop.\n     if       pay-value (z) = zero\n              go to  loop-back.\n*>\n     if       pay-sortcode not = zero\n              move \"B\" to l5-method\n     else\n              move \"C\" to l5-method\n     end-if\n     move     pay-invoice (z) to l5-invoice.\n     move     pay-folio (z)   to l5-folio.\n     move     pay-date        to u-bin.\n     perform  zz060-Convert-Date.\n     move     ws-date  to  l5-date.\n*>\n     if       pay-period (z) = zero\n              move  pay-value (z)  to  bal-0\n     else\n      if      pay-period (z) = 30\n              move  pay-value (z)  to  bal-30\n      else\n       if     pay-period (z) = 60\n              move  pay-value (z)  to  bal-60\n       else\n        if    pay-period (z) = 90\n              move  pay-value (z)  to  bal-90.\n*>\n     add      pay-value (z)  to  bal-t.\n*>\n*> now to print. What joy!!!!!!.\n*>\n     move     bal-0  to  l5-0.\n     move     bal-30 to  l5-30.\n     move     bal-60 to  l5-60.\n     move     bal-90 to  l5-90.\n     move     bal-t  to  l5-pay.\n*>\n     add      bal-0  to  tot-0.\n     add      bal-30 to  tot-30.\n     add      bal-60 to  tot-60.\n     add      bal-90 to  tot-90.\n*>\n     write    print-record  from  line-5 after 1.\n     add      1 to line-cnt.\n     if       line-cnt > Page-Lines\n              perform  headings.\n*>\n     move     zero  to  bal-0  bal-30  bal-60  bal-90.\n     move     space to  l5-key  l5-supplier.\n*>\n*> now loop back for next item....\n*>\n loop-back.\n     add      1  to  z.\n     if       z  <  10\n              go to  print-loop.\n     if       pay-cont = \"C\"\n              go to process-cont.\n*>\n     add      bal-t  to  tot-t.\n     move     zero   to  bal-t.\n     go       to read-purchase.\n*>\n process-cont.\n     perform  Payments-Read-Next.   *> read pay-file next record at end\n     if       fs-reply = 10\n              add bal-t to tot-t\n              go to main-end.\n*>\n     if       WS-Purch-Key not = pay-supl-key\n              go to skip-pay-read.\n     move     1 to z.\n     go       to print-loop.\n*>\n main-end.\n     move     tot-0  to  l6-0.\n     move     tot-30 to  l6-30.\n     move     tot-60 to  l6-60.\n     move     tot-90 to  l6-90.\n     move     tot-t  to  l6-pay.\n*>\n     write    print-record  from  line-7 after 1.\n     write    print-record  from  line-6 after 1.\n     close    print-file.    *> purchase-file pay-file.\n     perform  Purch-Close.\n     perform  Payments-Close.\n     call     \"SYSTEM\" using Print-Report.\n     exit     program.\n*>\n headings     section.\n*>===================\n*>\n     add      1  to p.\n     move     p to  l3-page.\n*>\n     if       p not = 1\n              write print-record from line-1 after page\n              write print-record from line-2 after 1\n              move  spaces  to  print-record\n              write print-record after 1\n     else\n              write print-record from line-1 before 1\n              write print-record from line-2 before 1\n     end-if\n     write    print-record  from  line-4 after 1.\n     move     spaces  to  print-record.\n     write    print-record  after advancing 1.\n     move     5 to line-cnt.\n*>\n main-exit.   exit.\n*>\n zz060-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in binary to UK/USA/Intl date format\n*>****************************************************\n*> Input:   u-bin\n*> output:  ws-date as uk/US/Inlt date format\n*>          u-date & ws-Date = spaces if invalid date\n*>\n     perform  maps04.\n     if       u-date = spaces\n              move spaces to ws-Date\n              go to zz060-Exit.\n     move     u-date to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz060-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     u-date (7:4) to ws-Intl-Year.\n     move     u-date (4:2) to ws-Intl-Month.\n     move     u-date (1:2) to ws-Intl-Days.\n*>\n zz060-Exit.\n     exit     section.\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     to-day (7:4) to ws-Intl-Year.\n     move     to-day (4:2) to ws-Intl-Month.\n     move     to-day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>\n maps04       section.\n*>*******************\n*>\n     call     \"maps04\"  using  maps03-ws.\n*>\n maps04-exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 74
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 4,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 63,
+      "totalOperators": 43,
+      "totalOperands": 86,
+      "vocabulary": 64,
+      "length": 129,
+      "volume": 774
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

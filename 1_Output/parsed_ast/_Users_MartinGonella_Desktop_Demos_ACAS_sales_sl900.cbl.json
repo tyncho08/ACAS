@@ -1,0 +1,403 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl900.cbl",
+  "fileName": "sl900.cbl",
+  "timestamp": "2025-09-15T16:25:30.141Z",
+  "programId": "sl900",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "working-storage",
+        "line": 113
+      },
+      {
+        "name": "linkage",
+        "line": 175
+      },
+      {
+        "name": "init01",
+        "line": 190
+      },
+      {
+        "name": "Fixed-Data",
+        "line": 307
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 456
+      },
+      {
+        "name": "exit",
+        "line": 484
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-defs",
+        "line": 187
+      },
+      {
+        "name": "menu-return",
+        "line": 201
+      },
+      {
+        "name": "menu-input",
+        "line": 225
+      },
+      {
+        "name": "loadit",
+        "line": 284
+      },
+      {
+        "name": "file-defs",
+        "line": 290
+      },
+      {
+        "name": "menu-exit",
+        "line": 293
+      },
+      {
+        "name": "menu-ex",
+        "line": 300
+      },
+      {
+        "name": "Data-Entry",
+        "line": 373
+      },
+      {
+        "name": "Extra-Type-Entry",
+        "line": 387
+      },
+      {
+        "name": "Extra-Print-Entry",
+        "line": 392
+      },
+      {
+        "name": "Entry-x",
+        "line": 402
+      },
+      {
+        "name": "Stock-Link-Check",
+        "line": 412
+      },
+      {
+        "name": "Audit-Check",
+        "line": 426
+      },
+      {
+        "name": "Extra-Chgs",
+        "line": 432
+      },
+      {
+        "name": "end-if",
+        "line": 438
+      },
+      {
+        "name": "Confirmation",
+        "line": 440
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 483
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 99,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 108,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 117,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 118,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 120,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 178,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 179,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 180,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 195
+      },
+      {
+        "target": "fixed-data",
+        "thru": null,
+        "line": 199
+      },
+      {
+        "target": "Fixed-Data",
+        "thru": null,
+        "line": 239
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "ws-caller",
+        "to": "ws-del-link",
+        "line": 196
+      },
+      {
+        "from": "ws-called",
+        "to": "ws-caller",
+        "line": 197
+      },
+      {
+        "from": "zero",
+        "to": "menu-reply",
+        "line": 202
+      },
+      {
+        "from": "menu-reply",
+        "to": "pass-value\n              move \"sl920\" to ws-called\n              go to loadit",
+        "line": 243
+      },
+      {
+        "from": "menu-reply",
+        "to": "pass-value\n              move \"sl940\" to ws-called\n              go to loadit",
+        "line": 248
+      },
+      {
+        "from": "menu-reply",
+        "to": "pass-value\n              move \"sl200\" to ws-called\n              go to loadit",
+        "line": 253
+      },
+      {
+        "from": "menu-reply",
+        "to": "pass-value\n              move \"sl950\" to ws-called\n              go to loadit",
+        "line": 258
+      },
+      {
+        "from": "menu-reply",
+        "to": "pass-value\n              move \"sl930\" to ws-called\n              go to loadit",
+        "line": 263
+      },
+      {
+        "from": "menu-reply",
+        "to": "pass-value\n              move \"sl910\" to ws-called\n              go to loadit",
+        "line": 268
+      },
+      {
+        "from": "menu-reply",
+        "to": "pass-value\n              move \"sl800\" to ws-called\n              go to loadit",
+        "line": 273
+      },
+      {
+        "from": "\"sl970\"",
+        "to": "WS-Called\n              move zero to Pass-Value\n              go to LoadIt",
+        "line": 278
+      },
+      {
+        "from": "zero",
+        "to": "pass-value",
+        "line": 296
+      },
+      {
+        "from": "ws-caller",
+        "to": "ws-called",
+        "line": 297
+      },
+      {
+        "from": "ws-del-link",
+        "to": "ws-caller",
+        "line": 298
+      },
+      {
+        "from": "next-invoice",
+        "to": "ws-next-invoice",
+        "line": 354
+      },
+      {
+        "from": "Extra-Rate",
+        "to": "ws-discount",
+        "line": 359
+      },
+      {
+        "from": "ws-disc-wka",
+        "to": "ws-disca1",
+        "line": 360
+      },
+      {
+        "from": "ws-disc-wkb",
+        "to": "ws-disca3",
+        "line": 361
+      },
+      {
+        "from": "Extra-Charge-Ac",
+        "to": "ws-extra-charge-ac",
+        "line": 366
+      },
+      {
+        "from": "VAT-Ac",
+        "to": "ws-vat-ac",
+        "line": 368
+      },
+      {
+        "from": "pf-retention",
+        "to": "ws-pf-retention",
+        "line": 370
+      },
+      {
+        "from": "ws-next-invoice",
+        "to": "next-invoice",
+        "line": 377
+      },
+      {
+        "from": "spaces",
+        "to": "Extra-Type Extra-Print\n              move zero   to Extra-Rate\n              go to entry-x",
+        "line": 383
+      },
+      {
+        "from": "ws-disca1",
+        "to": "ws-disc-wka",
+        "line": 398
+      },
+      {
+        "from": "ws-disca3",
+        "to": "ws-disc-wkb",
+        "line": 399
+      },
+      {
+        "from": "ws-discount",
+        "to": "Extra-Rate",
+        "line": 400
+      },
+      {
+        "from": "2",
+        "to": "Invoicer",
+        "line": 405
+      },
+      {
+        "from": "\"N\"",
+        "to": "SL-Stock-Audit\n              display  SL-Stock-Audit  at 1537 with foreground-color 3\n              go to Extra-Chgs\n     else\n              move \"Y\" to SL-Stock-Audit\n              display  SL-Stock-Audit  at 1537 with foreground-color 3",
+        "line": 417
+      },
+      {
+        "from": "ws-extra-charge-ac",
+        "to": "Extra-Charge-AC\n              accept   ws-vat-ac at 1748 with foreground-color 3 update\n              move     ws-vat-ac to Vat-AC\n     end-if",
+        "line": 435
+      },
+      {
+        "from": "ws-pf-retention",
+        "to": "pf-retention",
+        "line": 444
+      },
+      {
+        "from": "\"Y\"",
+        "to": "ws-reply",
+        "line": 445
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 464
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 467
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit",
+        "line": 471
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 478
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "descrition is blank.\n*> 15/05/13 vbc - .09 Fixed data: Added support for SL-Stock-Link & SL-Stock-Audit.\n*> 24/10/16 vbc - .10 ALL programs now using wsnames.cob in copybooks\n*> 15/01/17 vbc - .   All programs upgraded to v3.02 for RDB processing.\n*>                    Clean up of some tests in menu capture.\n*> 25/01/17 vbc       Dry testing completed.\n*> 20/03/18 vbc - .11 Forced Stock audit if stock link set - Must be used.\n*>                    Issue warning if invoicer is set to 1.\n*>                    Remark out Extra-Charge-AC disp, accept & process as not\n*>                    used anywhere.\n*> 02/04/18 vbc - .12 Started work on support for Autogen.using sl800 ?\n*> 19.03.24 vbc - .13 Support for sl970 BO reporting and amendments.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>\n*>                    QUESTIONS arise regarding system usage of param fields:\n*>     Extra-Charge-AC  NOT USED anywhere in the O/S version.\n*>     Vat-AC           Used in sl060 for GL posting only.\n*>           within the General-Ledger-Block.\n*> SO FAR CANNOT FIND USAGE OF Extra-Charge-AC param field anywhere in SL\n*>    but if any where it would be in sl100 Cash Posting.\n*>      May be for a later function upgrade that was never implemented.\n*>\n*>  These are displayed at para Fixed-Data and accepted at Data-Entry.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>================================\n*>\n copy \"envdiv.cob\".\n*>\n data                    division.\n*>================================\n*>\n working-storage section.\n*>-----------------------\n 77  prog-name               pic x(15) value \"SL900 (3.02.12)\".\n*>\n copy \"wsmaps03.cob\".\n copy \"wsfnctn.cob\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  ws-data.\n     03  menu-reply          pic x.\n     03  ws-reply            pic x.\n     03  ws-next-invoice     pic 9(8).\n     03  ws-extra-rate       pic 99v99.\n     03  ws-pf-retention     pic 999.\n     03  ws-extra-charge-ac  pic 9(6).\n     03  ws-vat-ac           pic 9(6).\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n 01  Error-Messages.\n*> System Wide\n*> Module specific\n     03  SL121           pic x(31) value \"SL121 Invalid option, try again\".\n*>\n 01  error-code          pic 999.\n*>\n 01  ws-discount-display.\n     03  ws-disca1       pic 99.\n     03  ws-disca2       pic x        value \".\".\n     03  ws-disca3       pic v99.\n 01  ws-discount-accept redefines ws-discount-display.\n     03  ws-discb1       pic 99.\n     03  filler          pic x.\n     03  ws-discb3       pic v99.\n 01  ws-discount-work.\n     03  ws-disc-wka     pic 99.\n     03  ws-disc-wkb     pic v99.\n 01  ws-discount redefines ws-discount-work  pic 99v99.\n*>\n linkage section.\n*>***************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n init01 section.\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n     perform  zz070-Convert-Date.\n     move     ws-caller to ws-del-link.\n     move     ws-called to ws-caller.\n     if       next-invoice  = zero\n              perform  fixed-data.\n*>\n menu-return.\n     move     zero  to  menu-reply.\n     display  prog-name at 0101 with erase eos foreground-color 2.\n     display  \"Invoicing Menu\" at 0134 with foreground-color 2.\n     display  ws-date at 0171 with foreground-color 2.\n*>\n     display  \"Select one of the following by number :- [ ]\"  at 0501 with foreground-color 2.\n     display  \"(1)  Enter or Amend Invoicing Fixed Data\"      at 0811 with foreground-color 2.\n*>\n     if       not-invoicing\n              display \"(2)  Enter Invoice Details\"      at 0911 with foreground-color 2\n     else\n              display \"(2)  Enter Invoices For Batch Printing\"     at 0911 with foreground-color 2\n              display \"(3)  Enter Invoice For Immediate Printing\"  at 1011 with foreground-color 2\n              display \"(7)  Print Delivery Notes/Picking Lists\"    at 1411 with foreground-color 2.\n              display \"(8)  Print Invoices\"                        at 1511 with foreground-color 2\n*>\n     display  \"(4)  Amend Invoices\" at 1111                     with foreground-color 2.\n     display  \"(5)  Delete Invoices\" at 1211                    with foreground-color 2.\n     display  \"(6)  Invoice Deletion Report\" at 1311            with foreground-color 2.\n     display  \"(9)  Recurring Invoice Processing\" at 1611       with foreground-color 2.\n     display  \"(A)  BO Reporting and amendments\"  at 1711       with foreground-color 2.\n     display  \"(X)  Return To System menu\" at 1911              with foreground-color 2.\n*>\n menu-input.\n*>**********\n*>\n     accept   menu-reply at 0543 with foreground-color 6 auto UPPER.\n*>\n     if       menu-reply  = \"X\"\n              go to  menu-exit.\n*>\n     if       not-invoicing\n         and  (menu-reply  = 3 or 7 or 8)\n              display SL121 at 2015 with foreground-color 3 highlight\n              go to  menu-input.\n*>\n     if       menu-reply  = 1\n              perform  Fixed-Data\n              go to menu-return.\n*>\n     if       menu-reply  = 4\n              move  menu-reply  to  pass-value\n              move \"sl920\" to ws-called\n              go to loadit.\n*>\n     if       menu-reply  = 5\n              move  menu-reply  to  pass-value\n              move \"sl940\" to ws-called\n              go to loadit.\n*>\n     if       menu-reply  = 6\n              move  menu-reply  to  pass-value\n              move \"sl200\" to ws-called\n              go to loadit.\n*>\n     if       menu-reply  = 7\n              move   menu-reply  to  pass-value\n              move \"sl950\" to ws-called\n              go to loadit.\n*>\n     if       menu-reply  = 8\n              move   menu-reply  to  pass-value\n              move \"sl930\" to ws-called\n              go to loadit.\n*>\n     if       menu-reply  = 2 or 3\n              move   menu-reply  to  pass-value\n              move \"sl910\" to ws-called\n              go to loadit.\n*>\n     if       menu-reply  = 9                     *> Autogen\n              move   menu-reply  to  pass-value\n              move \"sl800\" to ws-called\n              go to loadit.\n*>\n     if       Menu-Reply = \"A\"\n              move \"sl970\" to WS-Called\n              move zero to Pass-Value\n              go to LoadIt.\n\n     go       to menu-return.\n*>\n loadit.\n*>*****\n*>\n     call     ws-called using ws-calling-data\n                              system-record\n                              to-day\n                              file-defs.\n     go       to menu-return.\n*>\n menu-exit.\n*>********\n*>\n     move     zero        to  pass-value.\n     move     ws-caller   to ws-called.\n     move     ws-del-link to ws-caller.\n*>\n menu-ex.\n     exit     program.\n*>\n*>********************************************************\n*>      P R O C E D U R E S                              *\n*>********************************************************\n*>\n Fixed-Data              section.\n*>==============================\n*>\n     display  prog-name at 0101      with foreground-color 2 erase eos.\n     display  \"Invoicing Fixed Data\" at 0131  with foreground-color 2.\n     display  ws-date at 0171        with foreground-color 2.\n*>\n     display  \"Next Invoice\" at 0511 with foreground-color 2.\n     display  \"- [        ]\" at 0545 with foreground-color 2.\n*>\n     display  \"Extra Charge/Discount Description - [\"   at 0711  with foreground-color 2.\n     display  \"]\" at 0762            with foreground-color 2.\n*>\n     display  \"Extra Charge/Discount Type (C/D)  - [ ]\" at 0911 with foreground-color 2.\n*>\n     display  \"Print Extra on Invoices (N/Y)     - [ ]\" at 1011 with foreground-color 2.\n     display  \"Extra Charge/Discount Percentage  - [     ]\" at 1111 with foreground-color 2.\n*>\n     display  \"Invoice Entry Level (1, 2) \"             at 1311 with foreground-color 2.\n     display  \"- [ ]\" at 1345       with foreground-color 2.\n     display  \"Invoice to Stock Link  - [ ]\"            at 1411 with foreground-color 2.\n*>\n     display  \"Invoice to Stock Audit - [ ]\"            at 1511 with foreground-color 2.\n*>\n*>  We could have NO GL or IRS, not a good idea as could cause problems with\n*>   system when running.\n*>  GL implies GL or IRS or Both.  Need to check processing happens to\n*>    System Param fields = YES:\n*>     Extra-Charge-AC    = NO is not used.\n*>     Vat-AC           Used in sl060 for GL posting only (Not IRS).\n*>           within the General-Ledger-Block.\n*> SO FAR CANNOT FIND USAGE OF Extra-Charge-AC param field anywhere in SL.\n*> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n*> Rem out Extra-charge-ac as not used.  20/03/18.\n*>\n     if       G-L or IRS\n *>             display \"Extra Charge Discount Account\"   at 1611 with foreground-color 2\n *>             display \"- [      ]\"  at 1645                     with foreground-color 2\n              display \"Vat Account\" at 1711                     with foreground-color 2\n              display \"- [      ]\"  at 1745                     with foreground-color 2\n     end-if\n*>\n     display  \"Proforma Retention In Days \" at 1911             with foreground-color 2.\n     display  \"- [   ]\" at 1945 with foreground-color 2.\n*>\n     display  \"Details Ok To File (Y/N) ...........[Y]\" at 2111 with foreground-color 2.\n     move     next-invoice to ws-next-invoice.\n     display  ws-next-invoice at 0548 with foreground-color 3.\n     display  Extra-Desc      at 0748 with foreground-color 2.\n     display  Extra-Type      at 0948    with foreground-color 3.\n     display  Extra-Print     at 1048   with foreground-color 3.\n     move     Extra-Rate  to ws-discount.\n     move     ws-disc-wka to ws-disca1.\n     move     ws-disc-wkb to ws-disca3.\n     display  ws-discount-display at 1148 with foreground-color 3.\n     display  invoicer        at 1348 with foreground-color 3.\n     display  SL-Stock-Link   at 1437 with foreground-color 3.\n     display  SL-Stock-Audit  at 1537 with foreground-color 3.\n *>    move     Extra-Charge-Ac to ws-extra-charge-ac.\n *>    display  ws-Extra-Charge-Ac at 1648 with foreground-color 3.\n     move     VAT-Ac to ws-vat-ac.\n     display  ws-vat-ac       at 1748 with foreground-color 3.\n     move     pf-retention    to ws-pf-retention.\n     display  ws-pf-retention at 1948 with foreground-color 3.\n*>\n Data-Entry.\n*>*********\n*>\n     accept   ws-next-invoice at 0548 with update  foreground-color 3.\n     move     ws-next-invoice to next-invoice.\n     if       next-invoice  = zero\n              go to  data-entry.\n*>\n     accept   Extra-Desc at 0748 with foreground-color 2 update.\n     if       Extra-Desc = spaces\n              move spaces to Extra-Type Extra-Print\n              move zero   to Extra-Rate\n              go to entry-x.\n*>\n Extra-Type-Entry.\n     accept   Extra-Type at 0948  with foreground-color 3 update UPPER.\n     if       Extra-Type not = \"C\" and not = \"D\"\n              go to extra-type-entry.\n*>\n Extra-Print-Entry.\n     accept   Extra-Print at 1048 with foreground-color 3 update UPPER.\n     if       Extra-Print not = \"Y\" and not = \"N\"\n              go to Extra-Print-Entry.\n*>\n     accept   ws-discount-accept at 1148  with foreground-color 3 update.\n     move     ws-disca1 to ws-disc-wka.\n     move     ws-disca3 to ws-disc-wkb.\n     move     ws-discount to Extra-Rate.\n*>\n Entry-x.\n*>\n     if       Invoicer = zero\n              move 2 to Invoicer.                        *> set default to 2 - Full invoicing + stock Control\n     accept   invoicer at 1348 with foreground-color 3 update.\n     if       invoicer not = 1 and not = 2               *> option 1 shows net, vat. 2 only shows totals & where\n              go to entry-x.                             *>  does option 9 or 0 come from???????\n     if       Invoicer = 1\n              display \"Weak option, Select 2 \"  at 1351 with foreground-color 3 blink.\n*>\n Stock-Link-Check.\n     accept   SL-Stock-Link  at 1437  with update foreground-color 3 UPPER.\n     if       SL-Stock-Link not = \"Y\" and not = \"N\"\n              go to Stock-Link-Check.\n     if       SL-Stock-Link = \"N\"\n              move \"N\" to SL-Stock-Audit\n              display  SL-Stock-Audit  at 1537 with foreground-color 3\n              go to Extra-Chgs\n     else\n              move \"Y\" to SL-Stock-Audit\n              display  SL-Stock-Audit  at 1537 with foreground-color 3.\n*>\n*> Audit is forced on if stock link set so cannot change it - It NEEDS to be used.\n*>\n Audit-Check.\n *>    accept   SL-Stock-Audit  at 1537  with update foreground-color 3.\n *>    move     function upper-case (SL-Stock-Audit) to SL-Stock-Audit.\n *>    if       SL-Stock-Audit not = \"Y\" and not = \"N\"\n *>             go to Audit-Check.\n*>\n Extra-Chgs.\n     if       G-L or IRS\n *>             accept   ws-extra-charge-ac at 1648 with update   foreground-color 3\n *>             move     ws-extra-charge-ac to Extra-Charge-AC\n              accept   ws-vat-ac at 1748 with foreground-color 3 update\n              move     ws-vat-ac to Vat-AC\n     end-if.\n*>\n Confirmation.\n*>***********\n*>\n     accept   ws-pf-retention at 1948   with foreground-color 3 update.\n     move     ws-pf-retention to pf-retention.\n     move     \"Y\"  to  ws-reply.\n     accept   ws-reply at 2148 with foreground-color 6 update auto UPPER.\n*>\n     if       ws-reply = \"N\"\n              go to  data-entry.\n*>\n     if       ws-reply not = \"Y\"\n              go to  confirmation.\n*>\n main-exit.   exit.\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     to-day (7:4) to ws-Intl-Year.\n     move     to-day (4:2) to ws-Intl-Month.\n     move     to-day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>",
+        "line": 47
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 2,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 45,
+      "totalOperators": 35,
+      "totalOperands": 70,
+      "vocabulary": 46,
+      "length": 105,
+      "volume": 579.9740053859864
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

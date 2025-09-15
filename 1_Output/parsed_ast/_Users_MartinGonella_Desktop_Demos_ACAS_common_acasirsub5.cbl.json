@@ -1,0 +1,570 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasirsub5.cbl",
+  "fileName": "acasirsub5.cbl",
+  "timestamp": "2025-09-15T16:25:35.566Z",
+  "programId": "acasirsub5",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 92
+      },
+      {
+        "name": "file",
+        "line": 101
+      },
+      {
+        "name": "working-storage",
+        "line": 107
+      },
+      {
+        "name": "Linkage",
+        "line": 132
+      },
+      {
+        "name": "aa-Process-Flat-File",
+        "line": 153
+      },
+      {
+        "name": "ba-Process-RDBMS",
+        "line": 351
+      },
+      {
+        "name": "exit",
+        "line": 523
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 93
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 150
+      },
+      {
+        "name": "aa010-main",
+        "line": 155
+      },
+      {
+        "name": "end-if",
+        "line": 177
+      },
+      {
+        "name": "end-evaluate",
+        "line": 208
+      },
+      {
+        "name": "aa040-Process-Read-Next",
+        "line": 249
+      },
+      {
+        "name": "end-if",
+        "line": 276
+      },
+      {
+        "name": "end-read",
+        "line": 286
+      },
+      {
+        "name": "aa070-Process-Write",
+        "line": 302
+      },
+      {
+        "name": "end-if",
+        "line": 323
+      },
+      {
+        "name": "aa100-Bad-Function",
+        "line": 328
+      },
+      {
+        "name": "aa999-main-exit",
+        "line": 335
+      },
+      {
+        "name": "end-if",
+        "line": 338
+      },
+      {
+        "name": "aa-main-exit",
+        "line": 340
+      },
+      {
+        "name": "aa-Exit",
+        "line": 348
+      },
+      {
+        "name": "ba010-Test-WS-Rec-Size",
+        "line": 359
+      },
+      {
+        "name": "ba012-Test-WS-Rec-Size-2",
+        "line": 367
+      },
+      {
+        "name": "end-if",
+        "line": 407
+      },
+      {
+        "name": "ba015-Test-Ends",
+        "line": 409
+      },
+      {
+        "name": "end-if",
+        "line": 459
+      },
+      {
+        "name": "end-if",
+        "line": 484
+      },
+      {
+        "name": "end-if",
+        "line": 505
+      },
+      {
+        "name": "ba020-Call-DAL",
+        "line": 513
+      },
+      {
+        "name": "end-call",
+        "line": 518
+      },
+      {
+        "name": "ba-rdbms-exit",
+        "line": 522
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 530
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "irsfinalMT",
+        "line": 514,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data",
+          "Final-Record",
+          "end-call"
+        ]
+      },
+      {
+        "target": "fhlogger",
+        "line": 529,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "for",
+        "line": 45,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 83,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 90,
+        "replacing": null
+      },
+      {
+        "name": "irswsfinal",
+        "line": 134,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 136,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 138,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 140,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 142,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "ba-Process-RDBMS",
+        "thru": null,
+        "line": 175
+      },
+      {
+        "target": "ba012-Test-WS-Rec-Size-2",
+        "thru": null,
+        "line": 181
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 337
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 391
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 429
+      },
+      {
+        "target": "ba020-Call-DAL",
+        "thru": null,
+        "line": 436
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 437
+      },
+      {
+        "target": "ba020-Call-DAL",
+        "thru": null,
+        "line": 443
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 446
+      },
+      {
+        "target": "ba020-Call-DAL",
+        "thru": null,
+        "line": 452
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 453
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 457
+      },
+      {
+        "target": "ba020-Call-DAL",
+        "thru": null,
+        "line": 463
+      },
+      {
+        "target": "ba020-Call-DAL",
+        "thru": null,
+        "line": 469
+      },
+      {
+        "target": "ba020-Call-DAL",
+        "thru": null,
+        "line": 473
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 479
+      },
+      {
+        "target": "ba020-Call-DAL",
+        "thru": null,
+        "line": 489
+      },
+      {
+        "target": "ba020-Call-DAL",
+        "thru": null,
+        "line": 495
+      },
+      {
+        "target": "ba020-Call-DAL",
+        "thru": null,
+        "line": 499
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 503
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "1",
+        "to": "WS-Log-System",
+        "line": 159
+      },
+      {
+        "from": "14",
+        "to": "WS-Log-File-No",
+        "line": 160
+      },
+      {
+        "from": "RDBMS-Flat-Statuses",
+        "to": "FA-RDBMS-Flat-Statuses    *> needed for DAL? not JC/dbpre versions\n              perform ba-Process-RDBMS                                *>  Can't hurt\n              go to AA-Main-Exit\n     end-if",
+        "line": 174
+      },
+      {
+        "from": "zero",
+        "to": "WE-Error             *> as in irsub5\n     move     spaces to SQL-Err SQL-Msg SQL-State",
+        "line": 189
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error\n              go to aa-Exit\n        when  2                              *> JIC but not used for irsub3 & 5\n*>              go to aa030-Process-Close\n              move zero to FS-Reply WE-Error\n              go to aa-Exit\n        when  3\n              go to aa040-Process-Read-Next\n        when  5\n        when  7                              *> write/rewrite can do the same\n              go to aa070-Process-Write      *> as file is opened as output",
+        "line": 195
+      },
+      {
+        "from": "spaces",
+        "to": "WS-File-Key",
+        "line": 214
+      },
+      {
+        "from": "201",
+        "to": "WS-No-Paragraph",
+        "line": 215
+      },
+      {
+        "from": "35",
+        "to": "fs-Reply\n*>                   move  1 to we-error     *> NOT as in irsub5\n*>                   go to aa999-Main-Exit\n*>              end-if\n*>      else\n*>       if     fn-i-o or fn-Extend\n*>              move 997 to WE-Error\n*>              move 99  to FS-Reply\n*>              go to aa999-main-exit\n*>       else\n*>        if    fn-output\n*>              open output Final-File         *> caller should check fs-reply\n*>        end-if\n*>       end-if\n*>     end-if",
+        "line": 219
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 234
+      },
+      {
+        "from": "1",
+        "to": "we-error",
+        "line": 236
+      },
+      {
+        "from": "202",
+        "to": "WS-No-Paragraph",
+        "line": 240
+      },
+      {
+        "from": "spaces",
+        "to": "WS-File-Key",
+        "line": 241
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply WE-Error",
+        "line": 243
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 244
+      },
+      {
+        "from": "zero",
+        "to": "File-Function\n*>                       Access-Type",
+        "line": 245
+      },
+      {
+        "from": "203",
+        "to": "WS-No-Paragraph",
+        "line": 254
+      },
+      {
+        "from": "Final-Record",
+        "to": "Record-5\n              write   Record-5\n              close   Final-File\n              go to aa999-Main-Exit\n     end-if\n     initialize Final-Record",
+        "line": 260
+      },
+      {
+        "from": "10",
+        "to": "FS-Reply\n                         WE-Error\n              move 3 to WE-Error                 *> NOT as in irsub5\n              move spaces to\n                             SQL-Err\n                             SQL-Msg\n              stop \"Cobol File EOF\"               *> for testing because it should not have got here !!\n              close Final-File\n              go to aa999-main-exit\n     end-if",
+        "line": 267
+      },
+      {
+        "from": "10",
+        "to": "WE-Error FS-Reply        *> EOF\n              move 3 to WE-Error                 *> as in irsub5\n              set Cobol-File-EoF to true\n              move 1 to Cobol-File-Status         *> JIC above dont work :)\n              move \"EOF\" to WS-File-Key           *> for logging\n              close Final-File\n              go to aa999-main-exit\n     end-read",
+        "line": 279
+      },
+      {
+        "from": "1",
+        "to": "we-error\n              close Final-File\n              go to aa999-main-exit\n     end-if\n     move     Record-5 to  Final-Record",
+        "line": 290
+      },
+      {
+        "from": "1",
+        "to": "WS-File-Key",
+        "line": 296
+      },
+      {
+        "from": "zeros",
+        "to": "WE-Error",
+        "line": 297
+      },
+      {
+        "from": "206",
+        "to": "WS-No-Paragraph",
+        "line": 306
+      },
+      {
+        "from": "Final-Record",
+        "to": "Record-5",
+        "line": 307
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 308
+      },
+      {
+        "from": "1",
+        "to": "we-error\n                 close Final-File\n                 go to aa999-main-exit\n     end-if\n     write    Record-5 from Final-Record",
+        "line": 315
+      },
+      {
+        "from": "1",
+        "to": "we-error\n     end-if",
+        "line": 322
+      },
+      {
+        "from": "999",
+        "to": "WE-Error",
+        "line": 332
+      },
+      {
+        "from": "99",
+        "to": "fs-reply",
+        "line": 333
+      },
+      {
+        "from": "24",
+        "to": "WS-Log-File-no",
+        "line": 365
+      },
+      {
+        "from": "901",
+        "to": "WE-Error       *> 901 Programming error; temp rec length is wrong caller must stop\n                   move 99 to fs-reply        *> allow for last field ( FILLER) not being present in layout",
+        "line": 377
+      },
+      {
+        "from": "spaces",
+        "to": "Display-Blk\n                       string IR902          delimited by size\n                              A              delimited by size\n                              \" < \"          delimited by size\n                              \"IRS-Final-Rec = \" delimited by size\n                              B              delimited by size    into Display-Blk\n                       end-string\n                       display Display-Blk at 2301 with erase eol     *> BUT WILL REMIND ME TO SET IT UP correctly\n                       display IR901 at 2401 with erase eol\n                       if  Testing-1\n                           perform Ca-Process-Logs\n                       end-if\n                       accept Accept-Reply at 2433\n                       go to ba-rdbms-exit\n              end-if\n*>\n*>  Not a error comparing the length of records so - -\n*>  Load up the DB settings from the system record as its not passed on\n*>           hopefully once is enough  :)\n*>\n              move     RDBMS-DB-Name to DB-Schema\n              move     RDBMS-User    to DB-UName\n              move     RDBMS-Passwd  to DB-UPass\n              move     RDBMS-Port    to DB-Port\n              move     RDBMS-Host    to DB-Host\n              move     RDBMS-Socket  to DB-Socket\n     end-if",
+        "line": 381
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error\n              go      to ba-RDBMS-Exit\n     end-if\n     if       fn-close                                 *> Close ignore & close logger\n              move    zero to File-Function\n                              Access-Type\n              perform Ca-Process-Logs\n              go      to ba-RDBMS-Exit\n     end-if\n*>\n     if       fn-read-next\n              set     fn-Open  to true\n              set     fn-Input to true\n              perform ba020-Call-DAL                   *> open\n              perform Ca-Process-Logs\n              if      Fs-Reply not = zero\n                   or WE-Error not = zero\n                      go to ba-rdbms-Exit\n              end-if\n              set     fn-Read-Next to true\n              perform ba020-Call-DAL                   *> Read\n              move    FS-Reply to WS-Save-FS-Reply     *> save the statuses\n              move    WE-Error to WS-Save-WE-Error\n              perform Ca-Process-Logs                  *> temp only during testing\n              if      FS-Reply not = zero\n                  or  WE-Error not = zero\n                      go      to ba-RDBMS-Exit\n              end-if\n              set     fn-Close to true\n              perform ba020-Call-DAL\n              perform Ca-Process-Logs                  *> temp only during testing\n              move    WS-Save-FS-Reply to FS-Reply     *> restore them\n              move    WS-Save-WE-Error to WE-Error\n              move    \"Open, Read, Close\" to WS-File-key\n              perform Ca-Process-Logs                  *> temp only during testing\n              go      to ba-RDBMS-Exit\n     end-if",
+        "line": 423
+      },
+      {
+        "from": "FS-Reply",
+        "to": "WS-Save-FS-Reply     *> save the statuses\n              move    WE-Error to WS-Save-WE-Error\n              set     fn-Close to true\n              perform ba020-Call-DAL\n              move    WS-Save-FS-Reply to FS-Reply     *> restore them\n              move    WS-Save-WE-Error to WE-Error\n              if      (fs-Reply not = zero or\n                      WE-Error not = zero)\n                      move    \"Open, Write failed, Close\" to WS-File-Key\n                      perform Ca-Process-Logs            *> temp only during testing\n                      set     fn-Re-write to true\n                      move zero to fs-reply we-error   *> clear if used in write\n              else\n                      go      to ba-RDBMS-Exit\n     end-if",
+        "line": 470
+      },
+      {
+        "from": "FS-Reply",
+        "to": "WS-Save-FS-Reply     *> save the statuses\n              move    WE-Error to WS-Save-WE-Error\n              set     fn-Close to true\n              perform ba020-Call-DAL\n              move    WS-Save-FS-Reply to FS-Reply     *> restore them\n              move    WS-Save-WE-Error to WE-Error\n              move    \"Open, Rewrite, Close\" to WS-File-key\n              perform Ca-Process-Logs                  *> temp only during testing\n              go      to ba-RDBMS-Exit\n     end-if",
+        "line": 496
+      },
+      {
+        "from": "999",
+        "to": "WE-Error",
+        "line": 509
+      },
+      {
+        "from": "99",
+        "to": "FS-Reply",
+        "line": 510
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>**********************************************************************************\n*>\n environment division.\n copy \"envdiv.cob\".\n*>\n input-output section.\n file-control.\n*>\n     select Final-File       assign file-37\n                             organization line sequential,\n                             access sequential,\n                             status fs-reply.\n*>\n data division.\n file section.\n*>***********\n fd  Final-File.\n*>\n 01  Record-5            pic x(655).\n*>\n working-storage section.\n*>**********************\n*>\n 77  prog-name          pic x(20)  value \"acasirsub5 (3.02.11)\".\n*>\n 77  WS-Reply           pic x      value space.\n 77  WS-Save-FS-Reply   pic 99     value zero.             *> These 2 for acasirsub3 & 5\n 77  WS-Save-WE-Error   pic 999    value zero.\n*>\n 77  A                  pic 9(4)             value zero.  *> A & B used in 1st test ONLY\n 77  B                  pic 9(4)             value zero.  *>  in ba-Process-RDBMS\n 77  Display-Blk        pic x(75)             value spaces.\n 77  Cobol-File-Status  pic 9                 value zero.\n     88  Cobol-File-Eof                       value 1.\n*>\n 01  Error-Messages.\n*> System Wide\n*> Module Specific\n     03  IR901          pic x(31) value \"IR901 Note error and hit return\".\n     03  IR902          pic x(32) value \"IR902 Program Error: Temp rec = \".\n     03  IR921          pic x(39) value \"IR921 Failure to read Final File rec. !\".\n     03  IR922          pic x(32) value \"IR922 Failure to read Final File\".\n     03  IR923          pic x(36) value \"IR923 Failure to open o/p Final File\".\n     03  IR924          pic x(33) value \"IR924 Failure to write Final File\".\n*>\n Linkage Section.\n*>**************\n copy \"irswsfinal.cob\".\n*>\n copy \"wssystem.cob\".\n*>\n copy \"wsfnctn.cob\".\n*>\n copy \"wsnames.cob\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n Procedure Division Using System-Record\n\n                          Final-Record\n\n                          File-Access\n                          File-Defs\n                          ACAS-DAL-Common-data.\n*>********************************************\n*>\n aa-Process-Flat-File Section.\n*>***************************\n aa010-main.\n*>\n*>  For logging only.\n*>\n     move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=Stock - used in FH logging\n     move     14     to WS-Log-File-No.  *> Cobol/RDB, File/Table within sub System.\n*>\n*> WARNING The modules acasirsub5 for Final as well as acasirsub3\n*> for defaults has to be modified as IRS only does a read or write\n*>   and not a direct open or close so\n*>   it has to be done here when processing RDB.\n*>\n*>   For Cobol files these have been changed to do the same so direct\n*>    calls to open and close are not needed or wanted.\n*>     so return with fs-reply & we-error = zero.\n*>\n*> Check if data files or RDBMS processing  !!\n*>\n     if       not FS-Cobol-Files-Used\n              move RDBMS-Flat-Statuses to FA-RDBMS-Flat-Statuses    *> needed for DAL? not JC/dbpre versions\n              perform ba-Process-RDBMS                                *>  Can't hurt\n              go to AA-Main-Exit\n     end-if.\n*>\n*> Test  Rec lengths first.\n*>\n     perform  ba012-Test-WS-Rec-Size-2.\n*>\n*>  File paths for Cobol File has already done in main menu module\n*>\n*>******************************************************************************\n*> So we are processing Cobol Flat files by themselves. *\n*>******************************************************************************\n*>\n     move     zero   to  WE-Error             *> as in irsub5\n     move     spaces to SQL-Err SQL-Msg SQL-State.\n*>\n     evaluate File-Function\n        when  1                              *> JIC but not used for irsub3 & 5\n*>              go to aa020-Process-Open\n              move zero to FS-Reply WE-Error\n              go to aa-Exit\n        when  2                              *> JIC but not used for irsub3 & 5\n*>              go to aa030-Process-Close\n              move zero to FS-Reply WE-Error\n              go to aa-Exit\n        when  3\n              go to aa040-Process-Read-Next\n        when  5\n        when  7                              *> write/rewrite can do the same\n              go to aa070-Process-Write      *> as file is opened as output.\n        when  other                          *> others are unused\n              go to aa100-Bad-Function\n     end-evaluate.\n*>\n*>  Should never get here but Just in case :(\n     go       to aa100-Bad-Function.\n*>\n*> aa020-Process-Open.\n*>     move     spaces to WS-File-Key.     *> for logging\n*>     move     201 to WS-No-Paragraph.\n*>     if       fn-input\n*>              open input Final-File\n*>              if   Fs-Reply not = zero  *> next 2 from irsub5\n*>                   move 35 to fs-Reply\n*>                   move  1 to we-error     *> NOT as in irsub5\n*>                   go to aa999-Main-Exit\n*>              end-if\n*>      else\n*>       if     fn-i-o or fn-Extend\n*>              move 997 to WE-Error\n*>              move 99  to FS-Reply\n*>              go to aa999-main-exit\n*>       else\n*>        if    fn-output\n*>              open output Final-File         *> caller should check fs-reply\n*>        end-if\n*>       end-if\n*>     end-if.\n*>     move     zero to Cobol-File-Status.\n*>     if       fs-reply not = zero\n*>              move 1 to we-error.\n*>     go       to aa999-main-exit.            *> with test for dup processing\n*>\n*> aa030-Process-Close.\n*>     move     202 to WS-No-Paragraph.\n*>     move     spaces to WS-File-Key.     *> for logging\n*>     close    Final-File.\n*>*> 27/07/16 16:30     move     zeros to FS-Reply WE-Error.\n*>     move     zero to Cobol-File-Status.\n*>     move     zero to  File-Function\n*>                       Access-Type.              *> close log file\n*>     go       to aa999-main-exit.\n*>\n aa040-Process-Read-Next.\n*>\n*>   Process READ next record Really its just a Read (one record)\n*>      NOTE change caller code to open first\n*>\n     move     203 to WS-No-Paragraph.\n     open     input Final-File.\n     if       Fs-Reply not = zero     *> NOT from irsub5\n              close Final-File\n              open output Final-File\n              initialize Final-Record\n              move    Final-Record to Record-5\n              write   Record-5\n              close   Final-File\n              go to aa999-Main-Exit\n     end-if\n     initialize Final-Record.\n     if       Cobol-File-Eof          *> This block should NOT occur\n              move 10 to FS-Reply\n                         WE-Error\n              move 3 to WE-Error                 *> NOT as in irsub5\n              move spaces to\n                             SQL-Err\n                             SQL-Msg\n              stop \"Cobol File EOF\"               *> for testing because it should not have got here !!\n              close Final-File\n              go to aa999-main-exit\n     end-if.\n     read     Final-File next record at end\n              display IR921 at 2301 with foreground-color 4\n              move 10 to WE-Error FS-Reply        *> EOF\n              move 3 to WE-Error                 *> as in irsub5\n              set Cobol-File-EoF to true\n              move 1 to Cobol-File-Status         *> JIC above dont work :)\n              move \"EOF\" to WS-File-Key           *> for logging\n              close Final-File\n              go to aa999-main-exit\n     end-read.\n*>\n     if       FS-Reply not = zero\n              display IR922 at 2301 with foreground-color 4  *> red\n               move 1 to we-error\n              close Final-File\n              go to aa999-main-exit\n     end-if\n     move     Record-5 to  Final-Record.\n*>\n     move     1   to WS-File-Key.\n     move     zeros to WE-Error.\n     move     \"Open Final, Read, Close on 1\" to WS-File-Key.\n     close    Final-File.\n     go to    aa999-main-exit.\n*>\n aa070-Process-Write.\n *>\n *>  code changed to same as irsub5\n *>\n     move     206 to WS-No-Paragraph.\n *>    move     Final-Record to Record-5.\n     move     zeros to FS-Reply  WE-Error.\n*>\n*>  FROM irsub5 but will make open & close calls from caller if needed.\n*>\n     open     output Final-File.\n     if       fs-reply not = zero\n                 display IR923 at 2301 with foreground-color 4  *> red\n                 move 1 to we-error\n                 close Final-File\n                 go to aa999-main-exit\n     end-if\n     write    Record-5 from Final-Record.\n     if       FS-Reply not = zero\n              display IR924 at 2301 with foreground-color 4  *> red\n              move 1 to we-error\n     end-if.\n     close    Final-File.      *> same as irsub5\n     move     \"Open Final, Write, Close on 1\" to WS-File-Key.\n     go       to aa999-main-exit.\n*>\n aa100-Bad-Function.\n*>\n*> Houston; We have a problem\n*>\n     move     999 to WE-Error.                         *> 999\n     move     99  to fs-reply.\n*>\n aa999-main-exit.\n     if       Testing-1\n              perform Ca-Process-Logs\n     end-if.\n*>\n aa-main-exit.\n*>\n*> Now have processed cobol flat file,  so ..\n*> Check for RDB processing ??\n*>\n *>    if       FS-Duplicate-Processing\n *>             go to ba-Process-rdbms\n *>    end-if.\n aa-Exit.\n     exit program.\n*>\n ba-Process-RDBMS section.\n*>***********************\n*>\n*>********************************************************************\n*>  Here we call the relevent RDBMS module for this table            *\n*>   which will include processing any other joined tables as needed *\n*>********************************************************************\n*>\n ba010-Test-WS-Rec-Size.\n*>\n*>     Test on very first call only  (So do NOT use var A & B again)\n*>       Lets test that Data-record size is = or > than declared Rec in DAL\n*>          as we cant adjust at compile/run time due to ALL Cobol compilers ?\n*>\n     move     24 to WS-Log-File-no.        *> for FHlogger\n*>\n ba012-Test-WS-Rec-Size-2.\n*>\n     if       A = zero                        *> so it is being called first time\n              move     function Length (\n                                         Final-Record\n                                                 ) to A\n              move     function length (\n                                        Record-5\n                                                 ) to B\n              if   A < B                      *> COULD LET caller module deal with these errors !!!!!!!\n                   move 901 to WE-Error       *> 901 Programming error; temp rec length is wrong caller must stop\n                   move 99 to fs-reply        *> allow for last field ( FILLER) not being present in layout.\n              end-if\n              if       WE-Error = 901                  *> record length wrong so display error, accept and",
+        "line": 80
+      },
+      {
+        "type": "IF",
+        "condition": "Testing-1\n                           perform Ca-Process-Logs\n                       end-if\n                       accept Accept-Reply at 2433\n                       go to ba-rdbms-exit\n              end-if\n*>\n*>  Not a error comparing the length of records so - -\n*>  Load up the DB settings from the system record as its not passed on\n*>           hopefully once is enough  :)\n*>\n              move     RDBMS-DB-Name to DB-Schema\n              move     RDBMS-User    to DB-UName\n              move     RDBMS-Passwd  to DB-UPass\n              move     RDBMS-Port    to DB-Port\n              move     RDBMS-Host    to DB-Host\n              move     RDBMS-Socket  to DB-Socket\n     end-if.\n*>\n ba015-Test-Ends.\n*>\n*>\n*>   HERE we need a CDF [Compiler Directive] to select the correct DAL based\n*>     on the pre SQL compiler e.g., JCs or dbpre or Prima conversions <<<<  ? >>>>>\n*>        Do this after system testing and pre code release.\n*>\n*>  NOW SET UP FOR JC pre-sql compiler system.\n*>   DAL-Datablock not needed unless using RDBMS DAL from Prima & MS Sql\n*>\n*>  Here we do non standard DAL things to handle open & close pre / post\n*>   to calls for Read and write.\n*>\n     if       fn-open                                  *> Open ignore\n              move    zero to FS-Reply WE-Error\n              go      to ba-RDBMS-Exit\n     end-if\n     if       fn-close                                 *> Close ignore & close logger\n              move    zero to File-Function\n                              Access-Type\n              perform Ca-Process-Logs\n              go      to ba-RDBMS-Exit\n     end-if\n*>\n     if       fn-read-next\n              set     fn-Open  to true\n              set     fn-Input to true\n              perform ba020-Call-DAL                   *> open\n              perform Ca-Process-Logs\n              if      Fs-Reply not = zero\n                   or WE-Error not = zero\n                      go to ba-rdbms-Exit\n              end-if\n              set     fn-Read-Next to true\n              perform ba020-Call-DAL                   *> Read\n              move    FS-Reply to WS-Save-FS-Reply     *> save the statuses\n              move    WE-Error to WS-Save-WE-Error\n              perform Ca-Process-Logs                  *> temp only during testing\n              if      FS-Reply not = zero\n                  or  WE-Error not = zero\n                      go      to ba-RDBMS-Exit\n              end-if\n              set     fn-Close to true\n              perform ba020-Call-DAL\n              perform Ca-Process-Logs                  *> temp only during testing\n              move    WS-Save-FS-Reply to FS-Reply     *> restore them\n              move    WS-Save-WE-Error to WE-Error\n              move    \"Open, Read, Close\" to WS-File-key\n              perform Ca-Process-Logs                  *> temp only during testing\n              go      to ba-RDBMS-Exit\n     end-if.\n     if       fn-Write\n              set     fn-Open  to true\n              set     fn-I-O to true\n              perform ba020-Call-DAL                   *> Open\n              if      Fs-Reply not = zero\n                   or WE-Error not = zero\n                      go to ba-rdbms-Exit\n              end-if\n              set     fn-Write to true\n              perform ba020-Call-DAL                   *> write\n              move    FS-Reply to WS-Save-FS-Reply     *> save the statuses\n              move    WE-Error to WS-Save-WE-Error\n              set     fn-Close to true\n              perform ba020-Call-DAL\n              move    WS-Save-FS-Reply to FS-Reply     *> restore them\n              move    WS-Save-WE-Error to WE-Error\n              if      (fs-Reply not = zero or\n                      WE-Error not = zero)\n                      move    \"Open, Write failed, Close\" to WS-File-Key\n                      perform Ca-Process-Logs            *> temp only during testing\n                      set     fn-Re-write to true\n                      move zero to fs-reply we-error   *> clear if used in write\n              else\n                      go      to ba-RDBMS-Exit\n     end-if.\n*>\n     if       fn-Re-write\n              set     fn-Open  to true\n              set     fn-I-O to true\n              perform ba020-Call-DAL                   *> Open\n              if      Fs-Reply not = zero\n                   or WE-Error not = zero\n                      go to ba-rdbms-Exit\n              end-if\n              set     fn-Re-write to true\n              perform ba020-Call-DAL                   *> write\n              move    FS-Reply to WS-Save-FS-Reply     *> save the statuses\n              move    WE-Error to WS-Save-WE-Error\n              set     fn-Close to true\n              perform ba020-Call-DAL\n              move    WS-Save-FS-Reply to FS-Reply     *> restore them\n              move    WS-Save-WE-Error to WE-Error\n              move    \"Open, Rewrite, Close\" to WS-File-key\n              perform Ca-Process-Logs                  *> temp only during testing\n              go      to ba-RDBMS-Exit\n     end-if.\n*>\n*> In case of bad call action that was missed.\n*>\n     move     999 to WE-Error.\n     move     99  to FS-Reply.\n     go       to ba-RDBMS-Exit.\n*>\n ba020-Call-DAL.\n     call     \"irsfinalMT\" using File-Access\n                                ACAS-DAL-Common-data\n\n                                Final-Record\n     end-call.\n*>\n*>   Any errors leave it to caller to recover from\n*>\n ba-rdbms-exit.\n     exit     section.\n*>   ****     *******\n*>\n Ca-Process-Logs. *> Not called on DAL access as it does it already\n*>**************\n*>\n     call     \"fhlogger\" using File-Access\n                               ACAS-DAL-Common-data.\n*>\n ca-Exit.     exit.\n*>\n*>\n end program acasirsub5.",
+        "line": 390
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "File-Function\n        when  1                              *> JIC but not used for irsub3 & 5\n*>    ...",
+        "line": 192,
+        "whenCount": 6
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 11,
+    "cognitive": 14,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 46,
+      "totalOperators": 37,
+      "totalOperands": 74,
+      "vocabulary": 47,
+      "length": 111,
+      "volume": 616.5593625362178
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

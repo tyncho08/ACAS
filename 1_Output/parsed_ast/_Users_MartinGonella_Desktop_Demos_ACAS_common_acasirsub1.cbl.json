@@ -1,0 +1,858 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/acasirsub1.cbl",
+  "fileName": "acasirsub1.cbl",
+  "timestamp": "2025-09-15T16:25:36.662Z",
+  "programId": "acasirsub1",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 157
+      },
+      {
+        "name": "file",
+        "line": 167
+      },
+      {
+        "name": "working-storage",
+        "line": 172
+      },
+      {
+        "name": "Linkage",
+        "line": 200
+      },
+      {
+        "name": "aa-Process-Flat-File",
+        "line": 221
+      },
+      {
+        "name": "ba-Process-RDBMS",
+        "line": 676
+      },
+      {
+        "name": "exit",
+        "line": 762
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 158
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 218
+      },
+      {
+        "name": "aa010-main",
+        "line": 223
+      },
+      {
+        "name": "end-evaluate",
+        "line": 246
+      },
+      {
+        "name": "end-if",
+        "line": 261
+      },
+      {
+        "name": "end-if",
+        "line": 269
+      },
+      {
+        "name": "end-evaluate",
+        "line": 310
+      },
+      {
+        "name": "aa020-Process-Open",
+        "line": 315
+      },
+      {
+        "name": "end-if",
+        "line": 361
+      },
+      {
+        "name": "aa030-Process-Close",
+        "line": 367
+      },
+      {
+        "name": "aa040-Process-Read-Next",
+        "line": 380
+      },
+      {
+        "name": "end-if",
+        "line": 396
+      },
+      {
+        "name": "aa041-Reread",
+        "line": 398
+      },
+      {
+        "name": "end-read",
+        "line": 407
+      },
+      {
+        "name": "aa045-Process-Read-Next-Raw",
+        "line": 422
+      },
+      {
+        "name": "end-if",
+        "line": 437
+      },
+      {
+        "name": "end-read",
+        "line": 447
+      },
+      {
+        "name": "aa047-Eval-Keys",
+        "line": 464
+      },
+      {
+        "name": "end-evaluate",
+        "line": 480
+      },
+      {
+        "name": "aa050-Process-Read-Indexed",
+        "line": 482
+      },
+      {
+        "name": "aa051-Reread",
+        "line": 493
+      },
+      {
+        "name": "aa060-Process-Start",
+        "line": 514
+      },
+      {
+        "name": "WE-Error",
+        "line": 520
+      },
+      {
+        "name": "Key-1",
+        "line": 523
+      },
+      {
+        "name": "aa070-Process-Write",
+        "line": 568
+      },
+      {
+        "name": "aa080-Process-Delete",
+        "line": 607
+      },
+      {
+        "name": "aa090-Process-Rewrite",
+        "line": 628
+      },
+      {
+        "name": "aa170-Process-Write-Raw",
+        "line": 638
+      },
+      {
+        "name": "end-write",
+        "line": 655
+      },
+      {
+        "name": "aa100-Bad-Function",
+        "line": 658
+      },
+      {
+        "name": "aa999-main-exit",
+        "line": 665
+      },
+      {
+        "name": "end-if",
+        "line": 668
+      },
+      {
+        "name": "aa-main-exit",
+        "line": 670
+      },
+      {
+        "name": "aa-Exit",
+        "line": 673
+      },
+      {
+        "name": "ba010-Test-WS-Rec-Size",
+        "line": 684
+      },
+      {
+        "name": "ba012-Test-WS-Rec-Size-2",
+        "line": 692
+      },
+      {
+        "name": "end-if",
+        "line": 732
+      },
+      {
+        "name": "ba015-Test-Ends",
+        "line": 734
+      },
+      {
+        "name": "end-if",
+        "line": 743
+      },
+      {
+        "name": "ba020-Process-DAL",
+        "line": 752
+      },
+      {
+        "name": "end-call",
+        "line": 757
+      },
+      {
+        "name": "ba-rdbms-exit",
+        "line": 761
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 769
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "irsnominalMT",
+        "line": 753,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data",
+          "WS-NL-Record",
+          "end-call"
+        ]
+      },
+      {
+        "target": "fhlogger",
+        "line": 768,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "for",
+        "line": 50,
+        "replacing": null
+      },
+      {
+        "name": "*>",
+        "line": 100,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 148,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 155,
+        "replacing": null
+      },
+      {
+        "name": "irsfdwsnl",
+        "line": 170,
+        "replacing": null
+      },
+      {
+        "name": "irswsnl",
+        "line": 202,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 204,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 206,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 208,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 210,
+        "replacing": null
+      },
+      {
+        "name": "the",
+        "line": 486,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "ba-Process-RDBMS",
+        "thru": null,
+        "line": 60
+      },
+      {
+        "target": "ba-Process-RDBMS",
+        "thru": null,
+        "line": 259
+      },
+      {
+        "target": "ba-Process-RDBMS",
+        "thru": null,
+        "line": 267
+      },
+      {
+        "target": "ba012-Test-WS-Rec-Size-2",
+        "thru": null,
+        "line": 273
+      },
+      {
+        "target": "aa999-main-exit",
+        "thru": null,
+        "line": 374
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 377
+      },
+      {
+        "target": "aa047-Eval-keys",
+        "thru": null,
+        "line": 491
+      },
+      {
+        "target": "aa999-main-exit",
+        "thru": null,
+        "line": 565
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 667
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 716
+      },
+      {
+        "target": "ba020-Process-Dal",
+        "thru": null,
+        "line": 741
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "key",
+        "to": "ws-file-key on error read indexed\n*>                    Change code for open I/O NOT to close open output etc but give error cond\n*>                    also give fs-reply to we-error if 47, 48, 49 to try and find error in caller\n*>                    that is opening an already open file",
+        "line": 53
+      },
+      {
+        "from": "1",
+        "to": "WS-Log-System",
+        "line": 227
+      },
+      {
+        "from": "11",
+        "to": "WS-Log-File-No",
+        "line": 228
+      },
+      {
+        "from": "998",
+        "to": "WE-Error       *> file seeks key type out of range        998\n                       move 99 to fs-reply\n                       go   to aa999-main-exit\n                end-if\n              when     8  *> fn-delete\n                if     File-Key-No not = 1        *> 1  is only for RDB as Cobol does it on primary key\n                       move 996 to WE-Error       *> file seeks key type out of range        996\n                       move 99 to fs-reply\n                       go   to aa999-main-exit\n                end-if\n     end-evaluate",
+        "line": 236
+      },
+      {
+        "from": "zero",
+        "to": "access-type\n              perform ba-Process-RDBMS\n              go to AA-Main-Exit\n     end-if",
+        "line": 258
+      },
+      {
+        "from": "RDBMS-Flat-Statuses",
+        "to": "FA-RDBMS-Flat-Statuses    *> needed for DAL? not JC/dbpre versions\n              perform ba-Process-RDBMS                                *>  Can't hurt\n              go to AA-Main-Exit\n     end-if",
+        "line": 266
+      },
+      {
+        "from": "zero",
+        "to": "WE-Error                                   *> as in irsub1\n *>  ?                      FS-Reply",
+        "line": 283
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Err SQL-Msg SQL-State",
+        "line": 285
+      },
+      {
+        "from": "spaces",
+        "to": "WS-File-Key",
+        "line": 316
+      },
+      {
+        "from": "201",
+        "to": "WS-No-Paragraph",
+        "line": 317
+      },
+      {
+        "from": "1",
+        "to": "we-error     *> as in irsub1\n                   go to aa999-Main-Exit\n              end-if\n              move     \"OPEN Input IRS NL File\" to WS-File-Key\n      else\n       if     fn-i-o\n              open i-o Nominal-Ledger\n *>             if       fs-reply not = zero\n *>                      close       Nominal-Ledger\n *>                      open output Nominal-Ledger           *> Doesnt create in i-o\n *>                      close       Nominal-Ledger\n *>                      open i-o    Nominal-Ledger\n              if   fs-reply = 41                              *> already open so close and open\n                   close Nominal-Ledger\n                   go to aa020-Process-Open\n              end-if\n              if   fs-Reply = 47 or 48 or 49                  *> no perms to do requested (no write perms etc)\n                   move  1 to we-error     *> as in irsub1\n                   move     \"OPEN I/O IRS NL File FAILED\" to WS-File-Key\n                   go to aa999-Main-Exit\n              end-if\n              if   fs-Reply not = zero\n                   move  1 to we-error     *> as in irsub1\n                   move     \"OPEN I/O IRS NL File FAILED\" to WS-File-Key\n                   go to aa999-Main-Exit\n              end-if\n              move     \"OPEN I/O IRS NL File\" to WS-File-Key\n       else\n        if    fn-output\n              open output Nominal-Ledger         *> caller should check fs-reply\n              move     \"OPEN Output IRS NL File\" to WS-File-Key\n        else\n         if   fn-extend                      *> Must not be used for ISAM files\n*>              open extend Nominal-Ledger\n              move 997 to WE-Error\n              move 99  to FS-Reply\n              go to aa999-main-exit\n         end-if\n        end-if\n       end-if\n     end-if",
+        "line": 321
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 362
+      },
+      {
+        "from": "1",
+        "to": "we-error",
+        "line": 364
+      },
+      {
+        "from": "202",
+        "to": "WS-No-Paragraph",
+        "line": 368
+      },
+      {
+        "from": "spaces",
+        "to": "WS-File-Key",
+        "line": 369
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply WE-Error",
+        "line": 371
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 372
+      },
+      {
+        "from": "zero",
+        "to": "File-Function\n                       Access-Type",
+        "line": 375
+      },
+      {
+        "from": "203",
+        "to": "WS-No-Paragraph",
+        "line": 386
+      },
+      {
+        "from": "10",
+        "to": "FS-Reply\n                         WE-Error\n              move 3 to WE-Error                 *> as in irsub1\n              move spaces to\n                             SQL-Err\n                             SQL-Msg\n              stop \"Cobol File EOF-RN\"               *> for testing because it should not have got here !!\n              go to aa999-main-exit\n     end-if",
+        "line": 388
+      },
+      {
+        "from": "10",
+        "to": "WE-Error FS-Reply        *> EOF\n              move 3 to WE-Error                 *> as in irsub1\n              set Cobol-File-EoF to true\n              move 1 to Cobol-File-Status         *> JIC above dont work :)\n              initialize WS-NL-Record\n              move \"EOF\" to WS-File-Key           *> for logging\n              go to aa999-main-exit\n     end-read",
+        "line": 400
+      },
+      {
+        "from": "Record-1",
+        "to": "WS-NL-Record",
+        "line": 411
+      },
+      {
+        "from": "NL-Key",
+        "to": "WS-File-Key",
+        "line": 418
+      },
+      {
+        "from": "zeros",
+        "to": "WE-Error FS-Reply",
+        "line": 419
+      },
+      {
+        "from": "213",
+        "to": "WS-No-Paragraph",
+        "line": 427
+      },
+      {
+        "from": "10",
+        "to": "FS-Reply\n                         WE-Error\n              move 3 to WE-Error                 *> as in irsub1\n              move spaces to\n                             SQL-Err\n                             SQL-Msg\n              stop \"Cobol File EOF-RNR\"               *> for testing because it should not have got here !!\n              go to aa999-main-exit\n     end-if",
+        "line": 429
+      },
+      {
+        "from": "10",
+        "to": "WE-Error FS-Reply        *> EOF\n              move 3 to WE-Error                 *> as in irsub1\n              set Cobol-File-EoF to true\n              move 1 to Cobol-File-Status         *> JIC above dont work :)\n              initialize WS-NL-Record\n              move \"EOF\" to WS-File-Key           *> for logging\n              go to aa999-main-exit\n     end-read",
+        "line": 440
+      },
+      {
+        "from": "Record-1",
+        "to": "WS-NL-Record",
+        "line": 451
+      },
+      {
+        "from": "NL-Key",
+        "to": "WS-File-Key",
+        "line": 458
+      },
+      {
+        "from": "zeros",
+        "to": "WE-Error FS-Reply",
+        "line": 459
+      },
+      {
+        "from": "NL-Key",
+        "to": "WS-File-Key\n                                                       Key-1\n                              when   other\n                                     move   spaces  to WS-File-Key\n                    end-evaluate\n              when  other\n                    move   spaces  to WS-File-Key\n     end-evaluate",
+        "line": 473
+      },
+      {
+        "from": "204",
+        "to": "WS-No-Paragraph",
+        "line": 490
+      },
+      {
+        "from": "NL-Key",
+        "to": "Key-1",
+        "line": 494
+      },
+      {
+        "from": "21",
+        "to": "we-error fs-reply\n              move  2 to we-error      *> from irsub1\n              move  NL-Key to WS-File-Key\n              go to aa999-main-exit\n     end-read\n     move  Record-1  to WS-NL-Record",
+        "line": 496
+      },
+      {
+        "from": "NL-Key",
+        "to": "WS-File-Key",
+        "line": 502
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error",
+        "line": 503
+      },
+      {
+        "from": "NL-Owning",
+        "to": "NL-Sub-Nominal\n              move NL-Pointer to NL-Owning\n              go to aa051-Reread",
+        "line": 508
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 511
+      },
+      {
+        "from": "205",
+        "to": "WS-No-Paragraph",
+        "line": 518
+      },
+      {
+        "from": "zeros",
+        "to": "fs-reply\n                       WE-Error",
+        "line": 519
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 521
+      },
+      {
+        "from": "NL-Key",
+        "to": "WS-File-Key\n                        Key-1",
+        "line": 522
+      },
+      {
+        "from": "zero",
+        "to": "Sub-Nominal",
+        "line": 524
+      },
+      {
+        "from": "998",
+        "to": "WE-Error                     *> 998 Invalid calling parameter settings\n              go to aa999-main-exit\n     end-if\n*>\n*>  Now do Start primary key before read-next\n*>\n     if       fn-equal-to\n              start Nominal-Ledger key = Key-1 invalid key\n                    move 21 to Fs-Reply\n                    move 2 to we-error     *> from irsub1\n                    go to aa999-main-exit\n              end-start\n     end-if\n     if       fn-not-less-than\n              start Nominal-Ledger key not < Key-1 invalid key\n                    move 21 to Fs-Reply\n                    move 2 to we-error     *> from irsub1\n                    go to aa999-main-exit\n              end-start\n     end-if\n     if       fn-greater-than\n              start Nominal-Ledger key > Key-1 invalid key\n                    move 21 to Fs-Reply\n                    move 2 to we-error     *> from irsub1\n                    go to aa999-main-exit\n              end-start\n     end-if\n*>\n     if       fn-less-than         *> Not used in irsub1\n              start Nominal-Ledger key < Key-1 invalid key\n                    move 21 to Fs-Reply\n                    move 2 to we-error     *> from irsub1\n                    go to aa999-main-exit\n              end-start\n     end-if\n*>\n*> Now go back and read next record [ from irsub1 ]\n*>\n     perform  aa999-main-exit",
+        "line": 527
+      },
+      {
+        "from": "206",
+        "to": "WS-No-Paragraph",
+        "line": 569
+      },
+      {
+        "from": "WS-NL-Record",
+        "to": "Record-1",
+        "line": 570
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 571
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 572
+      },
+      {
+        "from": "NL-Key",
+        "to": "WS-File-Key",
+        "line": 573
+      },
+      {
+        "from": "22",
+        "to": "FS-Reply    *> rest is from irsub1\n              display IR906 at 2401 with foreground-color 4\n              accept WS-Reply at 2438",
+        "line": 575
+      },
+      {
+        "from": "\"O\"",
+        "to": "NL-Type",
+        "line": 583
+      },
+      {
+        "from": "WS-NL-Record",
+        "to": "Record-1",
+        "line": 584
+      },
+      {
+        "from": "NL-Owning",
+        "to": "NL-Pointer",
+        "line": 594
+      },
+      {
+        "from": "NL-Sub-Nominal",
+        "to": "NL-Owning",
+        "line": 595
+      },
+      {
+        "from": "zero",
+        "to": "NL-Sub-Nominal",
+        "line": 596
+      },
+      {
+        "from": "\"S\"",
+        "to": "NL-Type",
+        "line": 597
+      },
+      {
+        "from": "WS-NL-Record",
+        "to": "Record-1",
+        "line": 598
+      },
+      {
+        "from": "NL-Owning",
+        "to": "NL-Sub-Nominal",
+        "line": 602
+      },
+      {
+        "from": "NL-Pointer",
+        "to": "NL-Owning",
+        "line": 603
+      },
+      {
+        "from": "NL-Key",
+        "to": "WS-File-Key",
+        "line": 604
+      },
+      {
+        "from": "207",
+        "to": "WS-No-Paragraph",
+        "line": 608
+      },
+      {
+        "from": "NL-Key",
+        "to": "Key-1",
+        "line": 609
+      },
+      {
+        "from": "NL-Key",
+        "to": "WS-File-Key",
+        "line": 610
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 611
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 612
+      },
+      {
+        "from": "NL-Sub-Nominal",
+        "to": "NL-Owning",
+        "line": 622
+      },
+      {
+        "from": "zero",
+        "to": "NL-Sub-Nominal",
+        "line": 623
+      },
+      {
+        "from": "NL-Key",
+        "to": "Key-1",
+        "line": 624
+      },
+      {
+        "from": "208",
+        "to": "WS-No-Paragraph",
+        "line": 630
+      },
+      {
+        "from": "WS-NL-Record",
+        "to": "Record-1",
+        "line": 631
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 632
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 633
+      },
+      {
+        "from": "NL-Key",
+        "to": "WS-File-Key",
+        "line": 634
+      },
+      {
+        "from": "216",
+        "to": "WS-No-Paragraph",
+        "line": 643
+      },
+      {
+        "from": "WS-NL-Record",
+        "to": "Record-1",
+        "line": 644
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 645
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 646
+      },
+      {
+        "from": "NL-Key",
+        "to": "WS-File-Key",
+        "line": 647
+      },
+      {
+        "from": "22",
+        "to": "FS-Reply    *> rest is from irsub1\n              display IR909 at 2401 with foreground-color 4\n              accept WS-Reply at 2448        *> TESTING\n              rewrite  Record-1 invalid key\n                  display IR910   at 2401 with foreground-color 4\n                  accept WS-Reply at 2432    *> TESTING\n     end-write",
+        "line": 649
+      },
+      {
+        "from": "999",
+        "to": "WE-Error",
+        "line": 662
+      },
+      {
+        "from": "99",
+        "to": "fs-reply",
+        "line": 663
+      },
+      {
+        "from": "21",
+        "to": "WS-Log-File-no",
+        "line": 690
+      },
+      {
+        "from": "901",
+        "to": "WE-Error       *> 901 Programming error; temp rec length is wrong caller must stop\n                   move 99 to fs-reply        *> allow for last field ( FILLER) not being present in layout",
+        "line": 702
+      },
+      {
+        "from": "spaces",
+        "to": "Display-Blk\n                       string IR902          delimited by size\n                              A              delimited by size\n                              \" < \"          delimited by size\n                              \"IRS-Nominal-Rec = \" delimited by size\n                              B              delimited by size    into Display-Blk\n                       end-string\n                       display Display-Blk at 2301 with erase eol     *> BUT WILL REMIND ME TO SET IT UP correctly\n                       display IR901 at 2401 with erase eol\n                       if  Testing-1\n                           perform Ca-Process-Logs\n                       end-if\n                       accept Accept-Reply at 2433\n                       go to ba-rdbms-exit\n              end-if\n*>\n*>  Not a error comparing the length of records so - -\n*>  Load up the DB settings from the system record as its not passed on\n*>           hopefully once is enough  :)\n*>\n              move     RDBMS-DB-Name to DB-Schema\n              move     RDBMS-User    to DB-UName\n              move     RDBMS-Passwd  to DB-UPass\n              move     RDBMS-Port    to DB-Port\n              move     RDBMS-Host    to DB-Host\n              move     RDBMS-Socket  to DB-Socket\n     end-if",
+        "line": 706
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "47, 48, 49 to try and find error in caller\n*>                    that is opening an already open file. Found it in irs030 (SL/PL posting file proc.\n*> 23/04/18 vbc - .11 Extra code in open and read indexed.\n*> 29/04/18 vbc - .12 Resetting Cobol-File-Status for write,rewrite,delete, start.\n*> 07/12/22 vbc - .13 Chgd Vars A & B to pic 999 to keep GC v3.2 happy.\n*> 10/12/22 vbc - .14 chg to perform ba-Process-RDBMS 2 remove GC warning msg from latest v3.2 code\n*>                    WITH ba-Main-Exit chgd to exit section.\n*> 16/04/24 vbc       Copyright notice update superceding all previous notices.\n*>**\n*>  Module USAGE\n*>**************\n*>\n*>    On Entry:         Set up Linkage areas -\n*>    ********              1. File and table WS record : -\n*>    acasirsub1 ONLY          WS-NL-Record = Contents of data record to be written/read\n*>                          2. File-Access = File-Function as needed.\n*>                              Access-Type   as needed.\n*>                          3. File-Defs (File-Definitions) = Paths set up.\n*>\n*>    On Exit:          Linkage contains and apples to ALL FH and DAL modules:\n*>    *******               Record = containing a read data record or table row\n*>                          Fs-Reply = 0, 99 or other value where\n*>                                     0  = Operation completed successfully\n*>                                     10 = End of file\n*>                                     21 = Invalid key | key not found\n*>                                     47 = Open input  denied wrong perns to read from file\n*>                                     48 = Open output denied wrong perns to write to file\n*>                                     49 = Open I/O    denied wrong perns to read/write to file\n*>                                     99 = Indicates an error see WE-Error for more info\n*>                          WE-Error   0    = Operation completed successfully\n*>                                     1+   = Failure to open IRS file\n*>                                     2+   = Indexed IRS record not found\n*>                                     3+   = IRS EOF reached\n*>                                     999  = Undefined / unknown error\n*>                                     998* = File-Key-No Out Of Range not 1.\n*>                                     997* = Access-Type wrong (< 5 or > 8)\n*>                                     996* = File Delete key out of range (not 1)\n*>                                     995* = During Delete SQLSTATE not '00000' investigate using MSG-Err/Msg\n*>                                     994* = During Rewrite,                     ^^ see above ^^\n*>                                     990* = Unknown and unexpected error, again ^^ see above ^^\n*>                                     989* = Unexpected error on Read-Indexed, investigate as above.\n*>                                     911* = Rdb Error during initializing,\n*>                                            possibly can not connect to database\n*>                                             Check connect data and\n*>                                             see SQL-Err & SQL-MSG\n*>                                            Produced by Mysql-1100-Db-Error in copy\n*>                                            module mysql-procedure.\n*>                                     901  = File Def Record size not =< than ws record size\n*>                                            Module needs ws definition changing to correct size\n*>                                            FATAL, Stop using system, fix source code\n*>                                            and recompile before using system again.\n*>                                     Other = any other rdbms errors see specific\n*>                                             (Rdbms) manual\n*>                          SQL-Err  = Error code from RDBMS is set if above 2 are non zero\n*>                          SQL-Msg  = Non space providing more info if SQL-Err non '00000'\n*>                                     * = FS-Reply = 99.\n*>                                     + = IRS FH & DAL Only.\n*>\n*>       During testing a log file will be created containing datetime stamp, task and return codes\n*>       for both FS-Reply and WE-Error and table used along with the RDB error number and message\n*>         In this case for the\n*>                Nominal Ledger File.\n*>\n*>       WARNING - This file could get large so needs manually deleting after examination.\n*>\n*>******************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supercedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>**********************************************************************************\n*>\n environment division.\n copy \"envdiv.cob\".\n*>\n input-output section.\n file-control.\n*>\n     select nominal-ledger  assign       File-34   *> nl-file\n                            organization indexed\n                            access       dynamic\n                            record       key-1\n                            status       fs-reply.\n*>\n data division.\n file section.\n*>***********\n fd  nominal-ledger.\n copy \"irsfdwsnl.cob\".\n*>\n working-storage section.\n*>**********************\n*>\n 77  prog-name          pic x(20)  value \"acasirsub1 (3.02.14)\".\n*>\n 77  WS-Reply           pic x      value space.\n*>\n 77  A                  pic 9(4)             value zero.  *> A & B used in 1st test ONLY\n 77  B                  pic 9(4)             value zero.  *>  in ba-Process-RDBMS\n 77  Display-Blk        pic x(75)             value spaces.\n 77  Cobol-File-Status  pic 9                 value zero.\n     88  Cobol-File-Eof                       value 1.\n*>\n 01  Error-Messages.\n*> STOPs - during testing and should NOT happen.\n*>  Cobol File EOF-RN  - within Read-Next.\n*>  Cobol File EOF-RNR - within Read-Next-Raw.\n*>\n*> System Wide\n*> Module Specific\n     03  IR901          pic x(31) value \"IR901 Note error and hit return\".\n     03  IR902          pic x(32) value \"IR902 Program Error: Temp rec = \".\n     03  IR906          pic x(40) value \"IR906 Link/record exists on owning write\".\n     03  IR907          pic x(42) value \"IR907 Link/record exists on rewrite (S->O)\".\n     03  IR908          pic x(37) value \"IR908 link/record exists on sub write\".\n     03  IR909          pic x(51) value \"IR909 Link/record exists on owning write, rewriting\".\n     03  IR910          pic x(28) value \"IR910 Rewrite failed as well\".\n*>\n Linkage Section.\n*>**************\n copy \"irswsnl.cob\" replacing nl-record by WS-NL-Record.\n*>\n copy \"wssystem.cob\".\n*>\n copy \"wsfnctn.cob\".\n*>\n copy \"wsnames.cob\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n Procedure Division Using System-Record\n\n                          WS-NL-Record\n\n                          File-Access\n                          File-Defs\n                          ACAS-DAL-Common-data.\n*>********************************************\n*>\n aa-Process-Flat-File Section.\n*>***************************\n aa010-main.\n*>\n*>  For logging only.\n*>\n     move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=Stock - used in FH logging\n     move     11     to WS-Log-File-No.  *> Cobol/RDB, File/Table within sub System.\n*>\n*>   Now Test for valid key for start, read-indexed and delete\n*>\n     evaluate File-Function\n              when  4   *> fn-read-indexed\n              when  9   *> fn-start\n                if     File-Key-No not = 1\n                       move 998 to WE-Error       *> file seeks key type out of range        998\n                       move 99 to fs-reply\n                       go   to aa999-main-exit\n                end-if\n              when     8  *> fn-delete\n                if     File-Key-No not = 1        *> 1  is only for RDB as Cobol does it on primary key\n                       move 996 to WE-Error       *> file seeks key type out of range        996\n                       move 99 to fs-reply\n                       go   to aa999-main-exit\n                end-if\n     end-evaluate.\n*>\n*>    TAKEN from acasirsub4 22/12/16\n*>\n*>  Special to allow RDB equivilent of Open file as output\n*>   therefore removing any existing records by doing a\n*>     special Delete-All instead.\n*>\n     if       fn-Open and\n              fn-output\n         and  not FS-Cobol-Files-Used  *> RDB processing\n *>             set fn-delete-all to true\n *>             move zero to access-type\n              perform ba-Process-RDBMS\n              go to AA-Main-Exit\n     end-if.\n*>\n*> Check if data files or RDBMS processing  !!\n*>\n     if       not FS-Cobol-Files-Used\n              move RDBMS-Flat-Statuses to FA-RDBMS-Flat-Statuses    *> needed for DAL? not JC/dbpre versions\n              perform ba-Process-RDBMS                                *>  Can't hurt\n              go to AA-Main-Exit\n     end-if.\n*>\n*> Test  Rec lengths first.\n*>\n     perform  ba012-Test-WS-Rec-Size-2.\n*>\n*>  File paths for Cobol File has already done in main menu module\n*>\n*>******************************************************************************\n*> So we are processing Cobol Flat files, as Dup processing, or by themselves. *\n*>    if reading, get it but will be overwritten by rdb processing if set,     *\n*>      otherwise will write/rewrite/delete etc, to both formats               *\n*>******************************************************************************\n*>\n     move     zero   to  WE-Error                                   *> as in irsub1\n *>  ?                      FS-Reply.\n     move     spaces to SQL-Err SQL-Msg SQL-State.\n*>\n     evaluate File-Function\n        when  1\n              go to aa020-Process-Open\n        when  2\n              go to aa030-Process-Close\n        when  3\n              go to aa040-Process-Read-Next\n        when  4\n              go to aa050-Process-Read-Indexed\n        when  5\n              go to aa070-Process-Write\n        when  7\n              go to aa090-Process-Rewrite\n        when  8\n              go to aa080-Process-Delete\n        when  9\n              go to aa060-Process-Start\n        when  13                                       *> fn-Read-Next-Raw\n              go to aa045-Process-Read-Next-Raw\n        when  15                                        *> fn-Write-Raw\n              go to aa170-Process-Write-Raw\n        when  other\n              go to aa100-Bad-Function\n     end-evaluate.\n*>\n*>  Should never get here but in case :(\n     go       to aa100-Bad-Function.\n*>\n aa020-Process-Open.\n     move     spaces to WS-File-Key.     *> for logging\n     move     201 to WS-No-Paragraph.\n     if       fn-input\n              open input Nominal-Ledger\n              if   Fs-Reply not = zero\n                   move  1 to we-error     *> as in irsub1\n                   go to aa999-Main-Exit\n              end-if\n              move     \"OPEN Input IRS NL File\" to WS-File-Key\n      else\n       if     fn-i-o\n              open i-o Nominal-Ledger\n *>             if       fs-reply not = zero\n *>                      close       Nominal-Ledger\n *>                      open output Nominal-Ledger           *> Doesnt create in i-o\n *>                      close       Nominal-Ledger\n *>                      open i-o    Nominal-Ledger\n              if   fs-reply = 41                              *> already open so close and open\n                   close Nominal-Ledger\n                   go to aa020-Process-Open\n              end-if\n              if   fs-Reply = 47 or 48 or 49                  *> no perms to do requested (no write perms etc)\n                   move  1 to we-error     *> as in irsub1\n                   move     \"OPEN I/O IRS NL File FAILED\" to WS-File-Key\n                   go to aa999-Main-Exit\n              end-if\n              if   fs-Reply not = zero\n                   move  1 to we-error     *> as in irsub1\n                   move     \"OPEN I/O IRS NL File FAILED\" to WS-File-Key\n                   go to aa999-Main-Exit\n              end-if\n              move     \"OPEN I/O IRS NL File\" to WS-File-Key\n       else\n        if    fn-output\n              open output Nominal-Ledger         *> caller should check fs-reply\n              move     \"OPEN Output IRS NL File\" to WS-File-Key\n        else\n         if   fn-extend                      *> Must not be used for ISAM files\n*>              open extend Nominal-Ledger\n              move 997 to WE-Error\n              move 99  to FS-Reply\n              go to aa999-main-exit\n         end-if\n        end-if\n       end-if\n     end-if.\n     move     zero to Cobol-File-Status.\n     if       fs-reply not = zero\n              move 1 to we-error.            *> JIC but shouldnt happen as tested for.\n     go       to aa999-main-exit.            *> with test for dup processing\n*>\n aa030-Process-Close.\n     move     202 to WS-No-Paragraph.\n     move     spaces to WS-File-Key.     *> for logging\n     close    Nominal-Ledger.\n*> 27/07/16 16:30     move     zeros to FS-Reply WE-Error.\n     move     zero to Cobol-File-Status.\n     move     \"CLOSE IRS NL File\" to WS-File-Key.\n     perform  aa999-main-exit.\n     move     zero to  File-Function\n                       Access-Type.              *> close log file\n     perform  Ca-Process-Logs.\n     go       to aa-main-exit.\n*>\n aa040-Process-Read-Next.\n*>\n*>   Process READ next record ignoring Sub-Nominal pointers.\n*> ?   This is processed after\n*> ?   Start code as its really Start/Read next at point aa041\n*>\n     move     203 to WS-No-Paragraph.\n     if       Cobol-File-Eof          *> This block should NOT occur\n              move 10 to FS-Reply\n                         WE-Error\n              move 3 to WE-Error                 *> as in irsub1\n              move spaces to\n                             SQL-Err\n                             SQL-Msg\n              stop \"Cobol File EOF-RN\"               *> for testing because it should not have got here !!\n              go to aa999-main-exit\n     end-if.\n*>\n aa041-Reread.\n     read     Nominal-Ledger next record at end\n              move 10 to WE-Error FS-Reply        *> EOF\n              move 3 to WE-Error                 *> as in irsub1\n              set Cobol-File-EoF to true\n              move 1 to Cobol-File-Status         *> JIC above dont work :)\n              initialize WS-NL-Record\n              move \"EOF\" to WS-File-Key           *> for logging\n              go to aa999-main-exit\n     end-read.\n     if       FS-Reply not = zero\n              move   \"Read Next failure on IRS NL File\" to WS-File-Key\n              go to aa999-main-exit.\n     move     Record-1 to  WS-NL-Record.\n*>\n*> test to see if pointer record [ from irsub1 ]\n*>\n     if       Sub\n              go to aa041-Reread.\n*>\n     move     NL-Key   to WS-File-Key.\n     move     zeros to WE-Error FS-Reply.\n     go to    aa999-main-exit.\n*>\n aa045-Process-Read-Next-Raw.\n*>\n*>   Process READ next record.\n*>     This process reads ALL records.\n*>\n     move     213 to WS-No-Paragraph.\n     if       Cobol-File-Eof          *> This block should NOT occur\n              move 10 to FS-Reply\n                         WE-Error\n              move 3 to WE-Error                 *> as in irsub1\n              move spaces to\n                             SQL-Err\n                             SQL-Msg\n              stop \"Cobol File EOF-RNR\"               *> for testing because it should not have got here !!\n              go to aa999-main-exit\n     end-if.\n*>\n     read     Nominal-Ledger next record at end\n              move 10 to WE-Error FS-Reply        *> EOF\n              move 3 to WE-Error                 *> as in irsub1\n              set Cobol-File-EoF to true\n              move 1 to Cobol-File-Status         *> JIC above dont work :)\n              initialize WS-NL-Record\n              move \"EOF\" to WS-File-Key           *> for logging\n              go to aa999-main-exit\n     end-read.\n     if       FS-Reply not = zero\n              move     \"Read Raw failure on IRS NL File\" to WS-File-Key\n              go to aa999-main-exit.\n     move     Record-1 to  WS-NL-Record.\n*>\n*> test to see if pointer record [ from irsub1 ]\n*>      OMITTED as reading all records RAW\n *>    if       Sub\n *>             go to aa041-Reread.\n*>\n     move     NL-Key   to WS-File-Key.\n     move     zeros to WE-Error FS-Reply.\n     go to    aa999-main-exit.\n*>\n*>   The next block will never get executed unless performed  so is it needed ?\n*>\n aa047-Eval-Keys.\n     evaluate File-Function      *> Set up keys just for logging\n              when  4             *> fn-read-indexed\n              when  5             *> fn-write\n              when  7             *> fn-re-write\n              when  8             *> fn-delete\n              when  9             *> fn-start\n                    evaluate  File-Key-No\n                              when   1\n                                     move   NL-Key  to WS-File-Key\n                                                       Key-1\n                              when   other\n                                     move   spaces  to WS-File-Key\n                    end-evaluate\n              when  other\n                    move   spaces  to WS-File-Key\n     end-evaluate.\n*>\n aa050-Process-Read-Indexed.\n*>\n*>   Coding from original irsub1\n*>\n*> copy the key to main file area\n*> if retrieve record by key set up for Owning or Sub-Nominal\n*>    pointer record\n*>\n     move     204 to WS-No-Paragraph.\n *>    perform  aa047-Eval-keys.\n*>\n aa051-Reread.\n     move     NL-Key to Key-1.         *> in case of goto Reread\n     read     Nominal-Ledger    invalid key\n              move 21 to we-error fs-reply\n              move  2 to we-error      *> from irsub1\n              move  NL-Key to WS-File-Key\n              go to aa999-main-exit\n     end-read\n     move  Record-1  to WS-NL-Record.\n     move  NL-Key    to WS-File-Key.\n     move  zero      to FS-Reply WE-Error.\n*>\n*> Pointer has been read if sub\n*>\n     if       Sub\n              move NL-Owning  to NL-Sub-Nominal\n              move NL-Pointer to NL-Owning\n              go to aa051-Reread.\n     move     zero to Cobol-File-Status.\n     go       to aa999-main-exit.\n*>\n aa060-Process-Start.\n*>\n*>  Check for Param error 1st on start   WARNING Not logging starts\n*>\n     move     205 to WS-No-Paragraph.\n     move     zeros to fs-reply\n                       WE-Error.\n     move     zero to Cobol-File-Status.\n     move     NL-Key to WS-File-Key\n                        Key-1.\n     move     zero   to Sub-Nominal.\n*>\n     if       access-type < 5 or > 8                   *> NOT using 'not >'\n              move 998 to WE-Error                     *> 998 Invalid calling parameter settings\n              go to aa999-main-exit\n     end-if\n*>\n*>  Now do Start primary key before read-next\n*>\n     if       fn-equal-to\n              start Nominal-Ledger key = Key-1 invalid key\n                    move 21 to Fs-Reply\n                    move 2 to we-error     *> from irsub1\n                    go to aa999-main-exit\n              end-start\n     end-if\n     if       fn-not-less-than\n              start Nominal-Ledger key not < Key-1 invalid key\n                    move 21 to Fs-Reply\n                    move 2 to we-error     *> from irsub1\n                    go to aa999-main-exit\n              end-start\n     end-if\n     if       fn-greater-than\n              start Nominal-Ledger key > Key-1 invalid key\n                    move 21 to Fs-Reply\n                    move 2 to we-error     *> from irsub1\n                    go to aa999-main-exit\n              end-start\n     end-if\n*>\n     if       fn-less-than         *> Not used in irsub1\n              start Nominal-Ledger key < Key-1 invalid key\n                    move 21 to Fs-Reply\n                    move 2 to we-error     *> from irsub1\n                    go to aa999-main-exit\n              end-start\n     end-if\n*>\n*> Now go back and read next record [ from irsub1 ]\n*>\n     perform  aa999-main-exit.   *> logging\n     go       to aa041-Reread.\n*>\n aa070-Process-Write.\n     move     206 to WS-No-Paragraph.\n     move     WS-NL-Record to Record-1.\n     move     zeros to FS-Reply  WE-Error.\n     move     zero to Cobol-File-Status.\n     move     NL-Key to WS-File-Key.\n     write    Record-1 invalid key\n              move 22 to FS-Reply    *> rest is from irsub1\n              display IR906 at 2401 with foreground-color 4\n              accept WS-Reply at 2438.    *> TESTING\n     if       Owner\n              go  to aa999-main-exit.\n*>\n*> Extra processing for sub-nominal.    From irsub1\n*>\n     move     \"O\" to NL-Type.\n     move     WS-NL-Record to Record-1.\n     rewrite  Record-1 invalid key\n              display IR907 at 2401 with foreground-color 4\n              accept WS-Reply at 2432.    *> TESTING\n*>\n*>  Extra code to stop zero keys  21/12/16\n*>\n     if       NL-Sub-Nominal = zero\n              go to aa999-Main-Exit.\n*>\n     move     NL-Owning      to NL-Pointer.\n     move     NL-Sub-Nominal to NL-Owning.\n     move     zero           to NL-Sub-Nominal.\n     move     \"S\"            to NL-Type.\n     move     WS-NL-Record to Record-1.\n     write    Record-1 invalid key\n              display IR908 at 2401 with foreground-color 4\n              accept WS-Reply at 2435.    *> TESTING\n     move     NL-Owning  to NL-Sub-Nominal.   *> Do not know why this was missed out\n     move     NL-Pointer to NL-Owning.        *>  but restored incase used by caller\n     move  NL-Key to WS-File-Key.\n     go       to aa999-main-exit.\n*>\n aa080-Process-Delete.\n     move     207 to WS-No-Paragraph.\n     move     NL-Key to Key-1.             *> NOT in irsub1 ??\n     move  NL-Key to WS-File-Key.\n     move     zeros to FS-Reply  WE-Error.\n     move     zero to Cobol-File-Status.\n*>\n*> Delete record and pointer if neccessary\n*>\n     delete   Nominal-Ledger record.\n     if       Owner\n              go       to aa999-main-exit.\n*>\n*> Delete the pointer\n*>\n     move     NL-Sub-Nominal to NL-Owning.\n     move     zero           to NL-Sub-Nominal.\n     move     NL-Key         to Key-1.\n     delete   Nominal-Ledger record.\n     go       to aa999-main-exit.\n*>\n aa090-Process-Rewrite.\n*>\n     move     208 to WS-No-Paragraph.\n     move     WS-NL-Record to Record-1.\n     move     zeros to FS-Reply  WE-Error.\n     move     zero to Cobol-File-Status.\n     move  NL-Key to WS-File-Key.\n     rewrite  Record-1.\n     go       to aa999-main-exit.\n*>\n aa170-Process-Write-Raw.\n*>\n*>  Just will write no with no tests for owner or sub\n*>   used with nominalLD\n*>\n     move     216 to WS-No-Paragraph.\n     move     WS-NL-Record to Record-1.\n     move     zeros to FS-Reply  WE-Error.\n     move     zero to Cobol-File-Status.\n     move     NL-Key to WS-File-Key.\n     write    Record-1 invalid key\n              move 22 to FS-Reply    *> rest is from irsub1\n              display IR909 at 2401 with foreground-color 4\n              accept WS-Reply at 2448        *> TESTING\n              rewrite  Record-1 invalid key\n                  display IR910   at 2401 with foreground-color 4\n                  accept WS-Reply at 2432    *> TESTING\n     end-write.\n     go       to aa999-main-exit.\n*>\n aa100-Bad-Function.\n*>\n*> Houston; We have a problem\n*>\n     move     999 to WE-Error.                         *> 999\n     move     99  to fs-reply.\n*>\n aa999-main-exit.\n     if       Testing-1\n              perform Ca-Process-Logs\n     end-if.\n*>\n aa-main-exit.\n*>\n*> Now have processed cobol flat file,  so ..\n aa-Exit.\n     exit program.\n*>\n ba-Process-RDBMS section.\n*>***********************\n*>\n*>********************************************************************\n*>  Here we call the relevent RDBMS module for this table            *\n*>   which will include processing any other joined tables as needed *\n*>********************************************************************\n*>\n ba010-Test-WS-Rec-Size.\n*>\n*>     Test on very first call only  (So do NOT use var A & B again)\n*>       Lets test that Data-record size is = or > than declared Rec in DAL\n*>          as we cant adjust at compile/run time due to ALL Cobol compilers ?\n*>\n     move     21 to WS-Log-File-no.        *> for FHlogger\n*>\n ba012-Test-WS-Rec-Size-2.\n*>\n     if       A = zero                        *> so it is being called first time\n              move     function Length (\n                                         WS-NL-Record\n                                                 ) to A\n              move     function length (\n                                        Record-1\n                                                 ) to B\n              if   A < B                      *> COULD LET caller module deal with these errors !!!!!!!\n                   move 901 to WE-Error       *> 901 Programming error; temp rec length is wrong caller must stop\n                   move 99 to fs-reply        *> allow for last field ( FILLER) not being present in layout.\n              end-if\n              if       WE-Error = 901                  *> record length wrong so display error, accept and",
+        "line": 55
+      },
+      {
+        "type": "IF",
+        "condition": "Testing-1\n                           perform Ca-Process-Logs\n                       end-if\n                       accept Accept-Reply at 2433\n                       go to ba-rdbms-exit\n              end-if\n*>\n*>  Not a error comparing the length of records so - -\n*>  Load up the DB settings from the system record as its not passed on\n*>           hopefully once is enough  :)\n*>\n              move     RDBMS-DB-Name to DB-Schema\n              move     RDBMS-User    to DB-UName\n              move     RDBMS-Passwd  to DB-UPass\n              move     RDBMS-Port    to DB-Port\n              move     RDBMS-Host    to DB-Host\n              move     RDBMS-Socket  to DB-Socket\n     end-if.\n*>\n ba015-Test-Ends.\n*>\n*>  First check if there is an open output and if so open 1st",
+        "line": 715
+      },
+      {
+        "type": "IF",
+        "condition": "fn-Open\n        and   fn-Output\n              perform ba020-Process-Dal\n              set fn-Delete-All to true\n     end-if.\n*>\n*>   HERE we need a CDF [Compiler Directive] to select the correct DAL based\n*>     on the pre SQL compiler e.g., JCs or dbpre or Prima conversions <<<<  ? >>>>>\n*>        Do this after system testing and pre code release.\n*>\n*>  NOW SET UP FOR JCs pre-sql compiler system.\n*>   DAL-Datablock not needed unless using RDBMS DAL from Prima & MS Sql\n*>\n ba020-Process-DAL.\n     call     \"irsnominalMT\" using File-Access\n                                   ACAS-DAL-Common-data\n\n                                   WS-NL-Record\n     end-call.\n*>\n*>   Any errors leave it to caller to recover from\n*>\n ba-rdbms-exit.\n     exit     section.\n*>   ****     *******\n*>\n Ca-Process-Logs. *> Not called on DAL access as it does it already\n*>**************\n*>\n     call     \"fhlogger\" using File-Access\n                               ACAS-DAL-Common-data.\n*>\n ca-Exit.     exit.\n*>\n*>\n end program acasirsub1.",
+        "line": 739
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "File-Function\n              when  4   *> fn-read-indexed\n              when  9   *> fn-start\n       ...",
+        "line": 232,
+        "whenCount": 3
+      },
+      {
+        "content": "File-Function\n        when  1\n              go to aa020-Process-Open\n        when  2\n              g...",
+        "line": 287,
+        "whenCount": 11
+      },
+      {
+        "content": "File-Function      *> Set up keys just for logging\n              when  4             *> fn-read-inde...",
+        "line": 465,
+        "whenCount": 7
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 27,
+    "cognitive": 45,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 68,
+      "totalOperators": 84,
+      "totalOperands": 168,
+      "vocabulary": 69,
+      "length": 252,
+      "volume": 1539.3481631080986
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

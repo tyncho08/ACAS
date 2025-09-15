@@ -1,0 +1,1092 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl830.cbl",
+  "fileName": "sl830.cbl",
+  "timestamp": "2025-09-15T16:25:31.957Z",
+  "programId": "sl830",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": false,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "working-storage",
+        "line": 102
+      },
+      {
+        "name": "linkage",
+        "line": 252
+      },
+      {
+        "name": "aa000-Main",
+        "line": 267
+      },
+      {
+        "name": "ba000-Process-Autogen",
+        "line": 292
+      },
+      {
+        "name": "zz010-Open-Files",
+        "line": 374
+      },
+      {
+        "name": "zz020-Close-All-Files",
+        "line": 437
+      },
+      {
+        "name": "zz030-get-a-deleted-invoice",
+        "line": 452
+      },
+      {
+        "name": "zz040-Generate-Invoice",
+        "line": 491
+      },
+      {
+        "name": "zz045-Update-Analysis",
+        "line": 625
+      },
+      {
+        "name": "zz050-Validate-Date",
+        "line": 715
+      },
+      {
+        "name": "exit",
+        "line": 752
+      },
+      {
+        "name": "zz060-Convert-Date",
+        "line": 754
+      },
+      {
+        "name": "exit",
+        "line": 787
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 789
+      },
+      {
+        "name": "exit",
+        "line": 817
+      },
+      {
+        "name": "zz900-Evaluate-Message",
+        "line": 819
+      },
+      {
+        "name": "maps04",
+        "line": 827
+      },
+      {
+        "name": "exit",
+        "line": 833
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "File-Defs",
+        "line": 264
+      },
+      {
+        "name": "goback",
+        "line": 271
+      },
+      {
+        "name": "ba000-Main",
+        "line": 295
+      },
+      {
+        "name": "ba010-Read-Autogen",
+        "line": 310
+      },
+      {
+        "name": "Autogen-Stored",
+        "line": 313
+      },
+      {
+        "name": "end-perform",
+        "line": 362
+      },
+      {
+        "name": "ba020-Check-For-Write-Errors",
+        "line": 365
+      },
+      {
+        "name": "end-if",
+        "line": 423
+      },
+      {
+        "name": "zz030-Start",
+        "line": 457
+      },
+      {
+        "name": "zz030-Read",
+        "line": 466
+      },
+      {
+        "name": "zz030-Close",
+        "line": 476
+      },
+      {
+        "name": "zz030-Terminate",
+        "line": 484
+      },
+      {
+        "name": "end-perform",
+        "line": 565
+      },
+      {
+        "name": "WS-Temp-Stock-Key",
+        "line": 648
+      },
+      {
+        "name": "end-if",
+        "line": 711
+      },
+      {
+        "name": "zz050-Test-Date",
+        "line": 746
+      },
+      {
+        "name": "zz045-Exit",
+        "line": 751
+      },
+      {
+        "name": "zz060-Exit",
+        "line": 786
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 816
+      },
+      {
+        "name": "maps04-exit",
+        "line": 832
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 385,
+        "type": "DYNAMIC",
+        "using": [
+          "File-4",
+          "*>",
+          "SaAutogen",
+          "File-Info",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "perform",
+          "SLautogen-Open-Output",
+          "*>",
+          "open",
+          "output",
+          "SLautogen-file",
+          "perform",
+          "SLautogen-Close",
+          "*>",
+          "close",
+          "SLautogen-file",
+          "move",
+          "\"Y\"",
+          "to",
+          "SL-Autogen",
+          "move",
+          "1",
+          "to",
+          "SL-Next-Rec",
+          "*>",
+          "SIMILAR",
+          "TO",
+          "NEXT",
+          "INVOICE",
+          "#",
+          "goback",
+          "*>",
+          "as",
+          "nothing",
+          "to",
+          "do",
+          "end-if",
+          "*>",
+          "call",
+          "\"CBL_CHECK_FILE_EXIST\"",
+          "using",
+          "File-15",
+          "*>",
+          "Analysis",
+          "File-Info",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "*>",
+          "This",
+          "should",
+          "have",
+          "happened",
+          "in",
+          "sl910",
+          "invoice",
+          "create",
+          "move",
+          "1",
+          "to",
+          "ws-Process-Func",
+          "ws-Sub-Function",
+          "*>",
+          "Create",
+          "default",
+          "entries",
+          "in",
+          "Analysis",
+          "call",
+          "\"sl070\"",
+          "using",
+          "WS-Calling-Data",
+          "*>",
+          "and",
+          "Value",
+          "files",
+          "System-Record",
+          "To-Day",
+          "File-Defs",
+          "end-if",
+          "*>",
+          "call",
+          "\"CBL_CHECK_FILE_EXIST\"",
+          "using",
+          "File-16",
+          "*>",
+          "Invoice",
+          "File-Info",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "perform",
+          "Invoice-Open-Output",
+          "*>",
+          "open",
+          "output",
+          "invoice-file",
+          "perform",
+          "Invoice-Close",
+          "*>",
+          "close",
+          "invoice-file",
+          "end-if",
+          "*>",
+          "if",
+          "Stk-Audit-Used",
+          "=",
+          "1",
+          "call",
+          "\"CBL_CHECK_FILE_EXIST\"",
+          "using",
+          "File-10",
+          "*>",
+          "Stock",
+          "audit",
+          "file",
+          "File-Info",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "perform",
+          "Stock-Audit-Open-Output",
+          "else",
+          "perform",
+          "Stock-Audit-Open-Extend",
+          "end-if",
+          "perform",
+          "Stock-Audit-Close",
+          "end-if",
+          "end-if"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 830,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 92,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 107,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 109,
+        "replacing": null
+      },
+      {
+        "name": "wsanal",
+        "line": 111,
+        "replacing": null
+      },
+      {
+        "name": "wsaudit",
+        "line": 112,
+        "replacing": null
+      },
+      {
+        "name": "wsstock",
+        "line": 113,
+        "replacing": null
+      },
+      {
+        "name": "wsdnos",
+        "line": 114,
+        "replacing": null
+      },
+      {
+        "name": "slwsinv",
+        "line": 117,
+        "replacing": null
+      },
+      {
+        "name": "slwsinv2",
+        "line": 118,
+        "replacing": null
+      },
+      {
+        "name": "wsval",
+        "line": 122,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 228,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 255,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 256,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 257,
+        "replacing": null
+      },
+      {
+        "name": "FileStat-Msgs",
+        "line": 822,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 836,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 275
+      },
+      {
+        "target": "zz010-Open-Files",
+        "thru": null,
+        "line": 282
+      },
+      {
+        "target": "ba000-Process-Autogen",
+        "thru": null,
+        "line": 284
+      },
+      {
+        "target": "zz020-Close-All-Files",
+        "thru": null,
+        "line": 288
+      },
+      {
+        "target": "until",
+        "thru": null,
+        "line": 315
+      },
+      {
+        "target": "SLautogen-Read-Next",
+        "thru": null,
+        "line": 317
+      },
+      {
+        "target": "move",
+        "thru": null,
+        "line": 320
+      },
+      {
+        "target": "zz040-Generate-Invoice",
+        "thru": null,
+        "line": 322
+      },
+      {
+        "target": "ba020-Check-For-Write-Errors",
+        "thru": null,
+        "line": 323
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 324
+      },
+      {
+        "target": "zz040-Generate-Invoice",
+        "thru": null,
+        "line": 331
+      },
+      {
+        "target": "ba020-Check-For-Write-Errors",
+        "thru": null,
+        "line": 332
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 333
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 340
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 348
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 354
+      },
+      {
+        "target": "zz040-Generate-Invoice",
+        "thru": null,
+        "line": 359
+      },
+      {
+        "target": "ba020-Check-For-Write-Errors",
+        "thru": null,
+        "line": 360
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 361
+      },
+      {
+        "target": "Value-Open-Input",
+        "thru": null,
+        "line": 377
+      },
+      {
+        "target": "Value-Close",
+        "thru": null,
+        "line": 379
+      },
+      {
+        "target": "Value-Open-Output",
+        "thru": null,
+        "line": 380
+      },
+      {
+        "target": "Value-Close",
+        "thru": null,
+        "line": 382
+      },
+      {
+        "target": "SLautogen-Open-Output",
+        "thru": null,
+        "line": 388
+      },
+      {
+        "target": "SLautogen-Close",
+        "thru": null,
+        "line": 389
+      },
+      {
+        "target": "Invoice-Open-Output",
+        "thru": null,
+        "line": 409
+      },
+      {
+        "target": "Invoice-Close",
+        "thru": null,
+        "line": 410
+      },
+      {
+        "target": "Stock-Audit-Open-Output",
+        "thru": null,
+        "line": 417
+      },
+      {
+        "target": "Stock-Audit-Open-Extend",
+        "thru": null,
+        "line": 419
+      },
+      {
+        "target": "Stock-Audit-Close",
+        "thru": null,
+        "line": 421
+      },
+      {
+        "target": "SLAutogen-Open",
+        "thru": null,
+        "line": 424
+      },
+      {
+        "target": "Invoice-Open",
+        "thru": null,
+        "line": 425
+      },
+      {
+        "target": "Stock-Audit-Open",
+        "thru": null,
+        "line": 426
+      },
+      {
+        "target": "Analysis-Open",
+        "thru": null,
+        "line": 427
+      },
+      {
+        "target": "Value-Open",
+        "thru": null,
+        "line": 428
+      },
+      {
+        "target": "DelInvNos-Open",
+        "thru": null,
+        "line": 429
+      },
+      {
+        "target": "SLAutogen-Close",
+        "thru": null,
+        "line": 440
+      },
+      {
+        "target": "Invoice-Close",
+        "thru": null,
+        "line": 441
+      },
+      {
+        "target": "Stock-Audit-Close",
+        "thru": null,
+        "line": 442
+      },
+      {
+        "target": "Analysis-Close",
+        "thru": null,
+        "line": 443
+      },
+      {
+        "target": "Value-Close",
+        "thru": null,
+        "line": 444
+      },
+      {
+        "target": "DelInvNos-Close",
+        "thru": null,
+        "line": 445
+      },
+      {
+        "target": "DelInvNos-Start",
+        "thru": null,
+        "line": 461
+      },
+      {
+        "target": "DelInvNos-Read-Next",
+        "thru": null,
+        "line": 467
+      },
+      {
+        "target": "DelInvNos-Delete",
+        "thru": null,
+        "line": 473
+      },
+      {
+        "target": "DelInvNos-Close",
+        "thru": null,
+        "line": 481
+      },
+      {
+        "target": "DelInvNos-Open-Output",
+        "thru": null,
+        "line": 482
+      },
+      {
+        "target": "SLautogen-Delete",
+        "thru": null,
+        "line": 522
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 526
+      },
+      {
+        "target": "SLautogen-Delete",
+        "thru": null,
+        "line": 528
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 532
+      },
+      {
+        "target": "zz030-get-a-deleted-invoice",
+        "thru": null,
+        "line": 542
+      },
+      {
+        "target": "Invoice-Write",
+        "thru": null,
+        "line": 545
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 552
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 554
+      },
+      {
+        "target": "Invoice-Write",
+        "thru": null,
+        "line": 559
+      },
+      {
+        "target": "zz045-Update-Analysis",
+        "thru": null,
+        "line": 564
+      },
+      {
+        "target": "SLautogen-Rewrite",
+        "thru": null,
+        "line": 619
+      },
+      {
+        "target": "Stock-Read-Indexed",
+        "thru": null,
+        "line": 660
+      },
+      {
+        "target": "Stock-Read-Indexed",
+        "thru": null,
+        "line": 668
+      },
+      {
+        "target": "Stock-Rewrite",
+        "thru": null,
+        "line": 705
+      },
+      {
+        "target": "Stock-Audit-Write",
+        "thru": null,
+        "line": 710
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 749
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 763
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "WS-Date",
+        "to": "WS-Locale-Run-Date",
+        "line": 276
+      },
+      {
+        "from": "zero",
+        "to": "Autogen-Status\n                      FS-Reply\n                      Autogen-Stored",
+        "line": 311
+      },
+      {
+        "from": "space",
+        "to": "WS-Invoice-Errors",
+        "line": 314
+      },
+      {
+        "from": "1",
+        "to": "Autogen-Status   *> Autogen-EOF so proces rec leave perform\n                       move  zero to Autogen-Stored\n                       perform  zz040-Generate-Invoice\n                       perform  ba020-Check-For-Write-Errors\n                       exit perform\n              end-if\n*>\n              if       Item-Nos = zero        *> read a header but have item lines from the last header\n                and    J not = zero\n                       if       sih-Date not < Bin-Minimum\n                         and    sih-Date not > Bin-Maximum\n                                perform  zz040-Generate-Invoice\n                                perform  ba020-Check-For-Write-Errors\n                                exit perform cycle\n                       end-if\n*>\n                       move     1 to Autogen-Stored\n                       move     zero to J\n                       initialise SInvoice-Bodies with filler\n                       move     WS-Invoice-Record to Sinvoice-Header\n                       exit perform cycle\n              end-if\n*>\n              if       Item-Nos = zero\n                       move     zero to J\n                       move     zero to Autogen-Stored\n                       initialise SInvoice-Bodies with filler\n                       move     WS-Invoice-Record to Sinvoice-Header\n                       exit perform cycle\n              end-if\n*>\n              if       Item-Nos not = zero    *> Not a header record\n                       add      1 to J\n                       move     WS-Invoice-Record to Invoice-Lines (J)\n                       exit perform cycle\n              end-if\n*>\n              if       sih-Date not < Bin-Minimum\n                and    sih-Date not > Bin-Maximum\n                       perform  zz040-Generate-Invoice\n                       perform  ba020-Check-For-Write-Errors\n                       exit perform cycle\n     end-perform",
+        "line": 320
+      },
+      {
+        "from": "\"Y\"",
+        "to": "SL-Autogen\n                    move     1   to SL-Next-Rec    *> SIMILAR TO NEXT INVOICE #\n                    goback                         *> as nothing to do\n              end-if\n*>\n              call  \"CBL_CHECK_FILE_EXIST\" using File-15   *> Analysis\n                                                 File-Info\n              if    return-code not = zero          *> not = zero - No file found\n                                                    *> This should have happened in sl910 invoice create\n                    move 1 to ws-Process-Func ws-Sub-Function    *> Create default entries in Analysis\n                    call \"sl070\" using WS-Calling-Data           *>   and Value files\n                                       System-Record\n                                       To-Day\n                                       File-Defs\n              end-if\n*>\n              call  \"CBL_CHECK_FILE_EXIST\" using File-16      *> Invoice\n                                                 File-Info\n              if    return-code not = zero          *> not = zero - No file found\n                    perform  Invoice-Open-Output    *> open output invoice-file\n                    perform  Invoice-Close          *> close invoice-file\n              end-if\n*>\n              if     Stk-Audit-Used = 1\n                     call  \"CBL_CHECK_FILE_EXIST\" using File-10      *> Stock audit file\n                                                        File-Info\n                     if    return-code not = zero          *> not = zero - No file found\n                           perform Stock-Audit-Open-Output\n                     else\n                           perform Stock-Audit-Open-Extend\n                     end-if\n                     perform Stock-Audit-Close\n              end-if\n     end-if",
+        "line": 390
+      },
+      {
+        "from": "1",
+        "to": "WS-DELINV",
+        "line": 431
+      },
+      {
+        "from": "zeros",
+        "to": "WS-Del-Inv-Nos",
+        "line": 458
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 459
+      },
+      {
+        "from": "WS-Del-Inv-Nos",
+        "to": "WS-Active-Invoice-No",
+        "line": 472
+      },
+      {
+        "from": "Next-Invoice",
+        "to": "WS-Active-Invoice-No",
+        "line": 485
+      },
+      {
+        "from": "zero",
+        "to": "WS-DELINV",
+        "line": 487
+      },
+      {
+        "from": "Sinvoice-Header",
+        "to": "WS-Invoice-Record\n*>    move spaces to ih-Order\n*>\n*>  As each line item (body) is processed also call zz045-Update-Analysis as well\n*>\n*>  After processing the last line item? Compute the date of the next submission date\n*>   into sih-Date based on sih-Freq - remember to convert the bin date to yyyymmdd\n*>    first to work the next date out",
+        "line": 508
+      },
+      {
+        "from": "Sinvoice-Header",
+        "to": "WS-Invoice-Record\n              perform  SLautogen-Delete\n              if       FS-Reply not = zero\n                       display SL199 at 1310 with foreground-color 5 erase eol\n                       end-if\n              perform  varying J from 1 by 1 until J > sih-Lines\n                       move     Invoice-Lines (J) to WS-Invoice-Record\n                       perform  SLautogen-Delete\n                       if       FS-Reply not = zero\n                                display SL199 at 1410 with foreground-color 5 erase eol\n                       end-if\n              end-perform\n     end-if\n     If       sih-Repeat not = zero AND not = 99\n              subtract 1 from sih-Repeat",
+        "line": 521
+      },
+      {
+        "from": "space",
+        "to": "WS-Invoice-Write-Error-Flag",
+        "line": 539
+      },
+      {
+        "from": "SInvoice-Header",
+        "to": "WS-Invoice-Record",
+        "line": 540
+      },
+      {
+        "from": "spaces",
+        "to": "ih-Order",
+        "line": 541
+      },
+      {
+        "from": "WS-Active-Invoice-No",
+        "to": "Invoice-Nos",
+        "line": 543
+      },
+      {
+        "from": "zeros",
+        "to": "Item-Nos",
+        "line": 544
+      },
+      {
+        "from": "\"Y\"",
+        "to": "WS-Invoice-Errors\n              move \"Y\" to WS-Invoice-Write-Error-Flag",
+        "line": 547
+      },
+      {
+        "from": "WS-Active-Invoice-No",
+        "to": "Invoice-Nos\n              move     J to Item-Nos    *> yes overriding one in Autogen JIC it is out of order\n              perform  Invoice-Write\n              if       FS-Reply not = zeros\n                       move \"Y\" to WS-Invoice-Errors\n                       move \"Y\" to WS-Invoice-Write-Error-Flag\n              end-if\n              perform  zz045-Update-Analysis   *> run varying J from 1 until  J > ih-Lines\n     end-perform",
+        "line": 557
+      },
+      {
+        "from": "1",
+        "to": "WS-Autogen-MM\n                       add      1 to WS-Autogen-YYYY\n              end-if\n     end-if\n     if       Sih-Quarterly\n              add      3 to WS-Autogen-MM\n              if       WS-Autogen-MM > 12\n                       subtract 12 from WS-Autogen-MM\n                       add      1  to   WS-Autogen-YYYY\n              end-if\n     end-if\n*>\n*>  These are to help testing, as daily would not be used in Autogen\n*>   recurring invoicing\n*>\n     if       sih-Daily or sih-Testing\n              add      1 to WS-Autogen-DD\n              if       WS-Autogen-MM = 2\n                and    WS-Autogen-DD > 28\n                       move     1 to WS-Autogen-DD\n                       add      1 to WS-Autogen-MM\n              else\n               if      (WS-Autogen-MM = 9 or = 4 or = 6 or = 11)\n                 and   WS-Autogen-DD > 30\n                       move     1 to WS-Autogen-DD\n                       add      1 to WS-Autogen-MM\n               else\n                if     WS-Autogen-DD > 31\n                       move     1 to WS-Autogen-DD\n                       add      1 to WS-Autogen-MM\n                       if       WS-Autogen-MM > 12\n                                move     1 to WS-Autogen-MM\n                                move     1 to WS-Autogen-DD\n                       end-if\n                end-if\n               end-if\n              end-if\n     end-if\n     move     Sih-Date to Sih-Last-Date",
+        "line": 578
+      },
+      {
+        "from": "SInvoice-Header",
+        "to": "WS-Invoice-Record",
+        "line": 618
+      },
+      {
+        "from": "3",
+        "to": "Audit-Type",
+        "line": 644
+      },
+      {
+        "from": "il-Invoice",
+        "to": "Audit-Invoice-PO",
+        "line": 645
+      },
+      {
+        "from": "WS-Locale-Run-Date",
+        "to": "Audit-Process-Date",
+        "line": 646
+      },
+      {
+        "from": "il-Product",
+        "to": "Audit-Stock-Key\n                                     WS-Temp-Stock-Key",
+        "line": 647
+      },
+      {
+        "from": "il-Description",
+        "to": "Audit-Desc",
+        "line": 649
+      },
+      {
+        "from": "il-Qty",
+        "to": "Audit-Transaction-Qty",
+        "line": 650
+      },
+      {
+        "from": "zero",
+        "to": "Audit-Unit-Cost",
+        "line": 651
+      },
+      {
+        "from": "zero",
+        "to": "Audit-Reverse-Transaction",
+        "line": 652
+      },
+      {
+        "from": "Stk-Audit-No",
+        "to": "Audit-No",
+        "line": 653
+      },
+      {
+        "from": "WS-Abrev-Stock",
+        "to": "WS-Stock-Abrev-Key\n              move  2 to File-Key-No\n              perform Stock-Read-Indexed      *> read Stock-File record key WS-Stock-Abrev-Key invalid key\n              if   FS-Reply = 21\n                   move zero to Stock-Cost\n                   move spaces to WS-Stock-Key\n              end-if                           *> end-read\n     else\n              move WS-Temp-Stock-Key to WS-Stock-Key\n              move  1 to File-Key-No\n              perform Stock-Read-Indexed    *> read Stock-File key WS-Stock-Key invalid key\n              if   FS-Reply = 21\n                   move zero to Stock-Cost\n                   move spaces to WS-Stock-Key\n              end-if                                *> end-read\n     end-if\n*>\n*> If we have great, but if not Stock-Cost is zero which helps it\n*>     show up in proof reports (sil-type same as sih-type so use later - less ram)\n*>\n     if       WS-Stock-Key not = spaces\t\t*> we have a stock rec",
+        "line": 658
+      },
+      {
+        "from": "zero",
+        "to": "Stock-Held\n              end-if\n              if       Stock-Held > zero\n                       multiply Stock-Held by Stock-Cost giving Stock-Value\n              else\n                       move zero to Stock-Value\n              end-if\n*>\n*>    Similar for sl920 (amend) and sl940 (Delete) invoices but reversed",
+        "line": 685
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No\n              perform  Stock-Rewrite      *> rewrite  WS-Stock-Record invalid key\n     end-if\n*>\n     if       Stk-Audit-Used = 1\n              move zero to Stk-Activity-Rep-Run\t   *> Need to run audit report\n              perform  Stock-Audit-Write           *> write Stock-Audit-Record\n     end-if",
+        "line": 704
+      },
+      {
+        "from": "ws-test-date",
+        "to": "WS-Date",
+        "line": 724
+      },
+      {
+        "from": "WS-Month",
+        "to": "WS-Inv-Month    *> done again for UK - but JIC 4 zz150 Analysis processing\n              move 1 to Date-Form",
+        "line": 726
+      },
+      {
+        "from": "WS-Month",
+        "to": "WS-Inv-Month\n              go to zz050-Test-Date",
+        "line": 729
+      },
+      {
+        "from": "ws-days",
+        "to": "WS-Swap\n              move ws-Month to ws-days\n              move WS-Swap to ws-Month\n              move WS-Month to WS-Inv-Month\n              go to zz050-Test-Date",
+        "line": 732
+      },
+      {
+        "from": "\"dd/mm/ccyy\"",
+        "to": "WS-Date",
+        "line": 740
+      },
+      {
+        "from": "WS-Month",
+        "to": "WS-Inv-Month\n     move     ws-test-date (9:2) to ws-Days",
+        "line": 743
+      },
+      {
+        "from": "WS-Date",
+        "to": "u-date",
+        "line": 747
+      },
+      {
+        "from": "zero",
+        "to": "u-bin",
+        "line": 748
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Date\n              go to zz060-Exit",
+        "line": 765
+      },
+      {
+        "from": "u-date",
+        "to": "WS-Date",
+        "line": 767
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 770
+      },
+      {
+        "from": "ws-days",
+        "to": "WS-Swap\n              move ws-Month to ws-days\n              move WS-Swap to ws-Month\n              go to zz060-Exit",
+        "line": 774
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "WS-Date",
+        "line": 781
+      },
+      {
+        "from": "To-Day",
+        "to": "WS-Date",
+        "line": 797
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 800
+      },
+      {
+        "from": "ws-days",
+        "to": "WS-Swap\n              move ws-Month to ws-days\n              move WS-Swap to ws-Month\n              go to zz070-Exit",
+        "line": 804
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "WS-Date",
+        "line": 811
+      }
+    ],
+    "computes": [
+      {
+        "target": "Audit-Stock-Value-Change",
+        "expression": "Audit-Transaction-Qty * Stock-Cost * -1\n              subtract Audit-Transaction-Qty from Stock-Held\n*>\n              if       Stock-Held < zero\n                       multiply -1 by Stock-Held\n                       add Stock-Held to Stock-Pre-Sales\n                       move zero to Stock-Held\n              end-if\n              if       Stock-Held > zero\n                       multiply Stock-Held by Stock-Cost giving Stock-Value\n              else\n                       move zero to Stock-Value\n              end-if\n*>\n*>    Similar for sl920 (amend) and sl940 (Delete) invoices but reversed",
+        "line": 679
+      }
+    ]
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "they are due to the invoice file for final\n*>                        processing by the invoice post programa sl055 & 060.\n*>**\n*>    Version.            See Prog-Name In Ws.\n*>**\n*>    Functions used:\n*>                        DATE-OF-INTEGER\n*>                        INTEGER-OF-DATE\n*>**\n*>    Called Modules.\n*>                        acas004  ->\n*>                         SLautogenMT.\n*>                        acas016  ->\n*>                         invoiceMT.\n*>                        acas010  ->      (Stock-Audit)\n*>                         auditMT\n*>                        acas015  ->       (Analysis) used for reading line items Anal codes\n*>                         analMT.           for validation.\n*>                        acas011  ->       Stock\n*>                         stockMT.\n*>**\n*>    Error messages used.\n*>                        SL198.\n*>                        SL199.\n*>                        SL200.\n*>                        SL201\n*>\n*>    Changes:\n*> 23/05/23 vbc -  00 New program :\n*> 23/05/23 vbc - .00 Generates Invoice records from Autogen to the invoice file\n*>                    If a Autogen record is due to be created, updating :\n*>                    Analysis, Audit (stock) stock records as needed.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n*>\n data                    division.\n*>===============================\n*>\n working-storage section.\n*>----------------------\n 77  Prog-Name           pic x(15)    value \"SL830 (3.02.00)\".\n 77  Exception-Msg       pic x(25)    value spaces.\n*>\n copy \"wsmaps03.cob\".\n*>\n copy \"wsfnctn.cob\".\n*>\n copy \"wsanal.cob\".\n copy \"wsaudit.cob\".\n copy \"wsstock.cob\".\n copy \"wsdnos.cob\".\n*>\n*> Autogen and Invoice-Record\n copy \"slwsinv.cob\"  replacing Invoice-Line by Invoice-Lines. *> Dup name Holds sih (header) & sil (lines)\n copy \"slwsinv2.cob\".\n 01  WS-Invoice-Record  redefines Invoice-Record\n                         pic x(137).        *> THIS ONLY HAS ONE Line ITEM\n*>\n copy \"wsval.cob\".\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n*>     03  WS-Stock-Audit-Record  pic x.\n*>     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n*>     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n*>     03  WS-Analysis-Record     pic x.\n*>     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n*>     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n 01  File-Info                          value zero.\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n 01  WS-Data.\n     03  Autogen-Status  pic 9           value zero.\n         88  Autogen-EOF                 value 1.\n     03  Autogen-Stored  pic 9           value zero.\n     03  WS-Active-Invoice-No\n                         pic 9(8)        value zero.  *> Temp hold for a deleted # or next inv. from SL parameter\n*>\n     03  WS-Invoice-Write-Error-Flag\n                         pic x           value space.  *> if set errors occurred for a autogen record\n     03  WS-Invoice-Errors\n                         pic x           value space.  *> if set errors has occured during run\n     03  WS-DELINV       pic 9           value zero.\n         88  Del-Exists                  value 1.\n*>\n     03  WS-Autogen-Date                 value zero.   *> Used to convert sih-date (in binary)\n         05  WS-Autogen-YYYY pic 9(4).\n         05  WS-Autogen-MM   pic 99.\n         05  WS-Autogen-DD   pic 99.\n     03  WS-Autogen-Date9 redefines WS-Autogen-Date\n                             pic 9(8).\n*>\n     03  WS-Temp-Stock-Key                    value spaces.\n         05  WS-Abrev-Stock   pic x(7).\n         05  WS-Stock-No-Long pic x(6).\n*>\n     03  WS-Inv-Month.\n         05  WS-Inv-Mth  pic 99.\n*>\n     03  J               pic 99.\n*>\n     03  Bin-To-Date     binary-long   value zero.  *> holds todays date in binary\n     03  Bin-Minimum     binary-long   value zero.  *> holds todays date minus CC-Min-Date\n     03  Bin-Maximum     binary-long   value zero.  *> holds todays date plus CC-Max-Date\n*>\n 01  WS-Temp-Run-Date        pic 9(8)          value zero.\n 01  ws-Test-Date            pic x(10).\n 01  WS-Locale-Run-Date      pic x(10)         value spaces.\n 01  WS-Date-Formats.\n     03  WS-Swap             pic xx.\n     03  WS-Conv-Date        pic x(10).\n     03  WS-Date             pic x(10).\n     03  ws-UK redefines WS-Date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-Month        pic xx.\n         05  filler          pic x.\n         05  ws-Year         pic x(4).\n     03  ws-USA redefines WS-Date.\n         05  ws-usa-Month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines WS-Date.\n         05  ws-Intl-Year    pic x(4).\n         05  filler          pic x.\n         05  ws-Intl-Month   pic xx.\n         05  filler          pic x.\n         05  ws-Intl-days    pic xx.\n*>\n 01  Error-Messages.\n*> System Wide\n*>       NONE\n*> Module specific\n*>  NEW\n     03  SL198           pic x(39) value \"SL198 Failure to Rewrite Autogen record\".\n     03  SL199           pic x(38) value \"SL199 Failure to Delete Autogen record\".\n     03  SL200           pic x(40) value \"SL200 Failure to Write Invoice record - \".\n     03  SL201           pic x(46) value \"SL201 There has been failures writing Invoices\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n*> Now for CONSTANTS used within program that are used for the date range\n*>  to be checked for. This can be changed and sl830 recompiled...\n*>\n*> As set, they give a four day window in order to cover weekend and Bank holidays\n*>  when ACAS, sales and this program may well NOT be run.\n*>\n*> CONSIDER adding a Sales parameter that executes this program say via CRONTAB\n*> or another job scheduler. This way it will auto run when there is no one in\n*>  office - Providing the system is on 24/7. IT DOES NOT MEAN THAT the invoice\n*>   posting program is run or that the invoice print program is run !!!\n*>\n*> If these programs also need to auto run",
+        "line": 30
+      },
+      {
+        "type": "IF",
+        "condition": "SL-Autogen not = \"Y\"    *> SL Autogen not in use\n              goback.\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n     perform  zz070-Convert-Date.   *> WS-Date now local disp date\n     move     WS-Date to WS-Locale-Run-Date.\n*>\n     display  Prog-Name at 0101 with foreground-color 2 erase eos.\n     display  \"Autogen Posting\"  at 0132  with foreground-color 2.\n     display  WS-Locale-Run-Date at 0171 with foreground-color 2.\n     display  \"Running....\"      at 1235 with foreground-color 3.\n     perform  zz010-Open-Files.\n*>\n     perform  ba000-Process-Autogen.\n     if       WS-Invoice-Errors = \"Y\"\n              display SL201 at 1610 with foreground-color 5.\n*>\n     perform  zz020-Close-All-Files.\n*>\n aa999-Exit.  goback.\n*>\n ba000-Process-Autogen  section.\n*>=============================\n*>\n ba000-Main.\n*>\n*> Need to get current date as binary since 1601/01/01\n*>\n     accept   WS-Temp-Run-Date from DATE YYYYMMDD.\n     move     function INTEGER-OF-DATE (WS-Temp-Run-Date) to Bin-To-Date.  *> bin date since 1600/12/31\n     subtract CC-Min-Date from Bin-To-Date giving Bin-Minimum.\n     Add      CC-Max-Date to   Bin-To-Date giving Bin-Maximum.\n*>\n*> Can now test autogen date is within range of Bin-Minimum and Bin-Maximum\n*> for action if NOT ALREADY PROCESSED AND that Freq is valid today\n*> IF, sih-Last-Date is not within same range (indicated it has already been processed.\n*>\n*>  ALL Invoice DATA is using sih and sil to store the invoice/Autogen record\n*>\n ba010-Read-Autogen.\n     move     zero to Autogen-Status\n                      FS-Reply\n                      Autogen-Stored.\n     move     space to WS-Invoice-Errors.    *> Records ANY write errors on Invoice file\n     perform  until Autogen-EOF\n              if       NOT Autogen-Stored = 1  *> We Have a record in WS-Invoice-Record\n                       perform  SLautogen-Read-Next\n              end-if\n              if       FS-Reply not = zero   *> IS THIS RIGHT ???????? and above statements\n                       move  1 to Autogen-Status   *> Autogen-EOF so proces rec leave perform\n                       move  zero to Autogen-Stored\n                       perform  zz040-Generate-Invoice\n                       perform  ba020-Check-For-Write-Errors\n                       exit perform\n              end-if\n*>\n              if       Item-Nos = zero        *> read a header but have item lines from the last header\n                and    J not = zero\n                       if       sih-Date not < Bin-Minimum\n                         and    sih-Date not > Bin-Maximum\n                                perform  zz040-Generate-Invoice\n                                perform  ba020-Check-For-Write-Errors\n                                exit perform cycle\n                       end-if\n*>\n                       move     1 to Autogen-Stored\n                       move     zero to J\n                       initialise SInvoice-Bodies with filler\n                       move     WS-Invoice-Record to Sinvoice-Header\n                       exit perform cycle\n              end-if\n*>\n              if       Item-Nos = zero\n                       move     zero to J\n                       move     zero to Autogen-Stored\n                       initialise SInvoice-Bodies with filler\n                       move     WS-Invoice-Record to Sinvoice-Header\n                       exit perform cycle\n              end-if\n*>\n              if       Item-Nos not = zero    *> Not a header record\n                       add      1 to J\n                       move     WS-Invoice-Record to Invoice-Lines (J)\n                       exit perform cycle\n              end-if\n*>\n              if       sih-Date not < Bin-Minimum\n                and    sih-Date not > Bin-Maximum\n                       perform  zz040-Generate-Invoice\n                       perform  ba020-Check-For-Write-Errors\n                       exit perform cycle\n     end-perform.\n     go to ba999-Exit.\n*>\n ba020-Check-For-Write-Errors.\n     if       WS-Invoice-Write-Error-Flag = \"Y\"\n              display SL200 at 1510 with foreground-color 5 erase eol\n              display Invoice-Key at 1550 with foreground-color 2.\n*>\n*> We have finished processing Autogen Records\n*>\n ba999-Exit.  exit section.\n*>\n zz010-Open-Files  section.\n*>========================\n*>\n     perform  Value-Open-Input.\n     if       fs-reply not = zero\n              perform Value-Close\n              perform Value-Open-Output\n     end-if\n     perform Value-Close.\n*>\n     if       FS-Cobol-Files-Used             *> create autogen if not exist.\n              call  \"CBL_CHECK_FILE_EXIST\" using File-4       *> SaAutogen\n                                                 File-Info\n              if    return-code not = zero          *> not = zero - No file found\n                    perform  SLautogen-Open-Output    *> open output SLautogen-file\n                    perform  SLautogen-Close          *> close SLautogen-file\n                    move     \"Y\" to SL-Autogen\n                    move     1   to SL-Next-Rec    *> SIMILAR TO NEXT INVOICE #\n                    goback                         *> as nothing to do\n              end-if\n*>\n              call  \"CBL_CHECK_FILE_EXIST\" using File-15   *> Analysis\n                                                 File-Info\n              if    return-code not = zero          *> not = zero - No file found\n                                                    *> This should have happened in sl910 invoice create\n                    move 1 to ws-Process-Func ws-Sub-Function    *> Create default entries in Analysis\n                    call \"sl070\" using WS-Calling-Data           *>   and Value files\n                                       System-Record\n                                       To-Day\n                                       File-Defs\n              end-if\n*>\n              call  \"CBL_CHECK_FILE_EXIST\" using File-16      *> Invoice\n                                                 File-Info\n              if    return-code not = zero          *> not = zero - No file found\n                    perform  Invoice-Open-Output    *> open output invoice-file\n                    perform  Invoice-Close          *> close invoice-file\n              end-if\n*>\n              if     Stk-Audit-Used = 1\n                     call  \"CBL_CHECK_FILE_EXIST\" using File-10      *> Stock audit file\n                                                        File-Info\n                     if    return-code not = zero          *> not = zero - No file found\n                           perform Stock-Audit-Open-Output\n                     else\n                           perform Stock-Audit-Open-Extend\n                     end-if\n                     perform Stock-Audit-Close\n              end-if\n     end-if.\n     perform  SLAutogen-Open.\n     perform  Invoice-Open.\n     perform  Stock-Audit-Open.\n     perform  Analysis-Open.\n     perform  Value-Open.\n     perform  DelInvNos-Open.\n     if       FS-Reply = zero\n              move     1 to WS-DELINV.\n*>\n*>\n zz010-Exit.  exit section.\n*>*********\n*>\n zz020-Close-All-Files section.\n*>============================\n*>\n     perform  SLAutogen-Close.\n     perform  Invoice-Close.\n     perform  Stock-Audit-Close.\n     perform  Analysis-Close.\n     perform  Value-Close.\n     perform  DelInvNos-Close.\n*>\n*> ANY MORE ???\n*>\n zz020-Exit.  exit section.\n*>*********\n*>\n zz030-get-a-deleted-invoice section.\n*>==================================\n*>\n     if       not Del-Exists\n              go to zz030-Terminate.\n zz030-Start.\n     move     zeros to WS-Del-Inv-Nos.\n     move     1 to File-Key-No.\n     set      fn-not-less-than to true.\n     perform  DelInvNos-Start.\n*>     start    Del-Inv-Nos-File key not < WS-Del-Inv-Nos invalid key\n     if       fs-reply = 21 or 23\n              go to zz030-Terminate.\n*>\n zz030-Read.\n     perform  DelInvNos-Read-Next.\n     if       fs-reply = 10\n              go to zz030-Close.\n     if       WS-Del-Inv-Nos = zero\n              go to zz030-Read.\n     move     WS-Del-Inv-Nos to WS-Active-Invoice-No.  *> del rec will be deleted after o/p of invoice.\n     perform  DelInvNos-Delete.\n     go       to zz030-Exit.\n*>\n zz030-Close.\n*>\n*> If open as output clear down file and if RDB *MT deletes all records with\n*>  key below 99999999 so same thing\n*>\n     perform  DelInvNos-Close.\n     perform  DelInvNos-Open-Output.\n*>\n zz030-Terminate.\n     move     Next-Invoice to WS-Active-Invoice-No.\n     add      1 to Next-Invoice.\n     move     zero to WS-DELINV.\n*>\n zz030-Exit.  exit section.\n*>\n zz040-Generate-Invoice section.\n*>=============================\n*>\n*> Dont forget to update sih-date for the next Autogen invoice due date\n*>    and",
+        "line": 270
+      },
+      {
+        "type": "IF",
+        "condition": "non zero AND NOT 99 ( repeat count is ignored )\n     if       sih-Repeat = zero          *> Recurring invoice is now dead and can be deleted\n              move     Sinvoice-Header to WS-Invoice-Record\n              perform  SLautogen-Delete\n              if       FS-Reply not = zero\n                       display SL199 at 1310 with foreground-color 5 erase eol\n                       end-if\n              perform  varying J from 1 by 1 until J > sih-Lines\n                       move     Invoice-Lines (J) to WS-Invoice-Record\n                       perform  SLautogen-Delete\n                       if       FS-Reply not = zero\n                                display SL199 at 1410 with foreground-color 5 erase eol\n                       end-if\n              end-perform\n     end-if\n     If       sih-Repeat not = zero AND not = 99\n              subtract 1 from sih-Repeat.   *>  And continue\n*>\n*> Create Header\n*>\n     move     space to WS-Invoice-Write-Error-Flag.\n     move     SInvoice-Header to WS-Invoice-Record.\n     move     spaces to ih-Order.\n     perform  zz030-get-a-deleted-invoice.     *> if exist get it else use Next-Invoice\n     move     WS-Active-Invoice-No to Invoice-Nos.\n     move     zeros to Item-Nos.               *> Header marker\n     perform  Invoice-Write.\n     if       FS-Reply not = zeros\n              move \"Y\" to WS-Invoice-Errors\n              move \"Y\" to WS-Invoice-Write-Error-Flag.\n*>\n*> Now process Line Items\n*>\n     perform  varying J from 1 by 1 until J > sih-Lines\n              if      J > sih-Lines\n                      exit perform\n              end-if\n              move     Invoice-Lines (J) to WS-Invoice-Record\n              move     WS-Active-Invoice-No to Invoice-Nos\n              move     J to Item-Nos    *> yes overriding one in Autogen JIC it is out of order\n              perform  Invoice-Write\n              if       FS-Reply not = zeros\n                       move \"Y\" to WS-Invoice-Errors\n                       move \"Y\" to WS-Invoice-Write-Error-Flag\n              end-if\n              perform  zz045-Update-Analysis   *> run varying J from 1 until  J > ih-Lines\n     end-perform.\n*>\n*> Now Update next autogen date based on Freq\n*>\n*>     get date in yyyymmdd form   convert back using INTEGER-OF-DATE\n*>\n     move     FUNCTION DATE-OF-INTEGER (sih-Date) to WS-Autogen-Date9.\n     if       Sih-Yearly\n              add      1 to WS-Autogen-YYYY\n     end-if\n     if       Sih-Monthly\n              add      1 to WS-Autogen-MM\n              if       WS-Autogen-MM > 12\n                       move     1 to WS-Autogen-MM\n                       add      1 to WS-Autogen-YYYY\n              end-if\n     end-if\n     if       Sih-Quarterly\n              add      3 to WS-Autogen-MM\n              if       WS-Autogen-MM > 12\n                       subtract 12 from WS-Autogen-MM\n                       add      1  to   WS-Autogen-YYYY\n              end-if\n     end-if\n*>\n*>  These are to help testing, as daily would not be used in Autogen\n*>   recurring invoicing\n*>\n     if       sih-Daily or sih-Testing\n              add      1 to WS-Autogen-DD\n              if       WS-Autogen-MM = 2\n                and    WS-Autogen-DD > 28\n                       move     1 to WS-Autogen-DD\n                       add      1 to WS-Autogen-MM\n              else\n               if      (WS-Autogen-MM = 9 or = 4 or = 6 or = 11)\n                 and   WS-Autogen-DD > 30\n                       move     1 to WS-Autogen-DD\n                       add      1 to WS-Autogen-MM\n               else\n                if     WS-Autogen-DD > 31\n                       move     1 to WS-Autogen-DD\n                       add      1 to WS-Autogen-MM\n                       if       WS-Autogen-MM > 12\n                                move     1 to WS-Autogen-MM\n                                move     1 to WS-Autogen-DD\n                       end-if\n                end-if\n               end-if\n              end-if\n     end-if\n     move     Sih-Date to Sih-Last-Date.    *> Save the old date  This date is plus or minus 2\n     move     FUNCTION INTEGER-OF-DATE (WS-Autogen-Date9) to Sih-Date.\n     move     SInvoice-Header to WS-Invoice-Record.\n     perform  SLautogen-Rewrite.\n     if       FS-Reply not = zero\n              display  SL198  at 1210 with foreground-color 5 erase eol.\n*>\n zz040-Exit.  exit section.\n*>\n zz045-Update-Analysis section.\n*>============================\n*>\n*> THIS PROCESSES LINE ITEMS using the O/P record pre writing it out\n*>\n*> Removed all file error displays and waits as can run unattended.\n*>\n*> Only process if linked to Stock Control & Invoices\n*>  This section only creates an Audit record and updates\n*>   Stock record quantity held (Stock-Held) and Stock-Value\n*>\n*>  ALSO UPDATE THE STOCK REC HISTORY CURRENT PERIOD AND BY Month ?.\n*>\n     if       SL-Stock-Link not = \"Y\"\n              go to zz045-Exit.\n     if       Sih-Type not = 2       *> Not for 4-Proformas, 3 - CR.Notes and\n              go to zz045-Exit.      *> But 'Might' be for 1 - receipts at some point ??\n*>\n     initialize WS-Stock-Audit-Record.           *> using O/P rec in ws-invoice-record\n     move     3                   to Audit-Type.\n     move     il-Invoice          to Audit-Invoice-PO.\n     move     WS-Locale-Run-Date  to Audit-Process-Date.  *> Using the Locale run date format via zz070\n     move     il-Product          to Audit-Stock-Key\n                                     WS-Temp-Stock-Key.\n     move     il-Description      to Audit-Desc.\n     move     il-Qty              to Audit-Transaction-Qty.\n     move     zero                to Audit-Unit-Cost.\n     move     zero                to Audit-Reverse-Transaction.\n     move     Stk-Audit-No        to Audit-No.   *> Batch #, updated in Stock Control\n*>\n*> Get the stock record\n*>\n     if       WS-Stock-No-Long = spaces\n              move WS-Abrev-Stock to WS-Stock-Abrev-Key\n              move  2 to File-Key-No\n              perform Stock-Read-Indexed      *> read Stock-File record key WS-Stock-Abrev-Key invalid key\n              if   FS-Reply = 21\n                   move zero to Stock-Cost\n                   move spaces to WS-Stock-Key\n              end-if                           *> end-read\n     else\n              move WS-Temp-Stock-Key to WS-Stock-Key\n              move  1 to File-Key-No\n              perform Stock-Read-Indexed    *> read Stock-File key WS-Stock-Key invalid key\n              if   FS-Reply = 21\n                   move zero to Stock-Cost\n                   move spaces to WS-Stock-Key\n              end-if                                *> end-read\n     end-if\n*>\n*> If we have great, but if not Stock-Cost is zero which helps it\n*>     show up in proof reports (sil-type same as sih-type so use later - less ram)\n*>\n     if       WS-Stock-Key not = spaces\t\t*> we have a stock rec.\n              compute  Audit-Stock-Value-Change = Audit-Transaction-Qty * Stock-Cost * -1\n              subtract Audit-Transaction-Qty from Stock-Held\n*>\n              if       Stock-Held < zero\n                       multiply -1 by Stock-Held\n                       add Stock-Held to Stock-Pre-Sales\n                       move zero to Stock-Held\n              end-if\n              if       Stock-Held > zero\n                       multiply Stock-Held by Stock-Cost giving Stock-Value\n              else\n                       move zero to Stock-Value\n              end-if\n*>\n*>    Similar for sl920 (amend) and sl940 (Delete) invoices but reversed.\n*>\n*> Update record period and Month in Year totals but check that WS-Inv-Mth is valid.\n*>    [ All values positive ] Note that stock fields are not signed and a credit\n*>                  could be different Month - WIP stock is NOT sold!\n*>\n              if       WS-Inv-Mth not < 1 or > 12\n                       add Audit-Transaction-Qty to Stock-Deducts\n                       add Audit-Transaction-Qty to Stock-TD-Deds (WS-Inv-Mth)\n              end-if\n*>\n              move 1 to File-Key-No\n              perform  Stock-Rewrite      *> rewrite  WS-Stock-Record invalid key\n     end-if\n*>\n     if       Stk-Audit-Used = 1\n              move zero to Stk-Activity-Rep-Run\t   *> Need to run audit report\n              perform  Stock-Audit-Write           *> write Stock-Audit-Record\n     end-if.\n*>\n zz045-Exit.  exit section.\n*>\n zz050-Validate-Date        section.\n*>=================================\n*>\n*>  Converts USA/Intl to UK date format for processing.\n*>****************************************************\n*> Input:   ws-test-date\n*> output:  u-date/WS-Date as uk date format\n*>          u-bin not zero if valid date\n*>\n     move     ws-test-date to WS-Date.\n     if       Date-Form = zero\n              move WS-Month to WS-Inv-Month    *> done again for UK - but JIC 4 zz150 Analysis processing\n              move 1 to Date-Form.\n     if       Date-UK\n              move WS-Month to WS-Inv-Month\n              go to zz050-Test-Date.\n     if       Date-USA                *> swap Month and days\n              move ws-days to WS-Swap\n              move ws-Month to ws-days\n              move WS-Swap to ws-Month\n              move WS-Month to WS-Inv-Month\n              go to zz050-Test-Date.\n*>\n*> So its International date format\n*>\n     move     \"dd/mm/ccyy\" to WS-Date.  *> swap Intl to UK form\n     move     ws-test-date (1:4) to ws-Year.\n     move     ws-test-date (6:2) to ws-Month.\n     move     WS-Month to WS-Inv-Month\n     move     ws-test-date (9:2) to ws-Days.\n*>\n zz050-Test-Date.\n     move     WS-Date to u-date.\n     move     zero to u-bin.\n     perform  maps04.\n*>\n zz045-Exit.\n     exit     section.\n*>\n zz060-Convert-Date        section.\n*>================================\n*>\n*>  Converts date in binary to UK/USA/Intl date format\n*>****************************************************\n*> Input:   u-bin\n*> output:  WS-Date as uk/US/Inlt date format\n*>          u-date & WS-Date = spaces if invalid date\n*>\n     perform  maps04.\n     if       u-date = spaces\n              move spaces to WS-Date\n              go to zz060-Exit.\n     move     u-date to WS-Date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz060-Exit.\n     if       Date-USA                *> swap Month and days\n              move ws-days to WS-Swap\n              move ws-Month to ws-days\n              move WS-Swap to ws-Month\n              go to zz060-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to WS-Date.  *> swap Intl to UK form\n     move     u-date (7:4) to ws-Intl-Year.\n     move     u-date (4:2) to ws-Intl-Month.\n     move     u-date (1:2) to ws-Intl-Days.\n*>\n zz060-Exit.\n     exit     section.\n*>\n zz070-Convert-Date        section.\n*>================================\n*>\n*>  Converts date in To-Day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   To-Day\n*> output:  WS-Date as uk/US/Inlt date format\n*>\n     move     To-Day to WS-Date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap Month and days\n              move ws-days to WS-Swap\n              move ws-Month to ws-days\n              move WS-Swap to ws-Month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to WS-Date.  *> swap Intl to UK form\n     move     To-Day (7:4) to ws-Intl-Year.\n     move     To-Day (4:2) to ws-Intl-Month.\n     move     To-Day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>\n zz900-Evaluate-Message Section.\n*>==============================\n*>\n copy \"FileStat-Msgs.cpy\" replacing MSG by Exception-Msg\n                                    STATUS by FS-Reply.\n*>\n Eval-Msg-Exit.  exit section.\n*>\n maps04       section.\n*>===================\n*>\n     call     \"maps04\"  using  maps03-ws.\n*>\n maps04-exit.\n     exit     section.\n*>\n*>LISTING OFF\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>LISTING ON\n*>",
+        "line": 519
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 7,
+    "cognitive": 3,
+    "halstead": {
+      "uniqueOperators": 2,
+      "uniqueOperands": 64,
+      "totalOperators": 52,
+      "totalOperands": 102,
+      "vocabulary": 66,
+      "length": 154,
+      "volume": 930.8366943812018
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

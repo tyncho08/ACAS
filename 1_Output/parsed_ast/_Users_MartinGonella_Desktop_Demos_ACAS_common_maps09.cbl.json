@@ -1,0 +1,183 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps09.cbl",
+  "fileName": "maps09.cbl",
+  "timestamp": "2025-09-15T16:25:36.483Z",
+  "programId": "maps09",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 68
+      },
+      {
+        "name": "working-storage",
+        "line": 73
+      },
+      {
+        "name": "linkage",
+        "line": 87
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "main",
+        "line": 95
+      },
+      {
+        "name": "addition-loop",
+        "line": 119
+      },
+      {
+        "name": "addition-error",
+        "line": 127
+      },
+      {
+        "name": "addition-do",
+        "line": 134
+      },
+      {
+        "name": "addition-end",
+        "line": 141
+      },
+      {
+        "name": "exit",
+        "line": 142
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 58,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 67,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps09",
+        "line": 90,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "addition-loop",
+        "thru": null,
+        "line": 100
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "customer-nos",
+        "to": "work-array",
+        "line": 98
+      },
+      {
+        "from": "zero",
+        "to": "suma",
+        "line": 99
+      },
+      {
+        "from": "\"N\"",
+        "to": "maps09-reply\n              go to  main-exit",
+        "line": 103
+      },
+      {
+        "from": "a",
+        "to": "check-digit\n              move  \"Y\"  to  maps09-reply",
+        "line": 110
+      },
+      {
+        "from": "\"Y\"",
+        "to": "maps09-reply",
+        "line": 115
+      },
+      {
+        "from": "zero",
+        "to": "suma",
+        "line": 130
+      },
+      {
+        "from": "7",
+        "to": "a",
+        "line": 131
+      }
+    ],
+    "computes": [
+      {
+        "target": "a",
+        "expression": "11 - (suma - (11 * z))",
+        "line": 107
+      },
+      {
+        "target": "z",
+        "expression": "y * (8 - a)",
+        "line": 138
+      }
+    ]
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy  \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n data                    division.\n*>===============================\n working-storage section.\n*>----------------------\n*>\n 01  ws-data.\n     03  alpha           pic x(37)     value \"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-\".\n     03  filler  redefines  alpha.\n       05  ar1           pic x         occurs  37  indexed by q.\n     03  work-array.\n       05  array         pic x         occurs  6.\n     03  suma            pic s9(5).\n*>\n     77  a               pic s9(5)      comp.\n     77  y               pic s9(5)      comp.\n     77  z               pic s9(5)      comp.\n linkage section.\n*>--------------\n*>\n copy  \"wsmaps09.cob\".\n*>\n procedure division  using  maps09-ws.\n*>===================================\n*>\n main.\n*>---\n*>\n     move     customer-nos  to  work-array.\n     move     zero  to  suma.\n     perform  addition-loop through addition-end varying a from 1 by 1 until a > 6.\n*>\n     if       suma = zero\n              move  \"N\"  to  maps09-reply\n              go to  main-exit.\n*>\n     divide   suma  by  11  giving  z.\n     compute  a  =  11 - (suma - (11 * z)).\n*>\n     if       maps09-reply = \"C\"\n              move   a   to  check-digit\n              move  \"Y\"  to  maps09-reply.\n*>\n     if       maps09-reply = \"V\"\n       and    a = check-digit\n              move  \"Y\"  to  maps09-reply.\n*>\n     go       to main-exit.\n*>\n addition-loop.\n*>************\n*>\n     set      q  to  1.\n     search   ar1  at end  go to  addition-error\n              when ar1 (q) = array (a)\n                   go to  addition-do.\n*>\n addition-error.\n*>*************\n*>\n     move     zero  to  suma.\n     move     7     to  a.\n     go to    addition-end.\n*>\n addition-do.\n*>**********\n*>\n     set      y  to  q.\n     compute  z  =   y * (8 - a).\n     add      z  to  suma.\n*>\n addition-end.\n     exit.\n*>\n main-exit.   exit program.\n*>********    ************",
+        "line": 55
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 4,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 2,
+      "uniqueOperands": 11,
+      "totalOperators": 9,
+      "totalOperands": 14,
+      "vocabulary": 13,
+      "length": 23,
+      "volume": 85.11011351724513
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

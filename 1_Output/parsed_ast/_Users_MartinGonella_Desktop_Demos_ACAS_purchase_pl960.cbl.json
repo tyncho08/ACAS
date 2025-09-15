@@ -1,0 +1,273 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl960.cbl",
+  "fileName": "pl960.cbl",
+  "timestamp": "2025-09-15T16:25:47.310Z",
+  "programId": "pl960",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 84
+      },
+      {
+        "name": "file",
+        "line": 98
+      },
+      {
+        "name": "working-storage",
+        "line": 110
+      },
+      {
+        "name": "linkage",
+        "line": 196
+      },
+      {
+        "name": "init",
+        "line": 211
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 87
+      },
+      {
+        "name": "file-defs",
+        "line": 208
+      },
+      {
+        "name": "goback",
+        "line": 221
+      },
+      {
+        "name": "loop",
+        "line": 224
+      },
+      {
+        "name": "l1-from",
+        "line": 246
+      },
+      {
+        "name": "end-perform",
+        "line": 282
+      },
+      {
+        "name": "main-end",
+        "line": 298
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 300,
+        "type": "DYNAMIC",
+        "using": [
+          "Print-Report"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 74,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 83,
+        "replacing": null
+      },
+      {
+        "name": "selprint",
+        "line": 94,
+        "replacing": null
+      },
+      {
+        "name": "fdprint",
+        "line": 109,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command",
+        "line": 113,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 115,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 117,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 199,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 200,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 201,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 276
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "spaces",
+        "to": "print-record",
+        "line": 228
+      },
+      {
+        "from": "1",
+        "to": "a",
+        "line": 233
+      },
+      {
+        "from": "cheque-record",
+        "to": "cheque",
+        "line": 240
+      },
+      {
+        "from": "c-name",
+        "to": "l1-addr1",
+        "line": 241
+      },
+      {
+        "from": "usera",
+        "to": "l1-addr2",
+        "line": 242
+      },
+      {
+        "from": "spaces",
+        "to": "l1-to\n                          l1-from",
+        "line": 245
+      },
+      {
+        "from": "address-1",
+        "to": "l1-addr2",
+        "line": 249
+      },
+      {
+        "from": "address-2",
+        "to": "l1-addr2",
+        "line": 253
+      },
+      {
+        "from": "address-3",
+        "to": "l1-addr2",
+        "line": 257
+      },
+      {
+        "from": "address-4",
+        "to": "l1-addr2",
+        "line": 261
+      },
+      {
+        "from": "spaces",
+        "to": "l1-addr2",
+        "line": 265
+      },
+      {
+        "from": "c-account",
+        "to": "l2-ac",
+        "line": 267
+      },
+      {
+        "from": "c-date",
+        "to": "l2-date",
+        "line": 268
+      },
+      {
+        "from": "spaces",
+        "to": "print-record",
+        "line": 273
+      },
+      {
+        "from": "\"Cheque\"",
+        "to": "l6-chq-bacs\n              move C-Cheque  to  l6-cheque\n     else\n              move \"BACS\" to l6-chq-bacs\n              move \"to your Bank\" to l6-cheque",
+        "line": 287
+      },
+      {
+        "from": "c-gross",
+        "to": "l6-total",
+        "line": 292
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>------------\n*>\n     select  cheque-file   assign file-33\n                           organization line sequential\n                           status fs-reply.\n*>\n copy \"selprint.cob\".\n data                    division.\n*>===============================\n*>\n file section.\n*>-----------\n*>\n fd  cheque-file.\n*>\n 01  cheque-record.\n     03  filler              pic x(256).\n     03  filler              pic x(128).\n     03  filler              pic x(128).\n     03  filler              pic x(128).\n     03  filler              pic x(5).\n copy \"fdprint.cob\".\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(15) value \"PL960 (3.02.06)\".\n copy \"print-spool-command.cob\".\n*>\n copy \"wsfnctn.cob\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  ws-data.\n     03  z                pic 99.\n     03  a                pic 9           value zero.\n*>\n*> 01  Error-Messages.\n*> System Wide\n*> Module specific\n*>     NONE\n*>\n 01  cheque.\n*>\n*> rec size 645 bytes\n*>\n     03  c-account        pic x(7).\n     03  filler           pic x           value \",\".\n     03  c-name           pic x(30).\n     03  filler           pic x           value \",\".\n     03  filler                          occurs 5.\n         05  c-address    pic x(32).\n         05  c-adr-filler pic x.\n     03  c-words-1        pic x(64).\n     03  filler           pic x           value \",\".\n     03  c-words-2        pic x(64).\n     03  filler           pic x           value \",\".\n     03  c-gross          pic x(10).\n     03  filler           pic x           value \",\".\n     03  C-Cheque         pic x(9).\n     03  filler           pic x           value \",\".\n     03  c-date           pic x(10).\n     03  filler           pic x           value \",\".\n     03  filler                    occurs 9.\n         05  c-inv        pic x(10).\n         05  c-inv-filler pic x.\n         05  c-folio      pic x(8).\n         05  c-folio-fil  pic x.\n         05  c-value      pic x(10).\n         05  c-last       pic x.\n*>\n 01  line-box.\n     03  filler          pic x(29)       value spaces.\n     03  filler          pic x(24)       value all \"*\".\n*>\n 01  line-0.\n     03  filler          pic x(29)       value spaces.\n     03  filler          pic x(24)       value \"** Remittance  Advice **\".\n*>\n 01  line-1.\n     03  l1-to           pic xxx.\n     03  l1-addr1        pic x(32).\n     03  filler          pic x(6)        value spaces.\n     03  l1-from         pic x(7).\n     03  l1-addr2        pic x(32).\n 01  line-2.\n     03  filler          pic x(16)       value \"   A/C Number - \".\n     03  l2-ac           pic x(19).\n     03  filler          pic x(5)        value \"Date \".\n     03  l2-date         pic x(10).\n 01  line-3.\n     03  filler          pic x(10)       value spaces.\n     03  filler          pic x(23)       value \"Invoice Nos       Folio\".\n     03  filler          pic x(17)       value spaces.\n     03  filler          pic x(7)        value \"Amount\".\n 01  line-4.\n     03  filler          pic x(11)       value spaces.\n     03  l4-inv          pic x(14).\n     03  l4-folio        pic x(23).\n     03  l4-amount       pic x(12).\n 01  line-5.\n     03  filler          pic x(48)       value spaces.\n     03  filler          pic x(10)       value all \"=\".\n 01  line-6.\n     03  filler          pic x(11)       value spaces.\n     03  filler          pic x(14)       value \"Total Paid by \".\n     03  l6-chq-bacs     pic x(7).\n     03  l6-cheque       pic x(16).\n     03  l6-total        pic x(12).\n*>\n linkage section.\n*>==============\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n init section.\n*>\n*> MODIFY these 3 lines to suit your requirements\n*>\n     string   \"lpr -P \"        delimited by size\n              Print-Spool-Name delimited by space\n              \" -r prt-1\"      delimited by size into Print-Report.\n*>\n     open     input cheque-file.\n     if       fs-reply not = zero\n              goback.\n     open     output print-file.\n*>\n loop.\n     read     cheque-file  at end\n              go to  main-end.\n*>\n     move     spaces  to  print-record.\n     if       a = 1\n              write print-record after page\n     else\n              write print-record after 1.\n     move     1 to a.\n     write    print-record  from  line-box after 1.\n     write    print-record  from  line-0 after 1.\n     write    print-record  from  line-box after 1.\n*>\n     move     \"To \"  to  l1-to.\n     move     \"From   \"  to  l1-from.\n     move     cheque-record  to  cheque.\n     move     c-name  to  l1-addr1.\n     move     usera   to  l1-addr2.\n     write    print-record  from  line-1 after 3.\n*>\n     move     spaces  to  l1-to\n                          l1-from.\n*>\n     move     c-address (1)  to  l1-addr1.\n     move     address-1      to  l1-addr2.\n     write    print-record  from  line-1 after 1.\n*>\n     move     c-address (2)  to  l1-addr1.\n     move     address-2      to  l1-addr2.\n     write    print-record  from  line-1 after 1.\n*>\n     move     c-address (3)  to  l1-addr1.\n     move     address-3      to  l1-addr2.\n     write    print-record  from  line-1 after 1.\n*>\n     move     c-address (4)  to  l1-addr1.\n     move     address-4      to  l1-addr2.\n     write    print-record  from  line-1 after 1.\n*>\n     move     c-address (5) to l1-addr1.\n     move     spaces to l1-addr2.\n     write    print-record from line-1 after 1.\n     move     c-account  to  l2-ac.\n     move     c-date     to  l2-date.\n     write    print-record  from  line-2 after 4 lines.\n*>\n     write    print-record  from  line-3 after 3 lines.\n*>\n     move     spaces  to  print-record.\n     write    print-record after 1.\n*>\n     perform  varying z from 1 by 1 until z > 9\n              move  c-inv (z)    to  l4-inv\n              move  c-folio (z)  to  l4-folio\n              move  c-value (z)  to  l4-amount\n              if    l4-amount  not equal  spaces\n                    write  print-record  from  line-4 after 1\n     end-perform.\n*>\n     write     print-record  from  line-5 after 3  lines.\n*>\n     if       C-Cheque not = \"BACS\"\n              move \"Cheque\"  to  l6-chq-bacs\n              move C-Cheque  to  l6-cheque\n     else\n              move \"BACS\" to l6-chq-bacs\n              move \"to your Bank\" to l6-cheque.\n     move     c-gross   to  l6-total.\n*>\n     write    print-record  from  line-6 after 1.\n     write    print-record  from  line-5 after 1.\n     go       to loop.\n*>\n main-end.\n     close    print-file cheque-file.\n     call     \"SYSTEM\" using Print-Report.\n     exit     program.\n*>",
+        "line": 71
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 23,
+      "totalOperators": 16,
+      "totalOperands": 32,
+      "vocabulary": 24,
+      "length": 48,
+      "volume": 220.0782000346155
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

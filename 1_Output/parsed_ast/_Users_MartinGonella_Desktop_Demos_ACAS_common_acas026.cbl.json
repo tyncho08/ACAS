@@ -1,0 +1,702 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/acas026.cbl",
+  "fileName": "acas026.cbl",
+  "timestamp": "2025-09-15T16:25:38.343Z",
+  "programId": "acas026",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 176
+      },
+      {
+        "name": "file",
+        "line": 182
+      },
+      {
+        "name": "working-storage",
+        "line": 186
+      },
+      {
+        "name": "Linkage",
+        "line": 212
+      },
+      {
+        "name": "aa-Process-Flat-File",
+        "line": 234
+      },
+      {
+        "name": "ba-Process-RDBMS",
+        "line": 542
+      },
+      {
+        "name": "exit",
+        "line": 620
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 177
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 231
+      },
+      {
+        "name": "aa010-main",
+        "line": 236
+      },
+      {
+        "name": "end-evaluate",
+        "line": 259
+      },
+      {
+        "name": "end-if",
+        "line": 267
+      },
+      {
+        "name": "end-evaluate",
+        "line": 303
+      },
+      {
+        "name": "aa020-Process-Open",
+        "line": 308
+      },
+      {
+        "name": "end-if",
+        "line": 339
+      },
+      {
+        "name": "aa030-Process-Close",
+        "line": 347
+      },
+      {
+        "name": "aa040-Process-Read-Next",
+        "line": 360
+      },
+      {
+        "name": "end-read",
+        "line": 383
+      },
+      {
+        "name": "aa045-Eval-Keys",
+        "line": 398
+      },
+      {
+        "name": "end-evaluate",
+        "line": 414
+      },
+      {
+        "name": "aa050-Process-Read-Indexed",
+        "line": 416
+      },
+      {
+        "name": "end-if",
+        "line": 433
+      },
+      {
+        "name": "aa060-Process-Start",
+        "line": 438
+      },
+      {
+        "name": "WE-Error",
+        "line": 445
+      },
+      {
+        "name": "aa070-Process-Write",
+        "line": 489
+      },
+      {
+        "name": "end-write",
+        "line": 496
+      },
+      {
+        "name": "aa080-Process-Delete",
+        "line": 500
+      },
+      {
+        "name": "end-delete",
+        "line": 507
+      },
+      {
+        "name": "aa090-Process-Rewrite",
+        "line": 511
+      },
+      {
+        "name": "aa100-Bad-Function",
+        "line": 523
+      },
+      {
+        "name": "aa999-main-exit",
+        "line": 530
+      },
+      {
+        "name": "end-if",
+        "line": 533
+      },
+      {
+        "name": "aa-main-exit",
+        "line": 535
+      },
+      {
+        "name": "aa-Exit",
+        "line": 539
+      },
+      {
+        "name": "ba010-Test-WS-Rec-Size",
+        "line": 550
+      },
+      {
+        "name": "ba012-Test-WS-Rec-Size-2",
+        "line": 558
+      },
+      {
+        "name": "end-if",
+        "line": 599
+      },
+      {
+        "name": "ba015-Test-Ends",
+        "line": 601
+      },
+      {
+        "name": "end-call",
+        "line": 615
+      },
+      {
+        "name": "ba-rdbms-exit",
+        "line": 619
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 627
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "plinvoiceMT",
+        "line": 612,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data",
+          "WS-PInvoice-Record",
+          "end-call"
+        ]
+      },
+      {
+        "target": "fhlogger",
+        "line": 627,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "code",
+        "line": 74,
+        "replacing": null
+      },
+      {
+        "name": "*>",
+        "line": 119,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 168,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 175,
+        "replacing": null
+      },
+      {
+        "name": "plselpinv",
+        "line": 180,
+        "replacing": null
+      },
+      {
+        "name": "plfdpinv",
+        "line": 185,
+        "replacing": null
+      },
+      {
+        "name": "plwspinv",
+        "line": 215,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 218,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 220,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 222,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 224,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "ba-Process-RDBMS",
+        "thru": null,
+        "line": 83
+      },
+      {
+        "target": "ba-Process-RDBMS",
+        "thru": null,
+        "line": 266
+      },
+      {
+        "target": "ba012-Test-WS-Rec-Size-2",
+        "thru": null,
+        "line": 272
+      },
+      {
+        "target": "aa999-main-exit",
+        "thru": null,
+        "line": 355
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 358
+      },
+      {
+        "target": "aa041-Move-Inv-Data",
+        "thru": null,
+        "line": 388
+      },
+      {
+        "target": "aa041-Move-Inv-Data",
+        "thru": null,
+        "line": 409
+      },
+      {
+        "target": "aa045-Eval-keys",
+        "thru": null,
+        "line": 420
+      },
+      {
+        "target": "aa041-Move-Inv-Data",
+        "thru": null,
+        "line": 428
+      },
+      {
+        "target": "aa045-Eval-keys",
+        "thru": null,
+        "line": 444
+      },
+      {
+        "target": "aa041-Move-Inv-Data",
+        "thru": null,
+        "line": 486
+      },
+      {
+        "target": "aa041-Move-Inv-Data",
+        "thru": null,
+        "line": 498
+      },
+      {
+        "target": "aa041-Move-Inv-Data",
+        "thru": null,
+        "line": 509
+      },
+      {
+        "target": "aa041-Move-Inv-Data",
+        "thru": null,
+        "line": 521
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 533
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 584
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "999",
+        "to": "WE-Error in Open,\r\n*> 16/04/24 vbc       Copyright notice update superceding all previous notices",
+        "line": 85
+      },
+      {
+        "from": "4",
+        "to": "WS-Log-System",
+        "line": 241
+      },
+      {
+        "from": "12",
+        "to": "WS-Log-File-No",
+        "line": 242
+      },
+      {
+        "from": "998",
+        "to": "WE-Error       *> file seeks key type out of range        998\r\n                       move 99 to fs-reply\r\n                       go   to aa999-main-exit\r\n                end-if\r\n              when     8  *> fn-delete\r\n                if     File-Key-No not = 1\r\n                       move 996 to WE-Error       *> file seeks key type out of range        996\r\n                       move 99 to fs-reply\r\n                       go   to aa999-main-exit\r\n                end-if\r\n     end-evaluate",
+        "line": 250
+      },
+      {
+        "from": "RDBMS-Flat-Statuses",
+        "to": "FA-RDBMS-Flat-Statuses    *> needed for DAL? not JC/dbpre versions\r\n              perform ba-Process-RDBMS                                *>  Can't hurt\r\n              go to AA-Main-Exit\r\n     end-if",
+        "line": 265
+      },
+      {
+        "from": "zero",
+        "to": "WE-Error\r\n *>  ?                      FS-Reply",
+        "line": 280
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Err SQL-Msg SQL-State",
+        "line": 282
+      },
+      {
+        "from": "spaces",
+        "to": "WS-File-Key",
+        "line": 310
+      },
+      {
+        "from": "201",
+        "to": "WS-No-Paragraph",
+        "line": 311
+      },
+      {
+        "from": "35",
+        "to": "fs-Reply\r\n                   close Invoice-File\r\n                   go to aa999-Main-Exit\r\n              end-if\r\n      else\r\n       if     fn-i-o\r\n              open i-o Invoice-File\r\n              if       fs-reply not = zero              *> this block was in st010 at ba000-Setup-Invoice\r\n                       close       Invoice-File\r\n                       open output Invoice-File           *> Doesnt create in i-o\r\n                       close       Invoice-File\r\n                       open i-o    Invoice-File\r\n              end-if                                      *> file-status will NOT be updated   ????\r\n       else\r\n        if    fn-output                      *> should not need to be used\r\n              open output Invoice-File         *> caller should check fs-reply\r\n        else\r\n         if   fn-extend                      *> Must not be used for ISAM files\r\n*>              open extend Invoice-File\r\n              move 997 to WE-Error\r\n              move 99  to FS-Reply\r\n              go to aa999-main-exit\r\n         end-if\r\n        end-if\r\n       end-if\r\n     end-if",
+        "line": 315
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply WE-Error",
+        "line": 341
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 342
+      },
+      {
+        "from": "999",
+        "to": "WE-Error",
+        "line": 345
+      },
+      {
+        "from": "202",
+        "to": "WS-No-Paragraph",
+        "line": 349
+      },
+      {
+        "from": "spaces",
+        "to": "WS-File-Key",
+        "line": 350
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply WE-Error",
+        "line": 352
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 353
+      },
+      {
+        "from": "zero",
+        "to": "File-Function\r\n                       Access-Type",
+        "line": 356
+      },
+      {
+        "from": "203",
+        "to": "WS-No-Paragraph",
+        "line": 366
+      },
+      {
+        "from": "10",
+        "to": "FS-Reply\r\n                         WE-Error\r\n              move spaces to Invoice-Key\r\n                             SQL-Err\r\n                             SQL-Msg\r\n              stop \"Cobol File EOF\"               *> for testing\r\n              go to aa999-main-exit\r\n     end-if\r\n*>\r\n     read     Invoice-File next record at end\r\n              move 10 to we-error fs-reply        *> EOF\r\n              set Cobol-File-EoF to true\r\n              move 1 to Cobol-File-Status         *> JIC above dont work :)\r\n              initialize Invoice-Record\r\n              move \"EOF\" to WS-File-Key           *> for logging\r\n              go to aa999-main-exit\r\n     end-read",
+        "line": 368
+      },
+      {
+        "from": "Invoice-Record",
+        "to": "WS-PInvoice-Record",
+        "line": 387
+      },
+      {
+        "from": "zeros",
+        "to": "WE-Error",
+        "line": 389
+      },
+      {
+        "from": "Invoice-Nos",
+        "to": "WS-Temp-ED-1",
+        "line": 393
+      },
+      {
+        "from": "Item-Nos",
+        "to": "WS-Temp-ED-2",
+        "line": 394
+      },
+      {
+        "from": "WS-Temp-ED",
+        "to": "WS-File-Key",
+        "line": 395
+      },
+      {
+        "from": "WS-Invoice-Key",
+        "to": "Invoice-Key\r\n                                     perform aa041-Move-Inv-Data\r\n                              when   other\r\n                                     move   spaces             to WS-File-Key\r\n                    end-evaluate\r\n              when  other\r\n                    move   spaces    to WS-File-Key\r\n     end-evaluate",
+        "line": 408
+      },
+      {
+        "from": "204",
+        "to": "WS-No-Paragraph",
+        "line": 419
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 421
+      },
+      {
+        "from": "21",
+        "to": "we-error fs-reply\r\n              end-read\r\n              if       fs-Reply = zero\r\n                       move     Invoice-Record to WS-PInvoice-Record\r\n                       perform  aa041-Move-Inv-Data\r\n              else\r\n                       initialize WS-PInvoice-Record\r\n                       move \"Failed action\" to WS-File-Key\r\n              end-if\r\n              go       to aa999-main-exit\r\n     end-if",
+        "line": 424
+      },
+      {
+        "from": "998",
+        "to": "WE-Error       *> file seeks key type out of range but should never get here       998\r\n     move     99 to fs-reply\r\n     go       to aa999-main-exit",
+        "line": 435
+      },
+      {
+        "from": "205",
+        "to": "WS-No-Paragraph",
+        "line": 443
+      },
+      {
+        "from": "zeros",
+        "to": "fs-reply\r\n                       WE-Error",
+        "line": 445
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 447
+      },
+      {
+        "from": "998",
+        "to": "WE-Error                     *> 998 Invalid calling parameter settings\r\n              go to aa999-main-exit\r\n     end-if\r\n*>\r\n*>  Now do Start primary key before read-next ?\r\n*>\r\n     move     WS-Invoice-Key to Invoice-Key",
+        "line": 450
+      },
+      {
+        "from": "21",
+        "to": "Fs-Reply\r\n                    go to aa999-main-exit\r\n              end-start\r\n     end-if\r\n     if       File-Key-No = 1\r\n        and   fn-less-than\r\n              start Invoice-File key < Invoice-Key invalid key\r\n                    move 21 to Fs-Reply\r\n                    go to aa999-main-exit\r\n              end-start\r\n     end-if\r\n     if       File-Key-No = 1\r\n        and   fn-greater-than\r\n              start Invoice-File key > Invoice-Key invalid key\r\n                    move 21 to Fs-Reply\r\n                    go to aa999-main-exit\r\n              end-start\r\n     end-if\r\n     if       File-Key-No = 1\r\n        and   fn-not-less-than\r\n              start Invoice-File key not < Invoice-Key invalid key\r\n                    move 21 to Fs-Reply\r\n                    go to aa999-main-exit\r\n              end-start\r\n     end-if\r\n     if       File-Key-No = 1\r\n              perform  aa041-Move-Inv-Data",
+        "line": 460
+      },
+      {
+        "from": "206",
+        "to": "WS-No-Paragraph",
+        "line": 491
+      },
+      {
+        "from": "WS-PInvoice-Record",
+        "to": "Invoice-Record",
+        "line": 492
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 493
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 494
+      },
+      {
+        "from": "22",
+        "to": "FS-Reply\r\n     end-write",
+        "line": 496
+      },
+      {
+        "from": "207",
+        "to": "WS-No-Paragraph",
+        "line": 502
+      },
+      {
+        "from": "WS-PInvoice-Record",
+        "to": "Invoice-Record",
+        "line": 503
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 504
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 505
+      },
+      {
+        "from": "21",
+        "to": "FS-Reply\r\n     end-delete",
+        "line": 507
+      },
+      {
+        "from": "208",
+        "to": "WS-No-Paragraph",
+        "line": 514
+      },
+      {
+        "from": "WS-PInvoice-Record",
+        "to": "Invoice-Record",
+        "line": 515
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 516
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 517
+      },
+      {
+        "from": "21",
+        "to": "FS-Reply\r\n     end-rewrite\r\n     perform  aa041-Move-Inv-Data",
+        "line": 519
+      },
+      {
+        "from": "999",
+        "to": "WE-Error",
+        "line": 528
+      },
+      {
+        "from": "99",
+        "to": "fs-reply",
+        "line": 529
+      },
+      {
+        "from": "12",
+        "to": "WS-Log-File-no",
+        "line": 557
+      },
+      {
+        "from": "901",
+        "to": "WE-Error       *> 901 Programming error; temp rec length is wrong caller must stop\r\n                   move 99 to fs-reply        *> allow for last field ( FILLER) not being present in layout",
+        "line": 569
+      },
+      {
+        "from": "spaces",
+        "to": "Display-Blk\r\n                       string PL907          delimited by size\r\n                              A              delimited by size\r\n                              \" < \"          delimited by size\r\n                              \"Invoice-Rec = \" delimited by size\r\n                              B              delimited by size    into Display-Blk\r\n                       end-string\r\n                       display Display-Blk at 2301 with erase eol     *> BUT WILL REMIND ME TO SET IT UP correctly\r\n                       display PL901 at 2401 with erase eol\r\n                       move  Display-Blk to SQL-Msg\r\n                       if  Testing-1\r\n                           perform Ca-Process-Logs\r\n                       end-if\r\n                       accept Accept-Reply at 2433\r\n                       go to ba-rdbms-exit\r\n              end-if\r\n*>\r\n*>  Not a error comparing the length of records so - -\r\n*>  Load up the DB settings from the system record as its not passed on\r\n*>           hopefully once is enough  :)\r\n*>\r\n              move     RDBMS-DB-Name to DB-Schema\r\n              move     RDBMS-User    to DB-UName\r\n              move     RDBMS-Passwd  to DB-UPass\r\n              move     RDBMS-Port    to DB-Port\r\n              move     RDBMS-Host    to DB-Host\r\n              move     RDBMS-Socket  to DB-Socket\r\n     end-if",
+        "line": 573
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "above 2 are non zero\r\n*>                          SQL-Msg  = Non space providing more info if SQL-Err non '00000'\r\n*>                                     * = FS-Reply = 99.\r\n*>\r\n*>       During testing a log file will be created containing datetime stamp, task and return codes\r\n*>       for both FS-Reply and WE-Error and table used along with the RDB error number and message\r\n*>         In this case for the\r\n*>                Invoice File.\r\n*>\r\n*>       WARNING - This file could get large so needs manually deleting after examination.\r\n*>\r\n*>  Programmer note : CONSIDER WRITING A reporting program for this with report selection criteria.\r\n*>\r\n*>******************************************************************************\r\n*>\r\n*>  From copyright.cob.\r\n*>\r\n*> Copyright Notice.\r\n*> ****************\r\n*>\r\n*> This notice supercedes all prior copyright notices & was updated 2024-04-16.\r\n*>\r\n*> These files and programs are part of the Applewood Computers Accounting\r\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\r\n*>\r\n*> This program is now free software; you can redistribute it and/or modify it\r\n*> under the terms listed here and of the GNU General Public License as\r\n*> published by the Free Software Foundation; version 3 and later as revised\r\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\r\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\r\n*>\r\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\r\n*> distribution in a rental or hire mode must get in touch with the copyright\r\n*> holder with your commercial plans and proposals.\r\n*>\r\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\r\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\r\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\r\n*> for more details. If it breaks, you own both pieces but I will endeavour\r\n*> to fix it, providing you tell me about the problem.\r\n*>\r\n*> You should have received a copy of the GNU General Public License along\r\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\r\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\r\n*>\r\n*>**********************************************************************************\r\n*>\r\n environment division.\r\n copy \"envdiv.cob\".\r\n*>\r\n input-output section.\r\n file-control.\r\n*>\r\n copy \"plselpinv.cob\".\r\n*>\r\n data division.\r\n file section.\r\n*>***********\r\n copy \"plfdpinv.cob\".\r\n*>\r\n working-storage section.\r\n*>**********************\r\n*>\r\n 77  prog-name          pic x(17)  value \"acas026 (3.02.11)\".\r\n*>\r\n 77  ws-reply           pic x      value space.\r\n*>\r\n 77  A                  pic 9(4)             value zero.  *> A & B used in 1st test ONLY\r\n 77  B                  pic 9(4)             value zero.  *>  in ba-Process-RDBMS\r\n 77  Display-Blk        pic x(75)             value spaces.\r\n 77  Cobol-File-Status  pic 9                 value zero.\r\n     88  Cobol-File-Eof                       value 1.\r\n *>\r\n *> TESING data\r\n *>\r\n 01  WS-Temp-ED.\r\n     03  ws-temp-ed-1       pic 9(8).\r\n     03  WS-Temp-ed-2       pic 99.\r\n*>\r\n 01  Error-Messages.\r\n*> System Wide\r\n*> Module Specific\r\n     03  PL901          pic x(31) value \"PL901 Note error and hit return\".\r\n     03  PL907          pic x(32) value \"PL907 Program Error: Temp rec = \".\r\n*>                                        yyy < Invoice-Rec = zzz\r\n*>\r\n Linkage Section.\r\n*>**************\r\n copy \"plwspinv.cob\" replacing PInvoice-Header by WS-PInvoice-Record\r\n                              PInvoice-Bodies by WS-PInvoice-Bodies.\r\n*>\r\n copy \"wssystem.cob\".\r\n*>\r\n copy \"wsfnctn.cob\".\r\n*>\r\n copy \"wsnames.cob\".\r\n*>\r\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\r\n*>\r\n Procedure Division Using System-Record\r\n\r\n                          WS-PInvoice-Record\r\n\r\n                          File-Access\r\n                          File-Defs\r\n                          ACAS-DAL-Common-data.\r\n*>********************************************\r\n*>\r\n aa-Process-Flat-File Section.\r\n*>***************************\r\n aa010-main.\r\n*>\r\n*>  For logging only.\r\n*>\r\n     move     4      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=Invoice used in FH logging\r\n     move     12     to WS-Log-File-No.  *> RDB, File/Table\r\n*>\r\n*>   Now Test for valid key for start, read-indexed and delete\r\n*>\r\n     evaluate File-Function\r\n              when  4   *> fn-read-indexed\r\n              when  9   *> fn-start\r\n                if     File-Key-No not = 1\r\n                       move 998 to WE-Error       *> file seeks key type out of range        998\r\n                       move 99 to fs-reply\r\n                       go   to aa999-main-exit\r\n                end-if\r\n              when     8  *> fn-delete\r\n                if     File-Key-No not = 1\r\n                       move 996 to WE-Error       *> file seeks key type out of range        996\r\n                       move 99 to fs-reply\r\n                       go   to aa999-main-exit\r\n                end-if\r\n     end-evaluate.\r\n*>\r\n*> Check if data files or RDBMS processing\r\n*>\r\n     if       not FS-Cobol-Files-Used\r\n              move RDBMS-Flat-Statuses to FA-RDBMS-Flat-Statuses    *> needed for DAL? not JC/dbpre versions\r\n              perform ba-Process-RDBMS                                *>  Can't hurt\r\n              go to AA-Main-Exit\r\n     end-if.\r\n*>\r\n*> Test  Rec lengths first.\r\n*>\r\n     perform  ba012-Test-WS-Rec-Size-2.\r\n*>\r\n*>  File paths for Cobol File has already done in main menu module\r\n*>\r\n*>******************************************\r\n*> So we are processing Cobol Flat files   *\r\n*>******************************************\r\n*>\r\n*>  ?   move     zero   to  WE-Error\r\n *>  ?                      FS-Reply.\r\n     move     spaces to SQL-Err SQL-Msg SQL-State.\r\n*>\r\n     evaluate File-Function\r\n        when  1\r\n              go to aa020-Process-Open\r\n        when  2\r\n              go to aa030-Process-Close\r\n        when  3\r\n        when  34                             *> fn-Read-Next-Header\r\n              go to aa040-Process-Read-Next\r\n        when  4\r\n              go to aa050-Process-Read-Indexed\r\n        when  5\r\n              go to aa070-Process-Write\r\n        when  7\r\n              go to aa090-Process-Rewrite\r\n        when  8\r\n              go to aa080-Process-Delete\r\n        when  9\r\n              go to aa060-Process-Start\r\n        when  other                          *> 6 is spare / unused\r\n              go to aa100-Bad-Function\r\n     end-evaluate.\r\n*>\r\n*>  Should never get here but in case :(\r\n     go       to aa100-Bad-Function.\r\n*>\r\n aa020-Process-Open.\r\n     move     spaces to WS-File-Key.     *> for logging\r\n     move     201 to WS-No-Paragraph.\r\n     if       fn-input\r\n              open input Invoice-File\r\n              if   Fs-Reply not = zero\r\n                   move 35 to fs-Reply\r\n                   close Invoice-File\r\n                   go to aa999-Main-Exit\r\n              end-if\r\n      else\r\n       if     fn-i-o\r\n              open i-o Invoice-File\r\n              if       fs-reply not = zero              *> this block was in st010 at ba000-Setup-Invoice\r\n                       close       Invoice-File\r\n                       open output Invoice-File           *> Doesnt create in i-o\r\n                       close       Invoice-File\r\n                       open i-o    Invoice-File\r\n              end-if                                      *> file-status will NOT be updated   ????\r\n       else\r\n        if    fn-output                      *> should not need to be used\r\n              open output Invoice-File         *> caller should check fs-reply\r\n        else\r\n         if   fn-extend                      *> Must not be used for ISAM files\r\n*>              open extend Invoice-File\r\n              move 997 to WE-Error\r\n              move 99  to FS-Reply\r\n              go to aa999-main-exit\r\n         end-if\r\n        end-if\r\n       end-if\r\n     end-if.\r\n*> 27/07/16 16:30     move     zeros to FS-Reply WE-Error.\r\n     move     zero to Cobol-File-Status.\r\n     move     \"OPEN PL INVOICE File\" to WS-File-Key.\r\n     if       fs-reply not = zero\r\n              move  999 to WE-Error.\r\n     go       to aa999-main-exit.            *> with test for dup processing\r\n*>\r\n aa030-Process-Close.\r\n     move     202 to WS-No-Paragraph.\r\n     move     spaces to WS-File-Key.     *> for logging\r\n     close    Invoice-File.\r\n*> 27/07/16 16:30     move     zeros to FS-Reply WE-Error.\r\n     move     zero to Cobol-File-Status.\r\n     move     \"CLOSE PL INVOICE File\" to WS-File-Key\r\n     perform  aa999-main-exit.\r\n     move     zero to  File-Function\r\n                       Access-Type.              *> close log file\r\n     perform  Ca-Process-Logs.\r\n     go       to aa-main-exit.\r\n*>\r\n aa040-Process-Read-Next.\r\n*>\r\n*>   Process READs, 1st is read next",
+        "line": 127
+      },
+      {
+        "type": "IF",
+        "condition": "Cobol-File-Eof\r\n              move 10 to FS-Reply\r\n                         WE-Error\r\n              move spaces to Invoice-Key\r\n                             SQL-Err\r\n                             SQL-Msg\r\n              stop \"Cobol File EOF\"               *> for testing\r\n              go to aa999-main-exit\r\n     end-if\r\n*>\r\n     read     Invoice-File next record at end\r\n              move 10 to we-error fs-reply        *> EOF\r\n              set Cobol-File-EoF to true\r\n              move 1 to Cobol-File-Status         *> JIC above dont work :)\r\n              initialize Invoice-Record\r\n              move \"EOF\" to WS-File-Key           *> for logging\r\n              go to aa999-main-exit\r\n     end-read.\r\n     if       FS-Reply not = zero\r\n              go to aa999-main-exit.\r\n     move     Invoice-Record to WS-PInvoice-Record.\r\n     perform  aa041-Move-Inv-Data.\r\n     move     zeros to WE-Error.\r\n     go to    aa999-main-exit.\r\n*>\r\n aa041-Move-Inv-Data.   *> Not really needed as both fields are now chars.\r\n     move     Invoice-Nos to WS-Temp-ED-1.\r\n     move     Item-Nos    to WS-Temp-ED-2.\r\n     move     WS-Temp-ED  to WS-File-Key.\r\n*>\r\n*>   The next block will never get executed unless performed  so is it needed ?\r\n*>\r\n aa045-Eval-Keys.\r\n     evaluate File-Function      *> Set up keys just for logging\r\n              when  4             *> fn-read-indexed\r\n              when  5             *> fn-write\r\n              when  7             *> fn-re-write\r\n              when  8             *> fn-delete    For delete can ignore Desc key\r\n              when  9             *> fn-start\r\n                    evaluate  File-Key-No\r\n                              when   1\r\n                                     move   WS-Invoice-Key     to Invoice-Key\r\n                                     perform aa041-Move-Inv-Data\r\n                              when   other\r\n                                     move   spaces             to WS-File-Key\r\n                    end-evaluate\r\n              when  other\r\n                    move   spaces    to WS-File-Key\r\n     end-evaluate.\r\n*>\r\n aa050-Process-Read-Indexed.\r\n*>\r\n     move     204 to WS-No-Paragraph.\r\n     perform  aa045-Eval-keys.\r\n     move     zero to Cobol-File-Status.\r\n     if       File-Key-No = 1\r\n              read     Invoice-File key WS-Invoice-Key       invalid key\r\n                       move 21 to we-error fs-reply\r\n              end-read\r\n              if       fs-Reply = zero\r\n                       move     Invoice-Record to WS-PInvoice-Record\r\n                       perform  aa041-Move-Inv-Data\r\n              else\r\n                       initialize WS-PInvoice-Record\r\n                       move \"Failed action\" to WS-File-Key\r\n              end-if\r\n              go       to aa999-main-exit\r\n     end-if.\r\n     move     998 to WE-Error       *> file seeks key type out of range but should never get here       998\r\n     move     99 to fs-reply\r\n     go       to aa999-main-exit.\r\n*>\r\n aa060-Process-Start.\r\n*>\r\n*>  Check for Param error 1st on start\r\n*>\r\n     move     205 to WS-No-Paragraph.\r\n     perform  aa045-Eval-keys.\r\n     move     zeros to fs-reply\r\n                       WE-Error.\r\n     move     zero to Cobol-File-Status.\r\n*>\r\n     if       access-type < 5 or > 8                   *> NOT using 'not >'\r\n              move 998 to WE-Error                     *> 998 Invalid calling parameter settings\r\n              go to aa999-main-exit\r\n     end-if\r\n*>\r\n*>  Now do Start primary key before read-next ?\r\n*>\r\n     move     WS-Invoice-Key to Invoice-Key.\r\n     if       File-Key-No = 1\r\n        and   fn-equal-to\r\n              start Invoice-File key = Invoice-Key invalid key\r\n                    move 21 to Fs-Reply\r\n                    go to aa999-main-exit\r\n              end-start\r\n     end-if\r\n     if       File-Key-No = 1\r\n        and   fn-less-than\r\n              start Invoice-File key < Invoice-Key invalid key\r\n                    move 21 to Fs-Reply\r\n                    go to aa999-main-exit\r\n              end-start\r\n     end-if\r\n     if       File-Key-No = 1\r\n        and   fn-greater-than\r\n              start Invoice-File key > Invoice-Key invalid key\r\n                    move 21 to Fs-Reply\r\n                    go to aa999-main-exit\r\n              end-start\r\n     end-if\r\n     if       File-Key-No = 1\r\n        and   fn-not-less-than\r\n              start Invoice-File key not < Invoice-Key invalid key\r\n                    move 21 to Fs-Reply\r\n                    go to aa999-main-exit\r\n              end-start\r\n     end-if\r\n     if       File-Key-No = 1\r\n              perform  aa041-Move-Inv-Data.\r\n*>\r\n     go       to aa999-main-exit.\r\n*>\r\n aa070-Process-Write.\r\n     move     206 to WS-No-Paragraph.\r\n     move     WS-PInvoice-Record to Invoice-Record.\r\n     move     zeros to FS-Reply  WE-Error.\r\n     move     zero to Cobol-File-Status.\r\n     write    Invoice-Record invalid key\r\n              move 22 to FS-Reply\r\n     end-write.\r\n     perform  aa041-Move-Inv-Data.\r\n     go       to aa999-main-exit.\r\n*>\r\n aa080-Process-Delete.\r\n     move     207 to WS-No-Paragraph.\r\n     move     WS-PInvoice-Record to Invoice-Record.\r\n     move     zeros to FS-Reply  WE-Error.\r\n     move     zero to Cobol-File-Status.\r\n     delete   Invoice-File record invalid key\r\n              move 21 to FS-Reply\r\n     end-delete.\r\n     perform  aa041-Move-Inv-Data.\r\n     go       to aa999-main-exit.\r\n*>\r\n aa090-Process-Rewrite.\r\n*>\r\n     move     208 to WS-No-Paragraph.\r\n     move     WS-PInvoice-Record to Invoice-Record.\r\n     move     zeros to FS-Reply  WE-Error.\r\n     move     zero to Cobol-File-Status.\r\n     rewrite  Invoice-Record invalid key\r\n              move 21 to FS-Reply\r\n     end-rewrite\r\n     perform  aa041-Move-Inv-Data.\r\n     go       to aa999-main-exit.\r\n*>\r\n aa100-Bad-Function.\r\n*>\r\n*> Houston; We have a problem\r\n*>\r\n     move     999 to WE-Error.                         *> 999\r\n     move     99  to fs-reply.\r\n*>\r\n aa999-main-exit.\r\n     if       Testing-1\r\n              perform Ca-Process-Logs\r\n     end-if.\r\n*>\r\n aa-main-exit.\r\n*>\r\n*> Now have processed cobol flat file,  so ..\r\n*>\r\n aa-Exit.\r\n     exit program.\r\n*>\r\n ba-Process-RDBMS section.\r\n*>***********************\r\n*>\r\n*>********************************************************************\r\n*>  Here we call the relevent RDBMS module for this table            *\r\n*>   which will include processing any other joined tables as needed *\r\n*>********************************************************************\r\n*>\r\n ba010-Test-WS-Rec-Size.\r\n*>\r\n*>     Test on very first call only  (So do NOT use var A & B again)\r\n*>       Lets test that Data-record size is = or > than declared Rec in DAL\r\n*>          as we cant adjust at compile/run time due to ALL Cobol compilers ?\r\n*>\r\n     move     12 to WS-Log-File-no.        *> for FHlogger\r\n*>\r\n ba012-Test-WS-Rec-Size-2.\r\n*>\r\n     if       A = zero                        *> so it is being called first time\r\n              move     function Length (\r\n                                        WS-PInvoice-Record\r\n                                                 ) to A\r\n              move     function length (\r\n                                        Invoice-Record\r\n                                                 ) to B\r\n              if   A < B                      *> COULD LET caller module deal with these errors !!!!!!!\r\n                   move 901 to WE-Error       *> 901 Programming error; temp rec length is wrong caller must stop\r\n                   move 99 to fs-reply        *> allow for last field ( FILLER) not being present in layout.\r\n              end-if\r\n              if       WE-Error = 901                  *> record length wrong so display error, accept and",
+        "line": 367
+      },
+      {
+        "type": "IF",
+        "condition": "Testing-1\r\n                           perform Ca-Process-Logs\r\n                       end-if\r\n                       accept Accept-Reply at 2433\r\n                       go to ba-rdbms-exit\r\n              end-if\r\n*>\r\n*>  Not a error comparing the length of records so - -\r\n*>  Load up the DB settings from the system record as its not passed on\r\n*>           hopefully once is enough  :)\r\n*>\r\n              move     RDBMS-DB-Name to DB-Schema\r\n              move     RDBMS-User    to DB-UName\r\n              move     RDBMS-Passwd  to DB-UPass\r\n              move     RDBMS-Port    to DB-Port\r\n              move     RDBMS-Host    to DB-Host\r\n              move     RDBMS-Socket  to DB-Socket\r\n     end-if.\r\n*>\r\n ba015-Test-Ends.\r\n*>\r\n*>\r\n*>   HERE we need a CDF [Compiler Directive] to select the correct DAL based\r\n*>     on the pre SQL compiler e.g., JCs or dbpre or Prima conversions <<<<  ? >>>>>\r\n*>        Do this after system testing and pre code release.\r\n*>\r\n*>  NOW SET UP FOR JC pre-sql compiler system.\r\n*>   DAL-Datablock not needed unless using RDBMS DAL from Prima & MS Sql\r\n*>\r\n     call     \"plinvoiceMT\" using File-Access\r\n                                  ACAS-DAL-Common-data\r\n\r\n                                  WS-PInvoice-Record\r\n     end-call.\r\n*>\r\n*>   Any errors leave it to caller to recover from\r\n*>\r\n ba-rdbms-exit.\r\n     exit     section.\r\n*>   ****     *******\r\n*>\r\n Ca-Process-Logs. *> Not called on DAL access as it does it already\r\n*>**************\r\n*>\r\n     call     \"fhlogger\" using File-Access\r\n                               ACAS-DAL-Common-data.\r\n*>\r\n ca-Exit.     exit.\r\n*>\r\n end program acas026.",
+        "line": 583
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "File-Function\r\n              when  4   *> fn-read-indexed\r\n              when  9   *> fn-start\r\n    ...",
+        "line": 246,
+        "whenCount": 3
+      },
+      {
+        "content": "File-Function\r\n        when  1\r\n              go to aa020-Process-Open\r\n        when  2\r\n           ...",
+        "line": 284,
+        "whenCount": 10
+      },
+      {
+        "content": "File-Function      *> Set up keys just for logging\r\n              when  4             *> fn-read-ind...",
+        "line": 400,
+        "whenCount": 7
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 26,
+    "cognitive": 43,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 59,
+      "totalOperators": 55,
+      "totalOperands": 110,
+      "vocabulary": 60,
+      "length": 165,
+      "volume": 974.6369482754055
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

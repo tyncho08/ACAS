@@ -1,0 +1,176 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irsubp.cbl",
+  "fileName": "irsubp.cbl",
+  "timestamp": "2025-09-15T16:25:49.453Z",
+  "programId": "irsubp",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 84
+      },
+      {
+        "name": "file",
+        "line": 92
+      },
+      {
+        "name": "working-storage",
+        "line": 108
+      },
+      {
+        "name": "linkage",
+        "line": 111
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 85
+      },
+      {
+        "name": "File-Defs",
+        "line": 120
+      },
+      {
+        "name": "Main",
+        "line": 123
+      },
+      {
+        "name": "Close-1",
+        "line": 145
+      },
+      {
+        "name": "Read-1",
+        "line": 156
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "books",
+        "line": 39,
+        "replacing": null
+      },
+      {
+        "name": "books",
+        "line": 46,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 77,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 84,
+        "replacing": null
+      },
+      {
+        "name": "irswspost",
+        "line": 115,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 116,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 117,
+        "replacing": null
+      }
+    ],
+    "performs": []
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "zero",
+        "to": "we-error",
+        "line": 130
+      },
+      {
+        "from": "99",
+        "to": "we-error",
+        "line": 142
+      },
+      {
+        "from": "99",
+        "to": "WE-Error\r\n              go to Main-Exit",
+        "line": 154
+      },
+      {
+        "from": "3",
+        "to": "we-error\r\n              go to  main-exit",
+        "line": 161
+      },
+      {
+        "from": "Record-4",
+        "to": "posting-record",
+        "line": 163
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "no input file.\r\n*> 07/05/13 vbc -     Change file to line seq in line with 055.\r\n*> 04/12/16 vbc - .13 Removed System-Record from call list but\r\n*>                    added File-Defs as filename now file-38 to\r\n*>                    force file into correct directory as possible bug.\r\n*>                    As this FH is only for a temporary file it will\r\n*>                    not be converted to also use a RDB table.\r\n*>                    As it is only created and\r\n*>                    used within irs055 for irs050.\r\n*>                    Long term would be to just extract rdb rows in the\r\n*>                    requested sorted order but as a primary sort field\r\n*>                    is the date elements (dd/mm/yy) & the date is stored\r\n*>                    as one column this cannot be done short of having\r\n*>                    three new column to hold DD, MM & YY.\r\n*>                    Hmm, might do it anyway but the sort is very quick!\r\n*> 29/01/18 vbc - .14 Clean up copy books to use default dir BUT the\r\n*>                    wspost.cob is in the irs dir as it is different.\r\n*>                    So code is now to v3.02 standards - ish.\r\n*> 10/02/18 vbc - .15 Removed o/p and writing as not used as the sort (irs055)\r\n*>                    (writes out within sort verb).\r\n*> 19/04/18 vbc -     Comment for .14 and wspost no longer applies as the posting\r\n*>                    is now setup for irs and a different one from SL & PL.\r\n*>                    All copy books are in the one directory.\r\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\r\n*>\r\n*>*************************************************************************\r\n*>\r\n*>  From copyright.cob.\r\n*>\r\n*> Copyright Notice.\r\n*> ****************\r\n*>\r\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\r\n*>\r\n*> These files and programs are part of the Applewood Computers Accounting\r\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\r\n*>\r\n*> This program is now free software; you can redistribute it and/or modify it\r\n*> under the terms listed here and of the GNU General Public License as\r\n*> published by the Free Software Foundation; version 3 and later as revised\r\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\r\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\r\n*>\r\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\r\n*> distribution in a rental or hire mode must get in touch with the copyright\r\n*> holder with your commercial plans and proposals.\r\n*>\r\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\r\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\r\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\r\n*> for more details. If it breaks, you own both pieces but I will endeavour\r\n*> to fix it, providing you tell me about the problem.\r\n*>\r\n*> You should have received a copy of the GNU General Public License along\r\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\r\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\r\n*>\r\n*>*************************************************************************\r\n*>\r\n environment division.\r\n copy  \"envdiv.cob\".\r\n input-output section.\r\n file-control.\r\n*>\r\n     select Sorted-Posting-File assign File-38   *> \"postsort.dat\"\r\n                                organization line sequential\r\n                                file status fs-reply.\r\n*>\r\n data division.\r\n file section.\r\n*>\r\n fd  Sorted-Posting-File.\r\n*>\r\n 01  Record-4.\r\n     03  key-4           pic 9(5).\r\n     03  post-code4      pic xx.\r\n     03  post-date4      pic x(8).\r\n     03  post-dr4        pic 9(5).\r\n     03  post-cr4        pic 9(5).\r\n     03  post-amount4    pic s9(7)v99  sign is leading.\r\n     03  post-legend4    pic x(32).\r\n     03  vat-ac-def4     pic 99.\r\n     03  post-vat-side4  pic xx.\r\n     03  vat-amount4     pic s9(7)v99   sign is leading.\r\n*>\r\n working-storage section.\r\n*>----------------------\r\n*>\r\n linkage section.\r\n*>--------------\r\n*>\r\n copy \"irswspost.cob\".\r\n copy \"wsfnctn.cob\".\r\n copy \"wsnames.cob\".\r\n*>\r\n procedure division using Posting-Record\r\n                          File-Access\r\n                          File-Defs.\r\n*>======================================\r\n*>\r\n Main.\r\n*>---\r\n*>\r\n*>  Now have Open Input or output, Close, Read next.\r\n*>  Keeping open output to clear the file but not currently used.\r\n*>\r\n     move     zero to we-error.\r\n*>\r\n     if       not fn-open\r\n              go to Close-1.\r\n*>\r\n*>   Open the file.\r\n*>\r\n     if       fn-input\r\n              open input  Sorted-Posting-File.\r\n     if       fn-output\r\n              open output Sorted-Posting-File.\r\n     if       fs-reply not = zero\r\n              move 99 to we-error.\r\n*>\r\n     go       to main-exit.\r\n*>\r\n Close-1.\r\n*>-----\r\n*>\r\n     if       fn-close\r\n              close Sorted-Posting-File\r\n              go to main-exit.\r\n*>\r\n     if       not fn-read-next\r\n              move 99 to WE-Error\r\n              go to Main-Exit.\r\n*>\r\n Read-1.\r\n*>------\r\n*>\r\n     read     Sorted-Posting-File record at end\r\n              move 3 to we-error\r\n              go to  main-exit.\r\n     move     Record-4 to posting-record.\r\n*>\r\n Main-Exit.   exit program.\r\n*>********    ************",
+        "line": 24
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 2,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 8,
+      "totalOperators": 5,
+      "totalOperands": 10,
+      "vocabulary": 9,
+      "length": 15,
+      "volume": 47.548875021634686
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

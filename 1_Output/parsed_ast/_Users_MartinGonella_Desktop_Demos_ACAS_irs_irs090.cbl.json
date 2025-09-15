@@ -1,0 +1,537 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs090.cbl",
+  "fileName": "irs090.cbl",
+  "timestamp": "2025-09-15T16:25:49.248Z",
+  "programId": "irs090",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 103
+      },
+      {
+        "name": "file",
+        "line": 128
+      },
+      {
+        "name": "working-storage",
+        "line": 151
+      },
+      {
+        "name": "linkage",
+        "line": 246
+      },
+      {
+        "name": "la-control",
+        "line": 289
+      },
+      {
+        "name": "lb-init",
+        "line": 300
+      },
+      {
+        "name": "lc-process",
+        "line": 339
+      },
+      {
+        "name": "ld-output-final",
+        "line": 362
+      },
+      {
+        "name": "le-close",
+        "line": 391
+      },
+      {
+        "name": "exit",
+        "line": 403
+      },
+      {
+        "name": "lz-common-routines",
+        "line": 411
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 104
+      },
+      {
+        "name": "File-Defs",
+        "line": 286
+      },
+      {
+        "name": "laa-exit",
+        "line": 297
+      },
+      {
+        "name": "lbb-screen-heads",
+        "line": 316
+      },
+      {
+        "name": "lbc-get-year-start",
+        "line": 324
+      },
+      {
+        "name": "lca-start",
+        "line": 342
+      },
+      {
+        "name": "ldb",
+        "line": 370
+      },
+      {
+        "name": "lez-exit",
+        "line": 402
+      },
+      {
+        "name": "lzc-set-report-months",
+        "line": 414
+      },
+      {
+        "name": "lzc-set-mth",
+        "line": 419
+      },
+      {
+        "name": "lzd-headings",
+        "line": 433
+      },
+      {
+        "name": "lze-print-line",
+        "line": 446
+      },
+      {
+        "name": "lze-set-mth",
+        "line": 451
+      },
+      {
+        "name": "lze-work",
+        "line": 467
+      },
+      {
+        "name": "lzf-get-nominal",
+        "line": 494
+      },
+      {
+        "name": "lzf-read",
+        "line": 499
+      },
+      {
+        "name": "lzg-read-nl-seq",
+        "line": 523
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 398,
+        "type": "DYNAMIC",
+        "using": [
+          "Print-Report"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 94,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 101,
+        "replacing": null
+      },
+      {
+        "name": "irsfdwsnl",
+        "line": 139,
+        "replacing": null
+      },
+      {
+        "name": "irsprint-spool-command",
+        "line": 154,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 221,
+        "replacing": null
+      },
+      {
+        "name": "irsfdwsnl",
+        "line": 222,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 231,
+        "replacing": null
+      },
+      {
+        "name": "irswssystem",
+        "line": 249,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 252,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 282,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ZZ100-ACAS-IRS-Calls",
+        "line": 539,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "lb-init",
+        "thru": null,
+        "line": 292
+      },
+      {
+        "target": "lc-process",
+        "thru": null,
+        "line": 293
+      },
+      {
+        "target": "ld-output-final",
+        "thru": null,
+        "line": 294
+      },
+      {
+        "target": "le-close",
+        "thru": null,
+        "line": 295
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 310
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 311
+      },
+      {
+        "target": "acasirsub1-Open-Input",
+        "thru": null,
+        "line": 331
+      },
+      {
+        "target": "lzc-set-report-months",
+        "thru": "lzc-exit",
+        "line": 333
+      },
+      {
+        "target": "lzd-headings",
+        "thru": "lzd-exit",
+        "line": 334
+      },
+      {
+        "target": "lze-print-line",
+        "thru": "lzf-exit",
+        "line": 345
+      },
+      {
+        "target": "lzf-get-nominal",
+        "thru": "lzf-exit",
+        "line": 348
+      },
+      {
+        "target": "lze-print-line",
+        "thru": "lze-exit",
+        "line": 352
+      },
+      {
+        "target": "lzf-get-nominal",
+        "thru": "lzf-exit",
+        "line": 353
+      },
+      {
+        "target": "acasirsub1-Close",
+        "thru": null,
+        "line": 367
+      },
+      {
+        "target": "acasirsub1-Open-Input",
+        "thru": null,
+        "line": 368
+      },
+      {
+        "target": "lzg-read-nl-seq",
+        "thru": "lzg-exit",
+        "line": 372
+      },
+      {
+        "target": "lzd-headings",
+        "thru": "lzd-exit",
+        "line": 382
+      },
+      {
+        "target": "acasirsub1-Close",
+        "thru": null,
+        "line": 396
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 479
+      },
+      {
+        "target": "move",
+        "thru": null,
+        "line": 481
+      },
+      {
+        "target": "acasirsub1-Read-Indexed",
+        "thru": null,
+        "line": 501
+      },
+      {
+        "target": "acasirsub1-Close",
+        "thru": null,
+        "line": 508
+      },
+      {
+        "target": "acasirsub1-Read-Next",
+        "thru": null,
+        "line": 525
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "hd-hh",
+        "to": "hd2-hh\n              move hd-mm to hd2-mm\n              move HD2-Time  to P-Time",
+        "line": 305
+      },
+      {
+        "from": "zero",
+        "to": "a b",
+        "line": 309
+      },
+      {
+        "from": "zeros",
+        "to": "ws-mths (b)\n     end-perform\n*>\n     move     run-date to l1-date",
+        "line": 310
+      },
+      {
+        "from": "client",
+        "to": "l1-client",
+        "line": 314
+      },
+      {
+        "from": "zero",
+        "to": "a b",
+        "line": 335
+      },
+      {
+        "from": "work-account",
+        "to": "ws-saved-account",
+        "line": 349
+      },
+      {
+        "from": "work-account",
+        "to": "ws-saved-account",
+        "line": 354
+      },
+      {
+        "from": "01",
+        "to": "work-mm",
+        "line": 356
+      },
+      {
+        "from": "owning",
+        "to": "wl4-no",
+        "line": 375
+      },
+      {
+        "from": "wl4-no",
+        "to": "l4-no",
+        "line": 383
+      },
+      {
+        "from": "wl4-group",
+        "to": "l4-group",
+        "line": 384
+      },
+      {
+        "from": "Print-Spool-Name",
+        "to": "PSN",
+        "line": 397
+      },
+      {
+        "from": "1",
+        "to": "a",
+        "line": 416
+      },
+      {
+        "from": "sr-reply",
+        "to": "b",
+        "line": 417
+      },
+      {
+        "from": "1",
+        "to": "b",
+        "line": 427
+      },
+      {
+        "from": "ws-page-no",
+        "to": "l1-page",
+        "line": 436
+      },
+      {
+        "from": "spaces",
+        "to": "print-record",
+        "line": 440
+      },
+      {
+        "from": "5",
+        "to": "ws-line-cnt",
+        "line": 442
+      },
+      {
+        "from": "1",
+        "to": "a",
+        "line": 448
+      },
+      {
+        "from": "sr-reply",
+        "to": "b",
+        "line": 449
+      },
+      {
+        "from": "+0",
+        "to": "ws-mths (b)",
+        "line": 455
+      },
+      {
+        "from": "1",
+        "to": "b",
+        "line": 464
+      },
+      {
+        "from": "nl-name",
+        "to": "l4-name",
+        "line": 469
+      },
+      {
+        "from": "owning",
+        "to": "wl4-no\n              move \"M\" to l4-type\n       else\n              move sub-nominal to wl4-no\n              move \"S\" to l4-type",
+        "line": 471
+      },
+      {
+        "from": "ws-years",
+        "to": "l4-total",
+        "line": 477
+      },
+      {
+        "from": "zero",
+        "to": "ws-years",
+        "line": 478
+      },
+      {
+        "from": "zero",
+        "to": "ws-mths (b)\n     end-perform\n     move     l4-group to wl4-group",
+        "line": 480
+      },
+      {
+        "from": "\"FF\"",
+        "to": "fs-reply",
+        "line": 484
+      },
+      {
+        "from": "work-account",
+        "to": "owning",
+        "line": 496
+      },
+      {
+        "from": "zero",
+        "to": "sub-nominal",
+        "line": 497
+      },
+      {
+        "from": "owning",
+        "to": "sub-nominal\n              move rec-pointer to owning\n              go to lzf-read",
+        "line": 515
+      },
+      {
+        "from": "\"FE\"",
+        "to": "fs-reply",
+        "line": 527
+      },
+      {
+        "from": "sub-nominal",
+        "to": "owning",
+        "line": 535
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment division.\n copy \"envdiv.cob\".\n*>\n input-output section.\n file-control.\n*>\n *>    select  nominal-ledger  assign nl-file\n *>                            organization indexed\n *>                            access dynamic\n *>                            record key-1\n *>                            status fs-reply.\n*>\n     select  work-file       assign \"workpost.tmp\"\n                             organization sequential\n                             status fs-reply.\n*>\n     select  work-file-2     assign \"work2.tmp\"\n                             organization indexed\n                             access dynamic\n                             record wl4-no\n                             status fs-reply.\n*>\n     select  print-file      assign \"prt-1\"\n                             organization line sequential.\n*>\n data division.\n*>**************\n*>\n file section.\n*>-------------\n*>\n fd  work-file.\n*>\n 01  work-record.\n     03  work-mm         pic 99.\n     03  work-account    pic 9(5)      comp.\n     03  work-amount     pic s9(7)v99  comp.\n*>\n*> fd  nominal-ledger.\n*>  copy \"irsfdwsnl.cob\".\n fd  work-file-2.\n*>\n 01  work-record-2.\n     03  filler.\n         05  wl4-no      pic 9(5)  comp.\n     03  wl4-group       pic x(126).\n*>\n fd  print-file.\n*>\n 01  print-record        pic x(132).\n*>\n working-storage section.\n 77  prog-name           pic x(16)  value \"irs090 (3.02.14)\".\n 77  sr-reply            pic 99     value zeros.\n copy \"irsprint-spool-command.cob\".\n*>\n 01  filler.\n     03  nl-file         pic x(11).\n     03  ws-page-no      pic 99        comp            value zero.\n     03  ws-line-cnt     pic 99        comp            value zero.\n     03  a               pic 99        comp            value zero.\n     03  b               pic 99        comp            value zero.\n     03  z               pic s9(8)      comp           value zero.\n     03  ws-saved-account pic 9(5)     comp            value zero.\n     03  ws-mths         pic s9(8)v99   comp     occurs 12.\n     03  ws-years        pic s9(8)      comp               value zero.\n     03  ws-mlits-a      pic x(60)    value \" JAN  FEB MARCHAPRIL \" &\n          \"MAY  JUNEJULY  AUG SEPT  OCT  NOV  DEC \".\n     03  ws-mlits-b  redefines ws-mlits-a\n                         pic x(5) occurs 12.\n*>\n     03  hdtime                          value spaces.\n         05  hd-hh       pic xx.\n         05  hd-mm       pic xx.\n         05  hd-ss       pic xx.\n         05  hd-uu       pic xx.\n     03  HD2-Time.\n         05  filler      pic x     value spaces.\n         05  hd2-hh      pic xx.\n         05  filler      pic x     value \":\".\n         05  hd2-mm      pic xx.\n*>\n 01  filler.\n     03  line-1.\n       05  l1-client     pic x(32)    value spaces.\n       05  filler        pic x(23)    value spaces.\n       05  filler        pic x(25)    value \"Monthly Analysis Report\".\n       05  filler        pic x(28)    value spaces.\n       05  l1-date       pic x(8).\n       05  P-Time        pic x(6)     value spaces.\n       05  filler        pic xx       value spaces.\n       05  filler        pic x(5)     value \"Page \".\n       05  l1-page       pic zz9.\n*>\n     03  line-2.\n       05  filler        pic x(29)    value \"<----------Account--------->\".\n       05  filler        pic x        value \"<\".\n       05  filler        pic x(46)    value all \"-\".\n       05  filler        pic x(4)     value \"Year\".\n       05  filler        pic x(43)    value all \"-\".\n       05  filler        pic x        value \">\".\n*>\n     03  line-3.\n       05  filler        pic x(28)    value \"  No Typ      Name\".\n       05  l3-lmonths                occurs 12.\n         07  filler      pic xxx.\n         07  l3-litmonth pic x(5).\n       05  l3-ltotal     pic x(9)     value \"  Total\".\n*>\n     03  line-4.\n      04  filler.\n       05  l4-no         pic z(4)9b.\n      04  l4-group.\n       05  l4-type       pic xb.\n       05  l4-name       pic x(20).\n       05  l4-month      pic -(7)9    occurs 12.\n       05  l4-total      pic -(7)9.\n*>\n    03  line-5           pic x(48)   value\n        \"  Note that above values are subject to rounding\".\n*>\n copy \"wsfnctn.cob\".\n copy \"irsfdwsnl.cob\"      replacing record-1      by WS-IRSNL-Record.\n*>\n 01  Dummies-For-Unused-FH-Calls.      *> IRS call blk at zz100-ACAS-IRS-Calls\n *>    03  WS-IRSNL-Record       pic x.\n     03  WS-IRS-Default-Record pic x.\n     03  Posting-Record        pic x.\n     03  Final-Record          pic x.\n     03  WS-IRS-Posting-Record pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  Error-Messages.\n*> System Wide      USED are :\n     03  SY008          pic x(32) value \"SY008 Note message & Hit return \".\n     03  IR911          pic x(47) value \"IR911 Error on systemMT processing, Fs-reply = \".\n     03  IR912          pic x(51) value \"IR912 Error on irsnominalMT processing, Fs-reply = \".\n     03  IR913          pic x(48) value \"IR913 Error on irsdfltMT processing, Fs-reply = \".\n     03  IR914          pic x(51) value \"IR914 Error on irspostingMT processing, Fs-reply = \".\n     03  IR915          pic x(49) value \"IR915 Error on irsfinalMT processing, Fs-reply = \".\n     03  IR916          pic x(50) value \"IR916 Error on slpostingMT processing, Fs-reply = \".\n*> Module specific  USED are :\n     03  IR990          pic x(41) value \"IR990       Does not exist..Aborting (  )\".\n     03  IR991          pic x(44) value \"IR991 Error on writing work file. Reply (  )\".\n*>\n linkage   section.\n*>*****************\n*>\n copy \"irswssystem.cob\"   *> IRS param record\n              replacing system-record  by IRS-System-Params. *> (01 level)\n*>\n copy \"wssystem.cob\"      *> new for v3.02\n             replacing  System-Record by WS-System-Record\n                        Run-Date   by ACAS-Run-Date     *> these 3 are in binary\n                        Start-Date by ACAS-Start-Date   *> IRS expects as x(8)\n                        End-Date   by ACAS-End-Date     *>  dd/mm/yy\n                        suser      by ACAS-suser\n                        Address-1  by ACAS-Address-1\n                        Address-2  by ACAS-Address-2\n                        Address-3  by ACAS-Address-3\n                        Address-4  by ACAS-Address-4\n                        Post-Code  by ACAS-Post-Code\n                        Print-Spool-Name by ACAS-Print-Spool-Name\n                        Pass-Value by ACAS-Pass-Value\n                        Pass-Word  by ACAS-Pass-Word\n                        OP-System  By ACAS-Op-System\n                        Client     by IRS-Client\n                        System-Ops by IRS-System-Ops\n                        Next-Post  by IRS-Next-Post\n                        Vat-Rates2 by IRS-Vat-Rates2\n                        Vat1       by IRS-Vat1\n                        Vat2       by IRS-Vat2\n                        Vat3       by IRS-Vat3\n                        Vat-Group  by IRS-Vat-Group\n                        Vat-Psent  by IRS-Vat-Psent\n                        Save-Sequ  by IRS-Save-Sequ\n                        System-Work-Group by IRS-System-Work-Group\n                        PL-App-Created by IRS-PL-App-Created\n                        PL-Approp-AC   by IRS-PL-Approp-AC\n                        1st-Time-Flag  by IRS-First-Time-Flag.\n*>\n copy \"wsnames.cob\".\n*>\n procedure division using IRS-System-Params\n                          WS-System-Record\n                          File-Defs.\n*>*****************************************\n*>\n la-control section.\n*>***************\n*>\n     perform  lb-init.\n     perform  lc-process.\n     perform  ld-output-final.\n     perform  le-close.\n*>\n laa-exit.\n     exit     program.\n*>\n lb-init section.\n*>****************\n*>\n     accept   hdtime from time.\n     if       hdtime not = \"00000000\"\n              move hd-hh to hd2-hh\n              move hd-mm to hd2-mm\n              move HD2-Time  to P-Time.\n*>\n     move     zero to a b.\n     perform  varying b from 1 by 1 until b > 12 move zeros to ws-mths (b)\n     end-perform\n*>\n     move     run-date to l1-date.\n     move     client to l1-client.\n*>\n lbb-screen-heads.\n*>\n     display  prog-name                                            at 0101 with erase eos foreground-color 2.\n     display  \"Monthly Analysis Report\"         at 0130 with foreground-color 1 background-color 7.\n     display  run-date                                             at 0173 with foreground-color 2.\n     display  \"You will need 132 column wide paper\"                at 0623 with foreground-color 3.\n     display  \"Which Month does your Tax Year start (01-12)  [  ]\" at 1201 with foreground-color 2.\n*>\n lbc-get-year-start.\n*>\n     accept   sr-reply at 1248 with foreground-color 3.\n     if       sr-reply < 01 or > 12\n              go to lbc-get-year-start.\n*>\n     open     input  work-file.      *>  nominal-ledger.\n     perform  acasirsub1-Open-Input.\n     open     output  print-file work-file-2.\n     perform  lzc-set-report-months thru lzc-exit.\n     perform  lzd-headings thru lzd-exit.\n     move     zero to a b.\n*>\n lbz-exit.    exit section.\n*>\n lc-process section.\n*>******************\n*>\n lca-start.\n*>\n     read     work-file at end\n              perform  lze-print-line thru lzf-exit\n              go to lcz-exit.\n     if       ws-saved-account = zero\n              perform lzf-get-nominal thru lzf-exit\n              move work-account to ws-saved-account.\n*>\n     if       ws-saved-account not = work-account\n              perform lze-print-line thru lze-exit\n              perform lzf-get-nominal thru lzf-exit\n              move work-account to ws-saved-account.\n     if       work-mm < 01 or > 12\n              move 01 to work-mm.\n     add      work-amount to ws-mths (work-mm).\n     go       to lca-start.\n*>\n lcz-exit.    exit section.\n*>\n ld-output-final section.\n*>***********************\n*>\n     close    work-file-2.         *> nominal-ledger\n     open     input work-file-2.   *> nominal-ledger\n     perform  acasirsub1-Close.\n     perform  acasirsub1-Open-Input.\n*>\n ldb.\n*>\n     perform  lzg-read-nl-seq thru lzg-exit.\n     if       fs-reply = \"FE\"\n              go to ldz-exit.\n     move     owning to wl4-no.\n     read     work-file-2  invalid key\n              go to ldb.\n*>\n     if       wl4-no not = owning\n              go to ldb.\n     if       ws-line-cnt > 60\n              perform lzd-headings thru lzd-exit.\n     move     wl4-no to l4-no.\n     move     wl4-group to l4-group.\n     write    print-record from line-4 after 1.\n     add      1 to ws-line-cnt.\n     go       to ldb.\n*>\n ldz-exit.    exit section.\n*>\n le-close section.\n*>****************\n*>\n     write    print-record from line-5 after 3.\n     close    print-file work-file work-file-2.      *>  nominal-ledger\n     perform  acasirsub1-Close.\n     move     Print-Spool-Name to PSN.\n     call     \"SYSTEM\" using Print-Report.\n     open     output  work-file-2 work-file.\n     close    work-file-2 work-file.\n*>\n lez-exit.\n     exit     section.\n*>\n*>*********************************************\n*>                                            *\n*>  Common routines used in the above code    *\n*>                                            *\n*>*********************************************\n*>\n lz-common-routines section.\n*>**************************\n*>\n lzc-set-report-months.\n*>\n     move     1 to a.\n     move     sr-reply to b.\n*>\n lzc-set-mth.\n*>\n     move     ws-mlits-b (b)  to  l3-litmonth (a).\n     add      1 to a.\n     add      1 to b.\n     if       a > 12\n              go to lzc-exit.\n     if       b > 12\n              move 1 to b.\n*>\n     go       to lzc-set-mth.\n*>\n lzc-exit.    exit.\n*>\n lzd-headings.\n*>\n     add      1 to ws-page-no.\n     move     ws-page-no to l1-page.\n     write    print-record from line-1 before 1.\n     write    print-record from line-2 after 1.\n     write    print-record from line-3 after 1.\n     move     spaces to print-record.\n     write    print-record after 1.\n     move     5 to ws-line-cnt.\n*>\n lzd-exit.    exit.\n*>\n lze-print-line.\n*>\n     move     1 to a.\n     move     sr-reply to b.\n*>\n lze-set-mth.\n*>\n     if       (ws-mths (b) = 0 and ws-mths (b) negative)\n           or ws-mths (b) = -0\n              move +0 to ws-mths (b).    *> yep , but it doesnt work\n     move     ws-mths (b)  to  z.\n     add      z to ws-years.\n     move     ws-mths (b)  to  l4-month (a).\n     add      1 to a.\n     add      1 to b.\n     if       a > 12\n              go to lze-work.\n     if       b > 12\n              move 1 to b.\n     go       to lze-set-mth.\n*>\n lze-work.\n*>\n     move     nl-name to l4-name.\n     if       sub-nominal = zero\n              move owning to wl4-no\n              move \"M\" to l4-type\n       else\n              move sub-nominal to wl4-no\n              move \"S\" to l4-type.\n*>\n     move     ws-years to l4-total.\n     move     zero to ws-years.\n     perform  varying b from 1 by 1 until b > 12\n              move zero to ws-mths (b)\n     end-perform\n     move     l4-group to wl4-group.\n     write    work-record-2 invalid key\n              move \"FF\" to fs-reply.\n     if       fs-reply not = zero\n              display IR991    at 1601\n              display fs-reply at 1642\n              display SY008    at 1701\n              accept fs-reply at 1734\n              go to lcz-exit.\n*>\n lze-exit.    exit.\n*>\n lzf-get-nominal.\n*>\n     move     work-account to owning.\n     move     zero    to sub-nominal.\n*>\n lzf-read.\n*>\n     perform  acasirsub1-Read-Indexed.\n     if       fs-reply not = zero\n              display IR990 at 1401 with foreground-color 2\n              display owning at 1401 with foreground-color 3\n              display FS-Reply at 1439 with foreground-color 3\n              display SY008 at 1501\n              accept fs-reply at 1534\n              perform  acasirsub1-Close\n              close work-file work-file-2 print-file\n              stop run.\n*>\n*>    Get pointer to Sub nominal to find main a/c\n*>\n     if       tipe = \"S\"\n              move owning to sub-nominal\n              move rec-pointer to owning\n              go to lzf-read.\n*>\n*>    At this point, we have got the record we want\n*>\n lzf-exit.    exit.\n*>\n lzg-read-nl-seq.\n*>\n     perform  acasirsub1-Read-Next.\n     if       fs-reply = 10\n              move \"FE\" to fs-reply.\n*>\n     if       fs-reply = \"FE\"\n              go to lzg-exit.\n*>\n     if       tipe = \"S\"\n              go to lzg-read-nl-seq.\n     if       sub-nominal not = zeros\n              move sub-nominal to owning.\n*>\n lzg-exit.    exit.\n*>\n copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n*>",
+        "line": 91
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 42,
+      "totalOperators": 33,
+      "totalOperands": 66,
+      "vocabulary": 43,
+      "length": 99,
+      "volume": 537.2002107155076
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

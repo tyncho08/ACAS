@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ACAS Data Lineage</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        #lineage { width: 100%; height: 600px; border: 1px solid #ccc; }
+        .stats { margin: 20px 0; padding: 10px; background: #f5f5f5; }
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <h1>ACAS Data Lineage Analysis</h1>
+    
+    <div class="stats">
+        <h3>Data Flow Statistics</h3>
+        <p>Total Data Flows Analyzed: 1000</p>
+        <p>Unique Source Fields: 153</p>
+        <p>Transformation Types: 1</p>
+    </div>
+    
+    <div id="lineage"></div>
+    
+    <h3>Top Data Sources</h3>
+    <table id="sources">
+        <tr>
+            <th>Source Field</th>
+            <th>Target Count</th>
+            <th>Program Count</th>
+            <th>Transformation Types</th>
+        </tr>
+    </table>
+    
+    <script>
+        // Prepare data for Sankey diagram
+        const nodes = [];
+        const links = [];
+        const nodeMap = new Map();
+        let nodeIndex = 0;
+        
+        // Add source nodes
+        [["0",{"targets":{},"programs":{},"transformations":{}}],["1",{"targets":{},"programs":{},"transformations":{}}],["2",{"targets":{},"programs":{},"transformations":{}}],["3",{"targets":{},"programs":{},"transformations":{}}],["4",{"targets":{},"programs":{},"transformations":{}}],["5",{"targets":{},"programs":{},"transformations":{}}],["6",{"targets":{},"programs":{},"transformations":{}}],["8",{"targets":{},"programs":{},"transformations":{}}],["10",{"targets":{},"programs":{},"transformations":{}}],["11",{"targets":{},"programs":{},"transformations":{}}],["12",{"targets":{},"programs":{},"transformations":{}}],["13",{"targets":{},"programs":{},"transformations":{}}],["14",{"targets":{},"programs":{},"transformations":{}}],["15",{"targets":{},"programs":{},"transformations":{}}],["16",{"targets":{},"programs":{},"transformations":{}}],["17",{"targets":{},"programs":{},"transformations":{}}],["20",{"targets":{},"programs":{},"transformations":{}}],["21",{"targets":{},"programs":{},"transformations":{}}],["22",{"targets":{},"programs":{},"transformations":{}}],["23",{"targets":{},"programs":{},"transformations":{}}],["25",{"targets":{},"programs":{},"transformations":{}}],["30",{"targets":{},"programs":{},"transformations":{}}],["35",{"targets":{},"programs":{},"transformations":{}}],["99",{"targets":{},"programs":{},"transformations":{}}],["201",{"targets":{},"programs":{},"transformations":{}}],["202",{"targets":{},"programs":{},"transformations":{}}],["203",{"targets":{},"programs":{},"transformations":{}}],["204",{"targets":{},"programs":{},"transformations":{}}],["205",{"targets":{},"programs":{},"transformations":{}}],["206",{"targets":{},"programs":{},"transformations":{}}],["207",{"targets":{},"programs":{},"transformations":{}}],["208",{"targets":{},"programs":{},"transformations":{}}],["901",{"targets":{},"programs":{},"transformations":{}}],["941",{"targets":{},"programs":{},"transformations":{}}],["988",{"targets":{},"programs":{},"transformations":{}}],["997",{"targets":{},"programs":{},"transformations":{}}],["998",{"targets":{},"programs":{},"transformations":{}}],["999",{"targets":{},"programs":{},"transformations":{}}],["1000",{"targets":{},"programs":{},"transformations":{}}],["CDT-Date",{"targets":{},"programs":{},"transformations":{}}],["CDT-Time",{"targets":{},"programs":{},"transformations":{}}],["spaces",{"targets":{},"programs":{},"transformations":{}}],["LS-SO-Print",{"targets":{},"programs":{},"transformations":{}}],["*>",{"targets":{},"programs":{},"transformations":{}}],["zeros",{"targets":{},"programs":{},"transformations":{}}],["zero",{"targets":{},"programs":{},"transformations":{}}],["\"sl070\"",{"targets":{},"programs":{},"transformations":{}}],["ACAS-Run-Date",{"targets":{},"programs":{},"transformations":{}}],["u-date",{"targets":{},"programs":{},"transformations":{}}],["to-day",{"targets":{},"programs":{},"transformations":{}}]].forEach(([source, data]) => {
+            if (!nodeMap.has(source)) {
+                nodeMap.set(source, nodeIndex);
+                nodes.push({ name: source });
+                nodeIndex++;
+            }
+            
+            // Add target nodes and links
+            Array.from(data.targets).forEach(target => {
+                if (!nodeMap.has(target)) {
+                    nodeMap.set(target, nodeIndex);
+                    nodes.push({ name: target });
+                    nodeIndex++;
+                }
+                
+                links.push({
+                    source: nodeMap.get(source),
+                    target: nodeMap.get(target),
+                    value: 1
+                });
+            });
+        });
+        
+        // Create Sankey diagram
+        const trace = {
+            type: "sankey",
+            orientation: "h",
+            node: {
+                pad: 15,
+                thickness: 20,
+                line: { color: "black", width: 0.5 },
+                label: nodes.map(n => n.name),
+                color: "blue"
+            },
+            link: {
+                source: links.map(l => l.source),
+                target: links.map(l => l.target),
+                value: links.map(l => l.value)
+            }
+        };
+        
+        const layout = {
+            title: "Data Flow Lineage (Top 50 Sources)",
+            font: { size: 10 }
+        };
+        
+        Plotly.newPlot('lineage', [trace], layout);
+        
+        // Populate table
+        const table = document.getElementById('sources');
+        [["0",{"targets":{},"programs":{},"transformations":{}}],["1",{"targets":{},"programs":{},"transformations":{}}],["2",{"targets":{},"programs":{},"transformations":{}}],["3",{"targets":{},"programs":{},"transformations":{}}],["4",{"targets":{},"programs":{},"transformations":{}}],["5",{"targets":{},"programs":{},"transformations":{}}],["6",{"targets":{},"programs":{},"transformations":{}}],["8",{"targets":{},"programs":{},"transformations":{}}],["10",{"targets":{},"programs":{},"transformations":{}}],["11",{"targets":{},"programs":{},"transformations":{}}],["12",{"targets":{},"programs":{},"transformations":{}}],["13",{"targets":{},"programs":{},"transformations":{}}],["14",{"targets":{},"programs":{},"transformations":{}}],["15",{"targets":{},"programs":{},"transformations":{}}],["16",{"targets":{},"programs":{},"transformations":{}}],["17",{"targets":{},"programs":{},"transformations":{}}],["20",{"targets":{},"programs":{},"transformations":{}}],["21",{"targets":{},"programs":{},"transformations":{}}],["22",{"targets":{},"programs":{},"transformations":{}}],["23",{"targets":{},"programs":{},"transformations":{}}]].forEach(([source, data]) => {
+            const row = table.insertRow();
+            row.insertCell(0).textContent = source;
+            row.insertCell(1).textContent = data.targets.size;
+            row.insertCell(2).textContent = data.programs.size;
+            row.insertCell(3).textContent = Array.from(data.transformations).join(', ');
+        });
+    </script>
+</body>
+</html>

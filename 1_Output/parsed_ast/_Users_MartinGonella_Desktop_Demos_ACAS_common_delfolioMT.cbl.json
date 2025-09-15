@@ -1,0 +1,1478 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/delfolioMT.cbl",
+  "fileName": "delfolioMT.cbl",
+  "timestamp": "2025-09-15T16:25:37.162Z",
+  "programId": "delfolioMT",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 205
+      },
+      {
+        "name": "Working-Storage",
+        "line": 207
+      },
+      {
+        "name": "Linkage",
+        "line": 286
+      },
+      {
+        "name": "screen",
+        "line": 297
+      },
+      {
+        "name": "ba-ACAS-DAL-Process",
+        "line": 319
+      },
+      {
+        "name": "bb000-HV-Load",
+        "line": 1007
+      },
+      {
+        "name": "exit",
+        "line": 1024
+      },
+      {
+        "name": "bb100-UnloadHVs",
+        "line": 1026
+      },
+      {
+        "name": "exit",
+        "line": 1041
+      },
+      {
+        "name": "bb200-Insert",
+        "line": 1043
+      },
+      {
+        "name": "exit",
+        "line": 1097
+      },
+      {
+        "name": "bb300-Update",
+        "line": 1099
+      },
+      {
+        "name": "exit",
+        "line": 1157
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "ba010-Initialise",
+        "line": 330
+      },
+      {
+        "name": "SQL-State",
+        "line": 341
+      },
+      {
+        "name": "end-evaluate",
+        "line": 372
+      },
+      {
+        "name": "ba020-Process-Open",
+        "line": 374
+      },
+      {
+        "name": "end-string",
+        "line": 382
+      },
+      {
+        "name": "end-string",
+        "line": 386
+      },
+      {
+        "name": "end-string",
+        "line": 390
+      },
+      {
+        "name": "end-string",
+        "line": 394
+      },
+      {
+        "name": "end-string",
+        "line": 398
+      },
+      {
+        "name": "end-string",
+        "line": 402
+      },
+      {
+        "name": "ba030-Process-Close",
+        "line": 418
+      },
+      {
+        "name": "ba040-Process-Read-Next",
+        "line": 433
+      },
+      {
+        "name": "end-if",
+        "line": 506
+      },
+      {
+        "name": "ba041-Reread",
+        "line": 508
+      },
+      {
+        "name": "end-if",
+        "line": 552
+      },
+      {
+        "name": "end-if",
+        "line": 558
+      },
+      {
+        "name": "ba050-Process-Read-Indexed",
+        "line": 565
+      },
+      {
+        "name": "end-if",
+        "line": 589
+      },
+      {
+        "name": "ba060-Process-Start",
+        "line": 653
+      },
+      {
+        "name": "ba070-Process-Write",
+        "line": 764
+      },
+      {
+        "name": "end-if",
+        "line": 788
+      },
+      {
+        "name": "ba080-Process-Delete",
+        "line": 791
+      },
+      {
+        "name": "end-if",
+        "line": 843
+      },
+      {
+        "name": "end-if",
+        "line": 924
+      },
+      {
+        "name": "ba090-Process-Rewrite",
+        "line": 928
+      },
+      {
+        "name": "ba100-Bad-Function",
+        "line": 973
+      },
+      {
+        "name": "ba998-Free",
+        "line": 985
+      },
+      {
+        "name": "ba999-end",
+        "line": 997
+      },
+      {
+        "name": "end-if",
+        "line": 1002
+      },
+      {
+        "name": "ba999-exit",
+        "line": 1004
+      },
+      {
+        "name": "bb000-Exit",
+        "line": 1023
+      },
+      {
+        "name": "bb100-Exit",
+        "line": 1040
+      },
+      {
+        "name": "bb200-Exit",
+        "line": 1096
+      },
+      {
+        "name": "bb300-Exit",
+        "line": 1156
+      },
+      {
+        "name": "Ca-Process-Logs",
+        "line": 1159
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 1163
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 485,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "*>",
+          "set",
+          "non",
+          "'0'",
+          "if",
+          "no",
+          "rows",
+          "?",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "*>",
+          "do",
+          "not",
+          "really",
+          "need",
+          "to",
+          "do",
+          "this",
+          "meaning",
+          "the",
+          "above",
+          "CALL",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "\"No",
+          "Data\"",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba999-End",
+          "*>",
+          "can",
+          "clear",
+          "the",
+          "dup",
+          "code",
+          "after",
+          "testing",
+          "end-if",
+          "set",
+          "Cursor-Active",
+          "to",
+          "true",
+          "move",
+          "WS-MYSQL-Count-Rows",
+          "to",
+          "WS-Temp-Ed",
+          "string",
+          "\">",
+          "0",
+          "got",
+          "cnt=\"",
+          "delimited",
+          "by",
+          "size",
+          "WS-Temp-ED",
+          "delimited",
+          "by",
+          "size",
+          "\"",
+          "recs\"",
+          "into",
+          "WS-File-Key",
+          "end-string",
+          "perform",
+          "ba999-End",
+          "*>",
+          "log",
+          "it",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 522,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-DEL-INV-NOS",
+          "HV-DEL-INV-DAT",
+          "HV-DEL-INV-CUS",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "return-code",
+          "=",
+          "-1",
+          "*>",
+          "no",
+          "more",
+          "data",
+          "so",
+          "free",
+          "cursor",
+          "&",
+          "return",
+          "move",
+          "10",
+          "to",
+          "fs-Reply",
+          "WE-Error",
+          "move",
+          "\"EOF\"",
+          "to",
+          "WS-File-Key",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "=",
+          "zero",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "*>",
+          "EOF",
+          "equivilent",
+          "!!",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "*>",
+          "Not",
+          "really",
+          "needed",
+          "but",
+          "help",
+          "for",
+          "testing",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "*>",
+          "ditto",
+          "initialize",
+          "WS-Del-Inv-Nos-Record",
+          "with",
+          "filler",
+          "move",
+          "\"EOF2\"",
+          "to",
+          "WS-File-Key",
+          "end-if",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 618,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-DEL-INV-NOS",
+          "HV-DEL-INV-DAT",
+          "HV-DEL-INV-CUS",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "not",
+          ">",
+          "zero",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "move",
+          "21",
+          "to",
+          "fs-reply",
+          "*>",
+          "from",
+          "23",
+          "move",
+          "990",
+          "to",
+          "WE-Error",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "spaces",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba998-Free",
+          "else",
+          "move",
+          "21",
+          "to",
+          "fs-reply",
+          "*>",
+          "from",
+          "23",
+          "move",
+          "989",
+          "to",
+          "WE-Error",
+          "move",
+          "zero",
+          "to",
+          "SQL-Err",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "move",
+          "spaces",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba998-Free",
+          "end-if",
+          "end-if",
+          "*>",
+          "row",
+          "count",
+          "zero",
+          "should",
+          "show",
+          "up",
+          "as",
+          "a",
+          "MYSQL",
+          "error",
+          "?",
+          "perform",
+          "bb100-UnloadHVs",
+          "*>",
+          "transfer/move",
+          "HV",
+          "vars",
+          "to",
+          "ws-Record",
+          "layout",
+          "move",
+          "HV-DEL-INV-NOS",
+          "to",
+          "WS-File-Key"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 734,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "21",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "move",
+          "zero",
+          "to",
+          "we-error",
+          "end-if",
+          "else",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error",
+          "move",
+          "WS-MYSQL-Count-Rows",
+          "to",
+          "WS-Temp-Ed",
+          "string",
+          "MOST-relation",
+          "WS-Del-Inv-Nos-Record",
+          "(K:L)",
+          "\"",
+          "got",
+          "=\"",
+          "delimited",
+          "by",
+          "size",
+          "WS-Temp-ED",
+          "delimited",
+          "by",
+          "size",
+          "\"",
+          "recs\"",
+          "into",
+          "WS-File-Key",
+          "end-string",
+          "end-if",
+          "go",
+          "to",
+          "ba999-end"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 773,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "if",
+          "SQL-Err",
+          "(1:4)",
+          "=",
+          "\"1062\"",
+          "or",
+          "=",
+          "\"1022\"",
+          "*>",
+          "Dup",
+          "key",
+          "(rec",
+          "already",
+          "present)",
+          "or",
+          "Sql-State",
+          "=",
+          "\"23000\"",
+          "*>",
+          "Dup",
+          "key",
+          "(rec",
+          "already",
+          "present)",
+          "move",
+          "22",
+          "to",
+          "fs-reply",
+          "else",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "end-if",
+          "end-if",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 829,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "move",
+          "995",
+          "to",
+          "WE-Error",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End",
+          "*>",
+          "and",
+          "log",
+          "it",
+          "else",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "move",
+          "zero",
+          "to",
+          "SQL-Err",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_query",
+        "line": 864,
+        "type": "DYNAMIC",
+        "using": [
+          "SQLCA-STATEMENT",
+          "*>",
+          "END-CALL",
+          "*>",
+          "*>",
+          "So",
+          "if",
+          "this",
+          "does",
+          "not",
+          "work",
+          "it",
+          "will",
+          "be",
+          "changed"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 910,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "move",
+          "995",
+          "to",
+          "WE-Error",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End",
+          "else",
+          "*>",
+          "of",
+          "course",
+          "there",
+          "could",
+          "be",
+          "no",
+          "data",
+          "in",
+          "table",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "move",
+          "zero",
+          "to",
+          "SQL-Err",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 956,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "(1:1)",
+          "not",
+          "=",
+          "\"0\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "move",
+          "994",
+          "to",
+          "WE-Error",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error"
+        ]
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 993,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "end-call",
+          "*>",
+          "/MYSQL-END\\",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true"
+        ]
+      },
+      {
+        "target": "fhlogger",
+        "line": 1162,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "*>",
+        "line": 148,
+        "replacing": null
+      },
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 161,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 196,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 203,
+        "replacing": null
+      },
+      {
+        "name": "mysql-variables",
+        "line": 275,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 289,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 291,
+        "replacing": null
+      },
+      {
+        "name": "wsdnos",
+        "line": 295,
+        "replacing": null
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 982,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 377
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 404
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 420
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "thru": "MYSQL-1999-EXIT",
+        "line": 428
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 473
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 474
+      },
+      {
+        "target": "ba999-End",
+        "thru": null,
+        "line": 505
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 559
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 602
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 603
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 647
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 666
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 724
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 725
+      },
+      {
+        "target": "bb000-HV-Load",
+        "thru": null,
+        "line": 765
+      },
+      {
+        "target": "bb200-Insert",
+        "thru": null,
+        "line": 771
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 826
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 907
+      },
+      {
+        "target": "bb000-HV-Load",
+        "thru": null,
+        "line": 930
+      },
+      {
+        "target": "bb300-Update",
+        "thru": null,
+        "line": 949
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 1001
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1092
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1152
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "24",
+        "to": "ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\"",
+        "line": 322
+      },
+      {
+        "from": "zero",
+        "to": "We-Error\n *>                       Fs-Reply",
+        "line": 332
+      },
+      {
+        "from": "spaces",
+        "to": "WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err\n                        SQL-State",
+        "line": 335
+      },
+      {
+        "from": "1",
+        "to": "ws-No-Paragraph",
+        "line": 403
+      },
+      {
+        "from": "2",
+        "to": "ws-No-Paragraph",
+        "line": 422
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" >= \"                 delimited by size   *> nom uses >  ??\n                       '\"00000000\"'         delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       keyname (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC '              delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=PUDELINV-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`PUDELINV-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)      *> DEL-INV-NOS > \"00000000\" ORDER BY PUDELINV-REC ASC\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-PUDELINV-REC\n*>               /MYSQL-END\\\n           move    \"00000000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number (1:1) not = \"0\"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba999-End       *> can clear the dup code after testing\n              end-if\n              set      Cursor-Active to true\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed\n              string   \"> 0 got cnt=\" delimited by size\n                       WS-Temp-ED delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n              perform ba999-End                         *> log it\n     end-if",
+        "line": 444
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Log-Where",
+        "line": 512
+      },
+      {
+        "from": "4",
+        "to": "ws-No-Paragraph",
+        "line": 513
+      },
+      {
+        "from": "zero",
+        "to": "return-code",
+        "line": 514
+      },
+      {
+        "from": "TP-PUDELINV-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-DEL-INV-NOS\n                    HV-DEL-INV-DAT\n                    HV-DEL-INV-CUS\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1                  *> no more data so free cursor & return\n              move 10 to fs-Reply WE-Error\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move 10 to fs-reply                  *> EOF equivilent !!\n                    move 10 to WE-Error\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize WS-Del-Inv-Nos-Record with filler\n              move    \"EOF2\" to WS-File-Key\n              end-if\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if",
+        "line": 521
+      },
+      {
+        "from": "\"EOF3\"",
+        "to": "WS-File-Key\n              go to ba999-End\n     end-if",
+        "line": 556
+      },
+      {
+        "from": "HV-DEL-INV-NOS",
+        "to": "WS-File-Key",
+        "line": 561
+      },
+      {
+        "from": "zero",
+        "to": "fs-reply WE-Error",
+        "line": 562
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Del-Inv-Nos-Record (K:L)  delimited by size\n *>             DEL-INV-NOS\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where",
+        "line": 574
+      },
+      {
+        "from": "5",
+        "to": "ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=PUDELINV-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`PUDELINV-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-PUDELINV-REC\n*>      /MYSQL-END\\\n*>\n     if     WS-MYSQL-Count-Rows = zero\n            move 21  to fs-Reply             *> could also be 23 or 14\n            go to ba998-Free\n     end-if\n     move     6 to ws-No-Paragraph\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=PUDELINV-REC\n           MOVE TP-PUDELINV-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-DEL-INV-NOS\n                    HV-DEL-INV-DAT\n                    HV-DEL-INV-CUS\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       WS-MYSQL-Count-Rows not > zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    move 21 to fs-reply    *> from 23\n                    move 990 to WE-Error\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move spaces to WS-File-Key\n                    go to ba998-Free\n              else\n                    move 21   to fs-reply    *> from 23\n                    move 989  to WE-Error\n                    move zero to SQL-Err\n                    move spaces to SQL-Msg\n                    move spaces to WS-File-Key\n                    go to ba998-Free\n              end-if\n     end-if                        *> row count zero should show up as a MYSQL error ?\n     perform  bb100-UnloadHVs      *> transfer/move HV vars to ws-Record layout\n     move     HV-DEL-INV-NOS to WS-File-Key",
+        "line": 590
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error",
+        "line": 650
+      },
+      {
+        "from": "99",
+        "to": "FS-Reply\n              move 997 to WE-Error                     *> Invalid calling parameter settings     997\n              go to ba999-end\n     end-if\n*>\n*>  First clear any active cursors\n*>\n     if       Cursor-Active\n              perform ba998-Free",
+        "line": 658
+      },
+      {
+        "from": "spaces",
+        "to": "MOST-Relation",
+        "line": 675
+      },
+      {
+        "from": "1",
+        "to": "J",
+        "line": 676
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              MOST-relation         delimited by space\n              '\"'                   delimited by size\n              WS-Del-Inv-Nos-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n              ' ORDER BY '          delimited by size\n              \"`\"                   delimited by size\n              keyname (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n                ' ASC  '            delimited by size\n                             into WS-Where\n                             with pointer J\n     end-string\n     move     WS-Where (1:J)  to WS-Log-Where",
+        "line": 690
+      },
+      {
+        "from": "8",
+        "to": "ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=PUDELINV-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`PUDELINV-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-PUDELINV-REC\n*>      /MYSQL-END\\\n*>\n     if       WS-MYSQL-Count-Rows not zero\n              set Cursor-Active to true\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 21 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move zero to we-error\n              end-if\n     else\n              move  zero to FS-Reply WE-Error\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed\n              string   MOST-relation\n                       WS-Del-Inv-Nos-Record (K:L)\n                       \" got =\" delimited by size\n                       WS-Temp-ED delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n     end-if\n     go       to ba999-end",
+        "line": 712
+      },
+      {
+        "from": "ws-DEL-INV-NOS",
+        "to": "WS-File-Key",
+        "line": 766
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error SQL-State",
+        "line": 767
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph",
+        "line": 768
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    if    SQL-Err (1:4) = \"1062\"\n                                     or = \"1022\"   *> Dup key (rec already present)\n                        or Sql-State = \"23000\"  *> Dup key (rec already present)\n                          move 22 to fs-reply\n                    else\n                          move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    end-if\n              end-if\n     end-if",
+        "line": 775
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Del-Inv-Nos-Record (K:L)    delimited by size\n *>             DEL-INV-NOS\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Del-Inv-Nos-Record (K:L)  to WS-File-Key",
+        "line": 797
+      },
+      {
+        "from": "13",
+        "to": "ws-No-Paragraph",
+        "line": 814
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply\n                    move 995 to WE-Error\n              end-if\n              go to ba999-End                        *> and log it\n     else\n              move spaces to SQL-Msg\n              move zero   to SQL-Err\n     end-if",
+        "line": 831
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error",
+        "line": 844
+      },
+      {
+        "from": "LOW-VALUES",
+        "to": "SQLCA-STATEMENT\n*>   STRING\n*>     \"DELETE \" DELIMITED SIZE\n*>     \"FROM \" DELIMITED SIZE\n*>     \"PUDELINV-REC\" DELIMITED SIZE\n*>   INTO SQLCA-STATEMENT\n*>   END-STRING\n*>   CALL \"MySQL_query\" USING SQLCA-STATEMENT\n*>   END-CALL\n*>\n*> So if this does not work it will be changed",
+        "line": 857
+      },
+      {
+        "from": "99999999",
+        "to": "ws-DEL-INV-NOS",
+        "line": 869
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '<\"'                  delimited by size\n              WS-Del-Inv-Nos-Record (K:L)    delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     spaces to WS-File-Key\n     string   \"Deleting back from \" delimited by size\n               ws-DEL-INV-NOS             delimited by size\n                      into WS-File-Key\n     end-string                                   *> for logging\n     move     WS-Where (1:J)   to WS-Log-Where",
+        "line": 875
+      },
+      {
+        "from": "15",
+        "to": "ws-No-Paragraph",
+        "line": 895
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply\n                    move 995 to WE-Error\n              end-if\n              go to ba999-End\n     else      *> of course there could be no data in table\n              move spaces to SQL-Msg\n              move zero   to SQL-Err\n     end-if",
+        "line": 912
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error",
+        "line": 925
+      },
+      {
+        "from": "ws-DEL-INV-NOS",
+        "to": "WS-File-Key",
+        "line": 931
+      },
+      {
+        "from": "17",
+        "to": "ws-No-Paragraph",
+        "line": 932
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Del-Inv-Nos-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where",
+        "line": 937
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move 994 to WE-Error\n              end-if\n              go to ba999-End\n     end-if\n     move     zero   to FS-Reply WE-Error",
+        "line": 958
+      },
+      {
+        "from": "zero",
+        "to": "SQL-Err",
+        "line": 969
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Msg",
+        "line": 970
+      },
+      {
+        "from": "990",
+        "to": "WE-Error",
+        "line": 977
+      },
+      {
+        "from": "99",
+        "to": "Fs-Reply",
+        "line": 978
+      },
+      {
+        "from": "20",
+        "to": "ws-No-Paragraph",
+        "line": 986
+      },
+      {
+        "from": "TP-PUDELINV-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     set      Cursor-Not-Active to true",
+        "line": 992
+      },
+      {
+        "from": "WS-DEL-INV-NOS",
+        "to": "HV-DEL-INV-NOS",
+        "line": 1016
+      },
+      {
+        "from": "Del-Inv-Dat",
+        "to": "HV-DEL-INV-DAT",
+        "line": 1017
+      },
+      {
+        "from": "Del-Inv-Cus",
+        "to": "HV-DEL-INV-CUS",
+        "line": 1018
+      },
+      {
+        "from": "HV-DEL-INV-NOS",
+        "to": "WS-DEL-INV-NOS",
+        "line": 1036
+      },
+      {
+        "from": "HV-DEL-INV-DAT",
+        "to": "Del-Inv-Dat",
+        "line": 1037
+      },
+      {
+        "from": "HV-DEL-INV-CUS",
+        "to": "Del-Inv-Cus",
+        "line": 1038
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`PUDELINV-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-NOS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-DEL-INV-NOS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-DEL-INV-DAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-CUS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-DEL-INV-CUS,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n       PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       ",
+        "line": 1052
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`PUDELINV-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-NOS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-DEL-INV-NOS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-DEL-INV-DAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-CUS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-DEL-INV-CUS,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING \" WHERE \"\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (WS-Where (1:J))\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       ",
+        "line": 1108
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "RDBMS (Relational DataBase Management Systems) is in use it will be\n*>                      called by the specific module to handle similar processing as a Cobol\n*>                      flat file and will pass the equivelent\n*>                      RDB (Relational DataBase) row as a Cobol file record (01 level) moving\n*>                      row by row to the correct Cobol flat file fields as required.\n*>\n*>                      RDB DAL (Data Access Layer) modules are individually modified to handle:\n*>                      MS SQL server, Mysql, DB2, Postgres and Oracle as available and tested.\n*>                      These are contained in seperate directories for each RDB, eg\n*>                       'MSSQL' (MS SQL Server), 'Mysql', 'DB2', 'Postgres'. 'Oracle'.\n*>                       You need to compile from the correct directory for the specific\n*>                       RDB you will use and have installed along with all of the development\n*>                       libraries and include files etc using the correct pre-compiler tool\n*>                       to process the 'EXEC SQL' code converting to Cobol calls etc.\n*>                       see the RDB specific ACAS notes.\n*>\n*>                      For specific SQL servers supported, the pre-compiler system is included\n*>                       where ever possible but for some, copyright reasons may prevent\n*>                       inclusion. In some cases for one specific RDB more than one precompiler\n*>                       is used as an experiment to help find the ideal one to use.\n*>\n*>                      In addition:\n*>                        If the system has been set up to (see the System File set up via the\n*>                        main menu module for each sub system), it will also process BOTH flat\n*>                        file  AND the correct rdb tables,\n*>\n*>                        it will write/delete/update etc to both but read from 1=Flat and be\n*>                        overwritten by the rdb access if data is present.\n*>                       This will help in transferring the Cobol flat files to rdb tables.\n*>\n*>                      If you wish to convert a running ACAS system over from Flat files\n*>                      to RDBMS see below. However it is recommended to use the Duplicate\n*>                      processing of files/table as outlined above where no or very low\n*>                      data records exist:\n*>\n*>                      Depending on the RDB you wish to use there is\n*>                      also, included LMs (Load Modules) to convert each ISAM\n*>                      (Indexed Sequential) file to the rdb database tables if you wish to\n*>                      convert the system in one hit, without using the Duplicate file/RDB\n*>                      processing procedures. These will also need to be compiled from the\n*>                      specific LM directory that contains the rdb DAL modules.\n*>                      These will be very RDB specific.\n*>\n*>                      For a existing running ACAS system using the Load modules AND\n*>                      not using the dup processing process as indicated above is the\n*>                      recommended way to go.\n*>**\n*>  File Handling:\n*>     Uses the Global Error / Access logging file within the acas0nn module.\n*>**\n*> Called by Modules:\n*>                      acas023 -  Delfolio Cobol Handler for purchase.\n*>\n*>**\n*> Error Messages Used.\n*>                      SM004 SQL Err no in 'mysql-procedures'\n*>                      SM901 Note error and hit return.\n*>**\n*> Version.             1.00 17/06/2016.\n*>\n*>**\n*> Changes.\n*> 15/11/16 vbc - .06 Taken from irsnominalMT & modified for SL  processing & based on\n*>                    irsub4.\n*> 22/12/16 vbc - .07 Changed to support fn-delete-all so that all\n*>                    CoA can be cleared down (similarly to open output).\n*>                    Forgot to add chg log for .06.\n*> 30/12/16 vbc - .08 Now using Sql-State as well.\n*> 31/12/16 vbc - .09 Added fields post4-day, post4-month, post4-year as new\n*>                    columns so that sorting can occur within mysql as\n*>                    selects. Pre-sort will need changes to cater if RDB\n*>                    is in use. Only should apply to write/rewrite operations.\n*>                    No changes needed for  DelfolioLD.\n*>                .10 Force logging at end of rewrite process - missed.\n*>                    On rewrite not setting DEL-INV-NOS for logging.\n*> 08/01/17 vbc -     Taken from delinvnosMT.\n*> 01/03/18 vbc - .11 Renamed error messages to SM901, SM004 as needed.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>**\n*>  Module USAGE\n*>**************\n*>\n*>    On Entry:         Set up Linkage areas -\n*>    ********              WS-Del-Inv-Nos-Record\n*>                                          = Contents of data record to be written/read\n*>                          File-Access = File-Function as needed.\n*>                                        Access-Type   as needed.\n*>                          File-Defs (File-Definitions) = Paths set up.\n*>\n*>    On Exit:          Linkage contains:\n*>    *******               Record = containing a read data record or table row\n*>                          Fs-Reply = 0, 99 or other value where\n*>                                     0  = Operation completed successfully\n*>                                     10 = End of (Cobol) File returned to calling module only.\n*>                                     21 = Invalid key on START OR key not found\n*>                                     22 - Attempt to duplicate a key value.\n*>                                     23 = Key not found.     from read indexed\n*>                                     99 = Indicates an error see WE-Error, SQL-ERR/MSG for more info\n*>                          WE-Error   0    = Operation completed successfully\n*>\n*>                                     999  = Not used here - Yet.\n*>                                     998* = File-Key-No Out Of Range not 1, 2 or 3.\n*>                                     997* = Access-Type wrong (< 5 or > 8)\n*>                                     996* = File Delete key out of range (not = 1 or 2)\n*>                                     995* = During Delete SQLSTATE not '00000' investigate using MSG-Err/Msg\n*>                                     994* = During Rewrite,                     ^^ see above ^^\n*>                                     992* = Invalid Function requested in File-Function\n*>                                     990* = Unknown and unexpected error, again ^^ see above ^^\n*>                                     989* = Unexpected error on Read-Indexed, investigate as above.\n*>                                     911* = Rdb Error during initializing,\n*>                                            possibly can not connect to database\n*>                                             Check connect data and\n*>                                             see SQL-Err & SQL-MSG\n*>                                            Produced by Mysql-1100-Db-Error in copy\n*>                                            module mysql-procedure.\n*>                                     910* = Table locked > 5 seconds\n*>                                     901  = File Def Record size not =< than ws record size\n*>                                            Module needs ws definition changing to correct size\n*>                                            FATAL, Stop using system, fix source code\n*>                                            and recompile before using system again.\n*>                                     Other = any other rdbms errors see specific\n*>                                             (Rdbms) manual\n*>                          SQL-Err  = Error code from RDBMS is set if above 2 are non zero\n*>                          SQL-Msg  = Non space providing more info if SQL-Err non '00000'\n*>                                     * = FS-Reply = 99.\n*>\n copy \"ACAS-SQLstate-error-list.cob\".\n*>\n*>       During testing a log file will be created containing datetime stamp, task and return codes\n*>       for both FS-Reply and WE-Error and table used - in this case the SL   Delfolio File.\n*>       WARNING - This file could get large so needs manually deleting after examination.\n*>\n*>       NOTE that the value in SQL-Err is the standard ANSI RDBMS error code to help keep\n*>         DAL handler changes to a minimum when reusing code for other RDBs - hopefully\n*>\n*>********************************************************************************************\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>**********************************************************************************\n*>\n environment division.\n*> copy \"envdiv.cob\".\n*>\n input-output section.\n Data Division.\n Working-Storage Section.\n 77  prog-name           pic x(23)    value \"delfolioMT (3.02.11)\".\n*>\n*> JC WS requirements here\n*>\n 77  ws-Where            pic x(512).\n*>\n*>  Used within presql generated code\n*>\n 01  WS-Reply            pic x           value space.\n 01  WS-MYSQL-I          PIC S9(4) COMP.\n 01  WS-MYSQL-EDIT       PIC -Z(18)9.9(9).\n *>\n *> TESING data\n *>\n 01  ws-temp-ed          pic 9(10).\n*>\n*> The communication area for the MySQL database changed for free/mysql\n*>\n*>  jc preSQL MySQL stuff ends\n*>\n*> Metadata on primary and alternate keys...  from Prima DAL for PUDELINV-REC\n*>\n 01  Table-Of-Keynames.\n     03  filler          pic x(30) value \"DEL-INV-NOS                   \". *> in RDB\n     03  filler          pic x(8)  value \"00010008\". *> offset/length in ws rec\n     03  filler          pic xxx   value \"STR\".      *> key is string\n*>\n 01  filler redefines table-of-keynames.\n     03  keyOfReference occurs 1    indexed by KOR-x1.\n         05 KeyName      pic x(30).\n         05 KOR-Offset   pic 9(4).\n         05 KOR-Length   pic 9(4).\n         05 KOR-Type     pic XXX.                    *> Not used currently\n*>\n*> The START condition cannot be compounded, and it must use a\n*> Key of Reference within the record. (These are COBOL rules...)\n*> The interface defines which key and the relation condition.\n*>\n 01  DAL-Data.\n     05  MOST-Relation   pic xxx.                  *> valid are >=, <=, <, >, =\n     05  Most-Cursor-Set pic 9    value zero.\n         88  Cursor-Not-Active    value zero.\n         88  Cursor-Active        value 1.\n*>\n*>  Variables common to all DALs\n*>  ****************************\n*>\n 01  subscripts usage comp-5.\n     12 J                pic s9(4).\n     12 K                pic s9(4).\n     12 L                pic s9(4).\n*>\n 01  work-fields.\n     03  ws-env-lines    pic 999              value zero.\n     03  ws-lines        binary-char unsigned value zero.\n     03  ws-22-lines     binary-char unsigned value zero.\n     03  ws-23-lines     binary-char unsigned value zero.\n     03  ws-98-lines     binary-char unsigned value zero.\n     03  ws-99-lines     binary-char unsigned value zero.\n     03  ws-Rec-Cnt      binary-long unsigned value zero.\n*>\n 01  Error-Messages.\n     03  SM901          pic x(31) value \"SM901 Note error and hit return\".\n*>\n*> /MYSQL VAR\\\n*>       ACASDB\n*>       TABLE=PUDELINV-REC,HV\n COPY \"mysql-variables.cpy\".\n*>\n*>    Definitions for the PUDELINV-REC Table\n*>\n       01  TP-PUDELINV-REC                       USAGE POINTER.\n       01  TD-PUDELINV-REC.\n           05  HV-DEL-INV-NOS                    PIC  9(10) COMP.\n           05  HV-DEL-INV-DAT                    PIC  9(10) COMP.\n           05  HV-DEL-INV-CUS                    PIC X(7).\n*> /MYSQL-END\\\n*>\n Linkage Section.\n*>**************\n*>\n copy \"wsfnctn.cob\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n*>  Record definition for Cobol file here:\n*>\n copy \"wsdnos.cob\".\n*>\n screen section.\n*>=============\n*>\n 01  Display-Message-1       foreground-color 2.\n     03          value \"WS-Where=\"                line 23 col  1.\n     03  from WS-Where (1:J)           pic x(69)          col 10.\n*>\n 01  Display-Message-2       foreground-color 2.\n     03      value \"SM004 SQL Err No.=\"            line 4 col  1.\n     03  using Ws-Mysql-Error-Number   pic x(4)           col 19.\n     03      value \" Para=\"                               col 23.\n     03  using WS-No-Paragraph         pic 9(3)           col 29.\n     03      value \" SQL Cmd=\"                            col 32.\n     03  using Ws-Mysql-Command        pic x(199)         col 41.\n     03      value \"SQL Err Msg=\"                  line 7 col  1.\n     03  using Ws-Mysql-Error-Message  pic x(67)          col 13.\n*>\n*>\n PROCEDURE DIVISION   using File-Access\n                            ACAS-DAL-Common-data\n                            WS-Del-Inv-Nos-Record.   *>  Ws record\n*>**********************************************\n ba-ACAS-DAL-Process  section.\n     accept   ws-env-lines from lines.\n     if       ws-env-lines < 24\n              move  24 to ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n ba010-Initialise.\n*>\n *>    move     zero   to We-Error\n *>                       Fs-Reply.\n*>\n     move     spaces to WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err\n                        SQL-State.\n*>\n*>  Work out what is being requested and convert to action!!\n*>\n*>    This version uses the JC pre-Sql processor.\n*>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n     evaluate File-Function\n        when  1\n              go to ba020-Process-Open\n        when  2\n              go to ba030-Process-Close\n        when  3\n              go to ba040-Process-Read-Next\n        when  4\n              go to ba050-Process-Read-Indexed\n        when  5\n              go to ba070-Process-Write\n*>\n*> option 6 is a special to cleardown all data  --  IS IT NEEDED ?\n*>\n        when  6                              *> DELETE-ALL  Special\n              go to ba085-Process-DELETE-ALL\n        when  7\n              go to ba090-Process-Rewrite\n        when  8\n              go to ba080-Process-Delete\n        when  9\n              go to ba060-Process-Start\n        when  other\n              go to ba100-Bad-Function\n     end-evaluate.\n*>\n ba020-Process-Open.\n *>\n *>  Manual process MYSQL INIT\n *>",
+        "line": 35
+      },
+      {
+        "type": "IF",
+        "condition": "fs-reply not = zero\n              go   to ba999-end.\n*>\n*> *> /MYSQL INIT\\\n*>       BASE=ACASDB\n*>       IMPLEMENTATION=dev-prog-001\n*>       PASSWORD=mysqlpass\n*> *> /MYSQL-END\\\n*>\n     move    \"OPEN  Delfolio\" to WS-File-Key\n     set     Cursor-Not-Active to true.\n     go      to ba999-end.\n*>\n ba030-Process-Close.\n     if      Cursor-Active\n             perform ba998-Free.\n*>\n     move     2 to ws-No-Paragraph.\n     move    \"CLOSE  Delfolio\" to WS-File-Key.\n*>  /MYSQL CLOSE\\\n*>\n*>    Close the Database\n*>\n           PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n*>  /MYSQL-END\\\n*>\n     go      to ba999-end.\n*>\n ba040-Process-Read-Next.\n*>\n*>   Here a SELECT first",
+        "line": 405
+      },
+      {
+        "type": "IF",
+        "condition": "no cursor active using lowest\n*>    possible key of \"00000000\"\n*>           [ DEL-INV-NOS ]\n*>\n     if       Cursor-Not-Active\n              set      KOR-x1 to 1                *> 1 = Primary\n              move     KOR-offset (KOR-x1) to K\n              move     KOR-length (KOR-x1) to L\n*>\n              move     spaces to WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" >= \"                 delimited by size   *> nom uses >  ??\n                       '\"00000000\"'         delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       keyname (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC '              delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=PUDELINV-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`PUDELINV-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)      *> DEL-INV-NOS > \"00000000\" ORDER BY PUDELINV-REC ASC\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-PUDELINV-REC\n*>               /MYSQL-END\\\n           move    \"00000000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number (1:1) not = \"0\"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba999-End       *> can clear the dup code after testing\n              end-if\n              set      Cursor-Active to true\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed\n              string   \"> 0 got cnt=\" delimited by size\n                       WS-Temp-ED delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n              perform ba999-End                         *> log it\n     end-if.\n*>\n ba041-Reread.\n*>\n*>  If here cursor is set (even from start), so get the next row\n*>\n     move     spaces to WS-Log-Where.\n     move     4 to ws-No-Paragraph.\n     move zero to return-code.\n*>\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=PUDELINV-REC\n           MOVE TP-PUDELINV-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-DEL-INV-NOS\n                    HV-DEL-INV-DAT\n                    HV-DEL-INV-CUS\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1                  *> no more data so free cursor & return\n              move 10 to fs-Reply WE-Error\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move 10 to fs-reply                  *> EOF equivilent !!\n                    move 10 to WE-Error\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize WS-Del-Inv-Nos-Record with filler\n              move    \"EOF2\" to WS-File-Key\n              end-if\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if.\n*>\n     if       fs-reply = 10\n              set Cursor-Not-Active to true\n              move    \"EOF3\" to WS-File-Key\n              go to ba999-End\n     end-if.\n     perform  bb100-UnloadHVs.       *> transfer/move HV vars to Record layout\n*>\n     move     HV-DEL-INV-NOS to WS-File-Key.\n     move     zero to fs-reply WE-Error.\n     go       to ba999-end.\n*>\n ba050-Process-Read-Indexed.\n*>\n*>  Now do on correct key within WHERE\n*>  Sets up key and compare data\n*>\n     set      KOR-x1 to 1.              *> 1 = only key\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Del-Inv-Nos-Record (K:L)  delimited by size\n *>             DEL-INV-NOS\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where.    *>  For test logging\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if.\n     move     5 to ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=PUDELINV-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`PUDELINV-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-PUDELINV-REC\n*>      /MYSQL-END\\\n*>\n     if     WS-MYSQL-Count-Rows = zero\n            move 21  to fs-Reply             *> could also be 23 or 14\n            go to ba998-Free\n     end-if\n     move     6 to ws-No-Paragraph\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=PUDELINV-REC\n           MOVE TP-PUDELINV-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-DEL-INV-NOS\n                    HV-DEL-INV-DAT\n                    HV-DEL-INV-CUS\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       WS-MYSQL-Count-Rows not > zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    move 21 to fs-reply    *> from 23\n                    move 990 to WE-Error\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move spaces to WS-File-Key\n                    go to ba998-Free\n              else\n                    move 21   to fs-reply    *> from 23\n                    move 989  to WE-Error\n                    move zero to SQL-Err\n                    move spaces to SQL-Msg\n                    move spaces to WS-File-Key\n                    go to ba998-Free\n              end-if\n     end-if                        *> row count zero should show up as a MYSQL error ?\n     perform  bb100-UnloadHVs      *> transfer/move HV vars to ws-Record layout\n     move     HV-DEL-INV-NOS to WS-File-Key.\n*>\n     move     zero to FS-Reply WE-Error.\n     go       to ba998-Free.\n*>\n ba060-Process-Start.\n*>\n*>  Check for Param error 1st on start\n*>\n     if       access-type < 5 or > 8                   *> not using not < or not >\n              move 99 to FS-Reply\n              move 997 to WE-Error                     *> Invalid calling parameter settings     997\n              go to ba999-end\n     end-if\n*>\n*>  First clear any active cursors\n*>\n     if       Cursor-Active\n              perform ba998-Free.\n*>\n*>  Now do Start on correct key before read-next  within WHERE\n*>  Set up MOST-relation for condition test and key\n*>\n     set      KOR-x1 to 1.\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to MOST-Relation.\n     move     1   to J.\n     evaluate Access-Type\n              when  5                           *> fn-equal-to [also in sub4]\n                    move \"=  \" to MOST-Relation\n              when  6                           *> fn-less-than  [NOT in sub4]\n                    move \"<  \" to MOST-Relation\n              when  7                           *> fn-greater-than [also in sub4]\n                    move \">  \" to MOST-Relation\n              when  8                           *> fn-not-less-than [also in sub4]\n                    move \">= \" to MOST-Relation\n              when  9                           *> fn-not-greater-than [ not currently used in ACAS ]\n                    move \"<= \" to MOST-Relation\n     end-evaluate\n*>\n     move     spaces to WS-Where\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              MOST-relation         delimited by space\n              '\"'                   delimited by size\n              WS-Del-Inv-Nos-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n              ' ORDER BY '          delimited by size\n              \"`\"                   delimited by size\n              keyname (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n                ' ASC  '            delimited by size\n                             into WS-Where\n                             with pointer J\n     end-string\n     move     WS-Where (1:J)  to WS-Log-Where.    *>  For test logging\n     move     WS-Del-Inv-Nos-Record (K:L) to WS-File-Key.\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n*>\n     move     8 to ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=PUDELINV-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`PUDELINV-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-PUDELINV-REC\n*>      /MYSQL-END\\\n*>\n     if       WS-MYSQL-Count-Rows not zero\n              set Cursor-Active to true\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 21 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move zero to we-error\n              end-if\n     else\n              move  zero to FS-Reply WE-Error\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed\n              string   MOST-relation\n                       WS-Del-Inv-Nos-Record (K:L)\n                       \" got =\" delimited by size\n                       WS-Temp-ED delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n     end-if\n     go       to ba999-end.                                 *> Log it\n*>\n*> Here we need FETCH as SELECT has been issued & cursor active\n*>\n *>    go to ba041-Reread.\n*>\n*> Changed to do start",
+        "line": 435
+      },
+      {
+        "type": "IF",
+        "condition": "WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    if    SQL-Err (1:4) = \"1062\"\n                                     or = \"1022\"   *> Dup key (rec already present)\n                        or Sql-State = \"23000\"  *> Dup key (rec already present)\n                          move 22 to fs-reply\n                    else\n                          move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    end-if\n              end-if\n     end-if.\n     go       to ba999-End.       *> and log it\n*>\n ba080-Process-Delete.\n*>\n     set      KOR-x1 to 1.\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Del-Inv-Nos-Record (K:L)    delimited by size\n *>             DEL-INV-NOS\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Del-Inv-Nos-Record (K:L)  to WS-File-Key.\n     move     WS-Where (1:J)   to WS-Log-Where.   *>  For test logging\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n     move     13 to ws-No-Paragraph.\n*>      /MYSQL DELETE\\\n*>\n*>    Delete a row\n*>\n*>             TABLE=PUDELINV-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"DELETE FROM \"\n             \"`PUDELINV-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n             X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>      /MYSQL-END\\\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply\n                    move 995 to WE-Error\n              end-if\n              go to ba999-End                        *> and log it\n     else\n              move spaces to SQL-Msg\n              move zero   to SQL-Err\n     end-if.\n     move     zero to FS-Reply WE-Error.\n     go       to ba999-End.\n*>\n ba085-Process-Delete-ALL.    *> THIS IS NON STANDARD - IS IT NEEDED ?\n*>\n*> This is the equivalent of :\n*>           EXEC SQL\n*>              DELETE\n*>              FROM PUDELINV-REC\n*>           END-EXEC.\n*>\n*>  That creates the follwoing code from dbpre\n*>\n*>   MOVE LOW-VALUES TO SQLCA-STATEMENT\n*>   STRING\n*>     \"DELETE \" DELIMITED SIZE\n*>     \"FROM \" DELIMITED SIZE\n*>     \"PUDELINV-REC\" DELIMITED SIZE\n*>   INTO SQLCA-STATEMENT\n*>   END-STRING\n*>   CALL \"MySQL_query\" USING SQLCA-STATEMENT\n*>   END-CALL\n*>\n*> So if this does not work it will be changed.\n*>\n     move     99999999  to ws-DEL-INV-NOS.         *> as its the last  Delfolio\n*>\n     set      KOR-x1 to 1\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '<\"'                  delimited by size\n              WS-Del-Inv-Nos-Record (K:L)    delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     spaces to WS-File-Key\n     string   \"Deleting back from \" delimited by size\n               ws-DEL-INV-NOS             delimited by size\n                      into WS-File-Key\n     end-string                                   *> for logging\n     move     WS-Where (1:J)   to WS-Log-Where.   *>  For test logging\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n     move     15 to ws-No-Paragraph.\n*>      /MYSQL DELETE\\\n*>\n*>    Delete a row\n*>\n*>             TABLE=PUDELINV-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"DELETE FROM \"\n             \"`PUDELINV-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n             X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>      /MYSQL-END\\\n     if       WS-MYSQL-COUNT-ROWS not > zero    *> Changed for delete-ALL\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply\n                    move 995 to WE-Error\n              end-if\n              go to ba999-End\n     else      *> of course there could be no data in table\n              move spaces to SQL-Msg\n              move zero   to SQL-Err\n     end-if.\n     move     zero to FS-Reply WE-Error.\n     go       to ba999-End.\n*>\n ba090-Process-Rewrite.\n*>\n     perform  bb000-HV-Load.       *> Load up the HV fields from table record in WS\n     move     ws-DEL-INV-NOS to WS-File-Key.\n     move     17 to ws-No-Paragraph.\n     set      KOR-x1 to 1            *> 1 = Primary\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Del-Inv-Nos-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where.    *>  For test logging\n     perform  bb300-Update.\n*>\n     if       Testing-2\n              display Display-Message-1 with erase eos\n     end-if\n*>\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number (1:1) not = \"0\"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move 994 to WE-Error\n              end-if\n              go to ba999-End\n     end-if\n     move     zero   to FS-Reply WE-Error.\n     move     zero   to SQL-Err.\n     move     spaces to SQL-Msg.\n     go       to ba999-End.           *>  for logging\n*>\n ba100-Bad-Function.\n*>\n*> Houston; We have a problem\n*>\n     move     990 to WE-Error.\n     move     99 to Fs-Reply.\n     go       to ba999-end.\n*>\n*> /MYSQL PRO\\\n COPY \"mysql-procedures.cpy\".\n*> /MYSQL-END\\\n*>\n ba998-Free.\n     move     20 to ws-No-Paragraph.\n*>      /MYSQL FREE\\\n*>\n*>    Free result array\n*>\n*>             TABLE=PUDELINV-REC\n           MOVE TP-PUDELINV-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     set      Cursor-Not-Active to true.\n*>\n ba999-end.\n*>  Any Clean ups before quiting    move data record ?????  do so at the start as well ??????\n*>\n     if       Testing-1\n              perform Ca-Process-Logs\n     end-if.\n*>\n ba999-exit.\n     exit program.\n*>\n bb000-HV-Load      Section.\n*>*************************\n*>\n*>  Load the Host variables with data from the passed record\n*>\n*> This Method loads the Host Variables for the Base table with\n*> the data passed in the data-buffer.\n*>\n     initialize TD-PUDELINV-REC.\n     move     WS-DEL-INV-NOS    to HV-DEL-INV-NOS.\n     move     Del-Inv-Dat       to HV-DEL-INV-DAT.\n     move     Del-Inv-Cus       to HV-DEL-INV-CUS.\n*>\n*> Loading HVs implies a non-Fetch action. RGs are handled separately for\n*> all such actions so they must not be loaded here.\n*>\n bb000-Exit.\n     exit section.\n*>\n bb100-UnloadHVs    Section.\n*>*************************\n*>\n*>  Load the data buffer in the interface with data from the host variables.\n*> (init moved lower)\n*>\n*> NULL fields must not be returned in the buffer. SQL filters each column to\n*>  ensure it has a proper value.  This saves using indicator variables.\n*>\n     initialize WS-Del-Inv-Nos-Record.\n     move     HV-DEL-INV-NOS       to WS-DEL-INV-NOS.\n     move     HV-DEL-INV-DAT       to Del-Inv-Dat.\n     move     HV-DEL-INV-CUS       to Del-Inv-Cus.\n*>\n bb100-Exit.\n     exit section.\n*>\n bb200-Insert Section.\n*>*******************\n*>\n*>  /MYSQL INSERT\\\n*>\n*>    Insert a row\n*>\n*>         TABLE=PUDELINV-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`PUDELINV-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-NOS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-DEL-INV-NOS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-DEL-INV-DAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-CUS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-DEL-INV-CUS,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n       PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb200-Exit.\n     exit section.\n*>\n bb300-Update Section.\n*>*******************\n*>\n*>  /MYSQL UPDATE\\\n*>\n*>    Update a row\n*>\n*>      TABLE=PUDELINV-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`PUDELINV-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-NOS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-DEL-INV-NOS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-DEL-INV-DAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`DEL-INV-CUS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-DEL-INV-CUS,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING \" WHERE \"\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (WS-Where (1:J))\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb300-Exit.\n     exit section.\n*>\n Ca-Process-Logs.\n*>**************\n*>\n     call     \"fhlogger\" using File-Access\n                               ACAS-DAL-Common-data.\n*>\n ca-Exit.     exit.\n*>\nend program delfolioMT.",
+        "line": 772
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "File-Function\n        when  1\n              go to ba020-Process-Open\n        when  2\n              g...",
+        "line": 348,
+        "whenCount": 10
+      },
+      {
+        "content": "Access-Type\n              when  5                           *> fn-equal-to [also in sub4]\n          ...",
+        "line": 677,
+        "whenCount": 5
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 31,
+    "cognitive": 34,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 62,
+      "totalOperators": 53,
+      "totalOperands": 106,
+      "vocabulary": 63,
+      "length": 159,
+      "volume": 950.3875078364867
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

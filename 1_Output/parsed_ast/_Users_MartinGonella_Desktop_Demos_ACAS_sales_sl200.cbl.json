@@ -1,0 +1,418 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl200.cbl",
+  "fileName": "sl200.cbl",
+  "timestamp": "2025-09-15T16:25:31.345Z",
+  "programId": "sl200",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 86
+      },
+      {
+        "name": "file",
+        "line": 97
+      },
+      {
+        "name": "working-storage",
+        "line": 125
+      },
+      {
+        "name": "linkage",
+        "line": 194
+      },
+      {
+        "name": "zz060-Convert-Date",
+        "line": 276
+      },
+      {
+        "name": "exit",
+        "line": 309
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 311
+      },
+      {
+        "name": "exit",
+        "line": 339
+      },
+      {
+        "name": "maps04",
+        "line": 341
+      },
+      {
+        "name": "exit",
+        "line": 347
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 89
+      },
+      {
+        "name": "file-defs",
+        "line": 206
+      },
+      {
+        "name": "start-program",
+        "line": 209
+      },
+      {
+        "name": "main-read",
+        "line": 219
+      },
+      {
+        "name": "Headings-1",
+        "line": 238
+      },
+      {
+        "name": "End-Program",
+        "line": 261
+      },
+      {
+        "name": "main-term",
+        "line": 273
+      },
+      {
+        "name": "zz060-Exit",
+        "line": 308
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 338
+      },
+      {
+        "name": "maps04-exit",
+        "line": 346
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 271,
+        "type": "DYNAMIC",
+        "using": [
+          "Print-Report"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 344,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 76,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 85,
+        "replacing": null
+      },
+      {
+        "name": "selprint",
+        "line": 92,
+        "replacing": null
+      },
+      {
+        "name": "seldnos",
+        "line": 93,
+        "replacing": null
+      },
+      {
+        "name": "fdprint",
+        "line": 100,
+        "replacing": null
+      },
+      {
+        "name": "fddnos",
+        "line": 123,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command-p",
+        "line": 128,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 129,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 130,
+        "replacing": null
+      },
+      {
+        "name": "wsdnos",
+        "line": 131,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 157,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 197,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 198,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 199,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 349,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "headings-1",
+        "thru": null,
+        "line": 214
+      },
+      {
+        "target": "DelInvNos-Open-Input",
+        "thru": null,
+        "line": 215
+      },
+      {
+        "target": "DelInvNos-Read-Next",
+        "thru": null,
+        "line": 222
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "thru": null,
+        "line": 226
+      },
+      {
+        "target": "Headings-1",
+        "thru": null,
+        "line": 235
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 244
+      },
+      {
+        "target": "DelInvNos-Close",
+        "thru": null,
+        "line": 269
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 285
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "titles",
+        "to": "align up",
+        "line": 46
+      },
+      {
+        "from": "spaces",
+        "to": "print-record",
+        "line": 213
+      },
+      {
+        "from": "del-inv-dat",
+        "to": "u-bin",
+        "line": 225
+      },
+      {
+        "from": "ws-date",
+        "to": "pinv-date",
+        "line": 227
+      },
+      {
+        "from": "WS-del-inv-nos",
+        "to": "pinv-nos",
+        "line": 229
+      },
+      {
+        "from": "del-inv-cus",
+        "to": "pinv-cus",
+        "line": 230
+      },
+      {
+        "from": "spaces",
+        "to": "Head-Line",
+        "line": 240
+      },
+      {
+        "from": "Page-Cnt",
+        "to": "P1-Page",
+        "line": 242
+      },
+      {
+        "from": "\"Page\"",
+        "to": "P1-Tit-Page",
+        "line": 243
+      },
+      {
+        "from": "Prog-Name",
+        "to": "P1-Version",
+        "line": 246
+      },
+      {
+        "from": "4",
+        "to": "Line-Cnt",
+        "line": 247
+      },
+      {
+        "from": "spaces",
+        "to": "Head-Line-2",
+        "line": 252
+      },
+      {
+        "from": "Usera",
+        "to": "P2-Comp-Name",
+        "line": 253
+      },
+      {
+        "from": "WS-Date",
+        "to": "P2-Date",
+        "line": 254
+      },
+      {
+        "from": "spaces",
+        "to": "Print-Record",
+        "line": 258
+      },
+      {
+        "from": "Print-Spool-Name",
+        "to": "PSN",
+        "line": 270
+      },
+      {
+        "from": "spaces",
+        "to": "ws-Date\n              go to zz060-Exit",
+        "line": 287
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date",
+        "line": 289
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 292
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit",
+        "line": 296
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 303
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 319
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 322
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit",
+        "line": 326
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 333
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "any exist.                        *\n*>****************************************************************\n*>\n identification          division.\n*>================================\n*>\n      program-id.         sl200.\n*>**\n*>    Author.             V.B.Coen  FBCS, FIDM, FIDPM,\n*>                        For Applewood Computers.\n*>**\n*>    Security.           Copyright (C) 1976-2025 & later, Vincent Bryan Coen.\n*>                        Distributed under the GNU General Public License.\n*>                        See the file COPYING for details.\n*>**\n*>    Remarks.            Invoice Deletion Report.\n*>**\n*>    Called Modules.     Maps04.\n*>                        acas017  ->\n*>                         sldelinvnosMT\n*>**\n*>    Error messages used.\n*>                        NONE\n*>**\n*> Changes:\n*>  unknown vbc - Program added at customer requests\n*> 03/03/09 vbc - Migration to Open Cobol v3.00.00.\n*> 19/03/09 vbc - .01 Added 'None to report' when needed.\n*> 25/11/11 vbc - .02 Error msgs to SLnnn.Support for dates other than UK\n*> 08/12/11 vbc - .03 Support for path+filenames.\n*> 09/12/11 vbc -     Updated version to 3.01.nn\n*> 11/12/11 vbc - .04 Changed usage of Stk-Date-Form to the global field Date-Form making former redundent.\n*> 24/10/16 vbc - .05 ALL programs now using wsnames.cob in copybooks\n*> 15/01/17 vbc - .   All programs upgraded to v3.02 for RDB processing.\n*> 21/01/17 vbc - .06 Files converting to use FH - Completed.\n*> 25/01/17 vbc       Dry testing completed.\n*> 19/03/18 vbc - .07 Removed dup 'none to report' msg on printer.\n*> 09/06/23 vbc - .08 In End-Program - the test should be 'NOT = zero' as it\n*>                    signals end of file (10) etc and didnot produce msg\n*>                    'None to Report'.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*> 20/12/24 vbc - .09 Add 2nd head line and move titles to align up.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>================================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>-------------------------------\n*>\n file-control.\n*>------------\n*>\n copy \"selprint.cob\".\n*> copy \"seldnos.cob\".\n data                    division.\n*>================================\n*>\n file section.\n*>------------\n*>\n copy \"fdprint.cob\" replacing ==x(132)== by ==x(80)==.\n*>\n 01 line-1.\n     03  filler        pic xxx.\n     03  pinv-nos      pic z(9)9.\n     03  filler        pic x(5).\n     03  pinv-date     pic x(10).\n     03  filler        pic x(3).\n     03  pinv-cus      pic x(7).\n*>\n 01  Head-Line.\n     03  P1-Version    pic x(15).\n     03  filler        pic x(14).\n     03  P1-Title      pic x(23).\n     03  filler        pic x(21).\n     03  P1-Tit-Page   pic x(5).\n     03  P1-Page       pic z9.\n*>\n 01  Head-Line-2.\n     03  P2-Comp-Name  pic x(32).\n     03  filler        pic x(38).\n     03  P2-Date       pic x(10).\n*>\n*> copy \"fddnos.cob\".\n*>\n working-storage section.\n*>-----------------------\n 77  prog-name           pic x(15)    value \"SL200 (3.02.09)\".\n copy \"print-spool-command-p.cob\".\n copy \"wsmaps03.cob\".\n copy \"wsfnctn.cob\".\n copy \"wsdnos.cob\".\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n*>     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  ws-data.\n     03  ws-reply        pic x.\n     03  line-cnt        pic 99  comp value zero.\n     03  page-cnt        pic 99  comp value zero.\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n*> 01  Error-Messages.\n*> System Wide\n*>     NONE\n*> Module specific\n*>     NONE\n*>\n linkage section.\n*>***************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n start-program.\n*>*************\n*>\n     open     output print-file.\n     move     spaces to print-record.\n     perform  headings-1.\n     perform  DelInvNos-Open-Input.       *> open     input del-inv-nos-file.\n     if       fs-reply not = zero\n              go to end-program.\n*>\n main-read.\n*>*********\n*>\n     perform  DelInvNos-Read-Next.         *>  read del-inv-nos-file at end\n     if       fs-reply = 10\n              go to end-program.\n     move     del-inv-dat to u-bin.\n     perform  zz060-Convert-Date.\n     move     ws-date to pinv-date.\n*>\n     move     WS-del-inv-nos to pinv-nos.\n     move     del-inv-cus    to pinv-cus.\n*>\n     write    print-record after 1.\n     add      1 to line-cnt.\n     if       line-cnt > 70\n              perform Headings-1.\n     go       to main-read.\n*>\n Headings-1.\n*>\n     move     spaces to Head-Line.\n     add      1 to Page-Cnt.\n     move     Page-Cnt to P1-Page.\n     move     \"Page\" to P1-Tit-Page.\n     perform  zz070-Convert-Date.\n     move     \"Invoice Deletion Report\" to P1-Title.\n     move     Prog-Name to P1-Version.\n     move     4 to Line-Cnt.\n     if       Page-Cnt not = 1\n              write Print-Record after page\n     else\n              write Print-Record after 1.\n     move     spaces to Head-Line-2.\n     move     Usera to P2-Comp-Name.\n     move     WS-Date to P2-Date.\n     write    Print-Record after 1.\n     move     \"   Invoice No        Date      Cust No\" to print-record.\n     write    Print-Record after 2.\n     move     spaces to Print-Record.\n     write    Print-Record after 1.\n*>\n End-Program.\n*>***********\n*>\n     if       fs-reply not = zero\n       and    page-cnt = 1 and line-cnt = 4\n              move \"       None to Report\" to print-record\n              write print-record after 1.\n     close    print-file.                *> del-inv-nos-file\n     perform  DelInvNos-Close.\n     move     Print-Spool-Name to PSN.\n     call     \"SYSTEM\" using Print-Report.\n*>\n main-term.\n     exit program.\n*>\n zz060-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in binary to UK/USA/Intl date format\n*>****************************************************\n*> Input:   u-bin\n*> output:  ws-date as uk/US/Inlt date format\n*>          u-date & ws-Date = spaces if invalid date\n*>\n     perform  maps04.\n     if       u-date = spaces\n              move spaces to ws-Date\n              go to zz060-Exit.\n     move     u-date to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz060-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     u-date (7:4) to ws-Intl-Year.\n     move     u-date (4:2) to ws-Intl-Month.\n     move     u-date (1:2) to ws-Intl-Days.\n*>\n zz060-Exit.\n     exit     section.\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     to-day (7:4) to ws-Intl-Year.\n     move     to-day (4:2) to ws-Intl-Month.\n     move     to-day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>\n maps04       section.\n*>*******************\n*>\n     call     \"maps04\"  using  maps03-ws.\n*>\n maps04-exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 5
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 4,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 38,
+      "totalOperators": 25,
+      "totalOperands": 50,
+      "vocabulary": 39,
+      "length": 75,
+      "volume": 396.40516641466866
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

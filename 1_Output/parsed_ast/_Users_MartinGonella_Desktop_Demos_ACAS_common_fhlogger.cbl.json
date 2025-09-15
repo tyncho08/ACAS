@@ -1,0 +1,235 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/fhlogger.cbl",
+  "fileName": "fhlogger.cbl",
+  "timestamp": "2025-09-15T16:25:38.635Z",
+  "programId": "fhlogger",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 109
+      },
+      {
+        "name": "file",
+        "line": 118
+      },
+      {
+        "name": "working-storage",
+        "line": 155
+      },
+      {
+        "name": "Linkage",
+        "line": 179
+      },
+      {
+        "name": "Ca-Process-Logs",
+        "line": 189
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 110
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 186
+      },
+      {
+        "name": "Ca010-Create-Log-Rec",
+        "line": 192
+      },
+      {
+        "name": "end-if",
+        "line": 215
+      },
+      {
+        "name": "ca999-Exit",
+        "line": 252
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 100,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 107,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 181,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 183,
+        "replacing": null
+      }
+    ],
+    "performs": []
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "zero",
+        "to": "Log-File-Open-Flag\n              close Log-File\n              go to ca999-exit\n     end-if\n*>\n     if       File-Logging-Off\n              go to ca999-Exit",
+        "line": 199
+      },
+      {
+        "from": "1",
+        "to": "Log-File-Open-Flag\n *>             move zero to Log-File-Rec-Written\n     end-if",
+        "line": 213
+      },
+      {
+        "from": "space",
+        "to": "f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11",
+        "line": 218
+      },
+      {
+        "from": "\"$\"",
+        "to": "dollar1 dollar2",
+        "line": 219
+      },
+      {
+        "from": "CDT-Date",
+        "to": "Log-Date",
+        "line": 221
+      },
+      {
+        "from": "CDT-Time",
+        "to": "Log-Time",
+        "line": 222
+      },
+      {
+        "from": "FS-Reply",
+        "to": "Log-FS-Error",
+        "line": 223
+      },
+      {
+        "from": "WE-Error",
+        "to": "Log-WE-Error",
+        "line": 224
+      },
+      {
+        "from": "ws-Log-System",
+        "to": "Log-System",
+        "line": 225
+      },
+      {
+        "from": "WS-Log-File-no",
+        "to": "Log-File-no",
+        "line": 229
+      },
+      {
+        "from": "File-Function",
+        "to": "Log-Function",
+        "line": 230
+      },
+      {
+        "from": "ws-No-Paragraph",
+        "to": "Log-Para",
+        "line": 231
+      },
+      {
+        "from": "Access-Type",
+        "to": "Log-Access",
+        "line": 232
+      },
+      {
+        "from": "WS-File-Key",
+        "to": "Log-Key",
+        "line": 233
+      },
+      {
+        "from": "WS-Log-Where",
+        "to": "Log-Where",
+        "line": 234
+      },
+      {
+        "from": "SQL-Err",
+        "to": "Log-Errno",
+        "line": 235
+      },
+      {
+        "from": "SQL-Msg",
+        "to": "Log-Msg",
+        "line": 236
+      },
+      {
+        "from": "SQL-State",
+        "to": "Log-SQL-State",
+        "line": 237
+      },
+      {
+        "from": "zero",
+        "to": "Log-File-Open-Flag\n              go to    ca999-Exit",
+        "line": 247
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "we are file logging and if not exit.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>**\n*>********************************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>**********************************************************************************\n*>\n environment division.\n copy \"envdiv.cob\".\n*>\n input-output section.\n file-control.\n*>\n     select Log-File assign \"fh-logger.txt\"\n                     organisation  line\n                                  Sequential\n                     status Fx-Reply.\n*>\n data division.\n file section.\n*>***********\n*>\n*>  This file is also used via the caller DAL & FH units to record\n*>   all transactions (during testing) as well as reported\n*>    error conditions.\n*>\n FD  Log-File.\n 01  Log-Record.\n     03  Log-Date       pic 9(8).\n     03  f1             pic x.        *> just spacers for viewing log file\n     03  Log-Time       pic 9(8).\n     03  f2             pic x.\n     03  Log-System     pic 9.        *> 1=IRS, 2=GL, 3=Sales, 4=Purch, 5=Stock\n     03  f3             pic x.\n     03  Log-File-no    pic 99.       *> char 1 = flat, 2=RDB, char2== 1 = system, 2 = stock, 3 = ?\n     03  f4             pic x.\n     03  Log-FS-Error   pic 99.\n     03  f5             pic x.\n     03  Log-We-Error   pic 999.\n     03  f6             pic x.\n     03  Log-Function   pic 99.       *> 32\n     03  f7             pic x.\n     03  Log-Access     pic 9.\n     03  f9             pic x.\n     03  Log-Para       pic 999.\n     03  f10            pic x.\n     03  Log-Errno      pic x(5).     *> 44\n     03  f8             pic x.\n     03  Log-SQL-State  pic x(5).\n     03  f11            pic x.\n     03  Log-Key        pic x(64).    *> 109\n     03  dollar1        pic x.        *>    $ spacer for viewing log file\n     03  Log-Msg        pic x(176).    *> 286\n     03  dollar2        pic x.        *> 287\n     03  Log-Where      pic x(225).   *> 512\n*>\n working-storage section.\n*>**********************\n*>\n 77  prog-name          pic x(17)  value \"fhloger (1.00.07)\".\n 77  Log-File-Open-Flag pic 9      value zero.\n     88  LFOF-Closed               value zero.\n     88  LFOF-Open                 value 1.\n*>\n 77  fx-reply           pic 99     value zeroes.\n 77  WS-Logging-On      pic X      value C-Logging-On.\n     88  File-Logging-Off          value \"N\".\n *>\n 01  WS-CDT.\n     03  CDT-Date       pic 9(8).   *> to Log-Date  cc yymmdd.\n     03  CDT-Time       pic 9(8).   *> to Log-Time  hhmmssmm.\n     03  CDT-Diff-HH    pic s99  sign leading separate.\n     03  CBT-Diff-MM    pic 99.\n*>\n 01  Error-Messages.\n*> System Wide\n*> Module Specific\n     03  FH901          pic x(31) value \"FH901 Note error and hit return\".\n     03  FH903          pic x(34) value \"FH903 Write failure on Log File = \".\n*>\n Linkage Section.\n*>**************\n copy \"wsfnctn.cob\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n Procedure Division Using File-Access\n                          ACAS-DAL-Common-data.\n*>********************************************\n*>\n Ca-Process-Logs    Section.\n*>*************************\n*>\n Ca010-Create-Log-Rec.\n*>\n*>  First test if FF and AT zero = close log file as requested by caller.\n*>\n     if       File-Function = zero\n        and   Access-Type   = zero\n         and  LFOF-Open\n              move zero to Log-File-Open-Flag\n              close Log-File\n              go to ca999-exit\n     end-if\n*>\n     if       File-Logging-Off\n              go to ca999-Exit.\n*>\n     if       LFOF-Closed\n              open extend Log-File\n              if   fx-Reply not = zero\n                   close Log-File\n                   open output Log-File\n              end-if\n              move 1 to Log-File-Open-Flag\n *>             move zero to Log-File-Rec-Written\n     end-if.\n*>\n     initialize Log-Record.\n     move     space to f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11.\n     move     \"$\" to dollar1 dollar2.\n     move     function Current-Date to WS-CDT.\n     move     CDT-Date      to Log-Date.\n     move     CDT-Time      to Log-Time.\n     move     FS-Reply      to Log-FS-Error.\n     move     WE-Error      to Log-WE-Error.\n     move     ws-Log-System to Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=Stock\n*>\n*>   need to change next one if used in the DAL, e.g., move \"22\" ...\n*>\n     move     WS-Log-File-no  to Log-File-no.     *> char 1 = 1 flat, 2 = Rdb; char 2 = file/table\n     move     File-Function   to Log-Function.\n     move     ws-No-Paragraph to Log-Para.\n     move     Access-Type     to Log-Access.\n     move     WS-File-Key     to Log-Key.         *> caller must move this or spaces !\n     move     WS-Log-Where    to Log-Where.\n     move     SQL-Err         to Log-Errno.\n     move     SQL-Msg         to Log-Msg.\n     move     SQL-State       to Log-SQL-State.\n     write    Log-Record.\n     if       FX-Reply not = zero         *> Poss. problems with open EXTEND - again!\n              display  FH903    at 2301 with erase eol\n              display  FX-Reply at 2335\n              display  FH901    at 2401 with erase eol\n              accept   Accept-Reply at 2433\n              display  \" \"      at 2301 with erase eol\n              display  \" \"      at 2401 with erase eol\n              close    Log-File\n              move     zero to Log-File-Open-Flag\n              go to    ca999-Exit.\n*>\n     add      1 to Log-File-Rec-Written.\n*>\n ca999-Exit.\n     exit     program.\n*>*********   *******\n*>\n end program fhlogger.",
+        "line": 69
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 2,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 37,
+      "totalOperators": 19,
+      "totalOperands": 38,
+      "vocabulary": 38,
+      "length": 57,
+      "volume": 299.13186826628436
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

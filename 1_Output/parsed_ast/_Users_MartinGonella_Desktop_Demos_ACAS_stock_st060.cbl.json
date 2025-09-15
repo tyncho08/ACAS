@@ -1,0 +1,898 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/stock/st060.cbl",
+  "fileName": "st060.cbl",
+  "timestamp": "2025-09-15T16:25:50.044Z",
+  "programId": "st060",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 183
+      },
+      {
+        "name": "file",
+        "line": 196
+      },
+      {
+        "name": "working-storage",
+        "line": 212
+      },
+      {
+        "name": "linkage",
+        "line": 352
+      },
+      {
+        "name": "File-Error-On-IF",
+        "line": 368
+      },
+      {
+        "name": "aa000-Core",
+        "line": 402
+      },
+      {
+        "name": "ba000-Import-Stock",
+        "line": 448
+      },
+      {
+        "name": "exit",
+        "line": 663
+      },
+      {
+        "name": "zz010-Display-Heading",
+        "line": 669
+      },
+      {
+        "name": "exit",
+        "line": 701
+      },
+      {
+        "name": "zz025-Format-Number",
+        "line": 703
+      },
+      {
+        "name": "exit",
+        "line": 721
+      },
+      {
+        "name": "zz027-Clean-Number",
+        "line": 723
+      },
+      {
+        "name": "exit",
+        "line": 745
+      },
+      {
+        "name": "zz030-Format-Amount",
+        "line": 747
+      },
+      {
+        "name": "exit",
+        "line": 819
+      },
+      {
+        "name": "zz050-Validate-Date",
+        "line": 821
+      },
+      {
+        "name": "exit",
+        "line": 855
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 186
+      },
+      {
+        "name": "file-defs",
+        "line": 363
+      },
+      {
+        "name": "Declaratives",
+        "line": 366
+      },
+      {
+        "name": "a00-IF-Error-1",
+        "line": 371
+      },
+      {
+        "name": "Eval-Status",
+        "line": 390
+      },
+      {
+        "name": "main-exit",
+        "line": 397
+      },
+      {
+        "name": "exit",
+        "line": 398
+      },
+      {
+        "name": "GOBACK",
+        "line": 413
+      },
+      {
+        "name": "aa010-Get-File-for-Import",
+        "line": 415
+      },
+      {
+        "name": "a10-Stock-Error-1",
+        "line": 422
+      },
+      {
+        "name": "goback",
+        "line": 433
+      },
+      {
+        "name": "Eval-Status-2",
+        "line": 435
+      },
+      {
+        "name": "maps04",
+        "line": 442
+      },
+      {
+        "name": "aa999-Exit",
+        "line": 445
+      },
+      {
+        "name": "goback",
+        "line": 446
+      },
+      {
+        "name": "ba010-Get-A-Record",
+        "line": 468
+      },
+      {
+        "name": "ba020-Process-Regular",
+        "line": 483
+      },
+      {
+        "name": "ba030-Process-Comma",
+        "line": 533
+      },
+      {
+        "name": "end-if",
+        "line": 643
+      },
+      {
+        "name": "ba040-Write-Stock",
+        "line": 645
+      },
+      {
+        "name": "ba998-Main-End",
+        "line": 650
+      },
+      {
+        "name": "ba999-Exit",
+        "line": 662
+      },
+      {
+        "name": "zz010-convert-date",
+        "line": 680
+      },
+      {
+        "name": "end-if",
+        "line": 698
+      },
+      {
+        "name": "zz010-exit",
+        "line": 700
+      },
+      {
+        "name": "end-perform",
+        "line": 716
+      },
+      {
+        "name": "zz025-Exit",
+        "line": 720
+      },
+      {
+        "name": "end-if",
+        "line": 742
+      },
+      {
+        "name": "zz027-Exit",
+        "line": 744
+      },
+      {
+        "name": "end-if",
+        "line": 816
+      },
+      {
+        "name": "zz030-Exit",
+        "line": 817
+      },
+      {
+        "name": "zz050-test-date",
+        "line": 849
+      },
+      {
+        "name": "zz050-exit",
+        "line": 854
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "acas011",
+        "line": 381,
+        "type": "DYNAMIC",
+        "using": [
+          "System-Record",
+          "WS-Stock-Record",
+          "File-Access",
+          "File-Defs",
+          "ACAS-DAL-Common-data",
+          "end-call",
+          "end-if",
+          "*>",
+          "above",
+          "MUST",
+          "be",
+          "a",
+          "direct",
+          "call",
+          "as",
+          "subs",
+          "not",
+          "accessable",
+          "in",
+          "GC",
+          "exit",
+          "program"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 443,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      },
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 454,
+        "type": "DYNAMIC",
+        "using": [
+          "File-15",
+          "File-Info",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "move",
+          "1",
+          "to",
+          "ws-Process-Func",
+          "ws-Sub-Function",
+          "call",
+          "\"sl070\"",
+          "using",
+          "ws-Calling-Data",
+          "System-Record",
+          "To-Day",
+          "File-Defs",
+          "end-if",
+          "end-if",
+          "open",
+          "input",
+          "Import-File"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 35,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 173,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 182,
+        "replacing": null
+      },
+      {
+        "name": "wsstock",
+        "line": 203,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 312,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 313,
+        "replacing": null
+      },
+      {
+        "name": "wsstock",
+        "line": 314,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 341,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 355,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 356,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 357,
+        "replacing": null
+      },
+      {
+        "name": "FileStat-Msgs",
+        "line": 394,
+        "replacing": null
+      },
+      {
+        "name": "FileStat-Msgs",
+        "line": 439,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 857,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "Eval-Status",
+        "thru": null,
+        "line": 373
+      },
+      {
+        "target": "zz010-Display-Heading",
+        "thru": null,
+        "line": 416
+      },
+      {
+        "target": "ba000-Import-Stock",
+        "thru": null,
+        "line": 419
+      },
+      {
+        "target": "Eval-Status-2",
+        "thru": null,
+        "line": 424
+      },
+      {
+        "target": "Stock-Close",
+        "thru": null,
+        "line": 431
+      },
+      {
+        "target": "Stock-Open",
+        "thru": null,
+        "line": 466
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 504
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 508
+      },
+      {
+        "target": "Stock-Write",
+        "thru": null,
+        "line": 529
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 561
+      },
+      {
+        "target": "move",
+        "thru": null,
+        "line": 564
+      },
+      {
+        "target": "zz025-Format-Number",
+        "thru": null,
+        "line": 575
+      },
+      {
+        "target": "zz025-Format-Number",
+        "thru": null,
+        "line": 580
+      },
+      {
+        "target": "zz025-Format-Number",
+        "thru": null,
+        "line": 585
+      },
+      {
+        "target": "zz025-Format-Number",
+        "thru": null,
+        "line": 590
+      },
+      {
+        "target": "zz025-Format-Number",
+        "thru": null,
+        "line": 595
+      },
+      {
+        "target": "zz025-Format-Number",
+        "thru": null,
+        "line": 600
+      },
+      {
+        "target": "zz030-Format-Amount",
+        "thru": null,
+        "line": 610
+      },
+      {
+        "target": "zz030-Format-Amount",
+        "thru": null,
+        "line": 615
+      },
+      {
+        "target": "zz030-Format-Amount",
+        "thru": null,
+        "line": 622
+      },
+      {
+        "target": "zz050-Validate-Date",
+        "thru": null,
+        "line": 630
+      },
+      {
+        "target": "zz050-Validate-Date",
+        "thru": null,
+        "line": 640
+      },
+      {
+        "target": "Stock-Write",
+        "thru": null,
+        "line": 646
+      },
+      {
+        "target": "Stock-Close",
+        "thru": null,
+        "line": 651
+      },
+      {
+        "target": "zz010-convert-date",
+        "thru": null,
+        "line": 674
+      },
+      {
+        "target": "zz027-Clean-Number",
+        "thru": null,
+        "line": 708
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 713
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 732
+      },
+      {
+        "target": "move",
+        "thru": null,
+        "line": 735
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 757
+      },
+      {
+        "target": "move",
+        "thru": null,
+        "line": 760
+      },
+      {
+        "target": "Stock-Close",
+        "thru": null,
+        "line": 771
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 781
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 784
+      },
+      {
+        "target": "Stock-Close",
+        "thru": null,
+        "line": 814
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 852
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "spaces",
+        "to": "Evaluation-Msg",
+        "line": 393
+      },
+      {
+        "from": "spaces",
+        "to": "Evaluation-Msg",
+        "line": 438
+      },
+      {
+        "from": "1",
+        "to": "ws-Process-Func\n                              ws-Sub-Function\n                    call \"sl070\" using ws-Calling-Data\n                                       System-Record\n                                       To-Day\n                                       File-Defs\n              end-if\n     end-if\n     open     input Import-File",
+        "line": 457
+      },
+      {
+        "from": "spaces",
+        "to": "ws-stock-dates",
+        "line": 474
+      },
+      {
+        "from": "WS-Temp-Stock-Key",
+        "to": "WS-Stock-Key",
+        "line": 503
+      },
+      {
+        "from": "ws-Temp-Stock-Key",
+        "to": "WS-Stock-Abrev-Key\n     else\n              add   1              to ws-Abrev-Value\n              move  ws-Abrev-Value to WS-Stock-Abrev-Key\n     end-if\n*>\n*>  Instead of prev",
+        "line": 511
+      },
+      {
+        "from": "ws-Abrev-Key",
+        "to": "WS-Stock-Abrev-Key",
+        "line": 519
+      },
+      {
+        "from": "ws-Temp-Stock-Desc",
+        "to": "WS-Stock-Desc",
+        "line": 521
+      },
+      {
+        "from": "1",
+        "to": "b",
+        "line": 540
+      },
+      {
+        "from": "WS-Stock-Key",
+        "to": "WS-Stock-Abrev-Key\n     else\n              add 1 to ws-Abrev-Value\n              move ws-Abrev-Value to WS-Stock-Abrev-Key\n    end-if\n*>\n*>  Here we are using a default supplier but if used on old file use rem'd unstring instead\n*>\n     move     ws-Default-Supplier to Stock-Supplier-P1 in WS-Stock-Record",
+        "line": 547
+      },
+      {
+        "from": "ws-Test-Desc",
+        "to": "WS-Stock-Desc\n     end-if\n     move     ws-Default-PA to Stock-PA-Code in WS-Stock-Record",
+        "line": 567
+      },
+      {
+        "from": "ws-Default-SA",
+        "to": "Stock-SA-Code in WS-Stock-Record",
+        "line": 570
+      },
+      {
+        "from": "\"N\"",
+        "to": "Stock-Services-Flag in WS-Stock-Record",
+        "line": 571
+      },
+      {
+        "from": "zero",
+        "to": "ws-Number ws-Number-X-8",
+        "line": 573
+      },
+      {
+        "from": "ws-Chk-Number",
+        "to": "Stock-ReOrder-Pnt in WS-Stock-Record",
+        "line": 576
+      },
+      {
+        "from": "zero",
+        "to": "ws-Number ws-Number-X-8",
+        "line": 578
+      },
+      {
+        "from": "ws-Chk-Number",
+        "to": "Stock-Std-ReOrder in WS-Stock-Record",
+        "line": 581
+      },
+      {
+        "from": "zero",
+        "to": "ws-Number ws-Number-X-8",
+        "line": 583
+      },
+      {
+        "from": "ws-Chk-Number",
+        "to": "Stock-Back-Ordered in WS-Stock-Record",
+        "line": 586
+      },
+      {
+        "from": "zero",
+        "to": "ws-Number ws-Number-X-8",
+        "line": 588
+      },
+      {
+        "from": "ws-Chk-Number",
+        "to": "Stock-On-Order in WS-Stock-Record",
+        "line": 591
+      },
+      {
+        "from": "zero",
+        "to": "ws-Number ws-Number-X-8",
+        "line": 593
+      },
+      {
+        "from": "ws-Chk-Number",
+        "to": "Stock-Held in WS-Stock-Record",
+        "line": 596
+      },
+      {
+        "from": "zero",
+        "to": "ws-Number ws-Number-X-8",
+        "line": 598
+      },
+      {
+        "from": "ws-Chk-Number",
+        "to": "Stock-Pre-Sales in WS-Stock-Record",
+        "line": 601
+      },
+      {
+        "from": "zero",
+        "to": "ws-Amount ws-Amount-X-14",
+        "line": 608
+      },
+      {
+        "from": "ws-Chk-Amount-V",
+        "to": "Stock-Retail in WS-Stock-Record",
+        "line": 611
+      },
+      {
+        "from": "zero",
+        "to": "ws-Amount ws-Amount-X-14",
+        "line": 613
+      },
+      {
+        "from": "ws-Chk-Amount-V",
+        "to": "Stock-Cost in WS-Stock-Record",
+        "line": 616
+      },
+      {
+        "from": "zero",
+        "to": "ws-Amount ws-Amount-X-14",
+        "line": 620
+      },
+      {
+        "from": "ws-Chk-Amount-V",
+        "to": "Stock-Value in WS-Stock-Record",
+        "line": 623
+      },
+      {
+        "from": "u-bin",
+        "to": "Stock-Order-Date in WS-Stock-Record\n     end-if\n*>\n*> IF this is the LAST field in the record add 'or space' but if not can remove 'or space '\n*>     Same applies above field\n*>\n     unstring Import-Record  delimited by \",\" or space into ws-Stock-Order-Due pointer b",
+        "line": 632
+      },
+      {
+        "from": "u-bin",
+        "to": "Stock-Order-Due in WS-Stock-Record\n     end-if",
+        "line": 642
+      },
+      {
+        "from": "ws-Record-Count",
+        "to": "ws-Disp-Count",
+        "line": 653
+      },
+      {
+        "from": "ws-Write-Count",
+        "to": "ws-Disp-Count",
+        "line": 656
+      },
+      {
+        "from": "to-day",
+        "to": "u-date",
+        "line": 684
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              move ws-date to u-date\n     end-if\n     if       Date-Intl\n              move \"ccyy/mm/dd\" to ws-date   *> swap Intl to UK form\n              move u-date (7:4) to ws-Intl-Year\n              move u-date (4:2) to ws-Intl-Month\n              move u-date (1:2) to ws-Intl-Days\n              move ws-date to u-date\n     end-if",
+        "line": 686
+      },
+      {
+        "from": "zero",
+        "to": "ws-Chk-Number",
+        "line": 709
+      },
+      {
+        "from": "zeros",
+        "to": "ws-Number",
+        "line": 728
+      },
+      {
+        "from": "c",
+        "to": "c2",
+        "line": 729
+      },
+      {
+        "from": "zero",
+        "to": "ws-Number\n     end-if",
+        "line": 741
+      },
+      {
+        "from": "zeros",
+        "to": "ws-Amount",
+        "line": 753
+      },
+      {
+        "from": "c",
+        "to": "c2",
+        "line": 754
+      },
+      {
+        "from": "c2",
+        "to": "ws-Amount-Length                *> including the '",
+        "line": 777
+      },
+      {
+        "from": "zero",
+        "to": "e",
+        "line": 778
+      },
+      {
+        "from": "zeros",
+        "to": "ws-Chk-Amount",
+        "line": 790
+      },
+      {
+        "from": "ws-Amount-Length",
+        "to": "f\n              move ws-Amount (1:f) to ws-Chk-Amount (10 - f:f)            *> got the pounds\n     end-if\n*>\n*>  Test the data and if this appears its a possible program bug or a data problem\n*>\n     if     ws-Chk-Amount not numeric                        *> We have problems with the data so quit\n            display \"Problem with amount - \" at 1601 with foreground-color 3 highlight\n            display ws-Amount-X-14           at 1623 with foreground-color 3\n            display \"Has become - \"          at 1638 with foreground-color 3 highlight\n            display ws-Chk-Amount            at 1651 with foreground-color 3\n            display ST604                    at 1701 with foreground-color 3\n            accept  ws-reply                 at 1741\n            close import-File\n            perform Stock-Close\n            stop run\n     end-if",
+        "line": 800
+      },
+      {
+        "from": "ws-test-date",
+        "to": "ws-date",
+        "line": 831
+      },
+      {
+        "from": "1",
+        "to": "ws-Import-Date-Format",
+        "line": 833
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz050-test-date",
+        "line": 837
+      },
+      {
+        "from": "\"dd/mm/ccyy\"",
+        "to": "ws-date",
+        "line": 844
+      },
+      {
+        "from": "ws-date",
+        "to": "u-date",
+        "line": 850
+      },
+      {
+        "from": "zero",
+        "to": "u-bin",
+        "line": 851
+      }
+    ],
+    "computes": [
+      {
+        "target": "f",
+        "expression": "c + 1                    *> 1st pence position\n              compute ws-Pence-length = c2 - c            *> pence length\n              compute ws-Pounds-Length = c - 1\n              move ws-Amount (f:ws-Pence-Length)  to ws-Chk-Amount (10:ws-Pence-Length)\n              move ws-Amount (1:ws-Pounds-Length) to ws-Chk-Amount (10 - ws-Pounds-Length:ws-Pounds-Length)\n     end-if\n     if       e = zero                                *> Only pounds and no pence or '",
+        "line": 793
+      }
+    ]
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "you have it, the record layout of the file from the\n*>                        documentation of the old system or from their technical support\n*>                        department if they are still in business.\n*>                        Otherwise:\n*>\n*>                        It is recommended to create the five records using the lowest\n*>                        values for the stock number eg, 0000000test1 though 000000test5\n*>                        and all numeric fields 1234567 etc and likewise money fields with\n*>                        say 123456.78 or 987654.32 etc. Also alphabetic fields eg, item\n*>                        descriptions with 'abcdefghijklmnop' or 'mlkjihgfedcba' etc.\n*>                        This will help in examining the file for the correct layout for\n*>                        each field.\n*>                        This is a chargeable service and is charged at the rate of\n*>                        25 pounds sterling per hour with a maximum of eight hours but\n*>                        the average is five. Contact via email to vbcoen@gmail.com.\n*>                        --------------------------------------------------------------\n*>\n*>                        This program assumes that the supplier information is NOT\n*>                        available on the old system and will use the value in\n*>                        WS-Default-Supplier and you will need to manually add/change\n*>                        them via Stock Record Amend having loaded up all suppliers in\n*>                        Sales Ledger including the default one as set up in this program\n*>                        as well as the analysis code for each record however\n*>                        here you can leave it as the default code 'a1' for both sales\n*>                        and purchase (see WS-Default-PA for Purchase and ws-Default-SA\n*>                        for Sales. You can modify the source to different values prior\n*>                        to compiling and running this program.\n*>\n*>                        YOU must run sl070 (Set-Up Sales Analysis Codes) or\n*>                        pl070 (Set-Up Purchase Analysis Codes) to create the\n*>                        Analysis data to the table if using rdbms instead of files\n*>                        as it does not know if this exists but will know if the\n*>                        file version exists.\n*>\n*>                        Also the default operation regarding stock item numbers and the\n*>                        abbreviated number is for the Stock Item, use from old file,\n*>                        abbreviated, Generate new starting with 0000001.\n*>                        Here you should change to your requirements.\n*>\n*>                        WARNING, WARNING: This program MUST NOT be used as is.\n*>                        ^^^^^^^^^^^^^^^^* ************************************\n*>\n*>                        It needs to be changed according the data file to be imported\n*>                        as well as the field order in the imported file\n*>                        & the contents of the block of fields just below prog-name in WS.\n*>\n*>                        You",
+        "line": 44
+      },
+      {
+        "type": "IF",
+        "condition": "*>                         called will produce error messages before returning to the menu.\n*>\n*>                        Now compile stock.cbl by running cobc -x stock.cbl\n*>                        This should compile cleanly with no errors or warnings, if not fix\n*>                        and recompile.\n*>\n*>                        After this process and assuming an import will no longer be needed,\n*>                        recompile the original code of st060.cbl that will force a go back\n*>                        to the menu if selected, or what ever else you like.\n*>\n*>                        Generally - this program will only need to be used ONCE.\n*>**\n*>    Version.            See prog-name in Ws.\n*>**\n*>    Called modules.\n*>                        maps04 - Date testing and conversion.\n*>                        SL070  - Analysis codes set up - Defaults only.\n*>                        acas011 -> Stock file FH\n*>                         stockMT - STOCK-REC RDB table.\n*>**\n*>    Error messages used.\n*>                        ST000.\n*>\n*>                        ST601.\n*>                        ST602.\n*>                        ST603.\n*>                        ST604.\n*>**\n*>    Changes:\n*> 08/06/13 vbc - 3.01.37 Rewritten in Cobol from scratch via st010 & updated to v3.01.37.\n*> 21/07/16 vbc - 3.02.01 Support for RDB tables. version updated to v3.02.\n*> 24/10/16 vbc -     .02 ALL programs now using wsnames.cob in copybooks\n*> 12/03/18 vbc -     .03 acasnnn copylib renaming acas000-open etc to comply with\n*>                        rest of ACAS to (System-Open etc) removed unused field\n*>                        WS var. error-code.\n*> 14/03/18 vbc -     .04 Additional comments regarding modifications.\n*>                        Chg ST000 to stock rec. More comments added.\n*> 24/01/24 vbc -     .05 Added continue to inline performs clears warnings.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>================================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>-------------------------------\n*>\n file-control.\n*>------------\n*>\n     select import-file             assign File-101\n                                    organization sequential\n                                    status fs-reply.\n*>\n data                    division.\n*>================================\n*>\n file section.\n*>------------\n*>\n fd  Import-file.                     *> Assumes that this file is a comma delimited file\n 01  Import-Record.                   *> eg, field-1,field2,field3 etc where alphanemerics are in quotes\n     03  filler          pic x(512).    *> This needs changing to reflect actual + 2 bytes (if needed)\n*>\n copy \"wsstock.cob\" replacing\n                    WS-Stock-Record    by WS-Temp-Stock-Record\n                    WS-Stock-Key       by WS-Temp-Stock-Key\n                    WS-Stock-Abrev-Key by WS-Temp-Abrev-Key\n                    WS-Stock-Desc      by WS-Temp-Stock-Desc\n                    Stock-Mthly-Running-Totals\n                                       by Tmp-Stock-Mthly-Running-Totals\n                    Stock-History      by Tmp-Stock-History.\n*>\n working-storage section.\n*>-----------------------\n*>\n 77  prog-name           pic x(15)       value \"ST060 (3.02.05)\".\n*>\n*> START OF MODIFIABLE BLOCK IN WS -\n*> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n*>   CHANGE THESE TO SUIT YOUR INSTALLATION STANDARDS.\n*>     These are the defaults that will be used for all\n*>      transferred stock records from the old system.\n*>\n 77  ws-Default-PA       pic xxx         value \"Pa1\".         *> Default Anal code for PL.\n 77  ws-Default-SA       pic xxx         value \"Sa1\".         *> Default Anal code for SL.\n 77  ws-Default-Supplier pic x(7)        value \"A000011\".     *> Default Supplier code.\n 77  ws-Abrev-Value      pic 9(7)        value zero.          *> Default Abrev code.\n*>\n 77  Import-Mode         pic 9           value 1.        *> change to 2 if needed. currently for comma delimited\n     88  Process-Comma                   value 1.        *> import a comma delimited file\n     88  Process-Reg                     value 2.        *> import a text file containing Stock fields\n*>\n 77  ws-Hist-Reset-Flag  pic 9           value 1.        *> CHANGE to zero if importing these\n     88  ws-Reset-Hist                   value 1.\n*>\n*> ENDS MODIFIABLE BLOCK IN WS.\n*> ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n 77  Evaluation-Msg      pic x(25)       value spaces.\n 77  File-101            pic x(64)       value spaces.   *> NEEDS the file name for input see start of program.\n 77  ws-Import-Date-Format pic 9         value 1.        *> UK date format, but change to one needed.\n     88  ws-Date-UK                      value 1.  *> dd/mm/yyyy\n     88  ws-Date-USA                     value 2.  *> mm/dd/yyyy\n     88  ws-Date-Intl                    value 3.  *> yyyy/mm/dd\n 77  ws-Test-Desc        pic x(36)       value spaces.        *> Used to clear quotes from alphanumeric fields\n 77  ws-Delimiter-Found  pic x           value space.\n*>\n 77  ws-Record-Count     pic 9(7)        value zero.        *> read count\n 77  ws-Write-Count      pic 9(7)        value zero.\n 77  ws-Disp-Count       pic z(6)9.\n*>\n 01  ws-Number-X-8       pic x(8).\n 01  ws-Number-X.\n     03  ws-Number       pic 9(6)        value zero.\n 01  ws-Amount-X-14      pic x(14).\n 01  ws-Amount-X.\n     03  ws-Amount       pic 9(13)       value zero.        *> In pence of 4 places eg 9(9)[v]9999\n 01  ws-Chk-Number       pic 9(6).\n 01  ws-Chk-Amount       pic 9(13).\n 01  ws-Chk-Amount-V     redefines ws-Chk-Amount pic 9(9)v9(4).\n 01  ws-Amount-Length    binary-char     value zero.\n 01  ws-Pence-Length     binary-char     value zero.\n 01  ws-Pounds-Length    binary-char     value zero.\n*>\n 01  work-fields.\n     03  ws-reply        pic x.\n     03  a               binary-char unsigned value zero.\n     03  b               pic 9(4)   comp     value zero.\n     03  c               pic 9(4)   comp     value zero.\n     03  c2              pic 9(4)   comp     value zero.\n     03  d               pic 9               value zero.     *> flag for decimal point\n     03  e               pic 9               value zero.\n     03  f               pic 99.\n     03  ws-stock-dates.\n         05  ws-Stock-Order-Date pic x(12).\n         05  ws-Stock-Order-Due  pic x(12).\n     03  ws-Test-Date    pic x(10).\n*>\n 01  ws-date-formats.            *> not yet used\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n 01  File-Info                          value zero.\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n copy \"wsfnctn.cob\".\n copy \"wsmaps03.cob\".\n copy \"wsstock.cob\".                    *>  replacing WS-Stock-Desc by Stock-Desc.\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n*>     03  System-Record          pic x.\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n*>     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  Error-Messages.\n*> System Wide\n     03  ST000           pic x(36) value \"ST000 Error on Writing to Stock Rec.\".\n*> Module Specific\n     03  ST601           pic x(42) value \"ST601 Error on Open/Reading Import File - \".\n     03  ST602           pic x(31) value \"ST602 Note error and hit return\".\n     03  ST603           pic x(31) value \"ST603 Note total and hit return\".\n     03  ST604           pic x(39) value \"ST604 Note error and hit return to quit\".\n*>\n linkage section.\n*>***************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>***************************************\n*>\n Declaratives.\n*>\n File-Error-On-IF section.\n*>\n     use after error procedure on Import-File.\n a00-IF-Error-1.\n     if       fs-reply not = zero\n              perform  Eval-Status\n              display  ST601          at 2301\n              display  fs-reply       at 2337\n              display  Evaluation-Msg at 2340\n              display  ST602          at 2401\n              accept   ws-reply       at 2433\n              close Import-File\n              set      fn-Close to true\n              call     \"acas011\" using System-Record\n                                       WS-Stock-Record\n                                       File-Access\n                                       File-Defs\n                                       ACAS-DAL-Common-data\n              end-call\n     end-if      *> above MUST be a direct call as subs not accessable in GC\n     exit    program.\n*>\n Eval-Status.\n*>==========\n*>\n     move     spaces to Evaluation-Msg.\n copy \"FileStat-Msgs.cpy\"  replacing STATUS by fs-reply\n                                     msg    by Evaluation-Msg.\n*>\n main-exit.\n     exit.\n*>\n end declaratives.\n*>\n aa000-Core              section.\n*>******************************\n*>\n*>\n*> After changing this program to match your requirements REMARK out (with *>)\n*>  the next 5 non comment lines, ending with GOBACK.\n*>\n     display  \"THIS PROGRAM MUST BE CHANGED BEFORE USE\"\n                    at 0101 with foreground-color 2  erase eos.\n     display  ST604 at 0301 with foreground-color 2.\n     accept   Accept-Reply at 0341.\n     GOBACK.\n*>\n aa010-Get-File-for-Import.\n     perform  zz010-Display-Heading.\n     display  \"Provide full path and file name of file to be imported\" at 0701 with foreground-color 2.\n     accept   File-101 at 0902 with foreground-color 6 update.\n     perform  ba000-Import-Stock.\n     go       to aa999-exit.\n*>\n a10-Stock-Error-1.\n     if       fs-reply not = zero\n              perform  Eval-Status-2\n              display  ST000    at 2301 with foreground-color 4 highlight\n              display  fs-reply at 2338 with foreground-color 4 highlight\n              display  Evaluation-Msg at 2340\n              display  ST602          at 2401\n              accept   ws-reply       at 2433\n              close    Import-File\n              perform  Stock-Close\n     end-if\n     goback.\n*>\n Eval-Status-2.\n*>============\n*>\n     move     spaces to Evaluation-Msg.\n copy \"FileStat-Msgs.cpy\"  replacing STATUS by fs-reply\n                                     msg    by Evaluation-Msg.\n*>\n maps04.\n     call     \"maps04\" using maps03-ws.\n*>\n aa999-Exit.\n     goback.\n*>\n ba000-Import-Stock      section.\n*>******************************\n*>\n*> New for RDB - Create Analysis file and data if not exist.\n*>\n     if       FS-Cobol-Files-Used            *> Analysis file\n              call  \"CBL_CHECK_FILE_EXIST\" using File-15\n                                                 File-Info\n              if    return-code not = zero          *> not = zero - No file found\n                    move 1 to ws-Process-Func\n                              ws-Sub-Function\n                    call \"sl070\" using ws-Calling-Data\n                                       System-Record\n                                       To-Day\n                                       File-Defs\n              end-if\n     end-if\n     open     input Import-File.\n     perform  Stock-Open.     *> Opned as input-output\n*>\n ba010-Get-A-Record.\n*>\n*>  If stock item is =< 7 make both stock & Abrev the same otherwise create new Abrev key\n*>  incremented by 1 from ws-Abrev-Value\n*>\n     initialize Import-Record.            *> Needed ? cant do any harm !\n     move     spaces to ws-stock-dates.            *> NEEDED\n*>\n     read     Import-File record at end\n              go to  ba998-Main-End.\n     add      1 to ws-Record-Count.\n     initialize WS-Stock-Record with filler.\n     if       Process-Comma\n              go to ba030-Process-Comma.\n*>\n ba020-Process-Regular.\n*>\n*>  ************************************************************\n*>  *  THIS NEEDS TO BE CHANGED TO REFLECT import file LAYOUT  *\n*>  *                 DO NOT USE 'AS IS'                       *\n*>  ************************************************************\n*>\n*>  Change this to match up with the import record format and note\n*>   that the references to WS-Temp- name refer to the 01 redefines\n*>   of the import-record which may well need to be replaced with\n*>    another definition and the following code changed but hopefully\n*>    you will get the idea.\n*>\n     move     corresponding WS-Temp-Stock-Record to WS-Stock-Record.\n*>\n*>  The above line will ONY work if the import file fields match up with the\n*>  layout for the ACAS STock file and this is UNLIKELY but the above should not\n*>  cause any harm but remarked it out and make changes below to match with the\n*>  data structure of the import file.\n*>\n     move     WS-Temp-Stock-Key to WS-Stock-Key.\n     perform  varying a from 13 by -1\n                 until ws-Stock-Key (a:1) not = space\n                                         OR a = 1\n              continue\n     end-perform\n*>\n     if       a < 8\n              move ws-Temp-Stock-Key to WS-Stock-Abrev-Key\n     else\n              add   1              to ws-Abrev-Value\n              move  ws-Abrev-Value to WS-Stock-Abrev-Key\n     end-if\n*>\n*>  Instead of prev. if, when abrev key exists in imported record :\n*>\n*>     move     ws-Abrev-Key to WS-Stock-Abrev-Key.\n*>\n     move     ws-Temp-Stock-Desc to WS-Stock-Desc.\n     if       ws-Reset-Hist\n              initialize Stock-Mthly-Running-Totals\n                         Stock-History\n     end-if\n*>\n*>        ANY MORE MOVES NEEDED",
+        "line": 104
+      },
+      {
+        "type": "IF",
+        "condition": "not abrev-key available in imput file so increment by 1 for each record\n*>   No not the best. NOTE that both keys MUST NOT have duplicate keys\n*>\n     unstring Import-Record  delimited by \",\" into WS-Stock-Key count c pointer b.\n     if       c not > 7\n              move WS-Stock-Key to WS-Stock-Abrev-Key\n     else\n              add 1 to ws-Abrev-Value\n              move ws-Abrev-Value to WS-Stock-Abrev-Key\n    end-if\n*>\n*>  Here we are using a default supplier but if used on old file use rem'd unstring instead\n*>\n     move     ws-Default-Supplier to Stock-Supplier-P1 in WS-Stock-Record.\n*>     unstring Import-Record  delimited by \",\" into Stock-Supplier-P1 in WS-Stock-Record pointer b.\n*>\n     unstring Import-Record  delimited by \",\" into ws-Test-Desc pointer b.\n     if       ws-Test-Desc (1:1) = quote or \"'\" or \"`\"\n              move ws-Test-Desc (1:1) to ws-Delimiter-Found\n              perform varying c from 36 by -1 until c < 4\n                                                 or ws-Test-Desc (c:1) = ws-Delimiter-Found\n                       continue\n              end-perform\n              move ws-Test-Desc (2:c - 2) to WS-Stock-Desc\n     else\n              move ws-Test-Desc to WS-Stock-Desc\n     end-if\n     move     ws-Default-PA to Stock-PA-Code in WS-Stock-Record.\n     move     ws-Default-SA to Stock-SA-Code in WS-Stock-Record.\n     move     \"N\"           to Stock-Services-Flag in WS-Stock-Record.\n*>\n     move     zero to ws-Number ws-Number-X-8.\n     unstring Import-Record  delimited by \",\" into ws-Number-X-8 count c pointer b.\n     perform  zz025-Format-Number.\n     move     ws-Chk-Number to Stock-ReOrder-Pnt in WS-Stock-Record.\n*>\n     move     zero to ws-Number ws-Number-X-8.\n     unstring Import-Record  delimited by \",\" into ws-Number-X-8 count c pointer b.\n     perform  zz025-Format-Number.\n     move     ws-Chk-Number to Stock-Std-ReOrder in WS-Stock-Record.\n*>\n     move     zero to ws-Number ws-Number-X-8.\n     unstring Import-Record  delimited by \",\" into ws-Number-X-8 count c pointer b.\n     perform  zz025-Format-Number.\n     move     ws-Chk-Number to Stock-Back-Ordered in WS-Stock-Record.\n*>\n     move     zero to ws-Number ws-Number-X-8.\n     unstring Import-Record  delimited by \",\" into ws-Number-X-8 count c pointer b.\n     perform  zz025-Format-Number.\n     move     ws-Chk-Number to Stock-On-Order in WS-Stock-Record.\n*>\n     move     zero to ws-Number ws-Number-X-8.\n     unstring Import-Record  delimited by \",\" into ws-Number-X-8 count c pointer b.\n     perform  zz025-Format-Number.\n     move     ws-Chk-Number to Stock-Held in WS-Stock-Record.\n*>\n     move     zero to ws-Number ws-Number-X-8.\n     unstring Import-Record  delimited by \",\" into ws-Number-X-8 count c pointer b.\n     perform  zz025-Format-Number.\n     move     ws-Chk-Number to Stock-Pre-Sales in WS-Stock-Record.\n*>\n*> Formats of import amounts need to be examined and these changed to reflect it\n*>  including ws- field sizes\n*>  The move will truncate the source field as its a 9(9)v9999 moving to smaller fields\n*>    but that is ok as digits trancated are zero but still check it after running\n*>\n     move     zero to ws-Amount ws-Amount-X-14.\n     unstring Import-Record  delimited by \",\" into ws-Amount-X-14 count c pointer b.\n     perform  zz030-Format-Amount.\n     move     ws-Chk-Amount-V to Stock-Retail in WS-Stock-Record.\n*>\n     move     zero to ws-Amount ws-Amount-X-14.\n     unstring Import-Record  delimited by \",\" into ws-Amount-X-14 count c pointer b.\n     perform  zz030-Format-Amount.\n     move     ws-Chk-Amount-V to Stock-Cost in WS-Stock-Record.\n*>\n*>  Note that LAST field in record must also be delimited by space\n*>\n     move     zero to ws-Amount ws-Amount-X-14.\n     unstring Import-Record  delimited by \",\" or space into ws-Amount-X-14 count c pointer b.\n     perform  zz030-Format-Amount.\n     move     ws-Chk-Amount-V to Stock-Value in WS-Stock-Record.\n*>\n*>  Here for Due and order dates if present and they will be in quotes and dates are ASSUMED as 8 chars long\n*>    So we will ignore the first and last chars (quote)\n*>\n     unstring Import-Record  delimited by \",\" or space into ws-Stock-Order-Date pointer b.\n     move     ws-Stock-Order-Date (2:10) to ws-Test-Date.\n     perform  zz050-Validate-Date.\n     if       u-Bin not zero\n              move u-bin to Stock-Order-Date in WS-Stock-Record\n     end-if\n*>\n*> IF this is the LAST field in the record add 'or space' but if not can remove 'or space '\n*>     Same applies above field\n*>\n     unstring Import-Record  delimited by \",\" or space into ws-Stock-Order-Due pointer b.\n     move     ws-Stock-Order-Due (2:10) to ws-Test-Date.\n     perform  zz050-Validate-Date.\n     if       u-Bin not zero\n              move u-bin to Stock-Order-Due in WS-Stock-Record\n     end-if.\n*>\n ba040-Write-Stock.\n     perform  Stock-Write.\n     add      1 to ws-Write-Count.\n     go       to ba010-Get-A-Record.\n*>\n ba998-Main-End.\n     perform  Stock-Close.\n     close    Import-File.\n     move     ws-Record-Count to ws-Disp-Count.\n     display  \"Records Imported - \" at 0601 with foreground-color 2 erase eos.\n     display  ws-Disp-Count         at 0620 with foreground-color 2.\n     move     ws-Write-Count  to ws-Disp-Count.\n     display  \"Records Written  - \" at 0601 with foreground-color 2.\n     display  ws-Disp-Count         at 0620 with foreground-color 2.\n     display  ST603                 at 0801 with foreground-color 2.\n     accept   ws-reply              at 0835.\n*>\n ba999-Exit.\n     exit     section.\n*>\n*>****************************************************\n*>               Common Routines Block               *\n*>****************************************************\n*>\n zz010-Display-Heading      section.\n*>*********************************\n*>\n     display  prog-name at 0101 with foreground-color 2 erase eos.\n     display  usera at 0301 with foreground-color 3.\n     perform  zz010-convert-date.\n     display  u-date at 0171 with foreground-color 2.\n*>\n     display  \"Stock File Importer\" at 0124 with foreground-color 2.\n     go       to zz010-Exit.\n*>\n zz010-convert-date.\n*>\n*> Convert from UK to selected form\n*>\n     move     to-day to u-date.\n     if       Date-USA\n              move u-date to ws-date\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              move ws-date to u-date\n     end-if\n     if       Date-Intl\n              move \"ccyy/mm/dd\" to ws-date   *> swap Intl to UK form\n              move u-date (7:4) to ws-Intl-Year\n              move u-date (4:2) to ws-Intl-Month\n              move u-date (1:2) to ws-Intl-Days\n              move ws-date to u-date\n     end-if.\n*>\n zz010-exit.\n     exit     section.\n*>\n zz025-Format-Number       section.\n*>********************************\n*>\n*> C has char count\n*>\n     perform  zz027-Clean-Number.        *> remove any quotes if present\n     move     zero to ws-Chk-Number.\n     if       ws-Number-X not numeric\n              go to zz025-Exit.\n*>\n     perform  varying d from 6 by -1 until c < 1\n              move ws-Number (c:1) to ws-Chk-Number (d:1)\n              subtract 1 from c\n     end-perform.\n*>\n*>  Now have number right justified in ws-chk-number\n*>\n zz025-Exit.\n     exit     section.\n*>\n zz027-Clean-Number        section.\n*>********************************\n*>\n*> Check of number is in quotes and clear them otherwise move number\n*>\n     move     zeros to ws-Number.\n     move     c to c2.\n     if       ws-Number-X-8 (1:1) = quote or \"'\" or \"`\"\n              move ws-Number-X-8 (1:1) to ws-Delimiter-Found\n              perform varying c from 8 by -1 until c < 3\n                                                 or ws-Number-X-8 (c:1) = ws-Delimiter-Found\n                       continue\n              end-perform\n              move ws-Number-X-8 (2:c - 2) to ws-Number\n     else\n              move ws-Number-X-8 (1:c2) to ws-Number-X        *> now have unjustified number but not number?\n     end-if\n     if       ws-Number not numeric\n              move zero to ws-Number\n     end-if.\n*>\n zz027-Exit.\n     exit     section.\n*>\n zz030-Format-Amount       section.\n*>\n*> A reminder of what we can get: 0.n 0.nn nnnn nn.n nn.nn\n*> Source = ws-amount-X-14\n*> target = ws-chk-amount\n*>\n     move     zeros to ws-Amount.\n     move     c  to c2.\n     if       ws-Amount-X-14 (1:1) = quote or \"'\" or \"`\"\n              move ws-Amount-X-14 (1:1) to ws-Delimiter-Found\n              perform varying c from c2 by -1 until c < 3        *> Should happen on 1st pass\n                                                 or ws-Amount-X-14 (c:1) = ws-Delimiter-Found\n                      continue\n              end-perform\n              move ws-Amount-X-14 (2:c2 - 2) to ws-Amount-X    *> got 9(9).9999 LEFT justified\n              if   c = c2\n                   subtract 2 from c2                *> including the '.'\n              else                        *> We have problems with the data so quit\n                 display \"Problem with amount - \"       at 1601 with foreground-color 3 highlight\n                 display ws-Amount-X-14                 at 1623 with foreground-color 3\n                 display \"Has invalid quotes or other!\" at 1638 with foreground-color 3 highlight\n                 display ST604                          at 1701 with foreground-color 3\n                 accept  ws-reply                       at 1741\n                 close import-File\n                 perform Stock-Close\n                 stop run\n              end-if\n     else\n              move ws-Amount-X-14 (1:c2) to ws-Amount-X        *> now have left justified number\n     end-if\n     move     c2 to ws-Amount-Length                *> including the '.'\n     move     zero to e.                    *> test if we have a period\n     inspect  ws-Amount-X tallying e for all \".\".\n     if       e not = zero                    *> We do, so find it\n              perform  varying c from c2 by -1 until ws-Amount-X (c:1) = \".\"\n                                                  or c < 2    *> cant be 1st char so this test should not happen !\n                       continue\n              end-perform\n     end-if                            *> if c = 1",
+        "line": 542
+      },
+      {
+        "type": "IF",
+        "condition": "e = zero we have whole number only\n*>\n     move     zeros to ws-Chk-Amount.\n     if       e not zero\n       and    c > 1\n              compute f = c + 1                    *> 1st pence position\n              compute ws-Pence-length = c2 - c            *> pence length\n              compute ws-Pounds-Length = c - 1\n              move ws-Amount (f:ws-Pence-Length)  to ws-Chk-Amount (10:ws-Pence-Length)\n              move ws-Amount (1:ws-Pounds-Length) to ws-Chk-Amount (10 - ws-Pounds-Length:ws-Pounds-Length)\n     end-if\n     if       e = zero                                *> Only pounds and no pence or '.'\n              move ws-Amount-Length to f\n              move ws-Amount (1:f) to ws-Chk-Amount (10 - f:f)            *> got the pounds\n     end-if\n*>\n*>  Test the data and if this appears its a possible program bug or a data problem\n*>\n     if     ws-Chk-Amount not numeric                        *> We have problems with the data so quit\n            display \"Problem with amount - \" at 1601 with foreground-color 3 highlight\n            display ws-Amount-X-14           at 1623 with foreground-color 3\n            display \"Has become - \"          at 1638 with foreground-color 3 highlight\n            display ws-Chk-Amount            at 1651 with foreground-color 3\n            display ST604                    at 1701 with foreground-color 3\n            accept  ws-reply                 at 1741\n            close import-File\n            perform Stock-Close\n            stop run\n     end-if.\n\n zz030-Exit.\n     exit     section.\n*>\n zz050-Validate-Date       section.\n*>********************************\n*>\n*>  Converts USA/Intl to UK date format for processing and\n*>   modified for Import data ws field.\n*>========================================================\n*> Input:   ws-test-date\n*> output:  u-date/ws-date as uk date format\n*>          u-bin not zero if valid date\n*>\n     move     ws-test-date to ws-date.\n     if       ws-Import-Date-Format = zero\n              move 1 to ws-Import-Date-Format.\n     if       ws-Date-UK\n              go to zz050-test-date.\n     if       ws-Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz050-test-date.\n*>\n*> So its International date format\n*>\n     move     \"dd/mm/ccyy\" to ws-date.  *> swap Intl to UK form\n     move     ws-test-date (1:4) to ws-Year.\n     move     ws-test-date (6:2) to ws-Month.\n     move     ws-test-date (9:2) to ws-Days.\n*>\n zz050-test-date.\n     move     ws-date to u-date.\n     move     zero to u-bin.\n     perform  maps04.\n*>\n zz050-exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 788
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 9,
+    "cognitive": 4,
+    "halstead": {
+      "uniqueOperators": 2,
+      "uniqueOperands": 61,
+      "totalOperators": 54,
+      "totalOperands": 106,
+      "vocabulary": 63,
+      "length": 160,
+      "volume": 956.3647877599867
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/systemRES.cbl",
+  "fileName": "systemRES.cbl",
+  "timestamp": "2025-09-15T16:25:38.590Z",
+  "programId": "SystemRES",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 112
+      },
+      {
+        "name": "file",
+        "line": 126
+      },
+      {
+        "name": "working-storage",
+        "line": 143
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 115
+      },
+      {
+        "name": "aa000-Main-Start",
+        "line": 195
+      },
+      {
+        "name": "goback",
+        "line": 220
+      },
+      {
+        "name": "System-File",
+        "line": 295
+      },
+      {
+        "name": "goback",
+        "line": 307
+      },
+      {
+        "name": "Call-Sysout",
+        "line": 311
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 312,
+        "type": "DYNAMIC",
+        "using": [
+          "SO-Print"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 24,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 101,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 111,
+        "replacing": null
+      },
+      {
+        "name": "selsys",
+        "line": 118,
+        "replacing": null
+      },
+      {
+        "name": "fdsys",
+        "line": 129,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 131,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 170,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 172,
+        "replacing": null
+      },
+      {
+        "name": "wsdflt",
+        "line": 173,
+        "replacing": null
+      },
+      {
+        "name": "wsfinal",
+        "line": 174,
+        "replacing": null
+      },
+      {
+        "name": "wssys4",
+        "line": 175,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 176,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 177,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 178,
+        "replacing": null
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 309,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "thru": null,
+        "line": 196
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 303
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 305
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "0",
+        "to": "WS-Log-System",
+        "line": 197
+      },
+      {
+        "from": "10",
+        "to": "WS-Log-File-no",
+        "line": 198
+      },
+      {
+        "from": "zeros",
+        "to": "ws-Rec-Cnt-Out ws-Rec-Cnt-In",
+        "line": 202
+      },
+      {
+        "from": "128",
+        "to": "return-code\n              goback\n     end-if\n     initialise                    *> initialise all secondary records in WS\n              WS-System-Record\n              Default-Record\n              Final-Record\n              System-Record-4 with filler",
+        "line": 209
+      },
+      {
+        "from": "256",
+        "to": "return-code\n              goback",
+        "line": 219
+      },
+      {
+        "from": "1",
+        "to": "rrn",
+        "line": 278
+      },
+      {
+        "from": "2",
+        "to": "rrn",
+        "line": 282
+      },
+      {
+        "from": "3",
+        "to": "rrn",
+        "line": 286
+      },
+      {
+        "from": "4",
+        "to": "rrn",
+        "line": 290
+      },
+      {
+        "from": "spaces",
+        "to": "SO-Print",
+        "line": 296
+      },
+      {
+        "from": "zero",
+        "to": "Return-Code",
+        "line": 306
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "the file exists but produces any errors because of\n*>                       a bad file** etc, it will attempt to read the RDB table\n*>                       instead, and a message to that effect will be issued.\n*>\n*>                       ** This can occur if a change of ISAM library is used\n*>                       where the new one is incompatable with the old one.\n*>\n*>                       ALL program output goes to file SYS-DISPLAY.log as an\n*>                       extended opened file. So after finishing reading,\n*>                       delete it.\n*>\n*>                       This program creates FOUR records in ORDER :\n*>                       Parameter\n*>                       Default\n*>                       Final\n*>                       Totals - SL & PL.\n*>\n*>                       ALL RECORDS USE 1024 BYTES AS PER THE SIZE OF THE PARAM RECORD.\n*>\n*>                       For use with ACAS v3.02 and later only.\n*>**\n*>   Version.            See prog-name in Ws.\n*>**\n*>   Called Modules.     ACAS-Sysout\n*>**\n*>   Error messages used.\n*>                       SY001A.\n*>                       SY001B.\n*>                       SY001C.\n*>                       SY001D.\n*>                       SY004.\n*>                       SY007.\n*>                       SY008.\n*>                       SY009.\n*>                       SY019.\n*>                       SY020\n*>**\n*>   Changes.\n*> 28/05/23 vbc - .00 systemRES Source taken from systemLD and vers reset.\n*>                .01 Logic adjust if rdb details in file rec etc.\n*> 29/05/23 vbc - .02 Tidy up o/p to SYS-DISPLAY.log reporting DB status.\n*> 30/05/23 vbc - .03 Add rec counts in, created and total out to rep file.\n*> 03/06/23 vbc - .00 Created from systemUNL.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>**\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n*>\n environment division.\n*>-------------------\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n copy \"selsys.cob\".\n     select  System-File-Seq assign        \"system.seq\"\n                             organization  sequential\n                             status        FS-Reply.\n*>\n data division.\n*>------------\n*>\n file section.\n*>-----------\n*>\n copy \"fdsys.cob\".\n fd   system-file-seq.\n copy \"wssystem.cob\"  replacing System-Record by System-Record-Seq\n                               File-System-Used by WS-File-System-Used\n                               File-Duplicates-In-Use by WS-File-Duplicates-In-Use\n                               FS-Cobol-Files-Used by WS-FS-Cobol-Files-Used\n                               FS-Duplicate-Processing by WS-FS-Duplicate-Processing\n                               RDBMS-DB-Name by WS-RDBMS-DB-Name\n                               RDBMS-User    by WS-RDBMS-User\n                               RDBMS-Passwd  by WS-RDBMS-Passwd\n                               RDBMS-Port    by WS-RDBMS-Port\n                               RDBMS-Host    by WS-RDBMS-Host\n                               RDBMS-Socket  by WS-RDBMS-Socket.\n*>\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(20)    value \"SystemRES (3.02.03)\".\n 77  z                   binary-char  value zero.\n 77  OS-Delimiter        pic x        value \"/\".\n 77  ACAS_BIN            pic x(512)   value spaces.\n 77  ACAS_LEDGERS        pic x(500)   value spaces.\n 77  Arg-Number          pic 9        value zero.\n*>\n*> holds program parameter values from command line\n 01  Arg-Vals                         value spaces.\n     03  Arg-Value       pic x(525)  occurs 2.\n 01  Arg-Test            pic x(525)   value spaces.\n*>\n 01  work-fields.\n     03  ws-Rec-Cnt-In   pic 9999       value zero.\n     03  ws-Rec-Cnt-Out  pic 9999       value zero.\n     03  ws-Rec-Cnt-R-Out pic 9999      value zero.\n     03  ws-reply        pic x.\n     03  WS-Temp-Text    pic x(40)    value spaces.\n     03  WS-Dflt-Flag    pic 9        value 1.       *> record read\n     03  WS-Final-Flag   pic 9        value 1.       *> ditto\n     03  WS-Sys4-Flag    pic 9        value 1.       *> ditto\n     03  WS-Rec-Length-1 pic 9(5)     value zero.\n*>\n 01  SO-Print            pic x(160)    value spaces.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n copy \"wssystem.cob\"  replacing System-Record by WS-System-Record.\n copy \"wsdflt.cob\".   *> rec 2 - defaults\n copy \"wsfinal.cob\".  *> rec 3 - Final accounts\n copy \"wssys4.cob\".   *> rec 4 - totals for sales and purchase\n copy \"wsfnctn.cob\".\n copy \"wsnames.cob\".\n copy \"wscall.cob\".\n*>\n 01  Error-Messages.\n     03  SY001A         pic x(28) value \"SY001A System 1 read err = \".\n     03  SY001B         pic x(28) value \"SY001B System 2 read err = \".\n     03  SY001C         pic x(28) value \"SY001C System 3 read err = \".\n     03  SY001D         pic x(28) value \"SY001D System 4 read err = \".\n     03  SY004          pic x(38) value \"SY004 Problem with opening system file\".\n     03  SY007          pic x(35) value \"SY007 Program arguments incorrect: \".\n     03  SY008          pic x(31) value \"SY008 Note message & Hit return\".\n     03  SY009          pic x(53) value \"SY009 Environment variables not yet set up : ABORTING\".\n     03  SY019          pic x(37) value \"SY019 DB is NOT set up in Param file.\".\n     03  SY020          pic x(34) value \"SY020 DB IS set up in Param file :\".\n*>\n procedure division.\n*>=================\n*>\n aa000-Main-Start.\n     perform  zz020-Get-Program-Args.\n     move     0      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=Stock used in FH logging, 6=SL & PL\n     move     10     to WS-Log-File-no.  *> for FHlogger\n*>\n*>  Get the system param for the various RDB fields\n*>\n     move     zeros  to ws-Rec-Cnt-Out ws-Rec-Cnt-In.\n     open     input System-File-Seq.\n     if       fs-reply not = zero\n              display  Prog-Name at 0101\n              display SY004     at 0401\n              accept  fs-reply  at 0440\n              close System-File\n              move 128 to return-code\n              goback\n     end-if\n     initialise                    *> initialise all secondary records in WS\n              WS-System-Record\n              Default-Record\n              Final-Record\n              System-Record-4 with filler.\n*>\n     read     system-file-Seq next record into WS-System-Record at end\n              move 256 to return-code\n              goback.\n     if       fs-reply not = zero\n              display  Prog-Name at 0101\n              display SY001A          at 0401\n              display fs-reply        at 0428\n              display \"Not set up ?\"  at 0431\n     else\n              add     1 to ws-Rec-Cnt-In\n     end-if\n     display System-record-Seq at 0101 with erase eos.\n     display \"System Rec\" at 2201.\n     display sy008 at 2301 with erase eol.\n     accept fs-reply at 2334.\n*>\n     read     System-File-Seq next record into Default-Record.\n     if       fs-reply not = zero\n              display  Prog-Name at 0101\n              display SY001B          at 0501\n              display fs-reply        at 0528\n              display \"Not set up ?\"  at 0531\n     else\n              add     1 to ws-Rec-Cnt-In\n     end-if\n     display System-record-Seq at 0101 with erase eos.\n     display \"Default Rec\" at 2201.\n     display sy008 at 2301 with erase eol.\n     accept fs-reply at 2334.\n*>\n     read     System-File-seq next record into Final-Record.\n     if       fs-reply not = zero\n              display  Prog-Name at 0101\n              display SY001C          at 0601\n              display fs-reply        at 0628\n              display \"Not set up ?\"  at 0631\n     else\n              add     1 to ws-Rec-Cnt-In\n     end-if\n     display System-record-Seq at 0101 with erase eos.\n     display \"Final Rec\" at 2201.\n     display sy008 at 2301 with erase eol.\n     accept fs-reply at 2334.\n*>\n     read     System-File-seq next record into System-Record-4.\n     if       fs-reply not = zero\n              display  Prog-Name at 0101\n              display SY001D         at 0701\n              display fs-reply       at 0728\n              display \"Not set up ?\" at 0731\n     else\n              add     1 to ws-Rec-Cnt-In\n     end-if\n     display System-record-Seq at 0101 with erase eos.\n     display \"System 4 Rec\" at 2201.\n     display sy008 at 2301 with erase eol.\n     accept fs-reply at 2334.\n*>\n     open     output System-File.\n*>\n     move     1 to rrn.\n     write    System-Record from System-Record.   *> rec 1\n     add      1 to WS-Rec-Cnt-Out.\n*>\n     move     2 to rrn.\n     write    System-Record from Default-Record.  *> rec 2\n     add      1 to WS-Rec-Cnt-Out.\n*>\n     move     3 to rrn.\n     write    System-Record from Final-Record.    *> rec 3\n     add      1 to WS-Rec-Cnt-Out.\n*>\n     move     4 to rrn.\n     write    System-Record from System-Record-4. *> rec 4\n     add      1 to WS-Rec-Cnt-Out.\n*>\n     close    System-File-Seq\n              System-File.\n     move     spaces to SO-Print.\n     string\n              \"Records in = \"\n              ws-Rec-Cnt-In\n              \" Records Total out = \"\n              WS-Rec-Cnt-Out\n                     into SO-Print.\n     perform  Call-Sysout.\n     move     \"CLOSE \" to SO-Print.\n     perform  Call-Sysout.\n     move     zero to Return-Code.\n     goback.\n*>\n copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n*>\n Call-Sysout.\n     call     \"ACAS-Sysout\" using SO-Print.\n*>",
+        "line": 27
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 19,
+      "totalOperators": 11,
+      "totalOperands": 22,
+      "vocabulary": 20,
+      "length": 33,
+      "volume": 142.62362713128297
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

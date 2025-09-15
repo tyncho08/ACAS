@@ -1,0 +1,1388 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/nominalMT.cbl",
+  "fileName": "nominalMT.cbl",
+  "timestamp": "2025-09-15T16:25:35.140Z",
+  "programId": "nominalMT",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 218
+      },
+      {
+        "name": "Working-Storage",
+        "line": 220
+      },
+      {
+        "name": "Linkage",
+        "line": 307
+      },
+      {
+        "name": "screen",
+        "line": 318
+      },
+      {
+        "name": "ba-ACAS-DAL-Process",
+        "line": 340
+      },
+      {
+        "name": "bb000-HV-Load",
+        "line": 952
+      },
+      {
+        "name": "exit",
+        "line": 977
+      },
+      {
+        "name": "bb100-UnloadHVs",
+        "line": 979
+      },
+      {
+        "name": "exit",
+        "line": 1002
+      },
+      {
+        "name": "bb200-Insert",
+        "line": 1004
+      },
+      {
+        "name": "exit",
+        "line": 1181
+      },
+      {
+        "name": "bb300-Update",
+        "line": 1183
+      },
+      {
+        "name": "exit",
+        "line": 1364
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "ba010-Initialise",
+        "line": 351
+      },
+      {
+        "name": "SQL-State",
+        "line": 362
+      },
+      {
+        "name": "end-evaluate",
+        "line": 388
+      },
+      {
+        "name": "ba020-Process-Open",
+        "line": 390
+      },
+      {
+        "name": "end-string",
+        "line": 398
+      },
+      {
+        "name": "end-string",
+        "line": 402
+      },
+      {
+        "name": "end-string",
+        "line": 406
+      },
+      {
+        "name": "end-string",
+        "line": 410
+      },
+      {
+        "name": "end-string",
+        "line": 414
+      },
+      {
+        "name": "end-string",
+        "line": 418
+      },
+      {
+        "name": "ba030-Process-Close",
+        "line": 434
+      },
+      {
+        "name": "ba040-Process-Read-Next",
+        "line": 449
+      },
+      {
+        "name": "ba041-Reread",
+        "line": 524
+      },
+      {
+        "name": "end-if",
+        "line": 578
+      },
+      {
+        "name": "end-if",
+        "line": 584
+      },
+      {
+        "name": "ba050-Process-Read-Indexed",
+        "line": 591
+      },
+      {
+        "name": "end-if",
+        "line": 614
+      },
+      {
+        "name": "end-if",
+        "line": 636
+      },
+      {
+        "name": "ba060-Process-Start",
+        "line": 688
+      },
+      {
+        "name": "ba070-Process-Write",
+        "line": 792
+      },
+      {
+        "name": "end-if",
+        "line": 871
+      },
+      {
+        "name": "ba090-Process-Rewrite",
+        "line": 875
+      },
+      {
+        "name": "ba100-Bad-Function",
+        "line": 918
+      },
+      {
+        "name": "ba998-Free",
+        "line": 930
+      },
+      {
+        "name": "ba999-end",
+        "line": 942
+      },
+      {
+        "name": "end-if",
+        "line": 947
+      },
+      {
+        "name": "ba999-exit",
+        "line": 949
+      },
+      {
+        "name": "bb000-Exit",
+        "line": 976
+      },
+      {
+        "name": "bb100-Exit",
+        "line": 1001
+      },
+      {
+        "name": "bb200-Exit",
+        "line": 1180
+      },
+      {
+        "name": "bb300-Exit",
+        "line": 1363
+      },
+      {
+        "name": "Ca-Process-Logs",
+        "line": 1366
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 1370
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 501,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "\"No",
+          "Data\"",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba999-End",
+          "*>",
+          "can",
+          "clear",
+          "the",
+          "dup",
+          "code",
+          "after",
+          "testing",
+          "end-if",
+          "set",
+          "Cursor-Active",
+          "to",
+          "true",
+          "move",
+          "WS-MYSQL-Count-Rows",
+          "to",
+          "WS-Temp-Ed",
+          "string",
+          "\">",
+          "0",
+          "got",
+          "cnt=\"",
+          "delimited",
+          "by",
+          "size",
+          "WS-Temp-ED",
+          "delimited",
+          "by",
+          "size",
+          "\"",
+          "recs\"",
+          "into",
+          "WS-File-Key",
+          "end-string",
+          "perform",
+          "ba999-End",
+          "*>",
+          "log",
+          "it",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 539,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-LEDGER-KEY",
+          "HV-LEDGER-TYPE",
+          "HV-LEDGER-PLACE",
+          "HV-LEDGER-LEVEL",
+          "HV-LEDGER-NAME",
+          "HV-LEDGER-BALANCE",
+          "HV-LEDGER-LAST",
+          "HV-LEDGER-Q1",
+          "HV-LEDGER-Q2",
+          "HV-LEDGER-Q3",
+          "HV-LEDGER-Q4",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "return-code",
+          "=",
+          "-1",
+          "*>",
+          "no",
+          "more",
+          "data",
+          "so",
+          "free",
+          "cursor",
+          "&",
+          "return",
+          "move",
+          "10",
+          "to",
+          "fs-Reply",
+          "WE-Error",
+          "move",
+          "\"EOF\"",
+          "to",
+          "WS-File-Key",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "=",
+          "zero",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "*>",
+          "EOF",
+          "equivilent",
+          "!!",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "initialize",
+          "WS-Ledger-Record",
+          "with",
+          "filler",
+          "move",
+          "\"EOF2\"",
+          "to",
+          "WS-File-Key",
+          "end-if",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 644,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-LEDGER-KEY",
+          "HV-LEDGER-TYPE",
+          "HV-LEDGER-PLACE",
+          "HV-LEDGER-LEVEL",
+          "HV-LEDGER-NAME",
+          "HV-LEDGER-BALANCE",
+          "HV-LEDGER-LAST",
+          "HV-LEDGER-Q1",
+          "HV-LEDGER-Q2",
+          "HV-LEDGER-Q3",
+          "HV-LEDGER-Q4",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "not",
+          ">",
+          "zero",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "move",
+          "21",
+          "to",
+          "fs-reply",
+          "*>",
+          "from",
+          "23",
+          "move",
+          "990",
+          "to",
+          "WE-Error",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "spaces",
+          "to",
+          "WS-File-Key",
+          "move",
+          "\"Not",
+          "found",
+          "1\"",
+          "to",
+          "Ledger-Name",
+          "go",
+          "to",
+          "ba998-Free",
+          "else",
+          "move",
+          "21",
+          "to",
+          "fs-reply",
+          "*>",
+          "from",
+          "23",
+          "move",
+          "989",
+          "to",
+          "WE-Error",
+          "move",
+          "zero",
+          "to",
+          "SQL-Err",
+          "move",
+          "\"Not",
+          "found",
+          "2\"",
+          "to",
+          "Ledger-Name",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "move",
+          "spaces",
+          "to",
+          "WS-File-Key",
+          "*>",
+          "next",
+          "2",
+          "is",
+          "not",
+          "really",
+          "needed",
+          "go",
+          "to",
+          "ba998-Free",
+          "end-if",
+          "end-if",
+          "*>",
+          "row",
+          "count",
+          "zero",
+          "should",
+          "show",
+          "up",
+          "as",
+          "a",
+          "MYSQL",
+          "error",
+          "?",
+          "perform",
+          "bb100-UnloadHVs",
+          "*>",
+          "transfer/move",
+          "HV",
+          "vars",
+          "to",
+          "ws-Record",
+          "layout",
+          "move",
+          "HV-LEDGER-KEY",
+          "to",
+          "WS-File-Key"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 769,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "21",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "move",
+          "zero",
+          "to",
+          "WE-Error",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "else",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error",
+          "*>",
+          "next",
+          "2",
+          "for",
+          "testing",
+          "move",
+          "WS-MYSQL-Count-Rows",
+          "to",
+          "WS-Temp-Ed",
+          "string",
+          "MOST-relation",
+          "WS-Ledger-Record",
+          "(K:L)",
+          "\"",
+          "got",
+          "=\"",
+          "delimited",
+          "by",
+          "size",
+          "WS-Temp-ED",
+          "delimited",
+          "by",
+          "size",
+          "\"",
+          "recs\"",
+          "into",
+          "WS-File-Key",
+          "end-string",
+          "end-if",
+          "go",
+          "to",
+          "ba999-end"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 801,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "if",
+          "SQL-Err",
+          "(1:4)",
+          "=",
+          "\"1062\"",
+          "or",
+          "=",
+          "\"1022\"",
+          "or",
+          "Sql-State",
+          "=",
+          "\"23000\"",
+          "*>",
+          "Dup",
+          "key",
+          "(rec",
+          "already",
+          "present)",
+          "move",
+          "22",
+          "to",
+          "fs-reply",
+          "else",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "end-if",
+          "end-if",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 857,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "move",
+          "995",
+          "to",
+          "WE-Error",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End",
+          "*>",
+          "produce",
+          "log",
+          "else",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "SQL-State",
+          "move",
+          "zero",
+          "to",
+          "SQL-Err",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 901,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "move",
+          "994",
+          "to",
+          "WE-Error",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error"
+        ]
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 938,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "end-call",
+          "*>",
+          "/MYSQL-END\\",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true"
+        ]
+      },
+      {
+        "target": "fhlogger",
+        "line": 1369,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "*>",
+        "line": 159,
+        "replacing": null
+      },
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 174,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 209,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 216,
+        "replacing": null
+      },
+      {
+        "name": "mysql-variables",
+        "line": 288,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 310,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 312,
+        "replacing": null
+      },
+      {
+        "name": "wsledger",
+        "line": 316,
+        "replacing": null
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 927,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 393
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 420
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 436
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "thru": "MYSQL-1999-EXIT",
+        "line": 444
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 489
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 490
+      },
+      {
+        "target": "ba999-End",
+        "thru": null,
+        "line": 521
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 585
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 627
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 628
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 683
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 701
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 759
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 760
+      },
+      {
+        "target": "bb000-HV-Load",
+        "thru": null,
+        "line": 793
+      },
+      {
+        "target": "bb200-Insert",
+        "thru": null,
+        "line": 799
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 854
+      },
+      {
+        "target": "bb000-HV-Load",
+        "thru": null,
+        "line": 876
+      },
+      {
+        "target": "bb300-Update",
+        "thru": null,
+        "line": 894
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 946
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1176
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1359
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "24",
+        "to": "ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\"",
+        "line": 343
+      },
+      {
+        "from": "zero",
+        "to": "We-Error\n *>                       Fs-Reply",
+        "line": 353
+      },
+      {
+        "from": "spaces",
+        "to": "WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err\n                        SQL-State",
+        "line": 356
+      },
+      {
+        "from": "1",
+        "to": "ws-No-Paragraph",
+        "line": 419
+      },
+      {
+        "from": "zero",
+        "to": "Most-Cursor-Set\n     go      to ba999-end",
+        "line": 431
+      },
+      {
+        "from": "2",
+        "to": "ws-No-Paragraph",
+        "line": 438
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" > \"                 delimited by size   *> 26/12/16 NOT '='\n                       '\"00000000\"'          delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       keyname (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC '             delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=GLLEDGER-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`GLLEDGER-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)      *> KEY-1 > \"00000000\" ORDER BY GLLEDGER-REC ASC\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-GLLEDGER-REC\n*>               /MYSQL-END\\\n           move    \"> 00000000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0  \"\n                             move WS-MYSQL-Error-Number  to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba999-End       *> can clear the dup code after testing\n              end-if\n              set Cursor-Active to true\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed\n              string   \"> 0 got cnt=\" delimited by size\n                       WS-Temp-ED delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n              perform ba999-End                         *> log it\n     end-if",
+        "line": 460
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Log-Where",
+        "line": 528
+      },
+      {
+        "from": "4",
+        "to": "ws-No-Paragraph",
+        "line": 529
+      },
+      {
+        "from": "zero",
+        "to": "return-code",
+        "line": 531
+      },
+      {
+        "from": "TP-GLLEDGER-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-LEDGER-KEY\n                    HV-LEDGER-TYPE\n                    HV-LEDGER-PLACE\n                    HV-LEDGER-LEVEL\n                    HV-LEDGER-NAME\n                    HV-LEDGER-BALANCE\n                    HV-LEDGER-LAST\n                    HV-LEDGER-Q1\n                    HV-LEDGER-Q2\n                    HV-LEDGER-Q3\n                    HV-LEDGER-Q4\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1                  *> no more data so free cursor & return\n              move 10 to fs-Reply\n                         WE-Error\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move 10 to fs-reply                     *> EOF equivilent !!\n                    move 10 to WE-Error\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    initialize WS-Ledger-Record with filler\n                    move    \"EOF2\" to WS-File-Key\n              end-if\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if",
+        "line": 538
+      },
+      {
+        "from": "\"EOF3\"",
+        "to": "WS-File-Key\n              go to ba999-End\n     end-if",
+        "line": 582
+      },
+      {
+        "from": "HV-LEDGER-KEY",
+        "to": "WS-File-Key",
+        "line": 587
+      },
+      {
+        "from": "zero",
+        "to": "fs-reply WE-Error",
+        "line": 588
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Ledger-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where",
+        "line": 600
+      },
+      {
+        "from": "5",
+        "to": "ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=GLLEDGER-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`GLLEDGER-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-GLLEDGER-REC\n*>      /MYSQL-END\\\n*>\n     if     WS-MYSQL-Count-Rows = zero\n            move 21  to fs-Reply             *> could also be 23 or 14\n            move zero to WE-Error\n            go to ba998-Free\n     end-if",
+        "line": 615
+      },
+      {
+        "from": "6",
+        "to": "ws-No-Paragraph\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=GLLEDGER-REC\n           MOVE TP-GLLEDGER-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-LEDGER-KEY\n                    HV-LEDGER-TYPE\n                    HV-LEDGER-PLACE\n                    HV-LEDGER-LEVEL\n                    HV-LEDGER-NAME\n                    HV-LEDGER-BALANCE\n                    HV-LEDGER-LAST\n                    HV-LEDGER-Q1\n                    HV-LEDGER-Q2\n                    HV-LEDGER-Q3\n                    HV-LEDGER-Q4\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       WS-MYSQL-Count-Rows not > zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    move 21 to fs-reply    *> from 23\n                    move 990 to WE-Error\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move spaces to WS-File-Key\n                    move \"Not found 1\" to Ledger-Name\n                    go to ba998-Free\n              else\n                    move 21   to fs-reply    *> from 23\n                    move 989  to WE-Error\n                    move zero to SQL-Err\n                   move \"Not found 2\" to Ledger-Name\n                    move spaces to SQL-Msg\n                    move spaces to WS-File-Key     *> next 2 is not really needed\n                    go to ba998-Free\n              end-if\n     end-if                        *> row count zero should show up as a MYSQL error ?\n     perform  bb100-UnloadHVs      *> transfer/move HV vars to ws-Record layout\n     move     HV-LEDGER-KEY to WS-File-Key",
+        "line": 637
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error",
+        "line": 685
+      },
+      {
+        "from": "99",
+        "to": "FS-Reply\n              move 997 to WE-Error                     *> Invalid calling parameter settings     997\n              go to ba999-end\n     end-if\n*>\n*>  First clear any active cursors\n*>\n     if       Cursor-Active\n              perform ba998-Free",
+        "line": 693
+      },
+      {
+        "from": "spaces",
+        "to": "MOST-Relation",
+        "line": 710
+      },
+      {
+        "from": "1",
+        "to": "J",
+        "line": 711
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where",
+        "line": 725
+      },
+      {
+        "from": "WS-Ledger-Key",
+        "to": "WS-File-Key",
+        "line": 742
+      },
+      {
+        "from": "8",
+        "to": "ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=GLLEDGER-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`GLLEDGER-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-GLLEDGER-REC\n*>      /MYSQL-END\\\n*>\n     if       WS-MYSQL-Count-Rows not zero\n              set Cursor-Active to true\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 21 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move zero to WE-Error\n                    go to ba999-End\n              end-if\n     else\n              move  zero to FS-Reply WE-Error            *> next 2 for testing\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed\n              string   MOST-relation\n                       WS-Ledger-Record (K:L)\n                       \" got =\" delimited by size\n                       WS-Temp-ED delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n     end-if\n     go       to ba999-end",
+        "line": 747
+      },
+      {
+        "from": "WS-Ledger-Key",
+        "to": "WS-File-Key",
+        "line": 794
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error\n     move     spaces to SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph",
+        "line": 795
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    if    SQL-Err (1:4) = \"1062\"\n                                     or = \"1022\"\n                          or Sql-State = \"23000\"  *> Dup key (rec already present)\n                          move 22 to fs-reply\n                    else\n                          move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    end-if\n              end-if\n     end-if\n     go       to ba999-End",
+        "line": 803
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Ledger-Record (K:L)       delimited by size\n *>             WS-Ledger-Key\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Ledger-Record (K:L)  to WS-File-Key",
+        "line": 825
+      },
+      {
+        "from": "13",
+        "to": "ws-No-Paragraph",
+        "line": 842
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply\n                    move 995 to WE-Error\n              end-if\n              go to ba999-End                       *> produce log\n     else\n              move spaces to SQL-Msg SQL-State\n              move zero   to SQL-Err\n     end-if",
+        "line": 859
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error",
+        "line": 872
+      },
+      {
+        "from": "17",
+        "to": "ws-No-Paragraph",
+        "line": 877
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Ledger-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where",
+        "line": 882
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move 994 to WE-Error\n              end-if\n              go to ba999-End\n     end-if\n     move     zero   to FS-Reply WE-Error",
+        "line": 903
+      },
+      {
+        "from": "zero",
+        "to": "SQL-Err",
+        "line": 914
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Msg SQL-State",
+        "line": 915
+      },
+      {
+        "from": "990",
+        "to": "WE-Error",
+        "line": 922
+      },
+      {
+        "from": "99",
+        "to": "Fs-Reply",
+        "line": 923
+      },
+      {
+        "from": "20",
+        "to": "ws-No-Paragraph",
+        "line": 931
+      },
+      {
+        "from": "TP-GLLEDGER-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     set Cursor-Not-Active to true",
+        "line": 937
+      },
+      {
+        "from": "WS-Ledger-Key9",
+        "to": "HV-LEDGER-KEY",
+        "line": 961
+      },
+      {
+        "from": "Ledger-Type",
+        "to": "HV-LEDGER-TYPE\n     move     Ledger-Place    to HV-LEDGER-PLACE\n     move     Ledger-Name     to HV-LEDGER-NAME\n     move     Ledger-Level    to HV-LEDGER-LEVEL\n     move     Ledger-Balance  to HV-LEDGER-BALANCE\n     move     Ledger-Last     to HV-LEDGER-LAST\n     move     Ledger-Q1       to HV-LEDGER-Q1\n     move     Ledger-Q2       to HV-LEDGER-Q2\n     move     Ledger-Q3       to HV-LEDGER-Q3\n     move     Ledger-Q4       to HV-LEDGER-Q4",
+        "line": 962
+      },
+      {
+        "from": "HV-LEDGER-KEY",
+        "to": "WS-Ledger-Key9\n     move     HV-LEDGER-TYPE        to Ledger-Type\n     move     HV-LEDGER-PLACE       to Ledger-Place\n     move     HV-LEDGER-NAME        to Ledger-Name\n     move     HV-LEDGER-LEVEL       to Ledger-Level\n     move     HV-LEDGER-BALANCE     to Ledger-Balance\n     move     HV-LEDGER-LAST        to Ledger-Last\n     move     HV-LEDGER-Q1          to Ledger-Q1\n     move     HV-LEDGER-Q2          to Ledger-Q2\n     move     HV-LEDGER-Q3          to Ledger-Q3\n     move     HV-LEDGER-Q4          to Ledger-Q4",
+        "line": 989
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`GLLEDGER-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-TYPE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-TYPE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-PLACE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-LEDGER-PLACE,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-LEVEL`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-LEVEL\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-NAME`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-LEDGER-NAME,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-BALANCE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-BALANCE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1013
+      },
+      {
+        "from": "HV-LEDGER-LAST",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1092
+      },
+      {
+        "from": "HV-LEDGER-Q1",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1109
+      },
+      {
+        "from": "HV-LEDGER-Q2",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1126
+      },
+      {
+        "from": "HV-LEDGER-Q3",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1143
+      },
+      {
+        "from": "HV-LEDGER-Q4",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1160
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`GLLEDGER-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-TYPE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-TYPE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-PLACE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-LEDGER-PLACE,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-LEVEL`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-LEVEL\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-NAME`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-LEDGER-NAME,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-BALANCE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-BALANCE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1192
+      },
+      {
+        "from": "HV-LEDGER-LAST",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1271
+      },
+      {
+        "from": "HV-LEDGER-Q1",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1288
+      },
+      {
+        "from": "HV-LEDGER-Q2",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1305
+      },
+      {
+        "from": "HV-LEDGER-Q3",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1322
+      },
+      {
+        "from": "HV-LEDGER-Q4",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1339
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "RDBMS (Relational DataBase Management Systems) is in use it will be\n*>                      called by the specific module to handle similar processing as a Cobol\n*>                      flat file and will pass the equivelent\n*>                      RDB (Relational DataBase) row as a Cobol file record (01 level) moving\n*>                      row by row to the correct Cobol flat file fields as required.\n*>\n*>                      RDB DAL (Data Access Layer) modules are individually modified to handle:\n*>                      MS SQL server, Mysql, DB2, Postgres and Oracle as available and tested.\n*>                      These are contained in seperate directories for each RDB, eg\n*>                       'MSSQL' (MS SQL Server), 'Mysql', 'DB2', 'Postgres'. 'Oracle'.\n*>                       You need to compile from the correct directory for the specific\n*>                       RDB you will use and have installed along with all of the development\n*>                       libraries and include files etc using the correct pre-compiler tool\n*>                       to process the 'EXEC SQL' code converting to Cobol calls etc.\n*>                       see the RDB specific ACAS notes.\n*>\n*>                      For specific SQL servers supported, the pre-compiler system is included\n*>                       where ever possible but for some, copyright reasons may prevent\n*>                       inclusion. In some cases for one specific RDB more than one precompiler\n*>                       is used as an experiment to help find the ideal one to use.\n*>\n*>                      In addition:\n*>                        If the system has been set up to (see the System File set up via the\n*>                        main menu module for each sub system), it will also process BOTH flat\n*>                        file  AND the correct rdb tables,\n*>\n*>                        it will write/delete/update etc to both but read from 1=Flat and be\n*>                        overwritten by the rdb access if data is present.\n*>                       This will help in transferring the Cobol flat files to rdb tables.\n*>\n*>                      If you wish to convert a running ACAS system over from Flat files\n*>                      to RDBMS see below. However it is recommended to use the Duplicate\n*>                      processing of files/table as outlined above where no or very low\n*>                      data records exist:\n*>\n*>                      Depending on the RDB you wish to use there is\n*>                      also, included LMs (Load Modules) to convert each ISAM\n*>                      (Indexed Sequential) file to the rdb database tables if you wish to\n*>                      convert the system in one hit, without using the Duplicate file/RDB\n*>                      processing procedures. These will also need to be compiled from the\n*>                      specific LM directory that contains the rdb DAL modules.\n*>                      These will be very RDB specific.\n*>\n*>                      For a existing running ACAS system using the Load modules AND\n*>                      not using the dup processing process as indicated above is the\n*>                      recommended way to go.\n*>**\n*>  File Handling:\n*>     Uses the Global Error / Access logging file within the acas0nn module.\n*>**\n*> Called by Modules:\n*>                      acas005 - nominal Cobol Handler. (old irsub1) replacement.\n*>\n*>**\n*> Error Messages Used.\n*>                      SM004 SQL Err no in 'mysql-procedures'\n*>                      SM901 Note error and hit return.\n*>**\n*> Version.             1.00 17/06/2016.\n*>\n*>**\n*> Changes.\n*> 04/08/16 vbc - .01 Removed file action logging to sep. module ditto acas011.\n*> 18/07/16 vbc - .02 Insert call for SQL error msg where missing and move\n*>                    spaces / zero to SQL-Msg| Err and other little fixes/cleanups.\n*>                    Remap all changes to the .scb source file.\n*> 20/07/16 vbc - .03 Close logger if testing-1 set on table close.\n*>                    branch to 999-end instead of 998-free when EOF on read next.\n*>                    Seems to auto release if end of cursor data reached\n*>                    and causes an abort ??\n*> 30/07/16 vbc - .04 Change Open and Close to also show table name in operation.\n*> 31/07/16 vbc - .05 Moved mv spaces/zero in Write to before insert.\n*>                    Remove fhlogger file close in Process-Close.\n*>                    Forgot error 989 so commented.\n*> 02/10/16 vbc - .06 Modified for IRS processing & based on irsub1.\n*>                    write, rewrite, start etc.\n*> 22/12/16 vbc - .07 Changed to support fn-delete-all so that all\n*>                    CoA can be cleared down (similarly to open output).\n*>                    Also added fn-write-raw for nominalLD.\n*> 29/12/16 vbc - .08 Fixed bugs in Start for 2->we-error and goto ba041\n*>                    instead of ba040.\n*>                    Fixed bug in Delete forgot to do sub as well if owner.\n*> 30/12/16 vbc - .09 WE-Error is the only field tested for errors in irs so\n*>                    clear it at start and use it replacing if poss. fs-reply.\n*>                    This is only for IRS routines/modules - so far!\n*>                .10 In ba050 when a sub present went to ba051 instead of ba050\n*>                    as should get the isam key from pointer.\n*>                    Now using Sql-State as well.\n*> 07/01/17 vbc -     Taken from irsnominalMT removing sub nom. processing.\n*> 01/03/18 vbc - .11 Renamed error messages to SM901, SM004 as needed.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>**\n*>  Module USAGE\n*>**************\n*>\n*>    On Entry:         Set up Linkage areas -\n*>    ********              WS-Ledger-Record\n*>                                          = Contents of data record to be written/read\n*>                          File-Access = File-Function as needed.\n*>                                        Access-Type   as needed.\n*>                          File-Defs (File-Definitions) = Paths set up.\n*>\n*>    On Exit:          Linkage contains:\n*>    *******               Record = containing a read data record or table row\n*>                          Fs-Reply = 0, 99 or other value where\n*>                                     0  = Operation completed successfully\n*>                                     10 = End of (Cobol) File returned to calling module only.\n*>                                     21 = Invalid key on START OR key not found\n*>                                     22 - Attempt to duplicate a key value.\n*>                                     23 = Key not found.     from read indexed\n*>                                     99 = Indicates an error see WE-Error, SQL-ERR/MSG for more info\n*>                          WE-Error   0    = Operation completed successfully\n*>\n*>                                     999  = Not used here - Yet.\n*>                                     998* = File-Key-No Out Of Range not 1, 2 or 3.\n*>                                     997* = Access-Type wrong (< 5 or > 8)\n*>                                     996* = File Delete key out of range (not = 1 or 2)\n*>                                     995* = During Delete SQLSTATE not '00000' investigate using MSG-Err/Msg\n*>                                     994* = During Rewrite,                     ^^ see above ^^\n*>                                     992* = Invalid Function requested in File-Function\n*>                                     990* = Unknown and unexpected error, again ^^ see above ^^\n*>                                     989* = Unexpected error on Read-Indexed, investigate as above.\n*>                                     911* = Rdb Error during initializing,\n*>                                            possibly can not connect to database\n*>                                             Check connect data and\n*>                                             see SQL-Err & SQL-MSG\n*>                                            Produced by Mysql-1100-Db-Error in copy\n*>                                            module mysql-procedure.\n*>                                     910* = Table locked > 5 seconds\n*>                                     901  = File Def Record size not =< than ws record size\n*>                                            Module needs ws definition changing to correct size\n*>                                            FATAL, Stop using system, fix source code\n*>                                            and recompile before using system again.\n*>                                     255  = Key not found - to match GL programming.\n*>\n*>                                     Other = any other rdbms errors see specific\n*>                                             (Rdbms) manual\n*>                          SQL-Err  = Error code from RDBMS is set if above 2 are non zero\n*>                          SQL-Msg  = Non space providing more info if SQL-Err non '00000'\n*>                                     * = FS-Reply = 99.\n*>\n copy \"ACAS-SQLstate-error-list.cob\".\n*>\n*>       During testing a log file will be created containing datetime stamp, task and return codes\n*>       for both FS-Reply and WE-Error and table used - in this case the IRS Nnominal File.\n*>       WARNING - This file could get large so needs manually deleting after examination.\n*>\n*>       NOTE that the value in SQL-Err is the standard ANSI RDBMS error code to help keep\n*>         DAL handler changes to a minimum when reusing code for other RDBs - hopefully\n*>\n*>********************************************************************************************\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>**********************************************************************************\n*>\n environment division.\n*> copy \"envdiv.cob\".\n*>\n input-output section.\n Data Division.\n Working-Storage Section.\n 77  prog-name           pic x(22)    value \"nominalMT (3.02.11)\".\n*>\n*> JC WS requirements here\n*>\n 77  ws-Where            pic x(512).\n*>\n*>  Used within presql generated code\n*>\n 01  WS-Reply            pic x           value space.\n 01  WS-MYSQL-I          PIC S9(4) COMP.\n 01  WS-MYSQL-EDIT       PIC -Z(18)9.9(9).\n *>\n *> TESING data\n *>\n 01  ws-temp-ed          pic 9(10).\n*>\n*> The communication area for the MySQL database changed for free/mysql\n*>\n*>  jc preSQL MySQL stuff ends\n*>\n*> Metadata on primary and alternate keys...  from Prima DAL for GLLEDGER-REC\n*>\n 01  Table-Of-Keynames.\n     03  filler          pic x(30) value \"LEDGER-KEY                    \".\n     03  filler          pic x(8)  value \"00010008\". *> offset/length\n     03  filler          pic xxx   value \"STR\".      *> key is string\n*>\n 01  filler redefines table-of-keynames.\n     03  keyOfReference occurs 1    indexed by KOR-x1.\n         05 KeyName      pic x(30).\n         05 KOR-Offset   pic 9(4).\n         05 KOR-Length   pic 9(4).\n         05 KOR-Type     pic XXX.                    *> Not used currently\n*>\n*> The START condition cannot be compounded, and it must use a\n*> Key of Reference within the record. (These are COBOL rules...)\n*> The interface defines which key and the relation condition.\n*>\n 01  DAL-Data.\n     05  MOST-Relation   pic xxx.                  *> valid are >=, <=, <, >, =\n     05  Most-Cursor-Set pic 9    value zero.\n         88  Cursor-Not-Active    value zero.\n         88  Cursor-Active        value 1.\n*>\n*>  Variables common to all DALs\n*>  ****************************\n*>\n 01  subscripts usage comp-5.\n     12 J                pic s9(4).\n     12 K                pic s9(4).\n     12 L                pic s9(4).\n*>\n 01  work-fields.\n     03  ws-env-lines    pic 999              value zero.\n     03  ws-lines        binary-char unsigned value zero.\n     03  ws-22-lines     binary-char unsigned value zero.\n     03  ws-23-lines     binary-char unsigned value zero.\n     03  ws-98-lines     binary-char unsigned value zero.\n     03  ws-99-lines     binary-char unsigned value zero.\n     03  ws-Rec-Cnt      binary-long unsigned value zero.\n*>\n 01  Error-Messages.\n     03  SM901          pic x(31) value \"SM901 Note error and hit return\".\n*>\n*> /MYSQL VAR\\\n*>       ACASDB\n*>       TABLE=GLLEDGER-REC,HV\n COPY \"mysql-variables.cpy\".\n*>\n*>    Definitions for the GLLEDGER-REC Table\n*>\n       01  TP-GLLEDGER-REC                       USAGE POINTER.\n       01  TD-GLLEDGER-REC.\n           05  HV-LEDGER-KEY                     PIC  9(10) COMP.\n           05  HV-LEDGER-TYPE                    PIC  9(03) COMP.\n           05  HV-LEDGER-PLACE                   PIC X(1).\n           05  HV-LEDGER-LEVEL                   PIC  9(03) COMP.\n           05  HV-LEDGER-NAME                    PIC X(32).\n           05  HV-LEDGER-BALANCE                 PIC S9(08)V9(02) COMP.\n           05  HV-LEDGER-LAST                    PIC S9(08)V9(02) COMP.\n           05  HV-LEDGER-Q1                      PIC S9(08)V9(02) COMP.\n           05  HV-LEDGER-Q2                      PIC S9(08)V9(02) COMP.\n           05  HV-LEDGER-Q3                      PIC S9(08)V9(02) COMP.\n           05  HV-LEDGER-Q4                      PIC S9(08)V9(02) COMP.\n*> /MYSQL-END\\\n*>\n Linkage Section.\n*>**************\n*>\n copy \"wsfnctn.cob\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n*>  Record definition for Cobol file here:\n*>\n copy \"wsledger.cob\".\n*>\n screen section.\n*>=============\n*>\n 01  Display-Message-1       foreground-color 2.\n     03          value \"WS-Where=\"                line 23 col  1.\n     03  from WS-Where (1:J)           pic x(69)          col 10.\n*>\n 01  Display-Message-2       foreground-color 2.\n     03      value \"SM004 SQL Err No.=\"            line 4 col  1.    *> size 18 char\n     03  using Ws-Mysql-Error-Number   pic x(4)           col 19.    *>      4       == 22\n     03      value \" Para=\"                               col 23.    *> size 6 char  == 28\n     03  using WS-No-Paragraph         pic 9(3)           col 29.    *>      4       == 32\n     03      value \" SQL Cmd=\"                            col 32.    *>      9       == 41\n     03  using Ws-Mysql-Command        pic x(199)         col 41.\n     03      value \"SQL Err Msg=\"                  line 7 col  1.    *>      12\n     03  using Ws-Mysql-Error-Message  pic x(67)          col 13.\n*>\n*>\n PROCEDURE DIVISION   using File-Access\n                            ACAS-DAL-Common-data\n                            WS-Ledger-Record.   *>  Ws record\n*>**********************************************\n ba-ACAS-DAL-Process  section.\n     accept   ws-env-lines from lines.\n     if       ws-env-lines < 24\n              move  24 to ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n ba010-Initialise.\n*>\n *>    move     zero   to We-Error\n *>                       Fs-Reply.\n*>\n     move     spaces to WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err\n                        SQL-State.\n*>\n*>  Work out what is being requested and convert to action!!\n*>\n*>    This version uses the JC pre-Sql processor.\n*>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n     evaluate File-Function\n        when  1\n              go to ba020-Process-Open\n        when  2\n              go to ba030-Process-Close\n        when  3\n              go to ba040-Process-Read-Next\n        when  4\n              go to ba050-Process-Read-Indexed\n        when  5\n              go to ba070-Process-Write\n        when  7\n              go to ba090-Process-Rewrite\n        when  8\n              go to ba080-Process-Delete\n        when  9\n              go to ba060-Process-Start\n        when  other                          *> 6 is spare / unused\n              go to ba100-Bad-Function\n     end-evaluate.\n*>\n ba020-Process-Open.\n *>\n *>  Manual process MYSQL INIT\n *>",
+        "line": 33
+      },
+      {
+        "type": "IF",
+        "condition": "fs-reply not = zero\n              go   to ba999-end.\n*>\n*> *> /MYSQL INIT\\\n*>       BASE=ACASDB\n*>       IMPLEMENTATION=dev-prog-001\n*>       PASSWORD=mysqlpass\n*> *> /MYSQL-END\\\n*>\n     move    \"OPEN GL LEDGER (RDB)\" to WS-File-Key\n     move    zero   to Most-Cursor-Set\n     go      to ba999-end.\n*>\n ba030-Process-Close.\n     if      Cursor-Active\n             perform ba998-Free.\n*>\n     move     2 to ws-No-Paragraph.\n     move    \"CLOSE GL LEDGER (RDB)\" to WS-File-Key.\n*>  /MYSQL CLOSE\\\n*>\n*>    Close the Database\n*>\n           PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n*>  /MYSQL-END\\\n*>\n     go      to ba999-end.\n*>\n ba040-Process-Read-Next.\n*>\n*>   Here a SELECT first",
+        "line": 421
+      },
+      {
+        "type": "IF",
+        "condition": "no cursor active using lowest\n*>    possible key of \"00000000\"\n*>           [ LEDGER-KEY ]\n*>\n     if       Cursor-Not-Active\n              set      KOR-x1 to 1                *> 1 = Primary\n              move     KOR-offset (KOR-x1) to K\n              move     KOR-length (KOR-x1) to L\n*>\n              move     spaces to WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" > \"                 delimited by size   *> 26/12/16 NOT '='\n                       '\"00000000\"'          delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       keyname (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC '             delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=GLLEDGER-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`GLLEDGER-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)      *> KEY-1 > \"00000000\" ORDER BY GLLEDGER-REC ASC\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-GLLEDGER-REC\n*>               /MYSQL-END\\\n           move    \"> 00000000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0  \"\n                             move WS-MYSQL-Error-Number  to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba999-End       *> can clear the dup code after testing\n              end-if\n              set Cursor-Active to true\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed\n              string   \"> 0 got cnt=\" delimited by size\n                       WS-Temp-ED delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n              perform ba999-End                         *> log it\n     end-if.                                            *> cursor now set\n*>\n ba041-Reread.\n*>\n*>  If here cursor is set (even from start), so get the next row\n*>\n     move     spaces to WS-Log-Where.\n     move     4 to ws-No-Paragraph.\n\n     move zero to return-code.\n\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=GLLEDGER-REC\n           MOVE TP-GLLEDGER-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-LEDGER-KEY\n                    HV-LEDGER-TYPE\n                    HV-LEDGER-PLACE\n                    HV-LEDGER-LEVEL\n                    HV-LEDGER-NAME\n                    HV-LEDGER-BALANCE\n                    HV-LEDGER-LAST\n                    HV-LEDGER-Q1\n                    HV-LEDGER-Q2\n                    HV-LEDGER-Q3\n                    HV-LEDGER-Q4\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1                  *> no more data so free cursor & return\n              move 10 to fs-Reply\n                         WE-Error\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move 10 to fs-reply                     *> EOF equivilent !!\n                    move 10 to WE-Error\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    initialize WS-Ledger-Record with filler\n                    move    \"EOF2\" to WS-File-Key\n              end-if\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if.\n*>\n     if       fs-reply = 10\n              set Cursor-Not-Active to true\n              move    \"EOF3\" to WS-File-Key\n              go to ba999-End\n     end-if.\n     perform  bb100-UnloadHVs.       *> transfer/move HV vars to Record layout\n*>\n     move     HV-LEDGER-KEY to WS-File-Key.\n     move     zero to fs-reply WE-Error.\n     go       to ba999-end.\n*>\n ba050-Process-Read-Indexed.\n*>\n*>  Now do on correct key within WHERE\n*>  Sets up key and compare data\n*>\n     set      KOR-x1 to 1                *> 1 = Primary\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Ledger-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where.    *>  For test logging\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if.\n     move     5 to ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=GLLEDGER-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`GLLEDGER-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-GLLEDGER-REC\n*>      /MYSQL-END\\\n*>\n     if     WS-MYSQL-Count-Rows = zero\n            move 21  to fs-Reply             *> could also be 23 or 14\n            move zero to WE-Error\n            go to ba998-Free\n     end-if.\n     move     6 to ws-No-Paragraph\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=GLLEDGER-REC\n           MOVE TP-GLLEDGER-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-LEDGER-KEY\n                    HV-LEDGER-TYPE\n                    HV-LEDGER-PLACE\n                    HV-LEDGER-LEVEL\n                    HV-LEDGER-NAME\n                    HV-LEDGER-BALANCE\n                    HV-LEDGER-LAST\n                    HV-LEDGER-Q1\n                    HV-LEDGER-Q2\n                    HV-LEDGER-Q3\n                    HV-LEDGER-Q4\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       WS-MYSQL-Count-Rows not > zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    move 21 to fs-reply    *> from 23\n                    move 990 to WE-Error\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move spaces to WS-File-Key\n                    move \"Not found 1\" to Ledger-Name\n                    go to ba998-Free\n              else\n                    move 21   to fs-reply    *> from 23\n                    move 989  to WE-Error\n                    move zero to SQL-Err\n                   move \"Not found 2\" to Ledger-Name\n                    move spaces to SQL-Msg\n                    move spaces to WS-File-Key     *> next 2 is not really needed\n                    go to ba998-Free\n              end-if\n     end-if                        *> row count zero should show up as a MYSQL error ?\n     perform  bb100-UnloadHVs      *> transfer/move HV vars to ws-Record layout\n     move     HV-LEDGER-KEY to WS-File-Key.\n     move     zero to FS-Reply WE-Error.\n     go       to ba998-Free.\n*>\n ba060-Process-Start.\n*>\n*>  Check for Param error 1st on start\n*>\n     if       access-type < 5 or > 8                   *> not using not < or not >\n              move 99 to FS-Reply\n              move 997 to WE-Error                     *> Invalid calling parameter settings     997\n              go to ba999-end\n     end-if\n*>\n*>  First clear any active cursors\n*>\n     if       Cursor-Active\n              perform ba998-Free.\n*>\n*>  Now do Start on correct key before read-next  within WHERE\n*>  Set up MOST-relation for condition test and key\n*>\n     set      KOR-x1 to 1                *> 1 = Primary\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to MOST-Relation.\n     move     1   to J.\n     evaluate Access-Type     *>  x shows used in irs.\n              when  5                           *>x fn-equal-to\n                    move \"=  \" to MOST-Relation\n              when  6                           *> fn-less-than\n                    move \"<  \" to MOST-Relation\n              when  7                           *>x fn-greater-than\n                    move \">  \" to MOST-Relation\n              when  8                           *>x fn-not-less-than\n                    move \">= \" to MOST-Relation\n              when  9                           *> fn-not-greater-than [ not currently used in ACAS ]\n                    move \"<= \" to MOST-Relation\n     end-evaluate\n*>\n     move     spaces  to WS-Where.\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              MOST-relation         delimited by space\n              '\"'                   delimited by size\n              WS-Ledger-Record (K:L) delimited by size\n              '\"'                   delimited by size\n              \" ORDER BY \"          delimited by size\n              \"`\"                   delimited by size\n              keyname (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n                ' ASC '             delimited by size\n                             into WS-Where\n                             with pointer J\n     end-string\n     move     WS-Where (1:J)  to WS-Log-Where.    *>  For test logging\n     move     WS-Ledger-Key to WS-File-Key.   *> WS-Ledger-Record (K:L) to WS-File-Key.\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n*>\n     move     8 to ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=GLLEDGER-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`GLLEDGER-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-GLLEDGER-REC\n*>      /MYSQL-END\\\n*>\n     if       WS-MYSQL-Count-Rows not zero\n              set Cursor-Active to true\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 21 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move zero to WE-Error\n                    go to ba999-End\n              end-if\n     else\n              move  zero to FS-Reply WE-Error            *> next 2 for testing\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed\n              string   MOST-relation\n                       WS-Ledger-Record (K:L)\n                       \" got =\" delimited by size\n                       WS-Temp-ED delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n     end-if\n     go       to ba999-end.\n ba070-Process-Write.\n     perform  bb000-HV-Load.                       *>  move WS-Ledger-Record fields to HV fields\n     move     WS-Ledger-Key to WS-File-Key.\n     move     zero to FS-Reply WE-Error\n     move     spaces to SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph.\n     perform  bb200-Insert.\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    if    SQL-Err (1:4) = \"1062\"\n                                     or = \"1022\"\n                          or Sql-State = \"23000\"  *> Dup key (rec already present)\n                          move 22 to fs-reply\n                    else\n                          move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    end-if\n              end-if\n     end-if\n     go       to ba999-End.\n*>\n ba080-Process-Delete.        *> IRS does not test for error cond. as in irsub1\n*>\n     set      KOR-x1 to 1                *> 1 = Primary\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Ledger-Record (K:L)       delimited by size\n *>             WS-Ledger-Key\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Ledger-Record (K:L)  to WS-File-Key.\n     move     WS-Where (1:J)   to WS-Log-Where.   *>  For test logging\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n     move     13 to ws-No-Paragraph.\n*>      /MYSQL DELETE\\\n*>\n*>    Delete a row\n*>\n*>             TABLE=GLLEDGER-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"DELETE FROM \"\n             \"`GLLEDGER-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n             X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>      /MYSQL-END\\\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply\n                    move 995 to WE-Error\n              end-if\n              go to ba999-End                       *> produce log\n     else\n              move spaces to SQL-Msg SQL-State\n              move zero   to SQL-Err\n     end-if.\n     move     zero to FS-Reply WE-Error.\n     go       to ba999-End.\n*>\n ba090-Process-Rewrite.\n     perform  bb000-HV-Load.       *> Load up the HV fields from table record in WS\n     move     17 to ws-No-Paragraph.\n     set      KOR-x1 to 1            *> 1 = Primary\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-Ledger-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where.    *>  For test logging\n     perform  bb300-Update.\n*>\n     if       Testing-2\n              display Display-Message-1 with erase eos\n     end-if\n*>\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move 994 to WE-Error\n              end-if\n              go to ba999-End\n     end-if\n     move     zero   to FS-Reply WE-Error.\n     move     zero   to SQL-Err.\n     move     spaces to SQL-Msg SQL-State.\n     go       to ba999-End.\n*>\n ba100-Bad-Function.\n*>\n*> Houston; We have a problem\n*>\n     move     990 to WE-Error.\n     move     99 to Fs-Reply.\n     go       to ba999-end.\n*>\n*> /MYSQL PRO\\\n COPY \"mysql-procedures.cpy\".\n*> /MYSQL-END\\\n*>\n ba998-Free.\n     move     20 to ws-No-Paragraph.\n*>      /MYSQL FREE\\\n*>\n*>    Free result array\n*>\n*>             TABLE=GLLEDGER-REC\n           MOVE TP-GLLEDGER-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     set Cursor-Not-Active to true.\n*>\n ba999-end.\n*>  Any Clean ups before quiting    move data record ?????  do so at the start as well ??????\n*>\n     if       Testing-1\n              perform Ca-Process-Logs\n     end-if.\n*>\n ba999-exit.\n     exit program.\n*>\n bb000-HV-Load      Section.\n*>*************************\n*>\n*>  Load the Host variables with data from the passed record\n*>\n*> This Method loads the Host Variables for the Base table with\n*> the data passed in the data-buffer.\n*>\n     initialize TD-GLLEDGER-REC.\n     move     WS-Ledger-Key9  to HV-LEDGER-KEY.\n     move     Ledger-Type     to HV-LEDGER-TYPE\n     move     Ledger-Place    to HV-LEDGER-PLACE\n     move     Ledger-Name     to HV-LEDGER-NAME\n     move     Ledger-Level    to HV-LEDGER-LEVEL\n     move     Ledger-Balance  to HV-LEDGER-BALANCE\n     move     Ledger-Last     to HV-LEDGER-LAST\n     move     Ledger-Q1       to HV-LEDGER-Q1\n     move     Ledger-Q2       to HV-LEDGER-Q2\n     move     Ledger-Q3       to HV-LEDGER-Q3\n     move     Ledger-Q4       to HV-LEDGER-Q4.\n*>\n*> Loading HVs implies a non-Fetch action. RGs are handled separately for\n*> all such actions so they must not be loaded here.\n*>\n bb000-Exit.\n     exit section.\n*>\n bb100-UnloadHVs    Section.\n*>*************************\n*>\n*>  Load the data buffer in the interface with data from the host variables.\n*> (init moved lower)\n*>\n*> NULL fields must not be returned in the buffer. SQL filters each column to\n*>  ensure it has a proper value.  This saves using indicator variables.\n*>\n     initialize WS-Ledger-Record.\n     move     HV-LEDGER-KEY         to WS-Ledger-Key9\n     move     HV-LEDGER-TYPE        to Ledger-Type\n     move     HV-LEDGER-PLACE       to Ledger-Place\n     move     HV-LEDGER-NAME        to Ledger-Name\n     move     HV-LEDGER-LEVEL       to Ledger-Level\n     move     HV-LEDGER-BALANCE     to Ledger-Balance\n     move     HV-LEDGER-LAST        to Ledger-Last\n     move     HV-LEDGER-Q1          to Ledger-Q1\n     move     HV-LEDGER-Q2          to Ledger-Q2\n     move     HV-LEDGER-Q3          to Ledger-Q3\n     move     HV-LEDGER-Q4          to Ledger-Q4.\n*>\n bb100-Exit.\n     exit section.\n*>\n bb200-Insert Section.\n*>*******************\n*>\n*>  /MYSQL INSERT\\\n*>\n*>    Insert a row\n*>\n*>         TABLE=GLLEDGER-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`GLLEDGER-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-TYPE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-TYPE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-PLACE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-LEDGER-PLACE,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-LEVEL`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-LEVEL\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-NAME`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-LEDGER-NAME,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-BALANCE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-BALANCE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-LAST`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-LAST\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-Q1`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-Q1\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-Q2`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-Q2\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-Q3`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-Q3\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-Q4`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-Q4\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n       PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb200-Exit.\n     exit section.\n*>\n bb300-Update Section.\n*>*******************\n*>\n*>  /MYSQL UPDATE\\\n*>\n*>    Update a row\n*>\n*>      TABLE=GLLEDGER-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`GLLEDGER-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-TYPE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-TYPE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-PLACE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-LEDGER-PLACE,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-LEVEL`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-LEVEL\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-NAME`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-LEDGER-NAME,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-BALANCE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-BALANCE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-LAST`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-LAST\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-Q1`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-Q1\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-Q2`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-Q2\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-Q3`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-Q3\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-Q4`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-Q4\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \" WHERE \"\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (WS-Where (1:J))\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb300-Exit.\n     exit section.\n*>\n Ca-Process-Logs.\n*>**************\n*>\n     call     \"fhlogger\" using File-Access\n                               ACAS-DAL-Common-data.\n*>\n ca-Exit.     exit.\n*>\nend program nominalMT.",
+        "line": 451
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "File-Function\n        when  1\n              go to ba020-Process-Open\n        when  2\n              g...",
+        "line": 369,
+        "whenCount": 9
+      },
+      {
+        "content": "Access-Type     *>  x shows used in irs.\n              when  5                           *>x fn-equa...",
+        "line": 712,
+        "whenCount": 5
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 27,
+    "cognitive": 31,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 62,
+      "totalOperators": 55,
+      "totalOperands": 110,
+      "vocabulary": 63,
+      "length": 165,
+      "volume": 986.2511873774863
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

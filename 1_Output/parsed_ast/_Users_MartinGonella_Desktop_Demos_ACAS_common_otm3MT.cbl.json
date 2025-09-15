@@ -1,0 +1,2181 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/otm3MT.cbl",
+  "fileName": "otm3MT.cbl",
+  "timestamp": "2025-09-15T16:25:39.315Z",
+  "programId": "otm3MT",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 212
+      },
+      {
+        "name": "Working-Storage",
+        "line": 214
+      },
+      {
+        "name": "Linkage",
+        "line": 331
+      },
+      {
+        "name": "screen",
+        "line": 347
+      },
+      {
+        "name": "ba-ACAS-DAL-Process",
+        "line": 369
+      },
+      {
+        "name": "bb000-HV-Load",
+        "line": 1330
+      },
+      {
+        "name": "exit",
+        "line": 1376
+      },
+      {
+        "name": "bb100-UnloadHVs",
+        "line": 1378
+      },
+      {
+        "name": "exit",
+        "line": 1415
+      },
+      {
+        "name": "bb200-Insert",
+        "line": 1417
+      },
+      {
+        "name": "exit",
+        "line": 1796
+      },
+      {
+        "name": "bb300-Update",
+        "line": 1798
+      },
+      {
+        "name": "exit",
+        "line": 2181
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "ba010-Initialise",
+        "line": 383
+      },
+      {
+        "name": "SQL-Err",
+        "line": 394
+      },
+      {
+        "name": "end-evaluate",
+        "line": 427
+      },
+      {
+        "name": "end-string",
+        "line": 437
+      },
+      {
+        "name": "end-string",
+        "line": 441
+      },
+      {
+        "name": "end-string",
+        "line": 445
+      },
+      {
+        "name": "end-string",
+        "line": 449
+      },
+      {
+        "name": "end-string",
+        "line": 453
+      },
+      {
+        "name": "end-string",
+        "line": 457
+      },
+      {
+        "name": "end-if",
+        "line": 560
+      },
+      {
+        "name": "ba041-Reread",
+        "line": 562
+      },
+      {
+        "name": "end-if",
+        "line": 632
+      },
+      {
+        "name": "end-if",
+        "line": 638
+      },
+      {
+        "name": "SQL-State",
+        "line": 866
+      },
+      {
+        "name": "end-if",
+        "line": 940
+      },
+      {
+        "name": "ba090-Process-Rewrite",
+        "line": 943
+      },
+      {
+        "name": "SQL-Err",
+        "line": 984
+      },
+      {
+        "name": "ba140-Process-Read-Next",
+        "line": 988
+      },
+      {
+        "name": "end-if",
+        "line": 1059
+      },
+      {
+        "name": "ba141-Reread",
+        "line": 1061
+      },
+      {
+        "name": "end-if",
+        "line": 1129
+      },
+      {
+        "name": "end-if",
+        "line": 1135
+      },
+      {
+        "name": "ba150-Process-Read-Next",
+        "line": 1142
+      },
+      {
+        "name": "end-if",
+        "line": 1213
+      },
+      {
+        "name": "ba151-Reread",
+        "line": 1215
+      },
+      {
+        "name": "end-if",
+        "line": 1283
+      },
+      {
+        "name": "end-if",
+        "line": 1289
+      },
+      {
+        "name": "ba100-Bad-Function",
+        "line": 1296
+      },
+      {
+        "name": "ba998-Free",
+        "line": 1308
+      },
+      {
+        "name": "ba999-end",
+        "line": 1320
+      },
+      {
+        "name": "end-if",
+        "line": 1325
+      },
+      {
+        "name": "ba999-exit",
+        "line": 1327
+      },
+      {
+        "name": "WS-Temp-Ed-Invoice",
+        "line": 1341
+      },
+      {
+        "name": "WS-Temp-Ed-Customer",
+        "line": 1343
+      },
+      {
+        "name": "WS-Temp-ED-Batch-Nos",
+        "line": 1347
+      },
+      {
+        "name": "WS-Temp-ED-Batch-Item",
+        "line": 1349
+      },
+      {
+        "name": "bb000-Exit",
+        "line": 1375
+      },
+      {
+        "name": "bb100-Exit",
+        "line": 1414
+      },
+      {
+        "name": "bb200-Exit",
+        "line": 1795
+      },
+      {
+        "name": "bb300-Exit",
+        "line": 2180
+      },
+      {
+        "name": "Ca-Process-Logs",
+        "line": 2183
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 2187
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 539,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "*>",
+          "set",
+          "non",
+          "'0'",
+          "if",
+          "no",
+          "rows",
+          "?",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "*>",
+          "do",
+          "not",
+          "really",
+          "need",
+          "to",
+          "do",
+          "this",
+          "meaning",
+          "the",
+          "above",
+          "CALL",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "*>",
+          "should",
+          "be",
+          "0",
+          "'JIC'",
+          "likewise",
+          "the",
+          "others",
+          "move",
+          "\"No",
+          "Data\"",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba999-End",
+          "*>",
+          "can",
+          "clear",
+          "the",
+          "dup",
+          "code",
+          "after",
+          "testing",
+          "end-if",
+          "*>",
+          "We",
+          "have",
+          "data",
+          "set",
+          "Cursor-Active",
+          "to",
+          "true",
+          "move",
+          "WS-MYSQL-Count-Rows",
+          "to",
+          "WS-Temp-ED-Row",
+          "string",
+          "\">",
+          "0",
+          "got",
+          "cnt=\"",
+          "delimited",
+          "by",
+          "size",
+          "WS-Temp-ED-Row",
+          "delimited",
+          "by",
+          "size",
+          "\"",
+          "recs",
+          "for",
+          "INVOICE-RECORD",
+          "Table\"",
+          "into",
+          "WS-File-Key",
+          "end-string",
+          "perform",
+          "ba999-End",
+          "*>",
+          "log",
+          "it",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 576,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-OI3-KEY",
+          "HV-OI3-CUSTOMER",
+          "HV-OI3-INVOICE",
+          "HV-OI3-DAT",
+          "HV-OI3-BATCH",
+          "HV-OI3-BATCH-NOS",
+          "HV-OI3-BATCH-ITEM",
+          "HV-OI3-TYPE",
+          "HV-OI3-DESCRIPTION",
+          "HV-OI3-HOLD-FLAG",
+          "HV-OI3-UNAPL",
+          "HV-OI3-P-C",
+          "HV-OI3-NET",
+          "HV-OI3-EXTRA",
+          "HV-OI3-CARRIAGE",
+          "HV-OI3-VAT",
+          "HV-OI3-DISCOUNT",
+          "HV-OI3-E-VAT",
+          "HV-OI3-C-VAT",
+          "HV-OI3-PAID",
+          "HV-OI3-STATUS",
+          "HV-OI3-DEDUCT-DAYS",
+          "HV-OI3-DEDUCT-AMT",
+          "HV-OI3-DEDUCT-VAT",
+          "HV-OI3-DAYS",
+          "HV-OI3-CR",
+          "HV-OI3-APPLIED",
+          "HV-OI3-DATE-CLEARED",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "return-code",
+          "=",
+          "-1",
+          "*>",
+          "no",
+          "more",
+          "data",
+          "so",
+          "free",
+          "cursor",
+          "&",
+          "return",
+          "move",
+          "10",
+          "to",
+          "fs-Reply",
+          "WE-Error",
+          "*>",
+          "should",
+          "be",
+          "0",
+          "likewise",
+          "the",
+          "others",
+          "move",
+          "\"EOF\"",
+          "to",
+          "WS-File-Key",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "=",
+          "zero",
+          "*>",
+          "no",
+          "data",
+          "but",
+          "should",
+          "not",
+          "happen",
+          "here",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "*>",
+          "Not",
+          "really",
+          "needed",
+          "but",
+          "help",
+          "for",
+          "testing",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "*>",
+          "ditto",
+          "initialize",
+          "WS-OTM3-Record",
+          "with",
+          "filler",
+          "move",
+          "\"EOF2\"",
+          "to",
+          "WS-File-Key",
+          "end-if",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "*>",
+          "EOF",
+          "equivilent",
+          "!!",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 698,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-OI3-KEY",
+          "HV-OI3-CUSTOMER",
+          "HV-OI3-INVOICE",
+          "HV-OI3-DAT",
+          "HV-OI3-BATCH",
+          "HV-OI3-BATCH-NOS",
+          "HV-OI3-BATCH-ITEM",
+          "HV-OI3-TYPE",
+          "HV-OI3-DESCRIPTION",
+          "HV-OI3-HOLD-FLAG",
+          "HV-OI3-UNAPL",
+          "HV-OI3-P-C",
+          "HV-OI3-NET",
+          "HV-OI3-EXTRA",
+          "HV-OI3-CARRIAGE",
+          "HV-OI3-VAT",
+          "HV-OI3-DISCOUNT",
+          "HV-OI3-E-VAT",
+          "HV-OI3-C-VAT",
+          "HV-OI3-PAID",
+          "HV-OI3-STATUS",
+          "HV-OI3-DEDUCT-DAYS",
+          "HV-OI3-DEDUCT-AMT",
+          "HV-OI3-DEDUCT-VAT",
+          "HV-OI3-DAYS",
+          "HV-OI3-CR",
+          "HV-OI3-APPLIED",
+          "HV-OI3-DATE-CLEARED",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "not",
+          ">",
+          "zero",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "move",
+          "990",
+          "to",
+          "WE-Error",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "else",
+          "move",
+          "989",
+          "to",
+          "WE-Error",
+          "move",
+          "zero",
+          "to",
+          "SQL-Err",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "move",
+          "23",
+          "to",
+          "fs-reply",
+          "move",
+          "spaces",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba998-Free",
+          "end-if",
+          "*>",
+          "row",
+          "count",
+          "zero",
+          "should",
+          "show",
+          "up",
+          "as",
+          "a",
+          "MYSQL",
+          "error",
+          "?",
+          "perform",
+          "bb100-UnloadHVs",
+          "*>",
+          "transfer/move",
+          "HV",
+          "vars",
+          "to",
+          "ws-Record",
+          "layout",
+          "move",
+          "HV-OI3-KEY",
+          "to",
+          "WS-File-Key"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 836,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "move",
+          "21",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "move",
+          "zero",
+          "to",
+          "WE-Error",
+          "else",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error",
+          "move",
+          "WS-MYSQL-Count-Rows",
+          "to",
+          "WS-Temp-ED-Row",
+          "string",
+          "MOST-relation",
+          "WS-OTM3-Record",
+          "(K:L)",
+          "\"",
+          "got",
+          "\"",
+          "delimited",
+          "by",
+          "size",
+          "WS-Temp-ED-Row",
+          "delimited",
+          "by",
+          "size",
+          "\"",
+          "recs\"",
+          "into",
+          "WS-File-Key",
+          "end-string",
+          "end-if",
+          "go",
+          "to",
+          "ba999-end"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 872,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "if",
+          "SQL-Err",
+          "(1:4)",
+          "=",
+          "\"1062\"",
+          "or",
+          "=",
+          "\"1022\"",
+          "*>",
+          "Dup",
+          "key",
+          "or",
+          "Sql-State",
+          "=",
+          "\"23000\"",
+          "*>",
+          "Dup",
+          "key",
+          "move",
+          "22",
+          "to",
+          "fs-reply",
+          "end-if",
+          "end-if",
+          "end-if",
+          "go",
+          "to",
+          "ba999-End"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 926,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "move",
+          "995",
+          "to",
+          "WE-Error",
+          "go",
+          "to",
+          "ba999-End",
+          "else",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "move",
+          "zero",
+          "to",
+          "SQL-Err",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 970,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "move",
+          "994",
+          "to",
+          "WE-Error",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error",
+          "SQL-Err"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1038,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "*>",
+          "set",
+          "non",
+          "'0'",
+          "if",
+          "no",
+          "rows",
+          "?",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "*>",
+          "do",
+          "not",
+          "really",
+          "need",
+          "to",
+          "do",
+          "this",
+          "meaning",
+          "the",
+          "above",
+          "CALL",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "\"No",
+          "Data\"",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba999-End",
+          "*>",
+          "can",
+          "clear",
+          "the",
+          "dup",
+          "code",
+          "after",
+          "testing",
+          "end-if",
+          "set",
+          "Cursor-Active-2",
+          "to",
+          "true",
+          "move",
+          "WS-MYSQL-Count-Rows",
+          "to",
+          "WS-Temp-Ed-Row",
+          "string",
+          "\">",
+          "0",
+          "got",
+          "cnt=\"",
+          "delimited",
+          "by",
+          "size",
+          "WS-Temp-ED-Row",
+          "delimited",
+          "by",
+          "size",
+          "\"",
+          "recs",
+          "in",
+          "sorted",
+          "order\"",
+          "into",
+          "WS-File-Key",
+          "end-string",
+          "perform",
+          "ba999-End",
+          "*>",
+          "log",
+          "it",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 1074,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-OI3-KEY",
+          "HV-OI3-CUSTOMER",
+          "HV-OI3-INVOICE",
+          "HV-OI3-DAT",
+          "HV-OI3-BATCH",
+          "HV-OI3-BATCH-NOS",
+          "HV-OI3-BATCH-ITEM",
+          "HV-OI3-TYPE",
+          "HV-OI3-DESCRIPTION",
+          "HV-OI3-HOLD-FLAG",
+          "HV-OI3-UNAPL",
+          "HV-OI3-P-C",
+          "HV-OI3-NET",
+          "HV-OI3-EXTRA",
+          "HV-OI3-CARRIAGE",
+          "HV-OI3-VAT",
+          "HV-OI3-DISCOUNT",
+          "HV-OI3-E-VAT",
+          "HV-OI3-C-VAT",
+          "HV-OI3-PAID",
+          "HV-OI3-STATUS",
+          "HV-OI3-DEDUCT-DAYS",
+          "HV-OI3-DEDUCT-AMT",
+          "HV-OI3-DEDUCT-VAT",
+          "HV-OI3-DAYS",
+          "HV-OI3-CR",
+          "HV-OI3-APPLIED",
+          "HV-OI3-DATE-CLEARED",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "return-code",
+          "=",
+          "-1",
+          "*>",
+          "no",
+          "more",
+          "data",
+          "so",
+          "free",
+          "cursor",
+          "&",
+          "return",
+          "move",
+          "10",
+          "to",
+          "fs-Reply",
+          "WE-Error",
+          "move",
+          "\"EOF\"",
+          "to",
+          "WS-File-Key",
+          "set",
+          "Cursor-Not-Active-2",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "=",
+          "zero",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "*>",
+          "Not",
+          "really",
+          "needed",
+          "but",
+          "help",
+          "for",
+          "testing",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "*>",
+          "ditto",
+          "initialize",
+          "WS-OTM3-Record",
+          "with",
+          "filler",
+          "move",
+          "\"EOF2\"",
+          "to",
+          "WS-File-Key",
+          "end-if",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "*>",
+          "EOF",
+          "equivilent",
+          "!!",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "set",
+          "Cursor-Not-Active-2",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 1192,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "*>",
+          "set",
+          "non",
+          "'0'",
+          "if",
+          "no",
+          "rows",
+          "?",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "*>",
+          "do",
+          "not",
+          "really",
+          "need",
+          "to",
+          "do",
+          "this",
+          "meaning",
+          "the",
+          "above",
+          "CALL",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "\"No",
+          "Data\"",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba999-End",
+          "*>",
+          "can",
+          "clear",
+          "the",
+          "dup",
+          "code",
+          "after",
+          "testing",
+          "end-if",
+          "set",
+          "Cursor-Active-3",
+          "to",
+          "true",
+          "move",
+          "WS-MYSQL-Count-Rows",
+          "to",
+          "WS-Temp-Ed-Row",
+          "string",
+          "\">",
+          "0",
+          "got",
+          "cnt=\"",
+          "delimited",
+          "by",
+          "size",
+          "WS-Temp-ED-Row",
+          "delimited",
+          "by",
+          "size",
+          "\"",
+          "recs",
+          "in",
+          "sorted",
+          "order\"",
+          "into",
+          "WS-File-Key",
+          "end-string",
+          "perform",
+          "ba999-End",
+          "*>",
+          "log",
+          "it",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 1228,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-OI3-KEY",
+          "HV-OI3-CUSTOMER",
+          "HV-OI3-INVOICE",
+          "HV-OI3-DAT",
+          "HV-OI3-BATCH",
+          "HV-OI3-BATCH-NOS",
+          "HV-OI3-BATCH-ITEM",
+          "HV-OI3-TYPE",
+          "HV-OI3-DESCRIPTION",
+          "HV-OI3-HOLD-FLAG",
+          "HV-OI3-UNAPL",
+          "HV-OI3-P-C",
+          "HV-OI3-NET",
+          "HV-OI3-EXTRA",
+          "HV-OI3-CARRIAGE",
+          "HV-OI3-VAT",
+          "HV-OI3-DISCOUNT",
+          "HV-OI3-E-VAT",
+          "HV-OI3-C-VAT",
+          "HV-OI3-PAID",
+          "HV-OI3-STATUS",
+          "HV-OI3-DEDUCT-DAYS",
+          "HV-OI3-DEDUCT-AMT",
+          "HV-OI3-DEDUCT-VAT",
+          "HV-OI3-DAYS",
+          "HV-OI3-CR",
+          "HV-OI3-APPLIED",
+          "HV-OI3-DATE-CLEARED",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "return-code",
+          "=",
+          "-1",
+          "*>",
+          "no",
+          "more",
+          "data",
+          "so",
+          "free",
+          "cursor",
+          "&",
+          "return",
+          "move",
+          "10",
+          "to",
+          "fs-Reply",
+          "WE-Error",
+          "move",
+          "\"EOF\"",
+          "to",
+          "WS-File-Key",
+          "set",
+          "Cursor-Not-Active-3",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "=",
+          "zero",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "*>",
+          "Not",
+          "really",
+          "needed",
+          "but",
+          "help",
+          "for",
+          "testing",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "*>",
+          "ditto",
+          "initialize",
+          "WS-OTM3-Record",
+          "with",
+          "filler",
+          "move",
+          "\"EOF2\"",
+          "to",
+          "WS-File-Key",
+          "end-if",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "*>",
+          "EOF",
+          "equivilent",
+          "!!",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "set",
+          "Cursor-Not-Active-3",
+          "to",
+          "true",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 1316,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "end-call",
+          "*>",
+          "/MYSQL-END\\",
+          "set",
+          "Cursor-Not-Active",
+          "to",
+          "true"
+        ]
+      },
+      {
+        "target": "fhlogger",
+        "line": 2186,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 168,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 203,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 210,
+        "replacing": null
+      },
+      {
+        "name": "mysql-variables",
+        "line": 295,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 335,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 339,
+        "replacing": null
+      },
+      {
+        "name": "slwsoi",
+        "line": 344,
+        "replacing": null
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 1305,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 432
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 459
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 475
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "thru": "MYSQL-1999-EXIT",
+        "line": 483
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 527
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 528
+      },
+      {
+        "target": "ba999-End",
+        "thru": null,
+        "line": 559
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 640
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 681
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 682
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 749
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 752
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 768
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 826
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 827
+      },
+      {
+        "target": "bb000-HV-Load",
+        "thru": null,
+        "line": 862
+      },
+      {
+        "target": "bb200-Insert",
+        "thru": null,
+        "line": 870
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 923
+      },
+      {
+        "target": "bb000-HV-Load",
+        "thru": null,
+        "line": 944
+      },
+      {
+        "target": "bb300-Update",
+        "thru": null,
+        "line": 963
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1026
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 1027
+      },
+      {
+        "target": "ba999-End",
+        "thru": null,
+        "line": 1058
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 1137
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1180
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 1181
+      },
+      {
+        "target": "ba999-End",
+        "thru": null,
+        "line": 1212
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 1291
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 1324
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1791
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 2176
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "24",
+        "to": "ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\"",
+        "line": 372
+      },
+      {
+        "from": "zero",
+        "to": "SQL-State",
+        "line": 385
+      },
+      {
+        "from": "spaces",
+        "to": "WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err",
+        "line": 389
+      },
+      {
+        "from": "1",
+        "to": "ws-No-Paragraph",
+        "line": 458
+      },
+      {
+        "from": "2",
+        "to": "ws-No-Paragraph",
+        "line": 477
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" >= \"                 delimited by size\n                       '\"000000000000000\"'             delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       keyname (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC'              delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n*>               /MYSQL-END\\\n           move    \"000000000000000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0  \"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error        *> should be 0 'JIC' likewise the others\n                       move    \"No Data\" to WS-File-Key\n                       go to ba999-End       *> can clear the dup code after testing\n              end-if                         *> We have data\n              set      Cursor-Active to true\n              move     WS-MYSQL-Count-Rows to WS-Temp-ED-Row\n              string   \"> 0 got cnt=\" delimited by size\n                       WS-Temp-ED-Row delimited by size\n                       \" recs for INVOICE-RECORD Table\"\n                        into WS-File-Key\n              end-string\n              perform ba999-End                         *> log it\n     end-if",
+        "line": 498
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Log-Where",
+        "line": 566
+      },
+      {
+        "from": "4",
+        "to": "ws-No-Paragraph",
+        "line": 567
+      },
+      {
+        "from": "zero",
+        "to": "return-code",
+        "line": 568
+      },
+      {
+        "from": "TP-SAITM3-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-OI3-KEY\n                    HV-OI3-CUSTOMER\n                    HV-OI3-INVOICE\n                    HV-OI3-DAT\n                    HV-OI3-BATCH\n                    HV-OI3-BATCH-NOS\n                    HV-OI3-BATCH-ITEM\n                    HV-OI3-TYPE\n                    HV-OI3-DESCRIPTION\n                    HV-OI3-HOLD-FLAG\n                    HV-OI3-UNAPL\n                    HV-OI3-P-C\n                    HV-OI3-NET\n                    HV-OI3-EXTRA\n                    HV-OI3-CARRIAGE\n                    HV-OI3-VAT\n                    HV-OI3-DISCOUNT\n                    HV-OI3-E-VAT\n                    HV-OI3-C-VAT\n                    HV-OI3-PAID\n                    HV-OI3-STATUS\n                    HV-OI3-DEDUCT-DAYS\n                    HV-OI3-DEDUCT-AMT\n                    HV-OI3-DEDUCT-VAT\n                    HV-OI3-DAYS\n                    HV-OI3-CR\n                    HV-OI3-APPLIED\n                    HV-OI3-DATE-CLEARED\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1     *> no more data so free cursor & return\n              move 10 to fs-Reply\n                         WE-Error      *> should be 0 likewise the others\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero   *> no data but should not happen here\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize WS-OTM3-Record with filler\n                   move    \"EOF2\" to WS-File-Key\n              end-if\n              move 10 to fs-reply                  *> EOF equivilent !!\n              move 10 to WE-Error\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if",
+        "line": 575
+      },
+      {
+        "from": "\"EOF3\"",
+        "to": "WS-File-Key\n              go to ba999-End\n     end-if",
+        "line": 636
+      },
+      {
+        "from": "HV-OI3-KEY",
+        "to": "WS-File-Key",
+        "line": 641
+      },
+      {
+        "from": "zero",
+        "to": "fs-reply WE-Error",
+        "line": 642
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-OTM3-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where",
+        "line": 654
+      },
+      {
+        "from": "5",
+        "to": "ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n*>      /MYSQL-END\\\n*>\n     if     WS-MYSQL-Count-Rows = zero\n            move 23  to fs-Reply             *> could also be 21 or 14\n            move zero to WE-Error\n            go to ba998-Free\n     end-if\n     move     6 to ws-No-Paragraph\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=SAITM3-REC\n           MOVE TP-SAITM3-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-OI3-KEY\n                    HV-OI3-CUSTOMER\n                    HV-OI3-INVOICE\n                    HV-OI3-DAT\n                    HV-OI3-BATCH\n                    HV-OI3-BATCH-NOS\n                    HV-OI3-BATCH-ITEM\n                    HV-OI3-TYPE\n                    HV-OI3-DESCRIPTION\n                    HV-OI3-HOLD-FLAG\n                    HV-OI3-UNAPL\n                    HV-OI3-P-C\n                    HV-OI3-NET\n                    HV-OI3-EXTRA\n                    HV-OI3-CARRIAGE\n                    HV-OI3-VAT\n                    HV-OI3-DISCOUNT\n                    HV-OI3-E-VAT\n                    HV-OI3-C-VAT\n                    HV-OI3-PAID\n                    HV-OI3-STATUS\n                    HV-OI3-DEDUCT-DAYS\n                    HV-OI3-DEDUCT-AMT\n                    HV-OI3-DEDUCT-VAT\n                    HV-OI3-DAYS\n                    HV-OI3-CR\n                    HV-OI3-APPLIED\n                    HV-OI3-DATE-CLEARED\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       WS-MYSQL-Count-Rows not > zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    move 990 to WE-Error\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n              else\n                    move 989  to WE-Error\n                    move zero to SQL-Err\n                    move spaces to SQL-Msg\n              end-if\n              move 23   to fs-reply\n              move spaces to WS-File-Key\n              go to ba998-Free\n     end-if                        *> row count zero should show up as a MYSQL error ?\n     perform bb100-UnloadHVs       *> transfer/move HV vars to ws-Record layout\n     move     HV-OI3-KEY to WS-File-Key",
+        "line": 669
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error",
+        "line": 751
+      },
+      {
+        "from": "99",
+        "to": "FS-Reply\n              move 997 to WE-Error                     *> Invalid calling parameter settings     997\n              go to ba999-end\n     end-if\n*>\n*>  First clear any active cursors\n*>\n     if       Cursor-Active\n              perform ba998-Free",
+        "line": 760
+      },
+      {
+        "from": "spaces",
+        "to": "MOST-Relation",
+        "line": 777
+      },
+      {
+        "from": "1",
+        "to": "J",
+        "line": 778
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              MOST-relation         delimited by space\n              '\"'                   delimited by size\n              WS-OTM3-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n              ' ORDER BY '          delimited by size\n              \"`\"                   delimited by size\n              keyname (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n                ' ASC  '            delimited by size\n                             into WS-Where\n                             with pointer J\n     end-string\n     move     WS-Where (1:J)  to WS-Log-Where",
+        "line": 792
+      },
+      {
+        "from": "8",
+        "to": "ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n*>      /MYSQL-END\\\n*>\n     if       WS-MYSQL-Count-Rows not zero\n              set Cursor-Active to true\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n              end-if\n              move 21 to fs-reply                  *> this may need changing for val in WE-Error!!\n              move zero to WE-Error\n     else\n              move  zero to FS-Reply WE-Error\n              move     WS-MYSQL-Count-Rows to WS-Temp-ED-Row\n              string   MOST-relation\n                       WS-OTM3-Record (K:L)\n                       \" got \" delimited by size\n                       WS-Temp-ED-Row delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n     end-if\n     go       to ba999-end",
+        "line": 814
+      },
+      {
+        "from": "OI-Key",
+        "to": "WS-File-Key",
+        "line": 863
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply\n                      WE-Error\n                      SQL-State",
+        "line": 864
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph",
+        "line": 867
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              move  99 to fs-reply                  *> this may need changing for val in WE-Error!!\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    if    SQL-Err (1:4) = \"1062\"\n                                     or = \"1022\"   *> Dup key\n                          or Sql-State = \"23000\"   *> Dup key\n                           move 22 to fs-reply\n                    end-if\n              end-if\n     end-if\n     go       to ba999-End",
+        "line": 874
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-OTM3-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-OTM3-Record (K:L)  to WS-File-Key",
+        "line": 895
+      },
+      {
+        "from": "13",
+        "to": "ws-No-Paragraph",
+        "line": 911
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n              end-if\n              move 99 to fs-reply\n              move 995 to WE-Error\n              go to ba999-End\n     else\n              move spaces to SQL-Msg\n              move zero   to SQL-Err\n     end-if",
+        "line": 928
+      },
+      {
+        "from": "OI-Key",
+        "to": "WS-File-Key",
+        "line": 945
+      },
+      {
+        "from": "17",
+        "to": "ws-No-Paragraph",
+        "line": 946
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-OTM3-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where",
+        "line": 951
+      },
+      {
+        "from": "WS-MYSQL-SqlState",
+        "to": "SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n              end-if\n              move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n              move 994 to WE-Error\n              go to ba999-End\n     end-if\n     move     zero   to FS-Reply\n                        WE-Error\n                        SQL-Err",
+        "line": 972
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Msg",
+        "line": 985
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n              move     1   to J\n              string   \" ORDER BY \"          delimited by size\n                       \"'OI3-INVOICE', 'OI3-DAT' ASC, \"\n                                             delimited by size\n                       \"'OI3-TYPE' DESC, \"   delimited by size\n                       \"'OI3-BATCH-ITEM', 'OI3-BATCH-NOS' ASC \"\n                                             delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     21 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n*>               /MYSQL-END\\\n             move    \"Sorted\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0  \"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba999-End       *> can clear the dup code after testing\n              end-if\n              set      Cursor-Active-2 to true\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed-Row\n              string   \"> 0 got cnt=\" delimited by size\n                       WS-Temp-ED-Row delimited by size\n                       \" recs in sorted order\"\n                        into WS-File-Key\n              end-string\n              perform ba999-End                         *> log it\n     end-if",
+        "line": 1001
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Log-Where",
+        "line": 1065
+      },
+      {
+        "from": "22",
+        "to": "ws-No-Paragraph",
+        "line": 1066
+      },
+      {
+        "from": "zero",
+        "to": "return-code",
+        "line": 1067
+      },
+      {
+        "from": "TP-SAITM3-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-OI3-KEY\n                    HV-OI3-CUSTOMER\n                    HV-OI3-INVOICE\n                    HV-OI3-DAT\n                    HV-OI3-BATCH\n                    HV-OI3-BATCH-NOS\n                    HV-OI3-BATCH-ITEM\n                    HV-OI3-TYPE\n                    HV-OI3-DESCRIPTION\n                    HV-OI3-HOLD-FLAG\n                    HV-OI3-UNAPL\n                    HV-OI3-P-C\n                    HV-OI3-NET\n                    HV-OI3-EXTRA\n                    HV-OI3-CARRIAGE\n                    HV-OI3-VAT\n                    HV-OI3-DISCOUNT\n                    HV-OI3-E-VAT\n                    HV-OI3-C-VAT\n                    HV-OI3-PAID\n                    HV-OI3-STATUS\n                    HV-OI3-DEDUCT-DAYS\n                    HV-OI3-DEDUCT-AMT\n                    HV-OI3-DEDUCT-VAT\n                    HV-OI3-DAYS\n                    HV-OI3-CR\n                    HV-OI3-APPLIED\n                    HV-OI3-DATE-CLEARED\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1     *> no more data so free cursor & return\n              move 10 to fs-Reply WE-Error\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active-2 to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize WS-OTM3-Record with filler\n                    move    \"EOF2\" to WS-File-Key\n              end-if\n              move 10 to fs-reply                  *> EOF equivilent !!\n              move 10 to WE-Error\n              set Cursor-Not-Active-2 to true\n              go to ba999-End\n     end-if",
+        "line": 1073
+      },
+      {
+        "from": "\"EOF3\"",
+        "to": "WS-File-Key\n              go to ba999-End\n     end-if",
+        "line": 1133
+      },
+      {
+        "from": "HV-OI3-Key",
+        "to": "WS-File-Key",
+        "line": 1138
+      },
+      {
+        "from": "zero",
+        "to": "fs-reply WE-Error",
+        "line": 1139
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n              move     1   to J\n              string   \" ORDER BY \"          delimited by size\n                       \"'OI3-CUSTOMER', 'OI3-DAT', \" delimited by size\n                       \"'OI3-INVOICE', 'OI3-TYPE' ASC \"\n                                             delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     21 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n*>               /MYSQL-END\\\n             move    \"Sorted\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0  \"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba999-End       *> can clear the dup code after testing\n              end-if\n              set      Cursor-Active-3 to true\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed-Row\n              string   \"> 0 got cnt=\" delimited by size\n                       WS-Temp-ED-Row delimited by size\n                       \" recs in sorted order\"\n                        into WS-File-Key\n              end-string\n              perform ba999-End                         *> log it\n     end-if",
+        "line": 1157
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Log-Where",
+        "line": 1219
+      },
+      {
+        "from": "22",
+        "to": "ws-No-Paragraph",
+        "line": 1220
+      },
+      {
+        "from": "zero",
+        "to": "return-code",
+        "line": 1221
+      },
+      {
+        "from": "TP-SAITM3-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-OI3-KEY\n                    HV-OI3-CUSTOMER\n                    HV-OI3-INVOICE\n                    HV-OI3-DAT\n                    HV-OI3-BATCH\n                    HV-OI3-BATCH-NOS\n                    HV-OI3-BATCH-ITEM\n                    HV-OI3-TYPE\n                    HV-OI3-DESCRIPTION\n                    HV-OI3-HOLD-FLAG\n                    HV-OI3-UNAPL\n                    HV-OI3-P-C\n                    HV-OI3-NET\n                    HV-OI3-EXTRA\n                    HV-OI3-CARRIAGE\n                    HV-OI3-VAT\n                    HV-OI3-DISCOUNT\n                    HV-OI3-E-VAT\n                    HV-OI3-C-VAT\n                    HV-OI3-PAID\n                    HV-OI3-STATUS\n                    HV-OI3-DEDUCT-DAYS\n                    HV-OI3-DEDUCT-AMT\n                    HV-OI3-DEDUCT-VAT\n                    HV-OI3-DAYS\n                    HV-OI3-CR\n                    HV-OI3-APPLIED\n                    HV-OI3-DATE-CLEARED\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1     *> no more data so free cursor & return\n              move 10 to fs-Reply WE-Error\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active-3 to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize WS-OTM3-Record with filler\n                    move    \"EOF2\" to WS-File-Key\n              end-if\n              move 10 to fs-reply                  *> EOF equivilent !!\n              move 10 to WE-Error\n              set Cursor-Not-Active-3 to true\n              go to ba999-End\n     end-if",
+        "line": 1227
+      },
+      {
+        "from": "\"EOF3\"",
+        "to": "WS-File-Key\n              go to ba999-End\n     end-if",
+        "line": 1287
+      },
+      {
+        "from": "HV-OI3-Key",
+        "to": "WS-File-Key",
+        "line": 1292
+      },
+      {
+        "from": "zero",
+        "to": "fs-reply WE-Error",
+        "line": 1293
+      },
+      {
+        "from": "990",
+        "to": "WE-Error",
+        "line": 1300
+      },
+      {
+        "from": "99",
+        "to": "Fs-Reply",
+        "line": 1301
+      },
+      {
+        "from": "20",
+        "to": "ws-No-Paragraph",
+        "line": 1309
+      },
+      {
+        "from": "TP-SAITM3-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     set      Cursor-Not-Active to true",
+        "line": 1315
+      },
+      {
+        "from": "OI-Invoice",
+        "to": "HV-OI3-INVOICE\n                             WS-Temp-Ed-Invoice",
+        "line": 1340
+      },
+      {
+        "from": "OI-Customer",
+        "to": "HV-OI3-CUSTOMER\n                             WS-Temp-Ed-Customer",
+        "line": 1342
+      },
+      {
+        "from": "WS-Temp-Ed-Key",
+        "to": "HV-OI3-KEY\n*>\n     move     OI-B-Nos        to HV-OI3-BATCH-NOS\n                                 WS-Temp-ED-Batch-Nos",
+        "line": 1344
+      },
+      {
+        "from": "OI-B-Item",
+        "to": "HV-OI3-BATCH-ITEM\n                                 WS-Temp-ED-Batch-Item",
+        "line": 1348
+      },
+      {
+        "from": "WS-Temp-ED-Batch9",
+        "to": "HV-OI3-BATCH",
+        "line": 1350
+      },
+      {
+        "from": "OI-Date",
+        "to": "HV-OI3-DAT\n     move     OI-Type         to HV-OI3-TYPE\n     move     OI-Description  to HV-OI3-DESCRIPTION\n     move     OI-Hold-Flag    to HV-OI3-HOLD-FLAG\n     move     OI-Unapl        to HV-OI3-UNAPL\n     move     OI-P-C          to HV-OI3-P-C\n     move     OI-Net          to HV-OI3-NET\n     move     OI-Extra        to HV-OI3-EXTRA\n     move     OI-Carriage     to HV-OI3-CARRIAGE\n     move     OI-Vat          to HV-OI3-VAT\n     move     OI-Discount     to HV-OI3-DISCOUNT\n     move     OI-E-Vat        to HV-OI3-E-VAT\n     move     OI-C-Vat        to HV-OI3-C-VAT\n     move     OI-Paid         to HV-OI3-PAID\n     move     OI-Status       to HV-OI3-STATUS\n     move     OI-Deduct-Days  to HV-OI3-DEDUCT-DAYS\n     move     OI-Deduct-Amt   to HV-OI3-DEDUCT-AMT\n     move     OI-Deduct-Vat   to HV-OI3-DEDUCT-VAT\n     move     OI-Days         to HV-OI3-DAYS\n     move     OI-CR           to HV-OI3-CR\n     move     OI-Applied      to HV-OI3-APPLIED\n     move     OI-Date-Cleared to HV-OI3-DATE-CLEARED",
+        "line": 1352
+      },
+      {
+        "from": "HV-OI3-INVOICE",
+        "to": "OI-Invoice\n     move     HV-OI3-CUSTOMER      to OI-Customer\n     move     HV-OI3-DAT           to OI-Date\n*>\n     move     HV-OI3-BATCH-NOS     to OI-B-Nos\n     move     HV-OI3-BATCH-ITEM    to OI-B-Item\n*>\n     move     HV-OI3-TYPE          to OI-Type\n     move     HV-OI3-DESCRIPTION   to OI-Description\n     move     HV-OI3-HOLD-FLAG     to OI-Hold-Flag\n     move     HV-OI3-UNAPL         to OI-Unapl\n     move     HV-OI3-P-C           to OI-P-C\n     move     HV-OI3-NET           to OI-Net\n     move     HV-OI3-EXTRA         to OI-Extra\n     move     HV-OI3-CARRIAGE      to OI-Carriage\n     move     HV-OI3-VAT           to OI-Vat\n     move     HV-OI3-DISCOUNT      to OI-Discount\n     move     HV-OI3-E-VAT         to OI-E-Vat\n     move     HV-OI3-C-VAT         to OI-C-Vat\n     move     HV-OI3-PAID          to OI-Paid\n     move     HV-OI3-STATUS        to OI-Status\n     move     HV-OI3-DEDUCT-DAYS   to OI-Deduct-Days\n     move     HV-OI3-DEDUCT-AMT    to OI-Deduct-Amt\n     move     HV-OI3-DEDUCT-VAT    to OI-Deduct-Vat\n     move     HV-OI3-DAYS          to OI-Days\n     move     HV-OI3-CR            to OI-CR\n     move     HV-OI3-APPLIED       to OI-Applied\n     move     HV-OI3-DATE-CLEARED  to OI-Date-Cleared",
+        "line": 1385
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`SAITM3-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-KEY,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-CUSTOMER`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-CUSTOMER,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-INVOICE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-INVOICE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH-NOS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH-NOS,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH-ITEM`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH-ITEM,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-TYPE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-TYPE,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DESCRIPTION`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-DESCRIPTION,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-HOLD-FLAG`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-HOLD-FLAG,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-UNAPL`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-UNAPL,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-P-C`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-P-C\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1426
+      },
+      {
+        "from": "HV-OI3-NET",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1556
+      },
+      {
+        "from": "HV-OI3-EXTRA",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1573
+      },
+      {
+        "from": "HV-OI3-CARRIAGE",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1590
+      },
+      {
+        "from": "HV-OI3-VAT",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1607
+      },
+      {
+        "from": "HV-OI3-DISCOUNT",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1624
+      },
+      {
+        "from": "HV-OI3-E-VAT",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1641
+      },
+      {
+        "from": "HV-OI3-C-VAT",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1658
+      },
+      {
+        "from": "HV-OI3-PAID",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1675
+      },
+      {
+        "from": "HV-OI3-DEDUCT-DAYS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DEDUCT-AMT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DEDUCT-AMT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1701
+      },
+      {
+        "from": "HV-OI3-DEDUCT-VAT",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1730
+      },
+      {
+        "from": "HV-OI3-DAYS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-CR`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-CR\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-APPLIED`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-APPLIED,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DATE-CLEARED`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DATE-CLEARED\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n       PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       ",
+        "line": 1747
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`SAITM3-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-KEY,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-CUSTOMER`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-CUSTOMER,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-INVOICE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-INVOICE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH-NOS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH-NOS,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH-ITEM`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH-ITEM,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-TYPE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-TYPE,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DESCRIPTION`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-DESCRIPTION,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-HOLD-FLAG`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-HOLD-FLAG,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-UNAPL`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-UNAPL,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-P-C`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-P-C\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1807
+      },
+      {
+        "from": "HV-OI3-NET",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1937
+      },
+      {
+        "from": "HV-OI3-EXTRA",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1954
+      },
+      {
+        "from": "HV-OI3-CARRIAGE",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1971
+      },
+      {
+        "from": "HV-OI3-VAT",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1988
+      },
+      {
+        "from": "HV-OI3-DISCOUNT",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 2005
+      },
+      {
+        "from": "HV-OI3-E-VAT",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 2022
+      },
+      {
+        "from": "HV-OI3-C-VAT",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 2039
+      },
+      {
+        "from": "HV-OI3-PAID",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 2056
+      },
+      {
+        "from": "HV-OI3-DEDUCT-DAYS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DEDUCT-AMT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DEDUCT-AMT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 2082
+      },
+      {
+        "from": "HV-OI3-DEDUCT-VAT",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 2111
+      },
+      {
+        "from": "HV-OI3-DAYS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-CR`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-CR\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-APPLIED`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-APPLIED,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DATE-CLEARED`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DATE-CLEARED\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \" WHERE \"\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (WS-Where (1:J))\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       ",
+        "line": 2128
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "RDBMS (Relational Database Management Systems) is in use it will be\n*>                      called by the specific module to handle similar processing as a Cobol\n*>                      flat file and will pass the equivalent\n*>                      RDB (Relational Database) row as a Cobol file record (01 level) moving\n*>                      row by row to the correct Cobol flat file fields as required.\n*>\n*>                      RDB DAL (Data Access Layer) modules are individually modified to handle:\n*>                      MS SQL server, Mysql, DB2, Postgres and Oracle as available and tested.\n*>                      These are contained in separate directories for each RDB, e.g.\n*>                       'MSSQL' (MS SQL Server), 'Mysql', 'DB2', 'Postgres'. 'Oracle'.\n*>                       You need to compile from the correct directory for the specific\n*>                       RDB you will use and have installed along with all of the development\n*>                       libraries and include files etc using the correct pre-compiler tool\n*>                       to process the 'EXEC SQL' code converting to Cobol calls etc.\n*>                       see the RDB specific ACAS notes.\n*>\n*>                      For specific SQL servers supported, the pre-compiler system is included\n*>                       where ever possible but for some, copyright reasons may prevent\n*>                       inclusion. In some cases for one specific RDB more than one precompiler\n*>                       is used as an experiment to help find the ideal one to use.\n*>\n*>                      In addition:\n*>                        If the system has been set up to (see the System File set up via the\n*>                        main menu module for each sub system), it will also process BOTH flat\n*>                        file  AND the correct rdb tables,\n*>\n*>                        it will write/delete/update etc to both but read from 1=Flat and be\n*>                        overwritten by the rdb access if data is present.\n*>                       This will help in transferring the Cobol flat files to rdb tables.\n*>\n*>                      If you wish to convert a running ACAS system over from Flat files\n*>                      to RDBMS see below.\n*>\n*>                      Depending on the RDB you wish to use there is\n*>                      also, included LMs (Load Modules) to convert each ISAM\n*>                      (Indexed Sequential) file to the rdb database tables if you wish to\n*>                      convert the system in one hit, without using the Duplicate file/RDB\n*>                      processing procedures. These will also need to be compiled from the\n*>                      specific LM directory that contains the rdb DAL modules.\n*>                      These will be very RDB specific.\n*>\n*>**\n*>  File Handling:\n*>     Uses the Global Error / Access logging file within the FH acas0nn module\n*>               and in all DALs.\n*>**\n*> Called by Modules:\n*>                      acas019 - Sales Open-Item-File-3 Cobol Handler.\n*>\n*>**\n*> Error Messages Used.\n*>                      SM004 SQL Err no in 'mysql-procedures'\n*>                      SM901 Note error and hit return.\n*>**\n*> Version.             1.00 17/06/2016.\n*>\n*>**\n*> Changes.\n*> 04/08/16 vbc - .01 Removed file action logging to sep. module ditto acas011.\n*> 18/07/16 vbc - .02 Insert call for SQL error msg where missing and move\n*>                    spaces / zero to SQL-Msg| Err and other little fixes/cleanups.\n*>                    Remap all changes to the .scb source file.\n*> 20/07/16 vbc - .03 Close logger if testing-1 set on table close.\n*>                    branch to 999-end instead of 998-free when EOF on read next.\n*>                    Seems to auto release if end of cursor data reached\n*>                    and causes an abort ??\n*> 24/07/16 vbc -     Taken from the stockMT sources with same versioning.\n*> 30/07/16 vbc - .04 Change Open and Close to also show table name in operation.\n*> 31/07/16 vbc - .05 Moved mv spaces/zero in Write to before insert.\n*>                    Remove fhlogger file close in Process-Close.\n*>                    Forgot error 989 so commented.\n*> 10/01/17 vbc - .06 Taken from salesMT.\n*>                    Updated to support rg table needs for all Fetch, Update,\n*>                    Insert & Delete functions.\n*> 11/01/17 vbc -     Added 800 series WE-Error messages for RG processing\n*>                    for use with logging only.\n*> 27/01/17 vbc -     Taken from paymentsMT as uses a RG group.\n*> 08/02/17 vbc -     Taken from slinvoiceMT for OTM3 removing RG proc.\n*> 19/02/17 vbc - .07 Wrap quote around key in start same as read-indexed.\n*> 01/03/18 vbc - .11 Renamed error messages to SM901, SM004 as needed.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>**\n*>  Module USAGE\n*>**************\n*>\n*>    On Entry:         Set up Linkage areas -\n*>    ********              WS-OTM3-Record = Contents of data record to be written/read\n*>                          File-Access = File-Function as needed.\n*>                                        Access-Type   as needed.\n*>                          File-Defs (File-Definitions) = Paths set up.\n*>\n*>    On Exit:          Linkage contains:\n*>    *******               Record = containing a read data record or table row for both tables.\n*>                          Fs-Reply = 0, 99 or other value where\n*>                                     0  = Operation completed successfully\n*>                                     10 = End of (Cobol) File returned to calling module only.\n*>                                     21 = Invalid key on START OR key not found\n*>                                     22 - Attempt to duplicate a key value.\n*>                                     23 = Key not found.     from read indexed\n*>                                     99 = Indicates an error see WE-Error, SQL-ERR/MSG for more info\n*>                          WE-Error   0    = Operation completed successfully\n*>\n*>                                     999  = Not used here - Yet.\n*>                                     998* = File-Key-No Out Of Range not 1, 2 or 3.\n*>                                     997* = Access-Type wrong (< 5 or > 8)\n*>                                     996* = File Delete key out of range (not = 1 or 2)\n*>                                     995* = During Delete SQLSTATE not '00000' investigate using MSG-Err/Msg\n*>                                            or row count not > 0\n*>                                     994* = During Rewrite,                     ^^ see above ^^\n*>                                     992* = Invalid Function requested in File-Function\n*>                                     990* = Unknown and unexpected error, again ^^ see above ^^\n*>                                     989* = Unexpected error on Read-Indexed, investigate as above.\n*>                                     911* = Rdb Error during initializing,\n*>                                            possibly can not connect to database\n*>                                             Check connect data and\n*>                                             see SQL-Err & SQL-MSG\n*>                                     910* = Table locked > 5 seconds\n*>                                     901  = File Def Record size not =< than ws record size\n*>                                            Module needs ws definition changing to correct size\n*>                                            FATAL, Stop using system, fix source code\n*>                                            and recompile before using system again.\n*>                                     8nn  = Processing on RG Table & rows.\n*>                                     890  = Unknown and unexpected error, again ^^ see above on RG processing\n*>                                     880  = Unexpected range error in Rg1 secondary key.\n*>                                            Report to programming team.\n*>                                     Other = any other rdbms errors see specific\n*>                                             (Rdbms) manual\n*>                          SQL-Err   = Error code from RDBMS is set if above 2 are non zero\n*>                          SQL-Msg   = Non space providing more info if SQL-Err non '00000'\n*>                                      * = FS-Reply = 99.\n*>                          SQL-State = In support of SQL-Err for dup keys etc.\n*>\n copy \"ACAS-SQLstate-error-list.cob\".\n*>\n*>       During testing a log file will be created containing datetime stamp, task and return codes\n*>       for FS-Reply, WE-Error & SQL-State with table used - in this case the Payments File.\n*>       WARNING - This file could get large so needs manually deleting after examination.\n*>\n*>       NOTE that the value in SQL-State is the standard ANSI RDBMS error code to help keep\n*>         DAL handler changes to a minimum when reusing code for other RDBs - hopefully\n*>\n*>********************************************************************************************\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>**********************************************************************************\n*>\n environment division.\n copy \"envdiv.cob\".\n*>\n input-output section.\n Data Division.\n Working-Storage Section.\n 77  prog-name           pic x(19)    value \"otm3MT (3.02.11)\".\n*>\n*> JC WS requirements here\n*>\n 77  ws-Where           pic x(512).\n*>\n*>  Used within presql generated code\n*>\n 01  WS-Reply           pic x           value space.\n 01  WS-MYSQL-I         PIC S9(4) COMP.\n 01  WS-MYSQL-EDIT      PIC -Z(18)9.9(9).\n*>\n*> TESING data\n*>\n 01  WS-Temp-ED-Row     pic 9(7).\n*>\n 01  WS-Temp-ED-Key.\n     03  WS-Temp-Ed-Customer pic x(7).\n     03  WS-Temp-Ed-Invoice  pic 9(8).\n*>\n 01  WS-Temp-ED-Batch.\n     03  WS-Temp-ED-Batch-Nos  pic 9(5).\n     03  WS-Temp-ED-Batch-Item pic 999.\n 01  WS-Temp-ED-Batch9 redefines WS-Temp-ED-Batch\n                            pic 9(8).\n*>\n*> The communication area for the MySQL database changed for free/mysql\n*>\n*>  jc preSQL MySQL stuff ends\n*>\n*> Metadata on primary keys...   for SAITM3-REC\n*>\n 01  Table-Of-KeyNames.\n     03  filler         pic x(30) value 'OI3-KEY                       '.\n     03  filler         pic x(8)  value '00010015'.  *> offset/length\n     03  filler         pic x(3)  value 'STR'.       *> data type\n 01  filler redefines Table-Of-KeyNames.\n     03  KeyOfReference occurs 1\n                             indexed by KOR-x1.\n         05  keyname    pic x(30).\n         05  KOR-offset pic 9(4).\n         05  KOR-length pic 9(4).\n         05  KOR-Type   pic XXX.                   *> Not used currently\n*>\n 01  DAL-Data.\n     03  MOST-Relation     pic xxx.                *> valid are >=, <=, <, >, =\n     03  Most-Cursor-Set   pic 9  value zero.\n         88  Cursor-Not-Active    value zero.\n         88  Cursor-Active        value 1.\n     03  Most-Cursor-Set-2 pic 9  value zero.      *> RG 1 or special\n         88  Cursor-Not-Active-2  value zero.\n         88  Cursor-Active-2      value 1.\n     03  Most-Cursor-Set-3 pic 9  value zero.      *> RG 2 or special\n         88  Cursor-Not-Active-3  value zero.\n         88  Cursor-Active-3      value 1.\n*>\n*>  Variables common to all DALs\n*>  ****************************\n*>\n 01  subscripts usage comp-5.\n     12 J                    pic s9(4).\n     12 K                    pic s9(4).\n     12 L                    pic s9(4).\n*>\n 01  WS-Body-Key             pic x(9).\n*>\n 01  work-fields.\n     03  ws-env-lines    pic 999              value zero.\n     03  ws-lines        binary-char unsigned value zero.\n     03  ws-22-lines     binary-char unsigned value zero.\n     03  ws-23-lines     binary-char unsigned value zero.\n     03  ws-98-lines     binary-char unsigned value zero.\n     03  ws-99-lines     binary-char unsigned value zero.\n*>\n 01  Error-Messages.\n     03  SM901          pic x(31) value \"SM901 Note error and hit return\".\n*>\n*> /MYSQL VAR\\\n*>       ACASDB\n*>       TABLE=SAITM3-REC,HV\n COPY \"mysql-variables.cpy\".\n*>\n*>    Definitions for the SAITM3-REC Table\n*>\n       01  TP-SAITM3-REC                         USAGE POINTER.\n       01  TD-SAITM3-REC.\n           05  HV-OI3-KEY                        PIC X(15).\n           05  HV-OI3-CUSTOMER                   PIC X(7).\n           05  HV-OI3-INVOICE                    PIC  9(10) COMP.\n           05  HV-OI3-DAT                        PIC  9(10) COMP.\n           05  HV-OI3-BATCH                      PIC X(8).\n           05  HV-OI3-BATCH-NOS                  PIC X(5).\n           05  HV-OI3-BATCH-ITEM                 PIC X(3).\n           05  HV-OI3-TYPE                       PIC X(1).\n           05  HV-OI3-DESCRIPTION                PIC X(32).\n           05  HV-OI3-HOLD-FLAG                  PIC X(1).\n           05  HV-OI3-UNAPL                      PIC X(1).\n           05  HV-OI3-P-C                        PIC S9(07)V9(02) COMP.\n           05  HV-OI3-NET                        PIC S9(07)V9(02) COMP.\n           05  HV-OI3-EXTRA                      PIC S9(07)V9(02) COMP.\n           05  HV-OI3-CARRIAGE                   PIC S9(07)V9(02) COMP.\n           05  HV-OI3-VAT                        PIC S9(07)V9(02) COMP.\n           05  HV-OI3-DISCOUNT                   PIC S9(07)V9(02) COMP.\n           05  HV-OI3-E-VAT                      PIC S9(07)V9(02) COMP.\n           05  HV-OI3-C-VAT                      PIC S9(07)V9(02) COMP.\n           05  HV-OI3-PAID                       PIC S9(07)V9(02) COMP.\n           05  HV-OI3-STATUS                     PIC X(1).\n           05  HV-OI3-DEDUCT-DAYS                PIC  9(03) COMP.\n           05  HV-OI3-DEDUCT-AMT                 PIC S9(03)V9(02) COMP.\n           05  HV-OI3-DEDUCT-VAT                 PIC S9(03)V9(02) COMP.\n           05  HV-OI3-DAYS                       PIC  9(03) COMP.\n           05  HV-OI3-CR                         PIC S9(10) COMP.\n           05  HV-OI3-APPLIED                    PIC X(1).\n           05  HV-OI3-DATE-CLEARED               PIC  9(10) COMP.\n*> /MYSQL-END\\\n*>\n Linkage Section.\n*>**************\n*>\n*>**********************************************************************\n copy \"wsfnctn.cob\".                         *> File-Access\n*>\n*>**********************************************************************\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n*>  Using the first record but not the 2nd as it uses occurs 40 but\n*>   to reduce Ram usage get rid of the occurs, hopefully.\n*>\n copy \"slwsoi.cob\" replacing OI-Header\n               by WS-OTM3-Record.\n*>\n screen section.\n*>=============\n*>\n 01  Display-Message-1       foreground-color 2.\n     03          value \"WS-Where=\"               line 23 col  1.\n     03  from WS-Where (1:J)           pic x(69)         col 10.\n*>\n 01  Display-Message-2       foreground-color 2.\n     03      value \"SM004 SQL Err No.=\"           line 4 col  1.\n     03  using Ws-Mysql-Error-Number   pic x(4)          col 19.\n     03      value \" Para=\"                              col 23.\n     03  using WS-No-Paragraph         pic 9(3)          col 29.\n     03      value \" SQL Cmd=\"                           col 32.\n     03  using Ws-Mysql-Command        pic x(199)        col 41.\n     03      value \"SQL Err Msg=\"                 line 7 col  1.\n     03  using Ws-Mysql-Error-Message  pic x(67)         col 13.\n*>\n*>\n PROCEDURE DIVISION   using File-Access\n                            ACAS-DAL-Common-data\n                            WS-OTM3-Record.   *>  Ws record\n*>**********************************************\n ba-ACAS-DAL-Process  section.\n     accept   ws-env-lines from lines.\n     if       ws-env-lines < 24\n              move  24 to ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n     add      2 to ws-lines giving ws-99-lines.\n     add      1 to ws-lines giving ws-98-lines.\n*>\n ba010-Initialise.\n*>\n     move     zero   to SQL-State.\n*>                        We-Error\n*>                        Fs-Reply.\n*>\n     move     spaces to WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err.\n*>\n*>   Now Test for valid key for start, read-indexed and delete\n*>      REMOVED as not used here\n*>\n*>  Work out what is being requested and convert to action!!\n*>\n*>    This version uses the JC pre-Sql processor.\n*>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n     evaluate File-Function\n        when  1\n              go to ba020-Process-Open         *> Coded / D.tested\n        when  2\n              go to ba030-Process-Close        *> Coded / D.tested\n        when  3\n              go to ba040-Process-Read-Next\n        when  4\n              go to ba050-Process-Read-Indexed\n        when  5\n              go to ba070-Process-Write\n        when  7\n              go to ba090-Process-Rewrite\n        when  8\n              go to ba080-Process-Delete\n        when  9\n              go to ba060-Process-Start     *> Uses Header table only\n        when  32\n              go to ba140-Process-Read-Next        *> Sorted-By-Batch (nos,item,type,date,inv)\n        when  33\n              go to ba150-Process-Read-Next        *> Sorted-By-Cust (cust,date,inv,type)\n        when  other                            *> 6 is spare / unused\n              go to ba100-Bad-Function\n     end-evaluate.\n*>\n ba020-Process-Open.             *> dry tested - no rg01 requirements.\n *>\n *>  Manual process MYSQL INIT\n *>",
+        "line": 36
+      },
+      {
+        "type": "IF",
+        "condition": "fs-reply not = zero\n              go   to ba999-end.\n*>\n*> *> /MYSQL INIT\\\n*>       BASE=ACASDB\n*>       IMPLEMENTATION=dev-prog-001\n*>       PASSWORD=mysqlpass\n*> *> /MYSQL-END\\\n*>\n     move    \"OPEN SL OTM3\" to WS-File-Key\n     set     Cursor-Not-Active to true\n     go      to ba999-end.\n*>\n ba030-Process-Close.             *> dry tested - no rg01 requirements.\n     if      Cursor-Active\n             perform ba998-Free.\n*>\n     move     2 to ws-No-Paragraph.\n     move    \"CLOSE SL OTM3\" to WS-File-Key.\n*>  /MYSQL CLOSE\\\n*>\n*>    Close the Database\n*>\n           PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n*>  /MYSQL-END\\\n     go      to ba999-end.\n*>\n ba040-Process-Read-Next.             *> dry test.. - Has rg01 requirements.\n*>\n*>   Here a SELECT first",
+        "line": 460
+      },
+      {
+        "type": "IF",
+        "condition": "no cursor active using lowest\n*>    possible key of \"000000000000000\"\n*>           [ OI-Key ]\n*>\n     if       Cursor-Not-Active\n              set      KOR-x1 to 1                *> 1 = Primary\n              move     KOR-offset (KOR-x1) to K\n              move     KOR-length (KOR-x1) to L\n*>\n              move     spaces to WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" >= \"                 delimited by size\n                       '\"000000000000000\"'             delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       keyname (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC'              delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n*>               /MYSQL-END\\\n           move    \"000000000000000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0  \"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error        *> should be 0 'JIC' likewise the others\n                       move    \"No Data\" to WS-File-Key\n                       go to ba999-End       *> can clear the dup code after testing\n              end-if                         *> We have data\n              set      Cursor-Active to true\n              move     WS-MYSQL-Count-Rows to WS-Temp-ED-Row\n              string   \"> 0 got cnt=\" delimited by size\n                       WS-Temp-ED-Row delimited by size\n                       \" recs for INVOICE-RECORD Table\"\n                        into WS-File-Key\n              end-string\n              perform ba999-End                         *> log it\n     end-if.\n*>\n ba041-Reread.\n*>\n*>  If here cursor is set (even from start), so get the next row\n*>\n     move     spaces to WS-Log-Where.\n     move     4 to ws-No-Paragraph.\n     move     zero to return-code.\n*>\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=SAITM3-REC\n           MOVE TP-SAITM3-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-OI3-KEY\n                    HV-OI3-CUSTOMER\n                    HV-OI3-INVOICE\n                    HV-OI3-DAT\n                    HV-OI3-BATCH\n                    HV-OI3-BATCH-NOS\n                    HV-OI3-BATCH-ITEM\n                    HV-OI3-TYPE\n                    HV-OI3-DESCRIPTION\n                    HV-OI3-HOLD-FLAG\n                    HV-OI3-UNAPL\n                    HV-OI3-P-C\n                    HV-OI3-NET\n                    HV-OI3-EXTRA\n                    HV-OI3-CARRIAGE\n                    HV-OI3-VAT\n                    HV-OI3-DISCOUNT\n                    HV-OI3-E-VAT\n                    HV-OI3-C-VAT\n                    HV-OI3-PAID\n                    HV-OI3-STATUS\n                    HV-OI3-DEDUCT-DAYS\n                    HV-OI3-DEDUCT-AMT\n                    HV-OI3-DEDUCT-VAT\n                    HV-OI3-DAYS\n                    HV-OI3-CR\n                    HV-OI3-APPLIED\n                    HV-OI3-DATE-CLEARED\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1     *> no more data so free cursor & return\n              move 10 to fs-Reply\n                         WE-Error      *> should be 0 likewise the others\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero   *> no data but should not happen here\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize WS-OTM3-Record with filler\n                   move    \"EOF2\" to WS-File-Key\n              end-if\n              move 10 to fs-reply                  *> EOF equivilent !!\n              move 10 to WE-Error\n              set Cursor-Not-Active to true\n              go to ba999-End\n     end-if.\n*>\n     if       fs-reply = 10                 *> should not happen as tested prior\n              set Cursor-Not-Active to true\n              move    \"EOF3\" to WS-File-Key\n              go to ba999-End\n     end-if.\n*>\n     perform  bb100-UnloadHVs.       *> transfer/move HV vars to Record layout\n     move     HV-OI3-KEY to WS-File-Key.\n     move     zero to fs-reply WE-Error.\n     go       to ba999-end.\n*>\n ba050-Process-Read-Indexed.             *> dry test.. - Has rg01 requirements.\n*>\n*>  Now do on correct key within WHERE\n*>  Sets up key and compare data\n*>\n     set      KOR-x1 to 1.      *> 1 = Primary\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-OTM3-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where.    *>  For test logging\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n     move     5 to ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n*>      /MYSQL-END\\\n*>\n     if     WS-MYSQL-Count-Rows = zero\n            move 23  to fs-Reply             *> could also be 21 or 14\n            move zero to WE-Error\n            go to ba998-Free\n     end-if\n     move     6 to ws-No-Paragraph\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=SAITM3-REC\n           MOVE TP-SAITM3-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-OI3-KEY\n                    HV-OI3-CUSTOMER\n                    HV-OI3-INVOICE\n                    HV-OI3-DAT\n                    HV-OI3-BATCH\n                    HV-OI3-BATCH-NOS\n                    HV-OI3-BATCH-ITEM\n                    HV-OI3-TYPE\n                    HV-OI3-DESCRIPTION\n                    HV-OI3-HOLD-FLAG\n                    HV-OI3-UNAPL\n                    HV-OI3-P-C\n                    HV-OI3-NET\n                    HV-OI3-EXTRA\n                    HV-OI3-CARRIAGE\n                    HV-OI3-VAT\n                    HV-OI3-DISCOUNT\n                    HV-OI3-E-VAT\n                    HV-OI3-C-VAT\n                    HV-OI3-PAID\n                    HV-OI3-STATUS\n                    HV-OI3-DEDUCT-DAYS\n                    HV-OI3-DEDUCT-AMT\n                    HV-OI3-DEDUCT-VAT\n                    HV-OI3-DAYS\n                    HV-OI3-CR\n                    HV-OI3-APPLIED\n                    HV-OI3-DATE-CLEARED\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       WS-MYSQL-Count-Rows not > zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    move 990 to WE-Error\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n              else\n                    move 989  to WE-Error\n                    move zero to SQL-Err\n                    move spaces to SQL-Msg\n              end-if\n              move 23   to fs-reply\n              move spaces to WS-File-Key\n              go to ba998-Free\n     end-if                        *> row count zero should show up as a MYSQL error ?\n     perform bb100-UnloadHVs       *> transfer/move HV vars to ws-Record layout\n     move     HV-OI3-KEY to WS-File-Key.\n     move     zero to FS-Reply WE-Error.\n     perform  ba998-Free.                       *> Free cursor\n     go       to ba999-End.\n*>\n ba060-Process-Start.            *>  coded for header & lines [ NEEDED ? ].\n*>\n*>  Check for Param error 1st on start\n*>\n     if       access-type < 5 or > 8                   *> not using not < or not >\n              move 99 to FS-Reply\n              move 997 to WE-Error                     *> Invalid calling parameter settings     997\n              go to ba999-end\n     end-if\n*>\n*>  First clear any active cursors\n*>\n     if       Cursor-Active\n              perform ba998-Free.\n*>\n*>  Now do Start on correct key before read-next  within WHERE\n*>  Set up MOST-relation for condition test and key on Header table.\n*>\n     set      KOR-x1 to 1.\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to MOST-Relation.\n     move     1   to J.\n     evaluate Access-Type\n              when  5                           *> fn-equal-to\n                    move \"=  \" to MOST-Relation\n              when  6                           *> fn-less-than\n                    move \"<  \" to MOST-Relation\n              when  7                           *> fn-greater-than\n                    move \">  \" to MOST-Relation\n              when  8                           *> fn-not-less-than\n                    move \">= \" to MOST-Relation\n              when  9                           *> fn-not-greater-than [ not currently used in ACAS ]\n                    move \"<= \" to MOST-Relation\n     end-evaluate\n*>\n     move     spaces to WS-Where\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              MOST-relation         delimited by space\n              '\"'                   delimited by size\n              WS-OTM3-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n              ' ORDER BY '          delimited by size\n              \"`\"                   delimited by size\n              keyname (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n                ' ASC  '            delimited by size\n                             into WS-Where\n                             with pointer J\n     end-string\n     move     WS-Where (1:J)  to WS-Log-Where.    *>  For test logging\n     move     WS-OTM3-Record (K:L) to WS-File-Key\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n*>\n     move     8 to ws-No-Paragraph\n*>      /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>             TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n*>      /MYSQL-END\\\n*>\n     if       WS-MYSQL-Count-Rows not zero\n              set Cursor-Active to true\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n              end-if\n              move 21 to fs-reply                  *> this may need changing for val in WE-Error!!\n              move zero to WE-Error\n     else\n              move  zero to FS-Reply WE-Error\n              move     WS-MYSQL-Count-Rows to WS-Temp-ED-Row\n              string   MOST-relation\n                       WS-OTM3-Record (K:L)\n                       \" got \" delimited by size\n                       WS-Temp-ED-Row delimited by size\n                       \" recs\"\n                        into WS-File-Key\n              end-string\n     end-if\n     go       to ba999-end.\n*>\n*>  Now a read next will process a Fetch from cursor ( or cursor-2 )\n*>\n ba070-Process-Write.             *> dry test... - Has rg01 requirements.\n     perform  bb000-HV-Load.                       *>  move WS-OTM3-Record fields to HV fields\n     move     OI-Key to WS-File-Key.\n     move     zero to FS-Reply\n                      WE-Error\n                      SQL-State.\n     move     spaces to SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph.\n     perform  bb200-Insert.\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              move  99 to fs-reply                  *> this may need changing for val in WE-Error!!\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    if    SQL-Err (1:4) = \"1062\"\n                                     or = \"1022\"   *> Dup key\n                          or Sql-State = \"23000\"   *> Dup key\n                           move 22 to fs-reply\n                    end-if\n              end-if\n     end-if\n     go       to ba999-End.\n*>\n ba080-Process-Delete.             *> dry tested. - Has rg01 requirements.\n*>\n     set      KOR-x1 to 1.\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-OTM3-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-OTM3-Record (K:L)  to WS-File-Key.\n     move     WS-Where (1:J)   to WS-Log-Where.    *>  For test logging\n     if    Testing-2\n           display Display-Message-1 with erase eos\n     end-if\n     move     13 to ws-No-Paragraph.\n*>      /MYSQL DELETE\\\n*>\n*>    Delete a row\n*>\n*>             TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"DELETE FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             WS-Where (1:J)\n             X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>      /MYSQL-END\\\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n              end-if\n              move 99 to fs-reply\n              move 995 to WE-Error\n              go to ba999-End\n     else\n              move spaces to SQL-Msg\n              move zero   to SQL-Err\n     end-if.\n     go       to ba999-End.\n*>\n ba090-Process-Rewrite.\n     perform  bb000-HV-Load.       *> Load up the HV fields from table record in WS\n    move     OI-Key to WS-File-Key.\n    move     17 to ws-No-Paragraph.\n     set      KOR-x1 to 1            *> 1 = Primary\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n              WS-OTM3-Record (K:L)       delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where.    *>  For test logging\n     perform  bb300-Update.\n*>\n     if       Testing-2\n              display Display-Message-1 with erase eos\n     end-if\n*>\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n              end-if\n              move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n              move 994 to WE-Error\n              go to ba999-End\n     end-if\n     move     zero   to FS-Reply\n                        WE-Error\n                        SQL-Err.\n     move     spaces to SQL-Msg.\n     go       to ba999-End.\n*>\n ba140-Process-Read-Next.\n*>\n*>  Like 040 except we do order by B-Nos B-Item ASC, Type DES,\n*>              Date Invoice ASC\n*>\n*>   Here a SELECT first",
+        "line": 489
+      },
+      {
+        "type": "IF",
+        "condition": "no cursor active 2 NOT using\n*>   a key as by order\n*>\n     if       Cursor-Not-Active-2\n              set      KOR-x1 to 1                *> 1 = Primary\n              move     KOR-offset (KOR-x1) to K\n              move     KOR-length (KOR-x1) to L\n*>\n              move     spaces to WS-Where\n              move     1   to J\n              string   \" ORDER BY \"          delimited by size\n                       \"'OI3-INVOICE', 'OI3-DAT' ASC, \"\n                                             delimited by size\n                       \"'OI3-TYPE' DESC, \"   delimited by size\n                       \"'OI3-BATCH-ITEM', 'OI3-BATCH-NOS' ASC \"\n                                             delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     21 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n*>               /MYSQL-END\\\n             move    \"Sorted\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0  \"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba999-End       *> can clear the dup code after testing\n              end-if\n              set      Cursor-Active-2 to true\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed-Row\n              string   \"> 0 got cnt=\" delimited by size\n                       WS-Temp-ED-Row delimited by size\n                       \" recs in sorted order\"\n                        into WS-File-Key\n              end-string\n              perform ba999-End                         *> log it\n     end-if.\n*>\n ba141-Reread.\n*>\n*>  If here cursor is set (even from start), so get the next row\n*>\n     move     spaces to WS-Log-Where.\n     move     22 to ws-No-Paragraph.\n     move zero to return-code.\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=SAITM3-REC\n           MOVE TP-SAITM3-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-OI3-KEY\n                    HV-OI3-CUSTOMER\n                    HV-OI3-INVOICE\n                    HV-OI3-DAT\n                    HV-OI3-BATCH\n                    HV-OI3-BATCH-NOS\n                    HV-OI3-BATCH-ITEM\n                    HV-OI3-TYPE\n                    HV-OI3-DESCRIPTION\n                    HV-OI3-HOLD-FLAG\n                    HV-OI3-UNAPL\n                    HV-OI3-P-C\n                    HV-OI3-NET\n                    HV-OI3-EXTRA\n                    HV-OI3-CARRIAGE\n                    HV-OI3-VAT\n                    HV-OI3-DISCOUNT\n                    HV-OI3-E-VAT\n                    HV-OI3-C-VAT\n                    HV-OI3-PAID\n                    HV-OI3-STATUS\n                    HV-OI3-DEDUCT-DAYS\n                    HV-OI3-DEDUCT-AMT\n                    HV-OI3-DEDUCT-VAT\n                    HV-OI3-DAYS\n                    HV-OI3-CR\n                    HV-OI3-APPLIED\n                    HV-OI3-DATE-CLEARED\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1     *> no more data so free cursor & return\n              move 10 to fs-Reply WE-Error\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active-2 to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize WS-OTM3-Record with filler\n                    move    \"EOF2\" to WS-File-Key\n              end-if\n              move 10 to fs-reply                  *> EOF equivilent !!\n              move 10 to WE-Error\n              set Cursor-Not-Active-2 to true\n              go to ba999-End\n     end-if.\n*>\n     if       fs-reply = 10\n              set Cursor-Not-Active-2 to true\n              move    \"EOF3\" to WS-File-Key\n              go to ba999-End\n     end-if.\n*>\n     perform  bb100-UnloadHVs.       *> transfer/move HV vars to Record layout\n     move     HV-OI3-Key to WS-File-Key.\n     move     zero to fs-reply WE-Error.\n     go       to ba999-end.\n*>\n ba150-Process-Read-Next.\n*>\n*>  Like 040,140 except we do order by s-customer\n*>                                     s-date\n*>                                     s-invoice\n*>                                     s-type ASC\n*>\n*>   Here a SELECT first",
+        "line": 993
+      },
+      {
+        "type": "IF",
+        "condition": "no cursor active 3 NOT using\n*>   a key as by order\n*>\n     if       Cursor-Not-Active-3\n              set      KOR-x1 to 1                *> 1 = Primary\n              move     KOR-offset (KOR-x1) to K\n              move     KOR-length (KOR-x1) to L\n*>\n              move     spaces to WS-Where\n              move     1   to J\n              string   \" ORDER BY \"          delimited by size\n                       \"'OI3-CUSTOMER', 'OI3-DAT', \" delimited by size\n                       \"'OI3-INVOICE', 'OI3-TYPE' ASC \"\n                                             delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     21 to ws-No-Paragraph\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SAITM3-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SAITM3-REC\n*>               /MYSQL-END\\\n             move    \"Sorted\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0  \"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba999-End       *> can clear the dup code after testing\n              end-if\n              set      Cursor-Active-3 to true\n              move     WS-MYSQL-Count-Rows to WS-Temp-Ed-Row\n              string   \"> 0 got cnt=\" delimited by size\n                       WS-Temp-ED-Row delimited by size\n                       \" recs in sorted order\"\n                        into WS-File-Key\n              end-string\n              perform ba999-End                         *> log it\n     end-if.\n*>\n ba151-Reread.\n*>\n*>  If here cursor is set (even from start), so get the next row\n*>\n     move     spaces to WS-Log-Where.\n     move     22 to ws-No-Paragraph.\n     move zero to return-code.\n*>      /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>             TABLE=SAITM3-REC\n           MOVE TP-SAITM3-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-OI3-KEY\n                    HV-OI3-CUSTOMER\n                    HV-OI3-INVOICE\n                    HV-OI3-DAT\n                    HV-OI3-BATCH\n                    HV-OI3-BATCH-NOS\n                    HV-OI3-BATCH-ITEM\n                    HV-OI3-TYPE\n                    HV-OI3-DESCRIPTION\n                    HV-OI3-HOLD-FLAG\n                    HV-OI3-UNAPL\n                    HV-OI3-P-C\n                    HV-OI3-NET\n                    HV-OI3-EXTRA\n                    HV-OI3-CARRIAGE\n                    HV-OI3-VAT\n                    HV-OI3-DISCOUNT\n                    HV-OI3-E-VAT\n                    HV-OI3-C-VAT\n                    HV-OI3-PAID\n                    HV-OI3-STATUS\n                    HV-OI3-DEDUCT-DAYS\n                    HV-OI3-DEDUCT-AMT\n                    HV-OI3-DEDUCT-VAT\n                    HV-OI3-DAYS\n                    HV-OI3-CR\n                    HV-OI3-APPLIED\n                    HV-OI3-DATE-CLEARED\n\n*>      /MYSQL-END\\\n     end-call\n*>\n     if       return-code = -1     *> no more data so free cursor & return\n              move 10 to fs-Reply WE-Error\n              move    \"EOF\" to WS-File-Key\n              set Cursor-Not-Active-3 to true\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n              move  WS-MYSQL-SqlState   to SQL-State\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize WS-OTM3-Record with filler\n                    move    \"EOF2\" to WS-File-Key\n              end-if\n              move 10 to fs-reply                  *> EOF equivilent !!\n              move 10 to WE-Error\n              set Cursor-Not-Active-3 to true\n              go to ba999-End\n     end-if.\n*>\n     if       fs-reply = 10\n              set Cursor-Not-Active-3 to true\n              move    \"EOF3\" to WS-File-Key\n              go to ba999-End\n     end-if.\n*>\n     perform  bb100-UnloadHVs.       *> transfer/move HV vars to Record layout\n     move     HV-OI3-Key to WS-File-Key.\n     move     zero to fs-reply WE-Error.\n     go       to ba999-end.\n*>\n ba100-Bad-Function.\n*>\n*> Houston; We have a problem\n*>\n     move     990 to WE-Error.\n     move     99 to Fs-Reply.\n     go       to ba999-end.\n*>\n*> /MYSQL PRO\\\n COPY \"mysql-procedures.cpy\".\n*> /MYSQL-END\\\n*>\n ba998-Free.\n     move     20 to ws-No-Paragraph.\n*>      /MYSQL FREE\\\n*>\n*>    Free result array\n*>\n*>             TABLE=SAITM3-REC\n           MOVE TP-SAITM3-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     set      Cursor-Not-Active to true.\n*>\n ba999-end.\n*>  Any Clean ups before quiting    move data record ?????  do so at the start as well ??????\n*>\n     if       Testing-1\n              perform Ca-Process-Logs\n     end-if.\n*>\n ba999-exit.\n     exit program.\n*>\n bb000-HV-Load      Section.\n*>*************************\n*>\n*>  Load the Host variables with data from the passed record\n*>\n*> This Method loads the Host Variables for the Base table with\n*> the data passed in the data-buffer.\n*>\n     initialize TD-SAITM3-REC.\n*>\n     move     OI-Invoice  to HV-OI3-INVOICE\n                             WS-Temp-Ed-Invoice.\n     move     OI-Customer to HV-OI3-CUSTOMER\n                             WS-Temp-Ed-Customer.\n     move     WS-Temp-Ed-Key  to HV-OI3-KEY\n*>\n     move     OI-B-Nos        to HV-OI3-BATCH-NOS\n                                 WS-Temp-ED-Batch-Nos.\n     move     OI-B-Item       to HV-OI3-BATCH-ITEM\n                                 WS-Temp-ED-Batch-Item.\n     move     WS-Temp-ED-Batch9 to HV-OI3-BATCH.\n*>\n     move     OI-Date         to HV-OI3-DAT\n     move     OI-Type         to HV-OI3-TYPE\n     move     OI-Description  to HV-OI3-DESCRIPTION\n     move     OI-Hold-Flag    to HV-OI3-HOLD-FLAG\n     move     OI-Unapl        to HV-OI3-UNAPL\n     move     OI-P-C          to HV-OI3-P-C\n     move     OI-Net          to HV-OI3-NET\n     move     OI-Extra        to HV-OI3-EXTRA\n     move     OI-Carriage     to HV-OI3-CARRIAGE\n     move     OI-Vat          to HV-OI3-VAT\n     move     OI-Discount     to HV-OI3-DISCOUNT\n     move     OI-E-Vat        to HV-OI3-E-VAT\n     move     OI-C-Vat        to HV-OI3-C-VAT\n     move     OI-Paid         to HV-OI3-PAID\n     move     OI-Status       to HV-OI3-STATUS\n     move     OI-Deduct-Days  to HV-OI3-DEDUCT-DAYS\n     move     OI-Deduct-Amt   to HV-OI3-DEDUCT-AMT\n     move     OI-Deduct-Vat   to HV-OI3-DEDUCT-VAT\n     move     OI-Days         to HV-OI3-DAYS\n     move     OI-CR           to HV-OI3-CR\n     move     OI-Applied      to HV-OI3-APPLIED\n     move     OI-Date-Cleared to HV-OI3-DATE-CLEARED.\n*>\n bb000-Exit.\n     exit section.\n*>\n bb100-UnloadHVs    Section.\n*>*************************\n*>\n*>  Load the data buffer in the interface with data from the host variables.\n*>\n     initialize WS-OTM3-Record.\n*>\n     move     HV-OI3-INVOICE       to OI-Invoice\n     move     HV-OI3-CUSTOMER      to OI-Customer\n     move     HV-OI3-DAT           to OI-Date\n*>\n     move     HV-OI3-BATCH-NOS     to OI-B-Nos\n     move     HV-OI3-BATCH-ITEM    to OI-B-Item\n*>\n     move     HV-OI3-TYPE          to OI-Type\n     move     HV-OI3-DESCRIPTION   to OI-Description\n     move     HV-OI3-HOLD-FLAG     to OI-Hold-Flag\n     move     HV-OI3-UNAPL         to OI-Unapl\n     move     HV-OI3-P-C           to OI-P-C\n     move     HV-OI3-NET           to OI-Net\n     move     HV-OI3-EXTRA         to OI-Extra\n     move     HV-OI3-CARRIAGE      to OI-Carriage\n     move     HV-OI3-VAT           to OI-Vat\n     move     HV-OI3-DISCOUNT      to OI-Discount\n     move     HV-OI3-E-VAT         to OI-E-Vat\n     move     HV-OI3-C-VAT         to OI-C-Vat\n     move     HV-OI3-PAID          to OI-Paid\n     move     HV-OI3-STATUS        to OI-Status\n     move     HV-OI3-DEDUCT-DAYS   to OI-Deduct-Days\n     move     HV-OI3-DEDUCT-AMT    to OI-Deduct-Amt\n     move     HV-OI3-DEDUCT-VAT    to OI-Deduct-Vat\n     move     HV-OI3-DAYS          to OI-Days\n     move     HV-OI3-CR            to OI-CR\n     move     HV-OI3-APPLIED       to OI-Applied\n     move     HV-OI3-DATE-CLEARED  to OI-Date-Cleared.\n*>\n bb100-Exit.\n     exit section.\n*>\n bb200-Insert Section.\n*>*******************\n*>\n*>  /MYSQL INSERT\\\n*>\n*>    Insert a row\n*>\n*>         TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`SAITM3-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-KEY,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-CUSTOMER`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-CUSTOMER,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-INVOICE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-INVOICE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH-NOS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH-NOS,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH-ITEM`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH-ITEM,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-TYPE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-TYPE,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DESCRIPTION`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-DESCRIPTION,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-HOLD-FLAG`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-HOLD-FLAG,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-UNAPL`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-UNAPL,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-P-C`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-P-C\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-NET`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-NET\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-EXTRA`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-EXTRA\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-CARRIAGE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-CARRIAGE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-VAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-VAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DISCOUNT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DISCOUNT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-E-VAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-E-VAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-C-VAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-C-VAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-PAID`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-PAID\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-STATUS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-STATUS,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DEDUCT-DAYS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DEDUCT-DAYS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DEDUCT-AMT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DEDUCT-AMT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DEDUCT-VAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DEDUCT-VAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DAYS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DAYS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-CR`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-CR\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-APPLIED`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-APPLIED,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DATE-CLEARED`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DATE-CLEARED\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n       PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb200-Exit.\n     exit section.\n*>\n bb300-Update Section.\n*>*******************\n*>\n*>  /MYSQL UPDATE\\\n*>\n*>    Update a row\n*>\n*>      TABLE=SAITM3-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`SAITM3-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-KEY,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-CUSTOMER`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-CUSTOMER,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-INVOICE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-INVOICE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH-NOS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH-NOS,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-BATCH-ITEM`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-BATCH-ITEM,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-TYPE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-TYPE,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DESCRIPTION`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-DESCRIPTION,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-HOLD-FLAG`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-HOLD-FLAG,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-UNAPL`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-UNAPL,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-P-C`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-P-C\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-NET`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-NET\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-EXTRA`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-EXTRA\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-CARRIAGE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-CARRIAGE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-VAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-VAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DISCOUNT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DISCOUNT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-E-VAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-E-VAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-C-VAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-C-VAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-PAID`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-PAID\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(14:07))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-STATUS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-STATUS,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DEDUCT-DAYS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DEDUCT-DAYS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DEDUCT-AMT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DEDUCT-AMT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DEDUCT-VAT`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DEDUCT-VAT\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DAYS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DAYS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-CR`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-CR\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-APPLIED`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-OI3-APPLIED,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`OI3-DATE-CLEARED`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-OI3-DATE-CLEARED\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(11:10))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \" WHERE \"\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (WS-Where (1:J))\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb300-Exit.\n     exit section.\n*>\n Ca-Process-Logs.\n*>**************\n*>\n     call     \"fhlogger\" using File-Access\n                               ACAS-DAL-Common-data.\n*>\n ca-Exit.     exit.\n*>\nend program otm3MT.",
+        "line": 1149
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "File-Function\n        when  1\n              go to ba020-Process-Open         *> Coded / D.tested\n   ...",
+        "line": 404,
+        "whenCount": 11
+      },
+      {
+        "content": "Access-Type\n              when  5                           *> fn-equal-to\n                    move ...",
+        "line": 779,
+        "whenCount": 5
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 35,
+    "cognitive": 37,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 85,
+      "totalOperators": 84,
+      "totalOperands": 168,
+      "vocabulary": 86,
+      "length": 252,
+      "volume": 1619.4187181849286
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

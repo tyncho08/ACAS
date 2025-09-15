@@ -1,0 +1,994 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsfinalMT.cbl",
+  "fileName": "irsfinalMT.cbl",
+  "timestamp": "2025-09-15T16:25:34.303Z",
+  "programId": "irsfinalMT",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 91
+      },
+      {
+        "name": "Working-Storage",
+        "line": 93
+      },
+      {
+        "name": "Linkage",
+        "line": 175
+      },
+      {
+        "name": "screen",
+        "line": 188
+      },
+      {
+        "name": "ba-ACAS-DAL-Process",
+        "line": 210
+      },
+      {
+        "name": "bb200-Insert",
+        "line": 608
+      },
+      {
+        "name": "exit",
+        "line": 659
+      },
+      {
+        "name": "bb300-Update",
+        "line": 661
+      },
+      {
+        "name": "exit",
+        "line": 716
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "ba010-Initialise",
+        "line": 221
+      },
+      {
+        "name": "SQL-State",
+        "line": 229
+      },
+      {
+        "name": "end-evaluate",
+        "line": 251
+      },
+      {
+        "name": "ba020-Process-Open",
+        "line": 253
+      },
+      {
+        "name": "end-string",
+        "line": 265
+      },
+      {
+        "name": "end-string",
+        "line": 269
+      },
+      {
+        "name": "end-string",
+        "line": 273
+      },
+      {
+        "name": "end-string",
+        "line": 277
+      },
+      {
+        "name": "end-string",
+        "line": 281
+      },
+      {
+        "name": "end-string",
+        "line": 285
+      },
+      {
+        "name": "ba030-Process-Close",
+        "line": 301
+      },
+      {
+        "name": "ba040-Process-Read-Next",
+        "line": 316
+      },
+      {
+        "name": "end-if",
+        "line": 388
+      },
+      {
+        "name": "ba070-Process-Write",
+        "line": 467
+      },
+      {
+        "name": "WS-SQL-Retry",
+        "line": 469
+      },
+      {
+        "name": "ba090-Process-Rewrite",
+        "line": 518
+      },
+      {
+        "name": "WS-SQL-Retry",
+        "line": 521
+      },
+      {
+        "name": "ba100-Bad-Function",
+        "line": 575
+      },
+      {
+        "name": "ba998-Free",
+        "line": 587
+      },
+      {
+        "name": "ba999-end",
+        "line": 599
+      },
+      {
+        "name": "end-if",
+        "line": 603
+      },
+      {
+        "name": "ba999-exit",
+        "line": 605
+      },
+      {
+        "name": "bb200-Exit",
+        "line": 658
+      },
+      {
+        "name": "bb300-Exit",
+        "line": 715
+      },
+      {
+        "name": "Ca-Process-Logs",
+        "line": 718
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 722
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 374,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "*>",
+          "set",
+          "non",
+          "'0'",
+          "if",
+          "no",
+          "rows",
+          "?",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "*>",
+          "do",
+          "not",
+          "really",
+          "need",
+          "to",
+          "do",
+          "this",
+          "meaning",
+          "the",
+          "above",
+          "CALL",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "\"No",
+          "Data\"",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba998-Free",
+          "*>",
+          "can",
+          "clear",
+          "the",
+          "dup",
+          "code",
+          "after",
+          "testing",
+          "end-if",
+          "move",
+          "1",
+          "to",
+          "Most-Cursor-Set",
+          "*>",
+          "should",
+          "test",
+          "if",
+          "select",
+          "worked",
+          "first??????",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 404,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-IRS-FINAL-ACC-REC-KEY",
+          "HV-IRS-AR1",
+          "HV-IRS-AR2",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "*>",
+          "No",
+          "it",
+          "should",
+          "not",
+          "happen",
+          "but"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 437,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "*>",
+          "EOF",
+          "equivilent",
+          "!!",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "*>",
+          "Not",
+          "really",
+          "needed",
+          "but",
+          "help",
+          "for",
+          "testing",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "*>",
+          "ditto",
+          "move",
+          "\"EOF2\"",
+          "to",
+          "WS-File-Key",
+          "end-if",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "move",
+          "zero",
+          "to",
+          "Most-Cursor-Set",
+          "if",
+          "Testing-1",
+          "*>",
+          "do",
+          "for",
+          "each",
+          "row",
+          "perform",
+          "Ca-Process-Logs",
+          "end-if",
+          "exit",
+          "perform",
+          "end-if",
+          "move",
+          "HV-IRS-AR1",
+          "to",
+          "AR1",
+          "(HV-IRS-FINAL-ACC-REC-KEY)",
+          "*>",
+          "KEY",
+          "=",
+          "table",
+          "position",
+          "move",
+          "HV-IRS-AR2",
+          "to",
+          "AR2",
+          "(HV-IRS-FINAL-ACC-REC-KEY)",
+          "if",
+          "Testing-1",
+          "perform",
+          "Ca-Process-Logs",
+          "move",
+          "zeros",
+          "to",
+          "FS-Reply",
+          "SQL-Err",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "end-perform",
+          "*>",
+          "Have",
+          "all",
+          "of",
+          "the",
+          "data",
+          "*>",
+          "move",
+          "HV-IRS-FINAL-ACC-REC-KEY",
+          "to",
+          "WS-File-Key"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 487,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "*>",
+          "14/12/16",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "if",
+          "SQL-Err",
+          "(1:4)",
+          "=",
+          "\"1062\"",
+          "or",
+          "=",
+          "\"1022\"",
+          "*>",
+          "Dup",
+          "key",
+          "(rec",
+          "already",
+          "present)",
+          "or",
+          "Sql-State",
+          "=",
+          "\"23000\"",
+          "*>",
+          "Dup",
+          "key",
+          "(rec",
+          "already",
+          "present)",
+          "move",
+          "22",
+          "to",
+          "fs-reply",
+          "else",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "end-if",
+          "end-if",
+          "end-if",
+          "if",
+          "Testing-1",
+          "perform",
+          "Ca-Process-Logs",
+          "*>",
+          "move",
+          "zeros",
+          "to",
+          "FS-Reply",
+          "SQL-Err",
+          "*>",
+          "move",
+          "spaces",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "if",
+          "fs-reply",
+          "not",
+          "=",
+          "zero",
+          "move",
+          "fs-reply",
+          "to",
+          "ws-saved-fs-reply",
+          "move",
+          "zero",
+          "to",
+          "fs-reply",
+          "*>",
+          "for",
+          "next",
+          "loop",
+          "iteration",
+          "end-if",
+          "end-perform",
+          "if",
+          "ws-saved-fs-reply",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "restore",
+          "last",
+          "error",
+          "move",
+          "ws-saved-fs-reply",
+          "to",
+          "fs-reply",
+          "end-if",
+          "go",
+          "to",
+          "ba999-Exit"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 554,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "call",
+          "\"MySQL_sqlstate\"",
+          "using",
+          "WS-MYSQL-SQLstate",
+          "move",
+          "WS-MYSQL-SqlState",
+          "to",
+          "SQL-State",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "move",
+          "994",
+          "to",
+          "WE-Error",
+          "end-if",
+          "end-if",
+          "if",
+          "Testing-1",
+          "perform",
+          "Ca-Process-Logs",
+          "end-if",
+          "end-perform",
+          "*>",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error"
+        ]
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 595,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "end-call",
+          "*>",
+          "/MYSQL-END\\",
+          "move",
+          "zero",
+          "to",
+          "Most-Cursor-Set"
+        ]
+      },
+      {
+        "target": "fhlogger",
+        "line": 721,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 54,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 82,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 89,
+        "replacing": null
+      },
+      {
+        "name": "mysql-variables",
+        "line": 165,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 180,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 184,
+        "replacing": null
+      },
+      {
+        "name": "irswsfinal",
+        "line": 186,
+        "replacing": null
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 584,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 260
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 287
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 303
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "thru": "MYSQL-1999-EXIT",
+        "line": 311
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 362
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 363
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 395
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 420
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 422
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 430
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 432
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 450
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 452
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 457
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 461
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 475
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 478
+      },
+      {
+        "target": "bb200-Insert",
+        "thru": null,
+        "line": 485
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 504
+      },
+      {
+        "target": "if",
+        "thru": null,
+        "line": 512
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 523
+      },
+      {
+        "target": "bb300-Update",
+        "thru": null,
+        "line": 547
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 566
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 568
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 602
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 654
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 711
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "24",
+        "to": "ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\"",
+        "line": 213
+      },
+      {
+        "from": "zero",
+        "to": "We-Error                        *> as in irsub5\n     move     spaces to WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err\n                        SQL-State",
+        "line": 222
+      },
+      {
+        "from": "1",
+        "to": "ws-No-Paragraph",
+        "line": 286
+      },
+      {
+        "from": "zero",
+        "to": "Most-Cursor-Set\n     go      to ba999-end",
+        "line": 298
+      },
+      {
+        "from": "2",
+        "to": "ws-No-Paragraph",
+        "line": 305
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" > \"                 delimited by size\n                       '\"000\"'             delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC'              delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n *> IRS-FINAL-ACC-REC-KEY > \"000\" ORDER BY IRS-FINAL-ACC-REC-KEY ASC\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=IRSFINAL-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`IRSFINAL-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-IRSFINAL-REC\n*>               /MYSQL-END\\\n           move    \"000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       if    WS-MYSQL-Error-Number  not = \"0  \"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       move  10 to fs-reply\n                       move  10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba998-Free        *> can clear the dup code after testing\n              end-if\n              move     1 to Most-Cursor-Set    *> should test if select worked first??????\n     end-if",
+        "line": 332
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Log-Where",
+        "line": 392
+      },
+      {
+        "from": "4",
+        "to": "ws-No-Paragraph",
+        "line": 393
+      },
+      {
+        "from": "TP-IRSFINAL-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-IRS-FINAL-ACC-REC-KEY\n                    HV-IRS-AR1\n                    HV-IRS-AR2\n\n*>       /MYSQL-END\\\n      end-call\n*>\n*> No it should not happen but ",
+        "line": 403
+      },
+      {
+        "from": "10",
+        "to": "fs-Reply WE-Error\n                       move    \"EOF\" to WS-File-Key\n                       move     zero to Most-Cursor-Set\n                       if       Testing-1                                      *> do for each row\n                                perform Ca-Process-Logs\n                       end-if\n                       exit perform\n              end-if\n *> return-code = zero    and\n              if       HV-IRS-FINAL-ACC-REC-KEY = zero or > 26\n                       move    \"EOF3\" to WS-File-Key\n                       move    HV-IRS-FINAL-ACC-REC-KEY to WE-Error\n                       move     zero to Most-Cursor-Set\n                       if       Testing-1                                      *> do for each row\n                                perform Ca-Process-Logs\n                       end-if\n                       exit perform\n              end-if\n*>\n              move     HV-IRS-FINAL-ACC-REC-KEY to WS-File-Key\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       if    WS-MYSQL-Error-Number  not = \"0  \"\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move 10 to fs-reply                     *> EOF equivilent !!\n                             move 10 to WE-Error\n                             move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                             move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                             move    \"EOF2\" to WS-File-Key\n                       end-if\n                       call     \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move     WS-MYSQL-SqlState   to SQL-State\n                       move     zero to Most-Cursor-Set\n                       if       Testing-1                                      *> do for each row\n                                perform Ca-Process-Logs\n                       end-if\n                       exit perform\n              end-if\n              move     HV-IRS-AR1    to AR1 (HV-IRS-FINAL-ACC-REC-KEY)     *> KEY = table position\n              move     HV-IRS-AR2    to AR2 (HV-IRS-FINAL-ACC-REC-KEY)\n              if       Testing-1\n                       perform Ca-Process-Logs\n                       move     zeros to FS-Reply SQL-Err\n                       move     spaces to SQL-Msg\n              end-if\n     end-perform                                                      *> Have all of the data\n*>\n     move     HV-IRS-FINAL-ACC-REC-KEY to WS-File-Key",
+        "line": 416
+      },
+      {
+        "from": "zero",
+        "to": "fs-reply WE-Error",
+        "line": 464
+      },
+      {
+        "from": "zero",
+        "to": "WS-Mysql-Time-Step\n                      WS-SQL-Retry",
+        "line": 468
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error\n     move     spaces to SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph",
+        "line": 471
+      },
+      {
+        "from": "A",
+        "to": "HV-IRS-FINAL-ACC-REC-KEY\n                                   WS-Key\n              move     WS-Key   to WS-File-Key               *> will contain the record with problems\n              move     AR1 (A)  to HV-IRS-AR1\n              move     AR2 (A)  to HV-IRS-AR2\n              perform  bb200-Insert\n              if       WS-MYSQL-COUNT-ROWS not = 1\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0  \"  *> 14/12/16\n                             call \"MySQL_error\" using Ws-Mysql-Error-Message\n                             move WS-MYSQL-Error-Number  to SQL-Err\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                             if    SQL-Err (1:4) = \"1062\"\n                                              or = \"1022\"   *> Dup key (rec already present)\n                                    or Sql-State = \"23000\"  *> Dup key (rec already present)\n                                   move 22 to fs-reply\n                             else\n                                   move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                             end-if\n                       end-if\n              end-if\n              if       Testing-1\n                       perform Ca-Process-Logs\n   *>                    move     zeros to FS-Reply SQL-Err\n   *>                    move     spaces to SQL-Msg\n              end-if\n              if       fs-reply not = zero\n                       move fs-reply to ws-saved-fs-reply\n                       move zero to fs-reply                   *> for next loop iteration\n              end-if\n     end-perform\n     if       ws-saved-fs-reply not = zero                     *> restore last error\n              move ws-saved-fs-reply to fs-reply\n     end-if\n     go       to ba999-Exit",
+        "line": 480
+      },
+      {
+        "from": "zero",
+        "to": "WS-Mysql-Time-Step\n                      WS-SQL-Retry",
+        "line": 520
+      },
+      {
+        "from": "17",
+        "to": "ws-No-Paragraph",
+        "line": 522
+      },
+      {
+        "from": "A",
+        "to": "WS-Key\n              move     WS-Key   to WS-File-Key               *> will contain the record with problems\n                                   HV-IRS-FINAL-ACC-REC-KEY\n              move     AR1 (A)  to HV-IRS-AR1\n              move     AR2 (A)  to HV-IRS-AR2\n*>\n              set      KOR-x1 to 1            *> 1 = Primary, 2 = Abrev, 3 = Desc (NOT Delete function as can be dups)\n              move     KOR-offset (KOR-x1) to K\n              move     KOR-length (KOR-x1) to L\n*>\n              move     spaces to WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       '=\"'                  delimited by size\n*>                       Final-Record (K:L)       delimited by size\n                       WS-Key                delimited by size *> use the real key for row\n                       '\"'                   delimited by size\n                               into WS-Where\n                                 with pointer J\n              end-string\n              move     WS-Where (1:J)   to WS-Log-Where    *>  For test logging\n              perform  bb300-Update\n*>\n              if       Testing-2\n                       display Display-Message-1 with erase eos\n              end-if\n*>\n              if       WS-MYSQL-COUNT-ROWS not = 1\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0   \"\n                             call \"MySQL_error\" using Ws-Mysql-Error-Message\n                             move WS-MYSQL-Error-Number  to SQL-Err\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                             move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                             move 994 to WE-Error\n                       end-if\n              end-if\n              if       Testing-1\n                       perform Ca-Process-Logs\n              end-if\n     end-perform\n*>\n     move     zero   to FS-Reply WE-Error",
+        "line": 524
+      },
+      {
+        "from": "zero",
+        "to": "SQL-Err",
+        "line": 571
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Msg",
+        "line": 572
+      },
+      {
+        "from": "990",
+        "to": "WE-Error",
+        "line": 579
+      },
+      {
+        "from": "99",
+        "to": "Fs-Reply",
+        "line": 580
+      },
+      {
+        "from": "20",
+        "to": "ws-No-Paragraph",
+        "line": 588
+      },
+      {
+        "from": "TP-IRSFINAL-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     move     zero to Most-Cursor-Set",
+        "line": 594
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`IRSFINAL-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-FINAL-ACC-REC-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-IRS-FINAL-ACC-REC-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-AR1`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-IRS-AR1,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-AR2`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-IRS-AR2,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n       PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       ",
+        "line": 617
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`IRSFINAL-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-FINAL-ACC-REC-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-IRS-FINAL-ACC-REC-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-AR1`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-IRS-AR1,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-AR2`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-IRS-AR2,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING \" WHERE \"\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (WS-Where (1:J))\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       ",
+        "line": 670
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>**********************************************************************************\n*>\n environment division.\n copy \"envdiv.cob\".\n*>\n input-output section.\n Data Division.\n Working-Storage Section.\n 77  prog-name          pic x(20)    value \"irsfinalMT (3.02.11)\".\n*>\n*> JC WS requirements here\n*>\n 77  ws-Where           pic x(512).\n*>\n*>  Used within presql generated code\n*>\n 01  WS-Reply           pic x           value space.\n 01  WS-MYSQL-I         PIC S9(6) COMP.\n 01  WS-MYSQL-EDIT      PIC -Z(18)9.9(9).\n 01  WS-Key             pic 99.\n*>\n*> The communication area for the MySQL database changed for free/mysql\n*>\n*>  jc preSQL MySQL stuff ends\n*>\n*> Metadata on primary and alternate keys...  from Prima DAL for IRSFINAL-REC\n*>\n 01  Table-Of-Keynames.\n     03  filler         pic x(30) value 'IRS-FINAL-ACC-REC-KEY         '.\n     03  filler         pic x(8)  value '00010001'. *> offset/length  as one byte (tinyint)\n     03  filler         pic x(3)  value 'STR'. *> data type\n 01  filler redefines table-of-keynames.\n     03  keyOfReference occurs 1   indexed by KOR-x1.\n         05  KeyName    pic x(30).\n         05  KOR-Offset pic 9(4).\n         05  KOR-Length pic 9(4).\n         05  KOR-Type   pic XXX.                    *> Not used currently\n*>\n*> The START condition cannot be compounded, and it must use a\n*> Key of Reference within the record. (These are COBOL rules...)\n*> The interface defines which key and the relation condition.\n*>\n*>\n 01  DAL-Data.\n         05  MOST-Relation   pic xxx.                  *> valid are >=, <=, <, >, =\n         05  Most-Cursor-Set pic 9    value zero.\n             88  Cursor-Not-Active    value zero.\n             88  Cursor-Active        value 1.\n*>\n*>  Variables common to all DALs\n*>  ****************************\n*>\n 01  subscripts comp-5.\n     12 J                pic s9(4).\n     12 K                pic s9(4).\n     12 L                pic s9(4).\n*>\n 01  Old-File-Function   pic 9 value zero.\n*>\n 01  work-fields.\n     03  ws-saved-fs-reply pic 99.\n     03  ws-env-lines    pic 999              value zero.\n     03  ws-lines        binary-char unsigned value zero.\n     03  ws-22-lines     binary-char unsigned value zero.\n     03  ws-23-lines     binary-char unsigned value zero.\n     03  ws-98-lines     binary-char unsigned value zero.\n     03  ws-99-lines     binary-char unsigned value zero.\n     03  ws-Rec-Cnt      binary-long unsigned value zero.\n*>\n 01  Temp-work-fields.\n     03  Temp-SQL-Err    pic x(5).     *> 29/07/16\n     03  A               pic 99      comp     value zero.\n*>\n 01  Error-Messages.\n     03  SM901          pic x(31) value \"SM901 Note error and hit return\".\n*>\n*> /MYSQL VAR\\\n*>       ACASDB\n*>       TABLE=IRSFINAL-REC,HV\n COPY \"mysql-variables.cpy\".\n*>\n*>    Definitions for the IRSFINAL-REC Table\n*>\n       01  TP-IRSFINAL-REC                       USAGE POINTER.\n       01  TD-IRSFINAL-REC.\n           05  HV-IRS-FINAL-ACC-REC-KEY          PIC  9(03) COMP.\n           05  HV-IRS-AR1                        PIC X(24).\n           05  HV-IRS-AR2                        PIC X(1).\n*> /MYSQL-END\\\n\n Linkage Section.\n*>**************\n*>\n*>**************************************************************\n copy \"wsfnctn.cob\".            *> File-Access\n*>\n*>**************************************************************\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n copy \"irswsfinal.cob\".\n*>\n screen section.\n*>=============\n*>\n 01  Display-Message-1       foreground-color 2.\n     03          value \"WS-Where=\"      line 23 col  1.\n     03  from WS-Where (1:J)           pic x(69)         col 10.\n*>\n 01  Display-Message-2       foreground-color 2.\n     03      value \"SM004 SQL Err No.=\" line 4 col  1.    *> size 18 char\n     03  using Ws-Mysql-Error-Number   pic x(4)          col 19.    *>      4       == 22\n     03      value \" Para=\"                              col 23.    *> size 6 char  == 28\n     03  using WS-No-Paragraph         pic 9(3)          col 29.    *>      4       == 32\n     03      value \" SQL Cmd=\"                           col 32.    *>      9       == 41\n     03  using Ws-Mysql-Command        pic x(199)         col 41.\n     03      value \"SQL Err Msg=\"       line 7 col  1.    *>      12\n     03  using Ws-Mysql-Error-Message  pic x(67)        col 13.\n*>\n*>\n PROCEDURE DIVISION   using File-Access\n                            ACAS-DAL-Common-data\n                            Final-Record.   *>  Ws record\n*>**********************************************\n ba-ACAS-DAL-Process  section.\n     accept   ws-env-lines from lines.\n     if       ws-env-lines < 24\n              move  24 to ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n ba010-Initialise.\n     move     zero   to We-Error                        *> as in irsub5\n     move     spaces to WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err\n                        SQL-State.\n*>\n*>   As this is for only one set of 32 rows we will skip this ...\n*>\n*>  Work out what is being requested and convert to action!!\n*>\n*>    This version uses the JC pre-Sql processor.\n*>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n     evaluate File-Function\n        when  1\n              go to ba020-Process-Open\n        when  2\n              go to ba030-Process-Close\n        when  3\n              go to ba040-Process-Read-Next\n        when  5\n              go to ba070-Process-Write\n        when  7\n              go to ba090-Process-Rewrite\n        when  other                     *> others are unused\n              go to ba100-Bad-Function\n     end-evaluate.\n*>\n ba020-Process-Open.\n*>\n*> To get here the calling program MUST have read the Cobol system record first.\n*>\n\n *>\n *>  Manual process MYSQL INIT\n *>",
+        "line": 79
+      },
+      {
+        "type": "IF",
+        "condition": "fs-reply not = zero\n              go   to ba999-end.\n*>\n*> /MYSQL INIT\\\n*>       BASE=ACASDB\n*>       IMPLEMENTATION=dev-prog-001\n*>       PASSWORD=mysqlpass\n*> /MYSQL-END\\\n*>\n     move    \"OPEN IRS FINAL\" to WS-File-Key\n     move    zero   to Most-Cursor-Set\n     go      to ba999-end.\n*>\n ba030-Process-Close.\n     if      Cursor-Active         *> this will not occur for the system rows/records\n             perform ba998-Free.\n*>\n     move     2 to ws-No-Paragraph.\n     move    \"CLOSE IRS FINAL\" to WS-File-Key.\n*>  /MYSQL CLOSE\\\n*>\n*>    Close the Database\n*>\n           PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n*>  /MYSQL-END\\\n*>\n     go      to ba999-end.\n*>\n ba040-Process-Read-Next.\n*>\n*> Getting the 26 rows for loading into one cobol rec\n*>  having initialised record as some rows may not be present\n*>   if Cobol record has no data for a heading.\n*>    Same applies to the write process.\n*>\n*>   Here a SELECT first",
+        "line": 288
+      },
+      {
+        "type": "IF",
+        "condition": "no cursor active using lowest\n*>    possible key of \"000\"\n*>           [ IRS-FINAL-ACC-REC-KEY ]\n*>\n     if       Cursor-Not-Active\n              set      KOR-x1 to 1\n              move     KOR-offset (KOR-x1) to K\n              move     KOR-length (KOR-x1) to L\n*>\n              move     spaces to WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" > \"                 delimited by size\n                       '\"000\"'             delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC'              delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n *> IRS-FINAL-ACC-REC-KEY > \"000\" ORDER BY IRS-FINAL-ACC-REC-KEY ASC\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=IRSFINAL-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`IRSFINAL-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-IRSFINAL-REC\n*>               /MYSQL-END\\\n           move    \"000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       if    WS-MYSQL-Error-Number  not = \"0  \"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       move  10 to fs-reply\n                       move  10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba998-Free        *> can clear the dup code after testing\n              end-if\n              move     1 to Most-Cursor-Set    *> should test if select worked first??????\n     end-if.\n*>\n*>  If here cursor is set, so get all the (up to 26) rows in one hit\n*>\n     move     spaces to WS-Log-Where.\n     move     4 to ws-No-Paragraph.\n     initialize Final-Record with filler.\n     perform  varying A from 1 by 1\n                    until A > 26\n *>                      or return-code not = zero\n*>       /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>              TABLE=IRSFINAL-REC\n           MOVE TP-IRSFINAL-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-IRS-FINAL-ACC-REC-KEY\n                    HV-IRS-AR1\n                    HV-IRS-AR2\n\n*>       /MYSQL-END\\\n      end-call\n*>\n*> No it should not happen but ..\n*>\n              if       return-code = -1     *> no more data so free cursor & return\n                  or   A > 26 or = zero\n                       move 10 to fs-Reply WE-Error\n                       move    \"EOF\" to WS-File-Key\n                       move     zero to Most-Cursor-Set\n                       if       Testing-1                                      *> do for each row\n                                perform Ca-Process-Logs\n                       end-if\n                       exit perform\n              end-if\n *> return-code = zero    and\n              if       HV-IRS-FINAL-ACC-REC-KEY = zero or > 26\n                       move    \"EOF3\" to WS-File-Key\n                       move    HV-IRS-FINAL-ACC-REC-KEY to WE-Error\n                       move     zero to Most-Cursor-Set\n                       if       Testing-1                                      *> do for each row\n                                perform Ca-Process-Logs\n                       end-if\n                       exit perform\n              end-if\n*>\n              move     HV-IRS-FINAL-ACC-REC-KEY to WS-File-Key\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       if    WS-MYSQL-Error-Number  not = \"0  \"\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move 10 to fs-reply                     *> EOF equivilent !!\n                             move 10 to WE-Error\n                             move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                             move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                             move    \"EOF2\" to WS-File-Key\n                       end-if\n                       call     \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move     WS-MYSQL-SqlState   to SQL-State\n                       move     zero to Most-Cursor-Set\n                       if       Testing-1                                      *> do for each row\n                                perform Ca-Process-Logs\n                       end-if\n                       exit perform\n              end-if\n              move     HV-IRS-AR1    to AR1 (HV-IRS-FINAL-ACC-REC-KEY)     *> KEY = table position\n              move     HV-IRS-AR2    to AR2 (HV-IRS-FINAL-ACC-REC-KEY)\n              if       Testing-1\n                       perform Ca-Process-Logs\n                       move     zeros to FS-Reply SQL-Err\n                       move     spaces to SQL-Msg\n              end-if\n     end-perform                                                      *> Have all of the data\n*>\n     move     HV-IRS-FINAL-ACC-REC-KEY to WS-File-Key.\n     move     zero to fs-reply WE-Error.\n     go       to ba999-exit.  *> have written logs if testing\n*>\n ba070-Process-Write.\n     move     zero to WS-Mysql-Time-Step\n                      WS-SQL-Retry.\n*>\n     move     zero to FS-Reply WE-Error\n     move     spaces to SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph.\n     perform  varying A from 1 by 1 until A > 26\n *>             if       AR1 (A) = spaces              *> dont write out blank data\n *>                 and  AR2 (A) = spaces\n *>                      exit perform cycle\n *>             end-if\n              move     A        to HV-IRS-FINAL-ACC-REC-KEY\n                                   WS-Key\n              move     WS-Key   to WS-File-Key               *> will contain the record with problems\n              move     AR1 (A)  to HV-IRS-AR1\n              move     AR2 (A)  to HV-IRS-AR2\n              perform  bb200-Insert\n              if       WS-MYSQL-COUNT-ROWS not = 1\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0  \"  *> 14/12/16\n                             call \"MySQL_error\" using Ws-Mysql-Error-Message\n                             move WS-MYSQL-Error-Number  to SQL-Err\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                             if    SQL-Err (1:4) = \"1062\"\n                                              or = \"1022\"   *> Dup key (rec already present)\n                                    or Sql-State = \"23000\"  *> Dup key (rec already present)\n                                   move 22 to fs-reply\n                             else\n                                   move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                             end-if\n                       end-if\n              end-if\n              if       Testing-1\n                       perform Ca-Process-Logs\n   *>                    move     zeros to FS-Reply SQL-Err\n   *>                    move     spaces to SQL-Msg\n              end-if\n              if       fs-reply not = zero\n                       move fs-reply to ws-saved-fs-reply\n                       move zero to fs-reply                   *> for next loop iteration\n              end-if\n     end-perform\n     if       ws-saved-fs-reply not = zero                     *> restore last error\n              move ws-saved-fs-reply to fs-reply\n     end-if\n     go       to ba999-Exit.\n*>\n ba090-Process-Rewrite.\n*>\n     move     zero to WS-Mysql-Time-Step\n                      WS-SQL-Retry.\n     move     17 to ws-No-Paragraph.\n     perform  varying A from 1 by 1 until A > 26\n              move     A        to WS-Key\n              move     WS-Key   to WS-File-Key               *> will contain the record with problems\n                                   HV-IRS-FINAL-ACC-REC-KEY\n              move     AR1 (A)  to HV-IRS-AR1\n              move     AR2 (A)  to HV-IRS-AR2\n*>\n              set      KOR-x1 to 1            *> 1 = Primary, 2 = Abrev, 3 = Desc (NOT Delete function as can be dups)\n              move     KOR-offset (KOR-x1) to K\n              move     KOR-length (KOR-x1) to L\n*>\n              move     spaces to WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       '=\"'                  delimited by size\n*>                       Final-Record (K:L)       delimited by size\n                       WS-Key                delimited by size *> use the real key for row\n                       '\"'                   delimited by size\n                               into WS-Where\n                                 with pointer J\n              end-string\n              move     WS-Where (1:J)   to WS-Log-Where    *>  For test logging\n              perform  bb300-Update\n*>\n              if       Testing-2\n                       display Display-Message-1 with erase eos\n              end-if\n*>\n              if       WS-MYSQL-COUNT-ROWS not = 1\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       call  \"MySQL_sqlstate\" using WS-MYSQL-SQLstate\n                       move  WS-MYSQL-SqlState   to SQL-State\n                       if    WS-MYSQL-Error-Number  not = \"0   \"\n                             call \"MySQL_error\" using Ws-Mysql-Error-Message\n                             move WS-MYSQL-Error-Number  to SQL-Err\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                             move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                             move 994 to WE-Error\n                       end-if\n              end-if\n              if       Testing-1\n                       perform Ca-Process-Logs\n              end-if\n     end-perform\n*>\n     move     zero   to FS-Reply WE-Error.\n     move     zero   to SQL-Err.\n     move     spaces to SQL-Msg.\n     go       to ba999-exit.\n*>\n ba100-Bad-Function.\n*>\n*> Houston; We have a problem\n*>\n     move     990 to WE-Error.\n     move     99 to Fs-Reply.\n     go       to ba999-end.\n*>\n*> /MYSQL PRO\\\n COPY \"mysql-procedures.cpy\".\n*> /MYSQL-END\\\n*>\n ba998-Free.\n     move     20 to ws-No-Paragraph.\n*>      /MYSQL FREE\\\n*>\n*>    Free result array\n*>\n*>             TABLE=IRSFINAL-REC\n           MOVE TP-IRSFINAL-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     move     zero to Most-Cursor-Set.\n*>\n ba999-end.\n*>\n     if       Testing-1\n              perform Ca-Process-Logs\n     end-if.\n*>\n ba999-exit.\n     exit program.\n*>\n bb200-Insert Section.\n*>*******************\n*>\n*>  /MYSQL INSERT\\\n*>\n*>    Insert a row\n*>\n*>         TABLE=IRSFINAL-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`IRSFINAL-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-FINAL-ACC-REC-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-IRS-FINAL-ACC-REC-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-AR1`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-IRS-AR1,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-AR2`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-IRS-AR2,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n       PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb200-Exit.\n     exit section.\n*>\n bb300-Update Section.\n*>*******************\n*>\n*>  /MYSQL UPDATE\\\n*>\n*>    Update a row\n*>\n*>      TABLE=IRSFINAL-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`IRSFINAL-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-FINAL-ACC-REC-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-IRS-FINAL-ACC-REC-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-AR1`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-IRS-AR1,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`IRS-AR2`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (HV-IRS-AR2,TRAILING)\n                  '\"'\n                   INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           STRING \" WHERE \"\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (WS-Where (1:J))\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb300-Exit.\n     exit section.\n*>\n Ca-Process-Logs.\n*>**************\n*>\n     call     \"fhlogger\" using File-Access\n                               ACAS-DAL-Common-data.\n*>\n ca-Exit.     exit.\n*>\n end program irsfinalMT.",
+        "line": 323
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "File-Function\n        when  1\n              go to ba020-Process-Open\n        when  2\n              g...",
+        "line": 238,
+        "whenCount": 6
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 17,
+    "cognitive": 15,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 33,
+      "totalOperators": 25,
+      "totalOperands": 50,
+      "vocabulary": 34,
+      "length": 75,
+      "volume": 381.55971309377543
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

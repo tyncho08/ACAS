@@ -1,0 +1,931 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs070.cbl",
+  "fileName": "irs070.cbl",
+  "timestamp": "2025-09-15T16:25:48.854Z",
+  "programId": "irs070",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "file",
+        "line": 124
+      },
+      {
+        "name": "working-storage",
+        "line": 125
+      },
+      {
+        "name": "linkage",
+        "line": 229
+      },
+      {
+        "name": "init01",
+        "line": 270
+      },
+      {
+        "name": "date-validate",
+        "line": 709
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "File-Defs",
+        "line": 267
+      },
+      {
+        "name": "input-loop",
+        "line": 297
+      },
+      {
+        "name": "reverse-cr",
+        "line": 373
+      },
+      {
+        "name": "reverse-vat",
+        "line": 399
+      },
+      {
+        "name": "reverse-end",
+        "line": 431
+      },
+      {
+        "name": "date-input",
+        "line": 440
+      },
+      {
+        "name": "get-ac-def",
+        "line": 452
+      },
+      {
+        "name": "get-vat-side",
+        "line": 458
+      },
+      {
+        "name": "jump-to-dr",
+        "line": 505
+      },
+      {
+        "name": "rewrite-posting",
+        "line": 556
+      },
+      {
+        "name": "post-delete",
+        "line": 562
+      },
+      {
+        "name": "End-of-Amend",
+        "line": 568
+      },
+      {
+        "name": "end-option",
+        "line": 577
+      },
+      {
+        "name": "File-Defs",
+        "line": 593
+      },
+      {
+        "name": "rewrite-loop",
+        "line": 605
+      },
+      {
+        "name": "end-of-run",
+        "line": 620
+      },
+      {
+        "name": "main99-exit",
+        "line": 631
+      },
+      {
+        "name": "accept-money",
+        "line": 634
+      },
+      {
+        "name": "justify-accept-money",
+        "line": 652
+      },
+      {
+        "name": "end-if",
+        "line": 707
+      },
+      {
+        "name": "pack-loop-1",
+        "line": 793
+      },
+      {
+        "name": "pack-loop-2",
+        "line": 804
+      },
+      {
+        "name": "main-exit",
+        "line": 823
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "irsubn",
+        "line": 65,
+        "type": "DYNAMIC",
+        "using": []
+      },
+      {
+        "target": "irs055",
+        "line": 591,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "File-Defs"
+        ]
+      },
+      {
+        "target": "irsubp",
+        "line": 602,
+        "type": "DYNAMIC",
+        "using": [
+          "posting-record",
+          "file-access",
+          "File-Defs"
+        ]
+      },
+      {
+        "target": "irsubp",
+        "line": 608,
+        "type": "DYNAMIC",
+        "using": [
+          "posting-record",
+          "file-access",
+          "File-Defs"
+        ]
+      },
+      {
+        "target": "irsubp",
+        "line": 625,
+        "type": "DYNAMIC",
+        "using": [
+          "posting-record",
+          "file-access",
+          "File-Defs"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 115,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 122,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 160,
+        "replacing": null
+      },
+      {
+        "name": "irswsnl",
+        "line": 162,
+        "replacing": null
+      },
+      {
+        "name": "irswsdflt",
+        "line": 163,
+        "replacing": null
+      },
+      {
+        "name": "irswspost",
+        "line": 164,
+        "replacing": null
+      },
+      {
+        "name": "screenio",
+        "line": 207,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 216,
+        "replacing": null
+      },
+      {
+        "name": "irswssystem",
+        "line": 230,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 233,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 263,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ZZ100-ACAS-IRS-Calls",
+        "line": 827,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "acasirsubn",
+        "thru": null,
+        "line": 66
+      },
+      {
+        "target": "acasirsub3",
+        "thru": null,
+        "line": 282
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 286
+      },
+      {
+        "target": "acasirsub4",
+        "thru": null,
+        "line": 290
+      },
+      {
+        "target": "acasirsub4",
+        "thru": null,
+        "line": 325
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 352
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 371
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 380
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 397
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 410
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 429
+      },
+      {
+        "target": "date-validate",
+        "thru": null,
+        "line": 442
+      },
+      {
+        "target": "accept-money",
+        "thru": null,
+        "line": 449
+      },
+      {
+        "target": "accept-money",
+        "thru": null,
+        "line": 467
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 480
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 488
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 500
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 512
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 519
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 526
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 533
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 544
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 552
+      },
+      {
+        "target": "acasirsub4",
+        "thru": null,
+        "line": 559
+      },
+      {
+        "target": "acasirsub4",
+        "thru": null,
+        "line": 565
+      },
+      {
+        "target": "acasirsub4",
+        "thru": null,
+        "line": 572
+      },
+      {
+        "target": "acasirsub1",
+        "thru": null,
+        "line": 574
+      },
+      {
+        "target": "acasirsub4",
+        "thru": null,
+        "line": 599
+      },
+      {
+        "target": "acasirsub4",
+        "thru": null,
+        "line": 616
+      },
+      {
+        "target": "acasirsub4",
+        "thru": null,
+        "line": 623
+      },
+      {
+        "target": "justify-accept-money",
+        "thru": null,
+        "line": 641
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 660
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 664
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 669
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 673
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 678
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 686
+      },
+      {
+        "target": "cycle",
+        "thru": null,
+        "line": 691
+      },
+      {
+        "target": "if",
+        "thru": null,
+        "line": 693
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "zero",
+        "to": "save-sequ",
+        "line": 279
+      },
+      {
+        "from": "3",
+        "to": "file-function",
+        "line": 281
+      },
+      {
+        "from": "1",
+        "to": "file-function",
+        "line": 284
+      },
+      {
+        "from": "2",
+        "to": "access-type",
+        "line": 285
+      },
+      {
+        "from": "1",
+        "to": "file-function",
+        "line": 288
+      },
+      {
+        "from": "2",
+        "to": "access-type",
+        "line": 289
+      },
+      {
+        "from": "zero",
+        "to": "post-key",
+        "line": 315
+      },
+      {
+        "from": "zero",
+        "to": "we-error",
+        "line": 323
+      },
+      {
+        "from": "4",
+        "to": "file-function",
+        "line": 324
+      },
+      {
+        "from": "post-amount",
+        "to": "display-amount",
+        "line": 337
+      },
+      {
+        "from": "vat-amount",
+        "to": "display-amount",
+        "line": 342
+      },
+      {
+        "from": "post-dr",
+        "to": "nl-owning",
+        "line": 349
+      },
+      {
+        "from": "zero",
+        "to": "nl-sub-nominal",
+        "line": 350
+      },
+      {
+        "from": "4",
+        "to": "file-function",
+        "line": 351
+      },
+      {
+        "from": "1",
+        "to": "error-flag\n              go to reverse-cr\n     else\n              move zero to error-flag\n     end-if\n     if       post-amount > zero\n              add  post-amount  to  nl-cr\n     else\n              subtract  post-amount  from  nl-dr\n     end-if\n     if       post-vat-side = \"CR\"  and  vat-amount > 0\n              add  vat-amount  to  nl-cr",
+        "line": 355
+      },
+      {
+        "from": "7",
+        "to": "file-function",
+        "line": 370
+      },
+      {
+        "from": "post-cr",
+        "to": "nl-owning",
+        "line": 377
+      },
+      {
+        "from": "zero",
+        "to": "nl-sub-nominal",
+        "line": 378
+      },
+      {
+        "from": "4",
+        "to": "file-function",
+        "line": 379
+      },
+      {
+        "from": "1",
+        "to": "error-flag\n              go to  reverse-vat\n     end-if\n     if       post-amount > zero\n              add  post-amount  to  nl-dr\n     else\n              subtract  post-amount  from  nl-cr\n     end-if\n     if       post-vat-side = \"DR\"  and  vat-amount > 0\n              add  vat-amount  to  nl-dr",
+        "line": 383
+      },
+      {
+        "from": "7",
+        "to": "file-function",
+        "line": 396
+      },
+      {
+        "from": "vat-ac-def",
+        "to": "y",
+        "line": 406
+      },
+      {
+        "from": "zero",
+        "to": "nl-sub-nominal",
+        "line": 408
+      },
+      {
+        "from": "4",
+        "to": "file-function",
+        "line": 409
+      },
+      {
+        "from": "1",
+        "to": "error-flag\n              go to  reverse-end\n     end-if\n     if       post-vat-side = \"CR\"  and  vat-amount > 0\n              add  vat-amount  to  nl-dr\n     end-if\n     if       post-vat-side = \"DR\"  and  vat-amount > 0\n              add  vat-amount  to  nl-cr\n     end-if\n     if       post-vat-side = \"CR\"  and  vat-amount < 0\n              add  vat-amount  to  nl-cr\n     end-if\n     if       post-vat-side = \"DR\"  and  vat-amount < 0\n              add  vat-amount  to  nl-dr\n     end-if\n     move     7  to  file-function",
+        "line": 413
+      },
+      {
+        "from": "1014",
+        "to": "curs2",
+        "line": 447
+      },
+      {
+        "from": "post-amount",
+        "to": "amt-ok",
+        "line": 448
+      },
+      {
+        "from": "amt-ok",
+        "to": "post-amount",
+        "line": 450
+      },
+      {
+        "from": "1514",
+        "to": "curs2",
+        "line": 465
+      },
+      {
+        "from": "vat-amount",
+        "to": "amt-ok",
+        "line": 466
+      },
+      {
+        "from": "amt-ok",
+        "to": "vat-amount",
+        "line": 473
+      },
+      {
+        "from": "post-dr",
+        "to": "nl-owning",
+        "line": 477
+      },
+      {
+        "from": "zero",
+        "to": "nl-sub-nominal",
+        "line": 478
+      },
+      {
+        "from": "4",
+        "to": "file-function",
+        "line": 479
+      },
+      {
+        "from": "post-cr",
+        "to": "nl-owning",
+        "line": 485
+      },
+      {
+        "from": "zero",
+        "to": "nl-sub-nominal",
+        "line": 486
+      },
+      {
+        "from": "4",
+        "to": "file-function",
+        "line": 487
+      },
+      {
+        "from": "vat-ac-def",
+        "to": "y",
+        "line": 496
+      },
+      {
+        "from": "zero",
+        "to": "nl-sub-nominal",
+        "line": 498
+      },
+      {
+        "from": "4",
+        "to": "file-function",
+        "line": 499
+      },
+      {
+        "from": "post-dr",
+        "to": "nl-owning",
+        "line": 509
+      },
+      {
+        "from": "zero",
+        "to": "nl-sub-nominal",
+        "line": 510
+      },
+      {
+        "from": "4",
+        "to": "file-function",
+        "line": 511
+      },
+      {
+        "from": "7",
+        "to": "file-function",
+        "line": 518
+      },
+      {
+        "from": "post-cr",
+        "to": "nl-owning",
+        "line": 523
+      },
+      {
+        "from": "zero",
+        "to": "nl-sub-nominal",
+        "line": 524
+      },
+      {
+        "from": "4",
+        "to": "file-function",
+        "line": 525
+      },
+      {
+        "from": "7",
+        "to": "file-function",
+        "line": 532
+      },
+      {
+        "from": "vat-ac-def",
+        "to": "y",
+        "line": 540
+      },
+      {
+        "from": "zero",
+        "to": "nl-sub-nominal",
+        "line": 542
+      },
+      {
+        "from": "4",
+        "to": "file-function",
+        "line": 543
+      },
+      {
+        "from": "7",
+        "to": "file-function",
+        "line": 551
+      },
+      {
+        "from": "7",
+        "to": "file-function",
+        "line": 558
+      },
+      {
+        "from": "8",
+        "to": "file-function",
+        "line": 564
+      },
+      {
+        "from": "2",
+        "to": "file-function",
+        "line": 571
+      },
+      {
+        "from": "2",
+        "to": "file-function",
+        "line": 573
+      },
+      {
+        "from": "2",
+        "to": "pass-value save-sequ",
+        "line": 590
+      },
+      {
+        "from": "zero",
+        "to": "pass-value",
+        "line": 595
+      },
+      {
+        "from": "1",
+        "to": "file-function",
+        "line": 597
+      },
+      {
+        "from": "3",
+        "to": "access-type",
+        "line": 598
+      },
+      {
+        "from": "1",
+        "to": "access-type",
+        "line": 601
+      },
+      {
+        "from": "zero",
+        "to": "counter",
+        "line": 603
+      },
+      {
+        "from": "3",
+        "to": "file-function",
+        "line": 607
+      },
+      {
+        "from": "counter",
+        "to": "post-key",
+        "line": 613
+      },
+      {
+        "from": "5",
+        "to": "file-function",
+        "line": 615
+      },
+      {
+        "from": "2",
+        "to": "file-function",
+        "line": 622
+      },
+      {
+        "from": "2",
+        "to": "file-function",
+        "line": 624
+      },
+      {
+        "from": "amt-wk-pence",
+        "to": "ws-pence",
+        "line": 637
+      },
+      {
+        "from": "\".\"",
+        "to": "ws-period",
+        "line": 638
+      },
+      {
+        "from": "amt-wk-pds",
+        "to": "ws-pound",
+        "line": 639
+      },
+      {
+        "from": "ws-pound",
+        "to": "amt-wk-pds",
+        "line": 648
+      },
+      {
+        "from": "ws-pence",
+        "to": "amt-wk-pence",
+        "line": 649
+      },
+      {
+        "from": "zero",
+        "to": "amt-ok c d",
+        "line": 658
+      },
+      {
+        "from": "10",
+        "to": "b",
+        "line": 659
+      },
+      {
+        "from": "2",
+        "to": "c                        *> set negative flag - twice\n                    exit perform                       *> we have an error\n              end-if\n              if    ws-amount-screen-accept (a:1) = \"",
+        "line": 663
+      },
+      {
+        "from": "2",
+        "to": "d                        *> set decimal flag - twice\n                    exit perform                       *> we have an error\n              end-if\n              if    ws-amount-screen-accept (a:1) = \"-\"\n                    move 1 to c                        *> set negative flag\n                    exit perform cycle\n              end-if\n              if    ws-amount-screen-accept (a:1) = \"",
+        "line": 668
+      },
+      {
+        "from": "1",
+        "to": "d                        *> set decimal flag\n                    subtract b from 10 giving e    *> = 0, 1 or 2 dec",
+        "line": 676
+      },
+      {
+        "from": "3",
+        "to": "c                 *> if we have number already we cannot\n                    exit perform                *> NOT have more\n              end-if\n              if    ws-amount-screen-accept (a:1) numeric\n                    subtract 1 from b               *> 1st char is (10)\n                    move ws-amount-screen-accept (a:1) to ws-num-dstring (b:1)\n                    exit perform cycle\n              end-if\n     end-perform\n     if       c < 2 and d < 2         *> these are errors\n       if     e = 2\n              divide ws-nstrg by 100 giving amt-ok\n       else\n        if    e = 1\n              divide ws-nstrg by 10  giving amt-ok\n        else\n              move ws-nstrg to amt-ok\n        end-if\n       end-if\n       if     c = 1\n              multiply -1 by amt-ok\n       end-if\n     end-if",
+        "line": 685
+      },
+      {
+        "from": "zero",
+        "to": "u-bin q",
+        "line": 736
+      },
+      {
+        "from": "post-date",
+        "to": "u-date",
+        "line": 737
+      },
+      {
+        "from": "u-date",
+        "to": "post-date",
+        "line": 767
+      },
+      {
+        "from": "1",
+        "to": "ws-work1",
+        "line": 783
+      },
+      {
+        "from": "zero",
+        "to": "ws-work2",
+        "line": 784
+      },
+      {
+        "from": "zero",
+        "to": "u-bin\n              go to  pack-end",
+        "line": 790
+      },
+      {
+        "from": "zero",
+        "to": "u-bin\n              go to pack-end",
+        "line": 807
+      },
+      {
+        "from": "zero",
+        "to": "u-bin",
+        "line": 822
+      }
+    ],
+    "computes": [
+      {
+        "target": "u-bin",
+        "expression": "u-year * 365",
+        "line": 787
+      }
+    ]
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "post file changed.\n*> 26/07/83 vbc - rewrite date vet routine.\n*>  7/12/83 vbc - tidyup display.\n*> 16/03/84 vbc - detect for incorrect entry on ac-def\n*> 28/05/84 vbc - hilite display heads.\n*> 14/04/85 vbc - test for default 31 32 0\n*> 27/09/89 vbc - 2.53\n*>                Mods for cobol/2.\n*> 23/01/09 vbc - Migration to Open/Gnu Cobol as version 3.\n*> 21/02/09 vbc - Added support for environment LINES and COLUMNS as needed. NOT\n*> 22/02/09 vbc - Renamed the program\n*> 28/02/09 vbc - change test for (= Y or y) to (= Y or = y)\n*> 03/12/16 vbc - 3.02\n*> 03/12/16 vbc - .07 RDB support via acasirsub(1-5) & DALs and using\n*>                    standard ACAS param file (system.dat) for info pickup\n*>                    passed to IRS-System-Params (renamed from system-record).\n*>                    Replaced all occurances of call \"irsubn\" by\n*>                     perform acasirsubn\n*>                    File-Defs  added to all irsnnn calls as 2nd param.\n*>                    Clean up all msgs to use Pre-Defined ones system/module\n*>                    wide across entire IRS system in compliance with all of\n*>                    ACAS.\n*> 20/12/16 vbc -     All irs progs call cpybk Proc-ZZ100-ACAS-IRS-Calls.\n*> 29/01/18 vbc -     Removed unused error messages from WS.\n*>                    Changed copies to use copybooks where poss. I.e.,\n*>                    renamed print-spool-commandxxx & wsnl to irsprint-spool-command\n*>                    & irswsnl as moved to copybooks dir.\n*> 10/02/18 vbc - .08 Belated version update.\n*> 10/02/18 vbc -     Renamed IR011-16 to IR911-16\n*> 11/02/17 vbc - .09 Changed quit of posting from zero to ESCape to allow\n*>                    for posting number of zero and no it should not happen but.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>**\n*> TODO.\n*> 28/02/09 vbc     I MUST RELOOK AT THIS WITH THE POSTING MODULE TO CHECK\n*>                  IF THIS MODULE IS DOING THE REVERSE AND ADD CORRECTLY\n*>                   AS I AM A BIT DUBIOUS\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment division.\n copy  \"envdiv.cob\".\n data division.\n file section.\n working-storage section.\n 77  prog-name           pic x(16) value \"irs070 (3.02.09)\".\n*>\n 01  filler.\n     03  a               binary-char     value zero.\n     03  b               binary-char     value zero.\n     03  c               binary-char     value zero.\n     03  d               binary-char     value zero.\n     03  e               binary-char     value zero.\n*>\n     03  menu-reply      pic 9.\n     03  ws-reply        pic x.\n*>\n     03  counter         pic 9(5).\n     03  ws-pass         pic x(4).\n     03  y               pic 99.\n     03  ws-type         pic xx.\n     03  ws-default      pic s9(7)v99    value zero.\n     03  ws-vat          pic s9(7)v99    value zero.\n     03  ws-batch        pic s9(7)v99    value zero.\n     03  ws-def-ac       pic s9(7)v99    value zero.\n     03  input-account   pic s9(5).\n     03  ws-vat-code     pic x.\n     03  save-post       pic 9(5).\n     03  save-key        pic 9(5).\n     03  save-lin        pic 99.\n     03  net-display     pic -(6)9.99.\n     03  vat-display     pic -(6)9.99.\n     03  display-amount  pic z(6)9.99.\n     03  display-account pic zzzz9.\n     03  error-flag      pic 9.\n     03  ws-def-name     pic x(24).\n     03  ws-vat-ac       pic x(20).\n     03  display-legend  pic x(16).\n*>\n copy \"wsfnctn.cob\".\n*>\n copy \"irswsnl.cob\"       replacing nl-record      by WS-IRSNL-Record.\n copy \"irswsdflt.cob\"     replacing Default-Record by WS-IRS-Default-Record.\n copy \"irswspost.cob\".\n*>\n 01  date-fields.\n     03  q               pic 9.\n*>\n     03  days-in-month   pic x(24)  value \"312831303130313130313031\".\n     03  filler  redefines  days-in-month.\n         05  days        pic 99     occurs 12.\n     03  ws-work1        pic 9(5)             comp-3.\n     03  ws-work2        pic 9(5)             comp-3.\n     03  display-bin     pic zzzz9.\n*>\n 01  maps03-ws.\n     03  u-date          pic x(8).\n     03  filler  redefines  u-date.\n       05  u-days        pic 99.\n       05  filler        pic x.\n       05  u-month       pic 99.\n       05  filler        pic x.\n       05  u-year        pic 99.\n     03  u-bin           pic 9(5)   comp.\n*>\n 01  ws-amount-screen-display.\n     03  ws-poundsd      pic 9(7).\n     03  ws-period       pic x     value \".\".\n     03  ws-penced       pic v99.\n 01  ws-amount-screen-accept redefines ws-amount-screen-display.\n     03  ws-pound        pic 9(7).\n     03  filler          pic x.\n     03  ws-pence        pic v99.\n*>\n 01  ws-amount-work.\n     03  amt-wk-pds      pic s9(7).\n     03  amt-wk-pence    pic v99.\n 01  ws-amount-ok redefines ws-amount-work.\n     03  amt-ok          pic s9(7)v99.\n*>\n 01  ws-num-dstring.\n     03  ws-nstrg        pic 9(9).\n 01  ws-dstrg.\n     03  ws-dstrg-9      pic 99.\n*>\n 01  All-My-Constants    pic 9(4).\n     copy \"screenio.cpy\".\n*>\n 01  Dummies-For-Unused-FH-Calls.      *> IRS call blk at zz100-ACAS-IRS-Calls\n *>    03  WS-IRSNL-Record       pic x.\n *>    03  WS-IRS-Default-Record pic x.\n *>    03  Posting-Record        pic x.\n     03  Final-Record          pic x.\n     03  WS-IRS-Posting-Record pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  Error-Messages.\n*> System Wide      USED are :\n     03  SY008          pic x(32) value \"SY008 Note message & Hit return \".\n     03  IR911          pic x(47) value \"IR911 Error on systemMT processing, Fs-reply = \".\n     03  IR912          pic x(51) value \"IR912 Error on irsnominalMT processing, Fs-reply = \".\n     03  IR913          pic x(48) value \"IR913 Error on irsdfltMT processing, Fs-reply = \".\n     03  IR914          pic x(51) value \"IR914 Error on irspostingMT processing, Fs-reply = \".\n     03  IR915          pic x(49) value \"IR915 Error on irsfinalMT processing, Fs-reply = \".\n     03  IR916          pic x(50) value \"IR916 Error on slpostingMT processing, Fs-reply = \".\n*> Module specific  USED are None.\n*>\n linkage section.\n copy \"irswssystem.cob\"   *> IRS param record\n              replacing system-record  by IRS-System-Params. *> (01 level)\n*>\n copy \"wssystem.cob\"    *> NEW for v3.02\n             replacing  System-Record by WS-System-Record\n                        Run-Date   by ACAS-Run-Date     *> these 3 are in binary\n                        Start-Date by ACAS-Start-Date   *> IRS expects as x(8)\n                        End-Date   by ACAS-End-Date     *>  dd/mm/yy\n                        suser      by ACAS-suser\n                        Address-1  by ACAS-Address-1\n                        Address-2  by ACAS-Address-2\n                        Address-3  by ACAS-Address-3\n                        Address-4  by ACAS-Address-4\n                        Post-Code  by ACAS-Post-Code\n                        Print-Spool-Name by ACAS-Print-Spool-Name\n                        Pass-Value by ACAS-Pass-Value\n                        Pass-Word  by ACAS-Pass-Word\n                        OP-System  By ACAS-Op-System\n                        Client     by IRS-Client\n                        System-Ops by IRS-System-Ops\n                        Next-Post  by IRS-Next-Post\n                        Vat-Rates2 by IRS-Vat-Rates2\n                        Vat1       by IRS-Vat1\n                        Vat2       by IRS-Vat2\n                        Vat3       by IRS-Vat3\n                        Vat-Group  by IRS-Vat-Group\n                        Vat-Psent  by IRS-Vat-Psent\n                        Save-Sequ  by IRS-Save-Sequ\n                        System-Work-Group by IRS-System-Work-Group\n                        PL-App-Created by IRS-PL-App-Created\n                        PL-Approp-AC   by IRS-PL-Approp-AC\n                        1st-Time-Flag  by IRS-First-Time-Flag.\n*>\n copy \"wsnames.cob\".\n*>\n procedure division using IRS-System-Params\n                          WS-System-Record\n                          File-Defs.\n*>=========================================\n*>\n init01       section.\n*>********************\n*>\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n*> first get date & user information..\n*>\n     move     zero to save-sequ.\n*>\n     move     3  to  file-function.\n     perform  acasirsub3.           *> Defaults - Open input, Read,  Close\n*>\n     move     1  to  file-function.\n     move     2  to  access-type.\n     perform  acasirsub1.           *> NL - open i/o\n*>\n     move     1  to  file-function.\n     move     2  to  access-type.\n     perform  acasirsub4.           *> Postings - open i/o\n*>\n     display  \" \" at 0101 with erase eos.\n     display  prog-name at 0101 with foreground-color 2.\n     display  \"Posting Correction\" at 0131 with foreground-color 1 background-color 7.\n     display  run-date at 0173 with foreground-color 2.\n*>\n input-loop.\n*>\n     display  \"Number   :  [     ]\" at 0501 with foreground-color 2.\n     display  \"(ESC to quit)\" at 0525 with foreground-color 2 erase eol.\n     display  \"Code     :  [  ]\" at 0601 with foreground-color 2.\n     display  \"Date     :  [        ]\" at 0701 with foreground-color 2.\n     display  \"Debit    :  [     ]\" at 0801 with foreground-color 2.\n     display  \"Credit   :  [     ]\" at 0901 with foreground-color 2.\n     display  \"Net      :  [          ]\" at 1001 with foreground-color 2.\n     display  \" \" at 1101       with erase eol foreground-color 2.\n     display  \"Narative :  [\" at 1101 with foreground-color 2.\n     display  \"]\" AT 1147             with foreground-color 2.\n     display  \"VAT Type :  [  ]\" at 1201     with foreground-color 2.\n     display  \"(31-Input/32-Output)\" at 1301 with foreground-color 2.\n     display  \"VAT Side :  [  ]\" at 1401     with foreground-color 2.\n     display  \"VAT      :  [          ]\" AT 1501 with foreground-color 2.\n     display  \"Enter code of <**> to delete\" AT 2201 with foreground-color 2.\n     display  \"Enter number or ESC to exit\" AT 2301 with foreground-color 2.\n     move     zero to post-key.\n     accept   post-key at 0514 with foreground-color 3 update.\n *>    if       post-key = zero\n     if       Cob-Crt-Status = Cob-Scr-Esc\n              go to  End-of-Amend.\n*>\n*> now retrieve Posting Record\n*>\n     move     zero  to  we-error.\n     move     4  to  file-function.\n     perform  acasirsub4.\n*>\n     if       we-error = 2\n              display \"Posting does not exist!\" at 0542 with foreground-color 2\n              go to input-loop.\n*>\n     display  \"Reversing posting. please wait\"  at 0542 with foreground-color 2.\n*>\n     display  post-code at 0614 with foreground-color 3.\n     display  post-date at 0714 with foreground-color 3.\n     display  post-dr at 0814   with foreground-color 3.\n     display  post-cr at 0914   with foreground-color 3.\n     move     post-amount  to  display-amount.\n     display  display-amount at 1014 with foreground-color 3.\n     display  post-legend at 1114    with foreground-color 3.\n     display  vat-ac-def at 1214     with foreground-color 3.\n     display  post-vat-side at 1414  with foreground-color 3.\n     move     vat-amount  to  display-amount.\n     display  display-amount at 1514 with foreground-color 3.\n*>\n*> now reverse the transaction\n*>\n*> processing for DR\n*>\n     move     post-dr to nl-owning.\n     move     zero    to nl-sub-nominal.\n     move     4       to file-function.\n     perform  acasirsub1.\n*>\n     if       we-error equal 2\n              move 1 to error-flag\n              go to reverse-cr\n     else\n              move zero to error-flag\n     end-if\n     if       post-amount > zero\n              add  post-amount  to  nl-cr\n     else\n              subtract  post-amount  from  nl-dr\n     end-if\n     if       post-vat-side = \"CR\"  and  vat-amount > 0\n              add  vat-amount  to  nl-cr.\n     if       post-vat-side = \"CR\"  and  vat-amount < 0\n              subtract  vat-amount  from  nl-dr.\n*>\n     move     7  to  file-function.\n     perform  acasirsub1.\n*>\n reverse-cr.\n*>\n*> processing for CR\n*>\n     move     post-cr  to  nl-owning.\n     move     zero     to  nl-sub-nominal.\n     move     4        to  file-function.\n     perform  acasirsub1.\n*>\n     if       we-error = 2\n              move  1  to  error-flag\n              go to  reverse-vat\n     end-if\n     if       post-amount > zero\n              add  post-amount  to  nl-dr\n     else\n              subtract  post-amount  from  nl-cr\n     end-if\n     if       post-vat-side = \"DR\"  and  vat-amount > 0\n              add  vat-amount  to  nl-dr.\n*>\n     if       post-vat-side = \"DR\"  and  vat-amount < 0\n              subtract  vat-amount  from  nl-cr.\n     move     7  to  file-function.\n     perform  acasirsub1.\n*>\n reverse-vat.\n*>\n*> processing for VAT\n*>\n     if       vat-ac-def = zero\n              go to  reverse-end.\n*>\n     move     vat-ac-def  to  y.\n     move     def-acs (y)  to  nl-owning.\n     move     zero     to  nl-sub-nominal.\n     move     4        to  file-function.\n     perform  acasirsub1.\n*>\n     if       we-error = 2\n              move  1  to  error-flag\n              go to  reverse-end\n     end-if\n     if       post-vat-side = \"CR\"  and  vat-amount > 0\n              add  vat-amount  to  nl-dr\n     end-if\n     if       post-vat-side = \"DR\"  and  vat-amount > 0\n              add  vat-amount  to  nl-cr\n     end-if\n     if       post-vat-side = \"CR\"  and  vat-amount < 0\n              add  vat-amount  to  nl-cr\n     end-if\n     if       post-vat-side = \"DR\"  and  vat-amount < 0\n              add  vat-amount  to  nl-dr\n     end-if\n     move     7  to  file-function.\n     perform  acasirsub1.\n*>\n reverse-end.\n*>\n     display  \"Correct the transaction       \" at 0525 with foreground-color 2 erase eol.\n*>\n     display  \"'**' Here, will delete transaction\" at 0641 with foreground-color 4.\n     accept   post-code  at 0614 with update foreground-color 3.\n     if       post-code = \"**\"\n              go to  post-delete.\n     display  \" \" at 0641 with erase eol foreground-color 2.\n date-input.\n     accept   post-date at 0714 with update foreground-color 3.\n     perform  date-validate.\n     if       u-bin = zero\n              go to  date-input.\n     accept   post-dr at 0814 with update foreground-color 3.\n     accept   post-cr at 0914 with update foreground-color 3.\n     move     1014 to curs2.\n     move     post-amount to amt-ok.\n     perform  accept-money.\n     move     amt-ok to post-amount.\n     accept   post-legend  at 1114 with update foreground-color 3.\n get-ac-def.\n     accept   vat-ac-def at 1214 with update foreground-color 3.\n     if       vat-ac-def not = zero and not = 31 and not = 32\n              display \"Error\" at 1218 with foreground-color 4\n              go to get-ac-def.\n     display  \"     \" at 1218.\n get-vat-side.\n     accept   post-vat-side at 1414 with update foreground-color 3.\n     move     function upper-case (post-vat-side) to post-vat-side.\n     if       post-vat-side not = \"CR\" and not = \"DR\"\n              display \"Error\" at 1418 with foreground-color 4\n              go to get-vat-side.\n     display  \"     \" at 1418.\n     move     1514 to curs2.\n     move     vat-amount to amt-ok.\n     perform  accept-money.\n     if       amt-ok not = zero and\n              vat-ac-def = zero\n              display \"Inconsistent\" at 1525 with foreground-color 4\n              go to get-ac-def.\n     display  \"            \" at 1525.\n     move     amt-ok to vat-amount.\n*>\n*> now test  the accounts\n*>\n     move     post-dr  to  nl-owning.\n     move     zero     to  nl-sub-nominal.\n     move     4        to  file-function.\n     perform  acasirsub1.\n*>\n     if       we-error = 2\n              go to  reverse-end.\n*>\n     move     post-cr  to  nl-owning.\n     move     zero     to  nl-sub-nominal.\n     move     4        to  file-function.\n     perform  acasirsub1.\n*>\n     if       we-error = 2\n              go to  reverse-end.\n*>\n     if       vat-ac-def = zero\n              go to  jump-to-dr.\n*>\n     move     vat-ac-def  to  y.\n     move     def-acs (y)  to  nl-owning.\n     move     zero     to  nl-sub-nominal.\n     move     4        to  file-function.\n     perform  acasirsub1.\n*>\n     if       we-error = 2\n              go to  reverse-end.\n*>\n jump-to-dr.\n*>\n*> processing for DR\n*>\n     move     post-dr  to  nl-owning.\n     move     zero     to  nl-sub-nominal.\n     move     4        to  file-function.\n     perform  acasirsub1.\n*>\n     add      post-amount  to  nl-dr.\n     if       post-vat-side = \"CR\"\n              add  vat-amount  to  nl-dr.\n*>\n     move     7  to  file-function.\n     perform  acasirsub1.\n*>\n*> processing for CR\n*>\n     move     post-cr  to  nl-owning.\n     move     zero     to  nl-sub-nominal.\n     move     4        to  file-function.\n     perform  acasirsub1.\n*>\n     add      post-amount  to  nl-cr.\n     if       post-vat-side = \"DR\"\n              add  vat-amount  to  nl-cr.\n*>\n     move     7  to  file-function.\n     perform  acasirsub1.\n*>\n*> processing for vat\n*>\n     if       vat-ac-def = zero\n              go to  rewrite-posting.\n*>\n     move     vat-ac-def  to  y.\n     move     def-acs (y)  to  nl-owning.\n     move     zero     to  nl-sub-nominal.\n     move     4        to  file-function.\n     perform  acasirsub1.\n*>\n     if       post-vat-side = \"CR\"\n              add  vat-amount  to  nl-cr.\n     if       post-vat-side = \"DR\"\n              add  vat-amount  to  nl-dr.\n*>\n     move     7  to  file-function.\n     perform  acasirsub1.\n*>\n*> now re-write posting\n*>\n rewrite-posting.\n*>\n     move     7  to  file-function.\n     perform  acasirsub4.\n     go       to input-loop.\n*>\n post-delete.\n*>\n     move     8  to  file-function.\n     perform  acasirsub4.\n     go       to input-loop.\n*>\n End-of-Amend.\n*>\n     display  space.\n     move     2  to  file-function.    *> Close Postings\n     perform  acasirsub4.\n     move     2  to  file-function.    *> Close NL\n     perform  acasirsub1.\n     display  \"Renumber the postings (Y/N) - [ ]\" at 0301 with foreground-color 2.\n*>\n end-option.\n*>\n     accept   ws-reply at 0332 with foreground-color 6.\n     move     function upper-case (ws-reply) to ws-reply.\n*>\n     if       ws-reply = \"N\"\n              go to main99-exit.\n*>\n     if       ws-reply not = \"Y\"\n              go to end-option.\n*>\n     display  \"Sorting please wait.\" at 1331 with foreground-color 2.\n*>\n     move     2  to  pass-value save-sequ.\n     call     \"irs055\" using IRS-System-Params\n                             WS-System-Record\n                             File-Defs.\n*>\n     move     zero to pass-value.\n*>\n     move     1  to  file-function.\n     move     3  to  access-type.\n     perform  acasirsub4.\n*>\n     move     1  to  access-type.\n     call     \"irsubp\" using posting-record file-access File-Defs.\n     move     zero  to  counter.\n*>\n rewrite-loop.\n*>\n     move     3  to  file-function.\n     call     \"irsubp\" using posting-record file-access File-Defs.\n     if       we-error  not equal  zero\n              go to  end-of-run.\n*>\n     add      1  to  counter.\n     move     counter  to  post-key.\n*>\n     move     5  to  file-function.\n     perform  acasirsub4.\n*>\n     go       to rewrite-loop.\n*>\n end-of-run.\n*>\n     move     2  to  file-function.\n     perform  acasirsub4.\n     move     2  to  file-function.\n     call     \"irsubp\" using posting-record file-access File-Defs.\n*>\n     add      1  post-key  giving  next-post.\n*>\n*> System file update done in irs at eoj\n*>\n main99-exit.\n     exit     program.\n*>\n accept-money.\n*>------------\n*>\n     move     amt-wk-pence to ws-pence.\n     move     \".\" to ws-period.\n     move     amt-wk-pds to ws-pound.\n     accept   ws-amount-screen-accept at curs2 with update foreground-color 3.\n     perform  justify-accept-money.\n     if       c > 1 or d > 1\n              display \"Amount not numeric. Re-Enter\" at 2401 with foreground-color 4\n              go to accept-money\n     else\n              display \"                            \" at 2401\n     end-if .\n*>     move     ws-pound to amt-wk-pds.\n*>     move     ws-pence to amt-wk-pence.\n*>\n*>\n justify-accept-money.\n*>*******************\n*>\n*> because OC has no numeric editing or justification on accept\n*>      as of v1.1 beta on 16/02/09\n*> input field 9(7).99- output 9(9)\n     move     zero to amt-ok c d.   *> c = neg flag,d = dec. flag,e = dig before '.'\n     move     10 to b.      *> for num string 9 chars, if changed must also do below\n     perform  varying a from 10 by -1 until a < 1\n              if    ws-amount-screen-accept (a:1) = \"-\"\n                and c = 1\n                    move 2 to c                        *> set negative flag - twice\n                    exit perform                       *> we have an error\n              end-if\n              if    ws-amount-screen-accept (a:1) = \".\"\n                and d = 1\n                    move 2 to d                        *> set decimal flag - twice\n                    exit perform                       *> we have an error\n              end-if\n              if    ws-amount-screen-accept (a:1) = \"-\"\n                    move 1 to c                        *> set negative flag\n                    exit perform cycle\n              end-if\n              if    ws-amount-screen-accept (a:1) = \".\"\n                    move 1 to d                        *> set decimal flag\n                    subtract b from 10 giving e    *> = 0, 1 or 2 dec. digits\n                    exit perform cycle\n              end-if\n*>\n*> thats the allowed non numerics done\n*>    below may need to test for 0 thru 9 instead\n              if    ws-amount-screen-accept (a:1) not numeric\n                and b not = 10                  *> must be same as start value\n                    move 3 to c                 *> if we have number already we cannot\n                    exit perform                *> NOT have more\n              end-if\n              if    ws-amount-screen-accept (a:1) numeric\n                    subtract 1 from b               *> 1st char is (10)\n                    move ws-amount-screen-accept (a:1) to ws-num-dstring (b:1)\n                    exit perform cycle\n              end-if\n     end-perform\n     if       c < 2 and d < 2         *> these are errors\n       if     e = 2\n              divide ws-nstrg by 100 giving amt-ok\n       else\n        if    e = 1\n              divide ws-nstrg by 10  giving amt-ok\n        else\n              move ws-nstrg to amt-ok\n        end-if\n       end-if\n       if     c = 1\n              multiply -1 by amt-ok\n       end-if\n     end-if.\n*>\n date-validate section.\n*>---------------------\n*>\n*>*****************************************************************\n*>                                                                *\n*>     D A T E  V A L I D A T I O N  &  C O N V E R S I O N       *\n*>                                                                *\n*>*****************************************************************\n*>\n*>************************************************\n*>                                               *\n*>            DATEVET SECTION                    *\n*>            =================                  *\n*>                                               *\n*>    format of date must be as follows:-        *\n*>                                               *\n*>       ddxmmxyy                                *\n*>                                               *\n*>    where x can only be one of the following:- *\n*>                                               *\n*>        / , . -                                *\n*>                                               *\n*>     and  dd = 1 thru [days in month]          *\n*>          mm = 1 thru 12                       *\n*>                                               *\n*>************************************************\n*>\n     move     zero to u-bin q.\n     move     post-date to u-date.\n     inspect  u-date replacing all \".\" by \"/\".\n     inspect  u-date replacing all \",\" by \"/\".\n     inspect  u-date replacing all \"-\" by \"/\".\n     inspect  u-date tallying q for all \"/\".\n*>\n     if       q not = 2 or\n              u-days  not numeric or\n              u-month not numeric or\n              u-year  not numeric or\n              u-days  < 01 or > 31 or\n              u-month < 01 or > 12\n              go to main-exit.\n*>\n     if       u-days > 29 and\n              u-month = 2\n              go to main-exit.\n*>\n     if       u-days > days (u-month) and\n              u-month not = 2\n              go to main-exit.\n*>\n     divide   u-year by 4 giving ws-work1.\n     multiply ws-work1 by 4 giving ws-work2.\n*>\n     if       u-month = 2 and\n              u-days > 28 and\n              u-year not = ws-work2\n              go  to main-exit.\n*>\n     move     u-date to post-date.\n*>\n*>********************************************\n*>                                           *\n*>       date validation & conversion        *\n*>       ============================        *\n*>                                           *\n*>                                           *\n*>  requires  date input in u-date           *\n*>  & returns  date as binary days since     *\n*>    01/01/2000  in  u-bin                  *\n*>  date errors returned as u-bin equal zero *\n*>                                           *\n*>********************************************\n*>\n*>\n     move     1     to  ws-work1.\n     move     zero  to  ws-work2.\n*>\n     if       u-year > 0\n              compute  u-bin = u-year * 365.\n*>\n     if       u-bin <   zero\n              move  zero  to  u-bin\n              go to  pack-end.\n*>\n pack-loop-1.\n*>\n     if       u-year > ws-work2\n              add  1  to  u-bin\n              add  4  to  ws-work2\n              go to  pack-loop-1.\n*>\n     if       u-year equal   ws-work2\n       and    u-month > 2\n              add  1  to  u-bin.\n*>\n pack-loop-2.\n\n     if       u-month > 12\n              move  zero  to  u-bin\n              go to pack-end.\n     if       u-month > ws-work1\n              add  days (ws-work1)  to  u-bin\n              add  1  to  ws-work1\n              go to pack-loop-2.\n*>\n     if       u-days  not > days (ws-work1)\n              add  u-days  to  u-bin\n              go to  pack-end.\n     if       u-days  = 29\n        and   u-month = 2\n        and   u-year  = ws-work2\n              add  u-days  to   u-bin\n     else\n              move  zero  to u-bin.\n main-exit.\n*>\n pack-end.    exit.\n*>\n copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n*>",
+        "line": 49
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 8,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 2,
+      "uniqueOperands": 53,
+      "totalOperators": 87,
+      "totalOperands": 172,
+      "vocabulary": 55,
+      "length": 259,
+      "volume": 1497.372165802887
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

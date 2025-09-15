@@ -1,0 +1,767 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/general/gl120.cbl",
+  "fileName": "gl120.cbl",
+  "timestamp": "2025-09-15T16:25:32.598Z",
+  "programId": "gl120",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 95
+      },
+      {
+        "name": "file",
+        "line": 113
+      },
+      {
+        "name": "working-storage",
+        "line": 132
+      },
+      {
+        "name": "linkage",
+        "line": 306
+      },
+      {
+        "name": "gl120-Main",
+        "line": 321
+      },
+      {
+        "name": "zz050-Validate-Date",
+        "line": 734
+      },
+      {
+        "name": "exit",
+        "line": 771
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 773
+      },
+      {
+        "name": "exit",
+        "line": 801
+      },
+      {
+        "name": "maps04",
+        "line": 803
+      },
+      {
+        "name": "exit",
+        "line": 809
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 98
+      },
+      {
+        "name": "file-defs",
+        "line": 318
+      },
+      {
+        "name": "get-date",
+        "line": 332
+      },
+      {
+        "name": "loop",
+        "line": 374
+      },
+      {
+        "name": "accumulate",
+        "line": 466
+      },
+      {
+        "name": "detail-print",
+        "line": 474
+      },
+      {
+        "name": "total4-print",
+        "line": 502
+      },
+      {
+        "name": "total3-print",
+        "line": 526
+      },
+      {
+        "name": "total2-print",
+        "line": 546
+      },
+      {
+        "name": "total1-print",
+        "line": 562
+      },
+      {
+        "name": "end-run",
+        "line": 576
+      },
+      {
+        "name": "pl-loop",
+        "line": 594
+      },
+      {
+        "name": "place-change",
+        "line": 617
+      },
+      {
+        "name": "number-change",
+        "line": 639
+      },
+      {
+        "name": "l9-this-carry",
+        "line": 643
+      },
+      {
+        "name": "l9-last-carry",
+        "line": 645
+      },
+      {
+        "name": "number-change-end",
+        "line": 692
+      },
+      {
+        "name": "b-heading",
+        "line": 695
+      },
+      {
+        "name": "main-end",
+        "line": 707
+      },
+      {
+        "name": "main-exit",
+        "line": 731
+      },
+      {
+        "name": "goback",
+        "line": 732
+      },
+      {
+        "name": "zz050-test-date",
+        "line": 765
+      },
+      {
+        "name": "zz050-exit",
+        "line": 770
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 800
+      },
+      {
+        "name": "maps04-exit",
+        "line": 808
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 729,
+        "type": "DYNAMIC",
+        "using": [
+          "Print-Report"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 806,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 85,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 94,
+        "replacing": null
+      },
+      {
+        "name": "selprint",
+        "line": 101,
+        "replacing": null
+      },
+      {
+        "name": "seledger",
+        "line": 102,
+        "replacing": null
+      },
+      {
+        "name": "fdprint",
+        "line": 116,
+        "replacing": null
+      },
+      {
+        "name": "fdledger",
+        "line": 117,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command",
+        "line": 136,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 137,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 138,
+        "replacing": null
+      },
+      {
+        "name": "wsledger",
+        "line": 139,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 165,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 309,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 310,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 311,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 811,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-convert-date",
+        "thru": null,
+        "line": 327
+      },
+      {
+        "target": "zz050-Validate-Date",
+        "thru": null,
+        "line": 344
+      },
+      {
+        "target": "GL-Nominal-Open-Input",
+        "thru": null,
+        "line": 356
+      },
+      {
+        "target": "GL-Nominal-Read-Next",
+        "thru": null,
+        "line": 377
+      },
+      {
+        "target": "detail-print",
+        "thru": null,
+        "line": 383
+      },
+      {
+        "target": "total4-print",
+        "thru": null,
+        "line": 384
+      },
+      {
+        "target": "total3-print",
+        "thru": null,
+        "line": 385
+      },
+      {
+        "target": "total2-print",
+        "thru": null,
+        "line": 386
+      },
+      {
+        "target": "total1-print",
+        "thru": null,
+        "line": 387
+      },
+      {
+        "target": "detail-print",
+        "thru": null,
+        "line": 392
+      },
+      {
+        "target": "total4-print",
+        "thru": null,
+        "line": 410
+      },
+      {
+        "target": "total4-print",
+        "thru": null,
+        "line": 420
+      },
+      {
+        "target": "total3-print",
+        "thru": null,
+        "line": 421
+      },
+      {
+        "target": "total4-print",
+        "thru": null,
+        "line": 431
+      },
+      {
+        "target": "total3-print",
+        "thru": null,
+        "line": 432
+      },
+      {
+        "target": "total2-print",
+        "thru": null,
+        "line": 433
+      },
+      {
+        "target": "total4-print",
+        "thru": null,
+        "line": 445
+      },
+      {
+        "target": "total3-print",
+        "thru": null,
+        "line": 446
+      },
+      {
+        "target": "total2-print",
+        "thru": null,
+        "line": 447
+      },
+      {
+        "target": "total1-print",
+        "thru": null,
+        "line": 448
+      },
+      {
+        "target": "accumulate",
+        "thru": null,
+        "line": 455
+      },
+      {
+        "target": "GL-Nominal-Close",
+        "thru": null,
+        "line": 580
+      },
+      {
+        "target": "place-change",
+        "thru": null,
+        "line": 601
+      },
+      {
+        "target": "number-change",
+        "thru": null,
+        "line": 631
+      },
+      {
+        "target": "b-heading",
+        "thru": null,
+        "line": 685
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 768
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "Print-Spool-Name",
+        "to": "PSN",
+        "line": 324
+      },
+      {
+        "from": "ws-date",
+        "to": "l3-date date-pl",
+        "line": 328
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 330
+      },
+      {
+        "from": "ws-date",
+        "to": "date-pl",
+        "line": 342
+      },
+      {
+        "from": "date-pl",
+        "to": "ws-test-date",
+        "line": 343
+      },
+      {
+        "from": "ws-test-date",
+        "to": "l3-date date-pl",
+        "line": 347
+      },
+      {
+        "from": "\"Y\"",
+        "to": "ws-reply",
+        "line": 351
+      },
+      {
+        "from": "zero",
+        "to": "l-cr (1)  l-dr (1)  store-ledger (1)",
+        "line": 366
+      },
+      {
+        "from": "zero",
+        "to": "l-cr (2)  l-dr (2)  store-ledger (2)",
+        "line": 367
+      },
+      {
+        "from": "zero",
+        "to": "l-cr (3)  l-dr (3)  store-ledger (3)",
+        "line": 368
+      },
+      {
+        "from": "zero",
+        "to": "l-cr (4)  l-dr (4)  store-ledger (4)",
+        "line": 369
+      },
+      {
+        "from": "zero",
+        "to": "l-cr (5)  l-dr (5)  store-ledger (5)",
+        "line": 370
+      },
+      {
+        "from": "zero",
+        "to": "y  we-error  tot-dr  tot-cr",
+        "line": 372
+      },
+      {
+        "from": "255",
+        "to": "we-error",
+        "line": 379
+      },
+      {
+        "from": "zero",
+        "to": "l-cr (5)\n                              l-dr (5)\n              if ledger-level = zero\n                 move  WS-Ledger-Nos  to  store-ledger (5)",
+        "line": 393
+      },
+      {
+        "from": "WS-Ledger-Nos",
+        "to": "store-ledger (4)\n              go to  loop",
+        "line": 406
+      },
+      {
+        "from": "WS-Ledger-Nos",
+        "to": "store-ledger (4)\n              go to  loop",
+        "line": 411
+      },
+      {
+        "from": "WS-Ledger-Nos",
+        "to": "store-ledger (3)\n              go to  loop",
+        "line": 416
+      },
+      {
+        "from": "WS-Ledger-Nos",
+        "to": "store-ledger (3)\n              go to  loop",
+        "line": 422
+      },
+      {
+        "from": "WS-Ledger-Nos",
+        "to": "store-ledger (2)\n              go to  loop",
+        "line": 427
+      },
+      {
+        "from": "WS-Ledger-Nos",
+        "to": "store-ledger (2)\n              go to  loop",
+        "line": 434
+      },
+      {
+        "from": "WS-Ledger-Nos",
+        "to": "store-ledger (1)\n              move  ledger-place  to  store-place\n              move  ledger-name   to  store-name\n              go to  loop",
+        "line": 439
+      },
+      {
+        "from": "WS-Ledger-Nos",
+        "to": "store-ledger (1)\n              move  ledger-place  to  store-place\n              move  ledger-name   to  store-name\n              go to  loop",
+        "line": 449
+      },
+      {
+        "from": "ledger-balance",
+        "to": "l-cr (5)\n       else\n              move  ledger-balance  to  l-dr (5)",
+        "line": 459
+      },
+      {
+        "from": "WS-Ledger-Nos",
+        "to": "store-ledger (5)",
+        "line": 463
+      },
+      {
+        "from": "zero",
+        "to": "l-dr (5)  l-cr (5)",
+        "line": 500
+      },
+      {
+        "from": "zero",
+        "to": "store-ledger (4)  l-dr (4)  l-cr (4)",
+        "line": 524
+      },
+      {
+        "from": "zero",
+        "to": "store-ledger (3)  l-dr (3)  l-cr (3)",
+        "line": 544
+      },
+      {
+        "from": "zero",
+        "to": "store-ledger (2)  l-dr (2)  l-cr (2)",
+        "line": 560
+      },
+      {
+        "from": "store-place",
+        "to": "l-place",
+        "line": 565
+      },
+      {
+        "from": "zero",
+        "to": "l-pc",
+        "line": 567
+      },
+      {
+        "from": "store-name",
+        "to": "l-name",
+        "line": 568
+      },
+      {
+        "from": "zero",
+        "to": "l-last",
+        "line": 570
+      },
+      {
+        "from": "zero",
+        "to": "store-ledger (1)  l-dr (1)  l-cr (1)",
+        "line": 574
+      },
+      {
+        "from": "usera",
+        "to": "l0-user",
+        "line": 584
+      },
+      {
+        "from": "date-pl",
+        "to": "l1-date",
+        "line": 585
+      },
+      {
+        "from": "space",
+        "to": "store-place",
+        "line": 592
+      },
+      {
+        "from": "l-name",
+        "to": "l7-name",
+        "line": 603
+      },
+      {
+        "from": "l-balance",
+        "to": "l7-this",
+        "line": 608
+      },
+      {
+        "from": "l-last",
+        "to": "l7-last",
+        "line": 609
+      },
+      {
+        "from": "l-place",
+        "to": "store-place",
+        "line": 625
+      },
+      {
+        "from": "a",
+        "to": "xx\n              move  zero  to  total-this total-last",
+        "line": 636
+      },
+      {
+        "from": "total-this",
+        "to": "l9-this-total\n                              l9-this-carry",
+        "line": 642
+      },
+      {
+        "from": "total-last",
+        "to": "l9-last-total\n                              l9-last-carry",
+        "line": 644
+      },
+      {
+        "from": "run-this",
+        "to": "l11-this  gp-this\n              move  run-last  to  l11-last  gp-last",
+        "line": 660
+      },
+      {
+        "from": "np-this",
+        "to": "l11-this\n              move  np-last  to  l11-last",
+        "line": 667
+      },
+      {
+        "from": "run-this",
+        "to": "l11-this\n              move  run-last  to  l11-last",
+        "line": 672
+      },
+      {
+        "from": "spaces",
+        "to": "print-record\n              write  print-record after 2",
+        "line": 687
+      },
+      {
+        "from": "zero",
+        "to": "run-this  run-last",
+        "line": 690
+      },
+      {
+        "from": "run-this",
+        "to": "net-this\n              move  run-last  to  net-last",
+        "line": 704
+      },
+      {
+        "from": "np-this",
+        "to": "l7-this",
+        "line": 711
+      },
+      {
+        "from": "np-last",
+        "to": "l7-last",
+        "line": 712
+      },
+      {
+        "from": "run-this",
+        "to": "l11-this",
+        "line": 717
+      },
+      {
+        "from": "run-last",
+        "to": "l11-last",
+        "line": 718
+      },
+      {
+        "from": "ws-test-date",
+        "to": "ws-date",
+        "line": 747
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 749
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz050-test-date",
+        "line": 753
+      },
+      {
+        "from": "\"dd/mm/ccyy\"",
+        "to": "ws-date",
+        "line": 760
+      },
+      {
+        "from": "ws-date",
+        "to": "u-date",
+        "line": 766
+      },
+      {
+        "from": "zero",
+        "to": "u-bin",
+        "line": 767
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 781
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 784
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit",
+        "line": 788
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 795
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n copy \"selprint.cob\".\n*> copy \"seledger.cob\".\n*>\n     select Final-Output-file assign        file-3\n                              access        dynamic\n                              organization  indexed\n                              status        fs-reply\n                              record key    Final-Output-Key.\n*>\n data                    division.\n*>===============================\n*>\n file section.\n*>-----------\n*>\n copy \"fdprint.cob\"  replacing ==x(132)== by ==x(119)==.\n*> copy \"fdledger.cob\".\n*>\n*> Temporary IS file\n*>\n fd  Final-Output-file.\n*>\n 01  Final-Output-record.\n     03  Final-Output-Key.\n         05  l-place     pic x.\n         05  l-nos       pic 9(6).\n         05  l-pc        pic 99.\n     03  l-name          pic x(24).\n     03  l-balance       pic s9(8)v99   comp-3.\n     03  l-last          pic s9(8)v99   comp-3.\n*>\n working-storage section.\n*>----------------------\n*>\n 77  prog-name           pic x(15) value \"gl120 (3.02.07\".\n copy \"print-spool-command.cob\".\n copy \"wsmaps03.cob\".\n copy \"wsfnctn.cob\".\n copy \"wsledger.cob\".\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n*>     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  filler.\n     03  total-this      pic s9(8)v99    value zero.\n     03  total-last      pic s9(8)v99    value zero.\n     03  ws-reply        pic x.\n     03  date-pl         pic x(10).\n     03  run-this        pic s9(8)v99    value zero.\n     03  run-last        pic s9(8)v99    value zero.\n     03  gp-this         pic s9(8)v99    value zero.\n     03  gp-last         pic s9(8)v99    value zero.\n     03  np-this         pic s9(8)v99    value zero.\n     03  np-last         pic s9(8)v99    value zero.\n     03  net-this        pic s9(8)v99    value zero.\n     03  net-last        pic s9(8)v99    value zero.\n     03  xx              pic 99          value zero.\n     03  v               pic 9(5)        comp.\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n 01  Error-Messages.\n*> System Wide\n    03  GL013           pic x(24) value \"GL013 Hit Return to Quit\".\n*> Module specific\n    03  GL121           pic x(38) value \"GL121 Ledger File/Table Does Not Exist\".\n*>\n 01  filler.\n     03  l-dr            pic 9(8)v99     occurs  5.\n     03  l-cr            pic 9(8)v99     occurs  5.\n     03  store-ledger    pic 9(6)        occurs  5.\n     03  read-ledger     pic x           value space.\n     03  store-place     pic x.\n     03  store-name      pic x(30).\n     03  y               pic 99          value zero.\n     03  tot-dr          pic 9(8)v99     value zero.\n     03  tot-cr          pic 9(8)v99     value zero.\n     03  a               pic 99.\n     03  alphabat        pic x(26)       value \"ABCDEFGHIJKLMNOPQRSTUVWXYZ\".\n     03  filler  redefines  alphabat.\n         05  place-table pic x           occurs 26  indexed by j.\n     03  alpha-nos       pic x(26)    value \"11112222334444555666778888\".\n     03  filler  redefines  alpha-nos.\n         05  place-number pic 9          occurs 26.\n     03  alpha-names.\n         05  filler        pic x(19)  value \"Sales Income       \".\n         05  filler        pic x(19)  value \"Direct Costs       \".\n         05  filler        pic x(19)  value \"Sundry Income      \".\n         05  filler        pic x(19)  value \"Indirect Costs     \".\n         05  filler        pic x(19)  value \"Fixed Assets       \".\n         05  filler        pic x(19)  value \"Current Assets     \".\n         05  filler        pic x(19)  value \"Current Liabilities\".\n         05  filler        pic x(19)  value \"Shareholders Funds \".\n     03  filler  redefines  alpha-names.\n         05  place-name    pic x(19)       occurs 8.\n*>\n 01  line-0.\n     03  l0-user         pic x(32).\n*>\n 01  line-1.  *> 85\n     03  filler          pic x(32)       value spaces.\n     03  filler          pic x(43)       value \"Profit & Loss Account    For the period to \".\n     03  l1-date         pic x(10).\n*>\n 01  line-2.\n     03  filler          pic x(33)       value spaces.\n     03  filler          pic x(52)       value all \"*\".\n*>\n 01  line-3.\n     03  filler          pic x(42)       value spaces.\n     03  filler          pic x(22)       value \"Balance Sheet  as at  \".\n     03  l3-date         pic x(10).\n*>\n 01  line-4.\n     03  filler          pic x(44)       value spaces.\n     03  filler          pic x(30)       value all \"*\".\n*>\n 01  line-5.  *> 118\n     03  filler          pic x(50)       value spaces.\n     03  filler          pic x(40)       value \"<--------This  Year-------->\".\n     03  filler          pic x(28)       value \"<--------Last  Year-------->\".\n*>\n 01  line-6.\n     03  l6-name         pic x(24).\n*>\n 01  line-7.   *> 103 ?\n     03  filler          pic x(20)       value spaces.\n     03  l7-name         pic x(30).\n     03  l7-this         pic z(7)9.99cr.\n     03  filler          pic x(27)       value spaces.\n     03  l7-last         pic z(7)9.99cr  blank when zero.\n*>\n 01  line-8.  *> 101\n     03  filler          pic x(50)       value spaces.\n     03  filler          pic x(11)       value all \"=\".\n     03  filler          pic x(29)       value spaces.\n     03  filler          pic x(11)       value all \"=\".\n*>\n 01  line-9.  *> 119 ?\n     03  filler          pic x(50)       value spaces.\n     03  l9-this-total   pic z(7)9.99cr.\n     03  filler          pic xxx         value spaces.\n     03  l9-this-carry   pic z(7)9.99cr.\n     03  filler          pic x(11)       value spaces.\n     03  l9-last-total   pic z(7)9.99cr  blank when zero.\n     03  filler          pic xxx         value spaces.\n     03  l9-last-carry   pic z(7)9.99cr  blank when zero.\n*>\n 01  line-10.  *> 117\n     03  filler          pic x(66)       value spaces.\n     03  filler          pic x(11)       value all \"=\".\n     03  filler          pic x(29)       value spaces.\n     03  filler          pic x(11)       value all \"=\".\n*>\n 01  line-11.   *> 119\n     03  l11-name        pic x(66).\n     03  l11-this        pic z(7)9.99cr.\n     03  filler          pic x(27)       value spaces.\n     03  l11-last        pic z(7)9.99cr  blank when zero.\n*>\n linkage section.\n*>**************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 77  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>***************************************\n*>\n gl120-Main section.\n*>*****************\n*>\n     move     Print-Spool-Name to PSN.\n     display  prog-name at 0101 with foreground-color 2 erase eos.\n     display  \"P&L and Balance Sheet\" at 0131 with foreground-color 2.\n     perform  zz070-convert-date.\n     move     ws-date to l3-date date-pl.\n     display  ws-date at 0171 with foreground-color 2.\n     move     1  to File-Key-No.\n*>\n get-date.\n*>*******\n*>\n     display  \"Enter P&L Date  (space to abort) - [\" at 0521 with foreground-color 2.\n     display  \"]\" at 0567 with foreground-color 2.\n     accept   date-pl at 0557 with foreground-color 3 update.\n*>\n     if       date-pl = spaces\n              go to  main-exit.\n*>\n     move     ws-date to date-pl.\n     move     date-pl  to  ws-test-date.\n     perform  zz050-Validate-Date.\n     if       u-bin = zero\n              go to  get-date.\n     move     ws-test-date to l3-date date-pl.\n*>\n     display  \"Ok to continue ? (Y/N)\" at 0721 with foreground-color 2.\n     display  \"[Y]\" at 0746 with foreground-color 2.\n     move     \"Y\"  to  ws-reply.\n     accept   ws-reply at 0747 with foreground-color 3 update.\n     if       ws-reply = \"N\"  or  \"n\"\n              go to  get-date.\n*>\n     perform  GL-Nominal-Open-Input.                        *> open     input  ledger-file.\n     if       fs-reply not = zero\n              display space\n              display GL121 at 0901 with foreground-color 4 blink\n              display GL013 at 1001 with foreground-color 2\n              accept ws-reply at 1026\n              go to main-exit.\n*>\n     open     output  Final-Output-file.\n*>\n     move     zero  to  l-cr (1)  l-dr (1)  store-ledger (1).\n     move     zero  to  l-cr (2)  l-dr (2)  store-ledger (2).\n     move     zero  to  l-cr (3)  l-dr (3)  store-ledger (3).\n     move     zero  to  l-cr (4)  l-dr (4)  store-ledger (4).\n     move     zero  to  l-cr (5)  l-dr (5)  store-ledger (5).\n*>\n     move     zero  to  y  we-error  tot-dr  tot-cr.\n*>\n loop.\n*>***\n*>\n     perform  GL-Nominal-Read-Next.            *> read     ledger-file  next at end\n     if       fs-reply = 10\n              move  255  to  we-error.\n*>\n     if       we-error = 255\n       or     ledger-n = 9999\n              perform  detail-print\n              perform  total4-print\n              perform  total3-print\n              perform  total2-print\n              perform  total1-print\n              go to    end-run.\n*>\n     if       WS-Ledger-Nos not = store-ledger (5)\n       and    store-ledger (5) not = zero\n              perform  detail-print\n              move  zero  to  l-cr (5)\n                              l-dr (5)\n              if ledger-level = zero\n                 move  WS-Ledger-Nos  to  store-ledger (5).\n*>\n     if       WS-Ledger-Nos = store-ledger (4)\n       or                  store-ledger (3)\n       or                  store-ledger (2)\n       or                  store-ledger (1)\n              go to  loop.\n*>\n     if       ledger-level = 4\n       and    store-ledger (4) = zero\n              move  WS-Ledger-Nos  to  store-ledger (4)\n              go to  loop.\n*>\n     if       ledger-level = 4\n              perform  total4-print\n              move  WS-Ledger-Nos  to  store-ledger (4)\n              go to  loop.\n*>\n     if       ledger-level = 3\n       and    store-ledger (3) = zero\n              move  WS-Ledger-Nos  to  store-ledger (3)\n              go to  loop.\n*>\n     if       ledger-level = 3\n              perform  total4-print\n              perform  total3-print\n              move  WS-Ledger-Nos  to  store-ledger (3)\n              go to  loop.\n*>\n     if       ledger-level = 2\n       and    store-ledger (2) = zero\n              move  WS-Ledger-Nos  to  store-ledger (2)\n              go to  loop.\n*>\n     if       ledger-level = 2\n              perform  total4-print\n              perform  total3-print\n              perform  total2-print\n              move  WS-Ledger-Nos  to  store-ledger (2)\n              go to  loop.\n*>\n     if       ledger-level = 1\n       and    store-ledger (1) = zero\n              move  WS-Ledger-Nos  to  store-ledger (1)\n              move  ledger-place  to  store-place\n              move  ledger-name   to  store-name\n              go to  loop.\n*>\n     if       ledger-level = 1\n              perform  total4-print\n              perform  total3-print\n              perform  total2-print\n              perform  total1-print\n              move  WS-Ledger-Nos  to  store-ledger (1)\n              move  ledger-place  to  store-place\n              move  ledger-name   to  store-name\n              go to  loop.\n*>\n     if       WS-Ledger-Nos  = store-ledger (5)\n              perform  accumulate\n              go to    loop.\n*>\n     if       ledger-balance  <  0\n              move  ledger-balance  to  l-cr (5)\n       else\n              move  ledger-balance  to  l-dr (5).\n*>\n     move     WS-Ledger-Nos  to  store-ledger (5).\n     go       to loop.\n*>\n accumulate.\n*>*********\n*>\n     if       ledger-balance  <  0\n              subtract  ledger-balance  from  l-cr (5)\n     else\n              add ledger-balance  to    l-dr (5).\n*>\n detail-print.\n*>***********\n*>\n     if       store-ledger (4) not = zero\n              add  l-dr (5)  to  l-dr (4)\n              add  l-cr (5)  to  l-cr (4)\n     else\n      if      store-ledger (3) not = zero\n              add  l-dr (5)  to  l-dr (3)\n              add  l-cr (5)  to  l-cr (3)\n      else\n       if     store-ledger (2) not = zero\n              add  l-dr (5)  to  l-dr (2)\n              add  l-cr (5)  to  l-cr (2)\n       else\n        if     store-ledger (1) not = zero\n              add  l-dr (5)  to  l-dr (1)\n              add  l-cr (5)  to  l-cr (1)\n        else\n         if    l-dr (5)  >  l-cr (5)\n              add  l-dr (5)  to  tot-dr\n              subtract l-cr (5) from tot-dr\n         else\n              add  l-cr (5)  to  tot-cr\n              subtract l-dr (5) from tot-cr.\n*>\n     move     zero  to  l-dr (5)  l-cr (5).\n*>\n total4-print.\n*>***********\n*>\n     if       store-ledger (3) not = zero\n              add  l-dr (4)  to  l-dr (3)\n              add  l-cr (4)  to  l-cr (3)\n     else\n      if      store-ledger (2) not = zero\n              add  l-dr (4)  to  l-dr (2)\n              add  l-cr (4)  to  l-cr (2)\n      else\n       if     store-ledger (1) not = zero\n              add  l-dr (4)  to  l-dr (1)\n              add  l-cr (4)  to  l-cr (1)\n       else\n        if    l-dr (4)  >  l-cr (4)\n              add  l-dr (4)  to  tot-dr\n              subtract l-cr (4) from tot-dr\n        else\n              add  l-cr (4)  to  tot-cr\n              subtract l-dr (4) from tot-cr.\n*>\n     move     zero  to  store-ledger (4)  l-dr (4)  l-cr (4).\n*>\n total3-print.\n*>***********\n*>\n     if       store-ledger (2) not = zero\n              add  l-dr (3)  to  l-dr (2)\n              add  l-cr (3)  to  l-cr (2)\n     else\n      if      store-ledger (1) not = zero\n              add  l-dr (3)  to  l-dr (1)\n              add  l-cr (3)  to  l-cr (1)\n      else\n       if     l-dr (3)  >  l-cr (3)\n              add  l-dr (3)  to  tot-dr\n              subtract l-cr (3) from tot-dr\n       else\n              add  l-cr (3)  to  tot-cr\n              subtract l-dr (3) from tot-cr.\n*>\n     move     zero  to  store-ledger (3)  l-dr (3)  l-cr (3).\n*>\n total2-print.\n*>***********\n*>\n     if       store-ledger (1) not = zero\n              add  l-dr (2)  to  l-dr (1)\n              add  l-cr (2)  to  l-cr (1)\n     else\n      if      l-dr (2)  >  l-cr (2)\n              add  l-dr (2)  to  tot-dr\n              subtract l-cr (2) from tot-dr\n      else\n              add  l-cr (2)  to  tot-cr\n              subtract l-dr (2) from tot-cr.\n*>\n     move     zero  to  store-ledger (2)  l-dr (2)  l-cr (2).\n*>\n total1-print.\n*>***********\n*>\n     move     store-place  to  l-place.\n     move     store-ledger (1)  to  l-nos.\n     move     zero  to  l-pc.\n     move     store-name  to  l-name.\n     subtract l-cr (1)  from  l-dr (1)  giving  l-balance.\n     move     zero  to  l-last.\n*>\n     write    Final-Output-record.\n*>\n     move     zero  to  store-ledger (1)  l-dr (1)  l-cr (1).\n*>\n end-run.\n*>******\n*>\n     close    Final-Output-file.                      *>  ledger-file.\n     perform  GL-Nominal-Close.\n     open     output  print-file.\n     open     input  Final-Output-file.\n*>\n     move     usera  to  l0-user.\n     move     date-pl  to  l1-date.\n*>\n     write    print-record  from  line-0 after 1.\n     write    print-record  from  line-1 after 2.\n     write    print-record  from  line-2 after 1.\n     write    print-record  from  line-5 after 3.\n*>\n     move     space  to  store-place.\n*>\n pl-loop.\n*>******\n*>\n     read     Final-Output-file  next record at end\n              go to  main-end.\n*>\n     if       l-place not = store-place\n              perform  place-change.\n*>\n     move     l-name  to  l7-name.\n     if       a = 1  or  3  or  5\n              multiply  -1  by  l-balance\n              multiply  -1  by  l-last.\n*>\n     move     l-balance  to  l7-this.\n     move     l-last     to  l7-last.\n*>\n     add      l-balance  to  total-this.\n     add      l-last     to  total-last.\n*>\n     write    print-record  from  line-7 after 1.\n     go       to pl-loop.\n*>\n place-change.\n*>***********\n*>\n     set      j  to  1.\n     search   place-table\n              when  l-place = place-table (j)\n              next sentence.\n*>\n     move     l-place  to  store-place.\n*>\n     set      v  to  j.\n     move     place-number (v)  to  a.\n     if       a not = xx\n        and   xx not = zero\n              perform  number-change through number-change-end.\n*>\n     if       a not = xx\n              move  place-name (a)  to  l6-name\n              write  print-record  from  line-6 after 1\n              move  a  to  xx\n              move  zero  to  total-this total-last.\n*>\n number-change.\n*>************\n*>\n     move     total-this  to  l9-this-total\n                              l9-this-carry.\n     move     total-last  to  l9-last-total\n                              l9-last-carry.\n*>\n     write    print-record  from  line-8 after 2.\n     write    print-record  from  line-9 after 1.\n     write    print-record  from  line-8 after 1.\n*>\n     if       xx = 1  or  3  or  5\n              add  total-this  to  run-this\n              add  total-last  to  run-last\n     else\n              subtract  total-this  from  run-this\n              subtract  total-last  from  run-last.\n*>\n     if       a = 3\n              move  \"Gross Profit\"  to  l11-name\n              move  run-this  to  l11-this  gp-this\n              move  run-last  to  l11-last  gp-last.\n*>\n     if       a = 5\n              move  \"Net Profit  \"  to  l11-name\n              add  run-this  gp-this  giving  np-this\n              add  run-last  gp-last  giving  np-last\n              move  np-this  to  l11-this\n              move  np-last  to  l11-last.\n*>\n     if       a = 8\n              move  \"Net Current Value\"  to  l11-name\n              move  run-this  to  l11-this\n              move  run-last  to  l11-last.\n*>\n     if       a = 3  or  5  or  8\n              next sentence\n     else\n              go to  number-change-end.\n*>\n     write    print-record  from  line-10 after 2.\n     write    print-record  from  line-11 after 1.\n*>\n     if       a = 5\n              write  print-record  from  line-10 after 1\n              perform  b-heading\n     else\n              move  spaces  to  print-record\n              write  print-record after 2.\n*>\n     move     zero  to  run-this  run-last.\n*>\n number-change-end.\n*>****************\n*>\n b-heading.\n*>********\n*>\n     write    print-record  from  line-0 after 1.\n     write    print-record  from  line-3 after 2.\n     write    print-record  from  line-4 after 1.\n     write    print-record  from  line-5 after 3.\n*>\n     if       a = 5\n              move  run-this  to  net-this\n              move  run-last  to  net-last.\n*>\n main-end.\n*>*******\n*>\n     move     \"Net Profit  \"  to  l7-name.\n     move     np-this  to  l7-this.\n     move     np-last  to  l7-last.\n     write    print-record  from  line-7 after 1.\n*>\n     add      np-this  to  run-this.\n     add      np-last  to  run-last.\n     move     run-this  to  l11-this.\n     move     run-last  to  l11-last.\n     write    print-record  from  line-10 after 2.\n*>\n     write    print-record  from  line-11 after 1.\n     write    print-record  from  line-10 after 1.\n*>\n     close    print-file Final-Output-file.\n*>\n*> Here the o/p file could be closed, open output to clear it down\n*>   test program first BUT it might be useful to users. ?\n*>\n     call     \"SYSTEM\" using Print-Report.\n*>\n main-exit.\n     goback.\n*>\n zz050-Validate-Date        section.\n*>*********************************\n*>\n*>  Converts USA/Intl to UK date format for processing.\n*>*******************************\n*> Input:   ws-test-date\n*> output:  u-date/ws-date as uk date format\n*>          u-bin not zero if valid date\n*>\n     inspect  ws-test-date replacing all \".\" by \"/\".\n     inspect  ws-test-date replacing all \",\" by \"/\".\n     inspect  ws-test-date replacing all \"-\" by \"/\".\n*>\n     move     ws-test-date to ws-date.\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz050-test-date.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz050-test-date.\n*>\n*> So its International date format\n*>\n     move     \"dd/mm/ccyy\" to ws-date.  *> swap Intl to UK form\n     move     ws-test-date (1:4) to ws-Year.\n     move     ws-test-date (6:2) to ws-Month.\n     move     ws-test-date (9:2) to ws-Days.\n*>\n zz050-test-date.\n     move     ws-date to u-date.\n     move     zero to u-bin.\n     perform  maps04.\n*>\n zz050-exit.\n     exit     section.\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     to-day (7:4) to ws-Intl-Year.\n     move     to-day (4:2) to ws-Intl-Month.\n     move     to-day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>\n maps04       section.\n*>*******************\n*>\n     call     \"maps04\"  using  maps03-ws.\n*>\n maps04-exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 82
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 4,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 75,
+      "totalOperators": 64,
+      "totalOperands": 128,
+      "vocabulary": 76,
+      "length": 192,
+      "volume": 1199.6020825811684
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

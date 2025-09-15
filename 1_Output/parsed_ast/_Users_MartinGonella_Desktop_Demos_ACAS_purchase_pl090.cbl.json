@@ -1,0 +1,237 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl090.cbl",
+  "fileName": "pl090.cbl",
+  "timestamp": "2025-09-15T16:25:47.054Z",
+  "programId": "pl090",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 92
+      },
+      {
+        "name": "file",
+        "line": 105
+      },
+      {
+        "name": "working-storage",
+        "line": 124
+      },
+      {
+        "name": "linkage",
+        "line": 181
+      },
+      {
+        "name": "init01",
+        "line": 196
+      },
+      {
+        "name": "sorting-1",
+        "line": 233
+      },
+      {
+        "name": "input-to-sort",
+        "line": 248
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 95
+      },
+      {
+        "name": "file-defs",
+        "line": 193
+      },
+      {
+        "name": "end-if",
+        "line": 202
+      },
+      {
+        "name": "menu-exit",
+        "line": 230
+      },
+      {
+        "name": "goback",
+        "line": 231
+      },
+      {
+        "name": "process-input",
+        "line": 258
+      },
+      {
+        "name": "end-of-input",
+        "line": 273
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 82,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 91,
+        "replacing": null
+      },
+      {
+        "name": "seloi5",
+        "line": 98,
+        "replacing": null
+      },
+      {
+        "name": "plselois",
+        "line": 99,
+        "replacing": null
+      },
+      {
+        "name": "fdoi5",
+        "line": 108,
+        "replacing": null
+      },
+      {
+        "name": "plfdois",
+        "line": 110,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 131,
+        "replacing": null
+      },
+      {
+        "name": "plwsoi5C",
+        "line": 132,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 177,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 184,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 185,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 186,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 280,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "sorting-1",
+        "thru": null,
+        "line": 228
+      },
+      {
+        "target": "OTM5-Open-Input",
+        "thru": null,
+        "line": 251
+      },
+      {
+        "target": "OTM5-Close",
+        "thru": null,
+        "line": 253
+      },
+      {
+        "target": "OTM5-Read-Next",
+        "thru": null,
+        "line": 261
+      },
+      {
+        "target": "OTM5-Close",
+        "thru": null,
+        "line": 276
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "\"Y\"",
+        "to": "OI-5-Flag",
+        "line": 227
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "not using Cobol files as sort\n*>                    not needed for tables as we do selective read.\n*>                    Changed sort rec size to 113 after OI5 change.\n*>                    Added some comments in remarks and removed unneeded\n*>                    test condition that is tested (with exit) for previously.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*> 26/08/25 vbc   .03 Chg PL116 to PL006.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>------------\n*>\n*> copy \"seloi5.cob\".\n copy \"plselois.cob\".\n     select       sort-file   assign  file-21.\n*>\n data                    division.\n*>===============================\n*>\n file section.\n*>-----------\n*>\n*> copy \"fdoi5.cob\".\n*>\n copy \"plfdois.cob\".\n*>\n sd  sort-file.\n*>\n 01  sort-record.\n     03  s-supplier       pic x(7).\n     03  s-invoice        pic 9(8).  *> was binary-long.\n     03  s-date           binary-long.\n     03  s-batch                         comp.\n         05  s-b-nos      pic 9(5).\n         05  s-b-item     pic 999.\n     03  s-type           pic 9.\n     03  filler           pic x(87).  *> was 83 for rec 113.\n*>\n working-storage section.\n*>----------------------\n 77  prog-name            pic x(15) value \"PL090 (3.02.03)\".\n 77  ws-ITM5-Length       pic 999   value zero.\n 77  ws-ITMS-Length       pic 999   value zero.\n 77  ws-reply             pic x.\n*>\n copy \"wsfnctn.cob\".\n copy \"plwsoi5C.cob\".\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n*>     03  WS-OTM5-Record         pic x.\n*>\n 01  File-Info                          value zero.\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n 01  Error-Messages.\n*> System Wide\n     03  PL003           pic x(28) value \"PL003 Hit Return To Continue\".\n     03  PL006           pic x(38) value \"PL116 Note: and hit return to continue\".\n*> Module specific\n     03  PL142           pic x(39) value \"PL142 No Payments To Correct/Proof/Post\".\n     03  PL143           pic x(50) value \"PL143 System Error - OTM5 and OTMS not the same - \".\n     03  PL143B          pic x(11) value \"& Sorted - \".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n*> 01  error-code          pic 999.\n*>\n linkage section.\n*>**************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n init01 section.\n*>\n*>  First check if not using Cobol files -",
+        "line": 46
+      },
+      {
+        "type": "IF",
+        "condition": "not FS-Cobol-Files-Used    *> Will use fn-Read-Next-Sorted-By-Batch (32)\n              goback returning 4\n     end-if.\n*>\n*> Let make sure oi5 and ois are are same lengths.\n*>\n     display  prog-name at 0101 with erase eos.\n     move     function length (Open-Item-Record-5) to ws-ITM5-Length.\n     move     function length (Sort-Record)        to ws-ITMS-Length.\n     if       ws-ITM5-Length NOT = ws-ITMS-Length\n              display PL143    at 1201 with foreground-color 3 highlight *> 50\n              display ws-ITM5-Length at 1252 with foreground-color 3\n              display PL143B   at 1257 with foreground-color 3\n              display ws-ITMS-Length at 1268 with foreground-color 3\n              display PL006    at 1401 with foreground-color 3\n              accept  ws-reply at 1440\n              exit program\n     end-if\n*>\n*> Good, we can continue\n*>\n     if       P-Flag-P = 0    *> do we have data ?\n              display PL142  at 0501\n              display PL003  at 2401\n              accept ws-reply at 2430\n              go to menu-exit.\n*>\n     move     \"Y\" to OI-5-Flag.\n     perform  sorting-1.\n*>\n menu-exit.\n     goback.\n*>\n sorting-1    section.\n*>===================\n*>\n     sort     sort-file\n              on ascending key  s-b-nos\n                                s-b-item\n              on descending key s-type\n              on ascending key  s-date\n                                s-invoice\n              input procedure input-to-sort\n              giving open-item-file-s.\n*>\n main-exit.   exit section.\n*>********    ****\n*>\n input-to-sort  section.\n*>=====================\n*>\n     perform  OTM5-Open-Input. *> open input  open-item-file-5.\n     if       fs-reply not = zero\n              perform  OTM5-Close  *>  close open-item-file-5\n              open output open-item-file-s  *> create empty file\n              close open-item-file-s\n              go to main-exit.\n*>\n process-input.\n*>************\n*>\n     perform  OTM5-Read-Next.  *> read open-item-file-5 next record at end\n     if       fs-reply = 10\n              go to  end-of-input.\n*>\n     if       oi-type = 1 or 3\n              go to process-input.\n     if       zero = oi-b-nos and oi-b-item\n              go to process-input.\n*>\n     release  sort-record from  open-item-record-5.\n     go       to  process-input.\n*>\n end-of-input.\n*>***********\n*>\n     perform  OTM5-Close.  *> close    open-item-file-5.\n*>\n main-exit.   exit section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 200
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 2,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 2,
+      "totalOperators": 1,
+      "totalOperands": 2,
+      "vocabulary": 3,
+      "length": 3,
+      "volume": 4.754887502163468
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

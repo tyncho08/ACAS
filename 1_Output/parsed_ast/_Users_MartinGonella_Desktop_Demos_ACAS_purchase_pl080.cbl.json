@@ -1,0 +1,1062 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/purchase/pl080.cbl",
+  "fileName": "pl080.cbl",
+  "timestamp": "2025-09-15T16:25:46.328Z",
+  "programId": "pl080",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 101
+      },
+      {
+        "name": "file",
+        "line": 113
+      },
+      {
+        "name": "working-storage",
+        "line": 118
+      },
+      {
+        "name": "linkage",
+        "line": 266
+      },
+      {
+        "name": "init01",
+        "line": 281
+      },
+      {
+        "name": "new-payment",
+        "line": 341
+      },
+      {
+        "name": "Payment-Appropriate",
+        "line": 518
+      },
+      {
+        "name": "erase-screen",
+        "line": 728
+      },
+      {
+        "name": "zz050-Validate-Date",
+        "line": 736
+      },
+      {
+        "name": "exit",
+        "line": 769
+      },
+      {
+        "name": "zz060-Convert-Date",
+        "line": 771
+      },
+      {
+        "name": "exit",
+        "line": 804
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 806
+      },
+      {
+        "name": "exit",
+        "line": 834
+      },
+      {
+        "name": "maps04",
+        "line": 836
+      },
+      {
+        "name": "exit",
+        "line": 842
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 104
+      },
+      {
+        "name": "file-defs",
+        "line": 278
+      },
+      {
+        "name": "end-if",
+        "line": 309
+      },
+      {
+        "name": "display-heads",
+        "line": 311
+      },
+      {
+        "name": "dh-exit",
+        "line": 318
+      },
+      {
+        "name": "menu-exit",
+        "line": 327
+      },
+      {
+        "name": "main-exit",
+        "line": 334
+      },
+      {
+        "name": "goback",
+        "line": 335
+      },
+      {
+        "name": "New-Payment-Main",
+        "line": 344
+      },
+      {
+        "name": "date-input",
+        "line": 354
+      },
+      {
+        "name": "customer-input",
+        "line": 372
+      },
+      {
+        "name": "Accept-Unappl-Reqst",
+        "line": 432
+      },
+      {
+        "name": "Accept-Unappl-Money",
+        "line": 448
+      },
+      {
+        "name": "Value-Input",
+        "line": 460
+      },
+      {
+        "name": "Set-Batch-Item",
+        "line": 475
+      },
+      {
+        "name": "Data-Input",
+        "line": 483
+      },
+      {
+        "name": "More-Data",
+        "line": 490
+      },
+      {
+        "name": "Accept-Money",
+        "line": 501
+      },
+      {
+        "name": "Accept-Money2",
+        "line": 508
+      },
+      {
+        "name": "Pay-Loop",
+        "line": 532
+      },
+      {
+        "name": "pay-details",
+        "line": 561
+      },
+      {
+        "name": "get-agreement",
+        "line": 618
+      },
+      {
+        "name": "end-line",
+        "line": 665
+      },
+      {
+        "name": "end-line-2",
+        "line": 679
+      },
+      {
+        "name": "payment-2-high-maybe",
+        "line": 689
+      },
+      {
+        "name": "payment-2-high",
+        "line": 696
+      },
+      {
+        "name": "main-end",
+        "line": 704
+      },
+      {
+        "name": "zz050-test-date",
+        "line": 763
+      },
+      {
+        "name": "zz050-exit",
+        "line": 768
+      },
+      {
+        "name": "zz060-Exit",
+        "line": 803
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 833
+      },
+      {
+        "name": "maps04-exit",
+        "line": 841
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 301,
+        "type": "DYNAMIC",
+        "using": [
+          "File-29",
+          "*>",
+          "Open",
+          "ITM5",
+          "file",
+          "File-Info",
+          "if",
+          "return-code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "not",
+          "=",
+          "zero",
+          "-",
+          "No",
+          "file",
+          "found",
+          "display",
+          "PL119",
+          "at",
+          "2301",
+          "erase",
+          "eos",
+          "display",
+          "PL116",
+          "at",
+          "2401",
+          "accept",
+          "ws-reply",
+          "at",
+          "2440",
+          "go",
+          "to",
+          "main-exit",
+          "end-if",
+          "end-if"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 839,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 91,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 100,
+        "replacing": null
+      },
+      {
+        "name": "selpl",
+        "line": 107,
+        "replacing": null
+      },
+      {
+        "name": "seloi5",
+        "line": 108,
+        "replacing": null
+      },
+      {
+        "name": "fdpl",
+        "line": 116,
+        "replacing": null
+      },
+      {
+        "name": "fdoi5",
+        "line": 117,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 123,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 124,
+        "replacing": null
+      },
+      {
+        "name": "wsoi",
+        "line": 141,
+        "replacing": null
+      },
+      {
+        "name": "wspl",
+        "line": 143,
+        "replacing": null
+      },
+      {
+        "name": "plwsoi5B",
+        "line": 144,
+        "replacing": null
+      },
+      {
+        "name": "plwsoi",
+        "line": 145,
+        "replacing": null
+      },
+      {
+        "name": "screenio",
+        "line": 220,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 256,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 269,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 270,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 271,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 844,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 315
+      },
+      {
+        "target": "Purch-Open",
+        "thru": null,
+        "line": 321
+      },
+      {
+        "target": "OTM5-Open",
+        "thru": null,
+        "line": 322
+      },
+      {
+        "target": "new-payment",
+        "thru": null,
+        "line": 323
+      },
+      {
+        "target": "Purch-Close",
+        "thru": null,
+        "line": 324
+      },
+      {
+        "target": "OTM5-Close",
+        "thru": null,
+        "line": 325
+      },
+      {
+        "target": "display-heads",
+        "thru": null,
+        "line": 330
+      },
+      {
+        "target": "display-heads",
+        "thru": null,
+        "line": 346
+      },
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 355
+      },
+      {
+        "target": "zz050-Validate-Date",
+        "thru": null,
+        "line": 365
+      },
+      {
+        "target": "Purch-Read-Indexed",
+        "thru": null,
+        "line": 389
+      },
+      {
+        "target": "accept-money2",
+        "thru": null,
+        "line": 449
+      },
+      {
+        "target": "Purch-Rewrite",
+        "thru": null,
+        "line": 457
+      },
+      {
+        "target": "accept-money",
+        "thru": null,
+        "line": 462
+      },
+      {
+        "target": "Payment-Appropriate",
+        "thru": null,
+        "line": 484
+      },
+      {
+        "target": "erase-screen",
+        "thru": null,
+        "line": 486
+      },
+      {
+        "target": "OTM5-Start",
+        "thru": null,
+        "line": 530
+      },
+      {
+        "target": "OTM5-Read-Next",
+        "thru": null,
+        "line": 533
+      },
+      {
+        "target": "OTM5-Rewrite",
+        "thru": null,
+        "line": 555
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "thru": null,
+        "line": 570
+      },
+      {
+        "target": "accept-money2",
+        "thru": null,
+        "line": 604
+      },
+      {
+        "target": "OTM5-Rewrite",
+        "thru": null,
+        "line": 677
+      },
+      {
+        "target": "OTM5-Write",
+        "thru": null,
+        "line": 722
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 766
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 780
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "24",
+        "to": "ws-env-lines ws-lines\n     else\n              move  ws-env-lines   to ws-lines\n     end-if\n     subtract 1 from ws-lines giving ws-23-lines",
+        "line": 284
+      },
+      {
+        "from": "today",
+        "to": "to-day",
+        "line": 289
+      },
+      {
+        "from": "zero",
+        "to": "k",
+        "line": 320
+      },
+      {
+        "from": "\"Y\"",
+        "to": "oi-5-flag",
+        "line": 332
+      },
+      {
+        "from": "4",
+        "to": "lin",
+        "line": 345
+      },
+      {
+        "from": "ws-date",
+        "to": "ws-test-date",
+        "line": 363
+      },
+      {
+        "from": "zero",
+        "to": "u-bin",
+        "line": 364
+      },
+      {
+        "from": "u-bin",
+        "to": "pay-date",
+        "line": 369
+      },
+      {
+        "from": "u-date",
+        "to": "to-day",
+        "line": 370
+      },
+      {
+        "from": "spaces",
+        "to": "pay-customer",
+        "line": 377
+      },
+      {
+        "from": "1",
+        "to": "c-check",
+        "line": 386
+      },
+      {
+        "from": "pay-customer",
+        "to": "WS-Purch-Key",
+        "line": 387
+      },
+      {
+        "from": "zero",
+        "to": "c-check",
+        "line": 391
+      },
+      {
+        "from": "purch-address",
+        "to": "address1",
+        "line": 396
+      },
+      {
+        "from": "1",
+        "to": "z",
+        "line": 399
+      },
+      {
+        "from": "spaces",
+        "to": "address-line",
+        "line": 403
+      },
+      {
+        "from": "spaces",
+        "to": "address-line",
+        "line": 407
+      },
+      {
+        "from": "spaces",
+        "to": "address-line",
+        "line": 411
+      },
+      {
+        "from": "spaces",
+        "to": "address-line",
+        "line": 416
+      },
+      {
+        "from": "purch-current",
+        "to": "display-s",
+        "line": 418
+      },
+      {
+        "from": "5",
+        "to": "transaction-type",
+        "line": 422
+      },
+      {
+        "from": "purch-unapplied",
+        "to": "display-8 amt-ok",
+        "line": 426
+      },
+      {
+        "from": "\"Y\"",
+        "to": "ws-reply",
+        "line": 430
+      },
+      {
+        "from": "zero",
+        "to": "cob-crt-status",
+        "line": 433
+      },
+      {
+        "from": "6",
+        "to": "transaction-type",
+        "line": 444
+      },
+      {
+        "from": "0749",
+        "to": "curs",
+        "line": 446
+      },
+      {
+        "from": "amt-ok",
+        "to": "pay-value",
+        "line": 456
+      },
+      {
+        "from": "0749",
+        "to": "curs",
+        "line": 461
+      },
+      {
+        "from": "amt-ok",
+        "to": "pay-value",
+        "line": 463
+      },
+      {
+        "from": "1",
+        "to": "p-flag-p",
+        "line": 469
+      },
+      {
+        "from": "batch-value",
+        "to": "display-s",
+        "line": 471
+      },
+      {
+        "from": "1",
+        "to": "bl-next-batch",
+        "line": 477
+      },
+      {
+        "from": "bl-next-batch",
+        "to": "display-n",
+        "line": 478
+      },
+      {
+        "from": "14",
+        "to": "lin",
+        "line": 485
+      },
+      {
+        "from": "\"Y\"",
+        "to": "ws-reply",
+        "line": 491
+      },
+      {
+        "from": "zero",
+        "to": "ws-poundsd amt-ok ws-penced",
+        "line": 502
+      },
+      {
+        "from": "ws-pound",
+        "to": "amt-wk-pds",
+        "line": 505
+      },
+      {
+        "from": "ws-pence",
+        "to": "amt-wk-pence",
+        "line": 506
+      },
+      {
+        "from": "amt-wk-pence",
+        "to": "ws-pence",
+        "line": 509
+      },
+      {
+        "from": "amt-wk-pds",
+        "to": "ws-pound",
+        "line": 510
+      },
+      {
+        "from": "ws-pound",
+        "to": "amt-wk-pds",
+        "line": 513
+      },
+      {
+        "from": "ws-pence",
+        "to": "amt-wk-pence",
+        "line": 514
+      },
+      {
+        "from": "zero",
+        "to": "approp-amount oi5-invoice",
+        "line": 526
+      },
+      {
+        "from": "14",
+        "to": "lin",
+        "line": 527
+      },
+      {
+        "from": "pay-customer",
+        "to": "oi5-supplier",
+        "line": 528
+      },
+      {
+        "from": "open-item-record-5",
+        "to": "oi-header",
+        "line": 537
+      },
+      {
+        "from": "oi-deduct-amt",
+        "to": "work-ded",
+        "line": 549
+      },
+      {
+        "from": "work-net",
+        "to": "test-amount",
+        "line": 550
+      },
+      {
+        "from": "pay-date",
+        "to": "oi-date-cleared\n              move 1 to oi-status\n              perform OTM5-Rewrite  *> rewrite  open-item-record-5 from oi-header\n              go to Pay-Loop",
+        "line": 553
+      },
+      {
+        "from": "1",
+        "to": "cole",
+        "line": 564
+      },
+      {
+        "from": "oi-invoice",
+        "to": "display-inv",
+        "line": 566
+      },
+      {
+        "from": "oi-date",
+        "to": "u-bin",
+        "line": 569
+      },
+      {
+        "from": "11",
+        "to": "cole",
+        "line": 571
+      },
+      {
+        "from": "work-net",
+        "to": "work-1",
+        "line": 574
+      },
+      {
+        "from": "work-ded",
+        "to": "work-2",
+        "line": 575
+      },
+      {
+        "from": "work-2",
+        "to": "display-5\n     else\n              move zero   to display-5",
+        "line": 580
+      },
+      {
+        "from": "work-1",
+        "to": "pay-paid",
+        "line": 585
+      },
+      {
+        "from": "work-1",
+        "to": "display-8",
+        "line": 586
+      },
+      {
+        "from": "21",
+        "to": "cole",
+        "line": 587
+      },
+      {
+        "from": "35",
+        "to": "cole",
+        "line": 590
+      },
+      {
+        "from": "65",
+        "to": "cole",
+        "line": 593
+      },
+      {
+        "from": "46",
+        "to": "cole",
+        "line": 602
+      },
+      {
+        "from": "pay-paid",
+        "to": "amt-ok",
+        "line": 603
+      },
+      {
+        "from": "amt-ok",
+        "to": "pay-paid",
+        "line": 605
+      },
+      {
+        "from": "zero",
+        "to": "pay-paid display-s\n              move 46 to cole\n              display display-s at curs with foreground-color 3\n              move 65 to cole\n              display \"",
+        "line": 608
+      },
+      {
+        "from": "bl-next-batch",
+        "to": "oi-b-nos",
+        "line": 615
+      },
+      {
+        "from": "k",
+        "to": "oi-b-item",
+        "line": 616
+      },
+      {
+        "from": "pay-date",
+        "to": "oi-date-cleared\n              move 1  to  oi-status\n              if  u-bin  >  pay-date\n                  subtract oi-deduct-amt from oi-net\n                  move zero  to  oi-deduct-amt\n                  add  work-2  to  deduct-taken\n              end-if\n              go to  end-line\n     end-if\n*>\n*>    ie not paid within discount term & amt paid not = inv amt\n*>     o/s (with deduct amt)\n*>\n     if       u-bin  not >  pay-date\n              subtract  work-2  from  work-1",
+        "line": 630
+      },
+      {
+        "from": "\"Y\"",
+        "to": "ws-reply",
+        "line": 652
+      },
+      {
+        "from": "65",
+        "to": "cole",
+        "line": 653
+      },
+      {
+        "from": "pay-date",
+        "to": "oi-date-cleared\n              move 1  to  oi-status\n              add  work-2  to  deduct-taken\n              subtract oi-deduct-amt from oi-net\n              move  zero  to  oi-deduct-amt",
+        "line": 659
+      },
+      {
+        "from": "pay-date",
+        "to": "oi-date-cleared\n              move 1 to oi-status",
+        "line": 673
+      },
+      {
+        "from": "OI-Header",
+        "to": "WS-OTM5-Record",
+        "line": 676
+      },
+      {
+        "from": "14",
+        "to": "lin",
+        "line": 683
+      },
+      {
+        "from": "65",
+        "to": "cole",
+        "line": 700
+      },
+      {
+        "from": "zero",
+        "to": "oi-carriage oi-vat oi-c-vat oi-status",
+        "line": 707
+      },
+      {
+        "from": "zero",
+        "to": "oi-cr oi-days oi-deduct-vat oi-discount oi-deduct-days oi-p-c",
+        "line": 708
+      },
+      {
+        "from": "spaces",
+        "to": "oi-applied",
+        "line": 709
+      },
+      {
+        "from": "pay-customer",
+        "to": "oi-supplier",
+        "line": 710
+      },
+      {
+        "from": "pay-date",
+        "to": "oi-date",
+        "line": 711
+      },
+      {
+        "from": "transaction-type",
+        "to": "oi-type",
+        "line": 712
+      },
+      {
+        "from": "pay-value",
+        "to": "oi-paid",
+        "line": 713
+      },
+      {
+        "from": "approp-amount",
+        "to": "oi-approp",
+        "line": 714
+      },
+      {
+        "from": "deduct-taken",
+        "to": "oi-deduct-amt",
+        "line": 715
+      },
+      {
+        "from": "bl-next-batch",
+        "to": "oi-b-nos",
+        "line": 716
+      },
+      {
+        "from": "k",
+        "to": "oi-b-item",
+        "line": 717
+      },
+      {
+        "from": "OI-Header",
+        "to": "WS-OTM5-Record",
+        "line": 721
+      },
+      {
+        "from": "zero",
+        "to": "approp-amount  deduct-taken",
+        "line": 723
+      },
+      {
+        "from": "1",
+        "to": "cole",
+        "line": 731
+      },
+      {
+        "from": "ws-test-date",
+        "to": "ws-date",
+        "line": 745
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 747
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz050-test-date",
+        "line": 751
+      },
+      {
+        "from": "\"dd/mm/ccyy\"",
+        "to": "ws-date",
+        "line": 758
+      },
+      {
+        "from": "ws-date",
+        "to": "u-date",
+        "line": 764
+      },
+      {
+        "from": "zero",
+        "to": "u-bin",
+        "line": 765
+      },
+      {
+        "from": "spaces",
+        "to": "ws-Date\n              go to zz060-Exit",
+        "line": 782
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date",
+        "line": 784
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 787
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit",
+        "line": 791
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 798
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 814
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 817
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit",
+        "line": 821
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 828
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "Next-Batch = 0,Add 1.\n*> 21/02/85 Vbc - Set P-Flag-P To 1 In Value-Input.\n*>                Copied over fixes from SL090, eg:\n*>                Replace Usage Of Next-Batch For First-Sl-Batch,\n*>                Bug/Feature 30.6 allowed out thru Escape, etc\n*> 22/03/09 vbc - Migration to Open Cobol v3.00.00.\n*> 15/12/11 vbc - .04 Error msgs to SLnnn.Support for dates other than UK\n*>                    Support for path+filenames.\n*>                    Updated version to 3.01.nn\n*> 24/10/16 vbc - .   ALL programs now using wsnames.cob in copybooks\n*> 09/01/18 vbc - .05 All programs upgraded to v3.02 for RDB processing.\n*>                    Removed/replaced all refs to maps99 with displays\n*>                    replaced file-status.\n*>                    Updated FD/WS and replaced cobol verbs\n*>                    for access to FH/DALs.\n*> 09/12/22 vbc - .06 Added para to start of sections 4 GC 3.2 warning.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*> 19/08/25 vbc - .07 Bugs in displays for error conditions at start of prog.\n*> 23/08/25 vbc       Added PL122 in place of embedded display.\n*> 26/08/25 vbc    08 In routine expanding address1 on last replace PL-Delim\n*>                    by \",\".\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>------------\n*>\n*> copy \"selpl.cob\".\n*> copy \"seloi5.cob\".\n*>\n data                    division.\n*>===============================\n*>\n file section.\n*>-----------\n*>\n*> copy \"fdpl.cob\".\n*> copy \"fdoi5.cob\".\n\n working-storage section.\n*>----------------------\n  77  prog-name           pic x(15)      value \"PL080 (3.02.08)\".\n*>\n copy \"wsmaps03.cob\".\n copy \"wsfnctn.cob\".\n*>\n 01  ws-amount-screen-display.\n     03  ws-poundsd      pic 9(7).\n     03  ws-period       pic x     value \".\".\n     03  ws-penced       pic v99.\n 01  ws-amount-screen-accept redefines ws-amount-screen-display.\n     03  ws-pound        pic 9(7).\n     03  filler          pic x.\n     03  ws-pence        pic v99.\n*>\n 01  ws-amount-work.\n     03  amt-wk-pds      pic 9(7).\n     03  amt-wk-pence    pic v99.\n 01  ws-amount-ok redefines ws-amount-work.\n     03  amt-ok          pic 9(7)v99.\n*>\n*> copy \"wsoi.cob\".\n*>\n copy \"wspl.cob\".\n copy \"plwsoi5B.cob\".\n copy \"plwsoi.cob\".    *> OI-Header so has to be moved !\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n*>     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n*>     03  WS-OTM5-Record         pic x.\n*>\n 01  File-Info                          value zero.\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n 01  ws-data.\n     03  ws-reply        pic x.\n     03  z               pic 99.\n     03  to-day          pic x(10).\n     03  c-check         pic 9.\n         88  c-exists  value  1.\n     03  work-1          pic 9(7)v99    comp-3 value zero.\n     03  work-2          pic 999v99     comp-3 value zero.\n     03  work-3          pic 9(7)v99    comp-3 value zero.\n     03  work-net        pic s9(7)v99   comp-3 value zero.\n     03  work-ded        pic 999v99     comp-3 value zero.\n     03  work-av         pic s9(14)     comp-3 value zero.\n     03  display-8       pic z(6)9.99.\n     03  display-s       pic z(6)9.99cr.\n     03  display-5       pic zz9.99.\n     03  display-n       pic z(4)9.\n     03  display-inv     pic z(7)9.\n     03  i               pic 99                 value 0.\n     03  j               pic 99                 value 0.\n     03  k               pic 999                value 0.\n     03  approp-amount   pic 9(6)v99    comp-3  value zero.\n     03  deduct-taken    pic 9(6)v99    comp-3  value zero.\n     03  pay-customer    pic x(7).\n     03  pay-date        binary-long            value zero.\n     03  pay-value       pic 9(7)v99     comp-3 value zero.\n     03  batch-value     pic 9(7)v99     comp-3 value zero.\n     03  pay-paid        pic s9(7)v99    comp-3 value zero.\n     03  test-amount     pic s9(7)v99    comp-3 value zero.\n     03  address1        pic x(96).\n     03  address-line    pic x(36).\n     03  ws-dash         pic x(80)       value all \"-\".\n     03  transaction-type pic 9          value zero.\n         88  trans-payment               value 5.\n         88  trans-unapplied             value 6.\n     03  ws-env-lines    pic 999                value zero.\n     03  ws-lines        binary-char unsigned   value zero.\n     03  ws-23-lines     binary-char unsigned   value zero.\n*>\n 01  All-My-Constants    pic 9(4).\n     copy \"screenio.cpy\".\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n 01  Error-Messages.\n*> System Wide\n*>       NONE\n*> Module specific\n     03  PL116           pic x(38) value \"PL116 Note: and hit return to continue\".\n     03  PL119           pic x(38) value \"PL119 Purchase Transactions Not Posted\".\n     03  PL121           pic x(52) value\n                        \"PL121 Invoices Not Posted; Payment Entry Not Allowed\".\n     03  PL122           pic x(33) value \"PL122 Batch Closed........Full!  \".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n*> 01  Error-Messages.\n*> System Wide\n*>       NONE\n*> Module specific\n*>       NONE\n*>\n*> 01  error-code          pic 999.\n*>\n linkage section.\n*>**************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  today               pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          today\n                          file-defs.\n*>=======================================\n*>\n init01 section.\n     accept   ws-env-lines   from lines.\n     if       ws-env-lines < 24\n              move  24 to ws-env-lines ws-lines\n     else\n              move  ws-env-lines   to ws-lines\n     end-if\n     subtract 1 from ws-lines giving ws-23-lines.\n     move     today to to-day.\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n     if       P-Flag-I = 1\n              display PL121   at 0501\n              display PL116   at line WS-Lines col 1 erase eol\n              accept ws-reply at 2440\n              go to main-exit.\n*>\n     if       FS-Cobol-Files-Used  *> code added to match sl080\n              call  \"CBL_CHECK_FILE_EXIST\" using File-29    *> Open ITM5 file\n                                                 File-Info\n              if    return-code not = zero          *> not = zero - No file found\n                    display  PL119  at 2301 erase eos\n                    display  PL116  at 2401\n                    accept ws-reply at 2440\n                    go to main-exit\n              end-if\n     end-if.\n*>\n display-heads.\n*>\n     display  prog-name at 0101 with erase eos foreground-color 2.\n     display  \"Payment Data Entry\" at 0133 with foreground-color 2.\n     perform  zz070-Convert-Date.\n     display  ws-date at 0171 with foreground-color 2.\n*>\n dh-exit.\n*>\n     move     zero  to  k.\n     perform  Purch-Open.  *> open i-o purchase-file open-item-file-5.\n     perform  OTM5-Open.\n     perform  new-payment.\n     perform  Purch-Close.  *> close    purchase-file open-item-file-5.\n     perform  OTM5-Close.\n*>\n menu-exit.\n*>********\n*>\n     perform  display-heads.\n     add      1 to bl-next-batch.\n     move     \"Y\" to oi-5-flag.\n*>\n main-exit.\n     goback.\n*>\n*>*********************************************\n*>                Procedures                  *\n*>*********************************************\n*>\n new-payment  section.\n*>===================\n*>\n New-Payment-Main.\n     move     4  to  lin.\n     perform  display-heads.\n*>\n     display  \"****************************************\" at 0441  with foreground-color 2.\n     display  \"*Date  [  /  /    ]*A/C Nos   [       ]*\" at 0541  with foreground-color 2.\n     display  \"***                                  ***\" at 0641  with foreground-color 2.\n     display  \"*Value [          ]*Batch   [     /   ]*\" at 0741  with foreground-color 2.\n     display  \"****************************************\" at 0841  with foreground-color 2.\n*>\n date-input.\n     perform  zz070-Convert-Date.\n     display  ws-date at 0549 with foreground-color 3.\n     accept   ws-date at 0549 with foreground-color 3 update.\n*>\n     if       ws-date = spaces\n         or   cob-crt-status = cob-scr-esc\n              go to  main-exit.\n*>\n     move     ws-date to ws-test-date.\n     move     zero  to  u-bin.\n     perform  zz050-Validate-Date.\n     if       u-bin = zero\n              go to  date-input.\n*>\n     move     u-bin  to  pay-date.\n     move     u-date to  to-day.\n*>\n customer-input.\n     if       k  =  999\n              display PL122  at 1041  with foreground-color 2 blink\n              go to  main-exit.\n*>\n     move     spaces to pay-customer.\n     accept   pay-customer at 0572 with foreground-color 3 UPPER.\n *>    display  pay-customer at 0572 with foreground-color 3.\n*>\n     if       pay-customer = spaces\n              go to date-input.\n     if       cob-crt-status = cob-scr-esc\n              go to  main-exit.\n*>\n     move     1  to  c-check.\n     move     pay-customer  to  WS-Purch-Key.\n*>\n     perform  Purch-Read-Indexed.  *> read  purchase-file  record  invalid key\n     if       fs-reply = 21\n              move  zero  to  c-check.\n*>\n     if       not  c-exists\n              go to  customer-input.\n*>\n     move     purch-address  to  address1.\n     display  purch-name at 0401 with foreground-color 3.\n*>\n     move     1  to  z.\n     unstring address1  delimited  by pl-delim into  address-line count z pointer  z.\n     display  address-line at 0501 with foreground-color 3.\n*>\n     move     spaces  to  address-line.\n     unstring address1  delimited  by pl-delim into  address-line  count z  pointer  z.\n     display  address-line at 0601 with foreground-color 3.\n*>\n     move     spaces  to  address-line.\n     unstring address1  delimited  by pl-delim into  address-line  count z pointer  z.\n     display  address-line at 0701 with foreground-color 3.\n*>\n     move     spaces  to  address-line.\n     unstring address1 into  address-line pointer  z.\n     inspect  Address1 replacing all PL-Delim by \",\".     *> 26/08/25\n     display  address-line at 0801 with foreground-color 3.\n*>\n     move     spaces  to  address-line.\n*>\n     move     purch-current  to  display-s.\n     display  \"Current Balance - \" at 1001  with foreground-color 2.\n     display  display-s at 1019 with foreground-color 3.\n*>\n     move     5 to transaction-type.\n     if       purch-unapplied = zero\n              go to value-input.\n*>\n     move     purch-unapplied to display-8 amt-ok.\n     display  \"Unapplied Balance - \" at 0645  with foreground-color 2.\n     display  display-8 at 0665 with foreground-color 3.\n     display  \"Do you wish to allocate the unapplied Balance to this account?  [Y]\" at 1601 with foreground-color 2.\n     move     \"Y\" to ws-reply.\n*>\n Accept-Unappl-Reqst.\n     move     zero to cob-crt-status.\n     accept   ws-reply at 1666 with foreground-color 6 update UPPER.\n     if       cob-crt-status = cob-scr-esc\n              go to new-payment-Main.\n *>    move     function upper-case (ws-reply) to ws-reply.\n     if       ws-reply not = \"Y\" and not = \"N\"\n              go to accept-unappl-reqst.\n     if       ws-reply = \"N\"\n              display space at 1601 with erase eol\n              go to value-input.\n*>\n     move     6 to transaction-type.\n     display  space at 1601 with erase eol.\n     move     0749 to curs.\n*>\n Accept-Unappl-Money.\n     perform  accept-money2.\n     if       amt-ok = zero\n              go to new-payment-Main.\n     if       amt-ok > purch-unapplied\n              go to accept-unappl-money.\n*>\n     subtract amt-ok from purch-unapplied.\n     move     amt-ok to pay-value.\n     perform  Purch-Rewrite.   *> rewrite  purch-record.\n     go       to set-batch-item.\n*>\n Value-Input.\n     move     0749 to curs.\n     perform  accept-money.\n     move     amt-ok to pay-value.\n     if       pay-value = zero\n              go to customer-input.\n     if       cob-crt-status = cob-scr-esc\n              go to  main-exit.\n*>\n     move     1 to p-flag-p.\n     add      pay-value  to  batch-value.\n     move     batch-value  to  display-s.\n     display  \"Batch Total - \" at 1041 with foreground-color 2.\n     display  display-s at 1055 with foreground-color 3.\n*>\n Set-Batch-Item.\n     if       bl-next-batch = zero\n              move 1 to bl-next-batch.\n     move     bl-next-batch  to  display-n.\n     add      1  to  k.\n     display  display-n at 0770 with foreground-color 2.\n     display  k at 0776 with foreground-color 2.\n*>\n Data-Input.\n     perform  Payment-Appropriate.\n     move     14  to  lin.\n     perform  erase-screen.\n*>\n     display \"Enter further payments? (Y/N)  [Y]\" at 1629  with foreground-color 2.\n*>\n More-Data.\n     move     \"Y\"  to   ws-reply.\n     accept   ws-reply at 1661 with foreground-color 6 update UPPER.\n *>    move     function upper-case (ws-reply) to ws-reply.\n*>\n     if       ws-reply = \"Y\"\n              go to  new-payment-Main.\n     if       ws-reply not = \"N\"\n              go to more-data.\n     go       to main-exit.\n*>\n Accept-Money.\n     move     zero to ws-poundsd amt-ok ws-penced.\n     display  ws-amount-screen-display at curs  with foreground-color 2.\n     accept   ws-amount-screen-accept at curs   with foreground-color 3 update.\n     move     ws-pound to amt-wk-pds.\n     move     ws-pence to amt-wk-pence.\n*>\n Accept-Money2.\n     move     amt-wk-pence to ws-pence.\n     move     amt-wk-pds to ws-pound.\n     display  ws-amount-screen-display at curs  with foreground-color 2.\n     accept   ws-amount-screen-accept at curs   with foreground-color 2 update.\n     move     ws-pound to amt-wk-pds.\n     move     ws-pence to amt-wk-pence.\n*>\n main-exit.   exit section.\n*>\n Payment-Appropriate     section.\n*>==============================\n*>\n     display   ws-dash at 1101 with foreground-color 2.\n     display  \"Folio No  --Date--  --Amount--\" at 1201 with foreground-color 2.\n     display  \"Deductable  ---Paid----\" at 1233        with foreground-color 2.\n     display  \"Deduction Taken\" at 1258                with foreground-color 2.\n*>\n     move     zero  to  approp-amount oi5-invoice.\n     move     14  to  lin.\n     move     pay-customer to oi5-supplier.\n     set      fn-not-less-than to true.\n     perform  OTM5-Start.   *> start open-item-file-5 key not < oi5-key.\n*>\n Pay-Loop.\n     perform  OTM5-Read-Next.  *> read open-item-file-5 next record  at end\n     if       fs-reply = 10\n              go to  main-end.\n*>\n     move     open-item-record-5  to  oi-header.\n*>\n     if       oi-type not = 2\n              go to  Pay-Loop.\n*>\n     if       oi-supplier not = pay-customer\n              go to main-end.\n*>\n     if       oi-b-nos not = zero\n              go to Pay-Loop.\n*>\n     add      oi-net oi-carriage oi-vat oi-c-vat giving work-net.\n     move     oi-deduct-amt to work-ded.\n     move     work-net to test-amount.\n     if       test-amount = oi-paid\n        and   oi-status = zero\n              move pay-date to oi-date-cleared\n              move 1 to oi-status\n              perform OTM5-Rewrite  *> rewrite  open-item-record-5 from oi-header\n              go to Pay-Loop.\n*>\n     if       test-amount not > oi-paid\n              go to  Pay-Loop.\n*>\n pay-details.\n*>**********\n*>\n     move     1 to cole.\n     display  space at curs with erase eol.\n     move     oi-invoice to display-inv.\n     display  display-inv at curs with foreground-color 3.\n*>\n     move     oi-date  to  u-bin.\n     perform  zz060-Convert-Date.\n     move     11 to cole.\n     display  u-date at curs with foreground-color 3.\n*>\n     move     work-net to work-1.\n     move     work-ded to work-2.\n*>\n     add      1  oi-deduct-days  to  u-bin.\n     if       u-bin  >  pay-date\n              subtract  work-2  from  work-1\n              move work-2 to display-5\n     else\n              move zero   to display-5.\n*>\n     subtract oi-paid  from  work-1.\n     move     work-1 to pay-paid.\n     move     work-1 to display-8.\n     move     21 to cole.\n     display  display-8 at curs with foreground-color 3.\n*>\n     move     35 to cole.\n     display  display-5 at curs with foreground-color 3.\n*>\n     move     65 to cole.\n     if       pay-paid = zero\n              display \"....Fully Paid  \" at curs  with foreground-color 2\n     else\n              display space at curs with erase eol.\n*>\n     if       pay-paid > pay-value\n              subtract approp-amount from pay-value  giving pay-paid.\n*>\n     move     46 to cole.\n     move     pay-paid to amt-ok.\n     perform  accept-money2.\n     move     amt-ok to pay-paid.\n*>\n     if       pay-paid = zero\n              move  zero  to  pay-paid display-s\n              move 46 to cole\n              display display-s at curs with foreground-color 3\n              move 65 to cole\n              display \"....No change  \" at curs  with foreground-color 2\n              go to  end-line-2.\n*>\n     move     bl-next-batch to oi-b-nos.\n     move     k             to oi-b-item.\n*>\n get-agreement.\n*>************\n*>\n*>    If payment within discount term, discount has been\n*>    subtracted from work-1\n*>\n     add      pay-paid  to  approp-amount.\n*>\n     if       approp-amount  >  pay-value\n              go to  payment-2-high.\n*>\n     if       pay-paid = work-1\n              move pay-date to oi-date-cleared\n              move 1  to  oi-status\n              if  u-bin  >  pay-date\n                  subtract oi-deduct-amt from oi-net\n                  move zero  to  oi-deduct-amt\n                  add  work-2  to  deduct-taken\n              end-if\n              go to  end-line\n     end-if\n*>\n*>    ie not paid within discount term & amt paid not = inv amt\n*>     o/s (with deduct amt)\n*>\n     if       u-bin  not >  pay-date\n              subtract  work-2  from  work-1.\n     if       pay-paid > work-1\n              go to payment-2-high-maybe.\n     if       pay-paid not = work-1\n              go to  end-line.\n*>\n*>   ie amt paid < inv amt o/s\n*>\n     move     \"Y\"  to  ws-reply.\n     move     65 to cole.\n     display  ws-reply at curs with foreground-color 6.\n     accept   ws-reply at curs with foreground-color 6 update.\n     move     function upper-case (ws-reply) to ws-reply.\n*>\n     if       ws-reply = \"Y\"\n              move pay-date to oi-date-cleared\n              move 1  to  oi-status\n              add  work-2  to  deduct-taken\n              subtract oi-deduct-amt from oi-net\n              move  zero  to  oi-deduct-amt.\n*>\n end-line.\n*>********\n*>\n     add      pay-paid  to  oi-paid.\n     add      pay-paid  to  oi-p-c.\n     multiply 100 by pay-paid giving oi-cr.\n     subtract oi-deduct-amt from work-net.\n     if       oi-paid = work-net\n              move pay-date to oi-date-cleared\n              move 1 to oi-status.\n*>\n     move     OI-Header to WS-OTM5-Record.\n     perform  OTM5-Rewrite.  *> rewrite  open-item-record-5 from oi-header.\n*>\n end-line-2.\n*>\n     add      1  to  lin.\n     if       lin  >  23\n              move  14  to  lin.\n*>\n     if       approp-amount  not <  pay-value\n              go to  main-end.\n     go       to Pay-Loop.\n*>\n payment-2-high-maybe.\n*>*******************\n*>\n*>   Check for paying late charge within time limit.\n*>\n*>   Not valid; fall thru to payment-2-high\n*>\n payment-2-high.\n*>*************\n*>\n     subtract pay-paid  from  approp-amount.\n     move     65 to cole.\n     display  \"Payment Too High\" at curs with foreground-color 4.\n     go       to pay-details.\n*>\n main-end.\n*>*******\n*>\n     move     zero to oi-carriage oi-vat oi-c-vat oi-status.\n     move     zero to oi-cr oi-days oi-deduct-vat oi-discount oi-deduct-days oi-p-c.\n     move     spaces to oi-applied.\n     move     pay-customer  to  oi-supplier.\n     move     pay-date  to  oi-date.\n     move     transaction-type to  oi-type.\n     move     pay-value to  oi-paid.\n     move     approp-amount  to  oi-approp.\n     move     deduct-taken   to  oi-deduct-amt.\n     move     bl-next-batch  to  oi-b-nos.\n     move     k           to  oi-b-item.\n     multiply oi-b-nos by 1000 giving oi-invoice.\n     add      oi-b-item to oi-invoice.\n*>\n     move     OI-Header to WS-OTM5-Record.\n     perform  OTM5-Write.  *> write    open-item-record-5 from oi-header.\n     move     zero  to  approp-amount  deduct-taken.\n*>\n main-exit.   exit section.\n*>********    ****\n*>\n erase-screen section.\n*>===================\n*>\n     move     1 to cole.\n     display  space at curs with erase eos.\n*>\n main-exit.   exit section.\n*>\n zz050-Validate-Date        section.\n*>*********************************\n*>\n*>  Converts USA/Intl to UK date format for processing.\n*>*******************************\n*> Input:   ws-test-date\n*> output:  u-date/ws-date as uk date format\n*>          u-bin not zero if valid date\n*>\n     move     ws-test-date to ws-date.\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz050-test-date.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz050-test-date.\n*>\n*> So its International date format\n*>\n     move     \"dd/mm/ccyy\" to ws-date.  *> swap Intl to UK form\n     move     ws-test-date (1:4) to ws-Year.\n     move     ws-test-date (6:2) to ws-Month.\n     move     ws-test-date (9:2) to ws-Days.\n*>\n zz050-test-date.\n     move     ws-date to u-date.\n     move     zero to u-bin.\n     perform  maps04.\n*>\n zz050-exit.\n     exit     section.\n*>\n zz060-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in binary to UK/USA/Intl date format\n*>****************************************************\n*> Input:   u-bin\n*> output:  ws-date as uk/US/Inlt date format\n*>          u-date & ws-Date = spaces if invalid date\n*>\n     perform  maps04.\n     if       u-date = spaces\n              move spaces to ws-Date\n              go to zz060-Exit.\n     move     u-date to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz060-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     u-date (7:4) to ws-Intl-Year.\n     move     u-date (4:2) to ws-Intl-Month.\n     move     u-date (1:2) to ws-Intl-Days.\n*>\n zz060-Exit.\n     exit     section.\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     to-day (7:4) to ws-Intl-Year.\n     move     to-day (4:2) to ws-Intl-Month.\n     move     to-day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>\n maps04       section.\n*>*******************\n*>\n     call     \"maps04\"  using  maps03-ws.\n*>\n maps04-exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 41
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 4,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 96,
+      "totalOperators": 104,
+      "totalOperands": 208,
+      "vocabulary": 97,
+      "length": 312,
+      "volume": 2059.172806762384
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/irsnominalUNL2.cbl",
+  "fileName": "irsnominalUNL2.cbl",
+  "timestamp": "2025-09-15T16:25:40.037Z",
+  "programId": "irsnominalUNL2",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 94
+      },
+      {
+        "name": "file",
+        "line": 113
+      },
+      {
+        "name": "working-storage",
+        "line": 164
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 97
+      },
+      {
+        "name": "aa000-Main-Start",
+        "line": 201
+      },
+      {
+        "name": "end-if",
+        "line": 221
+      },
+      {
+        "name": "aa010-Read-Recs",
+        "line": 225
+      },
+      {
+        "name": "end-perform",
+        "line": 256
+      },
+      {
+        "name": "aa020-Finish-Off",
+        "line": 258
+      },
+      {
+        "name": "Nominal-Ledger",
+        "line": 260
+      },
+      {
+        "name": "goback",
+        "line": 272
+      },
+      {
+        "name": "Call-Sysout",
+        "line": 276
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 277,
+        "type": "DYNAMIC",
+        "using": [
+          "SO-Print"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 83,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 93,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 185,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 187,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 188,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 189,
+        "replacing": null
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 274,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "thru": null,
+        "line": 202
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 209
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 216
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 219
+      },
+      {
+        "target": "forever",
+        "thru": null,
+        "line": 226
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 235
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 249
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 268
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 270
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "1",
+        "to": "WS-Log-System",
+        "line": 203
+      },
+      {
+        "from": "11",
+        "to": "WS-Log-File-no",
+        "line": 204
+      },
+      {
+        "from": "spaces",
+        "to": "SO-Print",
+        "line": 206
+      },
+      {
+        "from": "zeros",
+        "to": "ws-Rec-Cnt-In ws-Rec-Cnt-Out",
+        "line": 223
+      },
+      {
+        "from": "spaces",
+        "to": "SO-Print\n                       string   SY006\n                                \" \"\n                                FS-Reply\n                                   into SO-Print\n                       perform  Call-Sysout\n                       display WS-Nominal-Record at 0101 with erase eos\n                       display Sy008 at 0301\n                       accept WS-Reply at 0334\n                       go to aa020-Finish-Off\n              end-if\n              add      1 to WS-Rec-Cnt-Out\n     end-perform",
+        "line": 244
+      },
+      {
+        "from": "spaces",
+        "to": "SO-Print",
+        "line": 261
+      },
+      {
+        "from": "zero",
+        "to": "Return-Code",
+        "line": 271
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "the file exists but produces any errors because of\n*>                       a bad file** etc, it will attempt to read the RDB table\n*>                       instead, and a message to that effect will be issued.\n*>\n*>                       ** This can occur if a change of ISAM library is used\n*>                       where the new one is incompatable with the old one.\n*>\n*>                       ALL program output goes to file SYS-DISPLAY.log as an\n*>                       extended opened file. So after finishing reading,\n*>                       delete it.\n*>\n*>                       For use with ACAS v3.02 and later only.\n*>**\n*>   Version.            See prog-name in Ws.\n*>**\n*>   Called Modules.     ACAS-Sysout\n*>**\n*>   Error messages used.\n*>                       SY003.\n*>                       SY006.\n*>                       SY007.\n*>                       SY008.\n*>                       SY009.\n*>**\n*>   Changes.\n*>  1/06/23 vbc - .00 irsnominalUNL source taken from analysisUNL.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>**\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n*>\n environment division.\n*>-------------------\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n     select nominal-ledger  assign       File-34   *> nl-file\n                            organization indexed\n                            access       dynamic\n                            record       NL-key\n                            status       fs-reply.\n*>\n     select  irsnominal-File-Seq  assign      \"irsacnts.seq\"\n                                organization  line sequential\n                                status        FS-Reply.\n*>\n data division.\n*>------------\n*>\n file section.\n*>-----------\n*>\n fd  nominal-ledger.\n 01  Nominal-Record.\n     03  NL-Key.\n         05  NL-Owning      pic 9(5).\n         05  NL-Sub-Nominal pic 9(5).\n     03  NL-Type            pic x.\n         88  Owner                   value is \"O\".\n         88  Sub                     value is \"S\".\n     03  NL-Data.\n         05  NL-Name        pic x(24).\n         05  NL-DR          pic 9(8)v99   comp.\n         05  NL-CR          pic 9(8)v99   comp.\n         05  NL-DR-Last-1     pic 9(8)V99   comp.\n         05  NL-DR-Last-2     pic 9(8)V99   comp.\n         05  NL-DR-Last-3     pic 9(8)V99   comp.\n         05  NL-DR-Last-4     pic 9(8)V99   comp.\n         05  NL-CR-Last-1     pic 9(8)V99   comp.\n         05  NL-CR-Last-2     pic 9(8)V99   comp.\n         05  NL-CR-Last-3     pic 9(8)V99   comp.\n         05  NL-CR-Last-4     pic 9(8)V99   comp.\n         05  NL-AC          pic x.\n     03  filler  redefines  NL-Data.\n         05  NL-Pointer     pic 9(5).\n fd  irsnominal-File-Seq.\n*>\n 01  WS-Nominal-Record.\n     03  NL-Key.\n         05  NL-Owning      pic 9(5).\n         05  NL-Sub-Nominal pic 9(5).\n     03  NL-Type            pic x.\n         88  Owner                   value is \"O\".\n         88  Sub                     value is \"S\".\n     03  NL-Data.\n         05  NL-Name        pic x(24).  *> 35\n         05  NL-DR          pic 9(8).99.  *> 11+11+44+44+1 111+35 146\n         05  NL-CR          pic 9(8).99.  *> 22 57\n         05  NL-DR-Last-1     pic 9(8).99. *> 44\n         05  NL-DR-Last-2     pic 9(8).99. *> 44\n         05  NL-DR-Last-3     pic 9(8).99. *> 44\n         05  NL-DR-Last-4     pic 9(8).99. *> 44\n         05  NL-CR-Last-1     pic 9(8).99. *> 44\n         05  NL-CR-Last-2     pic 9(8).99. *> 44\n         05  NL-CR-Last-3     pic 9(8).99. *> 44\n         05  NL-CR-Last-4     pic 9(8).99. *> 44\n         05  NL-AC          pic x.\n     03  filler  redefines  NL-Data.\n         05  NL-Pointer     pic 9(5).\n*>\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(24)    value \"irsnominalUNL2 (3.02.00)\".\n 77  z                   binary-char  value zero.\n 77  OS-Delimiter        pic x        value \"/\".\n 77  ACAS_BIN            pic x(512)   value spaces.\n 77  ACAS_LEDGERS        pic x(500)   value spaces.\n 77  Arg-Number          pic 9        value zero.\n*>\n*> holds program parameter values from command line\n 01  Arg-Vals                         value spaces.\n     03  Arg-Value       pic x(525)  occurs 2.\n 01  Arg-Test            pic x(525)   value spaces.\n*>\n 01  work-fields.\n     03  ws-Rec-Cnt-In   pic 999       value zero.\n     03  ws-Rec-Cnt-Out  pic 999       value zero.\n     03  ws-reply        pic x.\n*>\n 01  SO-Print            pic x(160)    value spaces.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n copy \"wsfnctn.cob\".\n copy \"wsnames.cob\".\n copy \"wscall.cob\".\n*>\n 01  Error-Messages.\n     03  SY003          pic x(40) value \"SY003 Problem reading irsnominal file = \".\n     03  SY006          pic x(30) value \"SYS06 Write error on .seq file\".\n     03  SY007          pic x(35) value \"SY007 Program arguments incorrect: \".\n     03  SY008          pic x(31) value \"SY008 Note message & Hit return\".\n     03  SY009          pic x(53) value \"SY009 Environment variables not yet set up : ABORTING\".\n*>\n procedure division.\n*>=================\n*>\n aa000-Main-Start.\n     perform  zz020-Get-Program-Args.\n     move     1      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=Stock used in FH logging, 6=SL & PL\n     move     11     to WS-Log-File-no.  *> for FHlogger\n*>\n     move     spaces to SO-Print.\n     string   Prog-Name \" \"\n              \"Cobol files in use \" into SO-Print.\n     perform Call-Sysout.\n*>\n*> BYPASS ALL THE STANDARD CODING AS JUST WRITE THE REC OUT\n*>\n     open     input    Nominal-Ledger.\n     if       FS-Reply not = zeros\n              move     \"No irsnominal file to process\" to SO-Print\n              perform  Call-Sysout\n              close    Nominal-Ledger\n              move     \"CLOSE \" to SO-Print\n              perform  Call-Sysout\n              goback\n     end-if.\n     open     output   irsnominal-File-Seq.\n     move     zeros to ws-Rec-Cnt-In ws-Rec-Cnt-Out.\n*>\n aa010-Read-Recs.\n     perform  forever\n              read     Nominal-Ledger next record at end\n                       go to aa020-Finish-Off\n              end-read\n              if       FS-Reply not = zeros\n                       string   SY003\n                                FS-Reply\n                                  into SO-Print\n                       end-string\n                       perform  Call-Sysout\n                       go to aa020-Finish-Off\n              end-if\n              add      1 to WS-Rec-Cnt-In\n              initialise WS-Nominal-Record\n              move     corresponding Nominal-Record to WS-Nominal-Record\n              write    WS-Nominal-Record\n *>             write    WS-Nominal-Record from Nominal-Record\n              if       FS-Reply not = zero\n                       move spaces to SO-Print\n                       string   SY006\n                                \" \"\n                                FS-Reply\n                                   into SO-Print\n                       perform  Call-Sysout\n                       display WS-Nominal-Record at 0101 with erase eos\n                       display Sy008 at 0301\n                       accept WS-Reply at 0334\n                       go to aa020-Finish-Off\n              end-if\n              add      1 to WS-Rec-Cnt-Out\n     end-perform.\n*>\naa020-Finish-Off.\n     close    irsnominal-File-Seq\n              Nominal-Ledger.\n     move     spaces to SO-Print.\n     string\n              \"Records in = \"\n              ws-Rec-Cnt-In\n              \" Records Total out = \"\n              WS-Rec-Cnt-Out\n                     into SO-Print.\n     perform  Call-Sysout.\n     move     \"CLOSE \" to SO-Print.\n     perform  Call-Sysout.\n     move     zero to Return-Code.\n     goback.\n*>\n copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_irsnominalS now\n*>\n Call-Sysout.\n     call     \"ACAS-Sysout\" using SO-Print.\n*>",
+        "line": 26
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 11,
+      "totalOperators": 7,
+      "totalOperands": 14,
+      "vocabulary": 12,
+      "length": 21,
+      "volume": 75.28421251514428
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

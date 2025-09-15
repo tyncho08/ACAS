@@ -1,0 +1,177 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/ACAS-Sysout.cbl",
+  "fileName": "ACAS-Sysout.cbl",
+  "timestamp": "2025-09-15T16:25:33.935Z",
+  "programId": "ACAS-Sysout",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 72
+      },
+      {
+        "name": "file",
+        "line": 82
+      },
+      {
+        "name": "working-storage",
+        "line": 91
+      },
+      {
+        "name": "linkage",
+        "line": 104
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 75
+      },
+      {
+        "name": "end-if",
+        "line": 127
+      },
+      {
+        "name": "AA010-Process",
+        "line": 129
+      },
+      {
+        "name": "goback",
+        "line": 136
+      },
+      {
+        "name": "zz010-Open-File",
+        "line": 138
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 63,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 71,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz010-Open-File",
+        "thru": null,
+        "line": 113
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "CDT-Date",
+        "to": "SO-Log-Date",
+        "line": 109
+      },
+      {
+        "from": "CDT-Time",
+        "to": "SO-Log-Time",
+        "line": 110
+      },
+      {
+        "from": "spaces",
+        "to": "F1 F2",
+        "line": 111
+      },
+      {
+        "from": "CDT-Date",
+        "to": "SO-Log-Date\n              move     CDT-Time      to SO-Log-Time\n              move     spaces to F1 F2\n              write    SO-Record\n              close    Screen-Output\n              set      SO-Closed to true\n              move     spaces to LS-SO-Print   *> JIC it is reused\n              goback\n     end-if",
+        "line": 119
+      },
+      {
+        "from": "LS-SO-Print",
+        "to": "SO-Print",
+        "line": 130
+      },
+      {
+        "from": "CDT-Date",
+        "to": "SO-Log-Date",
+        "line": 131
+      },
+      {
+        "from": "CDT-Time",
+        "to": "SO-Log-Time",
+        "line": 132
+      },
+      {
+        "from": "spaces",
+        "to": "F1 F2",
+        "line": 133
+      },
+      {
+        "from": "spaces",
+        "to": "LS-SO-Print",
+        "line": 135
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n*>\n environment division.\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n       select  Screen-Output  assign \"SYS-DISPLAY.log\"\n                              organization line sequential\n                              file status FS-Status.\n data division.\n file section.\n fd  Screen-Output.\n 01  SO-Record.\n     03  SO-Log-Date    pic 9(8).\n     03  f1             pic x.        *> just spacers for viewing log file\n     03  SO-Log-Time    pic 9(8).\n     03  f2             pic x.\n     03  SO-Print       pic x(160).\n*>\n working-storage section.\n 77  prog-name          pic x(21)    value \"ACAS-Sysout (3.02.03)\".\n 77  File-Status        pic 9        value zero.\n     88  SO-Open                      value 1.\n     88  SO-Closed                    value zero.\n 77  FS-Status          pic 99       value zero.\n*>\n 01  WS-CDT.\n     03  CDT-Date       pic 9(8).   *> to Log-Date  cc yymmdd.\n     03  CDT-Time       pic 9(8).   *> to Log-Time  hhmmssmm.\n     03  CDT-Diff-HH    pic s99  sign leading separate.\n     03  CBT-Diff-MM    pic 99.\n*>\n linkage section.\n 01  LS-SO-Print        pic x(160).\n*>\n procedure division using LS-SO-Print.\n     move     function Current-Date to WS-CDT.\n     move     CDT-Date      to SO-Log-Date.\n     move     CDT-Time      to SO-Log-Time.\n     move     spaces to F1 F2.\n     if       SO-Closed\n              perform zz010-Open-File\n              go to AA010-Process.\n*>\n     if       LS-SO-Print (1:6) = \"CLOSE \"\n       and    SO-Open\n              move     \"Process Ended.\" to SO-Print\n              move     CDT-Date      to SO-Log-Date\n              move     CDT-Time      to SO-Log-Time\n              move     spaces to F1 F2\n              write    SO-Record\n              close    Screen-Output\n              set      SO-Closed to true\n              move     spaces to LS-SO-Print   *> JIC it is reused\n              goback\n     end-if.\n*>\n AA010-Process.\n     move     LS-SO-Print to SO-Print.\n     move     CDT-Date      to SO-Log-Date.\n     move     CDT-Time      to SO-Log-Time.\n     move     spaces to F1 F2.\n     write    SO-Record.\n     move     spaces to LS-SO-Print.\n     goback.\n*>\n zz010-Open-File.\n     open     extend Screen-Output.\n     if       FS-Status not = zero\n              close Screen-Output\n              open output Screen-Output\n     end-if\n     set SO-Open to true.\n*>",
+        "line": 60
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 2,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 9,
+      "totalOperators": 9,
+      "totalOperands": 18,
+      "vocabulary": 10,
+      "length": 27,
+      "volume": 89.69205856195877
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

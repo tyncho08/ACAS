@@ -1,0 +1,187 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/maps01.cbl",
+  "fileName": "maps01.cbl",
+  "timestamp": "2025-09-15T16:25:38.666Z",
+  "programId": "maps01",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 71
+      },
+      {
+        "name": "working-storage",
+        "line": 77
+      },
+      {
+        "name": "linkage",
+        "line": 102
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "encode-pass",
+        "line": 113
+      },
+      {
+        "name": "loop",
+        "line": 119
+      },
+      {
+        "name": "test-lower",
+        "line": 128
+      },
+      {
+        "name": "set-base",
+        "line": 135
+      },
+      {
+        "name": "return-to-loop",
+        "line": 153
+      },
+      {
+        "name": "encode-name",
+        "line": 161
+      },
+      {
+        "name": "loop-n",
+        "line": 166
+      },
+      {
+        "name": "test-lower-n",
+        "line": 175
+      },
+      {
+        "name": "set-base-n",
+        "line": 182
+      },
+      {
+        "name": "return-to-loop-n",
+        "line": 203
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [
+      {
+        "name": "of",
+        "line": 61,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 70,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps01",
+        "line": 105,
+        "replacing": null
+      }
+    ],
+    "performs": []
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "pass-word",
+        "to": "pass-word-input",
+        "line": 116
+      },
+      {
+        "from": "1",
+        "to": "y",
+        "line": 117
+      },
+      {
+        "from": "space",
+        "to": "ar3 (q)",
+        "line": 151
+      },
+      {
+        "from": "pass-word-output",
+        "to": "pass-word",
+        "line": 158
+      },
+      {
+        "from": "pass-name",
+        "to": "pass-name-input",
+        "line": 163
+      },
+      {
+        "from": "1",
+        "to": "y",
+        "line": 164
+      },
+      {
+        "from": "space",
+        "to": "ar5 (y)",
+        "line": 201
+      },
+      {
+        "from": "pass-name-output",
+        "to": "pass-name",
+        "line": 208
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy  \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n data                    division.\n*>===============================\n*>\n working-storage section.\n*>----------------------\n*>\n 01  ws-data.\n     03  alpha           pic x(26)     value \"CKQUAELSMWYIZJRPBXFVGNODTH\".\n     03  filla1  redefines  alpha.\n       05  ar1           pic x         occurs  26 indexed by xx.\n     03  alower          pic x(26)     value \"ckquaelsmwyizjrpbxfvgnodth\".\n     03  filler  redefines  alower.\n       05  ar1-l         pic x         occurs  26  indexed by a.\n*>\n     03  pass-word-input.\n       05  ar2           pic x         occurs  4.\n     03  pass-word-output.\n       05  ar3           pic x         occurs  4.\n*>\n     03  pass-name-input.\n       05  ar4           pic x         occurs  32.\n     03  pass-name-output.\n       05  ar5           pic x         occurs  32.\n*>\n 77  q                   pic s9(5)      computational.\n 77  y                   pic s9(5)      computational.\n 77  z                   pic s9(5)      computational.\n 77  base                pic s9(5)      computational.\n linkage section.\n*>--------------\n*>\n copy  \"wsmaps01.cob\".\n*>\n procedure division  using  maps01-ws.\n*>===================================\n*>\n     if       not  pass\n              go to  encode-name.\n*>\n encode-pass.\n*>----------\n*>\n     move     pass-word  to  pass-word-input.\n     move     1  to  y.\n*>\n loop.\n*>---\n*>\n     set      xx to  1.\n     search   ar1  at end  go to  test-lower\n                   when  ar1 (xx) = ar2 (y)\n                   set a to xx\n                   go to  set-base.\n*>\n test-lower.\n*>\n     set      a  to  1.\n     search   ar1-l  at end  go to  return-to-loop\n                     when  ar1-l (a) = ar2 (y)\n                     go to  set-base.\n*>\n set-base.\n*>\n     multiply y  by  y  giving  base.\n     add      3  to  base.\n*>\n     set      z  to  a.\n     add      base  to  z.\n     subtract 26  from  z.\n*>\n     if       z  <  1\n              multiply  z  by  -1  giving  z.\n*>\n     subtract y  from  5  giving  q.\n     if       z  not = zero\n              move  ar1 (z)  to  ar3 (q)\n     else\n              move  space    to  ar3 (q).\n*>\n return-to-loop.\n*>\n     add      1  to  y.\n     if       y  <   5    go to  loop.\n*>\n     move     pass-word-output  to  pass-word.\n     go       to main-exit.\n*>\n encode-name.\n*>----------\n     move     pass-name  to  pass-name-input.\n     move     1  to  y.\n*>\n loop-n.\n*>-----\n*>\n     set      xx to  1.\n     search   ar1  at end  go to  test-lower-n\n               when  ar1 (xx) = ar4 (y)\n               set a to xx\n               go to  set-base-n.\n*>\n test-lower-n.\n*>\n     set      a  to  1.\n     search   ar1-l  at end  go to  return-to-loop-n\n                when  ar1-l (a) = ar4 (y)\n                go to  set-base-n.\n*>\n set-base-n.\n*>\n     add      y  51  giving  base.\n     divide   base  by  y  giving  base  rounded.\n*>\n     if       base  >  25   subtract  26  from  base.\n*>\n     set      z  to  a.\n     add      base  to  z.\n     subtract 27  from  z.\n*>\n     if       z  <  1\n              multiply  z  by  -1  giving  z.\n*>\n     if       z  >  26   subtract  26  from  z.\n*>\n     if       z  not = zero\n              move  ar1 (z)  to  ar5 (y)\n     else\n              move  space    to  ar5 (y).\n*>\n return-to-loop-n.\n*>\n     add      1  to  y.\n     if       y  <  32    go to  loop-n.\n*>\n     move     pass-name-output  to  pass-name.\n*>\n main-exit.   exit program.\n*>********    ************",
+        "line": 58
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 2,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 11,
+      "totalOperators": 8,
+      "totalOperands": 16,
+      "vocabulary": 12,
+      "length": 24,
+      "volume": 86.03910001730775
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

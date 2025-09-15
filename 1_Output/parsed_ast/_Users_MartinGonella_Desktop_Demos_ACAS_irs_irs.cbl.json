@@ -1,0 +1,1246 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/irs/irs.cbl",
+  "fileName": "irs.cbl",
+  "timestamp": "2025-09-15T16:25:49.376Z",
+  "programId": "irs",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "working-storage",
+        "line": 231
+      },
+      {
+        "name": "screen",
+        "line": 427
+      },
+      {
+        "name": "irs-main",
+        "line": 474
+      },
+      {
+        "name": "zz060-Convert-Date",
+        "line": 863
+      },
+      {
+        "name": "exit",
+        "line": 896
+      },
+      {
+        "name": "maps04",
+        "line": 898
+      },
+      {
+        "name": "exit",
+        "line": 904
+      },
+      {
+        "name": "zz090-Set-Up-IRS-System-Data",
+        "line": 908
+      },
+      {
+        "name": "exit",
+        "line": 999
+      },
+      {
+        "name": "zz095-Restore-IRS-System-Data",
+        "line": 1001
+      },
+      {
+        "name": "exit",
+        "line": 1034
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "goback",
+        "line": 488
+      },
+      {
+        "name": "goback",
+        "line": 493
+      },
+      {
+        "name": "File-Duplicates-In-Use",
+        "line": 497
+      },
+      {
+        "name": "end-if",
+        "line": 506
+      },
+      {
+        "name": "aa010-Get-System-Recs",
+        "line": 508
+      },
+      {
+        "name": "end-if",
+        "line": 520
+      },
+      {
+        "name": "end-if",
+        "line": 586
+      },
+      {
+        "name": "end-if",
+        "line": 631
+      },
+      {
+        "name": "Main-Loop",
+        "line": 638
+      },
+      {
+        "name": "end-if",
+        "line": 652
+      },
+      {
+        "name": "end-if",
+        "line": 794
+      },
+      {
+        "name": "EOJ-End",
+        "line": 796
+      },
+      {
+        "name": "goback",
+        "line": 797
+      },
+      {
+        "name": "end-if",
+        "line": 839
+      },
+      {
+        "name": "EOJ-Post",
+        "line": 841
+      },
+      {
+        "name": "end-if",
+        "line": 861
+      },
+      {
+        "name": "zz060-Exit",
+        "line": 895
+      },
+      {
+        "name": "maps04-exit",
+        "line": 903
+      },
+      {
+        "name": "zz090-Start",
+        "line": 911
+      },
+      {
+        "name": "WS-Pass-Value",
+        "line": 957
+      },
+      {
+        "name": "WS-Save-Sequ",
+        "line": 959
+      },
+      {
+        "name": "WS-System-Work-Group",
+        "line": 961
+      },
+      {
+        "name": "WS-PL-App-Created",
+        "line": 963
+      },
+      {
+        "name": "WS-PL-Approp-AC",
+        "line": 965
+      },
+      {
+        "name": "WS-First-Time-Flag",
+        "line": 967
+      },
+      {
+        "name": "zz090-Proc-Run-Date",
+        "line": 973
+      },
+      {
+        "name": "end-string",
+        "line": 979
+      },
+      {
+        "name": "zz090-Proc-Start-Date",
+        "line": 981
+      },
+      {
+        "name": "end-string",
+        "line": 987
+      },
+      {
+        "name": "zz090-Proc-End-Date",
+        "line": 988
+      },
+      {
+        "name": "end-string",
+        "line": 994
+      },
+      {
+        "name": "zz090-Exit",
+        "line": 998
+      },
+      {
+        "name": "zz095-Exit",
+        "line": 1033
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "maps04",
+        "line": 562,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      },
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 594,
+        "type": "DYNAMIC",
+        "using": [
+          "Run-Backup",
+          "File-Info",
+          "end-call",
+          "if",
+          "Return-Code",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "and",
+          "Batch-Text",
+          "(1:1)",
+          "not",
+          "=",
+          "space",
+          "move",
+          "\"No",
+          "BackUp",
+          "Script",
+          "in",
+          "Bin\"",
+          "to",
+          "Batch-Text",
+          "else",
+          "move",
+          "1",
+          "to",
+          "Backup-Sw",
+          "string",
+          "\"Using",
+          "\"",
+          "delimited",
+          "by",
+          "size",
+          "Script-Name",
+          "delimited",
+          "by",
+          "space",
+          "into",
+          "Batch-Text",
+          "end-if",
+          "*>",
+          "*>",
+          "Now",
+          "for",
+          "the",
+          "pre",
+          "and",
+          "post",
+          "EOY",
+          "scripts",
+          "*>",
+          "string",
+          "ACAS_BIN",
+          "delimited",
+          "by",
+          "space",
+          "OS-Delimiter",
+          "delimited",
+          "by",
+          "size",
+          "Script-Pre-EOY-Name",
+          "delimited",
+          "by",
+          "space",
+          "into",
+          "Run-Pre-Backup",
+          "end-string",
+          "call",
+          "\"CBL_CHECK_FILE_EXIST\"",
+          "using",
+          "Run-Pre-Backup",
+          "File-Info",
+          "if",
+          "Return-Code",
+          "=",
+          "zero",
+          "move",
+          "1",
+          "to",
+          "Backup-Pre-Sw",
+          "end-if",
+          "string",
+          "ACAS_BIN",
+          "delimited",
+          "by",
+          "space",
+          "OS-Delimiter",
+          "delimited",
+          "by",
+          "size",
+          "Script-Post-EOY-Name",
+          "delimited",
+          "by",
+          "space",
+          "into",
+          "Run-Post-Backup",
+          "end-string",
+          "call",
+          "\"CBL_CHECK_FILE_EXIST\"",
+          "using",
+          "Run-Post-Backup",
+          "File-Info",
+          "if",
+          "Return-Code",
+          "=",
+          "zero",
+          "move",
+          "1",
+          "to",
+          "Backup-Post-Sw",
+          "end-if",
+          "*>",
+          "if",
+          "Menu-Reply",
+          "=",
+          "\"1\"",
+          "call",
+          "\"irs000\"",
+          "using",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "param",
+          "record",
+          "to-day",
+          "end-call",
+          "end-if"
+        ]
+      },
+      {
+        "target": "irs000",
+        "line": 648,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-System-Record",
+          "to-day",
+          "end-call",
+          "perform",
+          "zz090-Proc-Run-Date",
+          "*>",
+          "updated",
+          "by",
+          "irs000",
+          "end-if"
+        ]
+      },
+      {
+        "target": "irs010",
+        "line": 655,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "irs020",
+        "line": 662,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "irs030",
+        "line": 669,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "irs040",
+        "line": 676,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "irs050",
+        "line": 683,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "irs065",
+        "line": 695,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "irs060",
+        "line": 699,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "irs070",
+        "line": 712,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "irs085",
+        "line": 722,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "irs090",
+        "line": 726,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "irs080",
+        "line": 734,
+        "type": "DYNAMIC",
+        "using": [
+          "IRS-System-Params",
+          "WS-System-Record",
+          "*>",
+          "ACAS",
+          "system",
+          "rec"
+        ]
+      },
+      {
+        "target": "SYSTEM",
+        "line": 793,
+        "type": "DYNAMIC",
+        "using": [
+          "Full-Backup-Script",
+          "end-if"
+        ]
+      },
+      {
+        "target": "SYSTEM",
+        "line": 838,
+        "type": "DYNAMIC",
+        "using": [
+          "Run-Pre-Backup",
+          "end-if"
+        ]
+      },
+      {
+        "target": "SYSTEM",
+        "line": 860,
+        "type": "DYNAMIC",
+        "using": [
+          "Run-Post-Backup",
+          "end-if"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 901,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 218,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 227,
+        "replacing": null
+      },
+      {
+        "name": "sys-params-versioning",
+        "line": 257,
+        "replacing": null
+      },
+      {
+        "name": "screenio",
+        "line": 297,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 331,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 332,
+        "replacing": null
+      },
+      {
+        "name": "wstime",
+        "line": 333,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 334,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 362,
+        "replacing": null
+      },
+      {
+        "name": "irswssystem",
+        "line": 392,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 395,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 404,
+        "replacing": null
+      },
+      {
+        "name": "verb",
+        "line": 951,
+        "replacing": null
+      },
+      {
+        "name": "verb",
+        "line": 1007,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ZZ100-ACAS-IRS-Calls",
+        "line": 1036,
+        "replacing": null
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 1038,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "thru": null,
+        "line": 482
+      },
+      {
+        "target": "acas000-open-Input",
+        "thru": null,
+        "line": 500
+      },
+      {
+        "target": "acas000-close",
+        "thru": null,
+        "line": 502
+      },
+      {
+        "target": "acas000-open",
+        "thru": null,
+        "line": 505
+      },
+      {
+        "target": "acas000-Read-Indexed",
+        "thru": null,
+        "line": 513
+      },
+      {
+        "target": "acas000-close",
+        "thru": null,
+        "line": 515
+      },
+      {
+        "target": "acas000-open",
+        "thru": null,
+        "line": 518
+      },
+      {
+        "target": "acas000-Close",
+        "thru": null,
+        "line": 533
+      },
+      {
+        "target": "acas000-Open",
+        "thru": null,
+        "line": 537
+      },
+      {
+        "target": "acas000-Read-Indexed",
+        "thru": null,
+        "line": 538
+      },
+      {
+        "target": "acas000-Write",
+        "thru": null,
+        "line": 541
+      },
+      {
+        "target": "acas000-Close",
+        "thru": null,
+        "line": 547
+      },
+      {
+        "target": "acas000-Close",
+        "thru": null,
+        "line": 552
+      },
+      {
+        "target": "zz090-Set-Up-IRS-System-Data",
+        "thru": null,
+        "line": 557
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 634
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "thru": null,
+        "line": 636
+      },
+      {
+        "target": "zz090-Proc-Run-Date",
+        "thru": null,
+        "line": 651
+      },
+      {
+        "target": "EOJ-Pre",
+        "thru": null,
+        "line": 692
+      },
+      {
+        "target": "EOJ-Post",
+        "thru": null,
+        "line": 706
+      },
+      {
+        "target": "acas000-Open",
+        "thru": null,
+        "line": 744
+      },
+      {
+        "target": "acas000-Rewrite",
+        "thru": null,
+        "line": 745
+      },
+      {
+        "target": "acas000-Close",
+        "thru": null,
+        "line": 746
+      },
+      {
+        "target": "acas000-Open",
+        "thru": null,
+        "line": 761
+      },
+      {
+        "target": "acas000-Read-Indexed",
+        "thru": null,
+        "line": 762
+      },
+      {
+        "target": "acas000-Close",
+        "thru": null,
+        "line": 763
+      },
+      {
+        "target": "zz095-Restore-IRS-System-Data",
+        "thru": null,
+        "line": 765
+      },
+      {
+        "target": "acas000-Open",
+        "thru": null,
+        "line": 768
+      },
+      {
+        "target": "acas000-Rewrite",
+        "thru": null,
+        "line": 769
+      },
+      {
+        "target": "acas000-Close",
+        "thru": null,
+        "line": 770
+      },
+      {
+        "target": "acas000-Open",
+        "thru": null,
+        "line": 773
+      },
+      {
+        "target": "acas000-Rewrite",
+        "thru": null,
+        "line": 774
+      },
+      {
+        "target": "acas000-Close",
+        "thru": null,
+        "line": 775
+      },
+      {
+        "target": "acas000-Open",
+        "thru": null,
+        "line": 808
+      },
+      {
+        "target": "acas000-Read-Indexed",
+        "thru": null,
+        "line": 809
+      },
+      {
+        "target": "acas000-Close",
+        "thru": null,
+        "line": 810
+      },
+      {
+        "target": "zz095-Restore-IRS-System-Data",
+        "thru": null,
+        "line": 811
+      },
+      {
+        "target": "acas000-Open",
+        "thru": null,
+        "line": 814
+      },
+      {
+        "target": "acas000-Rewrite",
+        "thru": null,
+        "line": 815
+      },
+      {
+        "target": "acas000-Close",
+        "thru": null,
+        "line": 816
+      },
+      {
+        "target": "acas000-Open",
+        "thru": null,
+        "line": 819
+      },
+      {
+        "target": "acas000-Rewrite",
+        "thru": null,
+        "line": 820
+      },
+      {
+        "target": "acas000-Close",
+        "thru": null,
+        "line": 821
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 872
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 975
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 983
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 990
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "zeros",
+        "to": "File-System-Used\n                       File-Duplicates-In-Use",
+        "line": 496
+      },
+      {
+        "from": "\"00\"",
+        "to": "FA-RDBMS-Flat-Statuses",
+        "line": 498
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 499
+      },
+      {
+        "from": "\"sys002\"",
+        "to": "ws-called     *> create param file by requesting info from user\n              call    ws-called using ws-calling-data file-defs\n              perform acas000-open\n     end-if",
+        "line": 503
+      },
+      {
+        "from": "zeros",
+        "to": "File-System-Used         *> again in case RDB setup\n                       File-Duplicates-In-Use",
+        "line": 509
+      },
+      {
+        "from": "\"00\"",
+        "to": "FA-RDBMS-Flat-Statuses",
+        "line": 511
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 512
+      },
+      {
+        "from": "\"sys002\"",
+        "to": "ws-called    *> create param file by requested info from user\n              call    ws-called using ws-calling-data file-defs\n              perform acas000-open\n              go to aa010-Get-System-Recs\n     end-if",
+        "line": 516
+      },
+      {
+        "from": "WS-System-Record",
+        "to": "WS-Temp-System-Rec",
+        "line": 521
+      },
+      {
+        "from": "File-System-Used",
+        "to": "Arg-Number       *> save value from param in Cobol file\n*>              move     zero to File-System-Used             *> so we can close the cobol file\n*>              perform  acas000-Close                        *>  close cobol file\n*>              move     Arg-Number to File-System-Used       *> restore value from param in cobol file\n*>              move     \"66\" to FA-RDBMS-Flat-Statuses       *> Force RDB processing\n*>              move     1 to File-Key-No\n*>              perform  acas000-Open                         *> It could be values 1 thru 5 when the other RDB's are programmed for\n*>              perform  acas000-Read-Indexed                 *> get the record from the RDB table\n*>              if       fs-reply not = zero                  *> but if error we have a problem such as someone forgot to run system load modules",
+        "line": 531
+      },
+      {
+        "from": "WS-Temp-System-Rec",
+        "to": "WS-System-Record   *> restore saved cobol file rec\n*>                       perform acas000-Write                *> So create RDB row in SYSTEM-REC from the Cobol file data\n*>                       if      fs-reply not = zero          *> Here on, should not happen !\n*>                               display SY011 at 2301\n*>                               display fs-reply at 2348\n*>                               display SY008    at 2401\n*>                               accept  ws-Reply at 2432\n*>                               perform acas000-Close\n*>                               goback\n*>                       end-if                              *> UNREMARKED THIS 11/03/18\n*>              end-if\n*>     end-if",
+        "line": 540
+      },
+      {
+        "from": "ACAS-Run-Date",
+        "to": "u-bin",
+        "line": 561
+      },
+      {
+        "from": "u-date",
+        "to": "to-day",
+        "line": 563
+      },
+      {
+        "from": "\"O/S\"",
+        "to": "op-display",
+        "line": 566
+      },
+      {
+        "from": "\"Linux\"",
+        "to": "op-display\n     else if  Windows  move \"Windows\" to op-display\n     else if  Mac      move \"Mac\"     to op-display\n     else if  Dos      move \"Dos\"     to op-display\n     else if  OS2      move \"OS/2\"    to op-display\n     else if  Unix     move \"Unix\"    to op-display",
+        "line": 567
+      },
+      {
+        "from": "Windows-Backup-Script-Name",
+        "to": "Script-Name\n              move Windows-Pre-EOY-Script-Name  to Script-Pre-EOY-Name\n              move Windows-Post-EOY-Script-Name to Script-Post-EOY-Name\n     else if  OS2\n              move OS2-Backup-Script-Name       to Script-Name\n              move OS2-Pre-EOY-Script-Name      to Script-Pre-EOY-Name\n              move OS2-Post-EOY-Script-Name     to Script-Post-EOY-Name\n     else if  Linux or Unix or Mac\n              move Linux-Backup-Script-Name     to Script-Name\n              move Linux-Pre-EOY-Script-Name    to Script-Pre-EOY-Name\n              move Linux-Post-EOY-Script-Name   to Script-Post-EOY-Name\n     end-if",
+        "line": 575
+      },
+      {
+        "from": "1",
+        "to": "Backup-Sw\n              string \"Using \"    delimited by size\n                     Script-Name delimited by space into Batch-Text\n     end-if\n*>\n*> Now for the pre and post EOY scripts\n*>\n     string   ACAS_BIN     delimited by space\n              OS-Delimiter delimited by size\n              Script-Pre-EOY-Name  delimited by space  into Run-Pre-Backup\n     end-string\n     call     \"CBL_CHECK_FILE_EXIST\" using Run-Pre-Backup\n                                           File-Info\n     if       Return-Code = zero\n              move 1 to Backup-Pre-Sw\n     end-if\n     string   ACAS_BIN     delimited by space\n              OS-Delimiter delimited by size\n              Script-Post-EOY-Name  delimited by space  into Run-Post-Backup\n     end-string\n     call     \"CBL_CHECK_FILE_EXIST\" using Run-Post-Backup\n                                           File-Info\n     if       Return-Code = zero\n              move 1 to Backup-Post-Sw\n     end-if\n*>\n     if       Menu-Reply = \"1\"\n              call \"irs000\" using WS-System-Record   *> ACAS param record\n                                  to-day\n              end-call\n     end-if",
+        "line": 601
+      },
+      {
+        "from": "run-date",
+        "to": "u-bin",
+        "line": 633
+      },
+      {
+        "from": "u-date",
+        "to": "to-day",
+        "line": 635
+      },
+      {
+        "from": "space",
+        "to": "Menu-Reply",
+        "line": 639
+      },
+      {
+        "from": "maps-ser-nn",
+        "to": "curs2",
+        "line": 640
+      },
+      {
+        "from": "\"00\"",
+        "to": "FA-RDBMS-Flat-Statuses  *> Force Cobol proc",
+        "line": 741
+      },
+      {
+        "from": "zero",
+        "to": "ws-term-code\n              move     1 to File-Key-No\n              perform  acas000-Open\n              perform  acas000-Rewrite                           *> in case of any changes\n              perform  acas000-Close\n              move    \"sys002\" to ws-called     *> create param file by requesting info from user\n              call    ws-called using ws-calling-data\n                                      file-defs\n              end-call\n              go to aa005-Open-System",
+        "line": 742
+      },
+      {
+        "from": "zeros",
+        "to": "File-System-Used         *> again in case RDB setup\n                       File-Duplicates-In-Use",
+        "line": 757
+      },
+      {
+        "from": "\"00\"",
+        "to": "FA-RDBMS-Flat-Statuses",
+        "line": 759
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 760
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 766
+      },
+      {
+        "from": "\"00\"",
+        "to": "FA-RDBMS-Flat-Statuses",
+        "line": 767
+      },
+      {
+        "from": "\"66\"",
+        "to": "FA-RDBMS-Flat-Statuses\n              perform  acas000-Open\n              perform  acas000-Rewrite         *> In case of any changes\n              perform  acas000-Close\n     end-if\n*>\n     if       Backup-Script-Found\n              if       Linux or Unix or Mac\n                       string \"nohup \" delimited by size\n                               Run-Backup delimited by space\n                               \" 0</dev/null &>/dev/null &\" delimited by size into Full-Backup-Script\n                       end-string\n              else\n               if      Dos or Windows\n                       move Script-Name to Full-Backup-Script\n               else\n                if     OS2\n                       move Script-Name to Full-Backup-Script\n                end-if\n               end-if\n              end-if\n              call     \"SYSTEM\" using Full-Backup-Script\n     end-if",
+        "line": 772
+      },
+      {
+        "from": "zeros",
+        "to": "File-System-Used         *> again in case RDB setup\n                                File-Duplicates-In-Use  *> if sys002 just been run",
+        "line": 804
+      },
+      {
+        "from": "\"00\"",
+        "to": "FA-RDBMS-Flat-Statuses  *> Force Cobol proc",
+        "line": 806
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No\n              perform  acas000-Open\n              perform  acas000-Read-Indexed\n              perform  acas000-Close\n              perform  zz095-Restore-IRS-System-Data\n              move     1 to File-Key-No              *> now default to file processing\n              move     \"00\" to FA-RDBMS-Flat-Statuses    *> Now for the file\n              perform  acas000-Open\n              perform  acas000-Rewrite\n              perform  acas000-Close\n              if       File-System-Used NOT = zero   *> Force RDB processing\n                       move     \"66\" to FA-RDBMS-Flat-Statuses\n                       perform  acas000-Open\n                       perform  acas000-Rewrite\n                       perform  acas000-Close\n              end-if\n*>\n              if       Linux or Unix or Mac\n                       string \"nohup \" delimited by size\n                               Script-Pre-EOY-Name delimited by space\n                               \" 0</dev/null &>/dev/null &\" delimited by size into Run-Pre-Backup\n                       end-string\n              else\n               if      Dos or Windows\n                       move Script-Pre-EOY-Name to Run-Pre-Backup\n               else\n                if     OS2\n                       move Script-Pre-EOY-Name to Run-Pre-Backup\n                end-if\n               end-if\n              end-if\n              call     \"SYSTEM\" using Run-Pre-Backup\n     end-if",
+        "line": 807
+      },
+      {
+        "from": "Script-Name",
+        "to": "Run-Post-Backup\n               else\n                if     OS2\n                       move Script-Name to Run-Post-Backup\n                end-if\n               end-if\n              end-if\n              call     \"SYSTEM\" using Run-Post-Backup\n     end-if",
+        "line": 853
+      },
+      {
+        "from": "spaces",
+        "to": "ws-Date\n              go to zz060-Exit",
+        "line": 874
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date",
+        "line": 876
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 879
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit",
+        "line": 883
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 890
+      },
+      {
+        "from": "ACAS-Pass-Word",
+        "to": "Pass-Word",
+        "line": 937
+      },
+      {
+        "from": "ACAS-Suser",
+        "to": "Suser",
+        "line": 938
+      },
+      {
+        "from": "ACAS-Address-1",
+        "to": "Address-1",
+        "line": 939
+      },
+      {
+        "from": "ACAS-Address-2",
+        "to": "Address-2",
+        "line": 940
+      },
+      {
+        "from": "ACAS-Address-3",
+        "to": "Address-3",
+        "line": 941
+      },
+      {
+        "from": "ACAS-Address-4",
+        "to": "Address-4",
+        "line": 942
+      },
+      {
+        "from": "Vat-Rate-1",
+        "to": "Vat in IRS-System-Params",
+        "line": 943
+      },
+      {
+        "from": "Vat-Rate-2",
+        "to": "Vat2",
+        "line": 944
+      },
+      {
+        "from": "Vat-Rate-3",
+        "to": "Vat3",
+        "line": 945
+      },
+      {
+        "from": "ACAS-Print-Spool-Name",
+        "to": "Print-Spool-Name",
+        "line": 946
+      },
+      {
+        "from": "ACAS-Op-System",
+        "to": "System-Ops",
+        "line": 948
+      },
+      {
+        "from": "IRS-Client",
+        "to": "Client",
+        "line": 953
+      },
+      {
+        "from": "IRS-Next-Post",
+        "to": "Next-Post\n                                       WS-Next-Post",
+        "line": 954
+      },
+      {
+        "from": "IRS-Pass-Value",
+        "to": "Pass-Value\n                                       WS-Pass-Value",
+        "line": 956
+      },
+      {
+        "from": "IRS-Save-Sequ",
+        "to": "Save-Sequ\n                                       WS-Save-Sequ",
+        "line": 958
+      },
+      {
+        "from": "IRS-System-Work-Group",
+        "to": "System-Work-Group\n                                       WS-System-Work-Group",
+        "line": 960
+      },
+      {
+        "from": "IRS-PL-App-Created",
+        "to": "PL-App-Created\n                                       WS-PL-App-Created",
+        "line": 962
+      },
+      {
+        "from": "IRS-PL-Approp-AC",
+        "to": "PL-Approp-AC\n                                       WS-PL-Approp-AC",
+        "line": 964
+      },
+      {
+        "from": "IRS-First-Time-Flag",
+        "to": "First-Time-Flag\n                                       WS-First-Time-Flag",
+        "line": 966
+      },
+      {
+        "from": "ACAS-Run-Date",
+        "to": "u-bin",
+        "line": 974
+      },
+      {
+        "from": "ACAS-Start-Date",
+        "to": "u-bin",
+        "line": 982
+      },
+      {
+        "from": "ACAS-End-Date",
+        "to": "u-bin",
+        "line": 989
+      },
+      {
+        "from": "Next-Post",
+        "to": "IRS-Next-Post",
+        "line": 1013
+      },
+      {
+        "from": "Pass-Value",
+        "to": "IRS-Pass-Value",
+        "line": 1016
+      },
+      {
+        "from": "Save-Sequ",
+        "to": "IRS-Save-Sequ",
+        "line": 1019
+      },
+      {
+        "from": "System-Work-Group",
+        "to": "IRS-System-Work-Group",
+        "line": 1022
+      },
+      {
+        "from": "First-Time-Flag",
+        "to": "IRS-First-Time-Flag",
+        "line": 1025
+      },
+      {
+        "from": "PL-Approp-AC",
+        "to": "IRS-PL-Approp-AC",
+        "line": 1028
+      },
+      {
+        "from": "PL-App-Created",
+        "to": "IRS-PL-App-Created",
+        "line": 1031
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "script found in current directory or ~/bin. Few more\n*>                very minor bugs cleared.\n*>                Changed progs, specs & manual to match.\n*> 01/03/09 vbc - Transferred all code changes to commercial versions incl.\n*>                MySQL and Oracle multi client/company versions.\n*>                Include rewrite Final accounts into OOo exports for\n*>                U.K. Company House and HMRC etc with all notes. Amend docs.\n*> 14/09/10 vbc - Added Cob Env variables presets.\n*> 21/09/10 vbc - .16 added test for Mac OSX\n*>                    added print spool name processing.\n*> 02/10/11 vbc - .17 Changed to Cbl-File-Details year to xx for OC v2.\n*> 21/11/11 vbc - .18 Initialise system-record on system setup & add prelim code\n*>                    for processing ACAS-IRS env variable but more needs to be done.\n*> 02/05/16 vbc - .19 Changed cosmetic - 'OS/10' to 'OSX' on setup screen.\n*> 19/10/16 vbc - .20 Repositioned processing for program environ args to\n*>                    start of prog, adjust ACAS_IRS to 500 to match rest of ACAS.\n*>                    IRS SYSTEM FILE DISCONTINUED FOR THE ACAS ONE.\n*>\n*> 20/10/16 vbc - .21 Introducing error messages into WS as literals in case\n*>                    user needs to change to own language - as used in ACAS.\n*>                    Using wsnames in copybooks for ALL progs in v3.02.\n*>                    Update programs to v3.02 as RDB support added.\n*>\n*> 25/11/16 vbc - .22 Using acas param file to recreate the irs system-record.\n*>                    After running specific modules [ irs030, ]\n*>                    transfer specific data back -\n*>                    Next-Post,\n*>                    to ACAS param file and update record on file/table.\n*>\n*> 26/11/16 vbc - .23 Clear out all set up processes as now done in sys002.\n*>                    Change all back up scripts to use the acas ones\n*>                    as all Cobol file if used are in acas directory.\n*>                    Removed maps01 & 99 processing - not needed.\n*>                    Changed usage of Cbl-File-Details to File-Info (see .17)\n*>\n*> 27/11/16 vbc - .24 file-defs  added to all irsnnn calls as 2nd param.\n*>                    Clean up all msgs to use Pre-Defined ones system/module\n*>                    wide across entire IRS system in compliance with all of\n*>                    ACAS.\n*>\n*> 20/12/16 vbc -     All irs progs call cpybk Proc-ZZ100-ACAS-IRS-Calls.\n*>\n*> 30/12/16 vbc - .25 Added PL-App-Created & Approp to zz090 & zz095 (used in irs020).\n*> 25/04/17 vbc - .26 Change init param open to Input as I/O creates if not exist.\n*> 29/01/18 vbc - .27 Changed copies to use copybooks where poss.\n*>                    Removed un-used error messages. IR011-16 are needed.\n*> 05/02/18 vbc - .28 Dont close file pre calling sys002 as not open!!!\n*> 07/02/18 vbc       Removed dead code for call maps03 - replaced with maps04\n*>                     years ago.\n*>                    Re-positioned Menu so that system set up is to ACAS norms as\n*>                    option Z.\n*> 08/02/18 vbc - .29 Force run of back up (but only if installed), prior to running\n*>                    irs060 as it can be asked to do EOY processing on accounts.\n*>                    This process changes nominal records, ie., clearing down and/or\n*>                    moving data.\n*>                    This process will also update any changed system data first\n*>                    see para EOJ. Same as EOJ so will run again.\n*> 09/02/18 vbc - .30 Added support for backup scripts for Pre and Post EOY processing.\n*> 10/02/18 vbc - .31 Renamed IR011-16 to IR911-16 and others.\n*> 11/03/18 vbc - .32 In aa005-Open-System remove the close, open I/O which\n*>                    only used to read, Make option Z only available if\n*>                    Param-Restrict <> \"Y\" & change menu title - same as all other\n*>                    systems.\n*>                    Removed password processing for O/S version as protection is\n*>                    built in to *nix, Windows with user passwords and ACL for users\n*>                    that require it.\n*>                    Extra comments for script names.\n*> 14/04/18 vbc - .33 Remark out code for reading in rdb system data as file will ALWAYS be up2date.\n*>                    If System setup requested write out current sys record 1.\n*> 22/05/18 vbc - .34 Small changes to the backup process at prerewrite as did not run.\n*> 28/05/18 vbc - .35 Added ws fields for env. columns and lines to verify minimums.\n*> 18/06/20 vbc -     Experimental unused CDF code removed.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*> 05/01/25 vbc   .36 Added get ACAS param rec (zz900) before saving irs param rec\n*>                    and rewriting param rec - last 2 already present\n*>                    but re-adjusted twice-ish.\n*>\n*> TODO for O/S versions.\n*>  1.           For UK users add code to support auto VAT returns ->\n*>\n*>  2.           Likewise for HMRC & Company House return via CT600\n*>                 Having worked out how !!\n*>                 Could just produce the figures displayed/printed for use in\n*>                 the online data entry but will be get changed again ?\n*>               But are we putting this into OS (Open Source) version\n*>               as it requires on-going support ?\n*>\n*>  3.           Consider if need for multi date format usage as IRS only uses\n*>               UK format (entry, display & print).\n*>\n*>*****************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment division.\n*>*******************\n*>\n copy \"envdiv.cob\".\n data division.\n*>************\n*>\n working-storage section.\n*>----------------------\n 77  Prog-Name            pic x(14)  value \"IRS (3.02.36) \".\n 77  z                    binary-char  value zero.\n 77  Call-Prog            pic x(6)   value spaces.\n 77  Batch-Text           pic x(28)  value spaces.\n 77  Script-Name          pic x(24)  value spaces.\n 77  Script-Pre-EOY-Name  pic x(24)  value spaces.\n 77  Script-Post-EOY-Name pic x(24)  value spaces.\n 77  Run-Backup           pic x(512) value spaces.  *> size changed\n 77  Run-Pre-Backup       pic x(512) value spaces.\n 77  Run-Post-Backup      pic x(512) value spaces.\n 77  Full-Backup-Script   pic x(512) value spaces.\n 77  OS-Delimiter         pic x      value \"/\".\n 77  ACAS_LEDGERS         pic x(500) value spaces.\n 77  ACAS_BIN             pic x(512) value spaces.\n 77  Arg-Number           pic 9      value zero.\n 77  Init-System-File-SW  pic 9      value zero.\n 77  Init-Sys4-File-SW    pic 9      value zero.\n 77  Init-Final-File-SW   pic 9      value zero.\n 77  Init-Default-File-SW pic 9      value zero.\n*>\n*>========================================================\n*>  in case file layout upgrade is needed (system record ? ).\n*>   Using a file update program.\n*>\n copy \"sys-params-versioning.cob\".\n*>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n*> Holds program parameter values from command line\n 01  Arg-Vals                         value spaces.\n     03  Arg-Value       pic x(525)  occurs 2.\n 01  Arg-Test            pic x(525)   value spaces.\n*>\n 01  Backup-Sw                    pic 9     value zero.\n     88  Backup-Script-Found                value 1.\n 01  Backup-Pre-Sw                pic 9     value zero.\n     88  Backup-Pre-Script-Found            value 1.\n 01  Backup-Post-Sw               pic 9     value zero.\n     88  Backup-Post-Script-Found           value 1.\n*>\n*> Note that Linux scripts are used with OSX and other *nix systems.\n*>\n 01  Linux-Backup-Script-Name     pic x(24) value \"acasbkup.sh\".\n 01  Linux-Pre-EOY-Script-Name    pic x(24) value \"acasbkup-Pre-EOY.sh\".\n 01  Linux-Post-EOY-Script-Name   pic x(24) value \"acasbkup-Post-EOY.sh\".\n 01  Windows-Backup-Script-Name   pic x(24) value \"acasbkup.bat\".\n 01  Windows-Pre-EOY-Script-Name  pic x(24) value \"acasbkup-Pre-EOY.bat\".\n 01  Windows-Post-EOY-Script-Name pic x(24) value \"acasbkup-Post-EOY.bat   \".\n 01  OS2-Backup-Script-Name       pic x(24) value \"acasbkup.cmd\".\n 01  OS2-Pre-EOY-Script-Name      pic x(24) value \"acasbkup-Pre-EOY.cmd\".\n 01  OS2-Post-EOY-Script-Name     pic x(24) value \"acasbkup-Post-EOY.cmd\".\n*>\n 01  File-Info                          value zero.       *> Layout as per GNU v2 manual\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n*> the following for GC and screen\n*>\n 01  All-My-Constants        pic 9(4).\n copy \"screenio.cpy\".\n*>\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n *> 01  date-fields.\n *>    03  q               pic s99     comp  value zero.\n*>\n *>    03  days-in-month   pic x(24)  value \"312831303130313130313031\".\n *>    03  filler  redefines  days-in-month.\n *>        05  days        pic 99     occurs 12.\n*>\n *>    03  ws-work1        pic s9(5)   comp.\n *>    03  ws-work2        pic s9(5)   comp.\n*>\n copy \"wsmaps03.cob\".\n copy \"wscall.cob\".\n copy \"wstime.cob\".\n copy \"wsfnctn.cob\".\n*>\n 01  WS-Work-Fields.\n     03  ws-pass         pic x(4)   value spaces.\n     03  ws-spaces       pic x(18)  value spaces.   *> chgd from x10 for SY006 25/11/16\n     03  Menu-Reply      pic x      value \"1\".      *> Force Run Date updating at SOJ.\n     03  wsfile          pic x(12).                 *> Not used\n     03  ws-reply        pic x.\n     03  op-display      pic x(7).\n     03  a               pic 99        comp.\n     03  wsmaps-ser.                                *> Not used\n         05  wsmaps-ser-xx pic xx.\n         05  wsmaps-ser-nn pic 9(4).\n*>\n     03  ws-env-columns  pic 999       value zero.\n     03  ws-env-lines    pic 999       value zero.\n*>\n*>  Holds data from system file (IRS-Entry-Block) to see if there has been any changes\n*>    that necessitates the system record being updated.\n*>\n     03  WS-Next-Post       pic 9(5) value zero.  *> Holds current values from prog. start\n     03  WS-Pass-Value      pic 9    value zero.  *>  Ditto\n     03  WS-Save-Sequ       pic 9    value zero.  *>  Ditto but may not be needed.\n     03  WS-First-Time-Flag pic 9    value zero.  *>  Ditto\n     03  WS-System-Work-Group pic x(18)  value spaces. *>  Ditto - - - - - -\n     03  WS-PL-App-Created  pic x    value space.\n     03  WS-PL-Approp-AC    pic 9(5) value zero.\n*>\n copy \"wssystem.cob\"    *> NEW for v3.02\n             replacing  System-Record by WS-System-Record\n                        Run-Date   by ACAS-Run-Date     *> these 3 are in binary\n                        Start-Date by ACAS-Start-Date   *> IRS expects as x(8)\n                        End-Date   by ACAS-End-Date     *>  dd/mm/yy\n                        suser      by ACAS-suser\n                        Address-1  by ACAS-Address-1\n                        Address-2  by ACAS-Address-2\n                        Address-3  by ACAS-Address-3\n                        Address-4  by ACAS-Address-4\n                        Post-Code  by ACAS-Post-Code\n                        Print-Spool-Name by ACAS-Print-Spool-Name\n                        Pass-Value by ACAS-Pass-Value\n                        Pass-Word  by ACAS-Pass-Word\n                        OP-System  By ACAS-Op-System\n                        Client     by IRS-Client\n                        System-Ops by IRS-System-Ops\n                        Next-Post  by IRS-Next-Post\n                        Vat-Rates2 by IRS-Vat-Rates2\n                        Vat1       by IRS-Vat1\n                        Vat2       by IRS-Vat2\n                        Vat3       by IRS-Vat3\n                        Vat-Group  by IRS-Vat-Group\n                        Vat-Psent  by IRS-Vat-Psent\n                        Save-Sequ  by IRS-Save-Sequ\n                        System-Work-Group by IRS-System-Work-Group\n                        PL-App-Created by IRS-PL-App-Created\n                        PL-Approp-AC   by IRS-PL-Approp-AC\n                        1st-Time-Flag  by IRS-First-Time-Flag.\n*>\n copy \"irswssystem.cob\"\n              replacing system-record  by IRS-System-Params. *> (01 level)\n*>\n copy \"wsnames.cob\".      *> Ditto\n*>\n 01  Dummies-For-Unused-FH-Calls.      *> IRS call blk at zz100-ACAS-IRS-Calls\n     03  WS-IRSNL-Record       pic x.\n     03  WS-IRS-Default-Record pic x.\n     03  Posting-Record        pic x.\n     03  WS-IRS-Posting-Record pic x.\n     03  Final-Record          pic x.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  to-day              pic x(10).                   *> in acas format\n*>\n 01  WS-Temp-System-Rec  pic x(2048).   *> Size overkill\n*>\n 01  Error-Messages.\n*> System Wide\n     03  SY006          pic x(62) value \"SY006 Program Arguments limited to two and you have specified \".\n     03  SY007          pic x(35) value \"SY007 Program arguments incorrect: \".\n     03  SY008          pic x(31) value \"SY008 Note message & Hit return\".\n     03  SY009          pic x(53) value \"SY009 Environment variables not yet set up : ABORTING\".\n     03  SY010          pic x(46) value \"SY010 Terminal program not set to length => 24\".\n     03  SY011          pic x(47) value \"SY011 Error on systemMT processing, Fs-reply = \".\n     03  SY013          pic x(47) value \"SY013 Terminal program not set to Columns => 80\".\n     03  IR911          pic x(47) value \"IR911 Error on systemMT processing, Fs-reply = \".\n     03  IR912          pic x(51) value \"IR912 Error on irsnominalMT processing, Fs-reply = \".\n     03  IR913          pic x(48) value \"IR913 Error on irsdfltMT processing, Fs-reply = \".\n     03  IR915          pic x(49) value \"IR915 Error on irsfinalMT processing, Fs-reply = \".\n     03  IR916          pic x(50) value \"IR916 Error on slpostingMT processing, Fs-reply = \".\n*> Module specific\n     03  IR001          pic x(51) value \"IR001 Running Back up, prior to running EOY process\".\n*>\n screen section.\n*>-------------\n*>\n 01  Menu-Screen-1                                       background-color cob-color-black\n                                                         foreground-color cob-color-green.\n     03  pic x(14) from prog-name          line  1 col 1     blank screen.\n     03  value \"IRS System Menu\"                   col 34 foreground-color cob-color-green.\n     03  pic x(8) from Run-Date                    col 73.  *> uses the IRS param rec.\n     03  value \"Client -\"                  line  3 col 1.\n     03  pic x(29) from Client                     col 10 foreground-color cob-color-cyan.\n     03  value \"Start date -\"                      col 39.\n     03  pic x(8) from Start-Date                  col 52 foreground-color cob-color-cyan.\n     03  value \"End date -\"                        col 62.\n     03  pic x(8) from End-Date                    col 73 foreground-color cob-color-cyan.\n     03  value \"Select the required function    [\"\n                                           line  5 col 1.\n     03  pic x using Menu-Reply  auto              col 34 foreground-color cob-color-yellow.\n     03  value \"]\"                                 col 35.\n     03  value \"(1)  Date Entry\"           line  7 col 6.\n     03  value \"(2)  Accounts Set-Up & Maintenance\"\n                                           line  8 col 6.\n     03  value \"(3)  Default A/Cs Set-Up & Maintenance\"\n                                           line  9 col 6.\n     03  value \"(4)  Posting\"              line 10 col 6.\n     03  value \"(5)  Trial Balance\"        line 11 col 6.\n     03  value \"(6)  Audit Trail\"          line 12 col 6.\n     03  value \"(7)  Accounts Production\"  line 13 col 6.\n     03  value \"(8)  Posting Amendments\"   line 14 col 6.\n     03  value \"(9)  Analysis Report\"      line 15 col 6.\n     03  value \"(A)  Nominal File Fix up\"  line 16 col 6.\n     03  value \"(X)  Exit to \"             line 19 col 6.\n     03  pic x(7)  from Op-Display                 col 19.\n     03  pic x(28) from Batch-Text                 col 28 foreground-color 3.\n*> displayed subject to param setting.\n     03  value \"(Z)  System Set-Up\"        line 20 col 6.\n     03  value \"F1 to F10 = options 1 to A;  Return to Accept \" &\n             \"data;  X or Escape to quit\"  line 22 col 1\n                                                highlight foreground-color cob-color-white.\n     03  value \"Copyright (c) 1976-\"       line 24 col 01 foreground-color 3.\n     03  pic 9(4)  from wse-year                   col 20 foreground-color 3.\n     03  value \" Applewood Computers\"              col 24 foreground-color 3.\n     03  pic xx    from maps-ser-xx                col 74 foreground-color 3.\n     03  pic 9(4)  from curs2                      col 76 foreground-color 3.\n*>\n procedure division.\n*>*****************\n*>\n irs-main section.\n*>***************\n*>\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n*>\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n     move     function current-date to wse-date-block.\n     perform  zz020-Get-Program-Args.\n*>\n     accept   ws-env-lines   from lines.\n     if       ws-env-lines < 24\n              display SY010    at 0101 with erase eos\n              accept  ws-reply at 0133\n              goback.\n     accept   ws-env-Columns from Columns.\n     if       ws-Env-Columns < 80\n              display SY013    at 0101 with erase eos\n              accept  ws-reply at 0133\n              goback.\n*>\n aa005-Open-System.                    *> First get system param cobol file\n     move     zeros to File-System-Used\n                       File-Duplicates-In-Use.\n     move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n     move     1 to File-Key-No.\n     perform  acas000-open-Input.      *> as Input as I/o may create\n     if       fs-reply not = zero\n *>             perform acas000-close\n              move    \"sys002\" to ws-called     *> create param file by requesting info from user\n              call    ws-called using ws-calling-data file-defs\n              perform acas000-open\n     end-if.\n*>\n aa010-Get-System-Recs.\n     move     zeros to File-System-Used         *> again in case RDB setup\n                       File-Duplicates-In-Use.  *> if sys002 just been run.\n     move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n     move     1 to File-Key-No.\n     perform  acas000-Read-Indexed.        *> Read Cobol file\n     if       fs-reply not = zero          *> should NOT happen\n              perform acas000-close\n              move    \"sys002\" to ws-called    *> create param file by requested info from user\n              call    ws-called using ws-calling-data file-defs\n              perform acas000-open\n              go to aa010-Get-System-Recs\n     end-if.\n     move     WS-System-Record to WS-Temp-System-Rec.   *> save in case of sys-rec-4 overwrite\n*>\n*> BY PASS THIS CODE AS THE FILE WILL ALWAYS BE CURRENT.\n*>\n*>  We now have the param file along with RDB information so -\n*>  Check if RDB in use & if so, close Cobol file and open\n*>   and read the RDB system-rec but if recs do not exist\n*>    write using the Cobol file versions.\n*>\n*>     if       File-System-Used NOT = zero      *> RDB in use ( could be values 1 thru 5 but currently only 1)\n*>              move     File-System-Used to Arg-Number       *> save value from param in Cobol file\n*>              move     zero to File-System-Used             *> so we can close the cobol file\n*>              perform  acas000-Close                        *>  close cobol file\n*>              move     Arg-Number to File-System-Used       *> restore value from param in cobol file\n*>              move     \"66\" to FA-RDBMS-Flat-Statuses       *> Force RDB processing\n*>              move     1 to File-Key-No\n*>              perform  acas000-Open                         *> It could be values 1 thru 5 when the other RDB's are programmed for\n*>              perform  acas000-Read-Indexed                 *> get the record from the RDB table\n*>              if       fs-reply not = zero                  *> but if error we have a problem such as someone forgot to run system load modules.\n*>                       move WS-Temp-System-Rec to WS-System-Record   *> restore saved cobol file rec\n*>                       perform acas000-Write                *> So create RDB row in SYSTEM-REC from the Cobol file data\n*>                       if      fs-reply not = zero          *> Here on, should not happen !\n*>                               display SY011 at 2301\n*>                               display fs-reply at 2348\n*>                               display SY008    at 2401\n*>                               accept  ws-Reply at 2432\n*>                               perform acas000-Close\n*>                               goback\n*>                       end-if                              *> UNREMARKED THIS 11/03/18\n*>              end-if\n*>     end-if.\n     perform  acas000-Close.            *> Release param file for others\n*>\n*>   So having read param file create the IRS param record in WS and this is the\n*>    one that is passed to all irs programs\n*>\n     perform  zz090-Set-Up-IRS-System-Data.          *> dont forget to run zz095 after\n*>\n*>  Back to work.\n*>\n     move     ACAS-Run-Date to u-bin.\n     call     \"maps04\" using maps03-ws.\n     move     u-date to to-day.\n*>\n     if       ACAS-Op-System = zero\n              move \"O/S\" to op-display.\n     if       Linux    move \"Linux\"   to op-display\n     else if  Windows  move \"Windows\" to op-display\n     else if  Mac      move \"Mac\"     to op-display\n     else if  Dos      move \"Dos\"     to op-display\n     else if  OS2      move \"OS/2\"    to op-display\n     else if  Unix     move \"Unix\"    to op-display.\n*>\n     if       Dos or Windows\n              move Windows-Backup-Script-Name   to Script-Name\n              move Windows-Pre-EOY-Script-Name  to Script-Pre-EOY-Name\n              move Windows-Post-EOY-Script-Name to Script-Post-EOY-Name\n     else if  OS2\n              move OS2-Backup-Script-Name       to Script-Name\n              move OS2-Pre-EOY-Script-Name      to Script-Pre-EOY-Name\n              move OS2-Post-EOY-Script-Name     to Script-Post-EOY-Name\n     else if  Linux or Unix or Mac\n              move Linux-Backup-Script-Name     to Script-Name\n              move Linux-Pre-EOY-Script-Name    to Script-Pre-EOY-Name\n              move Linux-Post-EOY-Script-Name   to Script-Post-EOY-Name\n     end-if.\n*>\n*> Test if script in users bin directory [ applies for processing Cobol files & RDB ]\n*>\n     string   ACAS_BIN     delimited by space\n              OS-Delimiter delimited by size\n              Script-Name  delimited by space  into Run-Backup\n     end-string\n     call     \"CBL_CHECK_FILE_EXIST\" using Run-Backup\n                                           File-Info\n     end-call\n     if       Return-Code not = zero\n*>          and Batch-Text (1:1) not = space\n              move \"No BackUp Script in Bin\" to Batch-Text\n     else\n              move 1 to Backup-Sw\n              string \"Using \"    delimited by size\n                     Script-Name delimited by space into Batch-Text\n     end-if\n*>\n*> Now for the pre and post EOY scripts\n*>\n     string   ACAS_BIN     delimited by space\n              OS-Delimiter delimited by size\n              Script-Pre-EOY-Name  delimited by space  into Run-Pre-Backup\n     end-string\n     call     \"CBL_CHECK_FILE_EXIST\" using Run-Pre-Backup\n                                           File-Info\n     if       Return-Code = zero\n              move 1 to Backup-Pre-Sw\n     end-if\n     string   ACAS_BIN     delimited by space\n              OS-Delimiter delimited by size\n              Script-Post-EOY-Name  delimited by space  into Run-Post-Backup\n     end-string\n     call     \"CBL_CHECK_FILE_EXIST\" using Run-Post-Backup\n                                           File-Info\n     if       Return-Code = zero\n              move 1 to Backup-Post-Sw\n     end-if\n*>\n     if       Menu-Reply = \"1\"\n              call \"irs000\" using WS-System-Record   *> ACAS param record\n                                  to-day\n              end-call\n     end-if.\n*>\n     move     run-date to u-bin.    *> from bin\n     perform  maps04.\n     move     u-date to to-day.     *>  to char\n*>     perform  zz060-Convert-Date.   *> not pres here for stock but conv. date in ws-date THIS MIGHT BE AN ERROR <<<\n*>                                                      menu uses the irs param file dates\n Main-Loop.\n     move     space to Menu-Reply.\n     move     maps-ser-nn to curs2.\n     display  Menu-Screen-1.\n     if       Param-Restrict = \"N\"\n              display  spaces at 2001 with erase eol.\n     accept   Menu-Screen-1.\n *>    move     function upper-case (Menu-Reply) to Menu-Reply.\n     if       Menu-Reply = \"1\"\n           or Cob-Crt-Status = Cob-Scr-F1\n              call \"irs000\" using WS-System-Record\n                                  to-day\n              end-call\n              perform zz090-Proc-Run-Date            *> updated by irs000\n     end-if.\n     if       Menu-Reply = \"2\"\n           or Cob-Crt-Status = Cob-Scr-F2\n              call   \"irs010\" using IRS-System-Params\n                                    WS-System-Record   *> ACAS system rec.\n                                    file-defs\n              end-call\n              go to main-loop.\n     if       Menu-Reply = \"3\"\n           or Cob-Crt-Status = Cob-Scr-F3\n              call   \"irs020\" using IRS-System-Params\n                                    WS-System-Record   *> ACAS system rec.\n                                    file-defs\n              end-call\n              go to main-loop.\n     if       Menu-Reply = \"4\"\n           or Cob-Crt-Status = Cob-Scr-F4\n              call   \"irs030\" using IRS-System-Params\n                                    WS-System-Record   *> ACAS system rec.\n                                    file-defs\n              end-call\n              go to main-loop.\n     if       Menu-Reply = \"5\"\n           or Cob-Crt-Status = Cob-Scr-F5\n              call   \"irs040\" using IRS-System-Params\n                                    WS-System-Record   *> ACAS system rec.\n                                    file-defs\n              end-call\n              go to main-loop.\n     if       Menu-Reply = \"6\"\n           or Cob-Crt-Status = Cob-Scr-F6\n              call   \"irs050\" using IRS-System-Params\n                                    WS-System-Record   *> ACAS system rec.\n                                    file-defs\n              end-call  *> irs050 calls sort program irs055\n              go to main-loop.\n     if       Menu-Reply = \"7\"\n           or Cob-Crt-Status = Cob-Scr-F7\n              if     Backup-Pre-Script-Found  *> Back up before running in case EOY is run.\n                     display IR001 at 2401 with foreground-color 4 erase eol\n                     perform EOJ-Pre\n                     display space at 2401 with erase eol\n              end-if\n              call   \"irs065\" using IRS-System-Params\n                                    WS-System-Record   *> ACAS system rec.\n                                    file-defs\n              end-call\n              call   \"irs060\" using IRS-System-Params\n                                    WS-System-Record   *> ACAS system rec.\n                                    file-defs\n              end-call\n              if     Backup-Post-Script-Found  *> Back up after running in case EOY was run.\n                     display IR001 at 2401 with foreground-color 4 erase eol\n                     display \"Post \" at 2431 with foreground-color 4\n                     perform EOJ-Post\n                     display space at 2401 with erase eol\n              end-if\n              go to main-loop.\n     if       Menu-Reply = \"8\"\n           or Cob-Crt-Status = Cob-Scr-F8\n              call   \"irs070\" using IRS-System-Params\n                                    WS-System-Record   *> ACAS system rec.\n                                    file-defs\n              end-call\n              go to main-loop.\n*>\n     move     function upper-case (Menu-Reply) to Menu-Reply.\n*>\n     if       Menu-Reply = \"9\"\n           or Cob-Crt-Status = Cob-Scr-F9\n              call   \"irs085\" using IRS-System-Params\n                                    WS-System-Record   *> ACAS system rec.\n                                    file-defs\n              end-call\n              call   \"irs090\" using IRS-System-Params\n                                    WS-System-Record   *> ACAS system rec.\n                                    file-defs\n              end-call\n              go to main-loop.\n*>\n     if       Menu-Reply = \"A\"\n           or Cob-Crt-Status = Cob-Scr-F10\n              call   \"irs080\" using IRS-System-Params\n                                  WS-System-Record   *> ACAS system rec.\n                                  file-defs\n              end-call\n              go to main-loop.\n*>\n     if       Menu-Reply = \"Z\"\n              move     \"00\" to  FA-RDBMS-Flat-Statuses  *> Force Cobol proc.\n              move     zero to ws-term-code\n              move     1 to File-Key-No\n              perform  acas000-Open\n              perform  acas000-Rewrite                           *> in case of any changes\n              perform  acas000-Close\n              move    \"sys002\" to ws-called     *> create param file by requesting info from user\n              call    ws-called using ws-calling-data\n                                      file-defs\n              end-call\n              go to aa005-Open-System.          *> Must re-read the param file & setup data\n     if       Menu-Reply not = \"X\"\n              and Cob-Crt-Status not = Cob-Scr-Esc\n              go to main-loop.\n*>\n EOJ.                                       *>  Cobol or RDB closed\n     move     zeros to File-System-Used         *> again in case RDB setup\n                       File-Duplicates-In-Use.  *> if sys002 just been run.\n     move     \"00\" to  FA-RDBMS-Flat-Statuses.  *> Force Cobol proc.\n     move     1 to File-Key-No.\n     perform  acas000-Open.\n     perform  acas000-Read-Indexed.        *> Read Cobol file\n     perform  acas000-Close.\n*>\n     perform  zz095-Restore-IRS-System-Data.\n     move     1 to File-Key-No.             *> now default to file processing\n     move     \"00\" to FA-RDBMS-Flat-Statuses.    *> Now do file\n     perform  acas000-Open.\n     perform  acas000-Rewrite.         *> In case of any changes\n     perform  acas000-Close.\n     if       File-System-Used NOT = zero   *> Force RDB processing\n              move     \"66\" to FA-RDBMS-Flat-Statuses\n              perform  acas000-Open\n              perform  acas000-Rewrite         *> In case of any changes\n              perform  acas000-Close\n     end-if\n*>\n     if       Backup-Script-Found\n              if       Linux or Unix or Mac\n                       string \"nohup \" delimited by size\n                               Run-Backup delimited by space\n                               \" 0</dev/null &>/dev/null &\" delimited by size into Full-Backup-Script\n                       end-string\n              else\n               if      Dos or Windows\n                       move Script-Name to Full-Backup-Script\n               else\n                if     OS2\n                       move Script-Name to Full-Backup-Script\n                end-if\n               end-if\n              end-if\n              call     \"SYSTEM\" using Full-Backup-Script\n     end-if.\n*>\n EOJ-End.\n     goback.\n*>\n EOJ-Pre.                                       *>  Cobol or RDB closed\n*>\n*> First save changed data in params\n*>\n     if       Backup-Pre-Script-Found\n              move     zeros to File-System-Used         *> again in case RDB setup\n                                File-Duplicates-In-Use  *> if sys002 just been run.\n              move     \"00\" to  FA-RDBMS-Flat-Statuses  *> Force Cobol proc.\n              move     1 to File-Key-No\n              perform  acas000-Open\n              perform  acas000-Read-Indexed\n              perform  acas000-Close\n              perform  zz095-Restore-IRS-System-Data\n              move     1 to File-Key-No              *> now default to file processing\n              move     \"00\" to FA-RDBMS-Flat-Statuses    *> Now for the file\n              perform  acas000-Open\n              perform  acas000-Rewrite\n              perform  acas000-Close\n              if       File-System-Used NOT = zero   *> Force RDB processing\n                       move     \"66\" to FA-RDBMS-Flat-Statuses\n                       perform  acas000-Open\n                       perform  acas000-Rewrite\n                       perform  acas000-Close\n              end-if\n*>\n              if       Linux or Unix or Mac\n                       string \"nohup \" delimited by size\n                               Script-Pre-EOY-Name delimited by space\n                               \" 0</dev/null &>/dev/null &\" delimited by size into Run-Pre-Backup\n                       end-string\n              else\n               if      Dos or Windows\n                       move Script-Pre-EOY-Name to Run-Pre-Backup\n               else\n                if     OS2\n                       move Script-Pre-EOY-Name to Run-Pre-Backup\n                end-if\n               end-if\n              end-if\n              call     \"SYSTEM\" using Run-Pre-Backup\n     end-if.\n*>\n EOJ-Post.\n*>\n*> Changed data in params already saved (pre).\n*>\n     if       Backup-Post-Script-Found\n              if       Linux or Unix or Mac\n                       string \"nohup \" delimited by size\n                               Script-Post-EOY-Name delimited by space\n                               \" 0</dev/null &>/dev/null &\" delimited by size into Run-Post-Backup\n                       end-string\n              else\n               if      Dos or Windows\n                       move Script-Name to Run-Post-Backup\n               else\n                if     OS2\n                       move Script-Name to Run-Post-Backup\n                end-if\n               end-if\n              end-if\n              call     \"SYSTEM\" using Run-Post-Backup\n     end-if.\n*>\n zz060-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in binary to UK/USA/Intl date format\n*>****************************************************\n*> Input:   u-bin\n*> output:  ws-date as uk/US/Inlt date format\n*>          u-date & ws-Date = spaces if invalid date\n*>\n     perform  maps04.\n     if       u-date = spaces\n              move spaces to ws-Date\n              go to zz060-Exit.\n     move     u-date to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz060-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     u-date (7:4) to ws-Intl-Year.\n     move     u-date (4:2) to ws-Intl-Month.\n     move     u-date (1:2) to ws-Intl-Days.\n*>\n zz060-Exit.\n     exit     section.\n*>\n maps04       section.\n*>*******************\n*>\n     call     \"maps04\"  using  maps03-ws.\n*>\n maps04-exit.\n     exit     section.\n*>\n*>   New for IRS and RDB support.\n*>\n zz090-Set-Up-IRS-System-Data  Section.\n*>************************************\n*>\n zz090-Start.\n*> We will remap the ACAS param data to that for IRS changing date formats\n*>  as needed. Likewise User name & address, VAT rates (1-3) as\n*>   1=Std ([S]tandard), 2=[R]educed, 3=[Z]ero, Start & end dates,\n*>   Client name, next posting no., 1st time flag, PL-Approp & create flag\n*>    Pass value, sequence & work group. It is done by -\n*>  Moving fields to the old IRS system file layout renamed IRS-System-Parms\n*>    and this record is passed to all irs modules.\n*>\n*>  Likewise after running any changes are updated in the ACAS system record\n*>    and written out.\n*>  Should consider that if RDB in use",
+        "line": 100
+      },
+      {
+        "type": "IF",
+        "condition": "NEEDED HAVING LOOKED AT IRS program conversion to RDB.\n*>\n*>  This block from IRS within ACAS param record at IRS-Entry-Block.\n*>   Field names have been changed at the COPY verb to prevent duplicates.\n*>\n*>   We are testing the WS stored data obtained after reading the ACAS system record\n*>    against the data in the IRS system params that may have been changed.\n*>\n     if       WS-Next-Post         not = Next-Post\n              move     Next-Post  to IRS-Next-Post.  *> via irs030\n*>                                                        & irs070\n     if       WS-Pass-Value        not = Pass-Value\n              move     Pass-Value to IRS-Pass-Value.\n*>\n     if       WS-Save-Sequ         not = Save-Sequ\n              move     Save-Sequ  to IRS-Save-Sequ.\n*>\n     if       WS-System-Work-Group not = System-Work-Group\n              move     System-Work-Group to IRS-System-Work-Group.\n*>\n     if       WS-First-Time-Flag    not = First-Time-Flag\n              move     First-Time-Flag   to IRS-First-Time-Flag.\n*>\n     if       WS-PL-Approp-AC       not = PL-Approp-AC\n              move     PL-Approp-AC    to IRS-PL-Approp-AC.\n*>\n     if       WS-PL-App-Created     not = PL-App-Created\n              move     PL-App-Created  to IRS-PL-App-Created.\n*>\n zz095-Exit.\n     exit     section.\n*>\n copy \"Proc-ZZ100-ACAS-IRS-Calls.cob\".\n*>\n copy \"Proc-Get-Env-Set-Files.cob\".\n*>",
+        "line": 1004
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 21,
+    "cognitive": 2,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 94,
+      "totalOperators": 67,
+      "totalOperands": 134,
+      "vocabulary": 95,
+      "length": 201,
+      "volume": 1320.5409772745206
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

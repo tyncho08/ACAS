@@ -1,0 +1,1273 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/sys4MT.cbl",
+  "fileName": "sys4MT.cbl",
+  "timestamp": "2025-09-15T16:25:39.712Z",
+  "programId": "sys4MT",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 236
+      },
+      {
+        "name": "Working-Storage",
+        "line": 238
+      },
+      {
+        "name": "Linkage",
+        "line": 336
+      },
+      {
+        "name": "screen",
+        "line": 347
+      },
+      {
+        "name": "ba-ACAS-DAL-Process",
+        "line": 369
+      },
+      {
+        "name": "bb000-HV-Load",
+        "line": 759
+      },
+      {
+        "name": "exit",
+        "line": 791
+      },
+      {
+        "name": "bb100-UnloadHVs",
+        "line": 793
+      },
+      {
+        "name": "exit",
+        "line": 824
+      },
+      {
+        "name": "bb200-Insert",
+        "line": 826
+      },
+      {
+        "name": "exit",
+        "line": 1199
+      },
+      {
+        "name": "bb300-Update",
+        "line": 1201
+      },
+      {
+        "name": "exit",
+        "line": 1578
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "ba010-Initialise",
+        "line": 380
+      },
+      {
+        "name": "SQL-Err",
+        "line": 386
+      },
+      {
+        "name": "end-evaluate",
+        "line": 420
+      },
+      {
+        "name": "ba020-Process-Open",
+        "line": 422
+      },
+      {
+        "name": "end-string",
+        "line": 434
+      },
+      {
+        "name": "end-string",
+        "line": 438
+      },
+      {
+        "name": "end-string",
+        "line": 442
+      },
+      {
+        "name": "end-string",
+        "line": 446
+      },
+      {
+        "name": "end-string",
+        "line": 450
+      },
+      {
+        "name": "end-string",
+        "line": 454
+      },
+      {
+        "name": "ba030-Process-Close",
+        "line": 470
+      },
+      {
+        "name": "end-if",
+        "line": 554
+      },
+      {
+        "name": "end-if",
+        "line": 617
+      },
+      {
+        "name": "end-if",
+        "line": 623
+      },
+      {
+        "name": "ba070-Process-Write",
+        "line": 630
+      },
+      {
+        "name": "WS-SQL-Retry",
+        "line": 632
+      },
+      {
+        "name": "ba090-Process-Rewrite",
+        "line": 665
+      },
+      {
+        "name": "WS-SQL-Retry",
+        "line": 668
+      },
+      {
+        "name": "WE-Error",
+        "line": 677
+      },
+      {
+        "name": "ba100-Bad-Function",
+        "line": 727
+      },
+      {
+        "name": "ba998-Free",
+        "line": 739
+      },
+      {
+        "name": "ba999-end",
+        "line": 751
+      },
+      {
+        "name": "end-if",
+        "line": 754
+      },
+      {
+        "name": "ba999-exit",
+        "line": 756
+      },
+      {
+        "name": "bb000-Exit",
+        "line": 790
+      },
+      {
+        "name": "bb100-Exit",
+        "line": 823
+      },
+      {
+        "name": "bb200-Exit",
+        "line": 1198
+      },
+      {
+        "name": "bb300-Exit",
+        "line": 1577
+      },
+      {
+        "name": "Ca-Process-Logs",
+        "line": 1580
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 1584
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "MySQL_errno",
+        "line": 542,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "*>",
+          "set",
+          "non",
+          "'0'",
+          "if",
+          "no",
+          "rows",
+          "?",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "end-if",
+          "*>",
+          "do",
+          "not",
+          "really",
+          "need",
+          "to",
+          "do",
+          "this",
+          "meaning",
+          "the",
+          "above",
+          "CALL",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "\"No",
+          "Data\"",
+          "to",
+          "WS-File-Key",
+          "go",
+          "to",
+          "ba998-Free",
+          "*>",
+          "can",
+          "clear",
+          "the",
+          "dup",
+          "code",
+          "after",
+          "testing",
+          "end-if",
+          "move",
+          "1",
+          "to",
+          "Most-Cursor-Set",
+          "*>",
+          "should",
+          "test",
+          "if",
+          "select",
+          "worked",
+          "first??????",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_fetch_record",
+        "line": 566,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "HV-LEDGER-TOTALS-REC-KEY",
+          "HV-SL-OS-BAL-LAST-MONTH",
+          "HV-SL-OS-BAL-THIS-MONTH",
+          "HV-SL-INVOICES-THIS-MONTH",
+          "HV-SL-CREDIT-NOTES-THIS-MONTH",
+          "HV-SL-VARIANCE",
+          "HV-SL-CREDIT-DEDUCTIONS",
+          "HV-SL-CN-UNAPPL-THIS-MONTH",
+          "HV-SL-PAYMENTS",
+          "HV-SL4-SPARE1",
+          "HV-SL4-SPARE2",
+          "HV-PL-OS-BAL-LAST-MONTH",
+          "HV-PL-OS-BAL-THIS-MONTH",
+          "HV-PL-INVOICES-THIS-MONTH",
+          "HV-PL-CREDIT-NOTES-THIS-MONTH",
+          "HV-PL-VARIANCE",
+          "HV-PL-CREDIT-DEDUCTIONS",
+          "HV-PL-CN-UNAPPL-THIS-MONTH",
+          "HV-PL-PAYMENTS",
+          "HV-SL4-SPARE3",
+          "HV-SL4-SPARE4",
+          "*>",
+          "/MYSQL-END\\",
+          "end-call",
+          "*>",
+          "if",
+          "FS-Reply",
+          "not",
+          "=",
+          "zero",
+          "*>",
+          "28/09/16",
+          "or",
+          "WE-Error",
+          "not",
+          "=",
+          "zero",
+          "go",
+          "to",
+          "ba998-Free",
+          "end-if",
+          "if",
+          "return-code",
+          "=",
+          "-1",
+          "*>",
+          "no",
+          "more",
+          "data",
+          "so",
+          "free",
+          "cursor",
+          "&",
+          "return",
+          "move",
+          "10",
+          "to",
+          "fs-Reply",
+          "WE-Error",
+          "move",
+          "\"EOF\"",
+          "to",
+          "WS-File-Key",
+          "move",
+          "zero",
+          "to",
+          "Most-Cursor-Set",
+          "initialize",
+          "System-Record-4",
+          "with",
+          "filler",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if",
+          "*>",
+          "if",
+          "WS-MYSQL-Count-Rows",
+          "=",
+          "zero",
+          "call",
+          "\"MySQL_errno\"",
+          "using",
+          "WS-MYSQL-Error-Number",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "WS-MYSQL-Error-Message",
+          "move",
+          "10",
+          "to",
+          "fs-reply",
+          "*>",
+          "EOF",
+          "equivilent",
+          "!!",
+          "move",
+          "10",
+          "to",
+          "WE-Error",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "*>",
+          "Not",
+          "really",
+          "needed",
+          "but",
+          "help",
+          "for",
+          "testing",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "*>",
+          "ditto",
+          "initialize",
+          "System-Record-4",
+          "with",
+          "filler",
+          "move",
+          "\"EOF2\"",
+          "to",
+          "WS-File-Key",
+          "end-if",
+          "move",
+          "zero",
+          "to",
+          "Most-Cursor-Set",
+          "go",
+          "to",
+          "ba999-End",
+          "end-if"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 646,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "if",
+          "SQL-Err",
+          "(1:4)",
+          "=",
+          "\"1062\"",
+          "or",
+          "\"1022\"",
+          "*>",
+          "Dup",
+          "key",
+          "(rec",
+          "already",
+          "present)",
+          "move",
+          "22",
+          "to",
+          "fs-reply",
+          "else",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "end-if",
+          "end-if",
+          "end-if",
+          ">>D",
+          "display",
+          "\"",
+          "Looking",
+          "in",
+          "for",
+          "\"",
+          ">>D",
+          "display",
+          "WS-MYSQL-COMMAND",
+          "(1:240)"
+        ]
+      },
+      {
+        "target": "MySQL_errno",
+        "line": 707,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-Error-Number",
+          "if",
+          "WS-MYSQL-Error-Number",
+          "not",
+          "=",
+          "\"0",
+          "\"",
+          "call",
+          "\"MySQL_error\"",
+          "using",
+          "Ws-Mysql-Error-Message",
+          "move",
+          "WS-MYSQL-Error-Number",
+          "to",
+          "SQL-Err",
+          "move",
+          "WS-MYSQL-Error-Message",
+          "to",
+          "SQL-Msg",
+          "move",
+          "99",
+          "to",
+          "fs-reply",
+          "*>",
+          "this",
+          "may",
+          "need",
+          "changing",
+          "for",
+          "val",
+          "in",
+          "WE-Error!!",
+          "move",
+          "994",
+          "to",
+          "WE-Error",
+          "end-if",
+          "*>",
+          "if",
+          "Testing-1",
+          "perform",
+          "Ca-Process-Logs",
+          "end-if",
+          "*>",
+          "go",
+          "to",
+          "ba999-exit",
+          "end-if",
+          "move",
+          "zero",
+          "to",
+          "FS-Reply",
+          "WE-Error"
+        ]
+      },
+      {
+        "target": "MySQL_free_result",
+        "line": 747,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-MYSQL-RESULT",
+          "end-call",
+          "*>",
+          "/MYSQL-END\\",
+          "move",
+          "zero",
+          "to",
+          "Most-Cursor-Set"
+        ]
+      },
+      {
+        "target": "fhlogger",
+        "line": 1583,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "*>",
+        "line": 177,
+        "replacing": null
+      },
+      {
+        "name": "ACAS-SQLstate-error-list",
+        "line": 190,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 227,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 234,
+        "replacing": null
+      },
+      {
+        "name": "mysql-variables",
+        "line": 308,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 341,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 343,
+        "replacing": null
+      },
+      {
+        "name": "wssys4",
+        "line": 345,
+        "replacing": null
+      },
+      {
+        "name": "mysql-procedures",
+        "line": 736,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 429
+      },
+      {
+        "target": "MYSQL-1000-OPEN",
+        "thru": "MYSQL-1090-EXIT",
+        "line": 458
+      },
+      {
+        "target": "ba998-Free",
+        "thru": null,
+        "line": 472
+      },
+      {
+        "target": "MYSQL-1980-CLOSE",
+        "thru": "MYSQL-1999-EXIT",
+        "line": 480
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 526
+      },
+      {
+        "target": "MYSQL-1220-STORE-RESULT",
+        "thru": "MYSQL-1239-EXIT",
+        "line": 527
+      },
+      {
+        "target": "bb100-UnloadHVs",
+        "thru": null,
+        "line": 625
+      },
+      {
+        "target": "bb000-HV-Load",
+        "thru": null,
+        "line": 633
+      },
+      {
+        "target": "bb200-Insert",
+        "thru": null,
+        "line": 639
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 661
+      },
+      {
+        "target": "bb000-HV-Load",
+        "thru": null,
+        "line": 669
+      },
+      {
+        "target": "bb300-Update",
+        "thru": null,
+        "line": 693
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 717
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 753
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1194
+      },
+      {
+        "target": "MYSQL-1210-COMMAND",
+        "thru": "MYSQL-1219-EXIT",
+        "line": 1573
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "24",
+        "to": "ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\"",
+        "line": 372
+      },
+      {
+        "from": "spaces",
+        "to": "WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err",
+        "line": 381
+      },
+      {
+        "from": "998",
+        "to": "WE-Error       *> file seeks key type out of range        998\n *>                      move 99 to fs-reply\n *>                      go   to ba999-end\n *>               end-if\n *>    end-evaluate",
+        "line": 395
+      },
+      {
+        "from": "1",
+        "to": "ws-No-Paragraph",
+        "line": 455
+      },
+      {
+        "from": "zero",
+        "to": "Most-Cursor-Set\n     PERFORM  MYSQL-1000-OPEN  THRU MYSQL-1090-EXIT",
+        "line": 457
+      },
+      {
+        "from": "2",
+        "to": "ws-No-Paragraph",
+        "line": 474
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" > \"                 delimited by size\n                       '\"000\"'             delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC'              delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n *> LEDGER-TOTALS-REC-KEY > \"000\" ORDER BY LEDGER-TOTALS-REC-KEY ASC\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=SYSTOT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SYSTOT-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SYSTOT-REC\n*>               /MYSQL-END\\\n           move    \"000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       FS-Reply not = zero      *> 28/09/16\n                    or WE-Error not = zero\n                       go to ba998-Free\n              end-if\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       if    WS-MYSQL-Error-Number  not = \"0  \"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba998-Free        *> can clear the dup code after testing\n              end-if\n              move     1 to Most-Cursor-Set    *> should test if select worked first??????\n     end-if",
+        "line": 496
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Log-Where",
+        "line": 558
+      },
+      {
+        "from": "4",
+        "to": "ws-No-Paragraph",
+        "line": 559
+      },
+      {
+        "from": "TP-SYSTOT-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-LEDGER-TOTALS-REC-KEY\n                    HV-SL-OS-BAL-LAST-MONTH\n                    HV-SL-OS-BAL-THIS-MONTH\n                    HV-SL-INVOICES-THIS-MONTH\n                    HV-SL-CREDIT-NOTES-THIS-MONTH\n                    HV-SL-VARIANCE\n                    HV-SL-CREDIT-DEDUCTIONS\n                    HV-SL-CN-UNAPPL-THIS-MONTH\n                    HV-SL-PAYMENTS\n                    HV-SL4-SPARE1\n                    HV-SL4-SPARE2\n                    HV-PL-OS-BAL-LAST-MONTH\n                    HV-PL-OS-BAL-THIS-MONTH\n                    HV-PL-INVOICES-THIS-MONTH\n                    HV-PL-CREDIT-NOTES-THIS-MONTH\n                    HV-PL-VARIANCE\n                    HV-PL-CREDIT-DEDUCTIONS\n                    HV-PL-CN-UNAPPL-THIS-MONTH\n                    HV-PL-PAYMENTS\n                    HV-SL4-SPARE3\n                    HV-SL4-SPARE4\n\n*>       /MYSQL-END\\\n      end-call\n*>\n     if       FS-Reply not = zero      *> 28/09/16\n           or WE-Error not = zero\n              go to ba998-Free\n     end-if\n     if       return-code = -1     *> no more data so free cursor & return\n              move 10 to fs-Reply WE-Error\n              move    \"EOF\" to WS-File-Key\n              move     zero to Most-Cursor-Set\n              initialize System-Record-4 with filler\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move 10 to fs-reply                     *> EOF equivilent !!\n                    move 10 to WE-Error\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize System-Record-4 with filler\n                    move    \"EOF2\" to WS-File-Key\n              end-if\n              move     zero to Most-Cursor-Set\n              go to ba999-End\n     end-if",
+        "line": 565
+      },
+      {
+        "from": "zero",
+        "to": "Most-Cursor-Set\n              move    \"EOF3\" to WS-File-Key\n              go to ba999-End\n     end-if",
+        "line": 620
+      },
+      {
+        "from": "HV-LEDGER-TOTALS-REC-KEY",
+        "to": "WS-File-Key",
+        "line": 626
+      },
+      {
+        "from": "zero",
+        "to": "fs-reply WE-Error",
+        "line": 627
+      },
+      {
+        "from": "zero",
+        "to": "WS-Mysql-Time-Step\n                      WS-SQL-Retry",
+        "line": 631
+      },
+      {
+        "from": "1",
+        "to": "WS-File-Key",
+        "line": 634
+      },
+      {
+        "from": "zero",
+        "to": "FS-Reply WE-Error\n     move     spaces to SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph",
+        "line": 635
+      },
+      {
+        "from": "WS-MYSQL-Error-Number",
+        "to": "SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    if    SQL-Err (1:4) = \"1062\" or \"1022\"     *> Dup key (rec already present)\n                          move 22 to fs-reply\n                    else\n                          move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    end-if\n              end-if\n     end-if\n>>D   display \" Looking in for \"\n>>D   display  WS-MYSQL-COMMAND (1:240)",
+        "line": 649
+      },
+      {
+        "from": "zero",
+        "to": "WS-Mysql-Time-Step\n                      WS-SQL-Retry",
+        "line": 667
+      },
+      {
+        "from": "1",
+        "to": "WS-File-Key",
+        "line": 670
+      },
+      {
+        "from": "17",
+        "to": "ws-No-Paragraph\n     set      KOR-x1 to 1            *> 1 = Primary, 2 = Abrev, 3 = Desc (NOT Delete function as can be dups)\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     zeros to fs-reply\n                       WE-Error",
+        "line": 671
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Msg",
+        "line": 678
+      },
+      {
+        "from": "zeroes",
+        "to": "SQL-Err",
+        "line": 679
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n*>              System-Record-4 (K:L) delimited by size\n              \"1\"                   delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where    *>  For test logging\n     perform  bb300-Update\n*>\n>>D   display \" Looking in for \"\n>>D   display  WS-MYSQL-COMMAND (1:240)",
+        "line": 680
+      },
+      {
+        "from": "WS-MYSQL-Error-Number",
+        "to": "SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move 994 to WE-Error\n              end-if\n*>\n              if       Testing-1\n                       perform Ca-Process-Logs\n              end-if\n*>\n              go to ba999-exit\n     end-if\n     move     zero   to FS-Reply WE-Error",
+        "line": 710
+      },
+      {
+        "from": "zero",
+        "to": "SQL-Err",
+        "line": 723
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Msg",
+        "line": 724
+      },
+      {
+        "from": "990",
+        "to": "WE-Error",
+        "line": 731
+      },
+      {
+        "from": "99",
+        "to": "Fs-Reply",
+        "line": 732
+      },
+      {
+        "from": "20",
+        "to": "ws-No-Paragraph",
+        "line": 740
+      },
+      {
+        "from": "TP-SYSTOT-REC",
+        "to": "WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     move     zero to Most-Cursor-Set",
+        "line": 746
+      },
+      {
+        "from": "1",
+        "to": "HV-LEDGER-TOTALS-REC-KEY",
+        "line": 768
+      },
+      {
+        "from": "sl-os-bal-last-month",
+        "to": "HV-SL-OS-BAL-LAST-MONTH",
+        "line": 769
+      },
+      {
+        "from": "sl-os-bal-this-month",
+        "to": "HV-SL-OS-BAL-THIS-MONTH",
+        "line": 770
+      },
+      {
+        "from": "sl-invoices-this-month",
+        "to": "HV-SL-INVOICES-THIS-MONTH",
+        "line": 771
+      },
+      {
+        "from": "sl-credit-notes-this-month",
+        "to": "HV-SL-CREDIT-NOTES-THIS-MONTH",
+        "line": 772
+      },
+      {
+        "from": "sl-variance",
+        "to": "HV-SL-VARIANCE",
+        "line": 773
+      },
+      {
+        "from": "sl-credit-deductions",
+        "to": "HV-SL-CREDIT-DEDUCTIONS",
+        "line": 774
+      },
+      {
+        "from": "sl-cn-unappl-this-month",
+        "to": "HV-SL-CN-UNAPPL-THIS-MONTH",
+        "line": 775
+      },
+      {
+        "from": "sl-payments",
+        "to": "HV-SL-PAYMENTS",
+        "line": 776
+      },
+      {
+        "from": "pl-os-bal-last-month",
+        "to": "HV-PL-OS-BAL-LAST-MONTH",
+        "line": 777
+      },
+      {
+        "from": "pl-os-bal-this-month",
+        "to": "HV-PL-OS-BAL-THIS-MONTH",
+        "line": 778
+      },
+      {
+        "from": "pl-invoices-this-month",
+        "to": "HV-PL-INVOICES-THIS-MONTH",
+        "line": 779
+      },
+      {
+        "from": "pl-credit-notes-this-month",
+        "to": "HV-PL-CREDIT-NOTES-THIS-MONTH",
+        "line": 780
+      },
+      {
+        "from": "pl-variance",
+        "to": "HV-PL-VARIANCE",
+        "line": 781
+      },
+      {
+        "from": "pl-credit-deductions",
+        "to": "HV-PL-CREDIT-DEDUCTIONS",
+        "line": 782
+      },
+      {
+        "from": "pl-cn-unappl-this-month",
+        "to": "HV-PL-CN-UNAPPL-THIS-MONTH",
+        "line": 783
+      },
+      {
+        "from": "pl-payments",
+        "to": "HV-PL-PAYMENTS",
+        "line": 784
+      },
+      {
+        "from": "sl4-spare1",
+        "to": "HV-SL4-SPARE1",
+        "line": 785
+      },
+      {
+        "from": "sl4-spare2",
+        "to": "HV-SL4-SPARE2",
+        "line": 786
+      },
+      {
+        "from": "sl4-spare3",
+        "to": "HV-SL4-SPARE3",
+        "line": 787
+      },
+      {
+        "from": "sl4-spare4",
+        "to": "HV-SL4-SPARE4",
+        "line": 788
+      },
+      {
+        "from": "HV-SL-OS-BAL-LAST-MONTH",
+        "to": "sl-os-bal-last-month\n     move     HV-SL-OS-BAL-THIS-MONTH       to sl-os-bal-this-month\n     move     HV-SL-INVOICES-THIS-MONTH     to sl-invoices-this-month\n     move     HV-SL-CREDIT-NOTES-THIS-MONTH to sl-credit-notes-this-month\n     move     HV-SL-VARIANCE                to sl-variance\n     move     HV-SL-CREDIT-DEDUCTIONS       to sl-credit-deductions\n     move     HV-SL-CN-UNAPPL-THIS-MONTH    to sl-cn-unappl-this-month\n     move     HV-SL-PAYMENTS                to sl-payments\n     move     HV-PL-OS-BAL-LAST-MONTH       to pl-os-bal-last-month\n     move     HV-PL-OS-BAL-THIS-MONTH       to pl-os-bal-this-month\n     move     HV-PL-INVOICES-THIS-MONTH     to pl-invoices-this-month\n     move     HV-PL-CREDIT-NOTES-THIS-MONTH to pl-credit-notes-this-month\n     move     HV-PL-VARIANCE                to pl-variance\n     move     HV-PL-CREDIT-DEDUCTIONS       to pl-credit-deductions\n     move     HV-PL-CN-UNAPPL-THIS-MONTH    to pl-cn-unappl-this-month\n     move     HV-PL-PAYMENTS                to pl-payments",
+        "line": 802
+      },
+      {
+        "from": "HV-SL4-SPARE1",
+        "to": "sl4-spare1",
+        "line": 818
+      },
+      {
+        "from": "HV-SL4-SPARE2",
+        "to": "sl4-spare2",
+        "line": 819
+      },
+      {
+        "from": "HV-SL4-SPARE3",
+        "to": "sl4-spare3",
+        "line": 820
+      },
+      {
+        "from": "HV-SL4-SPARE4",
+        "to": "sl4-spare4",
+        "line": 821
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`SYSTOT-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-TOTALS-REC-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-TOTALS-REC-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-OS-BAL-LAST-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-OS-BAL-LAST-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 835
+      },
+      {
+        "from": "HV-SL-OS-BAL-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 872
+      },
+      {
+        "from": "HV-SL-INVOICES-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 889
+      },
+      {
+        "from": "HV-SL-CREDIT-NOTES-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 906
+      },
+      {
+        "from": "HV-SL-VARIANCE",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 923
+      },
+      {
+        "from": "HV-SL-CREDIT-DEDUCTIONS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 940
+      },
+      {
+        "from": "HV-SL-CN-UNAPPL-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 957
+      },
+      {
+        "from": "HV-SL-PAYMENTS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 974
+      },
+      {
+        "from": "HV-SL4-SPARE1",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 991
+      },
+      {
+        "from": "HV-SL4-SPARE2",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1008
+      },
+      {
+        "from": "HV-PL-OS-BAL-LAST-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1025
+      },
+      {
+        "from": "HV-PL-OS-BAL-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1042
+      },
+      {
+        "from": "HV-PL-INVOICES-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1059
+      },
+      {
+        "from": "HV-PL-CREDIT-NOTES-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1076
+      },
+      {
+        "from": "HV-PL-VARIANCE",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1093
+      },
+      {
+        "from": "HV-PL-CREDIT-DEDUCTIONS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1110
+      },
+      {
+        "from": "HV-PL-CN-UNAPPL-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1127
+      },
+      {
+        "from": "HV-PL-PAYMENTS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1144
+      },
+      {
+        "from": "HV-SL4-SPARE3",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1161
+      },
+      {
+        "from": "HV-SL4-SPARE4",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1178
+      },
+      {
+        "from": "1",
+        "to": "WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`SYSTOT-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-TOTALS-REC-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-TOTALS-REC-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-OS-BAL-LAST-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-OS-BAL-LAST-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1210
+      },
+      {
+        "from": "HV-SL-OS-BAL-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1247
+      },
+      {
+        "from": "HV-SL-INVOICES-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1264
+      },
+      {
+        "from": "HV-SL-CREDIT-NOTES-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1281
+      },
+      {
+        "from": "HV-SL-VARIANCE",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1298
+      },
+      {
+        "from": "HV-SL-CREDIT-DEDUCTIONS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1315
+      },
+      {
+        "from": "HV-SL-CN-UNAPPL-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1332
+      },
+      {
+        "from": "HV-SL-PAYMENTS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1349
+      },
+      {
+        "from": "HV-SL4-SPARE1",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1366
+      },
+      {
+        "from": "HV-SL4-SPARE2",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1383
+      },
+      {
+        "from": "HV-PL-OS-BAL-LAST-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1400
+      },
+      {
+        "from": "HV-PL-OS-BAL-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1417
+      },
+      {
+        "from": "HV-PL-INVOICES-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1434
+      },
+      {
+        "from": "HV-PL-CREDIT-NOTES-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1451
+      },
+      {
+        "from": "HV-PL-VARIANCE",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1468
+      },
+      {
+        "from": "HV-PL-CREDIT-DEDUCTIONS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1485
+      },
+      {
+        "from": "HV-PL-CN-UNAPPL-THIS-MONTH",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1502
+      },
+      {
+        "from": "HV-PL-PAYMENTS",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1519
+      },
+      {
+        "from": "HV-SL4-SPARE3",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1536
+      },
+      {
+        "from": "HV-SL4-SPARE4",
+        "to": "WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \"",
+        "line": 1553
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "RDBMS (Relational DataBase Management Systems) is in use it will be\n*>                      called by the specific module to handle similar processing as a Cobol\n*>                      flat file and will pass the equivelent\n*>                      RDB (Relational DataBase) row as a Cobol file record (01 level) moving\n*>                      row by row to the correct Cobol flat file fields as required.\n*>\n*>                      RDB DAL (Data Access Layer) modules are individually modified to handle:\n*>                      MS SQL server, Mysql, DB2, Postgres and Oracle as available and tested.\n*>                      These are contained in seperate directories for each RDB, eg\n*>                       'MSSQL' (MS SQL Server), 'Mysql', 'DB2', 'Postgres'. 'Oracle'.\n*>                       You need to compile from the correct directory for the specific\n*>                       RDB you will use and have installed along with all of the development\n*>                       libraries and include files etc using the correct pre-compiler tool\n*>                       to process the 'EXEC SQL' code converting to Cobol calls etc.\n*>                       see the RDB specific ACAS notes.\n*>\n*>                      For specific SQL servers supported, the pre-compiler system is included\n*>                       where ever possible but for some, copyright reasons may prevent\n*>                       inclusion. In some cases for one specific RDB more than one precompiler\n*>                       is used as an experiment to help find the ideal one to use.\n*>\n*>                      In addition:\n*>                        If the system has been set up to (see the System File set up via the\n*>                        main menu module for each sub system), it will also process BOTH flat\n*>                        file  AND the correct rdb tables,\n*>\n*>                        it will write/delete/update etc to both but read from 1=Flat and be\n*>                        overwritten by the rdb access if data is present.\n*>                       This will help in transferring the Cobol flat files to rdb tables.\n*>\n*>                      If you wish to convert a running ACAS system over from Flat files\n*>                      to RDBMS see below. However it is recommended to use the Duplicate\n*>                      processing of files/table as outlined above where no or very low\n*>                      data records exist:\n*>\n*>                      Depending on the RDB you wish to use there is\n*>                      also, included LMs (Load Modules) to convert each ISAM\n*>                      (Indexed Sequential) file to the rdb database tables if you wish to\n*>                      convert the system in one hit, without using the Duplicate file/RDB\n*>                      processing procedures. These will also need to be compiled from the\n*>                      specific LM directory that contains the rdb DAL modules.\n*>                      These will be very RDB specific.\n*>\n*>                      For a existing running ACAS system using the Load modules AND\n*>                      not using the dup processing process as indicated above is the\n*>                      recommended way to go.\n*>**\n*>  File Handling:\n*>     Uses the Global Error / Access logging file within the acas0nn module.\n*>**\n*> Called by Modules:\n*>                      acas000 - sys4 Cobol Handler.\n*>\n*>**\n*> Error Messages Used.\n*>                      SM004 SQL Err no in 'mysql-procedures'\n*>                      SM901 Note error and hit return.\n*>**\n*> Version.             1.00 17/06/2016.\n*>\n*>**\n*> Changes.\n*> 04/08/16 vbc - .01 Removed file action logging to sep. module ditto acas011.\n*> 18/07/16 vbc - .02 Insert call for SQL error msg where missing and move\n*>                    spaces / zero to SQL-Msg| Err and other little fixes/cleanups.\n*>                    Remap all changes to the .scb source file.\n*> 20/07/16 vbc - .03 Close logger if testing-1 set on table close.\n*>                    branch to 999-end instead of 998-free when EOF on read next.\n*>                    Seems to auto release if end of cursor data reached\n*>                    and causes an abort ??\n*> 24/07/16 vbc -     Taken from the stockMT sources with same versioning.\n*> 30/07/16 vbc - .04 Change Open and Close to also show table name in operation.\n*> 31/07/16 vbc - .05 Moved mv spaces/zero in Write to before insert.\n*>                    Remove fhlogger file close in Process-Close.\n*>                    Forgot error 989 so commented.\n*> 27/08/16 vbc -     Taken from systemMT with same versioning.\n*> 18/09/16 vbc -     Temp added code to find out why a SQL error happens turned out\n*>                    that using as a SL or PL delimiter a \\ screws it up when processing\n*>                    as it would need another '\\'. There are others !\n*>  '                  This could also be a problem for name and address fields.<<<<<\n*>                    May be its to do with the windoz path type delim.\n*>                    Solution do NOT use it.\n*> 23/09/16 vbc - .06 Removed the lock/unlock as these are not needed with Mysql as\n*>                    it will do itself when using select + update/delete according to\n*>                    \"Definitive guide to MySQL 5 page 254\" see text :\n*> Tips MySQL always executes individual commands in such a way that they cannot be\n*> influenced by other commands. Therefore, no locking is necessary for a single command\n*> UPDATE … WHERE id=1234 or DELETE …WHERE id=5678.\n*> You need to execute locking only if you are executing several interdependent commands\n*> during which another client should not alter the underlying data. Usually, that is the\n*> case when you first execute a SELECT command and",
+        "line": 33
+      },
+      {
+        "type": "IF",
+        "condition": "you really wish to block an entire InnoDB table, there is available a new command,\n*> since MySQL 5.0.3, namely, LOCK TABLE[S] TRANSACTIONAL.\n*>\n*>  REMEMBER to remove for all other DAL units.\n*>\n*> 25/09/16 vbc - .07 Changed for one Cobol File/Record to many table rows - dfltMT and finalMT.\n*> 28/09/16 vbc - .08 Added extra tests for RS-Reply & WE-Error after calls insert,update as new\n*>                    extra checks inside MYSQL-Procedures have been changed (1300.\n*>                    THIS NEEDS to PROPAGATED to all MT processes after testing.\n*> 09/12/16 vbc - .09 Make functions 3 & 4 both read-next as in acas000 its indexed\n*>                    and in the DAL it is next.\n*> 01/03/18 vbc - .11 Renamed error messages to SM901, SM004 as needed.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>**\n*>  Module USAGE\n*>**************\n*>\n*>    On Entry:         Set up Linkage areas -\n*>    ********              System-Record-4\n*>                                   = Contents of data record to be written/read\n*>                          File-Access = File-Function as needed.\n*>                                        Access-Type   as needed.\n*>                          File-Defs (File-Definitions) = Paths set up.\n*>\n*>    On Exit:          Linkage contains:\n*>    *******               Record = containing a read data record or table row\n*>                          Fs-Reply = 0, 99 or other value where\n*>                                     0  = Operation completed successfully\n*>                                     10 = End of (Cobol) File returned to calling module only.\n*>                                     21 = Invalid key on START OR key not found\n*>                                     22 - Attempt to duplicate a key value.\n*>                                     23 = Key not found.     from read indexed\n*>                                     99 = Indicates an error see WE-Error, SQL-ERR/MSG for more info\n*>                          WE-Error   0    = Operation completed successfully\n*>\n*>                                     999  = Not used here - Yet.\n*>                                     998* = File-Key-No Out Of Range not 1, 2 or 3.\n*>                                     997* = Access-Type wrong (< 5 or > 8)\n*>                                     996* = File Delete key out of range (not = 1 or 2)\n*>                                     995* = During Delete SQLSTATE not '00000' investigate using MSG-Err/Msg\n*>                                     994* = During Rewrite,                     ^^ see above ^^\n*>                                     992* = Invalid Function requested in File-Function\n*>                                     990* = Unknown and unexpected error, again ^^ see above ^^\n*>                                     989* = Unexpected error on Read-Indexed, investigate as above.\n*>                                     911* = Rdb Error during initializing,\n*>                                            possibly can not connect to database\n*>                                             Check connect data and\n*>                                             see SQL-Err & SQL-MSG\n*>                                            Produced by Mysql-1100-Db-Error in copy\n*>                                            module mysql-procedure.\n*>                                     910* = Table locked > 5 seconds\n*>                                     901  = File Def Record size not =< than ws record size\n*>                                            Module needs ws definition changing to correct size\n*>                                            FATAL, Stop using system, fix source code\n*>                                            and recompile before using system again.\n*>                                     Other = any other rdbms errors see specific\n*>                                             (Rdbms) manual\n*>                          SQL-Err  = Error code from RDBMS is set if above 2 are non zero\n*>                          SQL-Msg  = Non space providing more info if SQL-Err non '00000'\n*>                                     * = FS-Reply = 99.\n*>\n copy \"ACAS-SQLstate-error-list.cob\".\n*>\n*>       During testing a log file will be created containing datetime stamp, task and return codes\n*>       for both FS-Reply and WE-Error and table used - in this case the Stock File.\n*>       WARNING - This file could get large so needs manually deleting after examination.\n*>\n*>       NOTE that the value in SQL-Err is the standard ANSI RDBMS error code to help keep\n*>         DAL handler changes to a minimum when reusing code for other RDBs - hopefully\n*>\n*>        SHOULD THIS BE IN THE DAL ONLY ?  Only for RDB accessing.\n*>\n*>********************************************************************************************\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>**********************************************************************************\n*>\n environment division.\n copy \"envdiv.cob\".\n*>\n input-output section.\n Data Division.\n Working-Storage Section.\n 77  prog-name          pic x(16)    value \"sys4MT (3.02.11)\".\n*>\n*> JC WS requirements here\n*>\n 77  ws-Where           pic x(512).\n*>\n*>  Used within presql generated code\n*>\n 01  WS-Reply           pic x           value space.\n 01  WS-MYSQL-I         PIC S9(6) COMP.\n 01  WS-MYSQL-EDIT      PIC -Z(18)9.9(9).\n*>\n*> The communication area for the MySQL database changed for free/mysql\n*>\n*>  jc preSQL MySQL stuff ends\n*>\n*> Metadata on primary and alternate keys...  from Prima DAL for SYSTOT-REC\n*>\n 01  Table-Of-Keynames.\n     03  filler         pic x(30) value 'LEDGER-TOTALS-REC-KEY         '.\n     03  filler         pic x(8)  value '00010001'. *> offset/length  as one byte (tinyint)\n     03  filler         pic x(3)  value 'STR'. *> data type\n 01  filler redefines table-of-keynames.\n     03  keyOfReference occurs 1   indexed by KOR-x1.\n         05  KeyName    pic x(30).\n         05  KOR-Offset pic 9(4).\n         05  KOR-Length pic 9(4).\n         05  KOR-Type   pic XXX.                    *> Not used currently\n*>\n*> The START condition cannot be compounded, and it must use a\n*> Key of Reference within the record. (These are COBOL rules...)\n*> The interface defines which key and the relation condition.\n*>\n*>\n 01  DAL-Data.\n         05  MOST-Relation   pic xxx.                  *> valid are >=, <=, <, >, =\n         05  Most-Cursor-Set pic 9    value zero.\n             88  Cursor-Not-Active    value zero.\n             88  Cursor-Active        value 1.\n*>\n*>  Variables common to all DALs\n*>  ****************************\n*>\n 01  subscripts comp-5.\n     12 J                pic s9(4).\n     12 K                pic s9(4).\n     12 L                pic s9(4).\n*>\n 01  Old-File-Function   pic 9 value zero.\n*>\n 01  work-fields.\n     03  ws-env-lines    pic 999              value zero.\n     03  ws-lines        binary-char unsigned value zero.\n     03  ws-22-lines     binary-char unsigned value zero.\n     03  ws-23-lines     binary-char unsigned value zero.\n     03  ws-98-lines     binary-char unsigned value zero.\n     03  ws-99-lines     binary-char unsigned value zero.\n     03  ws-Rec-Cnt      binary-long unsigned value zero.\n*>\n 01  Temp-work-fields.\n     03  Temp-SQL-Err    pic x(5).     *> 29/07/16\n     03  A               pic 99      comp     value zero.\n*>\n 01  Error-Messages.\n     03  SM901          pic x(31) value \"SM901 Note error and hit return\".\n*>\n*> /MYSQL VAR\\\n*>       ACASDB\n*>       TABLE=SYSTOT-REC,HV\n COPY \"mysql-variables.cpy\".\n*>\n*>    Definitions for the SYSTOT-REC Table\n*>\n       01  TP-SYSTOT-REC                         USAGE POINTER.\n       01  TD-SYSTOT-REC.\n           05  HV-LEDGER-TOTALS-REC-KEY          PIC  9(03) COMP.\n           05  HV-SL-OS-BAL-LAST-MONTH           PIC S9(08)V9(02) COMP.\n           05  HV-SL-OS-BAL-THIS-MONTH           PIC S9(08)V9(02) COMP.\n           05  HV-SL-INVOICES-THIS-MONTH         PIC S9(08)V9(02) COMP.\n           05  HV-SL-CREDIT-NOTES-THIS-MONTH     PIC S9(08)V9(02) COMP.\n           05  HV-SL-VARIANCE                    PIC S9(08)V9(02) COMP.\n           05  HV-SL-CREDIT-DEDUCTIONS           PIC S9(08)V9(02) COMP.\n           05  HV-SL-CN-UNAPPL-THIS-MONTH        PIC S9(08)V9(02) COMP.\n           05  HV-SL-PAYMENTS                    PIC S9(08)V9(02) COMP.\n           05  HV-SL4-SPARE1                     PIC S9(08)V9(02) COMP.\n           05  HV-SL4-SPARE2                     PIC S9(08)V9(02) COMP.\n           05  HV-PL-OS-BAL-LAST-MONTH           PIC S9(08)V9(02) COMP.\n           05  HV-PL-OS-BAL-THIS-MONTH           PIC S9(08)V9(02) COMP.\n           05  HV-PL-INVOICES-THIS-MONTH         PIC S9(08)V9(02) COMP.\n           05  HV-PL-CREDIT-NOTES-THIS-MONTH     PIC S9(08)V9(02) COMP.\n           05  HV-PL-VARIANCE                    PIC S9(08)V9(02) COMP.\n           05  HV-PL-CREDIT-DEDUCTIONS           PIC S9(08)V9(02) COMP.\n           05  HV-PL-CN-UNAPPL-THIS-MONTH        PIC S9(08)V9(02) COMP.\n           05  HV-PL-PAYMENTS                    PIC S9(08)V9(02) COMP.\n           05  HV-SL4-SPARE3                     PIC S9(08)V9(02) COMP.\n           05  HV-SL4-SPARE4                     PIC S9(08)V9(02) COMP.\n*> /MYSQL-END\\\n\n Linkage Section.\n*>**************\n*>\n*>**********************************************************************\n copy \"wsfnctn.cob\".                         *> File-Access\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n copy \"wssys4.cob\".\n*>\n screen section.\n*>=============\n*>\n 01  Display-Message-1       foreground-color 2.\n     03          value \"WS-Where=\"      line 23 col  1.\n     03  from WS-Where (1:J)           pic x(69)         col 10.\n*>\n 01  Display-Message-2       foreground-color 2.\n     03      value \"SM004 SQL Err No.=\" line 4 col  1.    *> size 18 char\n     03  using Ws-Mysql-Error-Number   pic x(4)          col 19.    *>      4       == 22\n     03      value \" Para=\"                              col 23.    *> size 6 char  == 28\n     03  using WS-No-Paragraph         pic 9(3)          col 29.    *>      4       == 32\n     03      value \" SQL Cmd=\"                           col 32.    *>      9       == 41\n     03  using Ws-Mysql-Command        pic x(199)         col 41.\n     03      value \"SQL Err Msg=\"       line 7 col  1.    *>      12\n     03  using Ws-Mysql-Error-Message  pic x(67)        col 13.\n*>\n*>\n PROCEDURE DIVISION   using File-Access\n                            ACAS-DAL-Common-data\n                            System-Record-4.   *>  Ws record\n*>**********************************************\n ba-ACAS-DAL-Process  section.\n     accept   ws-env-lines from lines.\n     if       ws-env-lines < 24\n              move  24 to ws-env-lines ws-lines\n     else\n              move  ws-env-lines to ws-lines\n     end-if\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n ba010-Initialise.\n     move     spaces to WS-MYSQL-Error-Message\n                        WS-MYSQL-Error-Number\n                        WS-Log-Where\n                        WS-File-Key\n                        SQL-Msg\n                        SQL-Err.\n*>\n*>   As this is for only one row we will skip this ...\n*>\n*>   Now Test for valid key for start, read-indexed and delete\n*>\n*>    evaluate File-Function\n *>             when  4   *> fn-read-indexed\n *>               if     File-Key-No not = 1\n *>                      move 998 to WE-Error       *> file seeks key type out of range        998\n *>                      move 99 to fs-reply\n *>                      go   to ba999-end\n *>               end-if\n *>    end-evaluate.\n*>\n*>  Work out what is being requested and convert to action!!\n*>\n*>    This version uses the JC pre-Sql processor.\n*>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n     evaluate File-Function\n        when  1\n              go to ba020-Process-Open\n        when  2\n              go to ba030-Process-Close\n        when  3        *> cobol is indexed but here its next\n        when  4\n              go to ba040-Process-Read-Next\n        when  5\n              go to ba070-Process-Write\n        when  7\n              go to ba090-Process-Rewrite\n        when  other                          *> 6 is spare / unused\n              go to ba100-Bad-Function\n     end-evaluate.\n*>\n ba020-Process-Open.\n*>\n*> To get here the calling program MUST have read the Cobol system record first.\n*>\n\n *>\n *>  Manual process MYSQL INIT\n *>",
+        "line": 129
+      },
+      {
+        "type": "IF",
+        "condition": "fs-reply not = zero\n              go   to ba999-end.\n*>\n*> /MYSQL INIT\\\n*>       BASE=ACASDB\n*>       IMPLEMENTATION=dev-prog-001\n*>       PASSWORD=mysqlpass\n*> /MYSQL-END\\\n*>\n     go      to ba999-end.\n*>\n ba030-Process-Close.\n     if      Cursor-Active         *> this will not occur for the system rows/records\n             perform ba998-Free.\n*>\n     move     2 to ws-No-Paragraph.\n     move    \"CLOSE SYS4\" to WS-File-Key.\n*>  /MYSQL CLOSE\\\n*>\n*>    Close the Database\n*>\n           PERFORM MYSQL-1980-CLOSE THRU MYSQL-1999-EXIT\n*>  /MYSQL-END\\\n*>\n     go      to ba999-end.\n*>\n ba040-Process-Read-Next.    *> Getting the row for loading into cobol rec\n*>\n*>   Here a SELECT first",
+        "line": 459
+      },
+      {
+        "type": "IF",
+        "condition": "no cursor active using lowest\n*>    possible key of \"000\"\n*>           [ LEDGER-TOTALS-REC-KEY ]\n*>\n     if       Cursor-Not-Active\n              set      KOR-x1 to 1                *> 1 = Primary, 2 = Abrev, 3 = Desc (NOT Delete function as can be dups)\n              move     KOR-offset (KOR-x1) to K\n              move     KOR-length (KOR-x1) to L\n*>\n              move     spaces to WS-Where\n              move     1   to J\n              string   \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                       \" > \"                 delimited by size\n                       '\"000\"'             delimited by size\n                       ' ORDER BY '          delimited by size\n                       \"`\"                   delimited by size\n                       KeyName (KOR-x1)      delimited by space\n                       \"`\"                   delimited by size\n                         ' ASC'              delimited by size\n                                      into ws-Where\n                                      with pointer J\n              end-string\n*>\n              move     ws-Where (1:J)   to WS-Log-Where       *>  For test logging\n              move     3 to ws-No-Paragraph\n *> LEDGER-TOTALS-REC-KEY > \"000\" ORDER BY LEDGER-TOTALS-REC-KEY ASC\n*>               /MYSQL SELECT\\\n*>\n*>    Select rows\n*>\n*>                    TABLE=SYSTOT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           STRING \"SELECT * FROM \"\n             \"`SYSTOT-REC`\"\n             \" WHERE \"\n             ws-Where (1:J)\n            \";\"  X\"00\" INTO WS-MYSQL-COMMAND\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n           PERFORM MYSQL-1220-STORE-RESULT THRU MYSQL-1239-EXIT\n           MOVE WS-MYSQL-RESULT TO TP-SYSTOT-REC\n*>               /MYSQL-END\\\n           move    \"000\" to WS-File-Key\n              if    Testing-2\n                    display Display-Message-1 with erase eos\n              end-if\n*>\n*>  It could be an empty table so test for it\n*>\n              if       FS-Reply not = zero      *> 28/09/16\n                    or WE-Error not = zero\n                       go to ba998-Free\n              end-if\n              if       WS-MYSQL-Count-Rows = zero\n                       call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n                       if    WS-MYSQL-Error-Number  not = \"0  \"    *> set non '0' if no rows ?\n                             move WS-MYSQL-Error-Number to SQL-Err\n                             call \"MySQL_error\" using WS-MYSQL-Error-Message\n                             move WS-MYSQL-Error-Message to SQL-Msg\n                       end-if       *> do not really need to do this meaning the above CALL\n                       move 10 to fs-reply\n                       move 10 to WE-Error\n                       move    \"No Data\" to WS-File-Key\n                       go to ba998-Free        *> can clear the dup code after testing\n              end-if\n              move     1 to Most-Cursor-Set    *> should test if select worked first??????\n     end-if.\n*>\n*>  If here cursor is set, so get the next and only row\n*>\n     move     spaces to WS-Log-Where.\n     move     4 to ws-No-Paragraph.\n*>       /MYSQL FETCH\\\n*>\n*>    Fetch next record\n*>\n*>              TABLE=SYSTOT-REC\n           MOVE TP-SYSTOT-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_fetch_record\" USING WS-MYSQL-RESULT\n                    HV-LEDGER-TOTALS-REC-KEY\n                    HV-SL-OS-BAL-LAST-MONTH\n                    HV-SL-OS-BAL-THIS-MONTH\n                    HV-SL-INVOICES-THIS-MONTH\n                    HV-SL-CREDIT-NOTES-THIS-MONTH\n                    HV-SL-VARIANCE\n                    HV-SL-CREDIT-DEDUCTIONS\n                    HV-SL-CN-UNAPPL-THIS-MONTH\n                    HV-SL-PAYMENTS\n                    HV-SL4-SPARE1\n                    HV-SL4-SPARE2\n                    HV-PL-OS-BAL-LAST-MONTH\n                    HV-PL-OS-BAL-THIS-MONTH\n                    HV-PL-INVOICES-THIS-MONTH\n                    HV-PL-CREDIT-NOTES-THIS-MONTH\n                    HV-PL-VARIANCE\n                    HV-PL-CREDIT-DEDUCTIONS\n                    HV-PL-CN-UNAPPL-THIS-MONTH\n                    HV-PL-PAYMENTS\n                    HV-SL4-SPARE3\n                    HV-SL4-SPARE4\n\n*>       /MYSQL-END\\\n      end-call\n*>\n     if       FS-Reply not = zero      *> 28/09/16\n           or WE-Error not = zero\n              go to ba998-Free\n     end-if\n     if       return-code = -1     *> no more data so free cursor & return\n              move 10 to fs-Reply WE-Error\n              move    \"EOF\" to WS-File-Key\n              move     zero to Most-Cursor-Set\n              initialize System-Record-4 with filler\n              go to ba999-End\n     end-if\n*>\n     if       WS-MYSQL-Count-Rows = zero\n              call  \"MySQL_errno\" using WS-MYSQL-Error-Number\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using WS-MYSQL-Error-Message\n                    move 10 to fs-reply                     *> EOF equivilent !!\n                    move 10 to WE-Error\n                    move WS-MYSQL-Error-Number  to SQL-Err   *> Not really needed but help for testing\n                    move WS-MYSQL-Error-Message to SQL-Msg   *>  ditto\n                    initialize System-Record-4 with filler\n                    move    \"EOF2\" to WS-File-Key\n              end-if\n              move     zero to Most-Cursor-Set\n              go to ba999-End\n     end-if.\n*>\n     if       fs-reply = 10                        *> belts and braces\n              move     zero to Most-Cursor-Set\n              move    \"EOF3\" to WS-File-Key\n              go to ba999-End\n     end-if.\n*>\n     perform  bb100-UnloadHVs.       *> transfer/move HV vars to Record layout\n     move     HV-LEDGER-TOTALS-REC-KEY to WS-File-Key.\n     move     zero to fs-reply WE-Error.\n     go       to ba999-end.\n*>\n ba070-Process-Write.\n     move     zero to WS-Mysql-Time-Step\n                      WS-SQL-Retry.\n     perform  bb000-HV-Load.                       *>  move System-Record-4 fields to HV fields\n     move     1 to WS-File-Key.                    *>  System-Record-4 uses key 4\n     move     zero to FS-Reply WE-Error\n     move     spaces to SQL-Msg\n     move     zero to SQL-Err\n     move     10 to ws-No-Paragraph.\n     perform  bb200-Insert.\n*>\n     if       FS-Reply not = zero      *> 28/09/16\n           or WE-Error not = zero\n              go to ba999-Exit\n     end-if\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call \"MySQL_errno\" using WS-MYSQL-Error-Number\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    if    SQL-Err (1:4) = \"1062\" or \"1022\"     *> Dup key (rec already present)\n                          move 22 to fs-reply\n                    else\n                          move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    end-if\n              end-if\n     end-if\n>>D   display \" Looking in for \"\n>>D   display  WS-MYSQL-COMMAND (1:240).\n     if       Testing-1\n              perform Ca-Process-Logs\n     end-if\n     go       to ba999-Exit.\n*>\n ba090-Process-Rewrite.\n*>\n     move     zero to WS-Mysql-Time-Step\n                      WS-SQL-Retry.\n     perform  bb000-HV-Load.       *> Load up the HV fields from table record in WS\n     move     1 to WS-File-Key.\n     move     17 to ws-No-Paragraph\n     set      KOR-x1 to 1            *> 1 = Primary, 2 = Abrev, 3 = Desc (NOT Delete function as can be dups)\n     move     KOR-offset (KOR-x1) to K\n     move     KOR-length (KOR-x1) to L\n*>\n     move     zeros to fs-reply\n                       WE-Error.\n     move     spaces to SQL-Msg.\n     move     zeroes to SQL-Err.             *> 03/10/16\n     move     spaces to WS-Where\n     move     1   to J\n     string   \"`\"                   delimited by size\n              KeyName (KOR-x1)      delimited by space\n              \"`\"                   delimited by size\n              '=\"'                  delimited by size\n*>              System-Record-4 (K:L) delimited by size\n              \"1\"                   delimited by size\n              '\"'                   delimited by size\n                      into WS-Where\n                        with pointer J\n     end-string\n     move     WS-Where (1:J)   to WS-Log-Where    *>  For test logging\n     perform  bb300-Update\n*>\n>>D   display \" Looking in for \"\n>>D   display  WS-MYSQL-COMMAND (1:240).\n     if       Testing-2\n              display Display-Message-1 with erase eos\n     end-if\n*>\n     if       FS-Reply not = zero      *> 28/09/16\n           or WE-Error not = zero\n              go to ba999-Exit\n     end-if\n*>\n     if       WS-MYSQL-COUNT-ROWS not = 1\n              call \"MySQL_errno\" using WS-MYSQL-Error-Number\n              if    WS-MYSQL-Error-Number  not = \"0  \"\n                    call \"MySQL_error\" using Ws-Mysql-Error-Message\n                    move WS-MYSQL-Error-Number  to SQL-Err\n                    move WS-MYSQL-Error-Message to SQL-Msg\n                    move 99 to fs-reply                  *> this may need changing for val in WE-Error!!\n                    move 994 to WE-Error\n              end-if\n*>\n              if       Testing-1\n                       perform Ca-Process-Logs\n              end-if\n*>\n              go to ba999-exit\n     end-if\n     move     zero   to FS-Reply WE-Error.\n     move     zero   to SQL-Err.\n     move     spaces to SQL-Msg.\n     go       to ba999-exit.\n*>\n ba100-Bad-Function.\n*>\n*> Houston; We have a problem\n*>\n     move     990 to WE-Error.\n     move     99 to Fs-Reply.\n     go       to ba999-end.\n*>\n*> /MYSQL PRO\\\n COPY \"mysql-procedures.cpy\".\n*> /MYSQL-END\\\n*>\n ba998-Free.\n     move     20 to ws-No-Paragraph.\n*>      /MYSQL FREE\\\n*>\n*>    Free result array\n*>\n*>             TABLE=SYSTOT-REC\n           MOVE TP-SYSTOT-REC TO WS-MYSQL-RESULT\n           CALL \"MySQL_free_result\" USING WS-MYSQL-RESULT end-call\n*>      /MYSQL-END\\\n     move     zero to Most-Cursor-Set.\n*>\n ba999-end.\n     if       Testing-1\n              perform Ca-Process-Logs\n     end-if.\n*>\n ba999-exit.\n     exit program.\n*>\n bb000-HV-Load      Section.\n*>*************************\n*>\n*>  Load the Host variables with data from the passed record\n*>\n*> This Method loads the Host Variables for the Base table with\n*> the data passed in the data-buffer.\n*>\n     initialize TD-SYSTOT-REC.\n     move     1                          to HV-LEDGER-TOTALS-REC-KEY.\n     move     sl-os-bal-last-month       to HV-SL-OS-BAL-LAST-MONTH.\n     move     sl-os-bal-this-month       to HV-SL-OS-BAL-THIS-MONTH.\n     move     sl-invoices-this-month     to HV-SL-INVOICES-THIS-MONTH.\n     move     sl-credit-notes-this-month to HV-SL-CREDIT-NOTES-THIS-MONTH.\n     move     sl-variance                to HV-SL-VARIANCE.\n     move     sl-credit-deductions       to HV-SL-CREDIT-DEDUCTIONS.\n     move     sl-cn-unappl-this-month    to HV-SL-CN-UNAPPL-THIS-MONTH.\n     move     sl-payments                to HV-SL-PAYMENTS.\n     move     pl-os-bal-last-month       to HV-PL-OS-BAL-LAST-MONTH.\n     move     pl-os-bal-this-month       to HV-PL-OS-BAL-THIS-MONTH.\n     move     pl-invoices-this-month     to HV-PL-INVOICES-THIS-MONTH.\n     move     pl-credit-notes-this-month to HV-PL-CREDIT-NOTES-THIS-MONTH.\n     move     pl-variance                to HV-PL-VARIANCE.\n     move     pl-credit-deductions       to HV-PL-CREDIT-DEDUCTIONS.\n     move     pl-cn-unappl-this-month    to HV-PL-CN-UNAPPL-THIS-MONTH.\n     move     pl-payments                to HV-PL-PAYMENTS.\n     move     sl4-spare1                 to HV-SL4-SPARE1.\n     move     sl4-spare2                 to HV-SL4-SPARE2.\n     move     sl4-spare3                 to HV-SL4-SPARE3.\n     move     sl4-spare4                 to HV-SL4-SPARE4.\n*>\n bb000-Exit.\n     exit section.\n*>\n bb100-UnloadHVs    Section.\n*>*************************\n*>\n*>  Load the data buffer in the interface with data from the host variables.\n*>\n*> NULL fields must not be returned in the buffer. SQL filters each column to\n*>  ensure it has a proper value.  This saves using indicator variables.\n*>\n     initialize System-Record-4 with filler.\n     move     HV-SL-OS-BAL-LAST-MONTH       to sl-os-bal-last-month\n     move     HV-SL-OS-BAL-THIS-MONTH       to sl-os-bal-this-month\n     move     HV-SL-INVOICES-THIS-MONTH     to sl-invoices-this-month\n     move     HV-SL-CREDIT-NOTES-THIS-MONTH to sl-credit-notes-this-month\n     move     HV-SL-VARIANCE                to sl-variance\n     move     HV-SL-CREDIT-DEDUCTIONS       to sl-credit-deductions\n     move     HV-SL-CN-UNAPPL-THIS-MONTH    to sl-cn-unappl-this-month\n     move     HV-SL-PAYMENTS                to sl-payments\n     move     HV-PL-OS-BAL-LAST-MONTH       to pl-os-bal-last-month\n     move     HV-PL-OS-BAL-THIS-MONTH       to pl-os-bal-this-month\n     move     HV-PL-INVOICES-THIS-MONTH     to pl-invoices-this-month\n     move     HV-PL-CREDIT-NOTES-THIS-MONTH to pl-credit-notes-this-month\n     move     HV-PL-VARIANCE                to pl-variance\n     move     HV-PL-CREDIT-DEDUCTIONS       to pl-credit-deductions\n     move     HV-PL-CN-UNAPPL-THIS-MONTH    to pl-cn-unappl-this-month\n     move     HV-PL-PAYMENTS                to pl-payments.\n     move     HV-SL4-SPARE1                 to sl4-spare1.\n     move     HV-SL4-SPARE2                 to sl4-spare2.\n     move     HV-SL4-SPARE3                 to sl4-spare3.\n     move     HV-SL4-SPARE4                 to sl4-spare4.\n*>\n bb100-Exit.\n     exit section.\n*>\n bb200-Insert Section.\n*>*******************\n*>\n*>  /MYSQL INSERT\\\n*>\n*>    Insert a row\n*>\n*>         TABLE=SYSTOT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'INSERT INTO '\n                    '`SYSTOT-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-TOTALS-REC-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-TOTALS-REC-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-OS-BAL-LAST-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-OS-BAL-LAST-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-OS-BAL-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-OS-BAL-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-INVOICES-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-INVOICES-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-CREDIT-NOTES-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-CREDIT-NOTES-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-VARIANCE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-VARIANCE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-CREDIT-DEDUCTIONS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-CREDIT-DEDUCTIONS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-CN-UNAPPL-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-CN-UNAPPL-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-PAYMENTS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-PAYMENTS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL4-SPARE1`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL4-SPARE1\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL4-SPARE2`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL4-SPARE2\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-OS-BAL-LAST-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-OS-BAL-LAST-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-OS-BAL-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-OS-BAL-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-INVOICES-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-INVOICES-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-CREDIT-NOTES-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-CREDIT-NOTES-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-VARIANCE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-VARIANCE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-CREDIT-DEDUCTIONS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-CREDIT-DEDUCTIONS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-CN-UNAPPL-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-CN-UNAPPL-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-PAYMENTS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-PAYMENTS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL4-SPARE3`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL4-SPARE3\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL4-SPARE4`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL4-SPARE4\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n       PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb200-Exit.\n     exit section.\n*>\n bb300-Update Section.\n*>*******************\n*>\n*>  /MYSQL UPDATE\\\n*>\n*>    Update a row\n*>\n*>      TABLE=SYSTOT-REC\n           INITIALIZE WS-MYSQL-COMMAND\n           MOVE 1 TO WS-MYSQL-I\n           STRING 'UPDATE '\n                    '`SYSTOT-REC` SET '\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`LEDGER-TOTALS-REC-KEY`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-LEDGER-TOTALS-REC-KEY\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(18:03))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-OS-BAL-LAST-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-OS-BAL-LAST-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-OS-BAL-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-OS-BAL-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-INVOICES-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-INVOICES-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-CREDIT-NOTES-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-CREDIT-NOTES-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-VARIANCE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-VARIANCE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-CREDIT-DEDUCTIONS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-CREDIT-DEDUCTIONS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-CN-UNAPPL-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-CN-UNAPPL-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL-PAYMENTS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL-PAYMENTS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL4-SPARE1`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL4-SPARE1\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL4-SPARE2`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL4-SPARE2\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-OS-BAL-LAST-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-OS-BAL-LAST-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-OS-BAL-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-OS-BAL-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-INVOICES-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-INVOICES-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-CREDIT-NOTES-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-CREDIT-NOTES-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-VARIANCE`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-VARIANCE\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-CREDIT-DEDUCTIONS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-CREDIT-DEDUCTIONS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-CN-UNAPPL-THIS-MONTH`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-CN-UNAPPL-THIS-MONTH\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`PL-PAYMENTS`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-PL-PAYMENTS\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL4-SPARE3`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL4-SPARE3\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING ', 'INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n*>\n           STRING '`SL4-SPARE4`=\"' INTO WS-MYSQL-COMMAND\n                   WITH POINTER WS-MYSQL-I end-string\n           MOVE HV-SL4-SPARE4\n             TO WS-MYSQL-EDIT\n           STRING FUNCTION TRIM (WS-MYSQL-EDIT(13:08))\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING \".\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING WS-MYSQL-EDIT(22:02)\n             INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           STRING '\"' INTO WS-MYSQL-COMMAND\n           WITH POINTER WS-MYSQL-I end-string\n           STRING \" WHERE \"\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING FUNCTION TRIM (WS-Where (1:J))\n              INTO WS-MYSQL-COMMAND\n              WITH POINTER WS-MYSQL-I end-string\n           STRING \";\" X\"00\" INTO WS-MYSQL-COMMAND\n             WITH POINTER WS-MYSQL-I end-string\n           PERFORM MYSQL-1210-COMMAND THRU MYSQL-1219-EXIT\n*>  /MYSQL-END\\\n       .     *> period here\n*>\n bb300-Exit.\n     exit section.\n*>\n Ca-Process-Logs.\n*>**************\n*>\n     call     \"fhlogger\" using File-Access\n                               ACAS-DAL-Common-data.\n*>\n ca-Exit.     exit.\n*>\n end program sys4MT.",
+        "line": 487
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "File-Function\n *>             when  4   *> fn-read-indexed\n *>               if     File-Key-No not ...",
+        "line": 392,
+        "whenCount": 1
+      },
+      {
+        "content": "File-Function\n        when  1\n              go to ba020-Process-Open\n        when  2\n              g...",
+        "line": 406,
+        "whenCount": 7
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 19,
+    "cognitive": 20,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 81,
+      "totalOperators": 96,
+      "totalOperands": 192,
+      "vocabulary": 82,
+      "length": 288,
+      "volume": 1830.9749773300082
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

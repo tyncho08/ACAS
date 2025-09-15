@@ -1,0 +1,422 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/makesqltable-free.cbl",
+  "fileName": "makesqltable-free.cbl",
+  "timestamp": "2025-09-15T16:25:40.144Z",
+  "programId": "MAKESQLTABLE",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 17
+      },
+      {
+        "name": "file",
+        "line": 29
+      },
+      {
+        "name": "working-storage",
+        "line": 38
+      },
+      {
+        "name": "0000-main",
+        "line": 71
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 18
+      },
+      {
+        "name": "WS-Read-Area",
+        "line": 69
+      },
+      {
+        "name": "goback",
+        "line": 75
+      },
+      {
+        "name": "1000-initialization",
+        "line": 79
+      },
+      {
+        "name": "goback",
+        "line": 89
+      },
+      {
+        "name": "goback",
+        "line": 96
+      },
+      {
+        "name": "goback",
+        "line": 108
+      },
+      {
+        "name": "1990-exit",
+        "line": 118
+      },
+      {
+        "name": "exit",
+        "line": 119
+      },
+      {
+        "name": "2000-process",
+        "line": 123
+      },
+      {
+        "name": "2010-read",
+        "line": 128
+      },
+      {
+        "name": "2100-read-columns",
+        "line": 178
+      },
+      {
+        "name": "2110-prefix-loop",
+        "line": 197
+      },
+      {
+        "name": "end-if",
+        "line": 207
+      },
+      {
+        "name": "2200-characters",
+        "line": 240
+      },
+      {
+        "name": "2210-character-loop",
+        "line": 244
+      },
+      {
+        "name": "end-if",
+        "line": 254
+      },
+      {
+        "name": "2215-bad-pic",
+        "line": 255
+      },
+      {
+        "name": "2220-get-repititions",
+        "line": 259
+      },
+      {
+        "name": "2240-got-count",
+        "line": 267
+      },
+      {
+        "name": "2250-varchar",
+        "line": 281
+      },
+      {
+        "name": "2900-eof",
+        "line": 292
+      },
+      {
+        "name": "7980-close",
+        "line": 309
+      },
+      {
+        "name": "7990-exit",
+        "line": 312
+      },
+      {
+        "name": "exit",
+        "line": 313
+      },
+      {
+        "name": "9000-end-of-program",
+        "line": 317
+      },
+      {
+        "name": "goback",
+        "line": 321
+      },
+      {
+        "name": "9990-exit",
+        "line": 322
+      },
+      {
+        "name": "exit",
+        "line": 323
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [],
+    "copies": [],
+    "performs": [
+      {
+        "target": "1000-initialization",
+        "thru": "1990-exit",
+        "line": 72
+      },
+      {
+        "target": "2000-process",
+        "thru": "7990-exit",
+        "line": 73
+      },
+      {
+        "target": "9000-end-of-program",
+        "thru": "9990-exit",
+        "line": 74
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "1000",
+        "to": "ws-no-paragraph",
+        "line": 80
+      },
+      {
+        "from": "2000",
+        "to": "ws-no-paragraph",
+        "line": 124
+      },
+      {
+        "from": "2010",
+        "to": "ws-no-paragraph",
+        "line": 129
+      },
+      {
+        "from": "spaces",
+        "to": "ws-trimmed-input-record (1:2)",
+        "line": 139
+      },
+      {
+        "from": "spaces",
+        "to": "ws-table-name",
+        "line": 142
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 147
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 154
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 162
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 169
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 174
+      },
+      {
+        "from": "spaces",
+        "to": "ws-trimmed-input-record (1:2)",
+        "line": 192
+      },
+      {
+        "from": "zero",
+        "to": "ws-i",
+        "line": 193
+      },
+      {
+        "from": "1",
+        "to": "ws-j",
+        "line": 196
+      },
+      {
+        "from": "spaces",
+        "to": "ws-trimmed-input-record (ws-j:ws-i)\n             next sentence\n        else add 1 to ws-j\n             if ws-j is less than 80\n               then go to 2110-prefix-loop\n             end-if\n    end-if",
+        "line": 200
+      },
+      {
+        "from": "spaces",
+        "to": "ws-column-name",
+        "line": 210
+      },
+      {
+        "from": "zero",
+        "to": "ws-i",
+        "line": 211
+      },
+      {
+        "from": "1",
+        "to": "ws-position-in-output",
+        "line": 216
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 217
+      },
+      {
+        "from": "zero",
+        "to": "ws-i",
+        "line": 227
+      },
+      {
+        "from": "spaces",
+        "to": "ws-third-trim",
+        "line": 230
+      },
+      {
+        "from": "2200",
+        "to": "ws-no-paragraph",
+        "line": 241
+      },
+      {
+        "from": "1",
+        "to": "ws-characters-wanted",
+        "line": 242
+      },
+      {
+        "from": "2",
+        "to": "ws-i",
+        "line": 243
+      },
+      {
+        "from": "zero",
+        "to": "ws-j",
+        "line": 260
+      },
+      {
+        "from": "ws-characters-wanted",
+        "to": "ws-ed5",
+        "line": 270
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 278
+      },
+      {
+        "from": "ws-characters-wanted",
+        "to": "ws-ed5",
+        "line": 282
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 290
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 298
+      },
+      {
+        "from": "\")\"",
+        "to": "output-record\n    write output-record",
+        "line": 299
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 301
+      },
+      {
+        "from": "spaces",
+        "to": "output-record",
+        "line": 304
+      },
+      {
+        "from": "9000",
+        "to": "ws-no-paragraph",
+        "line": 318
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "in    *\n*>                       command line and free format.      *\n*> 07/12/2022 1.02 vbc - mistyp WS-WS-NAME.. 1 too many -WS *\n*>                                                          *\n*>***********************************************************\n environment division.\n input-output section.\n file-control.\n*>\n    select input-file  assign WS-Name-Input-File\n                       organization line sequential\n                       file status  ws-input-file-status.\n\n    select output-file assign WS-Name-Output-File\n                       organization line sequential\n                       file status ws-output-file-status.\n\n data division.\n file section.\n*>\n fd  input-file.\n 01  input-record.\n     05  ir-buffer                       pic x(80).\n*>\n fd  output-file.\n 01  output-record                       pic x(128).\n*>\n working-storage section.\n*>***************************************************\n*>   constants, counters and work areas             *\n*>***************************************************\n 01  Ws-Name-Program                     pic x(18) value \"makesqltable v1.02\".\n 01  ws-no-paragraph                     pic s9(4) comp.\n 01  ws-i                                pic s9(4) comp.\n 01  ws-j                                pic s9(4) comp.\n 01  ws-k                                pic s9(4) comp.\n 01  ws-position-in-output               pic s9(4) comp.\n 01  WS-Name-Input-File                  pic x(128) value spaces.\n 01  WS-Name-Output-File                 pic x(128) value spaces.\n 01  WS-Input-File-Status                pic xx.\n 01  WS-Output-File-Status               pic xx.\n 01  WS-Read-Area                        pic x(80)  value spaces.\n 01  WS-Name-Data-Base                   pic x(30).\n 01  WS-Remove-Prefix                    pic x(10)  value spaces.\n 01  WS-Trimmed-Input-Record             pic x(80).\n 01  WS-Second-Trim                      pic x(80).\n 01  WS-Third-Trim                       pic x(80).\n 01  WS-Table-Name                       pic x(64).\n 01  WS-Column-Name                      pic x(64).\n 01  WS-Characters-Wanted                pic s9(4) comp.\n 01  ws-ed5                              pic zzzz9.\n*>\n*>***************************************************************\n*>                procedure division                            *\n*>***************************************************************\n procedure division       chaining WS-Name-Input-File\n                                   WS-Remove-Prefix\n                                   WS-Name-Output-File\n                                   WS-Read-Area.\n*>\n 0000-main section.\n     perform  1000-initialization thru 1990-exit.\n     perform  2000-process thru 7990-exit.\n     perform  9000-end-of-program thru 9990-exit.\n     goback.\n*>***************************************************************\n*>               initialization                                 *\n*>***************************************************************\n 1000-initialization.\n    move 1000 to ws-no-paragraph.\n    display \"I) \", ws-name-program, \" BEGINNING AT--\" function current-date.\n     if       function upper-case (WS-Name-Input-File) = \"-HELP\" or \"--HELP\"\n              display \"Help on parameters:\"\n              display \" All compulsory\"\n              display \"1. Input File Name\"\n              display \"2. Remove Prefix\"\n              display \"3. Output File Name\"\n              display \"4. Database Name\"\n              goback.\n     if       WS-Name-Input-File (1:10) = spaces\n              display \"A) ENTER INPUT FILE NAME \" with no advancing\n              accept WS-Name-Input-File.\n     open     input input-file.\n     if       ws-input-file-status not = \"00\"\n              display \"T) CANNOT OPEN INPUT FILE \" \"STATUS=\" ws-input-file-status\n              goback.\n     if       WS-Remove-Prefix = spaces\n              display \"A) ENTER THE FIELD NAME PREFIX TO REMOVE \" with no advancing.\n              accept WS-Remove-Prefix.\n     if       WS-Name-Output-File (1:10) = spaces\n              display \"A) ENTER OUTPUT FILE NAME \" with no advancing.\n              accept WS-Name-Output-File.\n     open     output output-file.\n     if       ws-output-file-status not = \"00\"\n              display \"T) CANNOT OPEN OUTPUT FILE \" \"STATUS=\" ws-output-file-status\n              close input-file\n                    output-file\n              goback.\n    if        WS-Read-Area (1:10) = spaces\n              display \"A) ENTER DATABASE NAME \" with no advancing\n              accept ws-read-area.\n*>\n*> All parameters accepted in if not included in command line\n*>\n    inspect ws-read-area replacing all \"-\" by \"_\".\n    move function upper-case (ws-read-area) to ws-name-data-base.            *> changed from lower\n*>\n 1990-exit.\n     exit.\n*>\n*>    Processing\n*>\n 2000-process.\n    move 2000 to ws-no-paragraph.\n*>\n*>    look for 01 entry (there must be one and only one)\n*>\n 2010-read.\n    move 2010 to ws-no-paragraph.\n    read input-file next record\n      at end display \"T) NO 01 ENTRY FOUND\"\n             go to 7990-exit.\n    move function trim (input-record)\n      to ws-trimmed-input-record.\n    if ws-trimmed-input-record (1:2) is equal to \"01\"",
+        "line": 11
+      },
+      {
+        "type": "IF",
+        "condition": "EXISTS \"\n      function lower-case (function trim (ws-table-name))\n      \";\"\n        into output-record.\n    write output-record.\n    move spaces to output-record.\n    string\n      \"CREATE TABLE `\"\n      function lower-case (function trim (ws-table-name))\n      \"` (\"\n        into output-record.\n    write output-record.\n    move spaces to output-record.\n    string\n      \"  `key` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,\"\n        into output-record.\n    write output-record.\n    move spaces to output-record.\n*>\n*>    now look for column definitions\n*>\n 2100-read-columns.\n    read input-file next record\n      at end go to 2900-eof.\n    move function trim (input-record)\n      to ws-trimmed-input-record.\n    if ws-trimmed-input-record (1:1) equals \"*\"\n      go to 2100-read-columns.\n    if ws-trimmed-input-record (1:2) equals \"01\"",
+        "line": 157
+      },
+      {
+        "type": "IF",
+        "condition": "ws-trimmed-input-record (1:2) is not numeric",
+        "line": 188
+      },
+      {
+        "type": "IF",
+        "condition": "ws-remove-prefix (1:ws-i) equals\n      ws-trimmed-input-record (ws-j:ws-i)",
+        "line": 198
+      },
+      {
+        "type": "IF",
+        "condition": "ws-j is less than 80",
+        "line": 204
+      },
+      {
+        "type": "IF",
+        "condition": "end-if.\n    move function trim (ws-trimmed-input-record)\n      to ws-second-trim.\n    move spaces to ws-column-name.\n    move zero to ws-i.\n    inspect ws-second-trim\n      tallying ws-i for all characters before \" \".\n    move ws-second-trim (1:ws-i) to ws-column-name.\n    inspect ws-column-name replacing all \"-\" by \"_\".\n    move 1 to ws-position-in-output.\n    move spaces to output-record.\n    string\n      \"  `\"\n      function lower-case (function trim (ws-column-name))\n      \"` \"\n        into output-record\n        with pointer ws-position-in-output.\n*>\n*> Now handle the pic\n*>\n    move zero to ws-i.\n    inspect ws-second-trim\n      tallying ws-i for all characters before \"PIC\".\n    move spaces to ws-third-trim.\n*>\n*>   Now get the required definition\n*>\n    move ws-second-trim (ws-i + 5:) to ws-third-trim.\n    if \"X\" equals ws-third-trim (1:1) go to 2200-characters.\n    go to 2215-bad-pic.\n*>\n*>    Character (string) based definition\n*>\n 2200-characters.\n    move 2200 to ws-no-paragraph.\n    move 1 to ws-characters-wanted.\n    move 2 to ws-i.\n 2210-character-loop.\n    if ws-third-trim (ws-i:1) equals \".\" go to 2240-got-count.\n    if ws-third-trim (ws-i:1) equals \"(\"\n      go to 2220-get-repititions.\n    if ws-third-trim (ws-i:1) equals \"X\"\n      add 1 to ws-characters-wanted\n      add 1 to ws-i\n      if ws-i is less than 74",
+        "line": 206
+      },
+      {
+        "type": "IF",
+        "condition": "end-if.\n 2215-bad-pic.\n    display \"T) INVALID PIC CLAUSE BELOW \".\n    display input-record.\n    go to 2900-eof.\n 2220-get-repititions.\n    move zero to ws-j.\n    inspect ws-third-trim tallying ws-j for all characters before initial \")\".\n    if ws-j is greater than 74 go to 2215-bad-pic.\n    move ws-third-trim (ws-i + 1 : ws-j - ws-i) to ws-characters-wanted.\n*>\n*>    Determine string type\n*>\n 2240-got-count.\n    if ws-characters-wanted is greater than 255\n      go to 2250-varchar.\n    move ws-characters-wanted to ws-ed5.\n    string\n      \"CHAR(\"\n      function trim (ws-ed5)\n      \") NOT NULL DEFAULT ' ',\"\n        into output-record\n        with pointer ws-position-in-output.\n    write output-record.\n    move spaces to output-record.\n    go to 2100-read-columns.\n*>\n 2250-varchar.\n    move ws-characters-wanted to ws-ed5.\n    string\n      \"VARCHAR(\"\n      function trim (ws-ed5)\n      \") NOT NULL DEFAULT ' ',\"\n        into output-record\n        with pointer ws-position-in-output.\n    write output-record.\n    move spaces to output-record.\n    go to 2100-read-columns.\n\n 2900-eof.\n    string\n      \"  PRIMARY KEY(`key`)\"\n        into output-record.\n    write output-record.\n    move spaces to output-record.\n    move \")\" to output-record\n    write output-record.\n    move spaces to output-record.\n    move \"ENGINE = MYISAM;\" to output-record.\n    write output-record.\n    move spaces to output-record.\n\n*>\n*>    End Of Job\n*>\n 7980-close.\n    close input-file.\n    close output-file.\n 7990-exit.\n    exit.\n*>***************************************************************\n*>             termination                                      *\n*>***************************************************************\n 9000-end-of-program.\n    move 9000 to ws-no-paragraph.\n    display \"I) \" ws-name-program \" COMPLETED NORMALLY AT--\"\n        function current-date.\n     goback.\n 9990-exit.\n    exit.",
+        "line": 253
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 8,
+    "cognitive": 7,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 23,
+      "totalOperators": 33,
+      "totalOperands": 66,
+      "vocabulary": 24,
+      "length": 99,
+      "volume": 453.91128757139444
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

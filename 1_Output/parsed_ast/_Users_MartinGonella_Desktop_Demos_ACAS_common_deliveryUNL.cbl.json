@@ -1,0 +1,273 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/deliveryUNL.cbl",
+  "fileName": "deliveryUNL.cbl",
+  "timestamp": "2025-09-15T16:25:35.735Z",
+  "programId": "deliveryUNL",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 94
+      },
+      {
+        "name": "file",
+        "line": 108
+      },
+      {
+        "name": "working-storage",
+        "line": 115
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 97
+      },
+      {
+        "name": "aa000-Main-Start",
+        "line": 152
+      },
+      {
+        "name": "end-if",
+        "line": 172
+      },
+      {
+        "name": "aa010-Read-Recs",
+        "line": 176
+      },
+      {
+        "name": "end-perform",
+        "line": 197
+      },
+      {
+        "name": "aa020-Finish-Off",
+        "line": 199
+      },
+      {
+        "name": "Delivery-File",
+        "line": 201
+      },
+      {
+        "name": "goback",
+        "line": 213
+      },
+      {
+        "name": "Call-Sysout",
+        "line": 217
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "ACAS-Sysout",
+        "line": 218,
+        "type": "DYNAMIC",
+        "using": [
+          "SO-Print"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 23,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 83,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 93,
+        "replacing": null
+      },
+      {
+        "name": "seldel",
+        "line": 100,
+        "replacing": null
+      },
+      {
+        "name": "fddel",
+        "line": 111,
+        "replacing": null
+      },
+      {
+        "name": "wsdel",
+        "line": 113,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 136,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 138,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 139,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 140,
+        "replacing": null
+      },
+      {
+        "name": "Proc-Get-Env-Set-Files",
+        "line": 215,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz020-Get-Program-Args",
+        "thru": null,
+        "line": 153
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 160
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 167
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 170
+      },
+      {
+        "target": "forever",
+        "thru": null,
+        "line": 177
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 186
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 193
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 209
+      },
+      {
+        "target": "Call-Sysout",
+        "thru": null,
+        "line": 211
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "6",
+        "to": "WS-Log-System",
+        "line": 154
+      },
+      {
+        "from": "14",
+        "to": "WS-Log-File-no",
+        "line": 155
+      },
+      {
+        "from": "spaces",
+        "to": "SO-Print",
+        "line": 157
+      },
+      {
+        "from": "zeros",
+        "to": "ws-Rec-Cnt-Out ws-Rec-Cnt-In",
+        "line": 174
+      },
+      {
+        "from": "SY006",
+        "to": "SO-Print\n                       perform  Call-Sysout\n                       go to aa020-Finish-Off\n              end-if\n              add      1 to WS-Rec-Cnt-Out\n     end-perform",
+        "line": 192
+      },
+      {
+        "from": "spaces",
+        "to": "SO-Print",
+        "line": 202
+      },
+      {
+        "from": "zero",
+        "to": "Return-Code",
+        "line": 212
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "the file exists but produces any errors because of\n*>                       a bad file** etc, it will attempt to read the RDB table\n*>                       instead, and a message to that effect will be issued.\n*>\n*>                       ** This can occur if a change of ISAM library is used\n*>                       where the new one is incompatable with the old one.\n*>\n*>                       ALL program output goes to file SYS-DISPLAY.log as an\n*>                       extended opened file. So after finishing reading,\n*>                       delete it.\n*>\n*>                       For use with ACAS v3.02 and later only.\n*>**\n*>   Version.            See prog-name in Ws.\n*>**\n*>   Called Modules.     ACAS-Sysout\n*>**\n*>   Error messages used.\n*>                       SY003.\n*>                       SY006.\n*>                       SY007.\n*>                       SY008.\n*>                       SY009.\n*>**\n*>   Changes.\n*>  1/06/23 vbc - .00 deliveryUNL source taken from analysisUNL.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>**\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n*>\n environment division.\n*>-------------------\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n copy \"seldel.cob\".\n     select  delivery-File-Seq  assign        \"delivery.seq\"\n                                organization  sequential\n                                status        FS-Reply.\n*>\n data division.\n*>------------\n*>\n file section.\n*>-----------\n*>\n copy \"fddel.cob\".\n fd  delivery-File-Seq.\n copy \"wsdel.cob\".\n*>\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(22)    value \"deliveryUNL (3.02.00)\".\n 77  z                   binary-char  value zero.\n 77  OS-Delimiter        pic x        value \"/\".\n 77  ACAS_BIN            pic x(512)   value spaces.\n 77  ACAS_LEDGERS        pic x(500)   value spaces.\n 77  Arg-Number          pic 9        value zero.\n*>\n*> holds program parameter values from command line\n 01  Arg-Vals                         value spaces.\n     03  Arg-Value       pic x(525)  occurs 2.\n 01  Arg-Test            pic x(525)   value spaces.\n*>\n 01  work-fields.\n     03  ws-Rec-Cnt-In   pic 9999       value zero.\n     03  ws-Rec-Cnt-Out  pic 9999       value zero.\n     03  ws-reply        pic x.\n*>\n 01  SO-Print            pic x(160)    value spaces.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n copy \"wsfnctn.cob\".\n copy \"wsnames.cob\".\n copy \"wscall.cob\".\n*>\n 01  Error-Messages.\n     03  SY003          pic x(35) value \"SY003 Problem reading batch file = \".\n     03  SY006          pic x(30) value \"SYS06 Write error on .seq file\".\n     03  SY007          pic x(35) value \"SY007 Program arguments incorrect: \".\n     03  SY008          pic x(31) value \"SY008 Note message & Hit return\".\n     03  SY009          pic x(53) value \"SY009 Environment variables not yet set up : ABORTING\".\n*>\n procedure division.\n*>=================\n*>\n aa000-Main-Start.\n     perform  zz020-Get-Program-Args.\n     move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 5=Stock used in FH logging, 6=SL & PL\n     move     14     to WS-Log-File-no.  *> for FHlogger\n*>\n     move     spaces to SO-Print.\n     string   Prog-Name \" \"\n              \"Cobol files in use \" into SO-Print.\n     perform Call-Sysout.\n*>\n*> BYPASS ALL THE STANDARD CODING AS JUST WRITE THE REC OUT\n*>\n     open     input    Delivery-File.\n     if       FS-Reply not = zeros\n              move     \"No delivery file to process\" to SO-Print\n              perform  Call-Sysout\n              close    Delivery-File\n              move     \"CLOSE \" to SO-Print\n              perform  Call-Sysout\n              goback\n     end-if.\n     open     output   delivery-File-Seq.\n     move     zeros to ws-Rec-Cnt-Out ws-Rec-Cnt-In.\n*>\n aa010-Read-Recs.\n     perform  forever\n              read     Delivery-File next record at end\n                       go to aa020-Finish-Off\n              end-read\n              if       FS-Reply not = zeros\n                       string   SY003\n                                FS-Reply\n                                  into SO-Print\n                       end-string\n                       perform  Call-Sysout\n                       go to aa020-Finish-Off\n              end-if\n              add      1 to WS-Rec-Cnt-In\n              write    WS-Delivery-Record from Delivery-Record\n              if       FS-Reply not = zero\n                       move     SY006 to SO-Print\n                       perform  Call-Sysout\n                       go to aa020-Finish-Off\n              end-if\n              add      1 to WS-Rec-Cnt-Out\n     end-perform.\n*>\naa020-Finish-Off.\n     close    delivery-File-Seq\n              Delivery-File.\n     move     spaces to SO-Print.\n     string\n              \"Records in = \"\n              ws-Rec-Cnt-In\n              \" Records Total out = \"\n              WS-Rec-Cnt-Out\n                     into SO-Print.\n     perform  Call-Sysout.\n     move     \"CLOSE \" to SO-Print.\n     perform  Call-Sysout.\n     move     zero to Return-Code.\n     goback.\n*>\n copy \"Proc-Get-Env-Set-Files.cob\".  *> Only uses ACAS_LEDGERS now\n*>\n Call-Sysout.\n     call     \"ACAS-Sysout\" using SO-Print.\n*>",
+        "line": 26
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 12,
+      "totalOperators": 7,
+      "totalOperands": 14,
+      "vocabulary": 13,
+      "length": 21,
+      "volume": 77.70923408096293
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

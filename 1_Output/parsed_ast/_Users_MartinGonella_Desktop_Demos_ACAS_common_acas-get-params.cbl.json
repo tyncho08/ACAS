@@ -1,0 +1,184 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/acas-get-params.cbl",
+  "fileName": "acas-get-params.cbl",
+  "timestamp": "2025-09-15T16:25:37.539Z",
+  "programId": "acas-get-params",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 98
+      },
+      {
+        "name": "file",
+        "line": 111
+      },
+      {
+        "name": "working-storage",
+        "line": 128
+      },
+      {
+        "name": "linkage",
+        "line": 148
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 101
+      },
+      {
+        "name": "LK-RDB-Vars",
+        "line": 163
+      },
+      {
+        "name": "aa000-Main",
+        "line": 166
+      },
+      {
+        "name": "File-Info",
+        "line": 176
+      },
+      {
+        "name": "goback",
+        "line": 179
+      },
+      {
+        "name": "LK-Return",
+        "line": 183
+      },
+      {
+        "name": "end-perform",
+        "line": 222
+      },
+      {
+        "name": "goback",
+        "line": 224
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "CBL_CHECK_FILE_EXIST",
+        "line": 175,
+        "type": "DYNAMIC",
+        "using": [
+          "\"acas"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "of",
+        "line": 87,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 97,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "until",
+        "thru": null,
+        "line": 185
+      },
+      {
+        "target": "end-read",
+        "thru": null,
+        "line": 187
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 190
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "zero",
+        "to": "LK-Return",
+        "line": 174
+      },
+      {
+        "from": "8",
+        "to": "LK-Return\n              goback",
+        "line": 178
+      },
+      {
+        "from": "1",
+        "to": "LK-Return\n                       goback\n              end-if\n              evaluate WS-RDB-Keyword (1:6)\n                       when     = \"DBHOST\"\n                                move WS-RDB-Value to LK-Host-Name\n                       when     = \"DBUSER\"\n                                move WS-RDB-Value to LK-Implementation\n                       when     = \"DBPASS\"\n                                move WS-RDB-Value to LK-Password\n                       when     = \"DBNAME\"\n                                move WS-RDB-Value to LK-Base-Name\n                       when     = \"DBPORT\"\n                                move WS-RDB-Value to LK-Port-Number\n                       when     = \"DBSOCK\"\n                                move WS-RDB-Value to LK-Socket\n                       when other\n                                move 2 to LK-Return\n                                goback\n              end-evaluate\n     end-perform",
+        "line": 202
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "the acas parameter file system.dat\n*>                       does not current hold settings for RDB processing\n*>                       so that the *LD programs can load up the tables from\n*>                       the Cobol files.\n*>\n*> Processing:\n*>\n*>                       Called by any and all *LD modules as require via linkage;\n*>\n*>                       Uses Current directory only.\n*>\n*>                       If system.dat does not hold RDBMS params we check if\n*>                       file acas.param exists and if so takes details from that.\n*>                       JIC not testing for RDB but it exists etc - saves having\n*>                       to change system.dat record just for loading DB's.\n*>\n*> Returns:\n*>  Normal =\n*>                       0 = Valid data read.\n*>                       8 = No file found.\n*>  Errors -\n*>                       1 = No valid keyword terminator i.e., = or :\n*>                       2 = Invalid Keyword - keyword not expected.\n*>\n*>**\n*>   Version.            See prog-name in Ws.\n*>**\n*>   Called Modules.     NONE.\n*>**\n*>   Error messages used.\n*>                       NONE.\n*>**\n*>   Changes.\n*> 21/06/23 vbc - .00 Module creation.\n*> 16/04/24 vbc       Copyright notice update superceding all previous notices.\n*>\n*>**\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supercedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n*>\n environment division.\n*>===================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n     select OPTIONAL ACAS-Params  assign \"acas.param\"\n                                  organisation line sequential\n                                  status  FS-Reply.\n*>\n data division.\n*>============\n*>\n file section.\n*>-----------\n*>\n*> Format :  Keyword=variable - simple\n*>\n FD  ACAS-Params\n     recording mode variable.\n*>\n 01  ACAS-Params-Record  pic x(80).\n*>\n*> Thrse are NOT used in program - just to show record layout\n*>\n 01  APR-Variable-Size.\n     03  APR-Keyword     pic x(8).   *> Varying between 6 and 8.\n     03  APR-Equals      pic x.      *> always '='.\n     03  APR-Value       pic x(64).  *>< variable size\n*>\n working-storage section.\n*>----------------------\n 77  prog-name           pic x(20)    value \"get-params (3.02.00)\".\n 77  FS-Reply            pic 99.\n*>\n 01  WS-RDB-Data.                           *> Temp data\n     03  WS-RDB-Keyword  pic x(8).\n     03  WS-RDB-Equal    pic x.\n     03  WS-RDB-Value    pic x(64).\n*>\n 01  File-Info                        value zero.  *> Layout as per GNU v2 manual\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.    *> Mod date.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.    *> Mod time\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp.    *> Always 00\n*>\n linkage section.\n*>--------------\n*>\n 01  LK-Return           pic 99       value zero.\n*>\n 01  LK-RDB-Vars                      value spaces.\n     03  LK-Host-Name    pic x(64).\n     03  LK-Implementation\n                         pic x(64).\n     03  LK-Password     pic x(64).\n     03  LK-Base-Name    pic x(64).\n     03  LK-Port-Number  pic x(4).\n     03  LK-Socket       pic x(64).\n*>\n procedure division using LK-Return\n                          LK-RDB-Vars.\n*>===================================\n*>\n aa000-Main.\n*>\n*>*************************************************************************\n*>  WOULD normally need cobmysqlapi39.c for Mysql & Mariadb DB handling.  *\n*>  How ever done the hard way so this module is not dependent on other   *\n*>    processes similar to as used for mysql/mariadb cobmysqlapi.         *\n*>*************************************************************************\n*>\n     move     zero  to LK-Return.\n     call     \"CBL_CHECK_FILE_EXIST\" using \"acas.param\"\n                                           File-Info.\n     if       Return-Code not = zero        *> = zero - file found\n              move     8 to LK-Return\n              goback.\n*>\n     initialise\n              LK-RDB-Vars\n              LK-Return.\n     open     input ACAS-Params.\n     perform  until FS-Reply not = zeros\n              read     ACAS-Params at end\n                       exit perform\n              end-read\n              if       FS-Reply not = zeros    *> JIC\n                       exit perform\n              end-if\n              initialise\n                       WS-RDB-Data\n              unstring ACAS-Params-Record delimited by \"=\"\n                                                    or \":\"\n                                                    or space\n                               into WS-RDB-Keyword\n                                        DELIMITER IN WS-RDB-Equal\n                                    WS-RDB-Value\n              end-unstring\n              if       WS-RDB-Equal not = \"=\" and not = \":\"\n                       move     1 to LK-Return\n                       goback\n              end-if\n              evaluate WS-RDB-Keyword (1:6)\n                       when     = \"DBHOST\"\n                                move WS-RDB-Value to LK-Host-Name\n                       when     = \"DBUSER\"\n                                move WS-RDB-Value to LK-Implementation\n                       when     = \"DBPASS\"\n                                move WS-RDB-Value to LK-Password\n                       when     = \"DBNAME\"\n                                move WS-RDB-Value to LK-Base-Name\n                       when     = \"DBPORT\"\n                                move WS-RDB-Value to LK-Port-Number\n                       when     = \"DBSOCK\"\n                                move WS-RDB-Value to LK-Socket\n                       when other\n                                move 2 to LK-Return\n                                goback\n              end-evaluate\n     end-perform.\n     close     ACAS-Params.\n     goback.\n*>",
+        "line": 21
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "WS-RDB-Keyword (1:6)\n                       when     = \"DBHOST\"\n                                move...",
+        "line": 205,
+        "whenCount": 7
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 10,
+    "cognitive": 15,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 6,
+      "totalOperators": 3,
+      "totalOperands": 6,
+      "vocabulary": 7,
+      "length": 9,
+      "volume": 25.26619429851844
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

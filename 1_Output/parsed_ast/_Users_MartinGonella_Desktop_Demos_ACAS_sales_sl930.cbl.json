@@ -1,0 +1,1271 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/sales/sl930.cbl",
+  "fileName": "sl930.cbl",
+  "timestamp": "2025-09-15T16:25:31.262Z",
+  "programId": "sl930",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 270
+      },
+      {
+        "name": "file",
+        "line": 290
+      },
+      {
+        "name": "working-storage",
+        "line": 310
+      },
+      {
+        "name": "linkage",
+        "line": 633
+      },
+      {
+        "name": "init01",
+        "line": 648
+      },
+      {
+        "name": "Print-Routine",
+        "line": 855
+      },
+      {
+        "name": "Headings-1",
+        "line": 1161
+      },
+      {
+        "name": "zz060-Convert-Date",
+        "line": 1249
+      },
+      {
+        "name": "exit",
+        "line": 1282
+      },
+      {
+        "name": "zz070-Convert-Date",
+        "line": 1284
+      },
+      {
+        "name": "exit",
+        "line": 1312
+      },
+      {
+        "name": "zz080-Setup-Company-Details",
+        "line": 1314
+      },
+      {
+        "name": "exit",
+        "line": 1326
+      },
+      {
+        "name": "zz090-Issue-Email",
+        "line": 1429
+      },
+      {
+        "name": "maps04",
+        "line": 1482
+      },
+      {
+        "name": "exit",
+        "line": 1488
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 273
+      },
+      {
+        "name": "file-defs",
+        "line": 645
+      },
+      {
+        "name": "menu-return",
+        "line": 669
+      },
+      {
+        "name": "goback",
+        "line": 686
+      },
+      {
+        "name": "amend-request",
+        "line": 738
+      },
+      {
+        "name": "all-print-go",
+        "line": 755
+      },
+      {
+        "name": "all-print",
+        "line": 763
+      },
+      {
+        "name": "all-print-more",
+        "line": 810
+      },
+      {
+        "name": "all-print-get-inv",
+        "line": 823
+      },
+      {
+        "name": "Main-End",
+        "line": 831
+      },
+      {
+        "name": "get-customer",
+        "line": 904
+      },
+      {
+        "name": "WS-Current-Time",
+        "line": 915
+      },
+      {
+        "name": "heading-details",
+        "line": 955
+      },
+      {
+        "name": "loop",
+        "line": 977
+      },
+      {
+        "name": "print-bypass",
+        "line": 1013
+      },
+      {
+        "name": "total-print",
+        "line": 1040
+      },
+      {
+        "name": "total-print-2",
+        "line": 1056
+      },
+      {
+        "name": "total-print-3",
+        "line": 1071
+      },
+      {
+        "name": "total-print-4",
+        "line": 1086
+      },
+      {
+        "name": "Email-Print-Record",
+        "line": 1119
+      },
+      {
+        "name": "end-perform",
+        "line": 1146
+      },
+      {
+        "name": "main-pre-end",
+        "line": 1242
+      },
+      {
+        "name": "zz060-Exit",
+        "line": 1281
+      },
+      {
+        "name": "zz070-Exit",
+        "line": 1311
+      },
+      {
+        "name": "maps04-exit",
+        "line": 1487
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "SYSTEM",
+        "line": 839,
+        "type": "DYNAMIC",
+        "using": [
+          "print-report"
+        ]
+      },
+      {
+        "target": "C$SLEEP",
+        "line": 848,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-Sleep",
+          "*>",
+          "allow",
+          "a",
+          "few",
+          "seconds",
+          "for",
+          "email",
+          "client",
+          "to",
+          "finish",
+          "*>",
+          "call",
+          "\"CBL_DELETE_FILE\"",
+          "using",
+          "\"sl930-Email-*\""
+        ]
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1406,
+        "type": "DYNAMIC",
+        "using": [
+          "Line-Company-Details1",
+          "\"C\""
+        ]
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1407,
+        "type": "DYNAMIC",
+        "using": [
+          "Line-Company-Details2",
+          "\"C\""
+        ]
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1408,
+        "type": "DYNAMIC",
+        "using": [
+          "Line-Company-Details3",
+          "\"C\""
+        ]
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1409,
+        "type": "DYNAMIC",
+        "using": [
+          "Line-Company-Details4",
+          "\"C\""
+        ]
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1410,
+        "type": "DYNAMIC",
+        "using": [
+          "Line-Company-Details5",
+          "\"C\""
+        ]
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1412,
+        "type": "DYNAMIC",
+        "using": [
+          "Line-Company-Details6",
+          "\"C\""
+        ]
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1414,
+        "type": "DYNAMIC",
+        "using": [
+          "Line-Company-Details7",
+          "\"C\""
+        ]
+      },
+      {
+        "target": "C$JUSTIFY",
+        "line": 1424,
+        "type": "DYNAMIC",
+        "using": [
+          "line-Company-Details8,",
+          "\"C\""
+        ]
+      },
+      {
+        "target": "SYSTEM",
+        "line": 1461,
+        "type": "DYNAMIC",
+        "using": [
+          "WS-Email-Command"
+        ]
+      },
+      {
+        "target": "maps04",
+        "line": 1485,
+        "type": "DYNAMIC",
+        "using": [
+          "maps03-ws"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "print-spool-command-p",
+        "line": 182,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 260,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 269,
+        "replacing": null
+      },
+      {
+        "name": "selinv",
+        "line": 276,
+        "replacing": null
+      },
+      {
+        "name": "selsl",
+        "line": 277,
+        "replacing": null
+      },
+      {
+        "name": "seldel",
+        "line": 278,
+        "replacing": null
+      },
+      {
+        "name": "selprint-2",
+        "line": 281,
+        "replacing": null
+      },
+      {
+        "name": "fdinv",
+        "line": 293,
+        "replacing": null
+      },
+      {
+        "name": "fdsl",
+        "line": 294,
+        "replacing": null
+      },
+      {
+        "name": "fddel",
+        "line": 295,
+        "replacing": null
+      },
+      {
+        "name": "out",
+        "line": 302,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command-invoice",
+        "line": 319,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command-p-dispatch",
+        "line": 320,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command-p-dispatch",
+        "line": 325,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command-p-dispatch-2",
+        "line": 326,
+        "replacing": null
+      },
+      {
+        "name": "print-spool-command-p-dispatch-3",
+        "line": 328,
+        "replacing": null
+      },
+      {
+        "name": "to",
+        "line": 335,
+        "replacing": null
+      },
+      {
+        "name": "wsmaps03",
+        "line": 340,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 341,
+        "replacing": null
+      },
+      {
+        "name": "wsinv",
+        "line": 342,
+        "replacing": null
+      },
+      {
+        "name": "slwsinv",
+        "line": 343,
+        "replacing": null
+      },
+      {
+        "name": "slwsinv2",
+        "line": 345,
+        "replacing": null
+      },
+      {
+        "name": "wssl",
+        "line": 348,
+        "replacing": null
+      },
+      {
+        "name": "wsdel",
+        "line": 349,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 469,
+        "replacing": null
+      },
+      {
+        "name": "wscall",
+        "line": 636,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 637,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 638,
+        "replacing": null
+      },
+      {
+        "name": "email",
+        "line": 1131,
+        "replacing": null
+      },
+      {
+        "name": "Proc-ACAS-FH-Calls",
+        "line": 1490,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "zz070-Convert-Date",
+        "thru": null,
+        "line": 666
+      },
+      {
+        "target": "zz080-Setup-Company-Details",
+        "thru": null,
+        "line": 667
+      },
+      {
+        "target": "Invoice-Open",
+        "thru": null,
+        "line": 684
+      },
+      {
+        "target": "Sales-Open-Input",
+        "thru": null,
+        "line": 687
+      },
+      {
+        "target": "Delivery-Open-Input",
+        "thru": null,
+        "line": 688
+      },
+      {
+        "target": "Invoice-Read-Indexed",
+        "thru": null,
+        "line": 700
+      },
+      {
+        "target": "print-routine",
+        "thru": null,
+        "line": 708
+      },
+      {
+        "target": "print-routine",
+        "thru": null,
+        "line": 720
+      },
+      {
+        "target": "Invoice-Start",
+        "thru": null,
+        "line": 761
+      },
+      {
+        "target": "Invoice-Read-Next-Header",
+        "thru": null,
+        "line": 766
+      },
+      {
+        "target": "print-routine",
+        "thru": null,
+        "line": 780
+      },
+      {
+        "target": "Print-Routine",
+        "thru": null,
+        "line": 805
+      },
+      {
+        "target": "Invoice-Close",
+        "thru": null,
+        "line": 834
+      },
+      {
+        "target": "Sales-Close",
+        "thru": null,
+        "line": 835
+      },
+      {
+        "target": "Delivery-Close",
+        "thru": null,
+        "line": 836
+      },
+      {
+        "target": "sih-lines",
+        "thru": null,
+        "line": 859
+      },
+      {
+        "target": "Invoice-Read-Next",
+        "thru": null,
+        "line": 860
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 862
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 865
+      },
+      {
+        "target": "end-if",
+        "thru": null,
+        "line": 869
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 872
+      },
+      {
+        "target": "Sales-Read-Indexed",
+        "thru": null,
+        "line": 909
+      },
+      {
+        "target": "Delivery-Read-Indexed",
+        "thru": null,
+        "line": 928
+      },
+      {
+        "target": "zz060-Convert-Date",
+        "thru": null,
+        "line": 961
+      },
+      {
+        "target": "headings-1",
+        "thru": null,
+        "line": 968
+      },
+      {
+        "target": "total-print",
+        "thru": null,
+        "line": 1032
+      },
+      {
+        "target": "headings-1",
+        "thru": null,
+        "line": 1036
+      },
+      {
+        "target": "Invoice-Rewrite",
+        "thru": null,
+        "line": 1129
+      },
+      {
+        "target": "forever",
+        "thru": null,
+        "line": 1140
+      },
+      {
+        "target": "end-read",
+        "thru": null,
+        "line": 1143
+      },
+      {
+        "target": "zz090-Issue-Email",
+        "thru": null,
+        "line": 1150
+      },
+      {
+        "target": "zz090-Issue-Email",
+        "thru": null,
+        "line": 1155
+      },
+      {
+        "target": "maps04",
+        "thru": null,
+        "line": 1258
+      },
+      {
+        "target": "lines",
+        "thru": null,
+        "line": 1318
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 1330
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 1333
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 1334
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 1337
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 1338
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 1341
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 1342
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 1345
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 1346
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 1349
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 1350
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 1353
+      },
+      {
+        "target": "varying",
+        "thru": null,
+        "line": 1354
+      },
+      {
+        "target": "*>",
+        "thru": null,
+        "line": 1357
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "Print-Spool-Name2",
+        "to": "PSN2\n      else   if Print-Spool-Name2 (1:5) = \"FILE:\"\n              move Print-Spool-Name2 (6:30) to PP-Print-File-Name",
+        "line": 661
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 665
+      },
+      {
+        "from": "zero",
+        "to": "item-nos",
+        "line": 697
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 699
+      },
+      {
+        "from": "WS-Invoice-Record",
+        "to": "sinvoice-header",
+        "line": 704
+      },
+      {
+        "from": "\"Y\"",
+        "to": "ws-reply",
+        "line": 715
+      },
+      {
+        "from": "\"P\"",
+        "to": "print-path\n     accept   print-path at 0744 with foreground-color 6 update",
+        "line": 731
+      },
+      {
+        "from": "\"N\"",
+        "to": "ws-reply",
+        "line": 740
+      },
+      {
+        "from": "zeros",
+        "to": "first-sl-inv item-nos\n              go to all-print",
+        "line": 745
+      },
+      {
+        "from": "first-sl-inv",
+        "to": "invoice-nos",
+        "line": 753
+      },
+      {
+        "from": "zero",
+        "to": "first-sl-inv  item-nos",
+        "line": 757
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 759
+      },
+      {
+        "from": "WS-Invoice-Record",
+        "to": "sinvoice-header",
+        "line": 773
+      },
+      {
+        "from": "\"Y\"",
+        "to": "ws-reply",
+        "line": 800
+      },
+      {
+        "from": "\"Y\"",
+        "to": "ws-reply",
+        "line": 813
+      },
+      {
+        "from": "zero",
+        "to": "invoice-nos",
+        "line": 826
+      },
+      {
+        "from": "1",
+        "to": "s-flag-i",
+        "line": 852
+      },
+      {
+        "from": "1",
+        "to": "i",
+        "line": 858
+      },
+      {
+        "from": "WS-Invoice-Record",
+        "to": "Invoice-Lines (i)\n              if   sil-type (i) = \"D\"  *> Should not happen (sl920 ?)\n                   exit perform\n              end-if\n              add  1  to  i\n     end-perform\n*>\n     subtract 1  from  i",
+        "line": 867
+      },
+      {
+        "from": "spaces",
+        "to": "line-0-a line-0-b line-0-c",
+        "line": 875
+      },
+      {
+        "from": "1",
+        "to": "ii",
+        "line": 879
+      },
+      {
+        "from": "1",
+        "to": "l7-count-1",
+        "line": 883
+      },
+      {
+        "from": "\"===========\"",
+        "to": "l0-xs\n       else\n              move  \"  Pro-Forma\" to  l0-type\n              move  \"  =========\" to  l0-xs\n              move \"This is not a VAT Invoice\" to l0-desc",
+        "line": 898
+      },
+      {
+        "from": "1",
+        "to": "File-Key-No",
+        "line": 907
+      },
+      {
+        "from": "sih-customer",
+        "to": "WS-Sales-Key",
+        "line": 908
+      },
+      {
+        "from": "WS-Current-Time",
+        "to": "PP-Emails-Time",
+        "line": 917
+      },
+      {
+        "from": "\"D\"",
+        "to": "WS-Deliv-Key-Type\n              move  WS-Sales-Key to WS-Deliv-Sales-Key\n              perform  Delivery-Read-Indexed",
+        "line": 926
+      },
+      {
+        "from": "spaces",
+        "to": "l1-i-name  l1-d-name l2-i-line  l2-d-line\n                        l3-i-line  l3-d-line l4-i-line  l4-d-line\n                        l5-i-line  l5-d-line l6-i-line  l6-d-line",
+        "line": 930
+      },
+      {
+        "from": "sales-name",
+        "to": "l1-i-name",
+        "line": 934
+      },
+      {
+        "from": "1",
+        "to": "a",
+        "line": 936
+      },
+      {
+        "from": "deliv-name",
+        "to": "l1-d-name",
+        "line": 946
+      },
+      {
+        "from": "1",
+        "to": "a",
+        "line": 948
+      },
+      {
+        "from": "sih-invoice",
+        "to": "l3-invoice",
+        "line": 958
+      },
+      {
+        "from": "sih-date",
+        "to": "u-bin",
+        "line": 960
+      },
+      {
+        "from": "ws-date",
+        "to": "l3-date",
+        "line": 962
+      },
+      {
+        "from": "sih-customer",
+        "to": "l6-account",
+        "line": 964
+      },
+      {
+        "from": "sih-ref",
+        "to": "l4-ref",
+        "line": 965
+      },
+      {
+        "from": "sih-order",
+        "to": "l6-order",
+        "line": 966
+      },
+      {
+        "from": "1",
+        "to": "k",
+        "line": 970
+      },
+      {
+        "from": "SL-Invoice-Lines",
+        "to": "J",
+        "line": 971
+      },
+      {
+        "from": "25",
+        "to": "j",
+        "line": 972
+      },
+      {
+        "from": "zero",
+        "to": "work-n  work-v",
+        "line": 975
+      },
+      {
+        "from": "spaces",
+        "to": "line-8",
+        "line": 982
+      },
+      {
+        "from": "zero",
+        "to": "l8-qty l8-unit l8-discount l8-vat l8-net\n              go to print-bypass",
+        "line": 988
+      },
+      {
+        "from": "zero",
+        "to": "l8-qty\n              move  zero  to  l8-unit\n              move  zero  to  l8-discount\n              move  spaces to l8-product",
+        "line": 997
+      },
+      {
+        "from": "\"%\"",
+        "to": "l8-percent\n              move  \"  Disc \" to l7B-Disc\n     else\n              move  spaces   to l7B-Disc\n              move  space    to l8-percent",
+        "line": 1004
+      },
+      {
+        "from": "k",
+        "to": "kk\n              move  2  to  k\n*>              add  25  to  j\t\t                                    *> 15  to  j\n              add  SL-Invoice-Lines  to  j                          *> (see above) 25  to  j\n              add  1   to  l7-count-1\n              perform  total-print\n              move kk  to  k\n  *>            move  spaces  to  Email-Print-Record                *> THESE 2 NOT NEED FOR NON MATRIX\n  *>            write  Email-Print-Record  after 13  lines          *> & PRE-PRINTED STATIONERY\n              perform  headings-1",
+        "line": 1027
+      },
+      {
+        "from": "spaces",
+        "to": "l9-desc",
+        "line": 1043
+      },
+      {
+        "from": "work-n",
+        "to": "l9-net\n     move     work-v  to  l9-vat",
+        "line": 1044
+      },
+      {
+        "from": "sih-days",
+        "to": "l9-days",
+        "line": 1046
+      },
+      {
+        "from": "spaces",
+        "to": "L9-Terms",
+        "line": 1050
+      },
+      {
+        "from": "zero",
+        "to": "l9-days",
+        "line": 1053
+      },
+      {
+        "from": "spaces",
+        "to": "l9-Terms",
+        "line": 1054
+      },
+      {
+        "from": "spaces",
+        "to": "l9-Terms",
+        "line": 1064
+      },
+      {
+        "from": "sih-deduct-vat",
+        "to": "l9-vat",
+        "line": 1065
+      },
+      {
+        "from": "sih-deduct-amt",
+        "to": "l9-net",
+        "line": 1066
+      },
+      {
+        "from": "spaces",
+        "to": "l9-desc",
+        "line": 1069
+      },
+      {
+        "from": "spaces",
+        "to": "l9-Terms",
+        "line": 1079
+      },
+      {
+        "from": "Extra-Desc",
+        "to": "l9-desc",
+        "line": 1080
+      },
+      {
+        "from": "sih-e-vat",
+        "to": "l9-vat",
+        "line": 1081
+      },
+      {
+        "from": "sih-extra",
+        "to": "l9-net",
+        "line": 1082
+      },
+      {
+        "from": "spaces",
+        "to": "l9-Terms",
+        "line": 1089
+      },
+      {
+        "from": "spaces",
+        "to": "l9-desc",
+        "line": 1090
+      },
+      {
+        "from": "sih-c-vat",
+        "to": "l9-vat",
+        "line": 1091
+      },
+      {
+        "from": "sih-carriage",
+        "to": "l9-net",
+        "line": 1092
+      },
+      {
+        "from": "zero",
+        "to": "l10-days\n                              l11-amount\n              move spaces to  l10-Terms\n     else\n              move \"Prompt pay time:\" to L10-Terms\n              move  sih-deduct-days  to  l10-days",
+        "line": 1097
+      },
+      {
+        "from": "spaces",
+        "to": "l10-terms\n              move  zero  to  l10-days",
+        "line": 1105
+      },
+      {
+        "from": "spaces",
+        "to": "print-record\n                          Email-Print-Record",
+        "line": 1118
+      },
+      {
+        "from": "\"I\"",
+        "to": "sih-status\n              move \"L\" to sih-Status-L      *> Invoice printed",
+        "line": 1126
+      },
+      {
+        "from": "sinvoice-header",
+        "to": "WS-Invoice-Record\n              perform Invoice-Rewrite",
+        "line": 1128
+      },
+      {
+        "from": "1",
+        "to": "WS-Email-Sent",
+        "line": 1156
+      },
+      {
+        "from": "spaces",
+        "to": "print-record\n                      write Email-Print-Record after page\n                      write Email-Print-Record from line-0-a after 4\n              end-if\n     end-if\n*>\n     write    Email-Print-Record  from  line-0-b after 1",
+        "line": 1193
+      },
+      {
+        "from": "\"Y\"",
+        "to": "ws-reply",
+        "line": 1225
+      },
+      {
+        "from": "\"N\"",
+        "to": "first-time",
+        "line": 1245
+      },
+      {
+        "from": "spaces",
+        "to": "ws-Date\n              go to zz060-Exit",
+        "line": 1260
+      },
+      {
+        "from": "u-date",
+        "to": "ws-date",
+        "line": 1262
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 1265
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit",
+        "line": 1269
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 1276
+      },
+      {
+        "from": "to-day",
+        "to": "ws-date",
+        "line": 1292
+      },
+      {
+        "from": "1",
+        "to": "Date-Form",
+        "line": 1295
+      },
+      {
+        "from": "ws-days",
+        "to": "ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit",
+        "line": 1299
+      },
+      {
+        "from": "\"ccyy/mm/dd\"",
+        "to": "ws-date",
+        "line": 1306
+      },
+      {
+        "from": "spaces",
+        "to": "Line-Company-Details",
+        "line": 1328
+      },
+      {
+        "from": "Usera",
+        "to": "Line-Company-Details1",
+        "line": 1385
+      },
+      {
+        "from": "Address-1",
+        "to": "line-Company-Details2",
+        "line": 1386
+      },
+      {
+        "from": "Address-2",
+        "to": "line-Company-Details3",
+        "line": 1387
+      },
+      {
+        "from": "Address-3",
+        "to": "line-Company-Details4",
+        "line": 1388
+      },
+      {
+        "from": "Address-4",
+        "to": "line-Company-Details5",
+        "line": 1389
+      },
+      {
+        "from": "Post-Code",
+        "to": "line-Company-Details6",
+        "line": 1390
+      },
+      {
+        "from": "Country",
+        "to": "line-Company-Details7",
+        "line": 1391
+      },
+      {
+        "from": "Line-Company-Details5",
+        "to": "Line-Company-Details4\n              move Line-Company-Details6 to Line-Company-Details5\n              move Line-Company-Details7 to Line-Company-Details6\n              move spaces to Line-Company-Details7",
+        "line": 1394
+      },
+      {
+        "from": "Line-Company-Details6",
+        "to": "Line-Company-Details5\n              move Line-Company-Details7 to Line-Company-Details6\n              move spaces to Line-Company-Details7",
+        "line": 1399
+      },
+      {
+        "from": "Line-Company-Details7",
+        "to": "Line-Company-Details6\n              move spaces to Line-Company-Details7",
+        "line": 1403
+      },
+      {
+        "from": "spaces",
+        "to": "WS-Email-Data",
+        "line": 1436
+      }
+    ],
+    "computes": [
+      {
+        "target": "k",
+        "expression": "((l7-count-2 * 25)  -  i) + 2\t*> was 15\n              compute  k = ((l7-count-2 * SL-Invoice-Lines) - i) + 2        *> 25 was 15\n              go to  total-print",
+        "line": 1022
+      }
+    ]
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "*> INVOICES HAVE BEEN PRINTED SO THIS NEEDS TO BE REMOVED\n*>   FOR PRODUCTION / SYSTEM TESTING.\n*> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n*>  THIS PROGRAM MUST BE MODIFIED TO SUIT YOUR INVOICING STATIONERY\n*>  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>    Do so in conjunction with SL950 Delivery / Picking Note Print.\n*>      and ensure testing with stationery or plain paper\n*>\n*>  FOR sending Emails as well as invoices, statements & late letters\n*>    the delay before deleting the created temporary email files is\n*>    in variable  WS-Sleep and is preset to 5 seconds at\n*>    program EOJ (End of Job).\n*>   Change this if time is wrong but allow extra 2 seconds just in\n*>    case.\n*>\n*> Change variable WS-Emails-Both to zero if you only want to send\n*>  emails if the sales record shows an email address and\n*>  Email-Invoicing is set.   Default BOTH.\n*>\n*> PRODUCES TITLES ETC ON PLAIN PAPER\n*>\n*> MAKE SURE THERE IS A NOTE IN THE SALES Manual Regarding these notes.\n*> ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*> Changes as of 27 June 2023 and version 3.02.22::\n*> Program operation has been changed to reflect usage of Emails using freely\n*> available email clients, in that instead of directly creating a invoice\n*> print to file or printer it opens it but all individual invoices are sent\n*> first to a newly created email file that at end of invoice creation is\n*> closed",
+        "line": 5
+      },
+      {
+        "type": "IF",
+        "condition": "sending email.\n*>         88  WS-Send-Email               value 1.      *>  or should it be instead !!!\n*>     03  WS-Sleep        pic 9           value 3.      *> at EOJ in secs to allow all emails to be issued\n*>                                                        to the email client.\n*>     03  WS-Emails-Both  pic 9           value 1.      *> Set to zero if only emails issued.\n*>         88  WS-Emails-Only              value zero.\n*>\n*>  WS-Emails-Both when set to 1 (default) will send both emails and a printed invoice\n*>    but if set to 0 (zero) will only send an email (recommended 1 as default)\n*>  This only applies if the individual sales record was set up with an Email address\n*>  AND the send email invoice.\n*>\n*> WS-Email-Set IF you wish to send Emails, set this to 1 instead of zero (default).\n*>\n*> WS-Sleep is set to 3 (seconds) as the time to wait before deleting the email\n*> files and this allows some time for the email client to actual send the emails\n*> out as the emails are actually files if the files are deleted it might not find\n*> one or more such files when sending if there is a delay it the client processing\n*> them.  IF you get errors being reporting that such files are missing from the\n*> email client, you should INCREASE the time preset from 3 to a larger number\n*> such as say 5 - 10, although 3 should be more than enough but for slower\n*> systems it just might not be enough.\n*>\n*>  Having made changes to these or any other setting in the program you must\n*>  re-compile it by running the supplied scripts in folder sales comp-sales.sh\n*>",
+        "line": 48
+      },
+      {
+        "type": "IF",
+        "condition": "you have installed\n*>  the system before or if the first time run instead install-ACAS.sh.\n*>  NOTE that you should ONLY run this last script ONCE as it also updates the\n*> file ./bashrc with extra setting for the ACAS environment. The script with\n*> the ...preinstalled.sh etc should be used otherwise.\n*>\n*>*****************************************************************\n*>                                                                *\n*>               I N V O I C E   P R I N T                        *\n*>                                                                *\n*>       SUPPLIED IN SOURCE FOR MODIFICATION BY CUSTOMER          *\n*>                                                                *\n*> Applewood Computers offers a service to change this module     *\n*>   to meet your invoicing requirements.                         *\n*>  currently set to spool to lpt2 printer and assumes a matrix   *\n*>      printer using preprinted stationery or a laser using      *\n*>        a preloaded template & produces 2 copies per invoice    *\n*>        but see changes .09 for more info on this.              *\n*>*****************************************************************\n*> Commercial version instead of printing created temp file for   *\n*> each inv by a/c name",
+        "line": 73
+      },
+      {
+        "type": "IF",
+        "condition": "you install packages     *\n*>   enscript & ghostscript-common                                *\n*>                                                                *\n*>  THIS PROGRAM MUST ALWAYS BE TESTED TO CONFIRM THAT IT WORKS   *\n*>  TO YOUR REQUIREMENTS. Likewise sl950 (picking/packing sheets) *\n*>   and for that matter Statements production sl190.             *\n*>                                                                *\n*>    Can be easily modified to also print to second printer in   *\n*>    Dispatch Department etc for Picking Lists/Dispatch notes    *\n*>    Also see sl950 that just prints Delivery/Picking notes      *\n*>     AND this should be run first, before sl930.                *\n*>     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                 *\n*>*****************************************************************\n*>  Adobe Reader API Code removed from this and the Dispatch      *\n*>  modules, has been removed as they are non-free code and users *\n*>  have to purchase it and the reader/Forms programs from Adobe. *\n*>  I will try and relook at this as well as links to LibreOffice *\n*>  that do a similar job in producing stylised documents instead *\n*>  based on template forms etc when time is available.           *\n*>*****************************************************************\n*>\n*>     Maximum Values that are printed as standard:\n*>        Amounts line items 10M<   M = Million & '<' = 1 less than.\n*>        Amounts Totals     100M<\n*>        Quanities          1M<\n*>        Line items per inv 25 =< from 15 and NOW USES SL-Invoice-Lines.\n*>             18/03/2018.\n*>*****************************************************************\n*>\n identification          division.\n*>===============================\n*>\n      program-id.         sl930.\n*>**\n*>    Author.             Cis Cobol Conversion By V B Coen, FBCS, FIDM, FIDPM 28/10/83\n*>                        For Applewood Computers.\n*>**\n*>    Security.           Copyright (C) 1976-2025 & later, Vincent Bryan Coen.\n*>                        Distributed under the GNU General Public License.\n*>                        See the file COPYING for details.\n*>**\n*>    Remarks.            Invoice Print.\n*>**\n*>    Version.            See Prog-Name In Ws.\n*>**\n*>    Called Modules.     Maps04.\n*>                        acas012  ->       (Sales)\n*>                         salesMT.\n*>                        acas014  ->       (Delivery)\n*>                         deliveryMT.\n*>                        acas016  ->\n*>                         invoiceMT.\n*>                        SL070. Analysis codes set up - Defaults only.\n*>**\n*>    Error messages used.  These messages are remarked out, as page align is off.\n*>                        SL003 hit return ...\n*>                        SL200  Form alignment msg. ->  Used for continuous stationery only.\n*>                        SL201  Error creating email file.\n*>                        SL202  Hit return to Abort.\n*>**\n*> Changes\n*> 03/03/09 vbc - .01 Migration to Open Cobol v3.00.00.\n*> 10/03/09 vbc - .02 Minor adjustment for A4 paper after 1st page\n*>                    also needs some added code for 10 point printing instead\n*>                    of 12 or change laser via script prior to printing and\n*>                    again afterwards.  Done, see print-spool-command.cob\n*> 11/03/09 vbc - .03 Re-added extra discount/charge line in totals\n*>                    for some reason missing on this version.\n*> 13/03/09 vbc - .03 Added extra-print flag to print or not see above.\n*> 07/09/10 vbc - .04 Mod lpr.\n*> 26/11/11 vbc - .05 Error msgs to SLnnn. Support for dates other than UK\n*> 08/12/11 vbc - .06 Support for path+filenames.\n*> 09/12/11 vbc -     Updated version to 3.01.nn, support for IS delivery file\n*> 11/12/11 vbc - .07 Changed usage of Stk-Date-Form to the global field Date-Form making former redundent.\n*> 24/03/12 vbc - .08 Support for printing to 2 printers but remd out\n*> 19/05/13 vbc - .09 Added in sil-Status-L (future proofing) at total-print-4 & show 'Invoice'for same\n*>                    and produces two copies of each invoice with one for filing. You will need to change\n*>                    copy \"print-spool-command-p.cob\" from \"-# 2 \" to \"-# 3 \" for three copies etc or\n*>                       \"-# 1 \" for one (or remove it).\n*>                    Note that sl950 just prints picking lists.\n*> 22/05/13 vbc - .10 Tidied up headings & added time to headings along with changes made to sl930.\n*> 29/05/13 vbc - .11 More tidyup of inv heads for plain paper invoices and no doubt more needed.\n*>                    Checked that all non-free API code from Adobe Reader is removed.\n*> 04/06/13 vbc - .12 Using Print details from Print-Spool-Name2 with PSN2 in prt-2.\n*> 24/10/16 vbc - .13 ALL programs now using wsnames.cob in copybooks\n*> 15/01/17 vbc - .   All programs upgraded to v3.02 for RDB processing.\n*> 19/01/17 vbc - .14 Converted usage of maps99 to displays.\n*>                    Added FH/DAL processing for file processing\n*>                    Invoice files to be done.\n*>                    Removed P.A. file test as it is NOT used here.\n*> 20/01/17 vbc       Removed all references to invoice-let as redundant.\n*>                    See sl910 & sl920.\n*> 25/01/17 vbc       Dry testing completed.\n*> 10/02/17 vbc - .15 Updated FD/WS for 016 and replaced cobol verbs\n*>                    for access to FH/DALs.\n*> 18/04/17 vbc - .16 Updated to use Invoice-Read-Next-Header where only the\n*>                    Header is wanted (if test = zero",
+        "line": 105
+      },
+      {
+        "type": "IF",
+        "condition": "SL-Comp-Inv = Y.was wrong (pick)\n*> 18/02/23 vbc - .20 Changed print-line to 88 max text line\n*>                    Support for printfile names instead of prt-1 but will default\n*>                    to it.\n*> 06/03/23 vbc - .21 In zz080-Setup-Company-Details if not spaces added VAT data to\n*>                    Line-Company-Details8 and in headings-1 print it out as\n*>                    last line in company name address details - hopefully centered.\n*>                    Also done in sl950.\n*> 07/03/23 vbc - .22 lpr copybook print-spool-command-p-dispatch.cob changed\n*>                    for single-sided  Also applies to sl930\n*>                    by using print-spool-command-p-dispatch-2 or -3 for multi copies\n*> 25/06/23 vbc *     Added zz090-Issue-Email but not coded up and no vars set up.\n*> 26/06/23           Next is also for programs sl110 and sl190.\n*>                    Extra coding to support sending of emails but not complete as\n*>                    it cannot be tested on dev system.\n*>                    Company heading changed to use C$JUSTIFY in ZZ080\n*>                     same for sl950.\n*> 07/08/23 vbc - .23 fix in zz090-Setup-Company-Details bland addr lines\n*>                    within address. for both sl930 & sl950.\n*>                    Adjust line-0-d less 1 char on 1st field.\n*> 27/01/24 vbc - .24 Omit using Credit Terms if not printing Invoice at\n*>                    total-print. Inv # missing - reduced size of line to 80\n*>                    by using fit-to-page - JIC.\n*> 16/04/24 vbc       Copyright notice update superseding all previous notices.\n*>\n*>*************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supersedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>*************************************************************************\n*>\n environment             division.\n*>===============================\n*>\n copy \"envdiv.cob\".\n input-output            section.\n*>------------------------------\n*>\n file-control.\n*>-----------\n*>\n*> copy \"selinv.cob\".\n*> copy \"selsl.cob\".\n*> copy \"seldel.cob\".\n*>\n*> 18/02/23\n copy \"selprint-2.cpy\".  *>  replacing \"prt-1\" by \"prt-2\". Invoice printer\n*>\n     select  Email-Print-File   assign       PP-Email-File\n                                organization line sequential\n                                status       PRT-Status.\n*>\n data                    division.\n*>===============================\n*>\n file section.\n*>-----------\n*>\n*> copy \"fdinv.cob\".\n*> copy \"fdsl.cob\".\n*> copy \"fddel.cob\".\n*>\n fd  Print-File.\n*>\n 01  Print-Record            pic x(88).  *> 18/2/23 was x(102) get rid of space lines between text\n*>\n*> Used for individual email texts all WRITE's for printing switched to using this\n*>  at end of Invoice file closed",
+        "line": 207
+      },
+      {
+        "type": "IF",
+        "condition": "needed also needs the \"\"prt-1\" by \"prt-2\"\n*> Also change for two (or more) copies per invoice,  if needed\n*> I.e., one for customer, filing, sales department etc, by using instead of\n*> copy \"print-spool-command-p-dispatch.cob\" use\n*>  copy \"print-spool-command-p-dispatch-2.cob\"\n*> for two copies or for three copies use\n*>  copy \"print-spool-command-p-dispatch-3.cob\".\n*>\n*> this one or next ONLY, not both & '-# 2' means 2 copies (1 cust, 1 file).\n*>\n*>    WARNING print delivery/packing slips FIRST (sl950) before printing\n*>     invoices. as you cannot do so after printing invoices.\n*>\n*> Another option is to leave the setting for only one copy to be printed and\n*> to use a copier of a three in one printer to produce copies of all printed\n*> invoices for the sales team to file prior to sending them.\n*>    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n*>\n copy \"wsmaps03.cob\".\n copy \"wsfnctn.cob\".\n                *>   was copy \"wsinv.cob\". This is the invoice table sih / l-\n copy \"slwsinv.cob\"  replacing Invoice-Line by Invoice-Lines. *> original with occ 40 for lines\n*> RDB / File records.\n copy \"slwsinv2.cob\".\n 01  WS-Invoice-Record  redefines Invoice-Record\n                                pic x(137).\n copy \"wssl.cob\".\n copy \"wsdel.cob\".\n*>\n*> REMARK OUT ANY IN USE\n*>\n 01  Dummies-4-Unused-ACAS-FH-Calls.      *> Call blk at zz080-ACAS-Calls\n     03  Default-Record         pic x.\n     03  Final-Record           pic x.\n     03  System-Record-4        pic x.\n     03  WS-Ledger-Record       pic x.\n     03  WS-Posting-Record      pic x.\n     03  WS-Batch-Record        pic x.\n     03  WS-IRS-Posting-Record  pic x.\n     03  WS-Stock-Audit-Record  pic x.\n     03  WS-Stock-Record        pic x.\n*>     03  WS-Sales-Record        pic x.\n     03  WS-Value-Record        pic x.\n*>     03  WS-Delivery-Record     pic x.\n     03  WS-Analysis-Record     pic x.\n     03  WS-Del-Inv-Nos-Record  pic x.\n     03  WS-Purch-Record        pic x.\n     03  WS-Pay-Record          pic x.\n*>     03  WS-Invoice-Record      pic x.\n     03  WS-OTM3-Record         pic x.\n     03  WS-PInvoice-Record     pic x.\n     03  WS-OTM5-Record         pic x.\n*>\n 01  File-Info                          value zero.\n     05 File-Size-Bytes  pic 9(18) comp.\n     05 Mod-DD           pic 9(2)  comp.\n     05 Mod-MO           pic 9(2)  comp.\n     05 Mod-YYYY         pic 9(4)  comp.\n     05 Mod-HH           pic 9(2)  comp.\n     05 Mod-MM           pic 9(2)  comp.\n     05 Mod-SS           pic 9(2)  comp.\n     05 filler           pic 9(2)  comp. *> Always 00\n*>\n 01  WS-Current-Time.\n*> From accept xx from microsecond-time 8 chars but only 6 is more than likely created\n     03 CDT-Hour         PIC 9(2).  *> chgd to use only 2 Mill as original produces nothing\n     03 CDT-Minutes      PIC 9(2).\n     03 CDT-Seconds      PIC 9(2).\n     03 CDT-Mill         pic 9(8).\n*>\n 01  WS-Email-Data.\n     03  WS-Email-Command pic x(768).\n     03  WS-Email-Subject pic x(256).\n     03  WS-Email-Body    pic x(256).\n\n 01  ws-data.\n*>\n*>  These three are for email processing only\n*>\n     03  WS-Email-Set    pic 9           value zero.   *> Set to 1 if sending email.\n         88  WS-Send-Emails              value 1.      *>  or should it be instead !!!\n     03  WS-Sleep        pic 9           value 3.      *> at EOJ in secs to allow all emails to be issued\n*>                                                        to the email client.\n     03  WS-Emails-Both  pic 9           value 1.      *> Set to zero if only emails issued.\n         88  WS-Emails-Only              value zero.\n     03  WS-Email-Sent   pic 9           value zero.  *> set to 1 = emails have been sent\n*>\n     03  PP-Email-File.\n         05  filler      pic X(12)       value \"sl930-Email-\".\n         05  PP-Emails-Time\n                         pic 9(14)       value zeros.\n*>\n     03  Test-Product.\n         05  filler      pic x.\n             88  il-comment              value \"/\".\n         05  filler      pic x(6).\n     03  WS-Reply        pic x.\n     03  PRT-Status      pic 99.\n     03  print-path      pic x.\n     03  a               pic 99.\n     03  c-check         pic 9.\n         88  c-exists                    value 1.\n     03  address-line    pic x(36).\n     03  work-n          pic 9(6)v99.\n     03  work-v          pic 9(6)v99.\n     03  i               pic 99.\n     03  ii              pic 99.\n     03  j               pic 99.\n     03  k               pic 99.\n     03  kk              pic 99.\n     03  ws-Time         pic 9(8)        value zero.\n     03  first-time      pic x           value \"Y\".\n     03  h1              pic 99.  *> Co name  max 32\n     03  h2              pic 99.  *> Addr 1   max 24\n     03  h3              pic 99.  *> Addr 2   max 24\n     03  h4              pic 99.  *> Addr 3   max 24\n     03  h5              pic 99.  *> Addr 4   max 24\n     03  h6              pic 99.  *> Postcode max 12\n     03  h7              pic 99.  *> Country  max 24\n     03  h97             binary-char.\n     03  h98             binary-char.\n     03  h99             binary-char.\n*>\n 01  ws-Test-Date            pic x(10).\n 01  ws-date-formats.\n     03  ws-swap             pic xx.\n     03  ws-Conv-Date        pic x(10).\n     03  ws-date             pic x(10).\n     03  ws-UK redefines ws-date.\n         05  ws-days         pic xx.\n         05  filler          pic x.\n         05  ws-month        pic xx.\n         05  filler          pic x.\n         05  ws-year         pic x(4).\n     03  ws-USA redefines ws-date.\n         05  ws-usa-month    pic xx.\n         05  filler          pic x.\n         05  ws-usa-days     pic xx.\n         05  filler          pic x.\n         05  filler          pic x(4).\n     03  ws-Intl redefines ws-date.\n         05  ws-intl-year    pic x(4).\n         05  filler          pic x.\n         05  ws-intl-month   pic xx.\n         05  filler          pic x.\n         05  ws-intl-days    pic xx.\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n 01  Error-Messages.\n*> System Wide\n     03  SL003          pic x(28) value \"SL003 Hit Return To Continue\".\n*> Module specific\n     03  SL200          pic x(37) value \"SL200 Re-Align Invoice To Top Of Form\".  *> Matrix type printers only\n     03  SL201          pic x(34) value \"SL201 Error creating Email file - \".\n     03  SL202          pic x(25) value \"SL202 Hit return to Abort\".\n*>\n 01  error-code          pic 999.\n*>\n 01  Line-Company-Details           value spaces.\n     03  line-Company-Details1 pic x(91).\n     03  line-Company-Details2 pic x(91).\n     03  line-Company-Details3 pic x(91).\n     03  line-Company-Details4 pic x(91).\n     03  line-Company-Details5 pic x(91).\n     03  line-Company-Details6 pic x(91).\n     03  line-Company-Details7 pic x(91).\n     03  line-Company-Details8 pic x(91).  *> VAT # line\n*>\n 01  line-0-a.\n*> line 1 - 14\n*>     03  filler          pic x(44)       value spaces.\n     03  l0-type         pic x(14).\n*>\n 01  line-0-b.\n*> line 2 - 14\n*>     03  filler          pic x(44)       value spaces.\n     03  l0-xs           pic x(14).\n*>\n 01  line-0-c.\n*> line 3 - 62\n     03  filler          pic x(37)       value spaces.\n     03  l0-desc         pic x(25).\t\t\t*> not a vat inv notice\n*>\n 01  line-0-d.\n*> line 5  85 chars\n     03  filler          pic x(25)       value spaces.\n     03  l3-title        pic x(7)        value \"INVOICE\".\n     03  filler          pic x(25)       value spaces.\n     03  filler          pic x(5)        value \"Page \".\n     03  l7-count-1      pic 9.\n     03  filler          pic x(4)        value \" of \".\n     03  l7-count-2      pic 9.\n     03  filler          pic x           value space.\n     03  l3-date         pic x(10).\n     03  filler          pic x           value space.\n     03  l3-HH           pic 99.\n     03  filler          pic x           value \":\".\n     03  l3-MM           pic 99.\n*>\n 01  line-0-e.\n*> line 9  85 chars\n     03  filler          pic x(66)       value spaces.\n     03  filler          pic x(5)        value \"Inv: \".\n     03  l3-invoice      pic z(7)9.\n *>\n 01  line-1.\n*> line 10 - 65\n*>     03  filler          pic x(05)       value spaces.\n     03  l1-i-name       pic x(31).\n     03  filler          pic x(4)        value spaces.\n     03  l1-d-name       pic x(30).\n*>\n 01  line-2.\n*> line 11 - 72\n*>     03  filler          pic x(05)       value spaces.\n     03  l2-i-line       pic x(31).\n     03  filler          pic xxxx        value spaces.\n     03  l2-d-line       pic x(30).\n     03  filler          pic x(7)        value spaces.\n*>\n 01  line-3.\n*> line 12  88 chars\n*>     03  filler          pic x(05)       value spaces.\n     03  l3-i-line       pic x(31).\n     03  filler          pic xxxx        value spaces.\n     03  l3-d-line       pic x(30).\n     03  filler          pic x(5)        value spaces.\n     03  filler          pic x(7)        value \"Order:\".\n     03  l6-order        pic x(11).\n*>\n 01  line-4.\n*> line 13  88 chars\n*>     03  filler          pic x(05)       value spaces.\n     03  l4-i-line       pic x(31).\n     03  filler          pic xxxx        value spaces.\n     03  l4-d-line       pic x(30).\n     03  filler          pic x(5)        value spaces.\n     03  filler          pic x(7)        value \" Ref :\".\n     03  l4-ref          pic x(11).\n*>\n 01  line-5.\n*> line 14  84 chars\n*>     03  filler          pic x(05)       value spaces.\n     03  l5-i-line       pic x(31).\n     03  filler          pic xxxx        value spaces.\n     03  l5-d-line       pic x(30).\n     03  filler          pic x(5)        value spaces.\n     03  filler          pic x(7)        value \" A/C :\".\n     03  l6-account      pic x(7).\n*>\n 01  line-6.\n*> line 15 - 65\n*>     03  filler          pic x(05)       value spaces.\n     03  l6-i-line       pic x(31).\n     03  filler          pic xxxx        value spaces.\n     03  l6-d-line       pic x(30).\n*>\n 01  line-7.\n*> line 16-18 (3)\n     03  filler          pic x(72)       value spaces.\n*>\n 01  line-7B.\t\t\t*> plain invoice line heads - 87\n     03  filler          pic x(14)       value \"Product Code  \".\n     03  filler          pic x(30)       value \"Item Description\".\n     03  filler          pic x(6)        value \"   Qty\".\n     03  filler          pic x(10)       value \"      Cost\".\n     03  l7B-Disc        pic x(7)        value \"  Disc \".\t*> This should be clear when no disc\n     03  filler          pic x(10)       value \"      Net\".\n     03  filler          pic x(10)       value \"      Vat\".\n*>\n 01  line-8.\n*> line 19-33 (15)  87 chars but should be 89 (desc x32)\n     03  l8-product      pic x(13)B      value spaces.\n     03  l8-desc         pic x(30).                          *> 44  Chopped last 2\n     03  l8-qty          pic z(5)9       blank when zero.    *> 50\n     03  l8-unit         pic z(6)9.99    blank when zero.    *> 60\n     03  l8-discount     pic zz9.99      blank when zero.    *> 66\n     03  l8-percent      pic x.\t\t\t\t     *> 67\n     03  l8-net          pic z(6)9.99    blank when zero.      *> 77\n     03  l8-vat          pic z(6)9.99    blank when zero.      *> 87\n*>\n 01  line-9.\n*> line 35,37  87 chars\n     03  l9-terms        pic x(14)       value \"Credit Terms: \".   *> blank when not used.\n     03  l9-days         pic zz9         blank when zero.\n     03  filler          pic x(24)       value spaces.\t\t*> 41\n     03  l9-desc         pic x(24).\t\t\t\t*> 65\n     03  l9-net          pic -(7)9.99    blank when zero.\t\t*> 76\n     03  l9-vat          pic -(7)9.99    blank when zero.\t\t*> 87\n*>\n 01  line-10.\n*> line 40\n     03  filler          pic x(14)       value spaces.\n     03  l10-terms       pic x(16)       value \"Prompt pay time:\".\n     03  l10-days        pic zz9         blank when zero.\n*>\n 01  line-11.\n*> line 41 - 87\n     03  filler          pic x(13)       value spaces.\n     03  l11-amount      pic zzz9.99     blank when zero.\t*> 20\n     03  filler          pic x(45)       value spaces.\t\t*> 65\n     03  l11-net         pic z(7)9.99    blank when zero.\t\t*> 76\n     03  l11-vat         pic z(7)9.99    blank when zero.\t\t*> 87\n*>\n 01  line-12.\n*> line 43\n     03  filler          pic x(65)       value spaces.\n     03  l10-Gross-Lit   pic x(11)       value \"Total Due: \".\n     03  l10-gross       pic z(7)9.99.\n*>\n linkage section.\n*>***************\n*>\n copy \"wscall.cob\".\n copy \"wssystem.cob\".\n copy \"wsnames.cob\".\n*>\n 01  to-day              pic x(10).\n*>\n procedure division using ws-calling-data\n                          system-record\n                          to-day\n                          file-defs.\n*>=======================================\n*>\n init01 section.\n     if       full-invoicing = zero    *> invoicing NOT turned on\n              goback                   *>  in Set up params.\n     end-if\n*>\n*> Force Esc, PgUp, PgDown, PrtSC to be detected\n     set      ENVIRONMENT \"COB_SCREEN_EXCEPTIONS\" to \"Y\".\n     set      ENVIRONMENT \"COB_SCREEN_ESC\" to \"Y\".\n*>\n*> 18/02/2023 SPECIAL CODE FOR TESTING (FILE:) so that the print file is saved\n*>     NOT IN sl950  - also see in menu-return\n*>\n     if       Print-Spool-Name2 (1:5) not = \"FILE:\" and not = spaces  *> 18/2/23\n              move     Print-Spool-Name2 to PSN2\n      else   if Print-Spool-Name2 (1:5) = \"FILE:\"\n              move Print-Spool-Name2 (6:30) to PP-Print-File-Name.\n*>\n     move     1 to File-Key-No.\n     perform  zz070-Convert-Date.\n     perform  zz080-Setup-Company-Details.\n*>\n menu-return.\n*>***********\n*>\n     display  prog-name at 0101 with foreground-color 2 erase eos.\n     display  \"Invoice Printing\" at 0134 with foreground-color 2.\n     display  ws-date at 0171 with foreground-color 2.\n*>\n*>  advise printing to file if Print-Spool-Name2 (1:5) = \"FILE:\"\n*>\n     if       Print-Spool-Name2 (1:5) = \"FILE:\"\n              display \"Warning: Printing to File: \" at 0205 with foreground-color 3\n              display PP-Print-File-Name            at 0232.\n*>\n*>     display  \"You will need to manually spool 'prt-2'\" at 0320 with foreground-color 2 highlight.\n*>\n     perform  Invoice-Open.          *>  open     i-o    invoice-file.\n     if       fs-reply = 35              *> No invoice file/data yet so quit.\n              goback.\n     perform  Sales-Open-Input.          *> open input sales-file delivery-file.\n     perform  Delivery-Open-Input.\n     open     output print-file.\n*>\n     if       pass-value not = 3\n              go to  all-print-start.\n*>\n*> Print one invoice as immediate print requested in sl910.\n*>\n     subtract 1  from  next-invoice  giving  invoice-nos.\n     move     zero  to  item-nos.\n*>\n     move     1 to File-Key-No.\n     perform  Invoice-Read-Indexed.   *> read invoice-file  record invalid key\n     if       fs-reply not = zero\n              go to  main-end.\n*>\n     move     WS-Invoice-Record  to  sinvoice-header. *> To table\n*>\n     if       pending in sih-status\n       or     sih-status-L not = \"L\"     *> Invoice NOT printed.\n              perform  print-routine\n              go to    main-end.\n*>\n     display  \"Invoice Number - \" at 0501 with foreground-color 2.\n     display  sih-invoice at 0518 with foreground-color 3.\n     display  \"Already Invoiced!.....Re-Print  (Y/N) ? - [Y]\" at 0601 with foreground-color 2.\n*>\n     move     \"Y\"  to  ws-reply.\n     accept   ws-reply at 0644 with foreground-color 6 update.\n     move     function upper-case (ws-reply) to ws-reply.\n*>\n     if       ws-reply = \"Y\"\n              perform   print-routine.\n*>\n     display  \" \" at 0501 with erase eol.\n     display  \" \" at 0601 with erase eol.\n*>\n     go       to main-end.\n*>\n all-print-start.   *> Batch printing (normal)\n*>***************\n*>\n     display  \"Print Or Re-Print.............  (P/R) ? - [P]\" at 0701 with foreground-color 2.\n     move     \"P\"  to  print-path\n     accept   print-path at 0744 with foreground-color 6 update.\n     move     function upper-case (ws-reply) to ws-reply.\n*>\n     if       print-path = \"R\"\n              go to  all-print-get-inv.\n*>\n amend-request.\n*>\n     move     \"N\" to ws-reply.\n     display  \"Any Amended Invoices In This Batch? [N]\" at 0901 with foreground-color 2.\n     accept   ws-reply at 0938 with foreground-color 6 update.\n     move     function upper-case (ws-reply) to ws-reply.\n     if       ws-reply = \"Y\"\n              move zeros to first-sl-inv item-nos\n              go to all-print.\n     if       ws-reply not = \"N\"\n              go to amend-request.\n*>\n     if       first-sl-inv = zero\n              go to  all-print.\n*>\n     move     first-sl-inv  to  invoice-nos.\n*>\n all-print-go.\n*>\n     move     zero  to  first-sl-inv  item-nos.\n*>\n     move     1 to File-Key-No.\n     set      fn-Not-Less-Than to true.\n     perform  Invoice-Start.   *> start invoice-file key not < invoice-key.\n*>\n all-print.\n*>*********\n*>\n     perform  Invoice-Read-Next-Header.    *> read invoice-file next record at end\n     if       fs-reply = 10\n              go to  main-end.\n*>\n     if       item-nos not = zero\t*> find headers\n              go to  all-print.\n*>\n     move     WS-Invoice-Record  to  sinvoice-header. *> to Table\n*>\n     if       sih-lines = zero and\n              sapplied\n              go to all-print.\n*>\n     if       pending in sih-status\n              perform  print-routine\n              go to    all-print.\n*>\n     if       print-path = \"P\"\n              go to  all-print.\n*>\n*> Here is test to ensure that Invoices have NOT been printed before,\n*>  but is remed out for testing\n*>   and this test should go up above 'if pending' and/or that test\n*>    be modified\n*> Also the tests below really should be skipped as inv. printing is\n*>  not relevant to pick lists [ this one IS invoice printing ]\n*>\n*>     if       ih-status-L = \"L\"     *> Invoice printed.\n*>              go to All-Print.\n*>\n     display  \"Invoice Number - \" at 1101 with foreground-color 2.\n     display  sih-invoice at 1118 with foreground-color 3.\n     display  \"Already Invoiced!.....Re-Print  (Y/N) ? - [Y]\" at 1201 with foreground-color 2.\n*>\n     move     \"Y\"  to  ws-reply.\n     accept   ws-reply at 1244 with foreground-color 6.\n     move     function upper-case (ws-reply) to ws-reply.\n*>\n     if       ws-reply = \"Y\"\n              perform   Print-Routine.\n*>\n     display  \" \" at 1101 with erase eol.\n     display  \" \" at 1201 with erase eol.\n*>\n all-print-more.\n*>\n     display  \"More To Print? [Y]\" at 1101 with foreground-color 2.\n     move     \"Y\" to ws-reply.\n     accept   ws-reply at 1117 with foreground-color 6 update.\n     move     function upper-case (ws-reply) to ws-reply.\n     if       ws-reply = \"N\"\n              go to main-end.\n     if       ws-reply = \"Y\"\n              go to all-print-get-inv.\n*>\n     go       to all-print-more.\n*>\n all-print-get-inv.\n*>\n     display  \" \" at 1301 with erase eol.\n     move     zero to invoice-nos.\n     display  \"Give Lowest Invoice No. [        ]\" at 1301 with foreground-color 2.\n     accept   invoice-nos at 1326 with foreground-color 3 update.\n     go       to all-print-go.\n*>\n Main-End.\n*>********\n*>\n     perform  Invoice-Close.    *> close invoice-file sales-file delivery-file.\n     perform  Sales-Close.\n     perform  Delivery-Close.\n     close    Print-File.\n     if       Print-Spool-Name2 (1:5) not = \"FILE:\"  *> Need to keep the file\n              call     \"SYSTEM\" using print-report.\n*>\n*> Sleep for default seconds to allow time to send last emails\n*>",
+        "line": 322
+      },
+      {
+        "type": "IF",
+        "condition": "WS-Email-Sent = 1\n *>             call     \"C$SLEEP\" using WS-Sleep  *> allow a few seconds for email client to finish\n *>             call     \"CBL_DELETE_FILE\" using \"sl930-Email-*\".  *> remove the old email attachment files\n*>\n     if       pass-value = 3\n              move 1 to s-flag-i.\n     exit     program.\n*>\n Print-Routine           section.\n*>===============================\n*>\n     move     1  to  i.\n     perform  sih-lines times\n              perform  Invoice-Read-Next     *> read invoice-file next record at end\n              if       fs-reply = 10\n                       exit perform\n              end-if                         *> end-read\n              if   item-nos = zero\n                   exit perform\n              end-if\n              move WS-Invoice-Record to Invoice-Lines (i)\n              if   sil-type (i) = \"D\"  *> Should not happen (sl920 ?)\n                   exit perform\n              end-if\n              add  1  to  i\n     end-perform\n*>\n     subtract 1  from  i.                       *> Now i = sih-lines = # of item lines\n     move     spaces  to  line-0-a line-0-b line-0-c.\n*>\n     subtract 1 from i giving ii.\n     if       ii = 0\n              move 1 to ii.\n*>     divide   ii by  25  giving  l7-count-2.           *> was 15\n     divide   ii by  SL-Invoice-Lines  giving  l7-count-2.  *> 18/03/18\n     add      1  to  l7-count-2.\n     move     1  to  l7-count-1.\n*>\n*>     if       sih-type = 2                   *> Do not know why this here as it bypasses\n*>              go to  get-customer.           *>    other if tests\n*>\n     move           \"  =======\" to  l0-xs.\t*> for Invoices & receipts\n*>\n     if       sih-type = 1\n              move  \"  Receipt\"  to  l0-type\n     else\n      if      sih-Type = 2\n              move  \"  Invoice\"  to l0-Type\n      else\n       if     sih-type = 3\n              move  \"Credit Note\" to  l0-type\n              move  \"===========\" to  l0-xs\n       else\n              move  \"  Pro-Forma\" to  l0-type\n              move  \"  =========\" to  l0-xs\n              move \"This is not a VAT Invoice\" to l0-desc.\n*>\n get-customer.\n*>************\n*>\n     move     1 to File-Key-No.\n     move     sih-customer  to  WS-Sales-Key.\n     perform  Sales-Read-Indexed.           *> read     sales-file  record.\n*>\n*> Here added code for processing EMAILS - 27/06/23 3.02.23\n*>  1st create email file-name with unique name\n*>\n     initialise\n              WS-Current-Time.\n     accept   WS-Current-Time from TIME.  *> MICROSECOND-TIME. - not working\n     move     WS-Current-Time to PP-Emails-Time.\n     open     output Email-Print-File.\n     if       PRT-Status not = zero\n              display  SL201 at 1201 with erase eos\n              stop     SL202\n              close    Email-Print-File\n              go to    Main-End.\n*>\n     if       delivery-tag  >  zero\n              move  \"D\"          to WS-Deliv-Key-Type\n              move  WS-Sales-Key to WS-Deliv-Sales-Key\n              perform  Delivery-Read-Indexed.      *> read delivery-file record.\n*>\n     move     spaces to l1-i-name  l1-d-name l2-i-line  l2-d-line\n                        l3-i-line  l3-d-line l4-i-line  l4-d-line\n                        l5-i-line  l5-d-line l6-i-line  l6-d-line.\n*>\n     move     sales-name  to  l1-i-name.\n*>\n     move     1  to  a.\n     unstring sales-address  delimited by SL-Delim into  l2-i-line count a  pointer a.\n     unstring sales-address  delimited by SL-Delim into  l3-i-line count a  pointer a.\n     unstring sales-address  delimited by SL-Delim into  l4-i-line count a  pointer a.\n     unstring sales-address  delimited by SL-Delim into  l5-i-line count a  pointer a.\n     unstring sales-address  delimited by SL-Delim into  l6-i-line          pointer a.\n*>\n     if       delivery-tag = zero\n              go to  heading-details.\n*>\n     move     deliv-name  to  l1-d-name.\n*>\n     move     1  to  a.\n     unstring deliv-address  delimited by SL-Delim into  l2-d-line  count a  pointer a.\n     unstring deliv-address  delimited by SL-Delim into  l3-d-line  count a  pointer a.\n     unstring deliv-address  delimited by SL-Delim into  l4-d-line  count a  pointer a.\n     unstring deliv-address  delimited by SL-Delim into  l5-d-line  count a  pointer a.\n     unstring deliv-address  delimited by SL-Delim into  l6-d-line           pointer a.\n*>\n heading-details.\n*>***************\n*>\n     move     sih-invoice  to  l3-invoice.\n*>\n     move     sih-date  to  u-bin.\n     perform  zz060-Convert-Date.\n     move     ws-date  to  l3-date.\n*>\n     move     sih-customer  to  l6-account.\n     move     sih-ref       to  l4-ref.\n     move     sih-order     to  l6-order.\n*>\n     perform  headings-1.\n*>\n     move     1   to  k.\n     move     SL-Invoice-Lines to J.     *> Using SL-Invoice-Lines instead of fixed 25 or 15.\n*>     move     25  to  j.\t*> 15  to  j.  matrix values with sub & totals etc lets try\n*>\t\t\t\t   10 more as should fit a page  - TEST\n*>",
+        "line": 847
+      },
+      {
+        "type": "IF",
+        "condition": "il-comment\n              move spaces to line-8.\n*>\n     if       i-level-2\n              move  sil-description (k)  to  l8-desc.\n*>\n     if       il-comment\n              move zero to l8-qty l8-unit l8-discount l8-vat l8-net\n              go to print-bypass.\n*>\n     if       i-level-2\n              move  sil-qty  (k)     to  l8-qty\n              move  sil-unit (k)     to  l8-unit\n              move  sil-product (k)  to  l8-product\n              move  sil-discount (k) to  l8-discount\n     else\n              move  zero  to  l8-qty\n              move  zero  to  l8-unit\n              move  zero  to  l8-discount\n              move  spaces to l8-product.\n*>\n     if       i-level-2\n       and    sil-discount (k)  >  0\n              move  \"%\"       to l8-percent\n              move  \"  Disc \" to l7B-Disc\n     else\n              move  spaces   to l7B-Disc\n              move  space    to l8-percent.\n*>\n     move     sil-net (k)   to  l8-net.\n     move     sil-vat (k)   to  l8-vat.\n*>\n print-bypass.\n*>\n     write    Email-Print-Record  from  line-8 after 1.\n*>\n     add      sil-net (k)   to  work-n.\n     add      sil-vat (k)   to  work-v.\n     add      1  to  k.\n*>\n     if       k  >  i                                               *> # sih-lines = # line items 4 cust.\n*>              compute  k = ((l7-count-2 * 25)  -  i) + 2\t*> was 15\n              compute  k = ((l7-count-2 * SL-Invoice-Lines) - i) + 2        *> 25 was 15\n              go to  total-print.\n*>\n     if       k  >  j\n              move  k  to  kk\n              move  2  to  k\n*>              add  25  to  j\t\t                                    *> 15  to  j\n              add  SL-Invoice-Lines  to  j                          *> (see above) 25  to  j\n              add  1   to  l7-count-1\n              perform  total-print\n              move kk  to  k\n  *>            move  spaces  to  Email-Print-Record                *> THESE 2 NOT NEED FOR NON MATRIX\n  *>            write  Email-Print-Record  after 13  lines          *> & PRE-PRINTED STATIONERY\n              perform  headings-1.\n*>\n     go       to loop.\n*>\n total-print.\n*>**********\n*>\n     move     spaces  to  l9-desc.\n     move     work-n  to  l9-net\n     move     work-v  to  l9-vat.\n     move     sih-days to  l9-days.\n     if       sih-type = 2\n              move     \"Credit Terms: \" to l9-terms\n     else\n              move     spaces to L9-Terms.\n*>\n     write    Email-Print-Record from line-9 after k  lines.\n     move     zero   to l9-days.\n     move     spaces to l9-Terms.\n*>\n total-print-2.\n*>************\n*>\n     if       zero = sih-deduct-amt and sih-deduct-vat\n              write Email-Print-Record from line-7 after 1\n              go to total-print-3.\n*>\n     move     \"Late Payment Surcharge\" to l9-desc.\n     move     spaces         to l9-Terms.\n     move     sih-deduct-vat to l9-vat.\n     move     sih-deduct-amt to l9-net.\n*>\n     write    Email-Print-Record  from  line-9 after 1.\n     move     spaces  to l9-desc.\n*>\n total-print-3.\n*>************\n*>\n     if       Extra-Print = \"N\"\n         or   (zero = sih-extra and sih-e-vat)\n              write Email-Print-Record from line-7 after 1\n              go to total-print-4.\n*>\n     move     spaces      to l9-Terms.\n     move     Extra-Desc  to l9-desc.\n     move     sih-e-vat   to l9-vat.\n     move     sih-extra   to l9-net.\n*>\n     write    Email-Print-Record  from  line-9 after 1.\n*>\n total-print-4.\n*>************\n*>\n     move     spaces     to l9-Terms.\n     move     spaces     to l9-desc.\n     move     sih-c-vat  to l9-vat.\n     move     sih-carriage to l9-net.\n*>\n     write    Email-Print-Record  from  line-9 after 2  lines.\n*>\n     if       sales-credit = zero\n              move  zero  to  l10-days\n                              l11-amount\n              move spaces to  l10-Terms\n     else\n              move \"Prompt pay time:\" to L10-Terms\n              move  sih-deduct-days  to  l10-days.\n*>\n     if       sih-deduct-amt = zero\n              move spaces to  l10-terms\n              move  zero  to  l10-days.\n*>\n     add      sih-deduct-amt  sih-deduct-vat                   giving  l11-amount.\n     add      sih-vat  sih-e-vat  sih-c-vat  sih-deduct-vat    giving  l11-vat.\n     add      sih-net  sih-extra  sih-carriage  sih-deduct-amt giving  l11-net.\n     add      sih-vat  sih-e-vat  sih-c-vat  sih-deduct-vat\n              sih-net  sih-extra  sih-carriage  sih-deduct-amt giving  l10-gross.\n*>\n     write    Email-Print-Record  from  line-10 after 1.\n     write    Email-Print-Record  from  line-11 after 1.\n     write    Email-Print-Record  from  line-12 after 2.\n*>\n     move     spaces  to  print-record\n                          Email-Print-Record.\n*>\n*> Omitted for plain paper or preprinted invoice not having a payslip section\n*>   at the bottom\n*>     write    Email-Print-Record after 5.\n*>\n     if       not sapplied\n              move \"I\" to sih-status\n              move \"L\" to sih-Status-L      *> Invoice printed.\n              move sinvoice-header to WS-Invoice-Record\n              perform Invoice-Rewrite.        *>  rewrite invoice-record.\n*>\n*> Copy email records to invoice printer\n*>\n     close    Email-Print-File.\n*>\n*> CURRENTLY WILL send an invoice if doing email - JIC email not the same was payment dept. etc.\n*>\n*> Could have a test if going to do an email and WS-Emails-Only set do NOT do up to end-perform:\n*>\n     open     input Email-Print-File\n     perform  forever\n              read     Email-Print-File at end\n                       close    Email-Print-File\n                       exit perform\n              end-read\n              write    Print-Record from Email-Print-Record\n     end-perform.\n*>\n*> Before this step you could convert these files to a .PDF file with the same name\n*>  but ending in .pdf say using prtpdf script, and if so modify the zz090 routine\n*>   that match it doing this prior to the perform zz090-Issue-Email.\n*>\n     if       WS-Send-Emails\n        and   Sales-Email (1:8) not = spaces\n        and   Email-Invoicing\n              perform zz090-Issue-Email\n              move    1 to WS-Email-Sent.\n*>\n main-exit.   exit section.\n*>********    ****\n*>\n Headings-1                section.\n*>================================\n*>\n*> May need to change this first block depending on page layout/size etc\n*>   and the business headings printed if not using preprinted stationary.\n*>  with the first-time test\n*>\n     accept   ws-Time from time.       *> This time info so that dup inv can\n     move     ws-Time (1:2) to l3-HH.  *> be found when reading the o/p to\n     move     ws-Time (3:2) to l3-MM.  *> ensure only the latest is sent.\n*>                                        THIS IS A MANUAL PROCESS:\n     if       SL-Comp-Inv \t\t\t*> print Bus. address details\n              if      first-time = \"Y\"          *> Dont print a blank page\n                      write Email-Print-Record from line-Company-Details1 after 1\n              else\n                      write Email-Print-Record from line-Company-Details1 after page\n              end-if\n              write Email-Print-Record from line-Company-Details2 after 1\n              write Email-Print-Record from line-Company-Details3 after 1\n              write Email-Print-Record from line-Company-Details4 after 1\n              write Email-Print-Record from line-Company-Details5 after 1\n              write Email-Print-Record from line-Company-Details6 after 1\n              write Email-Print-Record from line-Company-Details7 after 1\n              if    VAT-Reg-Number (1:4) not = spaces\n                    write Email-Print-Record from line-Company-Details8 after 1\n              end-if\n              write Email-Print-Record from line-0-a after 1\n     end-if\n     if       not SL-Comp-Inv\n              if      first-time = \"Y\"\n                      write    Email-Print-Record  from  line-0-a after 4\n              else\n                      move spaces to print-record\n                      write Email-Print-Record after page\n                      write Email-Print-Record from line-0-a after 4\n              end-if\n     end-if\n*>\n     write    Email-Print-Record  from  line-0-b after 1.\n     write    Email-Print-Record  from  line-0-c after 2.\n     write    Email-Print-Record  from  line-0-d after 1.\n     write    Email-Print-Record  from  line-0-e after 2.\n     write    Email-Print-Record  from  line-1 after 1.\n     write    Email-Print-Record  from  line-2 after 1.\n     write    Email-Print-Record  from  line-3 after 1.\n     write    Email-Print-Record  from  line-4 after 1.\n     write    Email-Print-Record  from  line-5 after 1.\n     write    Email-Print-Record  from  line-6 after 1.\n     write    Email-Print-Record  from  line-7 after 2.\n     write    Email-Print-Record  from  line-7B after 1.\t*> Line heads for plain invoices\n*>\n     if       first-time not = \"Y\"\n              go to  main-exit.\n*>\n*>  This block is not needed if you spool to a laser/inkjet that uses\n*>   single sheet paper.\n*>   Otherwise unremark (remove the '*>' tags) for this block that contains\n*>    Cobol lines if using a Line or matrix type printer ONLY with continuous\n*>     invoice stationery so that you can align the paper correctly.\n*>     but not for inkjet, lasers or other similar printers as there is nothing\n*>     to align.\n*>  REMOVE THE \"*>\" for the next 18 lines if needed.\n*>     display  \"Invoice Correctly Aligned.....  (Y/N) ? - [Y]\" at 1401 with foreground-color 2.\n*>\n*>     move     \"Y\"  to  ws-reply.\n*>     accept   ws-reply at 1444 with foreground-color 6 update.\n*>     move     function upper-case (ws-reply) to ws-reply.\n*>\n*>     if       ws-reply = \"Y\"\n*>              go to  main-end.\n*>\n*>     display  SL200  at 1601 with foreground-color 2.\n*>     display  SL003  at 1801 with foreground-color 2.\n*>\n*>     accept   ws-reply at 1831.\n*>     display  \" \" at 1401 with erase eol.\n*>     display  \" \" at 1601 with erase eol.\n*>     display  \" \" at 1801 with erase eol.\n*>\n*>     go       to headings-1.\n*>\n main-pre-end.\n*>***********\n*>\n     move     \"N\"  to  first-time.\n*>\n main-exit.   exit section.\n*>\n zz060-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in binary to UK/USA/Intl date format\n*>****************************************************\n*> Input:   u-bin\n*> output:  ws-date as uk/US/Inlt date format\n*>          u-date & ws-Date = spaces if invalid date\n*>\n     perform  maps04.\n     if       u-date = spaces\n              move spaces to ws-Date\n              go to zz060-Exit.\n     move     u-date to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz060-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz060-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     u-date (7:4) to ws-Intl-Year.\n     move     u-date (4:2) to ws-Intl-Month.\n     move     u-date (1:2) to ws-Intl-Days.\n*>\n zz060-Exit.\n     exit     section.\n*>\n zz070-Convert-Date        section.\n*>********************************\n*>\n*>  Converts date in to-day to UK/USA/Intl date format\n*>****************************************************\n*> Input:   to-day\n*> output:  ws-date as uk/US/Inlt date format\n*>\n     move     to-day to ws-date.\n*>\n     if       Date-Form = zero\n              move 1 to Date-Form.\n     if       Date-UK\n              go to zz070-Exit.\n     if       Date-USA                *> swap month and days\n              move ws-days to ws-swap\n              move ws-month to ws-days\n              move ws-swap to ws-month\n              go to zz070-Exit.\n*>\n*> So its International date format\n*>\n     move     \"ccyy/mm/dd\" to ws-date.  *> swap Intl to UK form\n     move     to-day (7:4) to ws-Intl-Year.\n     move     to-day (4:2) to ws-Intl-Month.\n     move     to-day (1:2) to ws-Intl-Days.\n*>\n zz070-Exit.\n     exit     section.\n*>\n zz080-Setup-Company-Details section.\n*>**********************************\n*>\n*>  This block is for NOT using preprinted stationary - Invoices.\n*>  also see headings-1 but remarked out the perform lines of headings-1\n*>   if not needed.\n*>\n*> >>>>> CODE CHANGED SO NEED TO TEST THIS BLOCK  26/06/23\n*>\n*>  First get no. of chars in each field\n*>\n     if       not SL-Comp-Inv \t\t\t*> test if company heads are wanted\n              exit section.\n*>\n     move     spaces to Line-Company-Details.\n*>\n *>    perform  varying h1 from 32 by -1 until h1 = 1\n *>                                      or     usera (h1:1) not = space\n *>             continue\n *>    end-perform\n *>    perform  varying h2 from 24 by -1 until h2 = 1\n *>                                      or Address-1 (h2:1) not = space\n *>             continue\n *>    end-perform\n *>    perform  varying h3 from 24 by -1 until h3 = 1\n *>                                      or Address-2 (h3:1) not = space\n *>             continue\n *>    end-perform\n *>    perform  varying h4 from 24 by -1 until h4 = 1\n *>                                      or Address-3 (h4:1) not = space\n *>             continue\n *>    end-perform\n *>    perform  varying h5 from 24 by -1 until h5 = 1\n *>                                      or Address-4 (h5:1) not = space\n *>             continue\n *>    end-perform\n *>    perform  varying h6 from 12 by -1 until h6 = 1\n *>                                      or Post-Code (h6:1) not = space\n *>             continue\n *>    end-perform\n *>    perform  varying h7 from 24 by -1 until h7 = 1\n *>                                      or Country   (h7:1) not = space\n *>             continue\n *>    end-perform\n*>\n *>    divide   91 by 2 giving h98.      *> size of print lines here = 45, yes I know its rounded down\n*>\n *>    divide   h1 by 2 giving h99.\n *>    add      1  to h99.\n *>    move     usera     (1:h1) to line-Company-Details1 (h98 - h99:h1).\n *>    divide   h2 by 2 giving h99.\n *>    add      1  to h99.\n *>    move     Address-1 (1:h2) to line-Company-Details2 (h98 - h99:h2).\n *>    divide   h3 by 2 giving h99.\n *>    add      1  to h99.\n *>    move     Address-2 (1:h3) to line-Company-Details3 (h98 - h99:h3).\n *>    divide   h4 by 2 giving h99.\n *>    add      1  to h99.\n *>    move     Address-3 (1:h4) to line-Company-Details4 (h98 - h99:h4).\n *>    divide   h5 by 2 giving h99.\n *>    add      1  to h99.\n *>    move     Address-4 (1:h5) to line-Company-Details5 (h98 - h99:h5).\n *>    divide   h6 by 2 giving h99.\n *>    add      1  to h99.\n *>    move     Post-Code (1:h6) to line-Company-Details6 (h98 - h99:h6).\n *>    divide   h7 by 2 giving h99.\n *>    add      1  to h99.\n *>    move     Country   (1:h7) to line-Company-Details7 (h98 - h99:h7).\n*>\n*>  Use C$JUSTIFY instead of all this coding.\n*>\n     move     Usera     to Line-Company-Details1.\n     move     Address-1 to line-Company-Details2.\n     move     Address-2 to line-Company-Details3.\n     move     Address-3 to line-Company-Details4.\n     move     Address-4 to line-Company-Details5.\n     move     Post-Code to line-Company-Details6.\n     move     Country   to line-Company-Details7.\n*> Backflow - simple !\n     if       Line-Company-Details4 (1:20) = spaces\n              move Line-Company-Details5 to Line-Company-Details4\n              move Line-Company-Details6 to Line-Company-Details5\n              move Line-Company-Details7 to Line-Company-Details6\n              move spaces to Line-Company-Details7.\n     if       Line-Company-Details5 (1:20) = spaces\n              move Line-Company-Details6 to Line-Company-Details5\n              move Line-Company-Details7 to Line-Company-Details6\n              move spaces to Line-Company-Details7.\n     if       Line-Company-Details6 (1:20) = spaces\n              move Line-Company-Details7 to Line-Company-Details6\n              move spaces to Line-Company-Details7.\n*>\n     call     \"C$JUSTIFY\" using Line-Company-Details1 \"C\".\n     call     \"C$JUSTIFY\" using Line-Company-Details2 \"C\".\n     call     \"C$JUSTIFY\" using Line-Company-Details3 \"C\".\n     call     \"C$JUSTIFY\" using Line-Company-Details4 \"C\".\n     call     \"C$JUSTIFY\" using Line-Company-Details5 \"C\".\n     if       Line-Company-Details6 (1:10) not = spaces\n              call     \"C$JUSTIFY\" using Line-Company-Details6 \"C\".\n     if       Line-Company-Details7 (1:10) not = spaces\n              call     \"C$JUSTIFY\" using Line-Company-Details7 \"C\".\n*>\n*> Vat detail line and is required for invoices in the UK and EU\n*>   Change  chars \"GB\" to match your country if needed.\n*>\n     if       VAT-Reg-Number (1:4) not = spaces\n              string   \"VAT Number: GB\"   delimited by size *> chg if country different from UK\n                       VAT-Reg-Number     delimited by size  *>  to match up with yours.\n                        into line-Company-Details8\n              end-string\n              CALL \"C$JUSTIFY\" using line-Company-Details8, \"C\".\n*>\n zz080-Exit.  Exit Section.\n*>*********\n*>\n zz090-Issue-Email  section.\n*>*************************\n*>\n*> This one for mailx, YOU MUST SET UP the password and/or other credentials\n*>  for this email address to your email service provider via the configuration\n*>  files usually stored in the *nix /etc folder for this to work.\n*>\n     move     spaces to WS-Email-Data.\n     string   \"Your invoice from \"        delimited by size\n              FUNCTION TRIM (Suser TRAILING)\n              \" \"                         delimited by size\n              \"is attached. Should you have any problems with this please email admin at: \"\n              FUNCTION TRIM (Company-Email TRAILING)\n              \". We thank you for your business and we hope to see you again soon.\" delimited by size\n                             into WS-Email-Body.\n     string   \"'Your new Invoice from \"   delimited by size\n              FUNCTION TRIM (Suser TRAILING)\n              \"'\"                         delimited by size\n                             into WS-Email-Subject.\n*>\n     STRING   \"echo \"\n              FUNCTION TRIM (WS-Email-Body TRAILING)\n              \" | mailx -r \"              delimited by size\n              FUNCTION TRIM (Company-Email TRAILING)\n              \" -s \"                      delimited by size\n              FUNCTION TRIM (WS-Email-Subject TRAILING)\n              \" -a \"                      delimited by size\n              FUNCTION TRIM (PP-Email-File TRAILING)\n              \" \"                         delimited by size\n              FUNCTION TRIM (Sales-Email TRAILING)\n              x\"00\"                       DELIMITED BY SIZE\n                     INTO WS-Email-Command.\n     call     \"SYSTEM\" using WS-Email-Command.\n     if       Return-Code not = zeros\n              display \"Email process is reporting failure - \" Return-Code.\n*>\n*> Example using mutt : Again assumes you have set up the config files for it.\n*>\n*> STRING \"echo \"\n*>        FUNCTION TRIM (WS-Email-Body TRAILING)\n*>        \" | mutt \" DELIMITED BY SIZE\n*>        \" -s '\"    DELIMITED BY SIZE\n*>        FUNCTION TRIM (WS-Email-Subject TRAILING)\n*>        \"' -a \"    DELIMITED BY SIZE\n*>        FUNCTION TRIM (PP-Email-File TRAILING)\n*>        \" -- \"     DELIMITED BY SIZE\n*>        FUNCTION TRIM (Sales-Email TRAILING)\n*>        INTO WS-EMAIL-COMMAND.\n*>\n*>   There are a lot of others to choice from including claws.\n*>\n zz090-Exit.  exit section.\n*>\n maps04       section.\n*>*******************\n*>\n     call     \"maps04\"  using  maps03-ws.\n*>\n maps04-exit.\n     exit     section.\n*>\n copy \"Proc-ACAS-FH-Calls.cob\".\n*>",
+        "line": 981
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 22,
+    "cognitive": 8,
+    "halstead": {
+      "uniqueOperators": 2,
+      "uniqueOperands": 117,
+      "totalOperators": 96,
+      "totalOperands": 190,
+      "vocabulary": 119,
+      "length": 286,
+      "volume": 1971.917880306072
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

@@ -1,0 +1,672 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/acas015.cbl",
+  "fileName": "acas015.cbl",
+  "timestamp": "2025-09-15T16:25:34.936Z",
+  "programId": "acas015",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "input-output",
+        "line": 235
+      },
+      {
+        "name": "file",
+        "line": 241
+      },
+      {
+        "name": "working-storage",
+        "line": 245
+      },
+      {
+        "name": "Linkage",
+        "line": 265
+      },
+      {
+        "name": "aa-Process-Flat-File",
+        "line": 286
+      },
+      {
+        "name": "ba-Process-RDBMS",
+        "line": 587
+      },
+      {
+        "name": "exit",
+        "line": 664
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "file-control",
+        "line": 236
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 283
+      },
+      {
+        "name": "aa010-main",
+        "line": 288
+      },
+      {
+        "name": "end-evaluate",
+        "line": 311
+      },
+      {
+        "name": "end-if",
+        "line": 319
+      },
+      {
+        "name": "end-evaluate",
+        "line": 356
+      },
+      {
+        "name": "aa020-Process-Open",
+        "line": 361
+      },
+      {
+        "name": "end-if",
+        "line": 392
+      },
+      {
+        "name": "aa030-Process-Close",
+        "line": 400
+      },
+      {
+        "name": "aa040-Process-Read-Next",
+        "line": 413
+      },
+      {
+        "name": "end-read",
+        "line": 436
+      },
+      {
+        "name": "aa045-Eval-Keys",
+        "line": 446
+      },
+      {
+        "name": "end-evaluate",
+        "line": 462
+      },
+      {
+        "name": "aa050-Process-Read-Indexed",
+        "line": 464
+      },
+      {
+        "name": "end-if",
+        "line": 482
+      },
+      {
+        "name": "aa060-Process-Start",
+        "line": 487
+      },
+      {
+        "name": "WE-Error",
+        "line": 493
+      },
+      {
+        "name": "aa070-Process-Write",
+        "line": 535
+      },
+      {
+        "name": "end-write",
+        "line": 543
+      },
+      {
+        "name": "aa080-Process-Delete",
+        "line": 546
+      },
+      {
+        "name": "end-delete",
+        "line": 553
+      },
+      {
+        "name": "aa090-Process-Rewrite",
+        "line": 556
+      },
+      {
+        "name": "aa100-Bad-Function",
+        "line": 568
+      },
+      {
+        "name": "aa999-main-exit",
+        "line": 575
+      },
+      {
+        "name": "end-if",
+        "line": 578
+      },
+      {
+        "name": "aa-main-exit",
+        "line": 580
+      },
+      {
+        "name": "aa-Exit",
+        "line": 584
+      },
+      {
+        "name": "ba010-Test-WS-Rec-Size",
+        "line": 595
+      },
+      {
+        "name": "ba012-Test-WS-Rec-Size-2",
+        "line": 603
+      },
+      {
+        "name": "end-if",
+        "line": 643
+      },
+      {
+        "name": "ba015-Test-Ends",
+        "line": 645
+      },
+      {
+        "name": "end-call",
+        "line": 659
+      },
+      {
+        "name": "ba-rdbms-exit",
+        "line": 663
+      },
+      {
+        "name": "ACAS-DAL-Common-data",
+        "line": 671
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "analMT",
+        "line": 655,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data",
+          "WS-Analysis-Record",
+          "end-call"
+        ]
+      },
+      {
+        "target": "fhlogger",
+        "line": 670,
+        "type": "DYNAMIC",
+        "using": [
+          "File-Access",
+          "ACAS-DAL-Common-data"
+        ]
+      }
+    ],
+    "copies": [
+      {
+        "name": "ws-PA-Code",
+        "line": 141,
+        "replacing": null
+      },
+      {
+        "name": "*>",
+        "line": 177,
+        "replacing": null
+      },
+      {
+        "name": "of",
+        "line": 226,
+        "replacing": null
+      },
+      {
+        "name": "envdiv",
+        "line": 233,
+        "replacing": null
+      },
+      {
+        "name": "selanal",
+        "line": 238,
+        "replacing": null
+      },
+      {
+        "name": "fdanal",
+        "line": 243,
+        "replacing": null
+      },
+      {
+        "name": "wsanal",
+        "line": 267,
+        "replacing": null
+      },
+      {
+        "name": "wssystem",
+        "line": 269,
+        "replacing": null
+      },
+      {
+        "name": "wsfnctn",
+        "line": 271,
+        "replacing": null
+      },
+      {
+        "name": "wsnames",
+        "line": 273,
+        "replacing": null
+      },
+      {
+        "name": "Test-Data-Flags",
+        "line": 275,
+        "replacing": null
+      },
+      {
+        "name": "the",
+        "line": 466,
+        "replacing": null
+      }
+    ],
+    "performs": [
+      {
+        "target": "ba-Process-RDBMS",
+        "thru": null,
+        "line": 143
+      },
+      {
+        "target": "ba-Process-RDBMS",
+        "thru": null,
+        "line": 317
+      },
+      {
+        "target": "ba012-Test-WS-Rec-Size-2",
+        "thru": null,
+        "line": 323
+      },
+      {
+        "target": "aa999-main-exit",
+        "thru": null,
+        "line": 407
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 410
+      },
+      {
+        "target": "aa045-Eval-keys",
+        "thru": null,
+        "line": 469
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 577
+      },
+      {
+        "target": "Ca-Process-Logs",
+        "thru": null,
+        "line": 627
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "6",
+        "to": "WS-Log-System",
+        "line": 292
+      },
+      {
+        "from": "12",
+        "to": "WS-Log-File-No",
+        "line": 293
+      },
+      {
+        "from": "998",
+        "to": "WE-Error       *> file seeks key type out of range        998\n                       move 99 to fs-reply\n                       go   to aa999-main-exit\n                end-if\n              when     8  *> fn-delete\n                if     File-Key-No not = 1        *> 1  is only for RDB as Cobol does it on primary key\n                       move 996 to WE-Error       *> file seeks key type out of range        996\n                       move 99 to fs-reply\n                       go   to aa999-main-exit\n                end-if\n     end-evaluate",
+        "line": 301
+      },
+      {
+        "from": "RDBMS-Flat-Statuses",
+        "to": "FA-RDBMS-Flat-Statuses    *> needed for DAL? not JC/dbpre versions\n              perform ba-Process-RDBMS                                *>  Can't hurt\n              go to AA-Main-Exit\n     end-if",
+        "line": 316
+      },
+      {
+        "from": "zero",
+        "to": "WE-Error\n *>  ?                      FS-Reply",
+        "line": 333
+      },
+      {
+        "from": "spaces",
+        "to": "SQL-Err SQL-Msg SQL-State",
+        "line": 335
+      },
+      {
+        "from": "spaces",
+        "to": "WS-File-Key",
+        "line": 362
+      },
+      {
+        "from": "201",
+        "to": "WS-No-Paragraph",
+        "line": 363
+      },
+      {
+        "from": "35",
+        "to": "fs-Reply\n                   close Analysis-File\n                   go to aa999-Main-Exit\n              end-if\n      else\n       if     fn-i-o\n              open i-o Analysis-File\n              if       fs-reply not = zero\n                       close       Analysis-File\n                       open output Analysis-File           *> Doesnt create in i-o\n                       close       Analysis-File\n                       open i-o    Analysis-File\n              end-if\n       else\n        if    fn-output\n              open output Analysis-File         *> caller should check fs-reply\n        else\n         if   fn-extend                      *> Must not be used for ISAM files\n*>              open extend Analysis-File\n              move 997 to WE-Error\n              move 99  to FS-Reply\n              go to aa999-main-exit\n         end-if\n        end-if\n       end-if\n     end-if",
+        "line": 367
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply WE-Error",
+        "line": 393
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 394
+      },
+      {
+        "from": "999",
+        "to": "WE-Error",
+        "line": 397
+      },
+      {
+        "from": "202",
+        "to": "WS-No-Paragraph",
+        "line": 401
+      },
+      {
+        "from": "spaces",
+        "to": "WS-File-Key",
+        "line": 402
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply WE-Error",
+        "line": 404
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 405
+      },
+      {
+        "from": "zero",
+        "to": "File-Function\n                       Access-Type",
+        "line": 408
+      },
+      {
+        "from": "203",
+        "to": "WS-No-Paragraph",
+        "line": 418
+      },
+      {
+        "from": "10",
+        "to": "FS-Reply\n                         WE-Error\n              move spaces to PA-Code\n                             SQL-Err\n                             SQL-Msg\n              stop \"Cobol File EOF\"               *> for testing\n              go to aa999-main-exit\n     end-if\n*>\n     read     Analysis-File next record at end\n              move 10 to we-error fs-reply        *> EOF\n              set Cobol-File-EoF to true\n              move 1 to Cobol-File-Status         *> JIC above dont work :)\n              initialize Analysis-Record\n              move \"EOF\" to WS-File-Key           *> for logging\n              go to aa999-main-exit\n     end-read",
+        "line": 420
+      },
+      {
+        "from": "Analysis-Record",
+        "to": "WS-Analysis-Record",
+        "line": 439
+      },
+      {
+        "from": "PA-Code",
+        "to": "WS-File-Key",
+        "line": 440
+      },
+      {
+        "from": "zeros",
+        "to": "WE-Error",
+        "line": 441
+      },
+      {
+        "from": "WS-PA-Code",
+        "to": "WS-File-Key\n                                                                  PA-Code\n                              when   other\n                                     move   spaces             to WS-File-Key\n                    end-evaluate\n              when  other\n                    move   spaces             to WS-File-Key\n     end-evaluate",
+        "line": 455
+      },
+      {
+        "from": "204",
+        "to": "WS-No-Paragraph",
+        "line": 468
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 470
+      },
+      {
+        "from": "PA-Code",
+        "to": "WS-File-Key",
+        "line": 471
+      },
+      {
+        "from": "21",
+        "to": "we-error fs-reply\n              end-read\n              if       fs-Reply = zero\n                       move     Analysis-Record to  WS-Analysis-Record\n              else\n                       move     spaces     to  WS-Analysis-Record\n              end-if\n              go       to aa999-main-exit\n     end-if",
+        "line": 474
+      },
+      {
+        "from": "998",
+        "to": "WE-Error       *> file seeks key type out of range but should never get here       998\n     move     99 to fs-reply\n     go       to aa999-main-exit",
+        "line": 483
+      },
+      {
+        "from": "205",
+        "to": "WS-No-Paragraph",
+        "line": 491
+      },
+      {
+        "from": "zeros",
+        "to": "fs-reply\n                       WE-Error",
+        "line": 492
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 494
+      },
+      {
+        "from": "WS-PA-Code",
+        "to": "PA-Code",
+        "line": 495
+      },
+      {
+        "from": "PA-Code",
+        "to": "WS-File-Key",
+        "line": 496
+      },
+      {
+        "from": "998",
+        "to": "WE-Error                     *> 998 Invalid calling parameter settings\n              go to aa999-main-exit\n     end-if\n*>\n*>  Now do Start primary key before read-next\n*>\n     if       File-Key-No = 1\n        and   fn-equal-to\n              start Analysis-File key = PA-Code invalid key\n                    move 21 to Fs-Reply\n                    go to aa999-main-exit\n              end-start\n     end-if\n     if       File-Key-No = 1\n        and   fn-less-than\n              start Analysis-File key < PA-Code invalid key\n                    move 21 to Fs-Reply\n                    go to aa999-main-exit\n              end-start\n     end-if\n     if       File-Key-No = 1\n        and   fn-greater-than\n              start Analysis-File key > PA-Code invalid key\n                    move 21 to Fs-Reply\n                    go to aa999-main-exit\n              end-start\n     end-if\n     if       File-Key-No = 1\n        and   fn-not-less-than\n              start Analysis-File key not < PA-Code invalid key\n                    move 21 to Fs-Reply\n                    go to aa999-main-exit\n              end-start\n     end-if\n     go       to aa999-main-exit",
+        "line": 499
+      },
+      {
+        "from": "206",
+        "to": "WS-No-Paragraph",
+        "line": 536
+      },
+      {
+        "from": "WS-Analysis-Record",
+        "to": "Analysis-Record",
+        "line": 537
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 538
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 539
+      },
+      {
+        "from": "PA-Code",
+        "to": "WS-File-Key",
+        "line": 540
+      },
+      {
+        "from": "22",
+        "to": "FS-Reply\n     end-write",
+        "line": 542
+      },
+      {
+        "from": "207",
+        "to": "WS-No-Paragraph",
+        "line": 547
+      },
+      {
+        "from": "WS-Analysis-Record",
+        "to": "Analysis-Record",
+        "line": 548
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 549
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 550
+      },
+      {
+        "from": "21",
+        "to": "FS-Reply\n     end-delete",
+        "line": 552
+      },
+      {
+        "from": "208",
+        "to": "WS-No-Paragraph",
+        "line": 558
+      },
+      {
+        "from": "WS-Analysis-Record",
+        "to": "Analysis-Record",
+        "line": 559
+      },
+      {
+        "from": "PA-Code",
+        "to": "WS-File-Key",
+        "line": 560
+      },
+      {
+        "from": "zeros",
+        "to": "FS-Reply  WE-Error",
+        "line": 561
+      },
+      {
+        "from": "zero",
+        "to": "Cobol-File-Status",
+        "line": 562
+      },
+      {
+        "from": "21",
+        "to": "FS-Reply\n     end-rewrite\n     go       to aa999-main-exit",
+        "line": 564
+      },
+      {
+        "from": "999",
+        "to": "WE-Error",
+        "line": 572
+      },
+      {
+        "from": "99",
+        "to": "fs-reply",
+        "line": 573
+      },
+      {
+        "from": "22",
+        "to": "WS-Log-File-no",
+        "line": 601
+      },
+      {
+        "from": "901",
+        "to": "WE-Error       *> 901 Programming error; temp rec length is wrong caller must stop\n                   move 99 to fs-reply        *> allow for last field ( FILLER) not being present in layout",
+        "line": 613
+      },
+      {
+        "from": "spaces",
+        "to": "Display-Blk\n                       string AC904          delimited by size\n                              A              delimited by size\n                              \" < \"          delimited by size\n                              \"Analysis-Rec = \" delimited by size\n                              B              delimited by size    into Display-Blk\n                       end-string\n                       display Display-Blk at 2301 with erase eol     *> BUT WILL REMIND ME TO SET IT UP correctly\n                       display AC901 at 2401 with erase eol\n                       if  Testing-1\n                           perform Ca-Process-Logs\n                       end-if\n                       accept Accept-Reply at 2433\n                       go to ba-rdbms-exit\n              end-if\n*>\n*>  Not a error comparing the length of records so - -\n*>  Load up the DB settings from the system record as its not passed on\n*>           hopefully once is enough  :)\n*>\n              move     RDBMS-DB-Name to DB-Schema\n              move     RDBMS-User    to DB-UName\n              move     RDBMS-Passwd  to DB-UPass\n              move     RDBMS-Port    to DB-Port\n              move     RDBMS-Host    to DB-Host\n              move     RDBMS-Socket  to DB-Socket\n     end-if",
+        "line": 617
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "Cobol Flat files are in use (via the system parameter file settings)\n*>                      which is passed via the wsfnctn (via copybook) / File-Access data block\n*>                      via the application module and each FH & DAL.\n*>                      It will read/write/delete/update/open/close as required and requested.\n*>                      NOTE the same fields are used for ALL of the FL and DAL modules so\n*>                      checking the error flags have to be done after each call before clearing.\n*>\n*>                      If RDBMS (Relational DataBase Management Systems) is in use it will call\n*>                      the specific module to handle similar processing passing the equivelent\n*>                      RDB (Relational DataBase) row as a Cobol file record (01 level) moving\n*>                      row by row to the correct Cobol flat file fields as required.\n*>                      These retrieve ALL columns and there fore the DAL modules cannot handle\n*>                      processing for selective columns, e.g., only updating one field/column\n*>                      as the whole record / row must be read or written to/from the RDB table.\n*>\n*>                      Module naming is based on the File ID variable name and for the Stock\n*>                      file which uses file-11  the FH is therefore acas011 - the last two chars\n*>                      reflect the same number as last two chars the 'file-nn' name.\n*>\n*>                      Did it have to be this way ? no but it is easy to see in the original\n*>                      code the name in the select statement for the Cobol file.\n*>\n*>                      RDB DAL (Data Access Layer) modules are individually modified to handle:\n*>                      MS SQL server, Mysql, DB2, Postgres and Oracle as available and tested.\n*>                      These are contained in seperate directories for each RDB, eg\n*>                       'MSSQL' (MS SQL Server), 'Mysql', 'DB2', 'Postgres'. 'Oracle'.\n*>                       You need to compile from the correct directory for the specific\n*>                       RDB you will use and have installed along with all of the development\n*>                       libraries and include files etc using the correct pre-compiler tool\n*>                       to process the 'EXEC SQL' code converting to Cobol calls etc.\n*>\n*>                      For specific SQL servers supported the pre-compiler system is included\n*>                       where ever possible but for some, copyright reasons may prevent\n*>                       inclusion. In some cases for one specific RDB more than one precompiler\n*>                       is used as an experiment to help find the ideal one to use.\n*>\n*>                      In addition:\n*>                        If the system has been set up to (see the System File set up via the\n*>                        main menu module for each sub system), also process BOTH flat file\n*>                        AND the correct rdb table/s,\n*>                        it will write/delete/update etc to both but read from 1=Flat and be\n*>                        overwritten by the rdb access. This was set up more for testing the\n*>                        new code for both cobol files and the rdb accessing modules.\n*>                       This can help in transferring the Cobol flat files to rdb tables but\n*>                        see below regarding the Load programs/modules.\n*>\n*>                      If you wish to convert a running ACAS system over from Flat files\n*>                      to RDBMS see below. However it is strongly recommended to not to use\n*>                      the Duplicate processing of files/table as outlined above but:\n*>\n*>                      Included are LMs (Load Modules) to convert each ISAM\n*>                      (Indexed Sequential) file to the rdb database tables if you wish to\n*>                      convert the system in one hit, without using the Duplicate file/RDB\n*>                      processing procedures. These will also need to be compiled from the\n*>                      specific LM directory that contains the rdb DAL modules.\n*>\n*>                      A specific program or bash process will be created to use, that will run\n*>                      each LM process for all existing Cobol files. These are created during\n*>                      writing of the FH and DAL for each file/table if only to help in testing\n*>                      them.\n*>**\n*> Called Modules:\n*>                      analMT -\n*>                                DAL (RDB Data Access Layer) or a variation\n*>                      Selected via CDF etc [to be added].\n*>\n*>**\n*> Error Messages Used.\n*>\n*>                      AC901 Note error and hit return\n*>                      AC904 Program Error: Temp rec =yyy < Stock-Rec = zzz\n*>**\n*> Version.             1.00 29/02/2012. Rewritten June 2016 after creating the DAL.\n*>\n*>                      This module is a ACAS File Handlers and is taken from\n*>                      the first one (acas001) and\n*>                      is lightly modelled on the irsub modules for IRS.\n*>\n*>\n*> Changes.\n*> 29/02/12 vbc - Created for Gnu Cobol v1.1 & v2.0. Code also to be tested with MF VC\n*>                ** UNDER TEST ** but there again every thing is!\n*> 17/05/16 vbc - Adding code for log file.\n*>                Notes about error messages.\n*> 24/06/16 vbc - Minor coding errors with a evaluate.\n*> 02/07/16 vbc - .01 Missing DB params in system rec not moved to DB-xx in wsfnctn.\n*> 04/08/16 vbc       Moved logging code into a new module to be called\n*>                    from here and the stockMT code.\n*> 04/08/16 vbc - .02 Test on read for read next at end bypass moves etc.\n*> 21/07/16 vbc - .03 Minor tidy up  of code & comments near the call to the DAL.\n*>                    Extra module comments and notes.\n*> 24/07/16 vbc       acas015 created from acas011 source with same versioning.\n*> 27/07/16 vbc - .04 Rem'd out some mv zero to fs-reply but don't think it is causing issues, may be\n*> 24/10/16 vbc - .   ALL programs now using wsnames.cob in copybooks\n*> 28/02/18 vbc - .05 Added recs test for FH at ba012-Test-WS-Rec-Size-2\n*>                    and removed msgs 906 & 7 renamed 901/2 to AC901/2.\n*> 29/04/18 vbc - .06 Resetting Cobol-File-Status for write,rewrite,delete, start etc\n*> 02/07/20 vbc - .07 For Start copy ws-PA-Code to PA-Code (was missing).\n*> 07/12/22 vbc - .08 Chgd Vars A & B to pic 999 toi keep GC v3.2 happy.\n*> 10/12/22 vbc - .09 chg to perform ba-Process-RDBMS + goto exit, 2 remove GC warning msg\n*>                    from latest v3.2 code WITH ba-Main-Exit chgd to exit section.\n*> 16/04/24 vbc       Copyright notice update superceding all previous notices.\n*>**\n*>  Module USAGE\n*>**************\n*>\n*>    On Entry:         Set up Linkage areas -\n*>    ********              1. File and table WS record : -\n*>    acas022 ONLY             WS-Analysis-Record = Contents of data record to be written/read\n*>                          2. File-Access = File-Function as needed.\n*>                                        Access-Type   as needed.\n*>                          3. File-Defs (File-Definitions) = Paths set up.\n*>\n*>    On Exit:          Linkage contains and apples to ALL FH and DAL modules:\n*>    *******               Record = containing a read data record or table row\n*>                          Fs-Reply = 0, 99 or other value where\n*>                                     0  = Operation completed successfully\n*>                                     10 = End of file\n*>                                     21 = Invalid key | key not found\n*>                                     99 = Indicates an error see WE-Error for more info\n*>                          WE-Error   0    = Operation completed successfully\n*>                                     999  = Undefined / unknown error\n*>                                     998* = File-Key-No Out Of Range not 1.\n*>                                     997* = Access-Type wrong (< 5 or > 8)\n*>                                     996* = File Delete key out of range (not 1)\n*>                                     995* = During Delete SQLSTATE not '00000' investigate using MSG-Err/Msg\n*>                                     994* = During Rewrite,                     ^^ see above ^^\n*>                                     990* = Unknown and unexpected error, again ^^ see above ^^\n*>                                     989* = Unexpected error on Read-Indexed, investigate as above.\n*>                                     911* = Rdb Error during initializing,\n*>                                            possibly can not connect to database\n*>                                             Check connect data and\n*>                                             see SQL-Err & SQL-MSG\n*>                                            Produced by Mysql-1100-Db-Error in copy\n*>                                            module mysql-procedure.\n*>                                     901  = File Def Record size not =< than ws record size\n*>                                            Module needs ws definition changing to correct size\n*>                                            FATAL, Stop using system, fix source code\n*>                                            and recompile before using system again.\n*>                                     Other = any other rdbms errors see specific\n*>                                             (Rdbms) manual\n*>                          SQL-Err  = Error code from RDBMS is set if above 2 are non zero\n*>                          SQL-Msg  = Non space providing more info if SQL-Err non '00000'\n*>                                     * = FS-Reply = 99.\n*>\n*>       During testing a log file will be created containing datetime stamp, task and return codes\n*>       for both FS-Reply and WE-Error and table used along with the RDB error number and message\n*>         In this case for the\n*>                Sales/Purch Analysis File.\n*>\n*>       WARNING - This file could get large so needs manually deleting after examination.\n*>\n*>  Programmer note : CONSIDER WRITING A reporting program for this with report selection criteria.\n*>\n*>******************************************************************************\n*>\n*>  From copyright.cob.\n*>\n*> Copyright Notice.\n*> ****************\n*>\n*> This notice supercedes all prior copyright notices & was updated 2024-04-16.\n*>\n*> These files and programs are part of the Applewood Computers Accounting\n*> System and is Copyright (c) Vincent B Coen. 1976-2025 and later.\n*>\n*> This program is now free software; you can redistribute it and/or modify it\n*> under the terms listed here and of the GNU General Public License as\n*> published by the Free Software Foundation; version 3 and later as revised\n*> for PERSONAL USAGE ONLY and that includes for use within a business but\n*> EXCLUDES repackaging or for Resale, Rental or Hire in ANY way.\n*>\n*> Persons interested in repackaging, redevelopment for the purpose of resale or\n*> distribution in a rental or hire mode must get in touch with the copyright\n*> holder with your commercial plans and proposals.\n*>\n*> ACAS is distributed in the hope that it will be useful, but WITHOUT\n*> ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or\n*> FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License\n*> for more details. If it breaks, you own both pieces but I will endeavour\n*> to fix it, providing you tell me about the problem.\n*>\n*> You should have received a copy of the GNU General Public License along\n*> with ACAS; see the file COPYING.  If not, write to the Free Software\n*> Foundation, 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA.\n*>\n*>**********************************************************************************\n*>\n environment division.\n copy \"envdiv.cob\".\n*>\n input-output section.\n file-control.\n*>\n copy \"selanal.cob\".\n*>\n data division.\n file section.\n*>***********\n copy \"fdanal.cob\".\n*>\n working-storage section.\n*>**********************\n*>\n 77  prog-name           pic x(17)    value \"acas015 (3.02.09)\".\n*>\n 77  ws-reply           pic x      value space.\n*>\n 77  A                  pic 9(4)             value zero.  *> A & B used in 1st test ONLY\n 77  B                  pic 9(4)             value zero.  *>  in ba-Process-RDBMS\n 77  Display-Blk        pic x(75)             value spaces.\n 77  Cobol-File-Status  pic 9                 value zero.\n     88  Cobol-File-Eof                       value 1.\n*>\n 01  Error-Messages.\n*> System Wide\n*> Module Specific\n     03  AC901          pic x(31) value \"AC901 Note error and hit return\".\n     03  AC904          pic x(32) value \"AC904 Program Error: Temp rec = \".\n*>                                        yyy < Purch-Rec = zzz\n*>\n Linkage Section.\n*>**************\n copy \"wsanal.cob\".\n*>\n copy \"wssystem.cob\".\n*>\n copy \"wsfnctn.cob\".\n*>\n copy \"wsnames.cob\".\n*>\n copy \"Test-Data-Flags.cob\".  *> set sw-testing to zero to stop logging.\n*>\n Procedure Division Using System-Record\n\n                          WS-Analysis-Record\n\n                          File-Access\n                          File-Defs\n                          ACAS-DAL-Common-data.\n*>********************************************\n*>\n aa-Process-Flat-File Section.\n*>***************************\n aa010-main.\n*>\n*>  For logging only.\n*>\n     move     6      to WS-Log-System.   *> 1 = IRS, 2=GL, 3=SL, 4=PL, 6=PL & SL, 5=Stock used in FH logging\n     move     12     to WS-Log-File-No.  *> Cobol/RDB, File/Table within sub System.\n*>\n*>   Now Test for valid key for start, read-indexed and delete\n*>\n     evaluate File-Function\n              when  4   *> fn-read-indexed\n              when  9   *> fn-start\n                if     File-Key-No not = 1\n                       move 998 to WE-Error       *> file seeks key type out of range        998\n                       move 99 to fs-reply\n                       go   to aa999-main-exit\n                end-if\n              when     8  *> fn-delete\n                if     File-Key-No not = 1        *> 1  is only for RDB as Cobol does it on primary key\n                       move 996 to WE-Error       *> file seeks key type out of range        996\n                       move 99 to fs-reply\n                       go   to aa999-main-exit\n                end-if\n     end-evaluate.\n*>\n*> Check if data files or RDBMS processing\n*>\n     if       not FS-Cobol-Files-Used\n              move RDBMS-Flat-Statuses to FA-RDBMS-Flat-Statuses    *> needed for DAL? not JC/dbpre versions\n              perform ba-Process-RDBMS                                *>  Can't hurt\n              go to AA-Main-Exit\n     end-if.\n*>\n*> Test  Rec lengths first.\n*>\n     perform  ba012-Test-WS-Rec-Size-2.\n*>\n*>  File paths for Cobol File has already done in main menu module\n*>\n*>******************************************************************************\n*> So we are processing Cobol Flat files, as Dup processing, or by themselves. *\n*>    if reading, get it but will be overwritten by rdb processing if set,     *\n*>      otherwise will write/rewrite/delete etc, to both formats               *\n*>******************************************************************************\n*>\n*>  ?   move     zero   to  WE-Error\n *>  ?                      FS-Reply.\n     move     spaces to SQL-Err SQL-Msg SQL-State.\n*>\n     evaluate File-Function\n        when  1\n              go to aa020-Process-Open\n        when  2\n              go to aa030-Process-Close\n        when  3\n              go to aa040-Process-Read-Next\n        when  4\n              go to aa050-Process-Read-Indexed\n        when  5\n              go to aa070-Process-Write\n        when  7\n              go to aa090-Process-Rewrite\n        when  8\n              go to aa080-Process-Delete\n        when  9\n              go to aa060-Process-Start\n        when  other                          *> 6 is spare / unused\n              go to aa100-Bad-Function\n     end-evaluate.\n*>\n*>  Should never get here but in case :(\n     go       to aa100-Bad-Function.\n*>\n aa020-Process-Open.\n     move     spaces to WS-File-Key.     *> for logging\n     move     201 to WS-No-Paragraph.\n     if       fn-input\n              open input Analysis-File\n              if   Fs-Reply not = zero\n                   move 35 to fs-Reply\n                   close Analysis-File\n                   go to aa999-Main-Exit\n              end-if\n      else\n       if     fn-i-o\n              open i-o Analysis-File\n              if       fs-reply not = zero\n                       close       Analysis-File\n                       open output Analysis-File           *> Doesnt create in i-o\n                       close       Analysis-File\n                       open i-o    Analysis-File\n              end-if\n       else\n        if    fn-output\n              open output Analysis-File         *> caller should check fs-reply\n        else\n         if   fn-extend                      *> Must not be used for ISAM files\n*>              open extend Analysis-File\n              move 997 to WE-Error\n              move 99  to FS-Reply\n              go to aa999-main-exit\n         end-if\n        end-if\n       end-if\n     end-if.\n*> 27/07/16 16:30     move     zeros to FS-Reply WE-Error.\n     move     zero to Cobol-File-Status.\n     move     \"OPEN ANALYSIS File\" to WS-File-Key.\n     if       fs-reply not = zero\n              move 999 to WE-Error.\n     go       to aa999-main-exit.            *> with test for dup processing\n*>\n aa030-Process-Close.\n     move     202 to WS-No-Paragraph.\n     move     spaces to WS-File-Key.     *> for logging\n     close    Analysis-File.\n*> 27/07/16 16:30     move     zeros to FS-Reply WE-Error.\n     move     zero to Cobol-File-Status.\n     move     \"CLOSE ANALYSIS File\" to WS-File-Key\n     perform  aa999-main-exit.\n     move     zero to  File-Function\n                       Access-Type.              *> close log file\n     perform  Ca-Process-Logs.\n     go       to aa-main-exit.\n*>\n aa040-Process-Read-Next.\n*>\n*>   Process READs, 1st is read next",
+        "line": 44
+      },
+      {
+        "type": "IF",
+        "condition": "Cobol-File-Eof\n              move 10 to FS-Reply\n                         WE-Error\n              move spaces to PA-Code\n                             SQL-Err\n                             SQL-Msg\n              stop \"Cobol File EOF\"               *> for testing\n              go to aa999-main-exit\n     end-if\n*>\n     read     Analysis-File next record at end\n              move 10 to we-error fs-reply        *> EOF\n              set Cobol-File-EoF to true\n              move 1 to Cobol-File-Status         *> JIC above dont work :)\n              initialize Analysis-Record\n              move \"EOF\" to WS-File-Key           *> for logging\n              go to aa999-main-exit\n     end-read.\n     if       FS-Reply not = zero\n              go to aa999-main-exit.\n     move     Analysis-Record to  WS-Analysis-Record.\n     move     PA-Code to WS-File-Key.\n     move     zeros to WE-Error.\n     go to    aa999-main-exit.\n*>\n*>   The next block will never get executed unless performed  so is it needed ?\n*>\n aa045-Eval-Keys.\n     evaluate File-Function      *> Set up keys just for logging\n              when  4             *> fn-read-indexed\n              when  5             *> fn-write\n              when  7             *> fn-re-write\n              when  8             *> fn-delete    For delete can ignore Desc key\n              when  9             *> fn-start\n                    evaluate  File-Key-No\n                              when   1\n                                     move   WS-PA-Code       to WS-File-Key\n                                                                  PA-Code\n                              when   other\n                                     move   spaces             to WS-File-Key\n                    end-evaluate\n              when  other\n                    move   spaces             to WS-File-Key\n     end-evaluate.\n*>\n aa050-Process-Read-Indexed.\n*>\n*> copy the key to main file area\n*>\n     move     204 to WS-No-Paragraph.\n     perform  aa045-Eval-keys.\n     move     zero to Cobol-File-Status.\n     move     PA-Code to WS-File-Key.\n     if       File-Key-No = 1\n              read     Analysis-File key PA-Code       invalid key\n                       move 21 to we-error fs-reply\n              end-read\n              if       fs-Reply = zero\n                       move     Analysis-Record to  WS-Analysis-Record\n              else\n                       move     spaces     to  WS-Analysis-Record\n              end-if\n              go       to aa999-main-exit\n     end-if.\n     move     998 to WE-Error       *> file seeks key type out of range but should never get here       998\n     move     99 to fs-reply\n     go       to aa999-main-exit.\n*>\n aa060-Process-Start.\n*>\n*>  Check for Param error 1st on start   WARNING Not logging starts\n*>\n     move     205 to WS-No-Paragraph.\n     move     zeros to fs-reply\n                       WE-Error.\n     move     zero to Cobol-File-Status.\n     move     WS-PA-Code to PA-Code.\n     move     PA-Code to WS-File-Key.\n*>\n     if       access-type < 5 or > 8                   *> NOT using 'not >'\n              move 998 to WE-Error                     *> 998 Invalid calling parameter settings\n              go to aa999-main-exit\n     end-if\n*>\n*>  Now do Start primary key before read-next\n*>\n     if       File-Key-No = 1\n        and   fn-equal-to\n              start Analysis-File key = PA-Code invalid key\n                    move 21 to Fs-Reply\n                    go to aa999-main-exit\n              end-start\n     end-if\n     if       File-Key-No = 1\n        and   fn-less-than\n              start Analysis-File key < PA-Code invalid key\n                    move 21 to Fs-Reply\n                    go to aa999-main-exit\n              end-start\n     end-if\n     if       File-Key-No = 1\n        and   fn-greater-than\n              start Analysis-File key > PA-Code invalid key\n                    move 21 to Fs-Reply\n                    go to aa999-main-exit\n              end-start\n     end-if\n     if       File-Key-No = 1\n        and   fn-not-less-than\n              start Analysis-File key not < PA-Code invalid key\n                    move 21 to Fs-Reply\n                    go to aa999-main-exit\n              end-start\n     end-if\n     go       to aa999-main-exit.\n*>\n aa070-Process-Write.\n     move     206 to WS-No-Paragraph.\n     move      WS-Analysis-Record to Analysis-Record.\n     move     zeros to FS-Reply  WE-Error.\n     move     zero to Cobol-File-Status.\n     move     PA-Code to WS-File-Key.\n     write    Analysis-Record invalid key\n              move 22 to FS-Reply\n     end-write.\n     go       to aa999-main-exit.\n*>\n aa080-Process-Delete.\n     move     207 to WS-No-Paragraph.\n     move     WS-Analysis-Record to Analysis-Record.\n     move     zeros to FS-Reply  WE-Error.\n     move     zero to Cobol-File-Status.\n     delete   Analysis-File record invalid key\n              move 21 to FS-Reply\n     end-delete.\n     go       to aa999-main-exit.\n*>\n aa090-Process-Rewrite.\n*>\n     move     208 to WS-No-Paragraph.\n     move     WS-Analysis-Record to Analysis-Record.\n     move     PA-Code to WS-File-Key.\n     move     zeros to FS-Reply  WE-Error.\n     move     zero to Cobol-File-Status.\n     rewrite  Analysis-Record invalid key\n              move 21 to FS-Reply\n     end-rewrite\n     go       to aa999-main-exit.\n*>\n aa100-Bad-Function.\n*>\n*> Houston; We have a problem\n*>\n     move     999 to WE-Error.                         *> 999\n     move     99  to fs-reply.\n*>\n aa999-main-exit.\n     if       Testing-1\n              perform Ca-Process-Logs\n     end-if.\n*>\n aa-main-exit.\n*>\n*> Now have processed cobol flat file,  so ..\n*>\n aa-Exit.\n     exit program.\n*>\n ba-Process-RDBMS section.\n*>***********************\n*>\n*>********************************************************************\n*>  Here we call the relevent RDBMS module for this table            *\n*>   which will include processing any other joined tables as needed *\n*>********************************************************************\n*>\n ba010-Test-WS-Rec-Size.\n*>\n*>     Test on very first call only  (So do NOT use var A & B again)\n*>       Lets test that Data-record size is = or > than declared Rec in DAL\n*>          as we cant adjust at compile/run time due to ALL Cobol compilers ?\n*>\n     move     22 to WS-Log-File-no.        *> for FHlogger\n*>\n ba012-Test-WS-Rec-Size-2.\n*>\n     if       A = zero                        *> so it is being called first time\n              move     function Length (\n                                         WS-Analysis-Record\n                                                 ) to A\n              move     function length (\n                                        Analysis-Record\n                                                 ) to B\n              if   A < B                      *> COULD LET caller module deal with these errors !!!!!!!\n                   move 901 to WE-Error       *> 901 Programming error; temp rec length is wrong caller must stop\n                   move 99 to fs-reply        *> allow for last field ( FILLER) not being present in layout.\n              end-if\n              if       WE-Error = 901                  *> record length wrong so display error, accept and",
+        "line": 419
+      },
+      {
+        "type": "IF",
+        "condition": "Testing-1\n                           perform Ca-Process-Logs\n                       end-if\n                       accept Accept-Reply at 2433\n                       go to ba-rdbms-exit\n              end-if\n*>\n*>  Not a error comparing the length of records so - -\n*>  Load up the DB settings from the system record as its not passed on\n*>           hopefully once is enough  :)\n*>\n              move     RDBMS-DB-Name to DB-Schema\n              move     RDBMS-User    to DB-UName\n              move     RDBMS-Passwd  to DB-UPass\n              move     RDBMS-Port    to DB-Port\n              move     RDBMS-Host    to DB-Host\n              move     RDBMS-Socket  to DB-Socket\n     end-if.\n*>\n ba015-Test-Ends.\n*>\n*>\n*>   HERE we need a CDF [Compiler Directive] to select the correct DAL based\n*>     on the pre SQL compiler e.g., JCs or dbpre or Prima conversions <<<<  ? >>>>>\n*>        Do this after system testing and pre code release.\n*>\n*>  NOW SET UP FOR JC pre-sql compiler system.\n*>   DAL-Datablock not needed unless using RDBMS DAL from Prima & MS Sql\n*>\n     call     \"analMT\" using File-Access\n                             ACAS-DAL-Common-data\n\n                             WS-Analysis-Record\n     end-call.\n*>\n*>   Any errors leave it to caller to recover from\n*>\n ba-rdbms-exit.\n     exit     section.\n*>   ****     *******\n*>\n Ca-Process-Logs. *> Not called on DAL access as it does it already\n*>**************\n*>\n     call     \"fhlogger\" using File-Access\n                               ACAS-DAL-Common-data.\n*>\n ca-Exit.     exit.\n*>\n*>\n end program acas015.",
+        "line": 626
+      }
+    ],
+    "evaluates": [
+      {
+        "content": "File-Function\n              when  4   *> fn-read-indexed\n              when  9   *> fn-start\n       ...",
+        "line": 297,
+        "whenCount": 3
+      },
+      {
+        "content": "File-Function\n        when  1\n              go to aa020-Process-Open\n        when  2\n              g...",
+        "line": 337,
+        "whenCount": 9
+      },
+      {
+        "content": "File-Function      *> Set up keys just for logging\n              when  4             *> fn-read-inde...",
+        "line": 447,
+        "whenCount": 7
+      }
+    ],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 25,
+    "cognitive": 41,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 53,
+      "totalOperators": 56,
+      "totalOperands": 112,
+      "vocabulary": 54,
+      "length": 168,
+      "volume": 966.8211003634626
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "filePath": "/Users/MartinGonella/Desktop/Demos/ACAS/common/cobdump.cbl",
+  "fileName": "cobdump.cbl",
+  "timestamp": "2025-09-15T16:25:35.485Z",
+  "programId": "cobdump",
+  "parserUsed": "GnuCOBOL + Regex",
+  "parseConfidence": 0,
+  "validationStatus": "ERROR",
+  "gnuCobolValidation": {
+    "success": true,
+    "errors": [],
+    "warnings": []
+  },
+  "parseErrors": [
+    "Cannot read properties of undefined (reading 'total')"
+  ],
+  "parseWarnings": [],
+  "divisions": {
+    "identification": true,
+    "environment": true,
+    "data": true,
+    "procedure": true
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "CONFIGURATION",
+        "line": 27
+      },
+      {
+        "name": "WORKING-STORAGE",
+        "line": 31
+      },
+      {
+        "name": "LINKAGE",
+        "line": 73
+      }
+    ],
+    "paragraphs": [
+      {
+        "name": "REPOSITORY",
+        "line": 28
+      },
+      {
+        "name": "000-COBDUMP",
+        "line": 77
+      },
+      {
+        "name": "100-Generate-Address",
+        "line": 125
+      },
+      {
+        "name": "END-PERFORM",
+        "line": 134
+      }
+    ],
+    "entryPoints": []
+  },
+  "dependencies": {
+    "calls": [
+      {
+        "target": "COBDUMP",
+        "line": 9,
+        "type": "DYNAMIC",
+        "using": [
+          "<data-item>",
+          "**",
+          "*>",
+          "[",
+          "<length>",
+          "]",
+          "**",
+          "*>",
+          "**",
+          "*>",
+          "If",
+          "specified,",
+          "the",
+          "<length>",
+          "argument",
+          "specifies",
+          "how",
+          "many",
+          "**",
+          "*>",
+          "bytes",
+          "of",
+          "<data-item>",
+          "are",
+          "to",
+          "be",
+          "dumped"
+        ]
+      }
+    ],
+    "copies": [],
+    "performs": [
+      {
+        "target": "100-Generate-Address",
+        "thru": null,
+        "line": 85
+      },
+      {
+        "target": "VARYING",
+        "thru": null,
+        "line": 91
+      },
+      {
+        "target": "100-Generate-Address",
+        "thru": null,
+        "line": 116
+      },
+      {
+        "target": "IF",
+        "thru": null,
+        "line": 118
+      },
+      {
+        "target": "WITH",
+        "thru": null,
+        "line": 129
+      }
+    ]
+  },
+  "dataFlow": {
+    "files": [],
+    "moves": [
+      {
+        "from": "LENGTH(Buffer)",
+        "to": "Buffer-Length\n     ELSE\n              MOVE Buffer-Len TO Buffer-Length\n     END-IF\n     MOVE     SPACES TO Output-Detail\n     SET      Addr-Pointer TO ADDRESS OF Buffer\n     PERFORM  100-Generate-Address\n     MOVE     0 TO Output-Sub\n     DISPLAY  Output-Header-1 UPON SYSERR\n     END-DISPLAY\n     DISPLAY  Output-Header-2 UPON SYSERR\n     END-DISPLAY\n     PERFORM  VARYING Buffer-Sub FROM 1 BY 1\n                   UNTIL Buffer-Sub > Buffer-Length\n              ADD    1 TO Output-Sub\n              END-ADD\n              IF     Output-Sub = 1\n                     MOVE Buffer-Sub TO OD-Byte\n              END-IF\n              MOVE   Buffer (Buffer-Sub : 1) TO PIC-X\n              IF     (PIC-X < ' ')\n               OR    (PIC-X > '~')\n                     MOVE Undisplayable-Char-Symbol TO OD-ASCII (Output-Sub)\n              ELSE\n                     MOVE PIC-X TO OD-ASCII (Output-Sub)\n              END-IF\n              DIVIDE PIC-Halfword BY 16 GIVING Left-Nibble REMAINDER Right-Nibble\n              END-DIVIDE\n              ADD    1 TO Left-Nibble Right-Nibble\n              END-ADD\n              MOVE   Hex-Digit (Left-Nibble)  TO OD-Hex-1 (Output-Sub)\n              MOVE   Hex-Digit (Right-Nibble) TO OD-Hex-2 (Output-Sub)\n              IF     Output-Sub = 16\n                     DISPLAY  Output-Detail UPON SYSERR\n                     MOVE     SPACES TO Output-Detail\n                     MOVE     0 TO Output-Sub\n                     SET      Addr-Pointer UP BY 16\n                     PERFORM  100-Generate-Address\n              END-IF\n     END-PERFORM\n     IF       Output-Sub > 0\n              DISPLAY  Output-Detail UPON SYSERR\n              END-DISPLAY\n     END-IF\n     EXIT PROGRAM ",
+        "line": 79
+      },
+      {
+        "from": "8",
+        "to": "Addr-Sub\n     MOVE     Addr-Number TO Addr-Value\n     MOVE     ALL '0' TO OD-Addr\n     PERFORM  WITH TEST BEFORE UNTIL Addr-Value = 0\n              DIVIDE Addr-Value BY 16  GIVING Addr-Value REMAINDER Nibble\n              ADD 1 TO Nibble\n              MOVE Hex-Digit (Nibble) TO OD-Addr-Hex (Addr-Sub)\n              SUBTRACT 1 FROM Addr-Sub\n     END-PERFORM",
+        "line": 126
+      }
+    ],
+    "computes": []
+  },
+  "businessLogic": {
+    "conditions": [
+      {
+        "type": "IF",
+        "condition": "specified, the <length> argument specifies how many      **\n *> bytes of <data-item> are to be dumped. If absent, all of    **\n *> <data-item> will be dumped (i.e. LENGTH(<data-item>) will   **\n *> be assumed for <length>).                                   **\n *>                                                             **\n *> >>> Note that the subroutine name MUST be specified in <<<  **\n *> >>> UPPERCASE <<<                                           **\n *>                                                             **\n *> The dump is generated to STDERR, so you may pipe it to a    **\n *> file when you execute your program using \"2> file\".         **\n *>                                                             **\n *> AUTHOR: GARY L. CUTLER                                      **\n *> CutlerGL@gmail.com                                          **\n *>***************************************************************\n ENVIRONMENT DIVISION.\n CONFIGURATION SECTION.\n REPOSITORY.\n     FUNCTION ALL INTRINSIC.\n DATA DIVISION.\n WORKING-STORAGE SECTION.\n 78  Undisplayable-Char-Symbol VALUE X'F9'.\n 01  Addr-Pointer       POINTER.\n 01  Addr-Number REDEFINES Addr-Pointer USAGE BINARY-LONG.\n 01  Addr-Sub           BINARY-CHAR.\n 01  Addr-Value         BINARY-LONG.\n 01  Buffer-Length      BINARY-LONG.\n 01  Buffer-Sub         PIC 9(4)  comp-5.\n 01  Hex-Digits                VALUE '0123456789ABCDEF'.\n     05 Hex-Digit OCCURS 16 TIMES PIC X.\n 01  Left-Nibble   COMP-5 PIC 9.\n 01  Nibble REDEFINES Left-Nibble BINARY-CHAR.\n 01  Output-Detail.\n     05  OD-Addr.\n        10  OD-Addr-Hex OCCURS 8 TIMES PIC X.\n     05  FILLER         PIC X.\n     05  OD-Byte        PIC Z(3)9.\n     05  FILLER         PIC X.\n     05  OD-Hex OCCURS 16 TIMES.\n         10  OD-Hex-1   PIC X.\n         10  OD-Hex-2   PIC X.\n         10  FILLER     PIC X.\n     05  OD-ASCII OCCURS 16 TIMES  PIC X.\n 01  Output-Sub    COMP-5 PIC 9(2).\n 01  Output-Header-1.\n      05  FILLER PIC X(80) VALUE\n          '<-Addr-> Byte ' &\n          '<---------------- Hexadecimal ----------------> ' &\n          '<---- Char ---->'.\n 01  Output-Header-2.\n     05  FILLER PIC X(80) VALUE\n         '======== ==== ' &\n         '=============================================== ' &\n         '================'.\n 01  PIC-XX.\n     05  FILLER         PIC X VALUE LOW-VALUES.\n     05  PIC-X          PIC X.\n 01  PIC-Halfword REDEFINES PIC-XX  PIC 9(4) COMP-X.\n 01  PIC-X10.\n     05  FILLER         PIC X(2).\n     05  PIC-X8         PIC X(8).\n 01  Right-Nibble       PIC 9      comp-5.\n LINKAGE SECTION.\n 01  Buffer             PIC X ANY LENGTH.\n 01  Buffer-Len         BINARY-LONG.\n PROCEDURE DIVISION USING Buffer, OPTIONAL Buffer-Len.\n 000-COBDUMP.\n     IF       NUMBER-OF-CALL-PARAMETERS = 1\n              MOVE LENGTH(Buffer) TO Buffer-Length\n     ELSE\n              MOVE Buffer-Len TO Buffer-Length\n     END-IF\n     MOVE     SPACES TO Output-Detail\n     SET      Addr-Pointer TO ADDRESS OF Buffer\n     PERFORM  100-Generate-Address\n     MOVE     0 TO Output-Sub\n     DISPLAY  Output-Header-1 UPON SYSERR\n     END-DISPLAY\n     DISPLAY  Output-Header-2 UPON SYSERR\n     END-DISPLAY\n     PERFORM  VARYING Buffer-Sub FROM 1 BY 1\n                   UNTIL Buffer-Sub > Buffer-Length\n              ADD    1 TO Output-Sub\n              END-ADD\n              IF     Output-Sub = 1\n                     MOVE Buffer-Sub TO OD-Byte\n              END-IF\n              MOVE   Buffer (Buffer-Sub : 1) TO PIC-X\n              IF     (PIC-X < ' ')\n               OR    (PIC-X > '~')\n                     MOVE Undisplayable-Char-Symbol TO OD-ASCII (Output-Sub)\n              ELSE\n                     MOVE PIC-X TO OD-ASCII (Output-Sub)\n              END-IF\n              DIVIDE PIC-Halfword BY 16 GIVING Left-Nibble REMAINDER Right-Nibble\n              END-DIVIDE\n              ADD    1 TO Left-Nibble Right-Nibble\n              END-ADD\n              MOVE   Hex-Digit (Left-Nibble)  TO OD-Hex-1 (Output-Sub)\n              MOVE   Hex-Digit (Right-Nibble) TO OD-Hex-2 (Output-Sub)\n              IF     Output-Sub = 16\n                     DISPLAY  Output-Detail UPON SYSERR\n                     MOVE     SPACES TO Output-Detail\n                     MOVE     0 TO Output-Sub\n                     SET      Addr-Pointer UP BY 16\n                     PERFORM  100-Generate-Address\n              END-IF\n     END-PERFORM\n     IF       Output-Sub > 0\n              DISPLAY  Output-Detail UPON SYSERR\n              END-DISPLAY\n     END-IF\n     EXIT PROGRAM .\n*>\n 100-Generate-Address.\n     MOVE     8 TO Addr-Sub\n     MOVE     Addr-Number TO Addr-Value\n     MOVE     ALL '0' TO OD-Addr\n     PERFORM  WITH TEST BEFORE UNTIL Addr-Value = 0\n              DIVIDE Addr-Value BY 16  GIVING Addr-Value REMAINDER Nibble\n              ADD 1 TO Nibble\n              MOVE Hex-Digit (Nibble) TO OD-Addr-Hex (Addr-Sub)\n              SUBTRACT 1 FROM Addr-Sub\n     END-PERFORM.",
+        "line": 12
+      }
+    ],
+    "evaluates": [],
+    "validations": []
+  },
+  "complexity": {
+    "mccabe": 3,
+    "cognitive": 1,
+    "halstead": {
+      "uniqueOperators": 1,
+      "uniqueOperands": 4,
+      "totalOperators": 2,
+      "totalOperands": 4,
+      "vocabulary": 5,
+      "length": 6,
+      "volume": 13.931568569324174
+    }
+  },
+  "quality": {
+    "gotos": [],
+    "deadCode": [],
+    "missingErrorHandlers": []
+  },
+  "sql": {
+    "hasSQL": false,
+    "statements": []
+  },
+  "cics": {
+    "hasCICS": false,
+    "statements": []
+  }
+}
